@@ -1,0 +1,1161 @@
+[
+ {
+  "invoice_id": "INV-124033",
+  "customer_id": "cust_en_107474",
+  "ro_number": "RO-124033",
+  "issued": "2026-11-16",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 413.06
+   }
+  ],
+  "total_cad": 988.82,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-312151",
+  "customer_id": "cust_en_146317",
+  "ro_number": "RO-312151",
+  "issued": "2026-11-11",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 235.16
+   }
+  ],
+  "total_cad": 545.41,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-875999",
+  "customer_id": "cust_en_163033",
+  "ro_number": "RO-875999",
+  "issued": "2026-10-09",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.4,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 540.51
+   }
+  ],
+  "total_cad": 1244.71,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-685638",
+  "customer_id": "cust_en_167415",
+  "ro_number": "RO-685638",
+  "issued": "2026-11-15",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 80.38
+   }
+  ],
+  "total_cad": 687.47,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-158501",
+  "customer_id": "cust_en_201630",
+  "ro_number": "RO-158501",
+  "issued": "2026-10-16",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 405.66
+   }
+  ],
+  "total_cad": 887.23,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-119392",
+  "customer_id": "cust_en_225773",
+  "ro_number": "RO-119392",
+  "issued": "2026-11-08",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 602.06
+   }
+  ],
+  "total_cad": 1109.16,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-800250",
+  "customer_id": "cust_en_238969",
+  "ro_number": "RO-800250",
+  "issued": "2026-11-16",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 630.93
+   }
+  ],
+  "total_cad": 1440.11,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-432289",
+  "customer_id": "cust_en_243963",
+  "ro_number": "RO-432289",
+  "issued": "2026-11-11",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 364.94
+   }
+  ],
+  "total_cad": 897.15,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-285496",
+  "customer_id": "cust_en_256703",
+  "ro_number": "RO-285496",
+  "issued": "2026-11-14",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 585.86
+   }
+  ],
+  "total_cad": 1333.24,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-204059",
+  "customer_id": "cust_en_256788",
+  "ro_number": "RO-204059",
+  "issued": "2026-11-12",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 242.6
+   }
+  ],
+  "total_cad": 777.55,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-285714",
+  "customer_id": "cust_en_26226",
+  "ro_number": "RO-285714",
+  "issued": "2026-11-11",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 142.61
+   }
+  ],
+  "total_cad": 683.21,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-939822",
+  "customer_id": "cust_en_27825",
+  "ro_number": "RO-939822",
+  "issued": "2026-11-09",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 637.68
+   }
+  ],
+  "total_cad": 1242.64,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-760577",
+  "customer_id": "cust_en_283061",
+  "ro_number": "RO-760577",
+  "issued": "2026-11-07",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 99.94
+   }
+  ],
+  "total_cad": 840.09,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-206414",
+  "customer_id": "cust_en_288390",
+  "ro_number": "RO-206414",
+  "issued": "2026-11-16",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 409.64
+   }
+  ],
+  "total_cad": 705.28,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-168471",
+  "customer_id": "cust_en_291370",
+  "ro_number": "RO-168471",
+  "issued": "2026-10-08",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 103.85
+   }
+  ],
+  "total_cad": 639.41,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-625451",
+  "customer_id": "cust_en_307420",
+  "ro_number": "RO-625451",
+  "issued": "2026-10-25",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 133.33
+   }
+  ],
+  "total_cad": 672.72,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-350960",
+  "customer_id": "cust_en_33327",
+  "ro_number": "RO-350960",
+  "issued": "2026-10-01",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 480.01
+   }
+  ],
+  "total_cad": 784.8,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-907787",
+  "customer_id": "cust_en_356779",
+  "ro_number": "RO-907787",
+  "issued": "2026-11-12",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 328.67
+   }
+  ],
+  "total_cad": 1154.49,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-805683",
+  "customer_id": "cust_en_397888",
+  "ro_number": "RO-805683",
+  "issued": "2026-11-15",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 516.08
+   }
+  ],
+  "total_cad": 881.49,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-285727",
+  "customer_id": "cust_en_439899",
+  "ro_number": "RO-285727",
+  "issued": "2026-11-07",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 127.07
+   }
+  ],
+  "total_cad": 889.39,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-773991",
+  "customer_id": "cust_en_471030",
+  "ro_number": "RO-773991",
+  "issued": "2026-11-12",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 426.75
+   }
+  ],
+  "total_cad": 1060.22,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-463521",
+  "customer_id": "cust_en_560087",
+  "ro_number": "RO-463521",
+  "issued": "2026-11-10",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 108.91
+   }
+  ],
+  "total_cad": 402.74,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-143332",
+  "customer_id": "cust_en_571859",
+  "ro_number": "RO-143332",
+  "issued": "2026-11-12",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 153.86
+   }
+  ],
+  "total_cad": 565.41,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-378093",
+  "customer_id": "cust_en_578857",
+  "ro_number": "RO-378093",
+  "issued": "2026-11-15",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 335.08
+   }
+  ],
+  "total_cad": 583.74,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-479982",
+  "customer_id": "cust_en_617890",
+  "ro_number": "RO-479982",
+  "issued": "2026-11-13",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 585.26
+   }
+  ],
+  "total_cad": 1444.43,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-623153",
+  "customer_id": "cust_en_631263",
+  "ro_number": "RO-623153",
+  "issued": "2026-11-02",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 383.04
+   }
+  ],
+  "total_cad": 954.9,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-620202",
+  "customer_id": "cust_en_659177",
+  "ro_number": "RO-620202",
+  "issued": "2026-11-14",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 554.48
+   }
+  ],
+  "total_cad": 1036.75,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-456002",
+  "customer_id": "cust_en_670488",
+  "ro_number": "RO-456002",
+  "issued": "2026-11-13",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 602.57
+   }
+  ],
+  "total_cad": 1109.74,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-327743",
+  "customer_id": "cust_en_671089",
+  "ro_number": "RO-327743",
+  "issued": "2026-09-19",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 131.05
+   }
+  ],
+  "total_cad": 688.79,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-464363",
+  "customer_id": "cust_en_681454",
+  "ro_number": "RO-464363",
+  "issued": "2026-11-14",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 246.72
+   }
+  ],
+  "total_cad": 633.05,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-713147",
+  "customer_id": "cust_en_6815",
+  "ro_number": "RO-713147",
+  "issued": "2026-11-11",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 636.96
+   }
+  ],
+  "total_cad": 962.15,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-613690",
+  "customer_id": "cust_en_693385",
+  "ro_number": "RO-613690",
+  "issued": "2026-11-14",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 127.86
+   }
+  ],
+  "total_cad": 442.8,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-268581",
+  "customer_id": "cust_en_72934",
+  "ro_number": "RO-268581",
+  "issued": "2026-11-15",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 106.55
+   }
+  ],
+  "total_cad": 698.4,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-789092",
+  "customer_id": "cust_en_732053",
+  "ro_number": "RO-789092",
+  "issued": "2026-11-15",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 127.78
+   }
+  ],
+  "total_cad": 349.49,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-508078",
+  "customer_id": "cust_en_735393",
+  "ro_number": "RO-508078",
+  "issued": "2026-11-15",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 175.71
+   }
+  ],
+  "total_cad": 944.35,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-530012",
+  "customer_id": "cust_en_750801",
+  "ro_number": "RO-530012",
+  "issued": "2026-09-27",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 417.8
+   }
+  ],
+  "total_cad": 1012.82,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-750002",
+  "customer_id": "cust_en_764545",
+  "ro_number": "RO-750002",
+  "issued": "2026-11-16",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 40.49
+   }
+  ],
+  "total_cad": 567.81,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-326801",
+  "customer_id": "cust_en_776647",
+  "ro_number": "RO-326801",
+  "issued": "2026-11-10",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.4,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 356.73
+   }
+  ],
+  "total_cad": 1037.03,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-589174",
+  "customer_id": "cust_en_848750",
+  "ro_number": "RO-589174",
+  "issued": "2026-10-01",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 40.31
+   }
+  ],
+  "total_cad": 642.19,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-526691",
+  "customer_id": "cust_en_911528",
+  "ro_number": "RO-526691",
+  "issued": "2026-11-08",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 74.1
+   }
+  ],
+  "total_cad": 643.08,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-851209",
+  "customer_id": "cust_en_91162",
+  "ro_number": "RO-851209",
+  "issued": "2026-11-16",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 476.36
+   }
+  ],
+  "total_cad": 1190.86,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-814209",
+  "customer_id": "cust_fr_101415",
+  "ro_number": "RO-814209",
+  "issued": "2026-11-16",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 137.8
+   }
+  ],
+  "total_cad": 398.1,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-923403",
+  "customer_id": "cust_fr_130890",
+  "ro_number": "RO-923403",
+  "issued": "2026-10-31",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 105.19
+   }
+  ],
+  "total_cad": 435.83,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-922707",
+  "customer_id": "cust_fr_291477",
+  "ro_number": "RO-922707",
+  "issued": "2026-10-25",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 533.9
+   }
+  ],
+  "total_cad": 1032.14,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-225840",
+  "customer_id": "cust_fr_303446",
+  "ro_number": "RO-225840",
+  "issued": "2026-11-14",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 535.7
+   }
+  ],
+  "total_cad": 791.79,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-607625",
+  "customer_id": "cust_fr_352945",
+  "ro_number": "RO-607625",
+  "issued": "2026-11-11",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 448.15
+   }
+  ],
+  "total_cad": 711.5,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-967448",
+  "customer_id": "cust_fr_372529",
+  "ro_number": "RO-967448",
+  "issued": "2026-11-09",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 637.43
+   }
+  ],
+  "total_cad": 1447.45,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-235253",
+  "customer_id": "cust_fr_398383",
+  "ro_number": "RO-235253",
+  "issued": "2026-10-25",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 415.26
+   }
+  ],
+  "total_cad": 1140.46,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-996163",
+  "customer_id": "cust_fr_45562",
+  "ro_number": "RO-996163",
+  "issued": "2026-11-12",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 173.09
+   }
+  ],
+  "total_cad": 400.69,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-616064",
+  "customer_id": "cust_fr_562276",
+  "ro_number": "RO-616064",
+  "issued": "2026-10-22",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 452.8
+   }
+  ],
+  "total_cad": 828.63,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-525764",
+  "customer_id": "cust_fr_633053",
+  "ro_number": "RO-525764",
+  "issued": "2026-11-07",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 584.88
+   }
+  ],
+  "total_cad": 1127.04,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-894000",
+  "customer_id": "cust_fr_638721",
+  "ro_number": "RO-894000",
+  "issued": "2026-11-15",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 459.25
+   }
+  ],
+  "total_cad": 1134.24,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-675200",
+  "customer_id": "cust_fr_679515",
+  "ro_number": "RO-675200",
+  "issued": "2026-11-09",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 191.1
+   }
+  ],
+  "total_cad": 682.07,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-805972",
+  "customer_id": "cust_fr_702730",
+  "ro_number": "RO-805972",
+  "issued": "2026-11-11",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 406.79
+   }
+  ],
+  "total_cad": 702.06,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-783697",
+  "customer_id": "cust_fr_716752",
+  "ro_number": "RO-783697",
+  "issued": "2026-11-12",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 611.15
+   }
+  ],
+  "total_cad": 1436.4,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-500910",
+  "customer_id": "cust_fr_735912",
+  "ro_number": "RO-500910",
+  "issued": "2026-11-11",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 238.15
+   }
+  ],
+  "total_cad": 604.72,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-434102",
+  "customer_id": "cust_fr_800582",
+  "ro_number": "RO-434102",
+  "issued": "2026-11-07",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 376.9
+   }
+  ],
+  "total_cad": 947.96,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-802569",
+  "customer_id": "cust_fr_874629",
+  "ro_number": "RO-802569",
+  "issued": "2026-10-30",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 412.33
+   }
+  ],
+  "total_cad": 782.9,
+  "status": "disputed"
+ },
+ {
+  "invoice_id": "INV-245892",
+  "customer_id": "cust_fr_908574",
+  "ro_number": "RO-245892",
+  "issued": "2026-11-13",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 215.99
+   }
+  ],
+  "total_cad": 654.26,
+  "status": "paid"
+ },
+ {
+  "invoice_id": "INV-548726",
+  "customer_id": "cust_fr_967097",
+  "ro_number": "RO-548726",
+  "issued": "2026-11-07",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 430.99
+   }
+  ],
+  "total_cad": 1214.17,
+  "status": "unpaid"
+ },
+ {
+  "invoice_id": "INV-833289",
+  "customer_id": "cust_fr_982154",
+  "ro_number": "RO-833289",
+  "issued": "2026-10-13",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 63.16
+   }
+  ],
+  "total_cad": 761.24,
+  "status": "disputed"
+ }
+]

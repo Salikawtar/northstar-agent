@@ -1,0 +1,52 @@
+[
+ {
+  "campaign_id": "NM-24R01",
+  "model": "Halden",
+  "year_from": 2021,
+  "year_to": 2023,
+  "title": "Rear camera image may not display",
+  "remedy": "Software update, about 45 minutes",
+  "safety_risk": true,
+  "parts_available": true
+ },
+ {
+  "campaign_id": "NM-25R03",
+  "model": "Lumen",
+  "year_from": 2024,
+  "year_to": 2025,
+  "title": "Low-pressure fuel pump may fail",
+  "remedy": "Replace fuel pump module, about 3 hours",
+  "safety_risk": true,
+  "parts_available": false
+ },
+ {
+  "campaign_id": "NM-23R07",
+  "model": "Tessera",
+  "year_from": 2019,
+  "year_to": 2020,
+  "title": "Front passenger seat belt pretensioner wiring",
+  "remedy": "Inspect and replace harness",
+  "safety_risk": true,
+  "parts_available": true
+ },
+ {
+  "campaign_id": "NM-24R11",
+  "model": "Oriel",
+  "year_from": 2019,
+  "year_to": 2022,
+  "title": "Infotainment unit may reboot while driving",
+  "remedy": "Software update, about 30 minutes",
+  "safety_risk": false,
+  "parts_available": true
+ },
+ {
+  "campaign_id": "NM-26R02",
+  "model": "Kestrel",
+  "year_from": 2021,
+  "year_to": 2023,
+  "title": "Hood latch may not hold secondary position",
+  "remedy": "Replace hood latch",
+  "safety_risk": true,
+  "parts_available": true
+ }
+]

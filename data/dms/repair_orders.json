@@ -1,0 +1,2180 @@
+[
+ {
+  "ro_number": "RO-124033",
+  "vin": "406YA53X6P93K4966",
+  "customer_id": "cust_en_107474",
+  "status": "closed",
+  "opened": "2026-11-15",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 413.06
+   }
+  ],
+  "estimate_cad": 875.06,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-312151",
+  "vin": "NB4ZBWS36FSFR1047",
+  "customer_id": "cust_en_146317",
+  "status": "closed",
+  "opened": "2026-11-10",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 235.16
+   }
+  ],
+  "estimate_cad": 482.66,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-875999",
+  "vin": "9DD5JU0VXREDX3107",
+  "customer_id": "cust_en_163033",
+  "status": "closed",
+  "opened": "2026-10-08",
+  "promised": null,
+  "complaint": "Tire change and storage",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.4,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 540.51
+   }
+  ],
+  "estimate_cad": 1101.51,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-685638",
+  "vin": "B5H0907J5G2JB4749",
+  "customer_id": "cust_en_167415",
+  "status": "closed",
+  "opened": "2026-11-14",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 80.38
+   }
+  ],
+  "estimate_cad": 608.38,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-287266",
+  "vin": "LJKU9HUL3U43S2132",
+  "customer_id": "cust_en_171340",
+  "status": "diagnosing",
+  "opened": "2026-11-06",
+  "promised": "2026-11-10",
+  "complaint": "Water leak at sunroof",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 632.81
+   }
+  ],
+  "estimate_cad": 1061.81,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-807727",
+  "vin": "JE3UNUP48E6UB9226",
+  "customer_id": "cust_en_179452",
+  "status": "diagnosing",
+  "opened": "2026-11-14",
+  "promised": "2026-11-19",
+  "complaint": "Check engine light on",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.4,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 418.25
+   }
+  ],
+  "estimate_cad": 649.25,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-158501",
+  "vin": "LV16R8AM2SEU26432",
+  "customer_id": "cust_en_201630",
+  "status": "closed",
+  "opened": "2026-10-15",
+  "promised": null,
+  "complaint": "Diagnosis of electrical fault",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 405.66
+   }
+  ],
+  "estimate_cad": 785.16,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-199746",
+  "vin": "454RVPS71S13N1447",
+  "customer_id": "cust_en_208497",
+  "status": "waiting_parts",
+  "opened": "2026-11-09",
+  "promised": "2026-11-12",
+  "complaint": "Check engine light on",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 320.11
+   }
+  ],
+  "estimate_cad": 518.11,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-119392",
+  "vin": "VK72V9VL85B7R8592",
+  "customer_id": "cust_en_225773",
+  "status": "closed",
+  "opened": "2026-11-07",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 602.06
+   }
+  ],
+  "estimate_cad": 981.56,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-813730",
+  "vin": "MHSYFRTL8VEFK1823",
+  "customer_id": "cust_en_231149",
+  "status": "waiting_parts",
+  "opened": "2026-11-07",
+  "promised": "2026-11-08",
+  "complaint": "Dashboard warning light flashing",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.4,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 554.68
+   }
+  ],
+  "estimate_cad": 1280.68,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-800250",
+  "vin": "5GVJFE4T15B882618",
+  "customer_id": "cust_en_238969",
+  "status": "closed",
+  "opened": "2026-11-15",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 630.93
+   }
+  ],
+  "estimate_cad": 1274.43,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-432289",
+  "vin": "3YA3FWJF3WJ0U6510",
+  "customer_id": "cust_en_243963",
+  "status": "closed",
+  "opened": "2026-11-10",
+  "promised": null,
+  "complaint": "Cabin filter replacement",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 364.94
+   }
+  ],
+  "estimate_cad": 793.94,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-285496",
+  "vin": "UR8TFWA34LNHW8306",
+  "customer_id": "cust_en_256703",
+  "status": "closed",
+  "opened": "2026-11-13",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 585.86
+   }
+  ],
+  "estimate_cad": 1179.86,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-204059",
+  "vin": "18PZ3UF6XLCS07713",
+  "customer_id": "cust_en_256788",
+  "status": "closed",
+  "opened": "2026-11-11",
+  "promised": null,
+  "complaint": "Cabin filter replacement",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 242.6
+   }
+  ],
+  "estimate_cad": 688.1,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-285714",
+  "vin": "YCXDJVF75UY837103",
+  "customer_id": "cust_en_26226",
+  "status": "closed",
+  "opened": "2026-11-10",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 142.61
+   }
+  ],
+  "estimate_cad": 604.61,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-939822",
+  "vin": "7KL6FKPZ2S4SH5450",
+  "customer_id": "cust_en_27825",
+  "status": "closed",
+  "opened": "2026-11-08",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 637.68
+   }
+  ],
+  "estimate_cad": 1099.68,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-760577",
+  "vin": "LFRHTHZG9D28U5939",
+  "customer_id": "cust_en_283061",
+  "status": "closed",
+  "opened": "2026-11-06",
+  "promised": null,
+  "complaint": "Cabin filter replacement",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 99.94
+   }
+  ],
+  "estimate_cad": 743.44,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-206414",
+  "vin": "UFN1AD5K3DVTB4638",
+  "customer_id": "cust_en_288390",
+  "status": "closed",
+  "opened": "2026-11-15",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 409.64
+   }
+  ],
+  "estimate_cad": 624.14,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-168471",
+  "vin": "XKNZ4DRD2DHW45786",
+  "customer_id": "cust_en_291370",
+  "status": "closed",
+  "opened": "2026-10-07",
+  "promised": null,
+  "complaint": "Annual maintenance package",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 103.85
+   }
+  ],
+  "estimate_cad": 565.85,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-684377",
+  "vin": "W4PGTR3T2ZDGU4200",
+  "customer_id": "cust_en_291705",
+  "status": "waiting_parts",
+  "opened": "2026-11-09",
+  "promised": "2026-11-14",
+  "complaint": "AC not cooling",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.4,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 290.44
+   }
+  ],
+  "estimate_cad": 521.44,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-625451",
+  "vin": "T31EWA7L9HCFF2133",
+  "customer_id": "cust_en_307420",
+  "status": "closed",
+  "opened": "2026-10-24",
+  "promised": null,
+  "complaint": "Brake service",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 133.33
+   }
+  ],
+  "estimate_cad": 595.33,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-520791",
+  "vin": "R8GBT1FC807AA3941",
+  "customer_id": "cust_en_31245",
+  "status": "waiting_customer_approval",
+  "opened": "2026-11-12",
+  "promised": "2026-11-17",
+  "complaint": "Water leak at sunroof",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 388.43
+   }
+  ],
+  "estimate_cad": 866.93,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-350960",
+  "vin": "TDHMK398312JJ9338",
+  "customer_id": "cust_en_33327",
+  "status": "closed",
+  "opened": "2026-09-30",
+  "promised": null,
+  "complaint": "Diagnosis of electrical fault",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 480.01
+   }
+  ],
+  "estimate_cad": 694.51,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-907787",
+  "vin": "78G6H3743TC869450",
+  "customer_id": "cust_en_356779",
+  "status": "closed",
+  "opened": "2026-11-11",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 328.67
+   }
+  ],
+  "estimate_cad": 1021.67,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-907205",
+  "vin": "4JA8PXD15Y5U21632",
+  "customer_id": "cust_en_379202",
+  "status": "waiting_customer_approval",
+  "opened": "2026-11-08",
+  "promised": "2026-11-12",
+  "complaint": "Transmission shudder at low speed",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 153.62
+   }
+  ],
+  "estimate_cad": 813.62,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-614520",
+  "vin": "P33UY27L088AP6261",
+  "customer_id": "cust_en_396923",
+  "status": "checked_in",
+  "opened": "2026-11-06",
+  "promised": "2026-11-11",
+  "complaint": "Noise from front suspension",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 383.41
+   }
+  ],
+  "estimate_cad": 894.91,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-805683",
+  "vin": "CV6LKCFZ5CVHF8177",
+  "customer_id": "cust_en_397888",
+  "status": "closed",
+  "opened": "2026-11-14",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 516.08
+   }
+  ],
+  "estimate_cad": 780.08,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-285727",
+  "vin": "LC9F0J0Z45M588871",
+  "customer_id": "cust_en_439899",
+  "status": "closed",
+  "opened": "2026-11-06",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 127.07
+   }
+  ],
+  "estimate_cad": 787.07,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-953281",
+  "vin": "A62UZAWCXK4FL8378",
+  "customer_id": "cust_en_442418",
+  "status": "diagnosing",
+  "opened": "2026-11-08",
+  "promised": "2026-11-11",
+  "complaint": "Infotainment screen black",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 43.73
+   }
+  ],
+  "estimate_cad": 736.73,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-400185",
+  "vin": "RA2UKTMK9N1843063",
+  "customer_id": "cust_en_443144",
+  "status": "in_repair",
+  "opened": "2026-11-07",
+  "promised": "2026-11-13",
+  "complaint": "AC not cooling",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 149.38
+   }
+  ],
+  "estimate_cad": 347.38,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-773991",
+  "vin": "ZEG259746LLYT2379",
+  "customer_id": "cust_en_471030",
+  "status": "closed",
+  "opened": "2026-11-11",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 426.75
+   }
+  ],
+  "estimate_cad": 938.25,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-275786",
+  "vin": "ZT5XZD2K0T2101927",
+  "customer_id": "cust_en_48051",
+  "status": "waiting_customer_approval",
+  "opened": "2026-11-07",
+  "promised": "2026-11-13",
+  "complaint": "Water leak at sunroof",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 424.0
+   }
+  ],
+  "estimate_cad": 704.5,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-588176",
+  "vin": "Y7UATHSU0KG833711",
+  "customer_id": "cust_en_484715",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-15",
+  "promised": "2026-11-21",
+  "complaint": "Noise from front suspension",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 574.89
+   }
+  ],
+  "estimate_cad": 1284.39,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-340140",
+  "vin": "DWNT1E3C5BDFG8397",
+  "customer_id": "cust_en_529904",
+  "status": "waiting_customer_approval",
+  "opened": "2026-11-12",
+  "promised": "2026-11-18",
+  "complaint": "AC not cooling",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 349.65
+   }
+  ],
+  "estimate_cad": 778.65,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-463521",
+  "vin": "NM23523V8ZB688322",
+  "customer_id": "cust_en_560087",
+  "status": "closed",
+  "opened": "2026-11-09",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 108.91
+   }
+  ],
+  "estimate_cad": 356.41,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-871569",
+  "vin": "CWC717ME0PLKW1696",
+  "customer_id": "cust_en_571413",
+  "status": "diagnosing",
+  "opened": "2026-11-06",
+  "promised": "2026-11-11",
+  "complaint": "Battery drains overnight",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 257.12
+   }
+  ],
+  "estimate_cad": 438.62,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-143332",
+  "vin": "2ST0PBGC6Z4JM7237",
+  "customer_id": "cust_en_571859",
+  "status": "closed",
+  "opened": "2026-11-11",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 153.86
+   }
+  ],
+  "estimate_cad": 500.36,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-378093",
+  "vin": "SSB8ZS9Y8ZZ6Y0431",
+  "customer_id": "cust_en_578857",
+  "status": "closed",
+  "opened": "2026-11-14",
+  "promised": null,
+  "complaint": "Cabin filter replacement",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 335.08
+   }
+  ],
+  "estimate_cad": 516.58,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-479982",
+  "vin": "P7N6PWCC08SE20153",
+  "customer_id": "cust_en_617890",
+  "status": "closed",
+  "opened": "2026-11-12",
+  "promised": null,
+  "complaint": "Cabin filter replacement",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 585.26
+   }
+  ],
+  "estimate_cad": 1278.26,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-674164",
+  "vin": "LV7NL6YCXBU7H2606",
+  "customer_id": "cust_en_619177",
+  "status": "checked_in",
+  "opened": "2026-11-09",
+  "promised": "2026-11-10",
+  "complaint": "Transmission shudder at low speed",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 392.3
+   }
+  ],
+  "estimate_cad": 920.3,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-623153",
+  "vin": "PH9HF3842067P1914",
+  "customer_id": "cust_en_631263",
+  "status": "closed",
+  "opened": "2026-11-01",
+  "promised": null,
+  "complaint": "Annual maintenance package",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 383.04
+   }
+  ],
+  "estimate_cad": 845.04,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-620202",
+  "vin": "GDDS12PD9PC2E7855",
+  "customer_id": "cust_en_659177",
+  "status": "closed",
+  "opened": "2026-11-13",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 554.48
+   }
+  ],
+  "estimate_cad": 917.48,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-456002",
+  "vin": "T45NFEM33H35A4251",
+  "customer_id": "cust_en_670488",
+  "status": "closed",
+  "opened": "2026-11-12",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 602.57
+   }
+  ],
+  "estimate_cad": 982.07,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-327743",
+  "vin": "XY8THYNJX1WKM0414",
+  "customer_id": "cust_en_671089",
+  "status": "closed",
+  "opened": "2026-09-18",
+  "promised": null,
+  "complaint": "Diagnosis of electrical fault",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 131.05
+   }
+  ],
+  "estimate_cad": 609.55,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-464363",
+  "vin": "JGWA1DAJ26R796449",
+  "customer_id": "cust_en_681454",
+  "status": "closed",
+  "opened": "2026-11-13",
+  "promised": null,
+  "complaint": "Cabin filter replacement",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 246.72
+   }
+  ],
+  "estimate_cad": 560.22,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-713147",
+  "vin": "S1A22K851HWGZ8825",
+  "customer_id": "cust_en_6815",
+  "status": "closed",
+  "opened": "2026-11-10",
+  "promised": null,
+  "complaint": "Cabin filter replacement",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 636.96
+   }
+  ],
+  "estimate_cad": 851.46,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-613690",
+  "vin": "433TD8ZY44M2D0145",
+  "customer_id": "cust_en_693385",
+  "status": "closed",
+  "opened": "2026-11-13",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 127.86
+   }
+  ],
+  "estimate_cad": 391.86,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-366757",
+  "vin": "RH3KLGEM1S3304948",
+  "customer_id": "cust_en_709571",
+  "status": "diagnosing",
+  "opened": "2026-11-15",
+  "promised": "2026-11-20",
+  "complaint": "Dashboard warning light flashing",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 316.32
+   }
+  ],
+  "estimate_cad": 728.82,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-268581",
+  "vin": "YKDPRVBK1XPXJ1275",
+  "customer_id": "cust_en_72934",
+  "status": "closed",
+  "opened": "2026-11-14",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 106.55
+   }
+  ],
+  "estimate_cad": 618.05,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-789092",
+  "vin": "78LNLPSS9HV648407",
+  "customer_id": "cust_en_732053",
+  "status": "closed",
+  "opened": "2026-11-14",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 127.78
+   }
+  ],
+  "estimate_cad": 309.28,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-508078",
+  "vin": "HJCMFKKN15MVV7302",
+  "customer_id": "cust_en_735393",
+  "status": "closed",
+  "opened": "2026-11-14",
+  "promised": null,
+  "complaint": "Cabin filter replacement",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 175.71
+   }
+  ],
+  "estimate_cad": 835.71,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-187778",
+  "vin": "Y14CEKUU2R4FY4483",
+  "customer_id": "cust_en_738798",
+  "status": "waiting_customer_approval",
+  "opened": "2026-11-07",
+  "promised": "2026-11-13",
+  "complaint": "AC not cooling",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 555.1
+   }
+  ],
+  "estimate_cad": 1264.6,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-530012",
+  "vin": "8UF04CS10Y4495253",
+  "customer_id": "cust_en_750801",
+  "status": "closed",
+  "opened": "2026-09-26",
+  "promised": null,
+  "complaint": "Diagnosis of electrical fault",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 417.8
+   }
+  ],
+  "estimate_cad": 896.3,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-750002",
+  "vin": "7T4NJA5Z5Y0S57261",
+  "customer_id": "cust_en_764545",
+  "status": "closed",
+  "opened": "2026-11-15",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 40.49
+   }
+  ],
+  "estimate_cad": 502.49,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-326801",
+  "vin": "M8KPP6Y370BHF4260",
+  "customer_id": "cust_en_776647",
+  "status": "closed",
+  "opened": "2026-11-09",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.4,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 356.73
+   }
+  ],
+  "estimate_cad": 917.73,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-126221",
+  "vin": "P11UU2FS58MA67196",
+  "customer_id": "cust_en_777573",
+  "status": "checked_in",
+  "opened": "2026-11-14",
+  "promised": "2026-11-19",
+  "complaint": "Noise from front suspension",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 581.3
+   }
+  ],
+  "estimate_cad": 960.8,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-865086",
+  "vin": "TSK0ZG0B4K4BW6997",
+  "customer_id": "cust_en_810621",
+  "status": "checked_in",
+  "opened": "2026-11-11",
+  "promised": "2026-11-16",
+  "complaint": "Infotainment screen black",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 621.13
+   }
+  ],
+  "estimate_cad": 1165.63,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-633345",
+  "vin": "WLBCTDTV7SMGJ3875",
+  "customer_id": "cust_en_844963",
+  "status": "diagnosing",
+  "opened": "2026-11-15",
+  "promised": "2026-11-17",
+  "complaint": "Transmission shudder at low speed",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.4,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 427.48
+   }
+  ],
+  "estimate_cad": 823.48,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-589174",
+  "vin": "9KEXLHM16G3XD8410",
+  "customer_id": "cust_en_848750",
+  "status": "closed",
+  "opened": "2026-09-30",
+  "promised": null,
+  "complaint": "Diagnosis of electrical fault",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 40.31
+   }
+  ],
+  "estimate_cad": 568.31,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-514485",
+  "vin": "ARU30W5C9EUX15797",
+  "customer_id": "cust_en_869694",
+  "status": "in_repair",
+  "opened": "2026-11-10",
+  "promised": "2026-11-16",
+  "complaint": "Noise from front suspension",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 186.88
+   }
+  ],
+  "estimate_cad": 863.38,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-526691",
+  "vin": "G4BZG6019Z8U64636",
+  "customer_id": "cust_en_911528",
+  "status": "closed",
+  "opened": "2026-11-07",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 74.1
+   }
+  ],
+  "estimate_cad": 569.1,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-851209",
+  "vin": "VWLT2XWM47WC15326",
+  "customer_id": "cust_en_91162",
+  "status": "closed",
+  "opened": "2026-11-15",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 476.36
+   }
+  ],
+  "estimate_cad": 1053.86,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-491601",
+  "vin": "SB5TXJG83H7R69453",
+  "customer_id": "cust_en_935519",
+  "status": "diagnosing",
+  "opened": "2026-11-12",
+  "promised": "2026-11-14",
+  "complaint": "Battery drains overnight",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 294.23
+   }
+  ],
+  "estimate_cad": 789.23,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-727962",
+  "vin": "GV1RFR2V4YTYV0369",
+  "customer_id": "cust_en_970343",
+  "status": "diagnosing",
+  "opened": "2026-11-10",
+  "promised": "2026-11-12",
+  "complaint": "Transmission shudder at low speed",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 516.28
+   }
+  ],
+  "estimate_cad": 813.28,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-128246",
+  "vin": "DM7U8G6Z7TS1X8882",
+  "customer_id": "cust_en_98247",
+  "status": "diagnosing",
+  "opened": "2026-11-06",
+  "promised": "2026-11-09",
+  "complaint": "Transmission shudder at low speed",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 501.72
+   }
+  ],
+  "estimate_cad": 864.72,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-814209",
+  "vin": "9RLFKH082MALD5739",
+  "customer_id": "cust_fr_101415",
+  "status": "closed",
+  "opened": "2026-11-15",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 137.8
+   }
+  ],
+  "estimate_cad": 352.3,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-995207",
+  "vin": "8TUGV1XE2X8WR0070",
+  "customer_id": "cust_fr_107176",
+  "status": "diagnosing",
+  "opened": "2026-11-09",
+  "promised": "2026-11-12",
+  "complaint": "Transmission shudder at low speed",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 439.57
+   }
+  ],
+  "estimate_cad": 621.07,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-923403",
+  "vin": "10PBXNML57UHL8107",
+  "customer_id": "cust_fr_130890",
+  "status": "closed",
+  "opened": "2026-10-30",
+  "promised": null,
+  "complaint": "Tire change and storage",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 105.19
+   }
+  ],
+  "estimate_cad": 385.69,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-795974",
+  "vin": "NMD4G96A1TJ0B3699",
+  "customer_id": "cust_fr_170556",
+  "status": "waiting_customer_approval",
+  "opened": "2026-11-06",
+  "promised": "2026-11-10",
+  "complaint": "Infotainment screen black",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 647.26
+   }
+  ],
+  "estimate_cad": 894.76,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-972611",
+  "vin": "SP552H1B2SLSE9719",
+  "customer_id": "cust_fr_219685",
+  "status": "in_repair",
+  "opened": "2026-11-14",
+  "promised": "2026-11-15",
+  "complaint": "AC not cooling",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 41.26
+   }
+  ],
+  "estimate_cad": 255.76,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-922707",
+  "vin": "MXNPKNA6XARLA0572",
+  "customer_id": "cust_fr_291477",
+  "status": "closed",
+  "opened": "2026-10-24",
+  "promised": null,
+  "complaint": "Tire change and storage",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 533.9
+   }
+  ],
+  "estimate_cad": 913.4,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-225840",
+  "vin": "U1TEKXEF8JZEX0957",
+  "customer_id": "cust_fr_303446",
+  "status": "closed",
+  "opened": "2026-11-13",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 535.7
+   }
+  ],
+  "estimate_cad": 700.7,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-607625",
+  "vin": "N6PMGD6H701EC3379",
+  "customer_id": "cust_fr_352945",
+  "status": "closed",
+  "opened": "2026-11-10",
+  "promised": null,
+  "complaint": "Multi-point inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 448.15
+   }
+  ],
+  "estimate_cad": 629.65,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-877361",
+  "vin": "NUZF4X255336K0755",
+  "customer_id": "cust_fr_360664",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-12",
+  "promised": "2026-11-13",
+  "complaint": "AC not cooling",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.4,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 593.57
+   }
+  ],
+  "estimate_cad": 1319.57,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-967448",
+  "vin": "PAJVJ7G30AU9H4227",
+  "customer_id": "cust_fr_372529",
+  "status": "closed",
+  "opened": "2026-11-08",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 637.43
+   }
+  ],
+  "estimate_cad": 1280.93,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-401028",
+  "vin": "28MEG4PM92KMX8516",
+  "customer_id": "cust_fr_376418",
+  "status": "waiting_parts",
+  "opened": "2026-11-11",
+  "promised": "2026-11-17",
+  "complaint": "Dashboard warning light flashing",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 286.88
+   }
+  ],
+  "estimate_cad": 748.88,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-696567",
+  "vin": "B7VBJUCU2VH9B4512",
+  "customer_id": "cust_fr_388163",
+  "status": "checked_in",
+  "opened": "2026-11-09",
+  "promised": "2026-11-14",
+  "complaint": "Noise from front suspension",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 128.09
+   }
+  ],
+  "estimate_cad": 788.09,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-235253",
+  "vin": "4PENXAEC02ETA3846",
+  "customer_id": "cust_fr_398383",
+  "status": "closed",
+  "opened": "2026-10-24",
+  "promised": null,
+  "complaint": "Diagnosis of electrical fault",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 415.26
+   }
+  ],
+  "estimate_cad": 1009.26,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-446353",
+  "vin": "ZPNBR4FP97E4C3610",
+  "customer_id": "cust_fr_398592",
+  "status": "in_repair",
+  "opened": "2026-11-13",
+  "promised": "2026-11-19",
+  "complaint": "Check engine light on",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 180.08
+   }
+  ],
+  "estimate_cad": 873.08,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-996163",
+  "vin": "TU07EKPF03NZE4379",
+  "customer_id": "cust_fr_45562",
+  "status": "closed",
+  "opened": "2026-11-11",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 173.09
+   }
+  ],
+  "estimate_cad": 354.59,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-336204",
+  "vin": "XH9CF3ZY5A6F93898",
+  "customer_id": "cust_fr_481742",
+  "status": "waiting_parts",
+  "opened": "2026-11-14",
+  "promised": "2026-11-17",
+  "complaint": "Battery drains overnight",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 504.1
+   }
+  ],
+  "estimate_cad": 1114.6,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-616064",
+  "vin": "1NS3TMSR3DD6U9618",
+  "customer_id": "cust_fr_562276",
+  "status": "closed",
+  "opened": "2026-10-21",
+  "promised": null,
+  "complaint": "Diagnosis of electrical fault",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 452.8
+   }
+  ],
+  "estimate_cad": 733.3,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-525764",
+  "vin": "9ESLNW2C9H2ZM6431",
+  "customer_id": "cust_fr_633053",
+  "status": "closed",
+  "opened": "2026-11-06",
+  "promised": null,
+  "complaint": "Cabin filter replacement",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 584.88
+   }
+  ],
+  "estimate_cad": 997.38,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-894000",
+  "vin": "FDH45K9J14ZD33729",
+  "customer_id": "cust_fr_638721",
+  "status": "closed",
+  "opened": "2026-11-14",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 459.25
+   }
+  ],
+  "estimate_cad": 1003.75,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-181536",
+  "vin": "6S2E4SGW7SDW83769",
+  "customer_id": "cust_fr_666564",
+  "status": "waiting_customer_approval",
+  "opened": "2026-11-09",
+  "promised": "2026-11-10",
+  "complaint": "Water leak at sunroof",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 299.45
+   }
+  ],
+  "estimate_cad": 662.45,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-675200",
+  "vin": "3JZVMDZ89WMVB2405",
+  "customer_id": "cust_fr_679515",
+  "status": "closed",
+  "opened": "2026-11-08",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.5,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 191.1
+   }
+  ],
+  "estimate_cad": 603.6,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-805972",
+  "vin": "ADJKRJZG2ZGBC0972",
+  "customer_id": "cust_fr_702730",
+  "status": "closed",
+  "opened": "2026-11-10",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 406.79
+   }
+  ],
+  "estimate_cad": 621.29,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-783697",
+  "vin": "RT2LPPHS786Z77601",
+  "customer_id": "cust_fr_716752",
+  "status": "closed",
+  "opened": "2026-11-11",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.0,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 611.15
+   }
+  ],
+  "estimate_cad": 1271.15,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-500910",
+  "vin": "RUMJTJN40SFKK2698",
+  "customer_id": "cust_fr_735912",
+  "status": "closed",
+  "opened": "2026-11-10",
+  "promised": null,
+  "complaint": "Cabin filter replacement",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 238.15
+   }
+  ],
+  "estimate_cad": 535.15,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-293155",
+  "vin": "FV3G2XTU2LR1M5036",
+  "customer_id": "cust_fr_74871",
+  "status": "diagnosing",
+  "opened": "2026-11-13",
+  "promised": "2026-11-15",
+  "complaint": "Water leak at sunroof",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 565.13
+   }
+  ],
+  "estimate_cad": 1175.63,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-434102",
+  "vin": "VGYUYD9CXG0713175",
+  "customer_id": "cust_fr_800582",
+  "status": "closed",
+  "opened": "2026-11-06",
+  "promised": null,
+  "complaint": "Tire rotation",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.8,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 376.9
+   }
+  ],
+  "estimate_cad": 838.9,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-473227",
+  "vin": "TP4XJP4T515T53945",
+  "customer_id": "cust_fr_83668",
+  "status": "diagnosing",
+  "opened": "2026-11-09",
+  "promised": "2026-11-15",
+  "complaint": "Infotainment screen black",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 399.67
+   }
+  ],
+  "estimate_cad": 878.17,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-802569",
+  "vin": "CP12J9G64T6R30938",
+  "customer_id": "cust_fr_874629",
+  "status": "closed",
+  "opened": "2026-10-29",
+  "promised": null,
+  "complaint": "Annual maintenance package",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 412.33
+   }
+  ],
+  "estimate_cad": 692.83,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-338165",
+  "vin": "TDPHHMVV0CDD84833",
+  "customer_id": "cust_fr_888663",
+  "status": "waiting_customer_approval",
+  "opened": "2026-11-15",
+  "promised": "2026-11-21",
+  "complaint": "Noise from front suspension",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 1.1,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 602.03
+   }
+  ],
+  "estimate_cad": 783.53,
+  "approved_by_customer": false
+ },
+ {
+  "ro_number": "RO-999722",
+  "vin": "4AA6C4EU13GJH8100",
+  "customer_id": "cust_fr_896866",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-12",
+  "promised": "2026-11-18",
+  "complaint": "Check engine light on",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 4.3,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 220.06
+   }
+  ],
+  "estimate_cad": 929.56,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-245892",
+  "vin": "VU987BDH1WRYJ9085",
+  "customer_id": "cust_fr_908574",
+  "status": "closed",
+  "opened": "2026-11-12",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 2.2,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 215.99
+   }
+  ],
+  "estimate_cad": 578.99,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-548726",
+  "vin": "828NJCFJ6KCH51941",
+  "customer_id": "cust_fr_967097",
+  "status": "closed",
+  "opened": "2026-11-06",
+  "promised": null,
+  "complaint": "Oil change and inspection",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.9,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 430.99
+   }
+  ],
+  "estimate_cad": 1074.49,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-256353",
+  "vin": "VPC23SGXXS3KC2422",
+  "customer_id": "cust_fr_97252",
+  "status": "waiting_parts",
+  "opened": "2026-11-14",
+  "promised": "2026-11-20",
+  "complaint": "Transmission shudder at low speed",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.6,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 586.6
+   }
+  ],
+  "estimate_cad": 1180.6,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-833289",
+  "vin": "9CCDXF5B732ME5842",
+  "customer_id": "cust_fr_982154",
+  "status": "closed",
+  "opened": "2026-10-12",
+  "promised": null,
+  "complaint": "Brake service",
+  "lines": [
+   {
+    "type": "labour",
+    "hours": 3.7,
+    "rate_cad": 165
+   },
+   {
+    "type": "parts",
+    "amount_cad": 63.16
+   }
+  ],
+  "estimate_cad": 673.66,
+  "approved_by_customer": true
+ }
+]

@@ -1,0 +1,32 @@
+[
+ {
+  "coverage": "basic",
+  "years": 3,
+  "km": 60000,
+  "excludes": [
+   "brake pads",
+   "wiper blades",
+   "tires",
+   "oil changes",
+   "damage from accidents"
+  ]
+ },
+ {
+  "coverage": "powertrain",
+  "years": 5,
+  "km": 100000,
+  "excludes": [
+   "clutch wear",
+   "damage from lack of maintenance"
+  ]
+ },
+ {
+  "coverage": "corrosion",
+  "years": 7,
+  "km": null,
+  "excludes": [
+   "surface rust",
+   "stone chips"
+  ]
+ }
+]

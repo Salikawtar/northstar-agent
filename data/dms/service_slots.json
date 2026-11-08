@@ -1,0 +1,1892 @@
+[
+ {
+  "slot_id": "SL-00001",
+  "location": "Oakville",
+  "start": "2026-11-17T08:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00002",
+  "location": "Oakville",
+  "start": "2026-11-17T09:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00003",
+  "location": "Oakville",
+  "start": "2026-11-17T10:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00004",
+  "location": "Oakville",
+  "start": "2026-11-17T11:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00005",
+  "location": "Oakville",
+  "start": "2026-11-17T12:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00006",
+  "location": "Oakville",
+  "start": "2026-11-17T13:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00007",
+  "location": "Oakville",
+  "start": "2026-11-17T14:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00008",
+  "location": "Oakville",
+  "start": "2026-11-17T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00009",
+  "location": "Oakville",
+  "start": "2026-11-17T16:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00010",
+  "location": "Mississauga",
+  "start": "2026-11-17T08:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00011",
+  "location": "Mississauga",
+  "start": "2026-11-17T09:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00012",
+  "location": "Mississauga",
+  "start": "2026-11-17T10:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00013",
+  "location": "Mississauga",
+  "start": "2026-11-17T11:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00014",
+  "location": "Mississauga",
+  "start": "2026-11-17T12:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00015",
+  "location": "Mississauga",
+  "start": "2026-11-17T13:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00016",
+  "location": "Mississauga",
+  "start": "2026-11-17T14:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00017",
+  "location": "Mississauga",
+  "start": "2026-11-17T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00018",
+  "location": "Mississauga",
+  "start": "2026-11-17T16:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00019",
+  "location": "Ottawa",
+  "start": "2026-11-17T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00020",
+  "location": "Ottawa",
+  "start": "2026-11-17T09:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00021",
+  "location": "Ottawa",
+  "start": "2026-11-17T10:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00022",
+  "location": "Ottawa",
+  "start": "2026-11-17T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00023",
+  "location": "Ottawa",
+  "start": "2026-11-17T12:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00024",
+  "location": "Ottawa",
+  "start": "2026-11-17T13:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00025",
+  "location": "Ottawa",
+  "start": "2026-11-17T14:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00026",
+  "location": "Ottawa",
+  "start": "2026-11-17T15:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00027",
+  "location": "Ottawa",
+  "start": "2026-11-17T16:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00028",
+  "location": "Oakville",
+  "start": "2026-11-18T08:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00029",
+  "location": "Oakville",
+  "start": "2026-11-18T09:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00030",
+  "location": "Oakville",
+  "start": "2026-11-18T10:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00031",
+  "location": "Oakville",
+  "start": "2026-11-18T11:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00032",
+  "location": "Oakville",
+  "start": "2026-11-18T12:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00033",
+  "location": "Oakville",
+  "start": "2026-11-18T13:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00034",
+  "location": "Oakville",
+  "start": "2026-11-18T14:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00035",
+  "location": "Oakville",
+  "start": "2026-11-18T15:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00036",
+  "location": "Oakville",
+  "start": "2026-11-18T16:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00037",
+  "location": "Mississauga",
+  "start": "2026-11-18T08:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00038",
+  "location": "Mississauga",
+  "start": "2026-11-18T09:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00039",
+  "location": "Mississauga",
+  "start": "2026-11-18T10:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00040",
+  "location": "Mississauga",
+  "start": "2026-11-18T11:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00041",
+  "location": "Mississauga",
+  "start": "2026-11-18T12:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00042",
+  "location": "Mississauga",
+  "start": "2026-11-18T13:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00043",
+  "location": "Mississauga",
+  "start": "2026-11-18T14:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00044",
+  "location": "Mississauga",
+  "start": "2026-11-18T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00045",
+  "location": "Mississauga",
+  "start": "2026-11-18T16:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00046",
+  "location": "Ottawa",
+  "start": "2026-11-18T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00047",
+  "location": "Ottawa",
+  "start": "2026-11-18T09:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00048",
+  "location": "Ottawa",
+  "start": "2026-11-18T10:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00049",
+  "location": "Ottawa",
+  "start": "2026-11-18T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00050",
+  "location": "Ottawa",
+  "start": "2026-11-18T12:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00051",
+  "location": "Ottawa",
+  "start": "2026-11-18T13:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00052",
+  "location": "Ottawa",
+  "start": "2026-11-18T14:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00053",
+  "location": "Ottawa",
+  "start": "2026-11-18T15:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00054",
+  "location": "Ottawa",
+  "start": "2026-11-18T16:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00055",
+  "location": "Oakville",
+  "start": "2026-11-19T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00056",
+  "location": "Oakville",
+  "start": "2026-11-19T09:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00057",
+  "location": "Oakville",
+  "start": "2026-11-19T10:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00058",
+  "location": "Oakville",
+  "start": "2026-11-19T11:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00059",
+  "location": "Oakville",
+  "start": "2026-11-19T12:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00060",
+  "location": "Oakville",
+  "start": "2026-11-19T13:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00061",
+  "location": "Oakville",
+  "start": "2026-11-19T14:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00062",
+  "location": "Oakville",
+  "start": "2026-11-19T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00063",
+  "location": "Oakville",
+  "start": "2026-11-19T16:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00064",
+  "location": "Mississauga",
+  "start": "2026-11-19T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00065",
+  "location": "Mississauga",
+  "start": "2026-11-19T09:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00066",
+  "location": "Mississauga",
+  "start": "2026-11-19T10:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00067",
+  "location": "Mississauga",
+  "start": "2026-11-19T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00068",
+  "location": "Mississauga",
+  "start": "2026-11-19T12:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00069",
+  "location": "Mississauga",
+  "start": "2026-11-19T13:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00070",
+  "location": "Mississauga",
+  "start": "2026-11-19T14:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00071",
+  "location": "Mississauga",
+  "start": "2026-11-19T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00072",
+  "location": "Mississauga",
+  "start": "2026-11-19T16:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00073",
+  "location": "Ottawa",
+  "start": "2026-11-19T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00074",
+  "location": "Ottawa",
+  "start": "2026-11-19T09:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00075",
+  "location": "Ottawa",
+  "start": "2026-11-19T10:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00076",
+  "location": "Ottawa",
+  "start": "2026-11-19T11:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00077",
+  "location": "Ottawa",
+  "start": "2026-11-19T12:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00078",
+  "location": "Ottawa",
+  "start": "2026-11-19T13:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00079",
+  "location": "Ottawa",
+  "start": "2026-11-19T14:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00080",
+  "location": "Ottawa",
+  "start": "2026-11-19T15:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00081",
+  "location": "Ottawa",
+  "start": "2026-11-19T16:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00082",
+  "location": "Oakville",
+  "start": "2026-11-20T08:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00083",
+  "location": "Oakville",
+  "start": "2026-11-20T09:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00084",
+  "location": "Oakville",
+  "start": "2026-11-20T10:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00085",
+  "location": "Oakville",
+  "start": "2026-11-20T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00086",
+  "location": "Oakville",
+  "start": "2026-11-20T12:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00087",
+  "location": "Oakville",
+  "start": "2026-11-20T13:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00088",
+  "location": "Oakville",
+  "start": "2026-11-20T14:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00089",
+  "location": "Oakville",
+  "start": "2026-11-20T15:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00090",
+  "location": "Oakville",
+  "start": "2026-11-20T16:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00091",
+  "location": "Mississauga",
+  "start": "2026-11-20T08:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00092",
+  "location": "Mississauga",
+  "start": "2026-11-20T09:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00093",
+  "location": "Mississauga",
+  "start": "2026-11-20T10:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00094",
+  "location": "Mississauga",
+  "start": "2026-11-20T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00095",
+  "location": "Mississauga",
+  "start": "2026-11-20T12:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00096",
+  "location": "Mississauga",
+  "start": "2026-11-20T13:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00097",
+  "location": "Mississauga",
+  "start": "2026-11-20T14:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00098",
+  "location": "Mississauga",
+  "start": "2026-11-20T15:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00099",
+  "location": "Mississauga",
+  "start": "2026-11-20T16:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00100",
+  "location": "Ottawa",
+  "start": "2026-11-20T08:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00101",
+  "location": "Ottawa",
+  "start": "2026-11-20T09:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00102",
+  "location": "Ottawa",
+  "start": "2026-11-20T10:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00103",
+  "location": "Ottawa",
+  "start": "2026-11-20T11:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00104",
+  "location": "Ottawa",
+  "start": "2026-11-20T12:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00105",
+  "location": "Ottawa",
+  "start": "2026-11-20T13:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00106",
+  "location": "Ottawa",
+  "start": "2026-11-20T14:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00107",
+  "location": "Ottawa",
+  "start": "2026-11-20T15:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00108",
+  "location": "Ottawa",
+  "start": "2026-11-20T16:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00109",
+  "location": "Oakville",
+  "start": "2026-11-23T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00110",
+  "location": "Oakville",
+  "start": "2026-11-23T09:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00111",
+  "location": "Oakville",
+  "start": "2026-11-23T10:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00112",
+  "location": "Oakville",
+  "start": "2026-11-23T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00113",
+  "location": "Oakville",
+  "start": "2026-11-23T12:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00114",
+  "location": "Oakville",
+  "start": "2026-11-23T13:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00115",
+  "location": "Oakville",
+  "start": "2026-11-23T14:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00116",
+  "location": "Oakville",
+  "start": "2026-11-23T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00117",
+  "location": "Oakville",
+  "start": "2026-11-23T16:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00118",
+  "location": "Mississauga",
+  "start": "2026-11-23T08:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00119",
+  "location": "Mississauga",
+  "start": "2026-11-23T09:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00120",
+  "location": "Mississauga",
+  "start": "2026-11-23T10:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00121",
+  "location": "Mississauga",
+  "start": "2026-11-23T11:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00122",
+  "location": "Mississauga",
+  "start": "2026-11-23T12:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00123",
+  "location": "Mississauga",
+  "start": "2026-11-23T13:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00124",
+  "location": "Mississauga",
+  "start": "2026-11-23T14:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00125",
+  "location": "Mississauga",
+  "start": "2026-11-23T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00126",
+  "location": "Mississauga",
+  "start": "2026-11-23T16:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00127",
+  "location": "Ottawa",
+  "start": "2026-11-23T08:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00128",
+  "location": "Ottawa",
+  "start": "2026-11-23T09:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00129",
+  "location": "Ottawa",
+  "start": "2026-11-23T10:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00130",
+  "location": "Ottawa",
+  "start": "2026-11-23T11:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00131",
+  "location": "Ottawa",
+  "start": "2026-11-23T12:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00132",
+  "location": "Ottawa",
+  "start": "2026-11-23T13:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00133",
+  "location": "Ottawa",
+  "start": "2026-11-23T14:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00134",
+  "location": "Ottawa",
+  "start": "2026-11-23T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00135",
+  "location": "Ottawa",
+  "start": "2026-11-23T16:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00136",
+  "location": "Oakville",
+  "start": "2026-11-24T08:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00137",
+  "location": "Oakville",
+  "start": "2026-11-24T09:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00138",
+  "location": "Oakville",
+  "start": "2026-11-24T10:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00139",
+  "location": "Oakville",
+  "start": "2026-11-24T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00140",
+  "location": "Oakville",
+  "start": "2026-11-24T12:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00141",
+  "location": "Oakville",
+  "start": "2026-11-24T13:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00142",
+  "location": "Oakville",
+  "start": "2026-11-24T14:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00143",
+  "location": "Oakville",
+  "start": "2026-11-24T15:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00144",
+  "location": "Oakville",
+  "start": "2026-11-24T16:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00145",
+  "location": "Mississauga",
+  "start": "2026-11-24T08:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00146",
+  "location": "Mississauga",
+  "start": "2026-11-24T09:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00147",
+  "location": "Mississauga",
+  "start": "2026-11-24T10:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00148",
+  "location": "Mississauga",
+  "start": "2026-11-24T11:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00149",
+  "location": "Mississauga",
+  "start": "2026-11-24T12:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00150",
+  "location": "Mississauga",
+  "start": "2026-11-24T13:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00151",
+  "location": "Mississauga",
+  "start": "2026-11-24T14:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00152",
+  "location": "Mississauga",
+  "start": "2026-11-24T15:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00153",
+  "location": "Mississauga",
+  "start": "2026-11-24T16:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00154",
+  "location": "Ottawa",
+  "start": "2026-11-24T08:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00155",
+  "location": "Ottawa",
+  "start": "2026-11-24T09:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00156",
+  "location": "Ottawa",
+  "start": "2026-11-24T10:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00157",
+  "location": "Ottawa",
+  "start": "2026-11-24T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00158",
+  "location": "Ottawa",
+  "start": "2026-11-24T12:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00159",
+  "location": "Ottawa",
+  "start": "2026-11-24T13:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00160",
+  "location": "Ottawa",
+  "start": "2026-11-24T14:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00161",
+  "location": "Ottawa",
+  "start": "2026-11-24T15:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00162",
+  "location": "Ottawa",
+  "start": "2026-11-24T16:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00163",
+  "location": "Oakville",
+  "start": "2026-11-25T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00164",
+  "location": "Oakville",
+  "start": "2026-11-25T09:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00165",
+  "location": "Oakville",
+  "start": "2026-11-25T10:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00166",
+  "location": "Oakville",
+  "start": "2026-11-25T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00167",
+  "location": "Oakville",
+  "start": "2026-11-25T12:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00168",
+  "location": "Oakville",
+  "start": "2026-11-25T13:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00169",
+  "location": "Oakville",
+  "start": "2026-11-25T14:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00170",
+  "location": "Oakville",
+  "start": "2026-11-25T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00171",
+  "location": "Oakville",
+  "start": "2026-11-25T16:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00172",
+  "location": "Mississauga",
+  "start": "2026-11-25T08:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00173",
+  "location": "Mississauga",
+  "start": "2026-11-25T09:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00174",
+  "location": "Mississauga",
+  "start": "2026-11-25T10:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00175",
+  "location": "Mississauga",
+  "start": "2026-11-25T11:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00176",
+  "location": "Mississauga",
+  "start": "2026-11-25T12:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00177",
+  "location": "Mississauga",
+  "start": "2026-11-25T13:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00178",
+  "location": "Mississauga",
+  "start": "2026-11-25T14:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00179",
+  "location": "Mississauga",
+  "start": "2026-11-25T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00180",
+  "location": "Mississauga",
+  "start": "2026-11-25T16:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00181",
+  "location": "Ottawa",
+  "start": "2026-11-25T08:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00182",
+  "location": "Ottawa",
+  "start": "2026-11-25T09:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00183",
+  "location": "Ottawa",
+  "start": "2026-11-25T10:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00184",
+  "location": "Ottawa",
+  "start": "2026-11-25T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00185",
+  "location": "Ottawa",
+  "start": "2026-11-25T12:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00186",
+  "location": "Ottawa",
+  "start": "2026-11-25T13:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00187",
+  "location": "Ottawa",
+  "start": "2026-11-25T14:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00188",
+  "location": "Ottawa",
+  "start": "2026-11-25T15:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00189",
+  "location": "Ottawa",
+  "start": "2026-11-25T16:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00190",
+  "location": "Oakville",
+  "start": "2026-11-26T08:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00191",
+  "location": "Oakville",
+  "start": "2026-11-26T09:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00192",
+  "location": "Oakville",
+  "start": "2026-11-26T10:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00193",
+  "location": "Oakville",
+  "start": "2026-11-26T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00194",
+  "location": "Oakville",
+  "start": "2026-11-26T12:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00195",
+  "location": "Oakville",
+  "start": "2026-11-26T13:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00196",
+  "location": "Oakville",
+  "start": "2026-11-26T14:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00197",
+  "location": "Oakville",
+  "start": "2026-11-26T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00198",
+  "location": "Oakville",
+  "start": "2026-11-26T16:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00199",
+  "location": "Mississauga",
+  "start": "2026-11-26T08:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00200",
+  "location": "Mississauga",
+  "start": "2026-11-26T09:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00201",
+  "location": "Mississauga",
+  "start": "2026-11-26T10:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00202",
+  "location": "Mississauga",
+  "start": "2026-11-26T11:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00203",
+  "location": "Mississauga",
+  "start": "2026-11-26T12:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00204",
+  "location": "Mississauga",
+  "start": "2026-11-26T13:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00205",
+  "location": "Mississauga",
+  "start": "2026-11-26T14:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00206",
+  "location": "Mississauga",
+  "start": "2026-11-26T15:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00207",
+  "location": "Mississauga",
+  "start": "2026-11-26T16:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00208",
+  "location": "Ottawa",
+  "start": "2026-11-26T08:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00209",
+  "location": "Ottawa",
+  "start": "2026-11-26T09:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00210",
+  "location": "Ottawa",
+  "start": "2026-11-26T10:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00211",
+  "location": "Ottawa",
+  "start": "2026-11-26T11:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00212",
+  "location": "Ottawa",
+  "start": "2026-11-26T12:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00213",
+  "location": "Ottawa",
+  "start": "2026-11-26T13:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00214",
+  "location": "Ottawa",
+  "start": "2026-11-26T14:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00215",
+  "location": "Ottawa",
+  "start": "2026-11-26T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00216",
+  "location": "Ottawa",
+  "start": "2026-11-26T16:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00217",
+  "location": "Oakville",
+  "start": "2026-11-27T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00218",
+  "location": "Oakville",
+  "start": "2026-11-27T09:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00219",
+  "location": "Oakville",
+  "start": "2026-11-27T10:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00220",
+  "location": "Oakville",
+  "start": "2026-11-27T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00221",
+  "location": "Oakville",
+  "start": "2026-11-27T12:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00222",
+  "location": "Oakville",
+  "start": "2026-11-27T13:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00223",
+  "location": "Oakville",
+  "start": "2026-11-27T14:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00224",
+  "location": "Oakville",
+  "start": "2026-11-27T15:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00225",
+  "location": "Oakville",
+  "start": "2026-11-27T16:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00226",
+  "location": "Mississauga",
+  "start": "2026-11-27T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00227",
+  "location": "Mississauga",
+  "start": "2026-11-27T09:00:00",
+  "service_type": "diagnosis",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00228",
+  "location": "Mississauga",
+  "start": "2026-11-27T10:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00229",
+  "location": "Mississauga",
+  "start": "2026-11-27T11:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00230",
+  "location": "Mississauga",
+  "start": "2026-11-27T12:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00231",
+  "location": "Mississauga",
+  "start": "2026-11-27T13:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00232",
+  "location": "Mississauga",
+  "start": "2026-11-27T14:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00233",
+  "location": "Mississauga",
+  "start": "2026-11-27T15:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00234",
+  "location": "Mississauga",
+  "start": "2026-11-27T16:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00235",
+  "location": "Ottawa",
+  "start": "2026-11-27T08:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00236",
+  "location": "Ottawa",
+  "start": "2026-11-27T09:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00237",
+  "location": "Ottawa",
+  "start": "2026-11-27T10:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00238",
+  "location": "Ottawa",
+  "start": "2026-11-27T11:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00239",
+  "location": "Ottawa",
+  "start": "2026-11-27T12:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00240",
+  "location": "Ottawa",
+  "start": "2026-11-27T13:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00241",
+  "location": "Ottawa",
+  "start": "2026-11-27T14:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00242",
+  "location": "Ottawa",
+  "start": "2026-11-27T15:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00243",
+  "location": "Ottawa",
+  "start": "2026-11-27T16:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00244",
+  "location": "Oakville",
+  "start": "2026-11-30T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00245",
+  "location": "Oakville",
+  "start": "2026-11-30T09:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00246",
+  "location": "Oakville",
+  "start": "2026-11-30T10:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00247",
+  "location": "Oakville",
+  "start": "2026-11-30T11:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00248",
+  "location": "Oakville",
+  "start": "2026-11-30T12:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00249",
+  "location": "Oakville",
+  "start": "2026-11-30T13:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00250",
+  "location": "Oakville",
+  "start": "2026-11-30T14:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00251",
+  "location": "Oakville",
+  "start": "2026-11-30T15:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00252",
+  "location": "Oakville",
+  "start": "2026-11-30T16:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00253",
+  "location": "Mississauga",
+  "start": "2026-11-30T08:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00254",
+  "location": "Mississauga",
+  "start": "2026-11-30T09:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00255",
+  "location": "Mississauga",
+  "start": "2026-11-30T10:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00256",
+  "location": "Mississauga",
+  "start": "2026-11-30T11:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00257",
+  "location": "Mississauga",
+  "start": "2026-11-30T12:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00258",
+  "location": "Mississauga",
+  "start": "2026-11-30T13:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00259",
+  "location": "Mississauga",
+  "start": "2026-11-30T14:00:00",
+  "service_type": "maintenance",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00260",
+  "location": "Mississauga",
+  "start": "2026-11-30T15:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00261",
+  "location": "Mississauga",
+  "start": "2026-11-30T16:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00262",
+  "location": "Ottawa",
+  "start": "2026-11-30T08:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00263",
+  "location": "Ottawa",
+  "start": "2026-11-30T09:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00264",
+  "location": "Ottawa",
+  "start": "2026-11-30T10:00:00",
+  "service_type": "tires",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00265",
+  "location": "Ottawa",
+  "start": "2026-11-30T11:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00266",
+  "location": "Ottawa",
+  "start": "2026-11-30T12:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00267",
+  "location": "Ottawa",
+  "start": "2026-11-30T13:00:00",
+  "service_type": "maintenance",
+  "available": false
+ },
+ {
+  "slot_id": "SL-00268",
+  "location": "Ottawa",
+  "start": "2026-11-30T14:00:00",
+  "service_type": "tires",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00269",
+  "location": "Ottawa",
+  "start": "2026-11-30T15:00:00",
+  "service_type": "diagnosis",
+  "available": true
+ },
+ {
+  "slot_id": "SL-00270",
+  "location": "Ottawa",
+  "start": "2026-11-30T16:00:00",
+  "service_type": "maintenance",
+  "available": true
+ }
+]

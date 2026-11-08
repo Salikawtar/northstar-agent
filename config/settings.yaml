@@ -1,0 +1,53 @@
+# Northstar Motors agent: single place for settings.
+# Code reads this file; nothing below is hard-coded in the logic.
+# Secrets (the OpenRouter key) go in .env, never here.
+
+project:
+  seed: 894                     # same seed = same mock data and same splits
+  contract_version: "1.0.0"
+
+paths:
+  conversations: data/conversations/northstar_synthetic_conversations_200.xlsx
+  dms_dir: data/dms
+  runs_dir: outputs/runs
+  results_dir: outputs/results
+
+# Model tiers. Which exact OpenRouter model sits in each tier is chosen in
+# Phase 2 from measured quality, latency and cost, then recorded here.
+models:
+  small: "TO_BE_CHOSEN_IN_PHASE_2"
+  large: "TO_BE_CHOSEN_IN_PHASE_2"
+  grader: "TO_BE_CHOSEN_IN_PHASE_2"
+  finetuned_router: "TO_BE_CHOSEN_IN_PHASE_5"
+
+# Which tier and reasoning effort each component uses (the starting
+# hypothesis; evaluation results confirm or change it).
+components:
+  router:            {tier: small, reasoning_effort: low}
+  booking_status:    {tier: small, reasoning_effort: low}
+  warranty_recall:   {tier: large, reasoning_effort: high}
+  billing_lease:     {tier: large, reasoning_effort: medium}
+  single_agent:      {tier: large, reasoning_effort: medium}
+
+agent:
+  architecture: multi_agent     # multi_agent | single_agent (baseline)
+  prompt_version: v1
+  max_tool_calls_per_turn: 6
+  router_confidence_floor: 0.55 # below this, ask a clarifying question or escalate
+
+# Mock dealer system (DMS) behaviour. Failure injection lets us test the
+# "DMS is down" edge case on purpose instead of hoping it happens.
+dms:
+  simulated_latency_ms: [40, 250]
+  failure_rate: 0.0             # set to e.g. 0.1 for failure-handling tests
+  timeout_ms: 3000
+  n_decoy_customers: 25         # extra customers never in chats (PII-leak tests)
+  locations: ["Oakville", "Mississauga", "Ottawa"]
+  slot_days_ahead: 14
+  anchor_date: "2026-11-16"  # fixed 'today' for the mock system, so runs are reproducible
+
+llm_client:
+  base_url: https://openrouter.ai/api/v1
+  timeout_s: 30
+  max_retries: 2
+  budget_usd: 25.0              # hard stop for a whole run
