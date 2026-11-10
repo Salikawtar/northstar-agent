@@ -7,7 +7,10 @@ project:
   contract_version: "1.0.0"
 
 paths:
-  conversations: data/conversations/northstar_synthetic_conversations_200.xlsx
+  conversations: data/conversations/conversations.csv   # train 130 / validation 30 / test 40
+  redteam: data/redteam/redteam_75.csv                  # guardrail tests only, never trained on
+  redteam_dms_dir: data/redteam                         # dealer records for red-team customers
+  dataset_source: data/source/northstar_synthetic_dataset_v1112.xlsx  # review workbook (source of truth)
   dms_dir: data/dms
   runs_dir: outputs/runs
   results_dir: outputs/results
@@ -42,7 +45,9 @@ dms:
   failure_rate: 0.0             # set to e.g. 0.1 for failure-handling tests
   timeout_ms: 3000
   n_decoy_customers: 25         # extra customers never in chats (PII-leak tests)
-  locations: ["Oakville", "Mississauga", "Ottawa"]
+  # Every branch a customer mentions in the chats, so the agent never denies a real branch.
+  locations: ["Oakville", "Mississauga", "Ottawa", "Scarborough", "Vaughan", "Brampton",
+              "Etobicoke", "Markham", "Burlington", "Richmond Hill", "Ajax"]
   slot_days_ahead: 14
   anchor_date: "2026-11-16"  # fixed 'today' for the mock system, so runs are reproducible
 

@@ -4,13 +4,14 @@ import pytest
 from pydantic import ValidationError
 
 from northstar.config import path
+from northstar.data import load_conversations
 from northstar.contracts import (
     AgentAction, AgentReply, EscalationReason, HandoffPayload, RequestType, RouterOutput, Urgency,
 )
 
 
 def test_dataset_labels_match_contract_enum():
-    labels = set(pd.read_excel(path("conversations"))["request_type"])
+    labels = set(load_conversations()["request_type"])
     assert labels == {t.value for t in RequestType}
 
 

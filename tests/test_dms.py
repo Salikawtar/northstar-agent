@@ -3,6 +3,7 @@ import pandas as pd
 import pytest
 
 from northstar.config import path
+from northstar.data import load_conversations
 from northstar.contracts import ToolError
 from northstar.dms import generate
 from northstar.dms.store import DealerSystem
@@ -20,7 +21,7 @@ def dms():
 
 @pytest.fixture(scope="module")
 def chats():
-    return pd.read_excel(path("conversations"))
+    return load_conversations()
 
 
 def _a_customer(chats):
