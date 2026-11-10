@@ -1,0 +1,402 @@
+[
+ {
+  "ro_number": "RO-547826",
+  "vin": "DZCW34CD3FAHD2555",
+  "customer_id": "rt_en_3012671",
+  "status": "closed",
+  "opened": "2026-10-30",
+  "complaint": "Noise and warning light diagnosis",
+  "estimate_cad": 3346.65,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-194859",
+  "vin": "G8WAANW28HME80600",
+  "customer_id": "rt_en_3012934",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-08",
+  "complaint": "Tow-in, no start",
+  "estimate_cad": 258.53,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-357414",
+  "vin": "GCX6CGW15VDAA3002",
+  "customer_id": "rt_en_3016487",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-05",
+  "complaint": "Parts order",
+  "estimate_cad": 2394.44,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-474373",
+  "vin": "2LXYWUUE4UPXL1507",
+  "customer_id": "rt_en_3018335",
+  "status": "closed",
+  "opened": "2026-10-31",
+  "complaint": "Noise and warning light diagnosis",
+  "estimate_cad": 2416.26,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-669350",
+  "vin": "2GETG480XZ05H6029",
+  "customer_id": "rt_en_3020494",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-06",
+  "complaint": "Invoice review requested",
+  "estimate_cad": 1550.04,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-537804",
+  "vin": "WDB9J3HJXCH999105",
+  "customer_id": "rt_en_3027326",
+  "status": "in_repair",
+  "opened": "2026-11-04",
+  "complaint": "Parts order",
+  "estimate_cad": 1790.71,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-190111",
+  "vin": "GELRAYG1362CP2843",
+  "customer_id": "rt_en_3032088",
+  "status": "ready_for_pickup",
+  "opened": "2026-10-27",
+  "complaint": "Scheduled maintenance",
+  "estimate_cad": 477.7,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-736172",
+  "vin": "F7YN2RV8XJUA64317",
+  "customer_id": "rt_en_3032259",
+  "status": "closed",
+  "opened": "2026-11-02",
+  "complaint": "Customer reports fault, warranty review",
+  "estimate_cad": 2603.54,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-896993",
+  "vin": "2LEBAZJ3XW8KS2788",
+  "customer_id": "rt_en_3033525",
+  "status": "closed",
+  "opened": "2026-10-30",
+  "complaint": "Recall check and campaign work",
+  "estimate_cad": 1790.18,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-333539",
+  "vin": "TA3PGUX85KH8E6284",
+  "customer_id": "rt_en_3037782",
+  "status": "waiting_parts",
+  "opened": "2026-11-13",
+  "complaint": "General inspection",
+  "estimate_cad": 663.32,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-287253",
+  "vin": "W2BRBJNV8YSMN4713",
+  "customer_id": "rt_en_3038173",
+  "status": "closed",
+  "opened": "2026-11-08",
+  "complaint": "Parts order",
+  "estimate_cad": 1185.54,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-717601",
+  "vin": "7CY2U2XJ5TLP66425",
+  "customer_id": "rt_en_3039453",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-05",
+  "complaint": "Customer reports fault, warranty review",
+  "estimate_cad": 2652.6,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-641485",
+  "vin": "EBHS7CE98APZE4070",
+  "customer_id": "rt_en_3042052",
+  "status": "closed",
+  "opened": "2026-11-03",
+  "complaint": "Noise and warning light diagnosis",
+  "estimate_cad": 1168.44,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-625757",
+  "vin": "GWVUJ5LG6UUAH7961",
+  "customer_id": "rt_en_3048585",
+  "status": "waiting_parts",
+  "opened": "2026-11-15",
+  "complaint": "Pre-return lease inspection",
+  "estimate_cad": 2989.87,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-556531",
+  "vin": "1RWB0L4K7S8NE5594",
+  "customer_id": "rt_en_3053036",
+  "status": "in_repair",
+  "opened": "2026-11-02",
+  "complaint": "Invoice review requested",
+  "estimate_cad": 2764.14,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-559673",
+  "vin": "ZG1S5SGZ6M8BE1049",
+  "customer_id": "rt_en_3059534",
+  "status": "closed",
+  "opened": "2026-10-30",
+  "complaint": "Customer concern, manager follow-up",
+  "estimate_cad": 2946.11,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-499148",
+  "vin": "X9M1PEKF56MBY1405",
+  "customer_id": "rt_en_3072096",
+  "status": "closed",
+  "opened": "2026-11-08",
+  "complaint": "Scheduled maintenance",
+  "estimate_cad": 908.04,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-766957",
+  "vin": "XBZHRZ6E1PRNJ2375",
+  "customer_id": "rt_en_3072364",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-02",
+  "complaint": "Recall check and campaign work",
+  "estimate_cad": 3146.41,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-663631",
+  "vin": "R5J8U0YX2R2AZ7400",
+  "customer_id": "rt_en_3072846",
+  "status": "closed",
+  "opened": "2026-10-29",
+  "complaint": "Customer reports fault, warranty review",
+  "estimate_cad": 972.59,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-501095",
+  "vin": "W6H2BKMD85AZ07618",
+  "customer_id": "rt_en_3074481",
+  "status": "in_repair",
+  "opened": "2026-11-15",
+  "complaint": "Pre-return lease inspection",
+  "estimate_cad": 1993.33,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-763052",
+  "vin": "9PM47CLD612DC4455",
+  "customer_id": "rt_en_3080539",
+  "status": "closed",
+  "opened": "2026-11-04",
+  "complaint": "Invoice review requested",
+  "estimate_cad": 699.65,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-886021",
+  "vin": "N6Y79TFX1XNHZ3741",
+  "customer_id": "rt_en_3082881",
+  "status": "waiting_parts",
+  "opened": "2026-10-28",
+  "complaint": "Noise and warning light diagnosis",
+  "estimate_cad": 1384.08,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-209772",
+  "vin": "SYJAUZAL7BMKR8215",
+  "customer_id": "rt_en_3083430",
+  "status": "closed",
+  "opened": "2026-10-28",
+  "complaint": "Customer reports fault, warranty review",
+  "estimate_cad": 1591.22,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-672568",
+  "vin": "YNU4EPHM3ZA357437",
+  "customer_id": "rt_en_3085197",
+  "status": "waiting_parts",
+  "opened": "2026-11-12",
+  "complaint": "Noise and warning light diagnosis",
+  "estimate_cad": 2446.85,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-470178",
+  "vin": "0J1JJ8AC0A50D9239",
+  "customer_id": "rt_en_3088853",
+  "status": "waiting_parts",
+  "opened": "2026-11-04",
+  "complaint": "General inspection",
+  "estimate_cad": 1089.42,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-116831",
+  "vin": "C75KBR1E7G3S46999",
+  "customer_id": "rt_en_3089749",
+  "status": "closed",
+  "opened": "2026-11-02",
+  "complaint": "Invoice review requested",
+  "estimate_cad": 2971.61,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-109181",
+  "vin": "XKGXUWU29HK249007",
+  "customer_id": "rt_en_3092637",
+  "status": "ready_for_pickup",
+  "opened": "2026-10-29",
+  "complaint": "Invoice review requested",
+  "estimate_cad": 3044.74,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-422448",
+  "vin": "792PMN0K6G4G70635",
+  "customer_id": "rt_en_3094334",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-10",
+  "complaint": "Pre-return lease inspection",
+  "estimate_cad": 1825.2,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-961548",
+  "vin": "BZ9WHZV84J6P96892",
+  "customer_id": "rt_fr_3109199",
+  "status": "waiting_parts",
+  "opened": "2026-11-11",
+  "complaint": "Noise and warning light diagnosis",
+  "estimate_cad": 466.41,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-256672",
+  "vin": "LCDBSVH62GUV48596",
+  "customer_id": "rt_fr_3111141",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-10",
+  "complaint": "Pre-return lease inspection",
+  "estimate_cad": 1288.9,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-413426",
+  "vin": "7NYG81RJ8LSVZ3982",
+  "customer_id": "rt_fr_3114783",
+  "status": "waiting_parts",
+  "opened": "2026-10-28",
+  "complaint": "Customer reports fault, warranty review",
+  "estimate_cad": 667.42,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-114199",
+  "vin": "BFZ1ZU628L95C1891",
+  "customer_id": "rt_fr_3123561",
+  "status": "closed",
+  "opened": "2026-11-15",
+  "complaint": "Scheduled maintenance",
+  "estimate_cad": 1265.65,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-217196",
+  "vin": "VTLK49LT6B8X47322",
+  "customer_id": "rt_fr_3135632",
+  "status": "waiting_parts",
+  "opened": "2026-11-14",
+  "complaint": "Recall check and campaign work",
+  "estimate_cad": 1684.45,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-319573",
+  "vin": "A2BZUZVX42PLK7197",
+  "customer_id": "rt_fr_3152452",
+  "status": "waiting_parts",
+  "opened": "2026-11-14",
+  "complaint": "General inspection",
+  "estimate_cad": 3110.87,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-200161",
+  "vin": "SNWNRC213EV9F3608",
+  "customer_id": "rt_fr_3157902",
+  "status": "ready_for_pickup",
+  "opened": "2026-11-09",
+  "complaint": "Parts order",
+  "estimate_cad": 2393.57,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-950389",
+  "vin": "PZFSRF9U6YLX50297",
+  "customer_id": "rt_fr_3160612",
+  "status": "closed",
+  "opened": "2026-11-14",
+  "complaint": "Parts order",
+  "estimate_cad": 505.91,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-768417",
+  "vin": "85HVP7KNXLR4F9708",
+  "customer_id": "rt_fr_3172846",
+  "status": "waiting_parts",
+  "opened": "2026-11-08",
+  "complaint": "Customer reports fault, warranty review",
+  "estimate_cad": 1320.07,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-676586",
+  "vin": "A614X08T4UNZG3201",
+  "customer_id": "rt_fr_3175300",
+  "status": "ready_for_pickup",
+  "opened": "2026-10-28",
+  "complaint": "Parts order",
+  "estimate_cad": 1690.98,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-325637",
+  "vin": "10HPMN821EURA5760",
+  "customer_id": "rt_fr_3180220",
+  "status": "waiting_parts",
+  "opened": "2026-11-13",
+  "complaint": "Parts order",
+  "estimate_cad": 2105.06,
+  "approved_by_customer": true
+ },
+ {
+  "ro_number": "RO-879338",
+  "vin": "ENAUCFXE2ESKY8656",
+  "customer_id": "rt_fr_3195196",
+  "status": "closed",
+  "opened": "2026-10-30",
+  "complaint": "Pre-return lease inspection",
+  "estimate_cad": 2035.18,
+  "approved_by_customer": true
+ }
+]

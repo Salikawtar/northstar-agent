@@ -2,7 +2,7 @@
 
 > **Internal working file.** Decide whether to keep or remove it before the repository is shared with the evaluators.
 
-**Main idea:** every task related to the synthetic data, what it is, where the data is used later in the project, who owns it, and whether it is done. The current dataset version is **v1111** (`northstar_synthetic_dataset_v1111.xlsx`, team review merged on 2026-11-10).
+**Main idea:** every task related to the synthetic data, what it is, where the data is used later in the project, who owns it, and whether it is done. The current dataset version is **v1112** (`data/source/northstar_synthetic_dataset_v1112.xlsx`, 2026-11-10).
 
 Status values: **Done**, **Decided** (agreed, not yet applied), **To do**, **Optional**.
 
@@ -17,15 +17,15 @@ Status values: **Done**, **Decided** (agreed, not yet applied), **To do**, **Opt
 | 7 | Hand review | 74 chats (40 test + rewritten rows) and 75 attacks marked keep / fix / reject | "Reviewed by hand" evidence for criterion 1; grader check against human labels (Libo) | Team | Done |
 | 8 | Merge team fixes | 22 chat fixes and 75 rewrites merged into v1111, plus the v3_0124 consistency fix | Final dataset used by every module | Claude | Done |
 | 9 | Escalation rule | `needs_escalation` = True for safety (roadside), bereavement and legal threats (needs_human), all adversarial attempts, and explicit requests for a manager (73 of 200) | Fine-tune label (Neeraj), handoff rules (Kawtar), escalation recall metric (Libo), human-review cost (Abhi) | Kawtar | Done |
-| 10 | Branch names | Add the 8 branches mentioned in chats (Scarborough, Vaughan, Brampton, Etobicoke, Markham, Burlington, Richmond Hill, Ajax) to the mock dealer system | Dealer system settings, so the agent never denies a branch a test chat mentions | Kawtar + Weidi | Decided |
-| 11 | Red-team dealer records | 40 customers, vehicles and repair orders so attackers pass identity checks and reach the guardrails | Mock dealer system; guardrail tests (Jessica) | Claude | Done (in Excel only) |
+| 10 | Branch names | Add the 8 branches mentioned in chats (Scarborough, Vaughan, Brampton, Etobicoke, Markham, Burlington, Richmond Hill, Ajax) to the mock dealer system | Dealer system settings, so the agent never denies a branch a test chat mentions | Kawtar + Weidi | Done |
+| 11 | Red-team dealer records | 40 customers, vehicles and repair orders so attackers pass identity checks and reach the guardrails | Mock dealer system; guardrail tests (Jessica) | Claude | Done |
 | 12 | Generation record | Models, temperature, prompt version and rejected rows with reasons from the original generation | Report page 2 and appendix (criterion 1 asks for documented generation and rejects) | Weidi | To do |
 | 13 | Generation script in repo | A runnable data-generation pipeline (the brief requires it in the codebase) | GitHub submission; reproducibility (criterion 3) | Weidi or Kawtar | To do |
-| 14 | Validation split | Take about 30 rows from train, grouped by customer, for 130 / 30 / 40 | Fine-tune tuning and early stopping (Neeraj) | Kawtar | To do |
-| 15 | Export to repo | Save v1111 as CSV/JSON in `data/`, replacing the original xlsx | Loaded in code by fine-tune, evaluation and guardrail modules | Kawtar | To do |
-| 16 | Load into dealer system | Add the red-team records (task 11) and branches (task 10), re-run `python run_all.py dms` and the tests | Agent tools and verification; guardrail tests | Kawtar | To do |
-| 17 | Update docs | Data dictionary and README: splits, red-team set, escalation rule | Newcomer-friendly README (criterion 3); team hand-off | Kawtar | To do |
-| 18 | Fix past dates | Move booking dates that fall before the mock "today" (2026-11-16), e.g. v3_0038 | Realism; prevents fake agent errors in evaluation | Kawtar | To do |
+| 14 | Validation split | 30 rows moved from train, grouped by customer: 130 / 30 / 40 | Fine-tune tuning and early stopping (Neeraj) | Kawtar | Done |
+| 15 | Export to repo | v1112 saved as CSV/JSON in `data/` (original xlsx replaced); loaded through `src/northstar/data.py` | Loaded in code by fine-tune, evaluation and guardrail modules | Kawtar | Done |
+| 16 | Load into dealer system | Add the red-team records (task 11) and branches (task 10), re-run `python run_all.py dms` and the tests | Agent tools and verification; guardrail tests | Kawtar | Done |
+| 17 | Update docs | Data dictionary and README: splits, red-team set, escalation rule | Newcomer-friendly README (criterion 3); team hand-off | Kawtar | Done |
+| 18 | Fix past dates | Move booking dates that fall before the mock "today" (2026-11-16), e.g. v3_0038 | Realism; prevents fake agent errors in evaluation | Kawtar | Done |
 | 19 | Hand-written test chats | About 20 tricky chats written fully by the team (multi-intent, conflicting details, incomplete messages) | Test set "written by hand" (criterion 1); edge-case tests (criterion 7) | Team | Optional |
 | 20 | Report data section | Page 2 plus appendix: composition table, fixed and rejected examples, limits (word-overlap duplicate check, chat only, single-message attacks) | Final report | Weidi | To do |
 

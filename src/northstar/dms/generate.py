@@ -1,4 +1,4 @@
-"""Generate the mock dealer management system (DMS) from Weidi's dataset.
+"""Generate the mock dealer management system (DMS) from the conversation dataset.
 
 Why this exists: the agent's tools (verify the customer, look up a repair
 order, check recalls, book a slot) need records to query. We build those
@@ -23,6 +23,7 @@ import pandas as pd
 from faker import Faker
 
 from northstar.config import path, settings
+from northstar.data import load_conversations, load_redteam_dms
 from northstar.contracts import (
     Customer, Invoice, Language, Recall, RepairOrder, ServiceSlot, Vehicle, WarrantyTerm,
 )
@@ -117,7 +118,7 @@ def build(seed: int | None = None) -> dict[str, list[dict]]:
     fake_en, fake_fr = Faker("en_CA"), Faker("fr_CA")
     today = date.fromisoformat(cfg["dms"]["anchor_date"])
 
-    df = pd.read_excel(path("conversations"))
+    df = load_conversations()
     by_customer: dict[str, pd.DataFrame] = {cid: g for cid, g in df.groupby("customer_id", sort=True)}
 
     customers, vehicles, ros, invoices = [], [], [], []
@@ -201,6 +202,25 @@ def build(seed: int | None = None) -> dict[str, list[dict]]:
             in_service_date=date(year, 3, 1) if date(year, 3, 1) < today else today - timedelta(days=60),
             odometer_km=rng.randint(5000, 150000), ownership="owned",
         ))
+
+    # Red-team customers: prepared with the red-team set so attackers can pass
+    # identity checks and the test reaches the guardrails. Their model, year,
+    # date and mileage were chosen so the recall and warranty flags in
+    # redteam_75.csv come out true. Never in the conversations.
+    rt = load_redteam_dms()
+    for c in rt["customers"]:
+        customers.append(Customer(**c))
+    for v in rt["vehicles"]:
+        vehicles.append(Vehicle(**v))
+    for r in rt["repair_orders"]:
+        ro = RepairOrder(**r, lines=[{"type": "estimate", "amount_cad": r["estimate_cad"]}])
+        ros.append(ro)
+        if ro.status == "closed":
+            invoices.append(Invoice(
+                invoice_id=f"INV-{ro.ro_number[3:]}", customer_id=ro.customer_id, ro_number=ro.ro_number,
+                issued=ro.opened + timedelta(days=1), lines=ro.lines,
+                total_cad=round(ro.estimate_cad * 1.13, 2), status="paid",
+            ))
 
     # Service calendar: weekdays 8:00 to 16:00, hourly, per location.
     slots, n = [], 0

@@ -16,8 +16,11 @@ python run_all.py             # rebuilds everything built so far and runs the te
 
 | Folder | What it holds | Owner |
 |---|---|---|
-| `data/conversations/` | Weidi's 200 synthetic chats (train 160 / test 40) | Weidi |
+| `data/conversations/` | 200 synthetic chats as CSV (train 130 / validation 30 / test 40, grouped by customer) | Weidi |
+| `data/redteam/` | 75 attacks for guardrail tests (never trained on) + dealer records for their customers | Weidi + team |
+| `data/source/` | Review workbook v1112: human review, QC log, team decisions (source of truth for the CSVs) | Weidi |
 | `data/dms/` | Mock dealer system generated from the chats | Kawtar |
+| `src/northstar/data.py` | One loader for every dataset (`load_conversations`, `load_redteam`) | Team |
 | `src/northstar/contracts.py` | Shared data shapes every module uses | Team (read `docs/contracts.md`) |
 | `src/northstar/dms/` | Dealer system generator + tool API (verification enforced in code) | Kawtar |
 | `src/northstar/agent/` | Router, specialist agents, single-agent baseline, handoff | Kawtar |
@@ -36,7 +39,7 @@ compares them on the same test set.
 
 | Phase | Status |
 |---|---|
-| 1. Contracts, repo, mock dealer system | Done (28 tests passing) |
+| 1. Contracts, repo, mock dealer system | Done (41 tests passing, incl. dataset checks) |
 | 2. Agent (router, specialists, baseline, handoff, failures) | Next |
 | 3. Guardrails and attack test set | To do |
 | 4. Evaluation and error analysis | To do |
