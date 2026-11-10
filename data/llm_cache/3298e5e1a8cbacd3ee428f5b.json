@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\":\"parts_order\",\"secondary_types\":[\"book_service\"],\"needs_escalation\":false,\"escalation_reason\":\"none\",\"confidence\":0.96,\"language\":\"en\"}",
+ "model": "openai/gpt-6-luna",
+ "input_tokens": 1568,
+ "output_tokens": 172,
+ "cost_usd": 0.000122305,
+ "latency_ms": 4300.9
+}

@@ -84,3 +84,11 @@ def test_evaluate_reports_accuracy_and_escalation_recall(tmp_path):
     out, s = evaluate("validation", router=r)
     assert s["n"] == 30 and s["type_accuracy"] == 1.0 and s["escalation_recall"] == 1.0
     assert s["cost_usd_total"] == pytest.approx(0.003)
+
+
+def test_replay_with_missing_recording_fails_loudly(tmp_path):
+    # A missing recording must not silently become a "send to a person" answer.
+    from northstar.llm import CacheMiss
+    r = Router(client=LLMClient(mode="replay", cache_dir=tmp_path), model="small")
+    with pytest.raises(CacheMiss):
+        r.route([("customer", "hello")])

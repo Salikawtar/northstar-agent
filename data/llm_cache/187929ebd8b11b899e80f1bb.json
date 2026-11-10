@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\":\"needs_human\",\"secondary_types\":[\"roadside_assistance\"],\"needs_escalation\":true,\"escalation_reason\":\"safety\",\"confidence\":0.97,\"language\":\"fr\"}",
+ "model": "openai/gpt-6-luna",
+ "input_tokens": 1640,
+ "output_tokens": 188,
+ "cost_usd": 0.000139305,
+ "latency_ms": 5283.5
+}

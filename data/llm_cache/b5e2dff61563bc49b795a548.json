@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\":\"repair_status\",\"secondary_types\":[],\"needs_escalation\":false,\"escalation_reason\":\"none\",\"confidence\":0.98,\"language\":\"en\"}",
+ "model": "openai/gpt-6-luna",
+ "input_tokens": 1560,
+ "output_tokens": 118,
+ "cost_usd": 9.4305e-05,
+ "latency_ms": 6725.9
+}

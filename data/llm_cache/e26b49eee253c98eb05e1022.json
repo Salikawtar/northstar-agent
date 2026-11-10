@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\":\"book_service\",\"secondary_types\":[\"warranty_claim\"],\"needs_escalation\":false,\"escalation_reason\":\"none\",\"confidence\":0.91,\"language\":\"en\"}",
+ "model": "openai/gpt-6-luna",
+ "input_tokens": 1598,
+ "output_tokens": 199,
+ "cost_usd": 0.000139555,
+ "latency_ms": 5188.2
+}

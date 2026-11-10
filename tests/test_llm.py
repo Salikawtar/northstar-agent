@@ -88,3 +88,13 @@ def test_json_in_code_fences_is_accepted(tmp_path):
 def test_still_broken_json_raises_clear_error(tmp_path):
     with pytest.raises(LLMError):
         client(tmp_path, Fake(["nope", "still nope"])).chat_json("m", MSG, Label)
+
+
+def test_correction_note_is_fixed_text_so_replay_works_on_any_machine(tmp_path):
+    seen = []
+    def t(req):
+        seen.append(req["messages"][-1]["content"])
+        return {"text": "nope" if len(seen) == 1 else '{"request_type": "x"}'}
+    LLMClient(mode="live", transport=t, cache_dir=tmp_path, sleep=lambda s: None).chat_json("m", MSG, Label)
+    from northstar.llm import CORRECTION_NOTE
+    assert seen[1] == CORRECTION_NOTE

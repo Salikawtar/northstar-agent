@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"lease_end_return\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"fr\"}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2505,
+ "output_tokens": 420,
+ "cost_usd": 0.0004605,
+ "latency_ms": 3318.1
+}

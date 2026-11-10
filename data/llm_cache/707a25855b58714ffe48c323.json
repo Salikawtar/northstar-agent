@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"billing_dispute\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.95, \"language\": \"fr\"}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2263,
+ "output_tokens": 67,
+ "cost_usd": 0.0002598,
+ "latency_ms": 1634.2
+}

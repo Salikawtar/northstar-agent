@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\":\"billing_dispute\",\"secondary_types\":[],\"needs_escalation\":true,\"escalation_reason\":\"adversarial\",\"confidence\":0.98,\"language\":\"fr\"}",
+ "model": "openai/gpt-6-luna",
+ "input_tokens": 1596,
+ "output_tokens": 83,
+ "cost_usd": 8.1305e-05,
+ "latency_ms": 3560.6
+}

@@ -64,7 +64,7 @@ client is a shared helper, not a step the message passes through.
 | Component | What it does | Model (starting choice) | Status |
 |---|---|---|---|
 | Input check | Flags prompt injection and personal data pasted into the chat before any model sees it | Rules, plus small model if needed | Planned (Phase 3) |
-| Router | Labels the request type (10 types), spots extra requests in the same message, decides if a person is needed now, detects language | Claude Haiku 5.5, low effort. Compared later with the fine-tuned model | **Built** (Phase 2, step 2); first live run pending |
+| Router | Labels the request type (10 types), spots extra requests in the same message, decides if a person is needed now, detects language | Claude Haiku 5.5, low effort, prompt v2. Compared later with the fine-tuned model | **Built and tested**: 90% type accuracy, 100% escalation recall and precision on validation |
 | Booking and status agent | Bookings, repair status, parts, roadside triage | Small model, low effort | Planned (Phase 2) |
 | Warranty and recalls agent | Recall lookups, warranty facts, drafting claims for the warranty desk | Large model, high effort | Planned (Phase 2) |
 | Billing and lease agent | Invoice questions, disputes, lease-return steps | Large model, medium effort | Planned (Phase 2) |
@@ -118,7 +118,7 @@ cannot perform them even if manipulated.
 
 | Component | Starting choice | Why | Confirmed by |
 |---|---|---|---|
-| Router | Claude Haiku 5.5, low effort | Runs on every chat, must be fast and cheap; the task is classification | Validation run, then Phase 4 |
+| Router | Claude Haiku 5.5, low effort | Runs on every chat, must be fast and cheap; the task is classification | **Confirmed** on validation: beat thinking-off and GPT-6 Luna (D-09) |
 | Booking and status | Claude Haiku 5.5, low effort | Simple, tool-driven requests | Phase 4 |
 | Warranty and recalls | Claude Sonnet 5.5, high effort | One wrong promise of coverage costs more than thousands of chats | Phase 4, error cost from Phase 6 |
 | Billing and lease | Claude Sonnet 5.5, medium effort | Disputes need careful reading, but fewer judgment calls than warranty | Phase 4 |
@@ -190,7 +190,7 @@ suggested next step.
 | Phase | What | Status |
 |---|---|---|
 | 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
-| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client and router built (58 tests passing) |
+| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client and router built and tested (62 tests passing) |
 | 3 | Operating policy, input and output checks, log masking, attack tests | Planned |
 | 4 | Evaluation, grader check against human labels, error analysis | Planned |
 | 5 | Fine-tuned router and comparison with small and large prompted models | Planned |

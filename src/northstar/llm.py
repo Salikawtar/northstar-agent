@@ -31,6 +31,10 @@ from northstar.config import ROOT, path, settings
 T = TypeVar("T", bound=BaseModel)
 
 
+CORRECTION_NOTE = ("Your answer was not one valid JSON object in the required format. "
+                   "Reply again with only that JSON object, no other text.")
+
+
 class LLMError(RuntimeError):
     """The model could not give a usable answer (after retries)."""
 
@@ -165,9 +169,10 @@ class LLMClient:
         try:
             return schema.model_validate_json(_strip_fences(resp.text)), resp
         except (ValidationError, ValueError) as e:
+            # Fixed wording on purpose: the error text from the library changes between
+            # versions, and a different message would break replay on another machine.
             fix = messages + [{"role": "assistant", "content": resp.text},
-                              {"role": "user", "content": "Your answer did not match the required JSON format: "
-                               f"{str(e)[:400]}. Reply again with valid JSON only, no other text."}]
+                              {"role": "user", "content": CORRECTION_NOTE}]
             resp2 = self.chat(model, fix, json_mode=True, **kw)
             try:
                 return schema.model_validate_json(_strip_fences(resp2.text)), resp2
