@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\":\"recall_inquiry\",\"secondary_types\":[],\"needs_escalation\":false,\"escalation_reason\":\"none\",\"confidence\":0.98,\"language\":\"fr\"}",
+ "model": "openai/gpt-6-luna",
+ "input_tokens": 1559,
+ "output_tokens": 105,
+ "cost_usd": 0.0002473,
+ "latency_ms": 6058.6
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\":\"out_of_scope\",\"secondary_types\":[],\"needs_escalation\":false,\"escalation_reason\":\"none\",\"confidence\":0.98,\"language\":\"en\"}",
+ "model": "openai/gpt-6-luna",
+ "input_tokens": 1571,
+ "output_tokens": 98,
+ "cost_usd": 8.568e-05,
+ "latency_ms": 3724.2
+}

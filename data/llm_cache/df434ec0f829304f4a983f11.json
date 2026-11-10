@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\":\"book_service\",\"secondary_types\":[\"lease_end_return\"],\"needs_escalation\":false,\"escalation_reason\":\"none\",\"confidence\":0.97,\"language\":\"fr\"}",
+ "model": "openai/gpt-6-luna",
+ "input_tokens": 1619,
+ "output_tokens": 81,
+ "cost_usd": 8.318e-05,
+ "latency_ms": 4680.2
+}

@@ -63,3 +63,12 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Choice:** the router reads the whole conversation so far and returns one JSON object checked against the shared contract. If the answer is unusable after one correction, the chat goes to a person (`needs_human`, reason `tool_failure`) instead of guessing.
 - **Why:** a wrong guess on a safety or attack message is worse than an unnecessary handoff.
 - **Prompt:** `prompts/router/v1.md`, with invented examples only, so no dataset chat can leak into the prompt (test `test_prompt_contains_no_dataset_chat`).
+
+
+### D-09. Router configuration: prompt v2, Claude Haiku 5.5, low effort
+- **Date:** 2026-11-10
+- **Choice:** router prompt v2 on Claude Haiku 5.5 with low reasoning effort (now the default in `config/settings.yaml`).
+- **Why:** best of 4 controlled validation runs: 90% type accuracy, 100% escalation recall and 100% precision, 2.8 s, $0.00036 per chat.
+- **Alternatives considered:** thinking off (1.0 s but 73% accuracy and one missed escalation); GPT-6 Luna (3 times cheaper, 67% accuracy, slower).
+- **Counter-argument:** 2.8 s per chat is slow for a first step; if latency becomes a problem, the fine-tuned router (Phase 5) is the planned fix, not turning thinking off.
+- **Evidence:** `docs/prompt_log.md`, router experiments table; recorded answers in `data/llm_cache/`.

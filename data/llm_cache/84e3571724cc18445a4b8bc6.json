@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"roadside_assistance\", \"secondary_types\": [\"repair_status\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.96, \"language\": \"en\"}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2320,
+ "output_tokens": 300,
+ "cost_usd": 0.000382,
+ "latency_ms": 3162.0
+}

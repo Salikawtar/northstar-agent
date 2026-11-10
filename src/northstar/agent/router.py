@@ -31,7 +31,7 @@ import pandas as pd
 from northstar.config import path, settings
 from northstar.contracts import EscalationReason, Language, RequestType, RouterOutput
 from northstar.data import load_conversations
-from northstar.llm import LLMClient, LLMError
+from northstar.llm import CacheMiss, LLMClient, LLMError
 
 
 def load_prompt(rel: str) -> str:
@@ -84,6 +84,8 @@ class Router:
             out, resp = self.client.chat_json(self.model, messages, RouterOutput,
                                               reasoning_effort=self.effort, max_tokens=self.max_tokens)
             return RouteResult(out, resp.latency_ms, resp.cost_usd, resp.input_tokens, resp.output_tokens)
+        except CacheMiss:
+            raise  # replay must never hide a missing recording behind the fail-safe
         except LLMError as e:
             # Fail safe: never guess. A person picks it up with whatever we know.
             lang = Language(language_hint) if language_hint in ("en", "fr") else Language.EN

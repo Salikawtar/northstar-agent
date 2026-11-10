@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"lease_end_return\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.94, \"language\": \"en\"}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2915,
+ "output_tokens": 71,
+ "cost_usd": 0.000327,
+ "latency_ms": 795.6
+}

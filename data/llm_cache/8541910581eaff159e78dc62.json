@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"out_of_scope\", \"secondary_types\": [], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2232,
+ "output_tokens": 63,
+ "cost_usd": 0.0002547,
+ "latency_ms": 1027.4
+}
