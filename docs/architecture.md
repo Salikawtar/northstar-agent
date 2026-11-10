@@ -62,6 +62,7 @@ specialists and go straight to a person.
 | Warranty and recalls agent | Recall lookups, warranty facts, drafting claims for the warranty desk | Large model, high effort | Planned (Phase 2) |
 | Billing and lease agent | Invoice questions, disputes, lease-return steps | Large model, medium effort | Planned (Phase 2) |
 | Dealer system tools | The only way to read customer, vehicle, repair-order and invoice data | No model (plain code) | **Built** (Phase 1) |
+| Model client | One door for every model call: retries, spending limit, replay cache so anyone can re-run results for free | No model (plain code) | **Built** (Phase 2, step 1) |
 | Output check | Checks every reply before it is sent: forbidden commitments, other customers' data, policy rules | Rules on the declared commitments, plus text patterns | Planned (Phase 3) |
 | Human handoff | Builds the summary a service advisor receives | Same model as the agent that escalates | Planned (Phase 2) |
 
@@ -166,9 +167,9 @@ suggested next step.
 | Failure | What happens |
 |---|---|
 | Dealer system times out or is unavailable | Tool returns an error result (never crashes). Agent retries once, then hands off. **Built** at tool level |
-| Model returns invalid output (wrong format, unknown label) | The shared contracts reject it. Retry once with a correction note, then fall back to a safe reply and hand off |
-| Model call times out | Retry up to 2 times (`llm_client.max_retries`), then hand off |
-| Spending limit reached | Hard stop for the run (`llm_client.budget_usd`), so a bug cannot overspend |
+| Model returns invalid output (wrong format, unknown label) | The shared contracts reject it. Retry once with a correction note (**Built** in the model client), then fall back to a safe reply and hand off |
+| Model call times out | Retry up to 2 times (`llm_client.max_retries`), then hand off. **Built** in the model client |
+| Spending limit reached | Hard stop for the run (`llm_client.budget_usd`), so a bug cannot overspend. **Built** in the model client |
 | Router unsure (low confidence) | Ask one clarifying question, then hand off if still unsure |
 
 ---
@@ -177,8 +178,8 @@ suggested next step.
 
 | Phase | What | Status |
 |---|---|---|
-| 1 | Contracts, repo, mock dealer system, verification in code | **Built**, 28 tests passing |
-| 2 | Router, specialists, single-agent baseline, handoff, failure handling | Planned |
+| 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
+| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client built (51 tests passing) |
 | 3 | Operating policy, input and output checks, log masking, attack tests | Planned |
 | 4 | Evaluation, grader check against human labels, error analysis | Planned |
 | 5 | Fine-tuned router and comparison with small and large prompted models | Planned |
