@@ -23,14 +23,19 @@ def ok(**kw):
     return json.dumps(d)
 
 
-def test_prompt_names_all_ten_request_types():
-    p = load_prompt("router/v1.md")
+PROMPTS = ["router/v1.md", "router/v2.md"]
+
+
+@pytest.mark.parametrize("name", PROMPTS)
+def test_prompt_names_all_ten_request_types(name):
+    p = load_prompt(name)
     assert all(t.value in p for t in RequestType)
 
 
-def test_prompt_contains_no_dataset_chat():
+@pytest.mark.parametrize("name", PROMPTS)
+def test_prompt_contains_no_dataset_chat(name):
     # Examples in the prompt are invented, so no test (or other) chat can leak into it.
-    p = load_prompt("router/v1.md")
+    p = load_prompt(name)
     chats = load_conversations()
     assert not any(row.turn_1_customer[:60] in p for row in chats.itertuples())
 

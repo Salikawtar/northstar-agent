@@ -15,6 +15,7 @@ Quick check on the validation chats (needs OPENROUTER_API_KEY the first time,
 then replays for free):
     python -m northstar.agent.router --split validation
     python -m northstar.agent.router --split validation --model compare_small
+    python -m northstar.agent.router --split validation --prompt router/v2.md --effort none
 """
 from __future__ import annotations
 
@@ -95,8 +96,9 @@ class Router:
 # Development check: how well does the router do on a split of the dataset?
 # (Libo's evaluation module does the full, graded evaluation in Phase 4.)
 # ---------------------------------------------------------------------------
-def evaluate(split: str = "validation", model: Optional[str] = None, router: Optional[Router] = None) -> tuple[pd.DataFrame, dict]:
-    router = router or Router(model=model)
+def evaluate(split: str = "validation", model: Optional[str] = None, router: Optional[Router] = None,
+             prompt: Optional[str] = None, effort: Optional[str] = None) -> tuple[pd.DataFrame, dict]:
+    router = router or Router(model=model, prompt=prompt, reasoning_effort=effort)
     df = load_conversations(split)
     rows = []
     for _, r in df.iterrows():
@@ -133,12 +135,15 @@ def _main() -> None:
     ap = argparse.ArgumentParser(description="Run the router on a dataset split and report accuracy, latency and cost.")
     ap.add_argument("--split", default="validation", choices=["train", "validation", "test"])
     ap.add_argument("--model", default=None, help="small | large | compare_small | an OpenRouter id (default: settings)")
+    ap.add_argument("--prompt", default=None, help="prompt file under prompts/, e.g. router/v2.md (default: settings)")
+    ap.add_argument("--effort", default=None, help="reasoning effort: none | low | medium | high (default: settings)")
     a = ap.parse_args()
     if a.split == "test":
         print("Note: the test split is for the final evaluation. Tune prompts on validation only.")
-    out, summary = evaluate(a.split, a.model)
+    out, summary = evaluate(a.split, a.model, prompt=a.prompt, effort=a.effort)
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
-    tag = f"router_{summary['model'].split('/')[-1]}_{a.split}"
+    prompt_v = summary["prompt"].split("/")[-1].removesuffix(".md")
+    tag = f"router_{summary['model'].split('/')[-1]}_{prompt_v}_{summary['reasoning_effort']}_{a.split}"
     out.to_csv(res_dir / f"{tag}.csv", index=False)
     (res_dir / f"{tag}.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
     print(json.dumps(summary, indent=1))

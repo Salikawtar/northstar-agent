@@ -56,7 +56,7 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Alternatives considered:** GPT-5.6 Luna (twice the price), GPT-6.1 Sol (same price as Sonnet, slower), Gemini 3.8 Flash (cheaper large option, but the price is a temporary 50% discount).
 - **Counter-argument:** both main models come from one vendor; French quality is not measured yet.
 - **Technical note:** Haiku 5.5 rejects any temperature setting and thinks by default, so the router sends no temperature and uses low reasoning effort.
-- **Evidence:** to come from the router run on the 30 validation chats (accuracy, escalation recall, latency, cost per chat).
+- **Evidence:** 2026-11-10, router v1 on 30 validation chats with Haiku 5.5: type accuracy 80%, escalation recall 100%, precision 69%, language 100%, $0.0003 per chat (as estimated), median latency 3.3 s (slower than hoped; thinking-off test planned). Recorded answers in `data/llm_cache/` replay the run for free.
 
 ### D-08. Router input and fail-safe
 - **Date:** 2026-11-10
