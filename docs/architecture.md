@@ -39,6 +39,11 @@ flowchart TD
     T --> E[Output check<br/>blocks forbidden promises]
     E --> R[Reply to customer]
     E --> H[Human handoff<br/>with case summary]
+    M[(Model client<br/>retries, budget, replay)]
+    C -.-> M
+    D1 -.-> M
+    D2 -.-> M
+    D3 -.-> M
 
     classDef safety fill:#FAECE7,stroke:#993C1D,color:#712B13;
     classDef model fill:#E1F5EE,stroke:#0F6E56,color:#085041;
@@ -47,8 +52,10 @@ flowchart TD
 ```
 
 Coral boxes are safety checks, green boxes are AI models, the rest is plain
-code or people. The dotted line is the fast path: urgent cases skip the
-specialists and go straight to a person.
+code or people. The dotted line from the router to the handoff is the fast
+path: urgent cases skip the specialists and go straight to a person. The
+dotted lines to the model client show which parts call an AI model; the
+client is a shared helper, not a step the message passes through.
 
 ---
 
@@ -57,7 +64,7 @@ specialists and go straight to a person.
 | Component | What it does | Model (starting choice) | Status |
 |---|---|---|---|
 | Input check | Flags prompt injection and personal data pasted into the chat before any model sees it | Rules, plus small model if needed | Planned (Phase 3) |
-| Router | Labels the request type (10 types), spots extra requests in the same message, decides if a person is needed now, detects language | Small model, low effort. Later replaced by the fine-tuned model | Planned (Phase 2, Phase 5) |
+| Router | Labels the request type (10 types), spots extra requests in the same message, decides if a person is needed now, detects language | Claude Haiku 5.5, low effort. Compared later with the fine-tuned model | **Built** (Phase 2, step 2); first live run pending |
 | Booking and status agent | Bookings, repair status, parts, roadside triage | Small model, low effort | Planned (Phase 2) |
 | Warranty and recalls agent | Recall lookups, warranty facts, drafting claims for the warranty desk | Large model, high effort | Planned (Phase 2) |
 | Billing and lease agent | Invoice questions, disputes, lease-return steps | Large model, medium effort | Planned (Phase 2) |
@@ -111,10 +118,13 @@ cannot perform them even if manipulated.
 
 | Component | Starting choice | Why | Confirmed by |
 |---|---|---|---|
-| Router | Small model, low effort | Runs on every chat, must be fast and cheap; the task is classification | Phase 4 accuracy, latency and cost |
-| Booking and status | Small model, low effort | Simple, tool-driven requests | Phase 4 |
-| Warranty and recalls | Large model, high effort | One wrong promise of coverage costs more than thousands of chats | Phase 4, error cost from Phase 6 |
-| Billing and lease | Large model, medium effort | Disputes need careful reading, but fewer judgment calls than warranty | Phase 4 |
+| Router | Claude Haiku 5.5, low effort | Runs on every chat, must be fast and cheap; the task is classification | Validation run, then Phase 4 |
+| Booking and status | Claude Haiku 5.5, low effort | Simple, tool-driven requests | Phase 4 |
+| Warranty and recalls | Claude Sonnet 5.5, high effort | One wrong promise of coverage costs more than thousands of chats | Phase 4, error cost from Phase 6 |
+| Billing and lease | Claude Sonnet 5.5, medium effort | Disputes need careful reading, but fewer judgment calls than warranty | Phase 4 |
+| Comparison router | GPT-6 Luna, low effort | Same price as Haiku 5.5 from another vendor: a controlled comparison | Validation run |
+
+Prices on 2026-11-10 (OpenRouter, per million tokens in / out): Haiku 5.5 $0.10 / $0.50, Sonnet 5.5 $2 / $10, GPT-6 Luna $0.10 / $0.50. Reasons and alternatives: `docs/decision_log.md`, D-07.
 
 These are hypotheses. Each one is tested by changing one thing at a time
 (model, effort, prompt version) and is kept or changed based on the results.
@@ -171,6 +181,7 @@ suggested next step.
 | Model call times out | Retry up to 2 times (`llm_client.max_retries`), then hand off. **Built** in the model client |
 | Spending limit reached | Hard stop for the run (`llm_client.budget_usd`), so a bug cannot overspend. **Built** in the model client |
 | Router unsure (low confidence) | Ask one clarifying question, then hand off if still unsure |
+| Router answer unusable after one correction | Chat goes to a person with reason `tool_failure` (**Built**, `test_unusable_model_answer_sends_chat_to_a_person`) |
 
 ---
 
@@ -179,7 +190,7 @@ suggested next step.
 | Phase | What | Status |
 |---|---|---|
 | 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
-| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client built (51 tests passing) |
+| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client and router built (58 tests passing) |
 | 3 | Operating policy, input and output checks, log masking, attack tests | Planned |
 | 4 | Evaluation, grader check against human labels, error analysis | Planned |
 | 5 | Fine-tuned router and comparison with small and large prompted models | Planned |
