@@ -81,9 +81,10 @@ def _openrouter_transport(timeout_s: float) -> Transport:
         extra = {"usage": {"include": True}}            # OpenRouter returns the real cost
         if req.get("reasoning_effort"):
             extra["reasoning"] = {"effort": req["reasoning_effort"]}
-        kw = dict(model=req["model"], messages=req["messages"], temperature=req["temperature"],
-                  max_tokens=req["max_tokens"], extra_body=extra)
-        if req.get("json"):
+        kw = dict(model=req["model"], messages=req["messages"], max_tokens=req["max_tokens"], extra_body=extra)
+        if req.get("temperature") is not None:          # some models (e.g. Claude Haiku 5.5) reject any temperature
+            kw["temperature"] = req["temperature"]
+        if req.get("json") and settings()["llm_client"].get("use_response_format", False):
             kw["response_format"] = {"type": "json_object"}
         r = client.chat.completions.create(**kw)
         u = r.usage
@@ -124,7 +125,7 @@ class LLMClient:
         self.usage = Usage()
 
     # -- public ------------------------------------------------------------
-    def chat(self, model: str, messages: list[dict[str, str]], *, temperature: float = 0.0,
+    def chat(self, model: str, messages: list[dict[str, str]], *, temperature: Optional[float] = None,
              max_tokens: int = 800, reasoning_effort: Optional[str] = None, json_mode: bool = False) -> LLMResponse:
         req = dict(model=model, messages=messages, temperature=temperature, max_tokens=max_tokens,
                    reasoning_effort=reasoning_effort, json=json_mode)

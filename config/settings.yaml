@@ -12,22 +12,25 @@ paths:
   redteam_dms_dir: data/redteam                         # dealer records for red-team customers
   llm_cache: data/llm_cache          # recorded model answers, committed so anyone can replay for free
   dataset_source: data/source/northstar_synthetic_dataset_v1112.xlsx  # review workbook (source of truth)
+  prompts_dir: prompts                # every prompt lives here, versioned (v1, v2...), never inside the code
   dms_dir: data/dms
   runs_dir: outputs/runs
   results_dir: outputs/results
 
-# Model tiers. Which exact OpenRouter model sits in each tier is chosen in
-# Phase 2 from measured quality, latency and cost, then recorded here.
+# Model tiers (OpenRouter ids). Starting choice made 2026-11-10 from price,
+# speed and fit (see docs/decision_log.md, D-07); the validation run confirms
+# or changes it.
 models:
-  small: "TO_BE_CHOSEN_IN_PHASE_2"
-  large: "TO_BE_CHOSEN_IN_PHASE_2"
-  grader: "TO_BE_CHOSEN_IN_PHASE_2"
+  small: "anthropic/claude-haiku-5.5"       # $0.10 / $0.50 per 1M tokens in / out
+  large: "anthropic/claude-sonnet-5.5"      # $2 / $10
+  compare_small: "openai/gpt-6-luna"        # $0.10 / $0.50, other vendor, for a controlled router comparison
+  grader: "TO_BE_CHOSEN_IN_PHASE_4"
   finetuned_router: "TO_BE_CHOSEN_IN_PHASE_5"
 
 # Which tier and reasoning effort each component uses (the starting
 # hypothesis; evaluation results confirm or change it).
 components:
-  router:            {tier: small, reasoning_effort: low}
+  router:            {tier: small, reasoning_effort: low, max_tokens: 1500, prompt: router/v1.md}
   booking_status:    {tier: small, reasoning_effort: low}
   warranty_recall:   {tier: large, reasoning_effort: high}
   billing_lease:     {tier: large, reasoning_effort: medium}
@@ -58,3 +61,4 @@ llm_client:
   timeout_s: 30
   max_retries: 2
   budget_usd: 25.0              # hard stop for a whole run
+  use_response_format: false    # JSON is asked for in the prompt and checked by the contracts; not every provider accepts response_format

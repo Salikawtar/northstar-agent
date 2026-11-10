@@ -12,6 +12,17 @@ cp .env.example .env          # add your OpenRouter key (needed from Phase 2)
 python run_all.py             # rebuilds everything built so far and runs the tests
 ```
 
+## Try the router
+
+```bash
+python -m northstar.agent.router --split validation                        # Claude Haiku 5.5
+python -m northstar.agent.router --split validation --model compare_small  # GPT-6 Luna
+```
+Needs `OPENROUTER_API_KEY` in `.env` the first time; answers are recorded in
+`data/llm_cache/`, so later runs replay for free. Results go to `outputs/results/`.
+
+Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/prompt_log.md`.
+
 ## Repository layout (mirrors the system design and the team roles)
 
 | Folder | What it holds | Owner |
@@ -30,6 +41,7 @@ python run_all.py             # rebuilds everything built so far and runs the te
 | `src/northstar/finetune/` | Fine-tuned router + small/large prompted baselines | Neeraj |
 | `src/northstar/evaluation/` | Grader, metrics, experiment runner, error analysis | Libo |
 | `src/northstar/economics/` | Cost model, volumes, break-even | Abhi |
+| `prompts/` | Every prompt, versioned (`router/v1.md`...). Changes logged in `docs/prompt_log.md` | Kawtar |
 | `config/settings.yaml` | All settings (models, effort, paths, failure injection) | Team |
 | `tests/` | Unit tests for every module | Everyone |
 
@@ -42,7 +54,7 @@ compares them on the same test set.
 | Phase | Status |
 |---|---|
 | 1. Contracts, repo, mock dealer system | Done |
-| 2. Agent (router, specialists, baseline, handoff, failures) | In progress (step 1: model client) |
+| 2. Agent (router, specialists, baseline, handoff, failures) | In progress (model client, router) |
 | 3. Guardrails and attack test set | To do |
 | 4. Evaluation and error analysis | To do |
 | 5. Fine-tune and 3-model comparison | To do |
