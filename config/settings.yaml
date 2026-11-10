@@ -10,6 +10,7 @@ paths:
   conversations: data/conversations/conversations.csv   # train 130 / validation 30 / test 40
   redteam: data/redteam/redteam_75.csv                  # guardrail tests only, never trained on
   redteam_dms_dir: data/redteam                         # dealer records for red-team customers
+  llm_cache: data/llm_cache          # recorded model answers, committed so anyone can replay for free
   dataset_source: data/source/northstar_synthetic_dataset_v1112.xlsx  # review workbook (source of truth)
   dms_dir: data/dms
   runs_dir: outputs/runs
@@ -52,6 +53,7 @@ dms:
   anchor_date: "2026-11-16"  # fixed 'today' for the mock system, so runs are reproducible
 
 llm_client:
+  mode: auto                    # auto = live if OPENROUTER_API_KEY is set, else replay
   base_url: https://openrouter.ai/api/v1
   timeout_s: 30
   max_retries: 2

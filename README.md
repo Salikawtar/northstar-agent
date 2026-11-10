@@ -20,6 +20,8 @@ python run_all.py             # rebuilds everything built so far and runs the te
 | `data/redteam/` | 75 attacks for guardrail tests (never trained on) + dealer records for their customers | Weidi + team |
 | `data/source/` | Review workbook v1112: human review, QC log, team decisions (source of truth for the CSVs) | Weidi |
 | `data/dms/` | Mock dealer system generated from the chats | Kawtar |
+| `src/northstar/llm.py` | One door for every model call (OpenRouter): retries, spending limit, replay cache | Kawtar |
+| `data/llm_cache/` | Recorded model answers, so results can be replayed with no key and no cost | Generated |
 | `src/northstar/data.py` | One loader for every dataset (`load_conversations`, `load_redteam`) | Team |
 | `src/northstar/contracts.py` | Shared data shapes every module uses | Team (read `docs/contracts.md`) |
 | `src/northstar/dms/` | Dealer system generator + tool API (verification enforced in code) | Kawtar |
@@ -39,8 +41,8 @@ compares them on the same test set.
 
 | Phase | Status |
 |---|---|
-| 1. Contracts, repo, mock dealer system | Done (41 tests passing, incl. dataset checks) |
-| 2. Agent (router, specialists, baseline, handoff, failures) | Next |
+| 1. Contracts, repo, mock dealer system | Done |
+| 2. Agent (router, specialists, baseline, handoff, failures) | In progress (step 1: model client) |
 | 3. Guardrails and attack test set | To do |
 | 4. Evaluation and error analysis | To do |
 | 5. Fine-tune and 3-model comparison | To do |
