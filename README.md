@@ -8,6 +8,7 @@ selling the fictional Meridian brand. All data is synthetic.
 
 ```bash
 pip install -r requirements.txt
+pip install -e .              # lets Python find the project code in src/ (once)
 cp .env.example .env          # add your OpenRouter key (needed from Phase 2)
 python run_all.py             # rebuilds everything built so far and runs the tests
 ```
@@ -17,6 +18,7 @@ python run_all.py             # rebuilds everything built so far and runs the te
 ```bash
 python -m northstar.agent.router --split validation                        # Claude Haiku 5.5
 python -m northstar.agent.router --split validation --model compare_small  # GPT-6 Luna
+python -m northstar.agent.router --split validation --prompt router/v2.md --effort none  # try a prompt or effort
 ```
 Needs `OPENROUTER_API_KEY` in `.env` the first time; answers are recorded in
 `data/llm_cache/`, so later runs replay for free. Results go to `outputs/results/`.
