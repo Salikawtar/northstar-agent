@@ -31,6 +31,12 @@ python -m northstar.agent.specialist --agent warranty_recall --split validation
 python -m northstar.agent.specialist --agent billing_lease --split validation
 ```
 
+Run the whole agent (router, then the fast path or a specialist) on the validation chats:
+
+```bash
+python -m northstar.agent.pipeline --split validation
+```
+
 Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/prompt_log.md`.
 
 ## Repository layout (mirrors the system design and the team roles)

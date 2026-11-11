@@ -72,6 +72,7 @@ client is a shared helper, not a step the message passes through.
 | Model client | One door for every model call: retries, spending limit, replay cache so anyone can re-run results for free | No model (plain code) | **Built** (Phase 2, step 1) |
 | Output check | Checks every reply before it is sent: forbidden commitments, other customers' data, policy rules | Rules on the declared commitments, plus text patterns | Planned (Phase 3) |
 | Specialist engine | Shared by the three agents: tool loop (max 6 calls), own tools only, code decides commitments and handoff | Uses each agent's model | **Built** (Phase 2, step 3) |
+| Pipeline | Connects everything: router first, then the fast path (fixed reply and a person at once) or the right specialist (D-15) | No model of its own | **Built** (Phase 2, step 6); first full run pending |
 | Human handoff | Builds the summary a service advisor receives: reason, urgency, queue, masked customer reference, next step | Summary written by the agent that escalates; routing rules in code | **Built** (Phase 2, step 3) |
 
 ---
@@ -181,7 +182,7 @@ suggested next step.
 | Model returns invalid output (wrong format, unknown label) | The shared contracts reject it. Retry once with a correction note (**Built** in the model client), then fall back to a safe reply and hand off |
 | Model call times out | Retry up to 2 times (`llm_client.max_retries`), then hand off. **Built** in the model client |
 | Spending limit reached | Hard stop for the run (`llm_client.budget_usd`), so a bug cannot overspend. **Built** in the model client |
-| Router unsure (low confidence) | Ask one clarifying question, then hand off if still unsure |
+| Router unsure (confidence below 0.55) | Fixed reply and handoff with reason `low_confidence` (**Built**, `test_unsure_router_sends_the_chat_to_a_person`). Simplified from "ask one question first" (D-15) |
 | Router answer unusable after one correction | Chat goes to a person with reason `tool_failure` (**Built**, `test_unusable_model_answer_sends_chat_to_a_person`) |
 
 ---
@@ -191,7 +192,7 @@ suggested next step.
 | Phase | What | Status |
 |---|---|---|
 | 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
-| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists and handoff built and run (89 tests passing) |
+| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists, handoff and the pipeline built (105 tests passing) |
 | 3 | Operating policy, input and output checks, log masking, attack tests | Planned |
 | 4 | Evaluation, grader check against human labels, error analysis | Planned |
 | 5 | Fine-tuned router and comparison with small and large prompted models | Planned |

@@ -107,3 +107,10 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** in its first run (v3_0199) it could explain the lease steps but not book the inspection, so a simple request ended in a handoff.
 - **Alternatives considered:** pass the booking to the booking specialist (needs a hand-over between agents, more parts) or keep handing off (more advisor time).
 - **Counter-argument:** one more tool for that desk widens what a manipulated billing chat could do. The risk is low: browsing slots needs no personal data, and booking needs a verified customer and creates no financial commitment.
+
+### D-15. Fast path: some chats skip the specialist
+- **Date:** 2026-11-11
+- **Choice:** when the router flags safety, a legal threat, bereavement, a request for a person, a router failure or low confidence (below 0.55), no specialist runs. The customer gets a short fixed reply (English or French) and the chat goes to a person with a summary. A contested charge (policy_limit) or a manipulation attempt (adversarial) still goes to the specialist when the request has a desk, so the customer gets a useful reply before the handoff. Out-of-scope requests get a fixed reply that lists what the dealership can help with.
+- **Why:** in these cases a person must act, so a model reply adds cost, delay (a Sonnet reply takes 6 to 9 s) and a chance of saying something wrong. A fixed safety reply always contains the 911 advice.
+- **Alternatives considered:** let the specialist write every reply (more personal, slower, riskier); ask one clarifying question when the router is unsure (closer to the original design, but our test chats are single replies and no validation chat was below 0.55).
+- **Counter-argument:** a fixed reply ignores details. In the step 5 run the booking specialist repeated the stranded driver's location and phone number back (v3_0069), which reassures the customer; the fixed reply cannot. The person who takes over still sees the whole chat.
