@@ -13,6 +13,7 @@ Design choices (each one maps to a grading criterion):
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import random
 import secrets
@@ -232,7 +233,9 @@ class DealerSystem:
                 return bad
             if not symptom or len(symptom) < 5:
                 return self._fail("draft_warranty_claim", ToolError.INVALID_INPUT, "Describe the symptom.")
-            claim_id = f"WC-{secrets.token_hex(3).upper()}"
+            # Derived from the customer and the symptom, not random: the same request gives
+            # the same claim number, so recorded runs replay exactly.
+            claim_id = "WC-" + hashlib.sha256(f"{session.customer_id}|{symptom.strip().lower()}".encode()).hexdigest()[:6].upper()
             return ToolResult(tool="draft_warranty_claim", ok=True, data={
                 "claim_id": claim_id, "status": "submitted_for_review",
                 "note": "Coverage is decided by the warranty desk after inspection."})

@@ -152,3 +152,49 @@ def test_tool_turns_replay_from_recordings(tmp_path, dms, customer):
     replay = Specialist("booking_status", client=LLMClient(mode="replay", cache_dir=tmp_path))
     res = replay.run("c10", TURNS, route(), DealerSystem())
     assert res.verified and res.reply.text == "Verified."
+
+
+# --- warranty and recalls, billing and lease ----------------------------------
+def test_warranty_desk_can_draft_but_not_book(tmp_path, dms, customer):
+    last, plate = customer
+    client, seen = scripted(tmp_path, [call("verify_customer", last_name=last, plate=plate),
+                                       call("draft_warranty_claim", symptom="screen goes black"),
+                                       final("I sent a review request.", "drafted_claim")])
+    res = Specialist("warranty_recall", client=client).run("w1", TURNS, route(RequestType.WARRANTY_CLAIM), dms)
+    names = {t["function"]["name"] for t in seen[0]["tools"]}
+    assert "book_slot" not in names and "get_invoice" not in names and "draft_warranty_claim" in names
+    assert res.reply.action == AgentAction.DRAFTED_CLAIM
+    assert not any(c.kind == CommitmentKind.WARRANTY_COVERAGE for c in res.reply.commitments)
+
+
+def test_claimed_draft_without_tool_is_not_counted(tmp_path, dms):
+    client, _ = scripted(tmp_path, [final("I've submitted your claim.", "drafted_claim")])
+    res = Specialist("warranty_recall", client=client).run("w2", TURNS, route(RequestType.WARRANTY_CLAIM), dms)
+    assert res.reply.action == AgentAction.ANSWERED
+
+
+def test_claim_number_is_the_same_every_run(dms, customer):
+    last, plate = customer
+    ids = []
+    for _ in range(2):
+        d = DealerSystem()
+        _, s = d.verify_customer(last, plate=plate)
+        ids.append(d.draft_warranty_claim(s, "screen goes black").data["claim_id"])
+    assert ids[0] == ids[1] and ids[0].startswith("WC-")
+
+
+def test_billing_desk_reads_invoices_but_cannot_book_or_draft(tmp_path, dms):
+    client, seen = scripted(tmp_path, [call("book_slot", slot_id="SL-00001"), final("A manager will review it.", "escalated", "policy_limit", "Disputes a charge.")])
+    res = Specialist("billing_lease", client=client).run("b1", TURNS, route(RequestType.BILLING_DISPUTE), dms)
+    names = {t["function"]["name"] for t in seen[0]["tools"]}
+    assert "get_invoice" in names and "book_slot" not in names and "draft_warranty_claim" not in names
+    assert res.denied_tools == ["book_slot"]
+    assert res.reply.action == AgentAction.ESCALATED and res.reply.handoff.reason == EscalationReason.POLICY_LIMIT
+
+
+@pytest.mark.parametrize("agent", ["warranty_recall", "billing_lease"])
+def test_each_desk_prompt_is_complete(tmp_path, agent):
+    client, _ = scripted(tmp_path, [final()])
+    system = Specialist(agent, client=client)._system(route())
+    assert "{policy}" not in system and "{context}" not in system and "P-09" in system
+    assert not any(r.turn_1_customer[:60] in system for r in load_conversations().itertuples())
