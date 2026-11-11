@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je peux vérifier votre dossier et l'état de votre réparation. Pour commencer, pouvez-vous me donner la plaque de votre véhicule ou votre numéro d'ordre de réparation (RO-######)? Je ne peux pas confirmer l'arrivée de la pièce, le dépôt ni la date de pose avant la vérification.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-10\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2741,
+ "output_tokens": 410,
+ "cost_usd": 0.0004791,
+ "latency_ms": 3829.0
+}

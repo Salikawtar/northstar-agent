@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you, Mr. Watson. You are booked for a maintenance service at our Scarborough branch on Tuesday, November 17, 2026, at 9:00 AM. Your confirmation number is BK-00029.\\n\\nAbout the recall letter: I can't check recall details from the chat, so please ask the service advisor when you arrive, or bring the letter with you. The number you sent is noted for them.\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3190,
+ "output_tokens": 192,
+ "cost_usd": 0.000415,
+ "latency_ms": 1988.3
+}

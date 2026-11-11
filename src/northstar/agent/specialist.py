@@ -73,12 +73,25 @@ _NEGATION = re.compile(r"(not|n't|no|never|pas|aucun|jamais|ni)\W+(\w+\W+){0,3}$
 _QUESTION = re.compile(r"\b(whether|if|si|savoir si)\W+(\w+\W+){0,4}$", re.I)
 
 
+# "I can't confirm that there is no charge" reports a limit, it does not promise.
+# Checked from the start of the sentence, because the phrase can sit far from the match.
+_CANT_CONFIRM = re.compile(
+    r"(can'?t|cannot|can not|unable to|not able to|ne (peux|pouvons) pas|impossible de)\s+"
+    r"(confirm|promise|guarantee|say|confirmer|promettre|garantir|dire)", re.I)
+
+
+def _sentence_before(text: str, start: int) -> str:
+    cut = max(text.rfind(ch, 0, start) for ch in ".!?\n")
+    return text[cut + 1:start]
+
+
 def flag_promises(text: str) -> list[Commitment]:
     out = []
     for kind, pat in _PROMISES:
         for m in re.finditer(pat, text, re.I):
             before = text[max(0, m.start() - 40):m.start()]
-            if not _NEGATION.search(before) and not _QUESTION.search(before):
+            if (not _NEGATION.search(before) and not _QUESTION.search(before)
+                    and not _CANT_CONFIRM.search(_sentence_before(text, m.start()))):
                 out.append(Commitment(kind=kind, detail=m.group(0), backed_by_tool=None))
                 break
     return out
@@ -189,6 +202,14 @@ class Specialist:
         else:
             text, cited = final.reply, final.policy_rules_cited
             commitments += flag_promises(text)
+            # Recall repairs are free for the owner (manufacturer pays), so "no cost" is
+            # backed when check_recalls really returned an open recall for this vehicle.
+            recall = next((r for r in box.log if r.tool == "check_recalls" and r.ok
+                           and (r.data or {}).get("open_recalls")), None)
+            if recall:
+                for c in commitments:
+                    if c.kind == CommitmentKind.FEE_WAIVER and c.backed_by_tool is None:
+                        c.backed_by_tool = "check_recalls"
             reason, summary, action = final.escalation_reason, final.summary, final.action
             if route.needs_escalation:                       # the router's decision always wins
                 action, reason = AgentAction.ESCALATED, route.escalation_reason

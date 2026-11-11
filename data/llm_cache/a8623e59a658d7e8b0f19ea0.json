@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je peux vérifier tout de suite si votre Halden est visée par un rappel. Pour cela, j'ai besoin de votre nom de famille et de votre plaque d'immatriculation. Pouvez-vous me les envoyer, svp?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\",\"P-03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2939,
+ "output_tokens": 584,
+ "cost_usd": 0.011718,
+ "latency_ms": 6722.3
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Avec plaisir, je peux vous aider à réserver l'inspection. Pour vérifier votre dossier, pouvez-vous me donner votre plaque d'immatriculation ou votre numéro d'ordre de réparation (RO-######)? Une correction : mon collègue a parlé d'un prix de rachat par courriel. C'est le bureau des affaires qui s'occupe du rachat et du prix, et je les contacterai pour vous ensuite.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\",\"P-03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3102,
+ "output_tokens": 442,
+ "cost_usd": 0.010624,
+ "latency_ms": 4997.2
+}

@@ -128,6 +128,12 @@ def test_promises_are_flagged_but_negations_are_not():
     # asking or reporting a question is not a promise (false alarm in the first warranty run, v3_0004)
     assert not flag_promises("I can't tell you whether this warning is covered. Only the warranty desk decides that.")
     assert not flag_promises("Le bureau de garantie va décider si la réparation est couverte.")
+    # Seen in the step 5 runs (v3_0062, v3_0114): a limit, not a promise.
+    assert not flag_promises("I also need to correct my colleague: I can't confirm that there is no charge or that the work was covered.")
+    assert not flag_promises("One correction: I can't confirm that the service light creates no charge, or that the inspection takes 30 minutes.")
+    assert not flag_promises("Je ne peux pas confirmer que la réparation sera sans frais.")
+    # The limit only covers its own sentence.
+    assert flag_promises("I can't confirm the date. The repair is free of charge.")
 
 
 def test_unbacked_promise_in_reply_is_recorded(tmp_path, dms):
@@ -220,3 +226,25 @@ def test_shared_rules_v2_carry_the_tone_rule(tmp_path):
     client, _ = scripted(tmp_path, [final()])
     system = Specialist("booking_status", client=client)._system(route())
     assert "State a limit at most once" in system
+
+
+def _recall_customer(dms):
+    for c in dms.customers.values():
+        v = dms.vehicle_by_customer.get(c["customer_id"])
+        if v and any(r["model"] == v["model"] and r["year_from"] <= v["year"] <= r["year_to"] for r in dms.recalls):
+            return c["last_name"], v["plate"]
+
+
+def test_recall_repair_at_no_cost_is_backed_by_check_recalls(tmp_path, dms):
+    last, plate = _recall_customer(dms)
+    client, _ = scripted(tmp_path, [call("verify_customer", last_name=last, plate=plate), call("check_recalls"),
+                                    final("There is an open recall, and the fix is done at no cost to you.")])
+    res = Specialist("warranty_recall", client=client).run("w9", TURNS, route(RequestType.RECALL_INQUIRY), dms)
+    fee = [c for c in res.reply.commitments if c.kind == CommitmentKind.FEE_WAIVER]
+    assert fee and all(c.backed_by_tool == "check_recalls" for c in fee)
+
+
+def test_no_cost_without_a_recall_lookup_stays_unbacked(tmp_path, dms):
+    client, _ = scripted(tmp_path, [final("The fix is done at no cost to you.")])
+    res = Specialist("warranty_recall", client=client).run("w10", TURNS, route(RequestType.RECALL_INQUIRY), dms)
+    assert any(c.backed_by_tool is None and c.kind == CommitmentKind.FEE_WAIVER for c in res.reply.commitments)

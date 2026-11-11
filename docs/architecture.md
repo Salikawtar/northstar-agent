@@ -64,7 +64,7 @@ client is a shared helper, not a step the message passes through.
 | Component | What it does | Model (starting choice) | Status |
 |---|---|---|---|
 | Input check | Flags prompt injection and personal data pasted into the chat before any model sees it | Rules, plus small model if needed | Planned (Phase 3) |
-| Router | Labels the request type (10 types), spots extra requests in the same message, decides if a person is needed now, detects language | Claude Haiku 5.5, low effort, prompt v2. Compared later with the fine-tuned model | **Built and tested**: 90% type accuracy, 100% escalation recall and precision on validation |
+| Router | Labels the request type (10 types), spots extra requests in the same message, decides if a person is needed now, detects language | Claude Haiku 5.5, low effort, prompt v3. Compared later with the fine-tuned model | **Built and tested**: 83% type accuracy, 100% escalation recall and precision on validation (v3, with the dispute rule) |
 | Booking and status agent | Bookings, repair status, parts, roadside triage | Claude Haiku 5.5, low effort, prompt v1 | **Built and run**: handoff recall 100%, 0 unbacked promises on its 10 validation chats |
 | Warranty and recalls agent | Recall lookups, warranty facts, drafting claims for the warranty desk | Claude Sonnet 5.5, high effort, prompt v1 | **Built and run**: handoff recall 100%, no coverage promises on its 7 validation chats |
 | Billing and lease agent | Invoice questions, disputes, lease-return steps and inspection bookings | Claude Sonnet 5.5, medium effort, prompt v2 | **Built and run** (v1): handoff recall 100%, 0 unbacked promises; v2 adds the dispute rule and inspection booking |
@@ -191,7 +191,7 @@ suggested next step.
 | Phase | What | Status |
 |---|---|---|
 | 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
-| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists and handoff built and run (87 tests passing) |
+| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists and handoff built and run (89 tests passing) |
 | 3 | Operating policy, input and output checks, log masking, attack tests | Planned |
 | 4 | Evaluation, grader check against human labels, error analysis | Planned |
 | 5 | Fine-tuned router and comparison with small and large prompted models | Planned |
