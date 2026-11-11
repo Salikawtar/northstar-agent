@@ -132,6 +132,9 @@ def test_promises_are_flagged_but_negations_are_not():
     assert not flag_promises("I also need to correct my colleague: I can't confirm that there is no charge or that the work was covered.")
     assert not flag_promises("One correction: I can't confirm that the service light creates no charge, or that the inspection takes 30 minutes.")
     assert not flag_promises("Je ne peux pas confirmer que la réparation sera sans frais.")
+    # Reporting a colleague's mistake (v3_0114, pipeline run) is not a promise.
+    assert not flag_promises("One correction: they shouldn't have said the service light creates no charge.")
+    assert not flag_promises("Mon collègue a eu tort de dire que c'était gratuit.")
     # The limit only covers its own sentence.
     assert flag_promises("I can't confirm the date. The repair is free of charge.")
 
@@ -248,3 +251,22 @@ def test_no_cost_without_a_recall_lookup_stays_unbacked(tmp_path, dms):
     client, _ = scripted(tmp_path, [final("The fix is done at no cost to you.")])
     res = Specialist("warranty_recall", client=client).run("w10", TURNS, route(RequestType.RECALL_INQUIRY), dms)
     assert any(c.backed_by_tool is None and c.kind == CommitmentKind.FEE_WAIVER for c in res.reply.commitments)
+
+
+def test_rule_ids_never_reach_the_customer(tmp_path, dms):
+    client, _ = scripted(tmp_path, [final("I can't share that until you're verified (P-01, P-02). What is your plate?")])
+    res = Specialist("billing_lease", client=client).run("b9", TURNS, route(RequestType.LEASE_END_RETURN), dms)
+    assert "P-0" not in res.reply.text and res.reply.text.startswith("I can't share that until you're verified.")
+
+
+def test_replayed_run_reports_the_recorded_latency(tmp_path, dms):
+    def transport(req):
+        return {"text": json.dumps({"reply": "Hi.", "action": "answered", "escalation_reason": "none",
+                                    "summary": "", "policy_rules_cited": []}),
+                "tool_calls": [], "input_tokens": 10, "output_tokens": 5, "cost_usd": 0.0}
+    live = LLMClient(mode="live", transport=transport, cache_dir=tmp_path, sleep=lambda s: None)
+    Specialist("booking_status", client=live).run("l1", TURNS, route(), dms)
+    rec = next(tmp_path.glob("*.json")); d = json.loads(rec.read_text()); d["latency_ms"] = 6000.0
+    rec.write_text(json.dumps(d))
+    res = Specialist("booking_status", client=LLMClient(mode="replay", cache_dir=tmp_path)).run("l1", TURNS, route(), dms)
+    assert res.latency_ms >= 6000.0

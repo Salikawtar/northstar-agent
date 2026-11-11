@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you, Brian. You're booked for maintenance at our Scarborough branch on Tuesday, November 17, 2026 at 9:00 AM (confirmation BK-00029). This visit covers the wrench light. I can't check recall letters with my tools, so I've noted your question about the recall. Please bring the letter to your visit, and our team can confirm the recall details there.\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3246,
+ "output_tokens": 416,
+ "cost_usd": 0.0005326,
+ "latency_ms": 3845.1
+}

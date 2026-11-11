@@ -77,12 +77,21 @@ _QUESTION = re.compile(r"\b(whether|if|si|savoir si)\W+(\w+\W+){0,4}$", re.I)
 # Checked from the start of the sentence, because the phrase can sit far from the match.
 _CANT_CONFIRM = re.compile(
     r"(can'?t|cannot|can not|unable to|not able to|ne (peux|pouvons) pas|impossible de)\s+"
-    r"(confirm|promise|guarantee|say|confirmer|promettre|garantir|dire)", re.I)
+    r"(confirm|promise|guarantee|say|confirmer|promettre|garantir|dire)"
+    r"|should(n'?t| not) have (said|told|promised)|was wrong to|n'aurait pas d[uû]|a eu tort", re.I)
 
 
 def _sentence_before(text: str, start: int) -> str:
     cut = max(text.rfind(ch, 0, start) for ch in ".!?\n")
     return text[cut + 1:start]
+
+
+_RULE_IDS = re.compile(r"\s*\((?:P-\d{2}(?:\s*,\s*|\s+(?:and|et)\s+)?)+\)")
+
+
+def _strip_rule_ids(text: str) -> str:
+    """Rule ids like (P-01, P-02) are for our logs, not for the customer."""
+    return _RULE_IDS.sub("", text)
 
 
 def flag_promises(text: str) -> list[Commitment]:
@@ -145,14 +154,17 @@ class Specialist:
              + "\n\nWrite the next Agent reply (use tools first if needed)."}]
         t0 = time.perf_counter()
         cost = 0.0; tin = 0; tout = 0; ncalls = 0; nmodel = 0
+        model_wall = 0.0; model_recorded = 0.0   # replayed calls return in ms, so use the recorded time
         final: Optional[SpecialistFinal] = None
         corrected = False
         err = ""
         try:
             while True:
                 use_tools = ncalls < box.max_calls()
+                tc = time.perf_counter()
                 resp = self.client.chat(self.model, messages, reasoning_effort=self.effort, max_tokens=self.max_tokens,
                                         tools=box.specs() if use_tools else None)
+                model_wall += time.perf_counter() - tc; model_recorded += resp.latency_ms
                 nmodel += 1; cost += resp.cost_usd; tin += resp.input_tokens; tout += resp.output_tokens
                 if resp.tool_calls and use_tools:
                     messages.append({"role": "assistant", "content": resp.text or None, "tool_calls": [
@@ -180,7 +192,8 @@ class Specialist:
         except LLMError as e:
             err = str(e)[:300]
         reply = self._decide(conversation_id, route, box, final)
-        return TurnResult(reply, round((time.perf_counter() - t0) * 1000, 1), cost, tin, tout, ncalls,
+        latency = (time.perf_counter() - t0 - model_wall) * 1000 + model_recorded
+        return TurnResult(reply, round(latency, 1), cost, tin, tout, ncalls,
                           list(box.denied), nmodel, box.verified, err)
 
     def _decide(self, cid: str, route: RouterOutput, box: ToolBox, final: Optional[SpecialistFinal]) -> AgentReply:
@@ -200,7 +213,7 @@ class Specialist:
                     "Sorry, I can't complete this right now. An advisor will get back to you.")
             reason, summary, action, cited = EscalationReason.TOOL_FAILURE, "The assistant could not produce a valid answer.", AgentAction.ESCALATED, []
         else:
-            text, cited = final.reply, final.policy_rules_cited
+            text, cited = _strip_rule_ids(final.reply), final.policy_rules_cited
             commitments += flag_promises(text)
             # Recall repairs are free for the owner (manufacturer pays), so "no cost" is
             # backed when check_recalls really returned an open recall for this vehicle.
