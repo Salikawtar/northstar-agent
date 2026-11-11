@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je peux vous réserver jeudi, mais je dois d'abord corriger mon collègue : le rappel n'a pas encore été vérifié pour votre véhicule. Pour le faire, quel est votre nom de famille, et quelle est votre plaque d'immatriculation (ou votre numéro de bon de réparation RO-######)? Dites-moi aussi dans quelle succursale vous voulez venir. Pour votre beau-frère, je ne peux pas donner les coordonnées d'un autre client.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\",\"P-02\",\"P-03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3945,
+ "output_tokens": 466,
+ "cost_usd": 0.01255,
+ "latency_ms": 4494.2
+}

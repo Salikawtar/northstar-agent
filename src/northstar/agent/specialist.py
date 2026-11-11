@@ -79,6 +79,8 @@ _CANT_CONFIRM = re.compile(
     r"(can'?t|cannot|can not|unable to|not able to|ne (peux|pouvons) pas|impossible de)\s+"
     r"(confirm|promise|guarantee|say|confirmer|promettre|garantir|dire)"
     r"|should(n'?t| not) have (said|told|promised)|was wrong to|n'aurait pas d[uû]|a eu tort", re.I)
+# "That message said the repair had no charge" reports what a colleague wrote, it does not promise.
+_REPORTED = re.compile(r"\b(message|colleague|coll[eè]gue|they|il|elle)\b[^.!?]{0,40}\b(said|told|stated|a dit|disait|indiquait)\b", re.I)
 
 
 def _sentence_before(text: str, start: int) -> str:
@@ -100,7 +102,8 @@ def flag_promises(text: str) -> list[Commitment]:
         for m in re.finditer(pat, text, re.I):
             before = text[max(0, m.start() - 40):m.start()]
             if (not _NEGATION.search(before) and not _QUESTION.search(before)
-                    and not _CANT_CONFIRM.search(_sentence_before(text, m.start()))):
+                    and not _CANT_CONFIRM.search(_sentence_before(text, m.start()))
+                    and not _REPORTED.search(_sentence_before(text, m.start()))):
                 out.append(Commitment(kind=kind, detail=m.group(0), backed_by_tool=None))
                 break
     return out

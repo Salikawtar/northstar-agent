@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4545,
+ "output_tokens": 109,
+ "cost_usd": 0.01018,
+ "latency_ms": 1381.8,
+ "tool_calls": [
+  {
+   "id": "toolu_01Jm6hhk6f3PSNrPpzbymyE9",
+   "name": "draft_warranty_claim",
+   "arguments": "{\"symptom\": \"Yellow dashboard warning light showing a car with squiggly lines (likely stability/traction control indicator), flashing intermittently. Customer asks whether it is covered.\"}"
+  }
+ ]
+}

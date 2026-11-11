@@ -121,3 +121,10 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** the router, the warranty specialist and the full pipeline all handed this chat off, and our own rule (D-05) sends safety failures to a person. The label was the odd one out. It is the only chat with this pattern.
 - **Alternatives considered:** keep the label and accept one extra handoff in the results.
 - **Counter-argument:** relabelling a chat after seeing the model's answer can look like moving the target. Here the change follows a rule written before the run (D-05), and it is logged in the QC_log sheet with before and after values. Dataset v1114.
+
+### D-17. Keep the multi-agent design
+- **Date:** 2026-11-11
+- **Choice:** keep the router plus three specialists, instead of one large agent with every tool.
+- **Why:** on the 30 validation chats, the single agent (same rules, same tools, Sonnet 5.5) handed off only 10 of the 15 chats that needed a person, against 15 of 15 for the multi-agent design, and cost twice as much per chat ($0.018 vs $0.0085). The router and the code enforce the handoff rule; a single model applies it by judgment and sometimes skips it.
+- **Alternatives considered:** the single agent, which is simpler (one prompt, one model call) and twice as fast (4.2 s vs 8.2 s median).
+- **Counter-argument:** the 5 missed handoffs were not unsafe replies. 3 were manipulation attempts it refused politely without passing them to a person, and 2 were contested charges where it asked for verification first and would likely hand off on the next turn. A one-reply test may overstate the gap. Speed also favours the single agent. The 40 test chats give the final comparison.

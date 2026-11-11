@@ -135,6 +135,9 @@ def test_promises_are_flagged_but_negations_are_not():
     # Reporting a colleague's mistake (v3_0114, pipeline run) is not a promise.
     assert not flag_promises("One correction: they shouldn't have said the service light creates no charge.")
     assert not flag_promises("Mon collègue a eu tort de dire que c'était gratuit.")
+    # Reporting what a colleague wrote (v3_0062, baseline run) is not a promise.
+    assert not flag_promises("That message said the repair had no charge because it was covered, and I can't confirm that yet.")
+    assert flag_promises("As agreed, the repair has no charge.")
     # The limit only covers its own sentence.
     assert flag_promises("I can't confirm the date. The repair is free of charge.")
 
