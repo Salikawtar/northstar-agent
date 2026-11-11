@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Happy to help you get the noise checked before Saturday. Before I look at any booking or order, I need to verify your identity. Your colleague's earlier message got ahead of the system: no appointment is booked yet, and I haven't checked the status of your order. What is your last name?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-10\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2730,
+ "output_tokens": 438,
+ "cost_usd": 0.000492,
+ "latency_ms": 3397.2
+}

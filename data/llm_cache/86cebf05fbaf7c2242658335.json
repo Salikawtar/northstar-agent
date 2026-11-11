@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I'd be glad to check RO-807727 for you. First, could you please give me the last name on the repair order? I can't confirm the status, the repair details, or the coverage until I've verified you. I also need to correct my colleague: I can't confirm that there is no charge or that the work was covered. Once you're verified, I can check the official status for you.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-04\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2713,
+ "output_tokens": 405,
+ "cost_usd": 0.0004738,
+ "latency_ms": 3626.0
+}

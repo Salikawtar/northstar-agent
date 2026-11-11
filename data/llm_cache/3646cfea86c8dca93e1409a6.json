@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Merci. Avant de continuer, je dois vous identifier. Quel est votre nom de famille tel qu'il figure au dossier?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2926,
+ "output_tokens": 261,
+ "cost_usd": 0.008462,
+ "latency_ms": 3890.0
+}

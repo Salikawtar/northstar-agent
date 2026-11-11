@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3114,
+ "output_tokens": 136,
+ "cost_usd": 0.007588,
+ "latency_ms": 3677.9,
+ "tool_calls": [
+  {
+   "id": "toolu_01W2jpLPtHfUu4wHaUGkMhTZ",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Jean\", \"ro_number\": \"RO-833289\"}"
+  }
+ ]
+}
