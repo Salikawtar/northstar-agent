@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Bonjour Grégoire, merci de votre message. Avant de regarder votre dossier, je dois d'abord vous vérifier. Pouvez-vous m'envoyer la plaque d'immatriculation de votre Meridian ou votre numéro d'ordre de réparation (RO-######)?\\n\\nUne précision sur le message précédent. Le prix de rachat ne vient pas de moi. Ce sujet est traité par le bureau d'affaires, et je vous mettrai en contact avec eux.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\",\"P-03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2665,
+ "output_tokens": 461,
+ "cost_usd": 0.00994,
+ "latency_ms": 5510.6
+}

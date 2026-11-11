@@ -23,7 +23,7 @@ def ok(**kw):
     return json.dumps(d)
 
 
-PROMPTS = ["router/v1.md", "router/v2.md"]
+PROMPTS = ["router/v1.md", "router/v2.md", "router/v3.md"]
 
 
 @pytest.mark.parametrize("name", PROMPTS)
