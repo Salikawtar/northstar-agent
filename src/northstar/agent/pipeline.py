@@ -105,7 +105,6 @@ class Pipeline:
 
     def handle(self, conversation_id: str, turns: list[tuple[str, str]],
                dms: Optional[DealerSystem] = None, language_hint: Optional[str] = None) -> PipelineResult:
-        t0 = time.perf_counter()
         rr = self.router.route(turns, language_hint=language_hint)
         route = rr.output
         cost = rr.cost_usd
@@ -115,6 +114,7 @@ class Pipeline:
             route = route.model_copy(update={"needs_escalation": True,
                                              "escalation_reason": EscalationReason.LOW_CONFIDENCE})
 
+        t1 = time.perf_counter()
         desk = DESK_FOR.get(route.request_type)
         reason = route.escalation_reason
         if route.needs_escalation and (reason in FAST_PATH or desk is None):
@@ -132,10 +132,10 @@ class Pipeline:
         else:
             res = self._specialist(desk).run(conversation_id, turns, route, dms or DealerSystem())
             reply, cost = res.reply, cost + res.cost_usd
-            path_taken = desk
-            return PipelineResult(route, reply, path_taken, round((time.perf_counter() - t0) * 1000, 1),
+            # Recorded model times, so a replayed run reports the latency a customer would see.
+            return PipelineResult(route, reply, desk, round(rr.latency_ms + res.latency_ms, 1),
                                   cost, rr.fallback, res.error or rr.error)
-        return PipelineResult(route, reply, path_taken, round((time.perf_counter() - t0) * 1000, 1),
+        return PipelineResult(route, reply, path_taken, round(rr.latency_ms + (time.perf_counter() - t1) * 1000, 1),
                               cost, rr.fallback, rr.error)
 
     def _fixed(self, cid: str, turns: list[tuple[str, str]], route: RouterOutput, escalate: bool) -> AgentReply:

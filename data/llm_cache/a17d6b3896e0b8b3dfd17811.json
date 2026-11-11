@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can book the inspection once I've verified you. Could you give me the licence plate on your own vehicle, or your repair-order number (RO-######)? One correction to my colleague's earlier message: they shouldn't have said the service light creates no charge. Any charge for wear is explained in the inspection report before you pay.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-02\", \"P-03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2971,
+ "output_tokens": 451,
+ "cost_usd": 0.010452,
+ "latency_ms": 4782.2
+}

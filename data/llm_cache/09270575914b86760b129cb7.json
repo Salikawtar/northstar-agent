@@ -1,0 +1,20 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2707,
+ "output_tokens": 286,
+ "cost_usd": 0.0004137,
+ "latency_ms": 2447.6,
+ "tool_calls": [
+  {
+   "id": "toolu_01AChuYKtGuMXV2vHF8eDT6w",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Watson\", \"plate\": \"CHWU 861\"}"
+  },
+  {
+   "id": "toolu_01QX4j99K1xRNwBYRiXgaQVA",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Scarborough\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

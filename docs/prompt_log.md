@@ -47,3 +47,14 @@ Each row changes one thing from the row it is compared with.
 **Replay note:** the thinking-off run had one answer that needed a JSON correction. The correction message used to contain library error text that differs between versions, so that one call does not replay. The message is now fixed text; re-running the thinking-off line once records the missing call.
 
 **Shared change (all specialists):** the tone rule is now in `prompts/shared/policy_core_v2.md` (P-10). The phrase checker was also fixed: "whether / if it is covered" is no longer flagged as a promise.
+
+## Full pipeline (router, then fast path or a specialist)
+
+| Date | Setup | Result on validation (30 chats) |
+|---|---|---|
+| 2026-11-11 | Router v3, booking v1, warranty v1, billing v2, shared rules v2, fast path (D-15) | Handoff recall 100%, handoff precision 87.5% (2 extra: v3_0106 brake light and grinding, v3_0115 out-of-scope read as a lease question), right desk 95% (the one miss is the router's v3_0115 error), 0 unbacked promises after the checker fix, 1 booking. Paths: 7 fast path, 2 out of scope, 21 specialists. Median latency 8.2 s overall, 3.5 s on the fast path (router only). Cost $0.0085 per chat on average: $0.0004 fast path, $0.0012 booking desk, $0.017 warranty and billing desks |
+
+**Fixes after this run (code, not prompts)**
+- Latency was reported from the replayed calls (milliseconds). It now uses each call's recorded time, so a replay shows what a customer would wait.
+- The checker flagged "they shouldn't have said the service light creates no charge" (v3_0114). Reporting a colleague's mistake is now treated like "I can't confirm".
+- One reply showed rule ids to the customer ("(P-01, P-02)", v3_0115). The code now removes them from the reply; they stay in the logs. The shared rules say "cite the rule id", which the model read as "write it in the reply": to reword when the rules are aligned with Jessica.
