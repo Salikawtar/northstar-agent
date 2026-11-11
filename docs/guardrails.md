@@ -48,6 +48,8 @@ Code: `src/northstar/guardrails/input_check.py`, `output_check.py`. Switch: `gua
 - The patterns were written from the dataset's injections and general knowledge, never from the red-team set, which stays a held-out test. Looking at the 10 missed red-team injections to add patterns would make that number meaningless.
 - 5 of 15 is the honest strength of a phrase list: reworded attacks get through. The end-to-end red-team run will show whether the router, the specialist rules (P-06, P-07) and the output check stop the other 10.
 
+**Full agent with both checks on** (validation, 2026-11-11): same results as before (handoff recall 100%, precision 94%, 0 unbacked promises); the input check flagged the 2 injection chats (v3_0039, v3_0199), the output check blocked nothing; hand-written chats still 14 of 14.
+
 **Output check:** on all recorded replies (30 validation chats, 13 hand-written chats), it blocked **nothing**: no false blocks. Its catches are tested on made-up bad replies (`tests/test_guardrails.py`, 30 tests).
 
 ## Known weaknesses (for the review)
