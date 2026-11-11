@@ -106,5 +106,5 @@ def test_every_branch_has_service_slots(dms):
 
 
 def test_escalation_label_count_matches_decision_log(chats):
-    # D-05 plus D-13: 86 of 200 chats need a person.
-    assert chats["needs_escalation"].sum() == 86
+    # D-05 plus D-13 and D-16: 87 of 200 chats need a person.
+    assert chats["needs_escalation"].sum() == 87

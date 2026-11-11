@@ -31,7 +31,7 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Date:** 2026-11-10
 - **Choice:** kept Weidi's 200 chats, fixed what QC found (28 agent replies promising coverage without checking, 14 incoherent chats, 183 em dashes, warranty fraud raised from 5 to 8), then the team reviewed 74 rows by hand (52 kept, 22 fixed) and rewrote all 75 red-team attacks by hand.
 - **Why:** criterion 1 "Great" asks for documented quality control with examples of what was fixed, and a test set partly reviewed by hand.
-- **Evidence:** QC_log sheet in `data/source/northstar_synthetic_dataset_v1113.xlsx` (every change with before and after).
+- **Evidence:** QC_log sheet in `data/source/northstar_synthetic_dataset_v1114.xlsx` (every change with before and after).
 
 ### D-05. Escalation rule
 - **Date:** 2026-11-10
@@ -39,7 +39,7 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** matches the project outline wording ("safety, bereavement, legal threats, adversarial attempts").
 - **Alternatives considered:** escalate only manufacturer impersonation and let the agent refuse other attacks on its own (fewer handoffs).
 - **Counter-argument:** more chats go to a person (higher human-review cost), and a model trained this way may escalate harmless tricky messages. Watch false escalations in evaluation.
-- **Update:** extended on 2026-11-11 to billing disputes that contest a charge (D-13); 86 of 200 chats.
+- **Update:** extended on 2026-11-11 to billing disputes that contest a charge (D-13); 86 of 200 chats. Extended again the same day to a brake warning light with grinding (D-16); 87 of 200.
 
 ### D-06. Splits and branches
 - **Date:** 2026-11-10
@@ -114,3 +114,10 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** in these cases a person must act, so a model reply adds cost, delay (a Sonnet reply takes 6 to 9 s) and a chance of saying something wrong. A fixed safety reply always contains the 911 advice.
 - **Alternatives considered:** let the specialist write every reply (more personal, slower, riskier); ask one clarifying question when the router is unsure (closer to the original design, but our test chats are single replies and no validation chat was below 0.55).
 - **Counter-argument:** a fixed reply ignores details. In the step 5 run the booking specialist repeated the stranded driver's location and phone number back (v3_0069), which reassures the customer; the fixed reply cannot. The person who takes over still sees the whole chat.
+
+### D-16. A brake warning light with grinding is a safety case
+- **Date:** 2026-11-11
+- **Choice:** v3_0106 is relabelled to `needs_escalation = True`. A customer reporting a brake warning light together with a grinding noise is told not to drive, and a person takes over (reason `safety`).
+- **Why:** the router, the warranty specialist and the full pipeline all handed this chat off, and our own rule (D-05) sends safety failures to a person. The label was the odd one out. It is the only chat with this pattern.
+- **Alternatives considered:** keep the label and accept one extra handoff in the results.
+- **Counter-argument:** relabelling a chat after seeing the model's answer can look like moving the target. Here the change follows a rule written before the run (D-05), and it is logged in the QC_log sheet with before and after values. Dataset v1114.

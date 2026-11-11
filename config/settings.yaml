@@ -11,7 +11,7 @@ paths:
   redteam: data/redteam/redteam_75.csv                  # guardrail tests only, never trained on
   redteam_dms_dir: data/redteam                         # dealer records for red-team customers
   llm_cache: data/llm_cache          # recorded model answers, committed so anyone can replay for free
-  dataset_source: data/source/northstar_synthetic_dataset_v1113.xlsx  # review workbook (source of truth)
+  dataset_source: data/source/northstar_synthetic_dataset_v1114.xlsx  # review workbook (source of truth)
   prompts_dir: prompts                # every prompt lives here, versioned (v1, v2...), never inside the code
   dms_dir: data/dms
   runs_dir: outputs/runs

@@ -2,7 +2,7 @@
 
 > **Internal working file.** Decide whether to keep or remove it before the repository is shared with the evaluators.
 
-**Main idea:** every task related to the synthetic data, what it is, where the data is used later in the project, who owns it, and whether it is done. The current dataset version is **v1113** (`data/source/northstar_synthetic_dataset_v1113.xlsx`, 2026-11-11).
+**Main idea:** every task related to the synthetic data, what it is, where the data is used later in the project, who owns it, and whether it is done. The current dataset version is **v1114** (`data/source/northstar_synthetic_dataset_v1114.xlsx`, 2026-11-11).
 
 Status values: **Done**, **Decided** (agreed, not yet applied), **To do**, **Optional**.
 
@@ -16,7 +16,7 @@ Status values: **Done**, **Decided** (agreed, not yet applied), **To do**, **Opt
 | 6 | Red-team set | 75 attacks, 15 per attack type, 3 tactics each; drafted, then rewritten by hand by the team | Guardrail pass rates per attack type (Jessica), report page 6 | Claude + team | Done |
 | 7 | Hand review | 74 chats (40 test + rewritten rows) and 75 attacks marked keep / fix / reject | "Reviewed by hand" evidence for criterion 1; grader check against human labels (Libo) | Team | Done |
 | 8 | Merge team fixes | 22 chat fixes and 75 rewrites merged into v1111, plus the v3_0124 consistency fix | Final dataset used by every module | Claude | Done |
-| 9 | Escalation rule | `needs_escalation` = True for safety (roadside), bereavement and legal threats (needs_human), all adversarial attempts, explicit requests for a manager, and billing disputes that contest a charge (86 of 200; disputes added 2026-11-11, D-13) | Fine-tune label (Neeraj), handoff rules (Kawtar), escalation recall metric (Libo), human-review cost (Abhi) | Kawtar | Done |
+| 9 | Escalation rule | `needs_escalation` = True for safety (roadside), bereavement and legal threats (needs_human), all adversarial attempts, explicit requests for a manager, and billing disputes that contest a charge, a brake warning light with grinding (87 of 200; disputes added 2026-11-11, D-13; v3_0106 relabelled, D-16) | Fine-tune label (Neeraj), handoff rules (Kawtar), escalation recall metric (Libo), human-review cost (Abhi) | Kawtar | Done |
 | 10 | Branch names | Add the 8 branches mentioned in chats (Scarborough, Vaughan, Brampton, Etobicoke, Markham, Burlington, Richmond Hill, Ajax) to the mock dealer system | Dealer system settings, so the agent never denies a branch a test chat mentions | Kawtar + Weidi | Done |
 | 11 | Red-team dealer records | 40 customers, vehicles and repair orders so attackers pass identity checks and reach the guardrails | Mock dealer system; guardrail tests (Jessica) | Claude | Done |
 | 12 | Generation record | Models, temperature, prompt version and rejected rows with reasons from the original generation | Report page 2 and appendix (criterion 1 asks for documented generation and rejects) | Weidi | To do |
