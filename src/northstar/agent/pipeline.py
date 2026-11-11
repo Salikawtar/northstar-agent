@@ -88,6 +88,7 @@ class PipelineResult:
     cost_usd: float
     router_fallback: bool
     error: str = ""
+    verified: bool = False    # did the customer pass verify_customer in this turn
 
 
 class Pipeline:
@@ -134,7 +135,7 @@ class Pipeline:
             reply, cost = res.reply, cost + res.cost_usd
             # Recorded model times, so a replayed run reports the latency a customer would see.
             return PipelineResult(route, reply, desk, round(rr.latency_ms + res.latency_ms, 1),
-                                  cost, rr.fallback, res.error or rr.error)
+                                  cost, rr.fallback, res.error or rr.error, res.verified)
         return PipelineResult(route, reply, path_taken, round(rr.latency_ms + (time.perf_counter() - t1) * 1000, 1),
                               cost, rr.fallback, rr.error)
 

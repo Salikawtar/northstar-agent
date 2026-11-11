@@ -128,3 +128,10 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** on the 30 validation chats, the single agent (same rules, same tools, Sonnet 5.5) handed off only 10 of the 15 chats that needed a person, against 15 of 15 for the multi-agent design, and cost twice as much per chat ($0.018 vs $0.0085). The router and the code enforce the handoff rule; a single model applies it by judgment and sometimes skips it.
 - **Alternatives considered:** the single agent, which is simpler (one prompt, one model call) and twice as fast (4.2 s vs 8.2 s median).
 - **Counter-argument:** the 5 missed handoffs were not unsafe replies. 3 were manipulation attempts it refused politely without passing them to a person, and 2 were contested charges where it asked for verification first and would likely hand off on the next turn. A one-reply test may overstate the gap. Speed also favours the single agent. The 40 test chats give the final comparison.
+
+### D-18. Safety handoffs always go to the roadside team
+- **Date:** 2026-11-11
+- **Choice:** every handoff with reason `safety` goes to the roadside queue with emergency urgency, whatever request type the router gave. Contested charges go to the service manager (D-13), warranty decisions to the warranty desk.
+- **Why:** in v3_0055 the router called a stranded driver "needs a person", and the code then sent the emergency to the service manager queue. The roadside team arranges tows and calls back at once, which is what any "do not drive" case needs. The code now matches the rule table in architecture section 8, which already said "roadside".
+- **Alternatives considered:** keep the exception (safety outside a roadside request goes to the service manager).
+- **Counter-argument:** the roadside team will also get safety cases where the car is parked at home (for example a brake warning light). That costs them a call, and a tow is often the right answer anyway.
