@@ -270,3 +270,21 @@ def test_replayed_run_reports_the_recorded_latency(tmp_path, dms):
     rec.write_text(json.dumps(d))
     res = Specialist("booking_status", client=LLMClient(mode="replay", cache_dir=tmp_path)).run("l1", TURNS, route(), dms)
     assert res.latency_ms >= 6000.0
+
+
+# --- single-agent baseline ----------------------------------------------------
+def test_single_agent_has_every_tool_and_no_router_context(tmp_path, dms):
+    client, seen = scripted(tmp_path, [final("Happy to help.")])
+    sp = Specialist("single_agent", client=client)
+    res = sp.run("s1", TURNS, None, dms, language_hint="fr")
+    names = {t["function"]["name"] for t in seen[0]["tools"]}
+    assert names == set(PERMISSIONS["single_agent"]) and {"book_slot", "get_invoice", "draft_warranty_claim"} <= names
+    system = seen[0]["messages"][0]["content"]
+    assert "router" not in system.lower() and "{context}" not in system and "P-08" in system
+    assert res.reply.language == Language.FR and res.reply.action == AgentAction.ANSWERED
+
+
+def test_single_agent_decides_its_own_handoff(tmp_path, dms):
+    client, _ = scripted(tmp_path, [final("Please stay safe, help is coming.", "escalated", "safety", "Stranded on the 401.")])
+    res = Specialist("single_agent", client=client).run("s2", TURNS, None, dms)
+    assert res.reply.action == AgentAction.ESCALATED and res.reply.handoff.reason == EscalationReason.SAFETY
