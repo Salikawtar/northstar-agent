@@ -90,6 +90,8 @@ client is a shared helper, not a step the message passes through.
 
 **How we will decide:** a single-agent baseline (one large model with all tools) runs on the same 40 test chats. We keep the multi-agent design only if it is at least as accurate and cheaper or safer. If not, we report that and use the single agent.
 
+**Baseline built (2026-11-11):** Claude Sonnet 5.5, medium effort, every tool, no router and no fast path, prompt `single_agent/v1.md` (the three specialist prompts joined, same shared rules). `python -m northstar.agent.baseline --split validation` prints both designs side by side. First run pending.
+
 ---
 
 ## 5. Tool permissions
@@ -192,7 +194,7 @@ suggested next step.
 | Phase | What | Status |
 |---|---|---|
 | 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
-| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists, handoff and the pipeline built (107 tests passing) |
+| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists, handoff and the pipeline built (109 tests passing) |
 | 3 | Operating policy, input and output checks, log masking, attack tests | Planned |
 | 4 | Evaluation, grader check against human labels, error analysis | Planned |
 | 5 | Fine-tuned router and comparison with small and large prompted models | Planned |

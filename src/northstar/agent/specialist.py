@@ -133,11 +133,15 @@ class Specialist:
         self.template = load_prompt(self.prompt_name).replace(
             "{policy}", load_prompt(settings()["agent"].get("shared_rules", "shared/policy_core.md")))
 
-    def _system(self, route: RouterOutput) -> str:
+    def _system(self, route: RouterOutput, no_router: bool = False) -> str:
         cfg = settings()
         ctx = [f"- Today is {cfg['dms']['anchor_date']}.",
-               f"- Branches: {', '.join(cfg['dms']['locations'])}.",
-               f"- The router read this chat as: {route.request_type.value}"
+               f"- Branches: {', '.join(cfg['dms']['locations'])}."]
+        if no_router:      # single-agent baseline: nobody read the chat before you
+            ctx.append("- No one has sorted this chat before you: decide yourself what the customer needs "
+                       "and whether a person must take over (rule P-08).")
+            return self.template.replace("{context}", "\n".join(ctx))
+        ctx += [f"- The router read this chat as: {route.request_type.value}"
                + (f" (also: {', '.join(t.value for t in route.secondary_types)})" if route.secondary_types else "")
                + f"; language {route.language.value}.",
                "- The router decided a person must take over (reason: " + route.escalation_reason.value
@@ -145,11 +149,17 @@ class Specialist:
                else "- The router saw no reason to hand off; decide yourself using rule P-08."]
         return self.template.replace("{context}", "\n".join(ctx))
 
-    def run(self, conversation_id: str, turns: list[tuple[str, str]], route: RouterOutput,
-            dms: Optional[DealerSystem] = None) -> TurnResult:
+    def run(self, conversation_id: str, turns: list[tuple[str, str]], route: Optional[RouterOutput],
+            dms: Optional[DealerSystem] = None, language_hint: Optional[str] = None) -> TurnResult:
+        """route=None: no router ran (single-agent baseline). The model decides everything itself;
+        the reply is logged with request type needs_human because nobody labelled the chat."""
+        no_router = route is None
+        if no_router:
+            route = RouterOutput(request_type=RequestType.NEEDS_HUMAN, needs_escalation=False, confidence=1.0,
+                                 language=Language(language_hint) if language_hint in ("en", "fr") else Language.EN)
         box = ToolBox(dms or DealerSystem(), self.agent)
         messages: list[dict[str, Any]] = [
-            {"role": "system", "content": self._system(route)},
+            {"role": "system", "content": self._system(route, no_router)},
             {"role": "user", "content": "Conversation so far:\n" + format_conversation(turns)
              + "\n\nWrite the next Agent reply (use tools first if needed)."}]
         t0 = time.perf_counter()

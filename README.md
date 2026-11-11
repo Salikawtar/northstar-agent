@@ -37,6 +37,12 @@ Run the whole agent (router, then the fast path or a specialist) on the validati
 python -m northstar.agent.pipeline --split validation
 ```
 
+Compare with the single-agent baseline (one model, every tool, no router):
+
+```bash
+python -m northstar.agent.baseline --split validation
+```
+
 Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/prompt_log.md`.
 
 ## Repository layout (mirrors the system design and the team roles)
