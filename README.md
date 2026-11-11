@@ -49,6 +49,12 @@ Run the hand-written test chats (each one passes or fails):
 python -m northstar.agent.scenarios
 ```
 
+Measure the input check (free, no model call):
+
+```bash
+python -m northstar.guardrails.evaluate
+```
+
 Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/prompt_log.md`.
 
 ## Repository layout (mirrors the system design and the team roles)

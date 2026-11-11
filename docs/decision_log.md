@@ -142,3 +142,10 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** hand-written test hw_05. Someone gave Joan Cox's last name and repair order with another customer's plate. Verification failed, then the model retried with the name and repair order only, passed, and read out the repair status. Each step looked fine on its own; together they let a mismatched identity through.
 - **Alternatives considered:** a prompt rule ("pass every identifier the customer gave"), which the model can still ignore. The fix is in code, like the other access rules.
 - **Counter-argument:** a customer who mistypes the plate but gives the right repair order is now refused until they correct it, and is handed off after two failures. That is slower for them, but the safe direction.
+
+### D-20. Input and output checks are rules, and the red team stays held out
+- **Date:** 2026-11-11
+- **Choice:** the input and output checks are plain rules (phrase patterns, number checks, comparing identifiers with what the customer and the tools gave). No extra model call. Their patterns are written from the dataset and general knowledge, never from the 75 red-team attacks.
+- **Why:** rules are free, instant and give the same answer every time, so the tests can check them exactly. Keeping the red team out of the tuning keeps it an honest test: on it, the input check flags 5 of 15 prompt injections.
+- **Alternatives considered:** a small classifier model for injections (catches rewordings, but adds cost, delay and a model to evaluate), or adding patterns until the red team passes (would make the red-team result meaningless).
+- **Counter-argument:** 5 of 15 is weak on its own. The case for rules rests on the other layers (router, specialist rules, verification in code, output check) stopping the rest, which the end-to-end red-team run has to show. If it does not, a classifier is the next step.

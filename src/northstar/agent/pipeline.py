@@ -32,6 +32,8 @@ from northstar.contracts import (AgentAction, AgentReply, EscalationReason, Lang
                                  RouterOutput)
 from northstar.data import load_conversations
 from northstar.dms.store import DealerSystem
+from northstar.guardrails.input_check import check_input
+from northstar.guardrails.output_check import check_output
 from northstar.llm import LLMClient
 
 # Reasons that skip the specialist: a person must act now, and a model reply adds risk or delay.
@@ -89,6 +91,7 @@ class PipelineResult:
     router_fallback: bool
     error: str = ""
     verified: bool = False    # did the customer pass verify_customer in this turn
+    guard_flags: list = None  # input and output check rules that fired (G-IN-.., G-OUT-..)
 
 
 class Pipeline:
@@ -98,6 +101,7 @@ class Pipeline:
         self.router = router or Router(client=self.client)
         self.specialists = specialists or {}
         self.floor = settings()["agent"].get("router_confidence_floor", 0.55)
+        self.guarded = settings().get("guardrails", {}).get("enabled", True)
 
     def _specialist(self, name: str) -> Specialist:
         if name not in self.specialists:
@@ -106,9 +110,18 @@ class Pipeline:
 
     def handle(self, conversation_id: str, turns: list[tuple[str, str]],
                dms: Optional[DealerSystem] = None, language_hint: Optional[str] = None) -> PipelineResult:
+        flags: list[str] = []
+        # Input check: the models only ever see the cleaned messages.
+        if self.guarded:
+            inp = check_input(turns)
+            turns, flags = inp.turns, list(inp.flags)
         rr = self.router.route(turns, language_hint=language_hint)
         route = rr.output
         cost = rr.cost_usd
+        # An instruction aimed at the assistant always means a person reviews the chat (P-06, P-08).
+        if self.guarded and inp.injection and not (route.needs_escalation and route.escalation_reason in FAST_PATH):
+            route = route.model_copy(update={"needs_escalation": True,
+                                             "escalation_reason": EscalationReason.ADVERSARIAL})
 
         # An unsure router does not guess: a person picks it up (the chat is passed on whole).
         if not route.needs_escalation and route.confidence < self.floor:
@@ -133,11 +146,14 @@ class Pipeline:
         else:
             res = self._specialist(desk).run(conversation_id, turns, route, dms or DealerSystem())
             reply, cost = res.reply, cost + res.cost_usd
+            if self.guarded:     # output check: nothing reaches the customer unchecked
+                out = check_output(reply, turns, res.tool_data)
+                reply, flags = out.reply, flags + out.flags
             # Recorded model times, so a replayed run reports the latency a customer would see.
             return PipelineResult(route, reply, desk, round(rr.latency_ms + res.latency_ms, 1),
-                                  cost, rr.fallback, res.error or rr.error, res.verified)
+                                  cost, rr.fallback, res.error or rr.error, res.verified, flags)
         return PipelineResult(route, reply, path_taken, round(rr.latency_ms + (time.perf_counter() - t1) * 1000, 1),
-                              cost, rr.fallback, rr.error)
+                              cost, rr.fallback, rr.error, False, flags)
 
     def _fixed(self, cid: str, turns: list[tuple[str, str]], route: RouterOutput, escalate: bool) -> AgentReply:
         key = route.escalation_reason.value if escalate else "out_of_scope"
@@ -179,7 +195,8 @@ def evaluate(split: str = "validation", pipeline: Optional[Pipeline] = None) -> 
             action=rep.action.value, tools=",".join(rep.tools_used),
             unbacked_promises=";".join(f"{c.kind.value}: {c.detail}" for c in unbacked),
             reply=rep.text, latency_ms=res.latency_ms, cost_usd=res.cost_usd,
-            router_fallback=res.router_fallback, error=res.error))
+            router_fallback=res.router_fallback, error=res.error,
+            guard_flags=";".join(res.guard_flags or [])))
     out = pd.DataFrame(rows)
     g, e = out[out.gold_escalation], out[out.escalated]
     sp = out[~out.path.isin(["fast_path", "out_of_scope"])]
@@ -192,6 +209,8 @@ def evaluate(split: str = "validation", pipeline: Optional[Pipeline] = None) -> 
         replies_with_unbacked_promise=int((out.unbacked_promises != "").sum()),
         bookings_made=int((out.action == "booked").sum()),
         router_fallbacks=int(out.router_fallback.sum()), errors=int((out.error != "").sum()),
+        input_check_flags=int(out.guard_flags.str.contains("G-IN").sum()),
+        replies_blocked_by_output_check=int(out.guard_flags.str.contains("G-OUT-0[123]").sum()),
         latency_ms_median=round(out.latency_ms.median(), 1),
         latency_ms_median_fast_path=round(out[out.path == "fast_path"].latency_ms.median(), 1) if (out.path == "fast_path").any() else None,
         cost_usd_total=round(out.cost_usd.sum(), 5), cost_usd_per_chat=round(out.cost_usd.mean(), 6),

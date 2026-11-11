@@ -63,14 +63,14 @@ client is a shared helper, not a step the message passes through.
 
 | Component | What it does | Model (starting choice) | Status |
 |---|---|---|---|
-| Input check | Flags prompt injection and personal data pasted into the chat before any model sees it | Rules, plus small model if needed | Planned (Phase 3) |
+| Input check | Flags prompt injection and personal data pasted into the chat before any model sees it | Rules (`src/northstar/guardrails/input_check.py`) | **Built**, to review with Jessica: 0 false alarms on 160 normal chats, 8 of 8 dataset injections, 5 of 15 held-out red-team injections (`docs/guardrails.md`) |
 | Router | Labels the request type (10 types), spots extra requests in the same message, decides if a person is needed now, detects language | Claude Haiku 5.5, low effort, prompt v3. Compared later with the fine-tuned model | **Built and tested**: 83% type accuracy, 93% escalation recall (misses v3_0106, the brake light, which the warranty specialist then hands off) and 100% precision on validation (v3) |
 | Booking and status agent | Bookings, repair status, parts, roadside triage | Claude Haiku 5.5, low effort, prompt v1 | **Built and run**: handoff recall 100%, 0 unbacked promises on its 10 validation chats |
 | Warranty and recalls agent | Recall lookups, warranty facts, drafting claims for the warranty desk | Claude Sonnet 5.5, high effort, prompt v1 | **Built and run**: handoff recall 100%, no coverage promises on its 7 validation chats |
 | Billing and lease agent | Invoice questions, disputes, lease-return steps and inspection bookings | Claude Sonnet 5.5, medium effort, prompt v2 | **Built and run** (v1): handoff recall 100%, 0 unbacked promises; v2 adds the dispute rule and inspection booking |
 | Dealer system tools | The only way to read customer, vehicle, repair-order and invoice data | No model (plain code) | **Built** (Phase 1) |
 | Model client | One door for every model call: retries, spending limit, replay cache so anyone can re-run results for free | No model (plain code) | **Built** (Phase 2, step 1) |
-| Output check | Checks every reply before it is sent: forbidden commitments, other customers' data, policy rules | Rules on the declared commitments, plus text patterns | Planned (Phase 3) |
+| Output check | Checks every reply before it is sent: forbidden commitments, other customers' data, policy rules | Rules on the declared commitments, plus text patterns (`src/northstar/guardrails/output_check.py`) | **Built**, to review with Jessica: blocks unbacked promises, other people's data and prompt leaks; no false blocks on recorded replies |
 | Specialist engine | Shared by the three agents: tool loop (max 6 calls), own tools only, code decides commitments and handoff | Uses each agent's model | **Built** (Phase 2, step 3) |
 | Pipeline | Connects everything: router first, then the fast path (fixed reply and a person at once) or the right specialist (D-15) | No model of its own | **Built and run**: handoff recall 100%, right desk 95%, 0 unbacked promises, $0.0085 per chat, median 8.2 s (3.5 s on the fast path) |
 | Human handoff | Builds the summary a service advisor receives: reason, urgency, queue, masked customer reference, next step | Summary written by the agent that escalates; routing rules in code | **Built** (Phase 2, step 3) |
@@ -207,8 +207,8 @@ suggested next step.
 | Phase | What | Status |
 |---|---|---|
 | 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
-| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists, handoff and the pipeline built (116 tests passing) |
-| 3 | Operating policy, input and output checks, log masking, attack tests | Planned |
+| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists, handoff and the pipeline built (146 tests) |
+| 3 | Operating policy, input and output checks, log masking, attack tests | In progress: input and output checks built (reference version, to review with Jessica); end-to-end red-team run next |
 | 4 | Evaluation, grader check against human labels, error analysis | Planned |
 | 5 | Fine-tuned router and comparison with small and large prompted models | Planned |
 | 6 | Cost model across volumes and break-even | Planned |
