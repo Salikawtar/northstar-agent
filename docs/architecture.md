@@ -90,7 +90,19 @@ client is a shared helper, not a step the message passes through.
 
 **How we will decide:** a single-agent baseline (one large model with all tools) runs on the same 40 test chats. We keep the multi-agent design only if it is at least as accurate and cheaper or safer. If not, we report that and use the single agent.
 
-**Baseline built (2026-11-11):** Claude Sonnet 5.5, medium effort, every tool, no router and no fast path, prompt `single_agent/v1.md` (the three specialist prompts joined, same shared rules). `python -m northstar.agent.baseline --split validation` prints both designs side by side. First run pending.
+**Baseline built (2026-11-11):** Claude Sonnet 5.5, medium effort, every tool, no router and no fast path, prompt `single_agent/v1.md` (the three specialist prompts joined, same shared rules). `python -m northstar.agent.baseline --split validation` prints both designs side by side.
+
+**Result on validation (30 chats, 2026-11-11):**
+
+| Measure | Multi-agent | Single agent |
+|---|---|---|
+| Needed a person and got one | 100% | 67% |
+| Sent to a person and needed it | 94% | 77% |
+| Replies with a false promise | 0 | 0 |
+| Median wait | 8.2 s | 4.2 s |
+| Cost per chat | $0.0085 | $0.018 |
+
+**Decision:** keep the multi-agent design (D-17). It follows the handoff rule every time, at half the cost. The single agent is twice as fast. Final numbers come from the 40 test chats.
 
 ---
 

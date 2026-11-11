@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Merci. Avant d'aller plus loin, j'ai besoin de vérifier votre dossier. Quel est votre nom de famille tel qu'il apparaît sur le dossier de réparation RO-833289?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3769,
+ "output_tokens": 251,
+ "cost_usd": 0.010048,
+ "latency_ms": 3105.0
+}

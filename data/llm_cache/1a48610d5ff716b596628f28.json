@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3748,
+ "output_tokens": 80,
+ "cost_usd": 0.008296,
+ "latency_ms": 1202.0,
+ "tool_calls": [
+  {
+   "id": "toolu_01KuXQvGSTDS1q6DffYd9ATS",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Howard\", \"plate\": \"CBNY 079\"}"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can book that for you once I've verified you, Mr. Brown. Could you give me your own licence plate or a repair-order number (RO-######)? One quick correction to my colleague: any charge is explained in the inspection report before you pay, so I can't say in advance that there won't be one.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\",\"P-02\",\"P-03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3821,
+ "output_tokens": 410,
+ "cost_usd": 0.011742,
+ "latency_ms": 3686.6
+}
