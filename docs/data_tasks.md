@@ -26,7 +26,7 @@ Status values: **Done**, **Decided** (agreed, not yet applied), **To do**, **Opt
 | 16 | Load into dealer system | Add the red-team records (task 11) and branches (task 10), re-run `python run_all.py dms` and the tests | Agent tools and verification; guardrail tests | Kawtar | Done |
 | 17 | Update docs | Data dictionary and README: splits, red-team set, escalation rule | Newcomer-friendly README (criterion 3); team hand-off | Kawtar | Done |
 | 18 | Fix past dates | Move booking dates that fall before the mock "today" (2026-11-16), e.g. v3_0038 | Realism; prevents fake agent errors in evaluation | Kawtar | Done |
-| 19 | Hand-written test chats | About 20 tricky chats written fully by the team (multi-intent, conflicting details, incomplete messages) | Test set "written by hand" (criterion 1); edge-case tests (criterion 7) | Team | Optional |
+| 19 | Hand-written test chats | About 20 tricky chats written fully by the team (multi-intent, conflicting details, incomplete messages) | Test set "written by hand" (criterion 1); edge-case tests (criterion 7) | Team | Started: 14 chats drafted with Claude in `data/handwritten/chats.yaml`, each with an expected result; run with `python -m northstar.agent.scenarios`. To do: team reviews the expected answers and adds its own chats (multi-intent, conflicting details, incomplete messages) so the set is really team-written |
 | 20 | Report data section | Page 2 plus appendix: composition table, fixed and rejected examples, limits (word-overlap duplicate check, chat only, single-message attacks) | Final report | Weidi | To do |
 
 ## Reminder before submission

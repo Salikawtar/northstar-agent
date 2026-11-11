@@ -43,6 +43,12 @@ Compare with the single-agent baseline (one model, every tool, no router):
 python -m northstar.agent.baseline --split validation
 ```
 
+Run the hand-written test chats (each one passes or fails):
+
+```bash
+python -m northstar.agent.scenarios
+```
+
 Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/prompt_log.md`.
 
 ## Repository layout (mirrors the system design and the team roles)

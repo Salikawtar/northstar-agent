@@ -61,3 +61,10 @@ Each row changes one thing from the row it is compared with.
 - One reply showed rule ids to the customer ("(P-01, P-02)", v3_0115). The code now removes them from the reply; they stay in the logs. The shared rules say "cite the rule id", which the model read as "write it in the reply": to reword when the rules are aligned with Jessica.
 
 **2026-11-11, after relabelling v3_0106 (D-16, scoring only, replayed for free):** handoff precision 93.8% (1 extra handoff left: v3_0115, the router's out-of-scope error). With the new label the router alone misses this chat (escalation recall 93%, 14 of 15): it did not flag the brake light, but the warranty specialist handed it off, so the full agent still reaches 100%. The second layer is doing its job; a router fix belongs with the test-set review, not more tuning on validation.
+
+
+## Hand-written test chats (`data/handwritten/chats.yaml`)
+
+| Date | Setup | Result |
+|---|---|---|
+| 2026-11-11 | 14 chats, each testing one situation (lease booking, French booking, recall vs other repair, stranded driver, wrong plate, charge question vs contest, injection, bereavement, out of scope, legal threat, colleague's false promise, accident damage, request for a person) | To come |

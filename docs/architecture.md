@@ -172,11 +172,12 @@ design decision to a test.
 
 | Trigger | Urgency | Queue |
 |---|---|---|
-| Safety: accident, brakes or steering failure, smoke, stranded on a highway | emergency | roadside |
+| Safety: accident, brakes or steering failure, smoke, stranded on a highway | emergency | roadside, whatever the request type (D-18) |
 | Legal threat or formal complaint | high | service manager |
 | Bereavement (owner passed away) | high | service advisors |
 | Customer asks for a person | normal | service advisors |
-| Warranty decision, fee waiver, refund or loaner request | normal | warranty desk or service advisors |
+| Contested charge, refund or fee waiver (D-13) | normal | service manager |
+| Warranty decision or loaner request | normal | warranty desk (warranty) or service advisors (other) |
 | Verification failed twice | normal | service advisors |
 | Dealer system down after one retry | normal | service advisors |
 | Router confidence below 0.55 after one clarifying question | normal | service advisors |
@@ -206,7 +207,7 @@ suggested next step.
 | Phase | What | Status |
 |---|---|---|
 | 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
-| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists, handoff and the pipeline built (109 tests passing) |
+| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists, handoff and the pipeline built (113 tests passing) |
 | 3 | Operating policy, input and output checks, log masking, attack tests | Planned |
 | 4 | Evaluation, grader check against human labels, error analysis | Planned |
 | 5 | Fine-tuned router and comparison with small and large prompted models | Planned |

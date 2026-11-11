@@ -50,8 +50,14 @@ def build_handoff(reason: EscalationReason, request_type: RequestType, summary: 
     if reason == EscalationReason.NONE:
         reason = EscalationReason.CUSTOMER_REQUEST
     u, queue = ROUTING[reason]
-    if reason == EscalationReason.SAFETY and request_type != RequestType.ROADSIDE_ASSISTANCE:
-        queue = "service_manager"           # a safety failure that is not a breakdown on the road
+    # Safety always goes to roadside, whatever the router called the request: they arrange tows and
+    # call back at once (architecture section 8; D-18). Contested charges go to the service manager
+    # (D-13); warranty decisions to the warranty desk.
+    if reason == EscalationReason.POLICY_LIMIT and request_type == RequestType.BILLING_DISPUTE:
+        queue = "service_manager"
+    elif reason == EscalationReason.POLICY_LIMIT and request_type in (RequestType.WARRANTY_CLAIM,
+                                                                      RequestType.RECALL_INQUIRY):
+        queue = "warranty_desk"
     summary = (summary or "").strip() or "Customer needs a person; see the conversation."
     return HandoffPayload(reason=reason, urgency=urgency or u, queue=queue, summary=summary[:600],
                           request_type=request_type, customer_verified=customer_id is not None,
