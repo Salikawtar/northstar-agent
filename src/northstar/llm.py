@@ -56,6 +56,7 @@ class LLMResponse:
     cost_usd: float = 0.0
     latency_ms: float = 0.0
     from_cache: bool = False
+    tool_calls: list[dict[str, Any]] = field(default_factory=list)   # [{"id", "name", "arguments"}]
 
 
 @dataclass
@@ -90,9 +91,14 @@ def _openrouter_transport(timeout_s: float) -> Transport:
             kw["temperature"] = req["temperature"]
         if req.get("json") and settings()["llm_client"].get("use_response_format", False):
             kw["response_format"] = {"type": "json_object"}
+        if req.get("tools"):
+            kw["tools"] = req["tools"]
         r = client.chat.completions.create(**kw)
         u = r.usage
-        return {"text": r.choices[0].message.content or "",
+        msg = r.choices[0].message
+        calls = [{"id": c.id, "name": c.function.name, "arguments": c.function.arguments or "{}"}
+                 for c in (msg.tool_calls or [])]
+        return {"text": msg.content or "", "tool_calls": calls,
                 "input_tokens": getattr(u, "prompt_tokens", 0) or 0,
                 "output_tokens": getattr(u, "completion_tokens", 0) or 0,
                 "cost_usd": float(getattr(u, "cost", 0.0) or 0.0)}
@@ -130,9 +136,12 @@ class LLMClient:
 
     # -- public ------------------------------------------------------------
     def chat(self, model: str, messages: list[dict[str, str]], *, temperature: Optional[float] = None,
-             max_tokens: int = 800, reasoning_effort: Optional[str] = None, json_mode: bool = False) -> LLMResponse:
+             max_tokens: int = 800, reasoning_effort: Optional[str] = None, json_mode: bool = False,
+             tools: Optional[list[dict[str, Any]]] = None) -> LLMResponse:
         req = dict(model=model, messages=messages, temperature=temperature, max_tokens=max_tokens,
                    reasoning_effort=reasoning_effort, json=json_mode)
+        if tools:
+            req["tools"] = tools          # only added when used, so older recordings keep their keys
         key = self._key(req)
         cached = self._read_cache(key)
         if cached is not None:
@@ -157,7 +166,8 @@ class LLMClient:
                 continue
             resp = LLMResponse(text=raw["text"], model=model, input_tokens=raw.get("input_tokens", 0),
                                output_tokens=raw.get("output_tokens", 0), cost_usd=raw.get("cost_usd", 0.0),
-                               latency_ms=round((time.perf_counter() - t0) * 1000, 1))
+                               latency_ms=round((time.perf_counter() - t0) * 1000, 1),
+                               tool_calls=raw.get("tool_calls", []))
             self._write_cache(key, resp)
             self.usage.spent_usd += resp.cost_usd
             return self._record(resp)
@@ -198,10 +208,14 @@ class LLMClient:
         if not f.exists():
             return None
         d = json.loads(f.read_text(encoding="utf-8"))
-        return {k: d[k] for k in ("text", "model", "input_tokens", "output_tokens", "cost_usd", "latency_ms")}
+        out = {k: d[k] for k in ("text", "model", "input_tokens", "output_tokens", "cost_usd", "latency_ms")}
+        out["tool_calls"] = d.get("tool_calls", [])
+        return out
 
     def _write_cache(self, key: str, r: LLMResponse) -> None:
         d = {k: getattr(r, k) for k in ("text", "model", "input_tokens", "output_tokens", "cost_usd", "latency_ms")}
+        if r.tool_calls:
+            d["tool_calls"] = r.tool_calls
         (self.cache_dir / f"{key}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
