@@ -121,6 +121,7 @@ class TurnResult:
     model_calls: int = 0
     verified: bool = False
     error: str = ""
+    tool_data: list = field(default_factory=list)   # what the tools returned (read by the output check)
 
 
 class Specialist:
@@ -207,7 +208,7 @@ class Specialist:
         reply = self._decide(conversation_id, route, box, final)
         latency = (time.perf_counter() - t0 - model_wall) * 1000 + model_recorded
         return TurnResult(reply, round(latency, 1), cost, tin, tout, ncalls,
-                          list(box.denied), nmodel, box.verified, err)
+                          list(box.denied), nmodel, box.verified, err, [r.data for r in box.log if r.ok])
 
     def _decide(self, cid: str, route: RouterOutput, box: ToolBox, final: Optional[SpecialistFinal]) -> AgentReply:
         """Code-side rules: what was really done, and whether a person takes over."""

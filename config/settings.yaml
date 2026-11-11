@@ -43,6 +43,11 @@ agent:
   shared_rules: shared/policy_core_v2.md   # rules P-01 to P-10 included in every specialist prompt
   router_confidence_floor: 0.55 # below this, ask a clarifying question or escalate
 
+# Input and output checks (Phase 3). Rules in docs/guardrails.md, code in src/northstar/guardrails/.
+guardrails:
+  enabled: true
+  max_message_chars: 2000       # longer customer messages are cut (G-IN-03)
+
 # Mock dealer system (DMS) behaviour. Failure injection lets us test the
 # "DMS is down" edge case on purpose instead of hoping it happens.
 dms:
