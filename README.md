@@ -23,6 +23,12 @@ python -m northstar.agent.router --split validation --prompt router/v2.md --effo
 Needs `OPENROUTER_API_KEY` in `.env` the first time; answers are recorded in
 `data/llm_cache/`, so later runs replay for free. Results go to `outputs/results/`.
 
+Try a specialist (its share of the validation chats, router decision taken from the labels):
+
+```bash
+python -m northstar.agent.specialist --agent booking_status --split validation
+```
+
 Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/prompt_log.md`.
 
 ## Repository layout (mirrors the system design and the team roles)
@@ -33,6 +39,7 @@ Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/promp
 | `data/redteam/` | 75 attacks for guardrail tests (never trained on) + dealer records for their customers | Weidi + team |
 | `data/source/` | Review workbook v1112: human review, QC log, team decisions (source of truth for the CSVs) | Weidi |
 | `data/dms/` | Mock dealer system generated from the chats | Kawtar |
+| `src/northstar/agent/` | Router, specialist engine, tool box, handoff | Kawtar |
 | `src/northstar/llm.py` | One door for every model call (OpenRouter): retries, spending limit, replay cache | Kawtar |
 | `data/llm_cache/` | Recorded model answers, so results can be replayed with no key and no cost | Generated |
 | `src/northstar/data.py` | One loader for every dataset (`load_conversations`, `load_redteam`) | Team |

@@ -72,3 +72,17 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Alternatives considered:** thinking off (1.0 s but 73% accuracy and one missed escalation); GPT-6 Luna (3 times cheaper, 67% accuracy, slower).
 - **Counter-argument:** 2.8 s per chat is slow for a first step; if latency becomes a problem, the fine-tuned router (Phase 5) is the planned fix, not turning thinking off.
 - **Evidence:** `docs/prompt_log.md`, router experiments table; recorded answers in `data/llm_cache/`.
+
+### D-10. Specialist engine: the code decides what was done, not the model
+- **Date:** 2026-11-11
+- **Choice:** one engine for all three specialists; each differs only by prompt, model and tools (settings and `prompts/`). The model may call tools (max 6 per turn) and then returns a small JSON answer (reply, action, reason, summary). The code then decides: a booking counts only if `book_slot` succeeded; the router's escalation always wins; two failed verifications or two dealer-system failures hand off; promise phrases in the reply ("no charge", "covered", "refund", "loaner") with no tool behind them are recorded as unbacked commitments for the output check.
+- **Why:** a model can be talked into saying it did something; the code only counts what the tools confirm. Least privilege twice: a specialist only sees its own tools, and the tool box refuses any other tool in code.
+- **Alternatives considered:** let the model fill in commitments and the handoff itself (simpler, but it can be manipulated or forget).
+- **Counter-argument:** the promise check is a simple phrase list; it can miss a reworded promise or flag a harmless sentence. It flags for review, it does not edit replies; Jessica's output check is the real gate.
+- **Evidence:** tests in `tests/test_specialist.py` (booking backed by tool, other desk's tool refused, tool cap, router escalation wins, verification failures, unbacked promise recorded).
+
+### D-11. Specialist check isolates the specialist from router errors
+- **Date:** 2026-11-11
+- **Choice:** the development check gives each specialist a router decision built from the gold labels, so its numbers measure the specialist alone. The full pipeline (router plus specialist) is graded by the evaluation module.
+- **Why:** if the router is wrong, a bad specialist score would hide where the error came from. Changing one thing at a time.
+- **Shared rules:** `prompts/shared/policy_core.md` (P-01 to P-10) is included in every specialist prompt. It is a draft: the rule ids must be aligned with the operating policy owned by the guardrails module.
