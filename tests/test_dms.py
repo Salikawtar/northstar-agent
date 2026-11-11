@@ -163,3 +163,11 @@ def test_random_failures_follow_failure_rate(chats):
     dms = DealerSystem(failure_rate=0.5, seed=3)
     results = [dms.list_slots("Oakville").ok for _ in range(200)]
     assert 60 < results.count(False) < 140
+
+
+def test_a_matching_repair_order_cannot_cover_for_a_wrong_plate(dms):
+    # hw_05: last name and repair order belong to Joan Cox, the plate to another customer.
+    res, sess = dms.verify_customer("Cox", plate="CHNJ 395", ro_number="RO-124033")
+    assert not res.ok and sess is None
+    assert dms.verify_customer("Cox", plate="CFEC 566", ro_number="RO-124033")[1] is not None
+    assert dms.verify_customer("Cox", ro_number="RO-124033")[1] is not None

@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3282,
+ "output_tokens": 451,
+ "cost_usd": 0.011074,
+ "latency_ms": 4925.6,
+ "tool_calls": [
+  {
+   "id": "toolu_011S2rc2BWBNRViieK53Ux3B",
+   "name": "draft_warranty_claim",
+   "arguments": "{\"symptom\": \"Infotainment screen keeps freezing\"}"
+  }
+ ]
+}

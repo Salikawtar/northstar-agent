@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2526,
+ "output_tokens": 109,
+ "cost_usd": 0.0003071,
+ "latency_ms": 978.5,
+ "tool_calls": [
+  {
+   "id": "toolu_01XeKwFEzi1Zn2w4tou5y7gB",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Cox\", \"plate\": \"CHNJ 395\", \"ro_number\": \"RO-124033\"}"
+  }
+ ]
+}

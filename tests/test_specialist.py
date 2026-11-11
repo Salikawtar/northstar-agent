@@ -291,3 +291,17 @@ def test_single_agent_decides_its_own_handoff(tmp_path, dms):
     client, _ = scripted(tmp_path, [final("Please stay safe, help is coming.", "escalated", "safety", "Stranded on the 401.")])
     res = Specialist("single_agent", client=client).run("s2", TURNS, None, dms)
     assert res.reply.action == AgentAction.ESCALATED and res.reply.handoff.reason == EscalationReason.SAFETY
+
+
+def test_retry_cannot_drop_the_plate_that_failed(tmp_path, dms):
+    # hw_05 (live run): the model failed with name + wrong plate + RO, then retried with name + RO only.
+    from northstar.agent.tools import ToolBox
+    box = ToolBox(dms, "booking_status")
+    assert not box.call("verify_customer", {"last_name": "Cox", "plate": "CHNJ 395", "ro_number": "RO-124033"}).ok
+    assert not box.call("verify_customer", {"last_name": "Cox", "ro_number": "RO-124033"}).ok and not box.verified
+    # A corrected plate is accepted.
+    assert box.call("verify_customer", {"last_name": "Cox", "plate": "CFEC 566"}).ok and box.verified
+
+
+def test_decides_what_is_covered_is_not_a_promise():
+    assert not flag_promises("The warranty desk decides what is covered after an inspection.")

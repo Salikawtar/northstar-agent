@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you, Joan. I found your repair order RO-124033. The work is complete and the status is closed. It was an oil change and inspection, opened on November 15, 2026. Is there anything else I can help you with?\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2934,
+ "output_tokens": 123,
+ "cost_usd": 0.0003549,
+ "latency_ms": 1521.5
+}

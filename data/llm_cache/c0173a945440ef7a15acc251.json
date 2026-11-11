@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Thanks, Joan, you're verified. The 413.06 line is for parts, in CAD. The invoice doesn't list the individual parts. The other line is labour: 2.8 hours at $165 per hour. The total is $988.82 with taxes included, and the invoice shows it as paid. Would you like me to explain anything else on it?\",\"action\":\"answered\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\",\"P-03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3280,
+ "output_tokens": 272,
+ "cost_usd": 0.00928,
+ "latency_ms": 3106.9
+}

@@ -70,7 +70,7 @@ _PROMISES = [
 ]
 _NEGATION = re.compile(r"(not|n't|no|never|pas|aucun|jamais|ni)\W+(\w+\W+){0,3}$", re.I)
 # "whether / if it is covered" asks or reports a question, it does not promise.
-_QUESTION = re.compile(r"\b(whether|if|si|savoir si)\W+(\w+\W+){0,4}$", re.I)
+_QUESTION = re.compile(r"\b(whether|if|si|savoir si|what|ce qui)\W+(\w+\W+){0,4}$", re.I)
 
 
 # "I can't confirm that there is no charge" reports a limit, it does not promise.
