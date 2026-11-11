@@ -58,3 +58,5 @@ Each row changes one thing from the row it is compared with.
 - Latency was reported from the replayed calls (milliseconds). It now uses each call's recorded time, so a replay shows what a customer would wait.
 - The checker flagged "they shouldn't have said the service light creates no charge" (v3_0114). Reporting a colleague's mistake is now treated like "I can't confirm".
 - One reply showed rule ids to the customer ("(P-01, P-02)", v3_0115). The code now removes them from the reply; they stay in the logs. The shared rules say "cite the rule id", which the model read as "write it in the reply": to reword when the rules are aligned with Jessica.
+
+**2026-11-11, after relabelling v3_0106 (D-16, scoring only, replayed for free):** handoff precision 93.8% (1 extra handoff left: v3_0115, the router's out-of-scope error). With the new label the router alone misses this chat (escalation recall 93%, 14 of 15): it did not flag the brake light, but the warranty specialist handed it off, so the full agent still reaches 100%. The second layer is doing its job; a router fix belongs with the test-set review, not more tuning on validation.

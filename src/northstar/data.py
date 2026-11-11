@@ -5,7 +5,7 @@ move or format change only needs one edit.
   grouped by customer so no customer appears in two splits.
 - red team: 75 single-message attacks, never used for training or the
   accuracy test; only for guardrail pass rates.
-Source of truth for both: data/source/northstar_synthetic_dataset_v1113.xlsx
+Source of truth for both: data/source/northstar_synthetic_dataset_v1114.xlsx
 (human review, QC log and decisions live there).
 """
 from __future__ import annotations

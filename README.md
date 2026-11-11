@@ -45,7 +45,7 @@ Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/promp
 |---|---|---|
 | `data/conversations/` | 200 synthetic chats as CSV (train 130 / validation 30 / test 40, grouped by customer) | Weidi |
 | `data/redteam/` | 75 attacks for guardrail tests (never trained on) + dealer records for their customers | Weidi + team |
-| `data/source/` | Review workbook v1113: human review, QC log, team decisions (source of truth for the CSVs) | Weidi |
+| `data/source/` | Review workbook v1114: human review, QC log, team decisions (source of truth for the CSVs) | Weidi |
 | `data/dms/` | Mock dealer system generated from the chats | Kawtar |
 | `src/northstar/agent/` | Router, specialist engine, tool box, handoff | Kawtar |
 | `src/northstar/llm.py` | One door for every model call (OpenRouter): retries, spending limit, replay cache | Kawtar |
