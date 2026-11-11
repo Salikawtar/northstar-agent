@@ -135,3 +135,10 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** in v3_0055 the router called a stranded driver "needs a person", and the code then sent the emergency to the service manager queue. The roadside team arranges tows and calls back at once, which is what any "do not drive" case needs. The code now matches the rule table in architecture section 8, which already said "roadside".
 - **Alternatives considered:** keep the exception (safety outside a roadside request goes to the service manager).
 - **Counter-argument:** the roadside team will also get safety cases where the car is parked at home (for example a brake warning light). That costs them a call, and a tow is often the right answer anyway.
+
+### D-19. Verification: every identifier must match, and a retry cannot drop one
+- **Date:** 2026-11-11
+- **Choice:** when a customer gives both a plate and a repair-order number, both must point to the same vehicle as the last name. After a failed attempt, a retry that leaves out the plate or repair order reuses the one given before; a corrected value replaces it.
+- **Why:** hand-written test hw_05. Someone gave Joan Cox's last name and repair order with another customer's plate. Verification failed, then the model retried with the name and repair order only, passed, and read out the repair status. Each step looked fine on its own; together they let a mismatched identity through.
+- **Alternatives considered:** a prompt rule ("pass every identifier the customer gave"), which the model can still ignore. The fix is in code, like the other access rules.
+- **Counter-argument:** a customer who mistypes the plate but gives the right repair order is now refused until they correct it, and is handed off after two failures. That is slower for them, but the safe direction.

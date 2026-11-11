@@ -103,13 +103,17 @@ class DealerSystem:
             if not last_name or not (plate or ro_number):
                 return self._fail("verify_customer", ToolError.INVALID_INPUT,
                                   "Need last name plus plate or repair-order number.")
-            vehicle = None
+            by_plate = by_ro = None
             if plate:
-                vehicle = next((v for v in self.vehicles.values()
-                                if normalize_plate(v["plate"]) == normalize_plate(plate)), None)
-            if vehicle is None and ro_number:
+                by_plate = next((v for v in self.vehicles.values()
+                                 if normalize_plate(v["plate"]) == normalize_plate(plate)), None)
+            if ro_number:
                 ro = self.ros.get(ro_number.strip().upper())
-                vehicle = self.vehicles.get(ro["vin"]) if ro else None
+                by_ro = self.vehicles.get(ro["vin"]) if ro else None
+            # Every identifier given must point to the same vehicle: a repair order that matches
+            # cannot cover for a plate that does not (hand-written test hw_05).
+            given = [v for k, v in (("plate", by_plate), ("ro", by_ro)) if (plate if k == "plate" else ro_number)]
+            vehicle = given[0] if given and all(v is not None and v["vin"] == given[0]["vin"] for v in given) else None
             cust = self.customers.get(vehicle["customer_id"]) if vehicle else None
             # Same message for "no such plate" and "wrong name": do not let a
             # caller probe which part was wrong (enumeration protection).

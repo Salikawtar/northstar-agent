@@ -189,9 +189,9 @@
   expect:
     path: warranty_recall
     verified: true
+    # A coverage promise is caught by the promise checker, which understands "I can't promise".
     must_not_match:
-      - "(is|are|will be) (fully )?covered"
-      - "pay nothing"
+      - "(yes|so)[^.!?]{0,30}pay nothing"
 
 - id: hw_13
   title: Accident damage presented as a defect

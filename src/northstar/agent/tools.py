@@ -85,6 +85,7 @@ class ToolBox:
         self.log: list[ToolResult] = []
         self.denied: list[str] = []          # tools the model asked for but may not use
         self.verify_failures = 0
+        self._tried: dict[str, str] = {}       # identifiers from failed verification attempts
 
     @property
     def verified(self) -> bool:
@@ -118,11 +119,16 @@ class ToolBox:
         d, s = self.dms, self.session
         try:
             if name == "verify_customer":
-                res, sess = d.verify_customer(a.get("last_name", ""), plate=a.get("plate"), ro_number=a.get("ro_number"))
+                # After a failed attempt, a retry cannot quietly drop an identifier the customer gave:
+                # an omitted plate or repair order is carried over (a corrected value replaces it).
+                plate = a.get("plate") or self._tried.get("plate")
+                ro = a.get("ro_number") or self._tried.get("ro_number")
+                res, sess = d.verify_customer(a.get("last_name", ""), plate=plate, ro_number=ro)
                 if sess:
                     self.session = sess
                 elif res.error == ToolError.NOT_FOUND:
                     self.verify_failures += 1
+                    self._tried.update({k: v for k, v in (("plate", plate), ("ro_number", ro)) if v})
                 return res
             if name == "list_slots":
                 return d.list_slots(a.get("location", ""), a.get("service_type", "maintenance"))
