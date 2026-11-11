@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Hello Ms. Johnson. Before I can go further, I need to verify your account. What is the licence plate of the vehicle, or your repair-order number (RO-######)? I can't use the VIN for this.\\n\\nSome things I can already tell you:\\n- I can't confirm coverage or a deductible. The warranty desk decides that after an inspection.\\n- I can't change the in-service date on file. Once you're verified, I can send a claim draft that notes your comment about the date. The warranty desk will review it.\\n- The Mississauga slot on 2026-11-24 from my colleague is not confirmed. I can't book it from this chat.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-04\", \"P-05\", \"P-09\", \"P-10\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2873,
+ "output_tokens": 771,
+ "cost_usd": 0.013456,
+ "latency_ms": 6913.1
+}

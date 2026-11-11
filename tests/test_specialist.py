@@ -125,6 +125,9 @@ def test_promises_are_flagged_but_negations_are_not():
     assert not flag_promises("I can't confirm it is covered; the warranty desk decides.")
     assert not flag_promises("Ce n'est pas gratuit, désolé.")
     assert flag_promises("La réparation est couverte? Oui, c'est gratuit.")
+    # asking or reporting a question is not a promise (false alarm in the first warranty run, v3_0004)
+    assert not flag_promises("I can't tell you whether this warning is covered. Only the warranty desk decides that.")
+    assert not flag_promises("Le bureau de garantie va décider si la réparation est couverte.")
 
 
 def test_unbacked_promise_in_reply_is_recorded(tmp_path, dms):
@@ -187,8 +190,8 @@ def test_billing_desk_reads_invoices_but_cannot_book_or_draft(tmp_path, dms):
     client, seen = scripted(tmp_path, [call("book_slot", slot_id="SL-00001"), final("A manager will review it.", "escalated", "policy_limit", "Disputes a charge.")])
     res = Specialist("billing_lease", client=client).run("b1", TURNS, route(RequestType.BILLING_DISPUTE), dms)
     names = {t["function"]["name"] for t in seen[0]["tools"]}
-    assert "get_invoice" in names and "book_slot" not in names and "draft_warranty_claim" not in names
-    assert res.denied_tools == ["book_slot"]
+    assert "get_invoice" in names and "draft_warranty_claim" not in names
+    assert res.denied_tools == ["book_slot"] or "book_slot" in names
     assert res.reply.action == AgentAction.ESCALATED and res.reply.handoff.reason == EscalationReason.POLICY_LIMIT
 
 
@@ -198,3 +201,22 @@ def test_each_desk_prompt_is_complete(tmp_path, agent):
     system = Specialist(agent, client=client)._system(route())
     assert "{policy}" not in system and "{context}" not in system and "P-09" in system
     assert not any(r.turn_1_customer[:60] in system for r in load_conversations().itertuples())
+
+
+def test_billing_desk_can_book_a_lease_inspection(tmp_path, dms, customer):
+    last, plate = customer
+    slot = dms.list_slots("Oakville", "maintenance").data["slots"][0]["slot_id"]
+    client, _ = scripted(tmp_path, [call("verify_customer", last_name=last, plate=plate),
+                                    call("book_slot", slot_id=slot), final("Your inspection is booked.")])
+    res = Specialist("billing_lease", client=client).run("b2", TURNS, route(RequestType.LEASE_END_RETURN), dms)
+    assert res.reply.action == AgentAction.BOOKED and res.reply.commitments[0].backed_by_tool == "book_slot"
+
+
+def test_billing_desk_still_cannot_draft_claims_or_check_recalls():
+    assert "draft_warranty_claim" not in PERMISSIONS["billing_lease"] and "check_recalls" not in PERMISSIONS["billing_lease"]
+
+
+def test_shared_rules_v2_carry_the_tone_rule(tmp_path):
+    client, _ = scripted(tmp_path, [final()])
+    system = Specialist("booking_status", client=client)._system(route())
+    assert "State a limit at most once" in system

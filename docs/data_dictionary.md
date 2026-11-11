@@ -7,9 +7,9 @@
 | `data/conversations/conversations.csv` | 200 | Three-turn chats. `split`: train 130 / validation 30 / test 40, grouped by customer. Labels: `request_type` (10 types), `needs_escalation`. `human_reviewed` = True for the 74 rows the team checked by hand (all test rows included). | Fine-tune (train, validation), evaluation (test), DMS build |
 | `data/redteam/redteam_75.csv` | 75 | Single-message attacks, 15 per attack type, 3 tactics each, rewritten by hand by the team. `expected_agent_behaviour` and `fails_if` define pass / fail. PII attacks name a decoy in `target_customer_id`. | Guardrail tests only (never trained on) |
 | `data/redteam/dms_*.json` | 40 each | Dealer records for the red-team customers, so attacks pass identity checks and reach the guardrails | DMS build |
-| `data/source/northstar_synthetic_dataset_v1112.xlsx` | | Review workbook: human review decisions, QC log (every change with before and after), team decisions | Report data section and appendix |
+| `data/source/northstar_synthetic_dataset_v1113.xlsx` | | Review workbook: human review decisions, QC log (every change with before and after), team decisions | Report data section and appendix |
 
-**Escalation rule** (`needs_escalation` = True): safety (roadside), bereavement and legal threats (needs_human), every adversarial attempt, and explicit requests for a manager. 73 of 200 chats.
+**Escalation rule** (`needs_escalation` = True): safety (roadside), bereavement and legal threats (needs_human), every adversarial attempt, explicit requests for a manager, and billing disputes that contest a charge (D-13). 86 of 200 chats.
 
 # Mock dealer system (DMS)
 

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je comprends votre inquiétude, et je vais vérifier tout de suite. Pour des raisons de confidentialité, je dois d'abord vous identifier. Le NIV seul ne suffit pas. Pouvez-vous m'envoyer votre nom de famille et votre plaque d'immatriculation? Si vous voyez de la fumée ou sentez une odeur de brûlé, arrêtez-vous en lieu sûr, sortez du véhicule avec les enfants et appelez le 911.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2852,
+ "output_tokens": 571,
+ "cost_usd": 0.011414,
+ "latency_ms": 6442.4
+}

@@ -31,7 +31,7 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Date:** 2026-11-10
 - **Choice:** kept Weidi's 200 chats, fixed what QC found (28 agent replies promising coverage without checking, 14 incoherent chats, 183 em dashes, warranty fraud raised from 5 to 8), then the team reviewed 74 rows by hand (52 kept, 22 fixed) and rewrote all 75 red-team attacks by hand.
 - **Why:** criterion 1 "Great" asks for documented quality control with examples of what was fixed, and a test set partly reviewed by hand.
-- **Evidence:** QC_log sheet in `data/source/northstar_synthetic_dataset_v1112.xlsx` (every change with before and after).
+- **Evidence:** QC_log sheet in `data/source/northstar_synthetic_dataset_v1113.xlsx` (every change with before and after).
 
 ### D-05. Escalation rule
 - **Date:** 2026-11-10
@@ -39,6 +39,7 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** matches the project outline wording ("safety, bereavement, legal threats, adversarial attempts").
 - **Alternatives considered:** escalate only manufacturer impersonation and let the agent refuse other attacks on its own (fewer handoffs).
 - **Counter-argument:** more chats go to a person (higher human-review cost), and a model trained this way may escalate harmless tricky messages. Watch false escalations in evaluation.
+- **Update:** extended on 2026-11-11 to billing disputes that contest a charge (D-13); 86 of 200 chats.
 
 ### D-06. Splits and branches
 - **Date:** 2026-11-10
@@ -91,3 +92,18 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Date:** 2026-11-11
 - **Choice:** a warranty claim draft number is computed from the customer and the symptom (`WC-` plus 6 characters of a hash) instead of a random number.
 - **Why:** tool results are fed back to the model, so a random number would make every recorded run impossible to replay. Same request, same number; different symptoms still get different numbers.
+
+### D-13. Billing disputes that contest a charge go to the service manager
+- **Date:** 2026-11-11 (proposed after the billing specialist's first run; labels confirmed by Kawtar)
+- **Choice:** when a customer contests a charge (wants it removed, refunded or corrected), the agent explains what the invoice shows and hands off to the service manager with reason `policy_limit`. A question about a charge ("what is this line?", "what is this card charge?") is answered and not escalated. 13 billing chats were relabelled (11 clear contests, 2 borderline: v3_0140, v3_0152). Escalations: 86 of 200.
+- **Why:** the agent has no tool to change an invoice, refund or waive (by design), so a contested charge left with the agent goes nowhere. Money decisions stay with people, as in the project outline's memo.
+- **Alternatives considered:** escalate only when the customer asks for a manager (fewer handoffs, labels unchanged), but disputed charges would often be left without an owner.
+- **Counter-argument:** more handoffs and advisor time; the line between asking and contesting is a judgement call, which is why the relabelled rows were confirmed by a person and listed in the QC log.
+- **Consequences:** router prompt v3 and billing prompt v2 carry the rule; the fine-tune labels change before training.
+
+### D-14. The billing desk may book lease pre-return inspections
+- **Date:** 2026-11-11
+- **Choice:** the billing and lease specialist gets `list_slots` and `book_slot`, only to book a lease pre-return inspection.
+- **Why:** in its first run (v3_0199) it could explain the lease steps but not book the inspection, so a simple request ended in a handoff.
+- **Alternatives considered:** pass the booking to the booking specialist (needs a hand-over between agents, more parts) or keep handing off (more advisor time).
+- **Counter-argument:** one more tool for that desk widens what a manipulated billing chat could do. The risk is low: browsing slots needs no personal data, and booking needs a verified customer and creates no financial commitment.

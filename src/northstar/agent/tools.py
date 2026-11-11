@@ -70,7 +70,8 @@ PERMISSIONS: dict[str, list[str]] = {
     "booking_status": ["verify_customer", "list_slots", "book_slot", "get_repair_status", "get_vehicle"],
     "warranty_recall": ["verify_customer", "get_repair_status", "get_vehicle", "check_recalls",
                         "get_warranty_status", "draft_warranty_claim"],
-    "billing_lease": ["verify_customer", "get_repair_status", "get_vehicle", "get_invoice"],
+    "billing_lease": ["verify_customer", "get_repair_status", "get_vehicle", "get_invoice",
+                      "list_slots", "book_slot"],          # lease pre-return inspections (D-14)
 }
 PERMISSIONS["single_agent"] = sorted({t for ts in PERMISSIONS.values() for t in ts})
 

@@ -69,14 +69,16 @@ _PROMISES = [
     (CommitmentKind.LOANER, r"(loaner (is|will be|car is)|courtesy car (is|will be)|auto de courtoisie (est|sera)|v[ée]hicule de courtoisie (est|sera))"),
 ]
 _NEGATION = re.compile(r"(not|n't|no|never|pas|aucun|jamais|ni)\W+(\w+\W+){0,3}$", re.I)
+# "whether / if it is covered" asks or reports a question, it does not promise.
+_QUESTION = re.compile(r"\b(whether|if|si|savoir si)\W+(\w+\W+){0,4}$", re.I)
 
 
 def flag_promises(text: str) -> list[Commitment]:
     out = []
     for kind, pat in _PROMISES:
         for m in re.finditer(pat, text, re.I):
-            before = text[max(0, m.start() - 30):m.start()]
-            if not _NEGATION.search(before):
+            before = text[max(0, m.start() - 40):m.start()]
+            if not _NEGATION.search(before) and not _QUESTION.search(before):
                 out.append(Commitment(kind=kind, detail=m.group(0), backed_by_tool=None))
                 break
     return out
@@ -106,7 +108,8 @@ class Specialist:
         self.effort = reasoning_effort or cfg.get("reasoning_effort")
         self.max_tokens = cfg.get("max_tokens", 2000)
         self.prompt_name = prompt or cfg["prompt"]
-        self.template = load_prompt(self.prompt_name).replace("{policy}", load_prompt("shared/policy_core.md"))
+        self.template = load_prompt(self.prompt_name).replace(
+            "{policy}", load_prompt(settings()["agent"].get("shared_rules", "shared/policy_core.md")))
 
     def _system(self, route: RouterOutput) -> str:
         cfg = settings()
@@ -236,8 +239,10 @@ def _strip_fences(text: str) -> str:
 def gold_route(row: pd.Series) -> RouterOutput:
     adv = isinstance(row["adversarial_type"], str) and row["adversarial_type"]
     if row["needs_escalation"]:
-        reason = (EscalationReason.ADVERSARIAL if adv else EscalationReason.SAFETY
-                  if row["request_type"] == "roadside_assistance" else EscalationReason.CUSTOMER_REQUEST)
+        reason = (EscalationReason.ADVERSARIAL if adv
+                  else EscalationReason.SAFETY if row["request_type"] == "roadside_assistance"
+                  else EscalationReason.POLICY_LIMIT if row["request_type"] == "billing_dispute"
+                  else EscalationReason.CUSTOMER_REQUEST)
     else:
         reason = EscalationReason.NONE
     return RouterOutput(request_type=RequestType(row["request_type"]), needs_escalation=bool(row["needs_escalation"]),
