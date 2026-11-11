@@ -65,9 +65,9 @@ client is a shared helper, not a step the message passes through.
 |---|---|---|---|
 | Input check | Flags prompt injection and personal data pasted into the chat before any model sees it | Rules, plus small model if needed | Planned (Phase 3) |
 | Router | Labels the request type (10 types), spots extra requests in the same message, decides if a person is needed now, detects language | Claude Haiku 5.5, low effort, prompt v2. Compared later with the fine-tuned model | **Built and tested**: 90% type accuracy, 100% escalation recall and precision on validation |
-| Booking and status agent | Bookings, repair status, parts, roadside triage | Claude Haiku 5.5, low effort, prompt v1 | **Built** (Phase 2, step 3); first live run pending |
-| Warranty and recalls agent | Recall lookups, warranty facts, drafting claims for the warranty desk | Large model, high effort | Planned (Phase 2) |
-| Billing and lease agent | Invoice questions, disputes, lease-return steps | Large model, medium effort | Planned (Phase 2) |
+| Booking and status agent | Bookings, repair status, parts, roadside triage | Claude Haiku 5.5, low effort, prompt v1 | **Built and run**: handoff recall 100%, 0 unbacked promises on its 10 validation chats |
+| Warranty and recalls agent | Recall lookups, warranty facts, drafting claims for the warranty desk | Claude Sonnet 5.5, high effort, prompt v1 | **Built** (Phase 2, step 4); first live run pending |
+| Billing and lease agent | Invoice questions, disputes, lease-return steps | Claude Sonnet 5.5, medium effort, prompt v1 | **Built** (Phase 2, step 4); first live run pending |
 | Dealer system tools | The only way to read customer, vehicle, repair-order and invoice data | No model (plain code) | **Built** (Phase 1) |
 | Model client | One door for every model call: retries, spending limit, replay cache so anyone can re-run results for free | No model (plain code) | **Built** (Phase 2, step 1) |
 | Output check | Checks every reply before it is sent: forbidden commitments, other customers' data, policy rules | Rules on the declared commitments, plus text patterns | Planned (Phase 3) |
@@ -191,7 +191,7 @@ suggested next step.
 | Phase | What | Status |
 |---|---|---|
 | 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
-| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, specialist engine, booking specialist and handoff built (75 tests passing) |
+| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists and handoff built (81 tests passing) |
 | 3 | Operating policy, input and output checks, log masking, attack tests | Planned |
 | 4 | Evaluation, grader check against human labels, error analysis | Planned |
 | 5 | Fine-tuned router and comparison with small and large prompted models | Planned |

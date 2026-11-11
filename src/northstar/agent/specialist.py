@@ -195,14 +195,22 @@ class Specialist:
                 action, reason = AgentAction.ESCALATED, EscalationReason.TOOL_FAILURE
             elif action == AgentAction.ESCALATED and reason == EscalationReason.NONE:
                 reason = EscalationReason.CUSTOMER_REQUEST
+            drafted = next((r for r in box.log if r.tool == "draft_warranty_claim" and r.ok), None)
             if action != AgentAction.ESCALATED and booked:
                 action = AgentAction.BOOKED
+            elif action != AgentAction.ESCALATED and drafted:
+                action = AgentAction.DRAFTED_CLAIM
+            elif action == AgentAction.DRAFTED_CLAIM and not drafted:
+                action = AgentAction.ANSWERED          # the model said it drafted a claim, but no tool did
 
         handoff = None
         if action == AgentAction.ESCALATED:
             facts = {"verified": str(box.verified)}
             if booked:
                 facts["booking"] = commitments[0].detail
+            for r in box.log:
+                if r.tool == "draft_warranty_claim" and r.ok:
+                    facts["warranty_claim_draft"] = r.data.get("claim_id", "")
             handoff = build_handoff(reason, route.request_type, summary or text, box.customer_id, facts)
         return AgentReply(conversation_id=cid, text=text, language=route.language, request_type=route.request_type,
                           action=action, commitments=commitments, tools_used=tools_used,

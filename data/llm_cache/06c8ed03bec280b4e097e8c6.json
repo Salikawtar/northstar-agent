@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks for the details, and I'm sorry for the rush. I haven't booked anything yet, so please disregard my earlier message. Before I can book the Oakville visit or look at your order, I need to verify your identity. What is your last name?\\n\\nAbout the cargo carrier: I can't confirm whether it has arrived or whether it's the right part. A parts advisor will check availability and the install for you. I can note that request on the visit once you are verified.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2643,
+ "output_tokens": 548,
+ "cost_usd": 0.0005383,
+ "latency_ms": 5000.3
+}

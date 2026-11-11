@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour. Avant de vous donner des renseignements sur le dossier RO-336204, j'ai besoin de vérifier votre identité. Quel est votre nom de famille?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2566,
+ "output_tokens": 308,
+ "cost_usd": 0.0004106,
+ "latency_ms": 6370.9
+}

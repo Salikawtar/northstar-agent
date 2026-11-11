@@ -32,8 +32,8 @@ models:
 components:
   router:            {tier: small, reasoning_effort: low, max_tokens: 1500, prompt: router/v2.md}   # chosen 2026-11-10 from 4 validation runs (prompt_log)
   booking_status:    {tier: small, reasoning_effort: low, max_tokens: 2000, prompt: booking_status/v1.md}
-  warranty_recall:   {tier: large, reasoning_effort: high}
-  billing_lease:     {tier: large, reasoning_effort: medium}
+  warranty_recall:   {tier: large, reasoning_effort: high, max_tokens: 4000, prompt: warranty_recall/v1.md}
+  billing_lease:     {tier: large, reasoning_effort: medium, max_tokens: 3000, prompt: billing_lease/v1.md}
   single_agent:      {tier: large, reasoning_effort: medium}
 
 agent:

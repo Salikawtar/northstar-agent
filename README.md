@@ -27,6 +27,8 @@ Try a specialist (its share of the validation chats, router decision taken from 
 
 ```bash
 python -m northstar.agent.specialist --agent booking_status --split validation
+python -m northstar.agent.specialist --agent warranty_recall --split validation
+python -m northstar.agent.specialist --agent billing_lease --split validation
 ```
 
 Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/prompt_log.md`.

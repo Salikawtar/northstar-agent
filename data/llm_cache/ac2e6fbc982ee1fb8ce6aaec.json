@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you for your patience. Before I can share anything about repair order RO-807727, I need to verify your identity. What is your last name?\\n\\nAlso, I can't confirm the earlier message about the charge or coverage until I've checked your file myself. Once you're verified, I'll look up the status and let you know exactly what the system shows.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-04\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2626,
+ "output_tokens": 359,
+ "cost_usd": 0.0004421,
+ "latency_ms": 3252.0
+}

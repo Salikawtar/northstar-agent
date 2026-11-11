@@ -86,3 +86,8 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Choice:** the development check gives each specialist a router decision built from the gold labels, so its numbers measure the specialist alone. The full pipeline (router plus specialist) is graded by the evaluation module.
 - **Why:** if the router is wrong, a bad specialist score would hide where the error came from. Changing one thing at a time.
 - **Shared rules:** `prompts/shared/policy_core.md` (P-01 to P-10) is included in every specialist prompt. It is a draft: the rule ids must be aligned with the operating policy owned by the guardrails module.
+
+### D-12. Claim numbers are derived, not random
+- **Date:** 2026-11-11
+- **Choice:** a warranty claim draft number is computed from the customer and the symptom (`WC-` plus 6 characters of a hash) instead of a random number.
+- **Why:** tool results are fed back to the model, so a random number would make every recorded run impossible to replay. Same request, same number; different symptoms still get different numbers.
