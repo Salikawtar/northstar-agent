@@ -28,6 +28,7 @@ Status values: **Done**, **Decided** (agreed, not yet applied), **To do**, **Opt
 | 18 | Fix past dates | Move booking dates that fall before the mock "today" (2026-11-16), e.g. v3_0038 | Realism; prevents fake agent errors in evaluation | Kawtar | Done |
 | 19 | Hand-written test chats | About 20 tricky chats written fully by the team (multi-intent, conflicting details, incomplete messages) | Test set "written by hand" (criterion 1); edge-case tests (criterion 7) | Team | Started: 14 chats drafted with Claude, all 14 pass (one found a verification gap, fixed in D-19) in `data/handwritten/chats.yaml`, each with an expected result; run with `python -m northstar.agent.scenarios`. To do: team reviews the expected answers and adds its own chats (multi-intent, conflicting details, incomplete messages) so the set is really team-written |
 | 20 | Report data section | Page 2 plus appendix: composition table, fixed and rejected examples, limits (word-overlap duplicate check, chat only, single-message attacks) | Final report | Weidi | To do |
+| 21 | Split and quality-check scripts in repo | A script that rebuilds and checks the 130 / 30 / 40 split (grouped by customer, no near-copies across splits) and runs the QC rules | GitHub submission (brief asks for validation and split scripts); reproducibility | Weidi or Kawtar | To do (today the split is a column in the data, not a script) |
 
 ## Reminder before submission
 
