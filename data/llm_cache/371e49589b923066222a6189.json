@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2918,
+ "output_tokens": 81,
+ "cost_usd": 0.0003323,
+ "latency_ms": 872.1,
+ "tool_calls": [
+  {
+   "id": "toolu_015cvgDXM6MY8vsuZ11kpLzE",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Drouin\", \"plate\": \"RKDP 742\"}"
+  }
+ ]
+}

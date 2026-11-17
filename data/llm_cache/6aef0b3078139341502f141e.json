@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4469,
+ "output_tokens": 447,
+ "cost_usd": 0.013408,
+ "latency_ms": 4221.9,
+ "tool_calls": [
+  {
+   "id": "toolu_017CkqKBDnFtchPrhyz5aXCc",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Scarborough\", \"service_type\": \"diagnosis\"}"
+  }
+ ]
+}

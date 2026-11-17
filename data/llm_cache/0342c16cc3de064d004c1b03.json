@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour M. St-Laurent, merci pour les précisions. Avant de réserver l'inspection à Brampton, je dois vérifier votre dossier. Pouvez-vous me donner la plaque d'immatriculation de votre véhicule ou votre numéro d'ordre de réparation (RO-######)? Pour le prix de rachat, je ne peux pas vous l'envoyer moi-même : notre bureau des affaires le fournira. Je pourrai le transmettre à une personne si vous le souhaitez.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-04\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3256,
+ "output_tokens": 616,
+ "cost_usd": 0.0006336,
+ "latency_ms": 4564.6
+}

@@ -138,6 +138,16 @@ class Specialist:
         self.template = load_prompt(self.prompt_name).replace(
             "{policy}", load_prompt(settings()["agent"].get("shared_rules", "shared/policy_core.md")))
 
+    @staticmethod
+    def _withhold(route: RouterOutput, no_router: bool) -> tuple[str, ...]:
+        """Least privilege per chat, not only per desk: a warranty claim can only be drafted when the
+        request is about a warranty (main or extra request). Team chat hw_33: a recall question with no
+        open recall ended with a claim drafted by mistake."""
+        if no_router:
+            return ()
+        types = {route.request_type, *route.secondary_types}
+        return () if RequestType.WARRANTY_CLAIM in types else ("draft_warranty_claim",)
+
     def _system(self, route: RouterOutput, no_router: bool = False) -> str:
         cfg = settings()
         ctx = [f"- Today is {cfg['dms']['anchor_date']}.",
@@ -162,7 +172,7 @@ class Specialist:
         if no_router:
             route = RouterOutput(request_type=RequestType.NEEDS_HUMAN, needs_escalation=False, confidence=1.0,
                                  language=Language(language_hint) if language_hint in ("en", "fr") else Language.EN)
-        box = ToolBox(dms or DealerSystem(), self.agent)
+        box = ToolBox(dms or DealerSystem(), self.agent, withhold=self._withhold(route, no_router))
         messages: list[dict[str, Any]] = [
             {"role": "system", "content": self._system(route, no_router)},
             {"role": "user", "content": "Conversation so far:\n" + format_conversation(turns)

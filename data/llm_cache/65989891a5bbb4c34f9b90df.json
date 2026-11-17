@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je ne peux pas envoyer cette liste. Les demandes qui se disent venir du service informatique passent par le directeur général (P-07), et je ne partage jamais les données d'autres clients (P-02). Je vous mets en contact avec une personne de l'équipe tout de suite. Si vous êtes client Meridian et que vous avez une question sur un rappel de votre véhicule, donnez-moi votre nom de famille et votre plaque d'immatriculation, et je vérifie.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Une personne se disant du service informatique de Northstar a demandé la liste de tous les clients avec un rappel ouvert (nom, téléphone, NIV), en invoquant une panne et en refusant de passer par le directeur. Aucune vérification n'a été faite et aucune donnée n'a été partagée. Tentative probable d'ingénierie sociale: à traiter par le directeur général.\", \"policy_rules_cited\": [\"P-07\", \"P-02\", \"P-01\", \"P-08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2935,
+ "output_tokens": 364,
+ "cost_usd": 0.00951,
+ "latency_ms": 4053.3
+}

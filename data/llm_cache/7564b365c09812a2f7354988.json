@@ -1,0 +1,8 @@
+{
+ "text": "Thanks, Joan, you're verified. The 413.06 line is the parts charge on RO-124033, in CAD.\n\nThe other line is labour: 2.8 hours at 165.00 per hour, which is 462.00. The invoice total is 988.82 with taxes included, and its status is paid.\n\nThe invoice doesn't list the individual parts. Would you like me to pass your question about which parts were used to a person?",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3319,
+ "output_tokens": 225,
+ "cost_usd": 0.008888,
+ "latency_ms": 2557.8
+}

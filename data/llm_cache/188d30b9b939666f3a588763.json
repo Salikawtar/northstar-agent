@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je comprends, je vais vérifier ça tout de suite. Pour consulter votre dossier, j'ai besoin de votre nom de famille et de votre plaque d'immatriculation. Pouvez-vous me les donner?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3093,
+ "output_tokens": 300,
+ "cost_usd": 0.009186,
+ "latency_ms": 4969.0
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Hi Ms. Johnson, I can book your visit and send a claim request once I verify you. What is the licence plate or the repair-order number for this Oriel? I can't change the in-service date on file. I'll note your correction for the warranty desk to review.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\",\"P-09\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4056,
+ "output_tokens": 476,
+ "cost_usd": 0.012872,
+ "latency_ms": 3926.3
+}

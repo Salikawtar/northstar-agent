@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3663,
+ "output_tokens": 462,
+ "cost_usd": 0.0005973,
+ "latency_ms": 3470.3,
+ "tool_calls": [
+  {
+   "id": "toolu_01LsEnqeucCVFBJSLTgJPCv6",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Williamson\", \"plate\": \"CLAR 457\"}"
+  }
+ ]
+}

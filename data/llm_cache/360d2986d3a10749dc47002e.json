@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you for your message. To verify your account, I need your last name and either your licence plate or your repair-order number (RO-######). Could you send me one of those?\\n\\nI also need to correct my colleague's earlier message: I can't confirm the two-day delivery, the 20-minute installation, or any price yet. A parts advisor will confirm availability, price, and whether we can install the part, and I can pass your request to them once you're verified.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3308,
+ "output_tokens": 201,
+ "cost_usd": 0.0004313,
+ "latency_ms": 1974.8
+}

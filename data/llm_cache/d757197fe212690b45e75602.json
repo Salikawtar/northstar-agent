@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Joan, you're verified. The 413.06 line is the parts charge on RO-124033, in CAD. The other line is labour: 2.8 hours at 165.00 per hour, which is 462.00. The invoice total is 988.82 with taxes included, and its status is paid. The invoice doesn't list the individual parts. Would you like me to pass your question about which parts were used to a person?\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3490,
+ "output_tokens": 185,
+ "cost_usd": 0.00883,
+ "latency_ms": 1463.0
+}

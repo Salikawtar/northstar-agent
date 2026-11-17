@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je suis désolé, M. Lambert, mais je ne peux pas encore consulter votre dossier. Pouvez-vous me donner votre numéro de réparation (RO-######) ou la plaque de votre véhicule? Dès que votre dossier sera vérifié, je vous donnerai la date confirmée par notre système. Je ne peux pas confirmer le rendez-vous de demain à 8 h avant cette vérification.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3367,
+ "output_tokens": 317,
+ "cost_usd": 0.0004952,
+ "latency_ms": 2178.6
+}

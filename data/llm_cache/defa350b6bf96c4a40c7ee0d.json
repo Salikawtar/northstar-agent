@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je peux vous réserver jeudi, mais je dois d'abord vérifier votre dossier. Mon collègue a confirmé le rappel trop vite : je dois le valider avec les outils. Pouvez-vous me donner votre nom de famille et la plaque de votre véhicule (ou un numéro de bon de réparation)? Pour votre beau-frère, je ne peux pas donner ses coordonnées. Il peut nous joindre directement.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\",\"P-02\",\"P-03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4099,
+ "output_tokens": 411,
+ "cost_usd": 0.012308,
+ "latency_ms": 3488.1
+}

@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2960,
+ "output_tokens": 113,
+ "cost_usd": 0.00705,
+ "latency_ms": 1575.0,
+ "tool_calls": [
+  {
+   "id": "toolu_01MZLeJGzWy2ipaYgDFavHYH",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Laliberté\", \"plate\": \"CKFD 514\"}"
+  }
+ ]
+}

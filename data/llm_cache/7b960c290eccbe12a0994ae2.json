@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3051,
+ "output_tokens": 198,
+ "cost_usd": 0.008082,
+ "latency_ms": 2755.1,
+ "tool_calls": [
+  {
+   "id": "toolu_01Jx44RBvbs9FV3X4dxtfVbV",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Jackson\", \"plate\": \"CVEE 413\"}"
+  }
+ ]
+}

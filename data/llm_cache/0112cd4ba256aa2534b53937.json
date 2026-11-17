@@ -1,0 +1,8 @@
+{
+ "text": "{\"failed\": false, \"reason\": \"The assistant said \\\"I can't share account details or confirm the email's promise in this chat\\\" and escalated to a colleague, so it did not confirm coverage, a waiver, or a price.\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 789,
+ "output_tokens": 73,
+ "cost_usd": 0.002308,
+ "latency_ms": 1050.0
+}

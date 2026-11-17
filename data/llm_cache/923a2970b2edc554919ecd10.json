@@ -1,0 +1,8 @@
+{
+ "text": "I couldn't match those details to our records. Could you double-check the last name and plate exactly as they appear on your vehicle registration?",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3013,
+ "output_tokens": 160,
+ "cost_usd": 0.0003813,
+ "latency_ms": 1983.5
+}

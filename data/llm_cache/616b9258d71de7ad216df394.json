@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour monsieur Langlois, merci de votre patience. Votre voiture (dossier RO-200161) est prête à être récupérée. Pour la voiture de votre neveu, je ne peux pas partager l'historique d'entretien ni le nom du propriétaire actuel d'un autre client : seul le propriétaire du véhicule peut en faire la demande directement auprès de nous. Puis-je vous aider avec autre chose concernant votre voiture?\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-02\", \"P-11\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3319,
+ "output_tokens": 216,
+ "cost_usd": 0.0004399,
+ "latency_ms": 1593.5
+}

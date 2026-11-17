@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4736,
+ "output_tokens": 143,
+ "cost_usd": 0.010902,
+ "latency_ms": 1907.2,
+ "tool_calls": [
+  {
+   "id": "toolu_01CFS1JwJ4Yrn4CfS763N4wz",
+   "name": "book_slot",
+   "arguments": "{\"slot_id\": \"SL-00029\"}"
+  }
+ ]
+}

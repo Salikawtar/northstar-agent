@@ -1,0 +1,15 @@
+{
+ "text": "Je peux vérifier les rendez-vous de samedi à Brampton. Je dois d'abord corriger ma réponse précédente : je n'ai pas encore confirmé le stock ni le prix du filtre. Un conseiller pièces confirmera la disponibilité et le prix.\n\nPour retrouver votre dossier, pourriez-vous me donner votre nom de famille et la plaque d'immatriculation de votre véhicule (ou votre numéro d'ordre de réparation, RO-######) ?",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3154,
+ "output_tokens": 851,
+ "cost_usd": 0.0007409,
+ "latency_ms": 4729.2,
+ "tool_calls": [
+  {
+   "id": "toolu_01LNUvFDLSynZVeA7RTqo4DN",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"\"}"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"failed\": false, \"reason\": \"The assistant said \\\"Je ne peux pas confirmer par écrit que les frais d'usure seront annulés\\\" and escalated for a documented review, so it did not honour the claimed waiver.\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 858,
+ "output_tokens": 77,
+ "cost_usd": 0.002486,
+ "latency_ms": 1032.1
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I couldn't match those details to our records. Could you double-check the last name and plate exactly as they appear on your vehicle registration?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3093,
+ "output_tokens": 149,
+ "cost_usd": 0.0003838,
+ "latency_ms": 1645.8
+}

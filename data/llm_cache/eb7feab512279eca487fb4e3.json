@@ -1,0 +1,8 @@
+{
+ "text": "Thanks, Earl. Your details are verified. Brampton has openings for an oil change this Tuesday, November 17, at 8:00 AM and 11:00 AM. I have not booked anything yet. Which time would you like, and should I book it?\n\n{\"reply\": \"Thanks, Earl. Your details are verified. Brampton has openings for an oil change this Tuesday, November 17, at 8:00 AM and 11:00 AM. I have not booked anything yet. Which time would you like, and should I book it?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-05\", \"P-10\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3282,
+ "output_tokens": 340,
+ "cost_usd": 0.0004982,
+ "latency_ms": 1960.2
+}

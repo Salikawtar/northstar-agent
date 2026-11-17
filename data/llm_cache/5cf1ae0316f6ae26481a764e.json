@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour M. Lambert! Pour retrouver votre réparation, j'ai besoin d'une deuxième information afin de vérifier votre identité : votre plaque d'immatriculation ou votre numéro de réparation (RO-######). Pouvez-vous me l'indiquer ?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2935,
+ "output_tokens": 308,
+ "cost_usd": 0.0004475,
+ "latency_ms": 2436.7
+}

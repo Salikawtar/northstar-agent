@@ -1,0 +1,8 @@
+{
+ "text": "Thanks, Evelyn. Your account is verified.\n\nYour Tessera has one open recall, **NM-23R07: front passenger seat belt pretensioner wiring**. The fix is to inspect and replace the wiring harness. The dealer has parts for it, and the repair is done at no cost to you. It is marked as a safety recall, so I'd recommend booking it soon.\n\nFor Vaughan, the next open times I can see are:\n- Tuesday, Nov 17 at 3:00 PM\n- Wednesday, Nov 18 at 9:00 AM or 10:00 AM\n\nI don't see any Thursday afternoon openings yet. Would one of these times work for your service?",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3518,
+ "output_tokens": 554,
+ "cost_usd": 0.0006288,
+ "latency_ms": 3417.2
+}

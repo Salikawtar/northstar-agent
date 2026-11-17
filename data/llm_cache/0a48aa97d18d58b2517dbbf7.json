@@ -1,0 +1,20 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2914,
+ "output_tokens": 153,
+ "cost_usd": 0.0003679,
+ "latency_ms": 1302.9,
+ "tool_calls": [
+  {
+   "id": "toolu_01QtJte9xgNd2oBQAMWiyXqs",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Dumas\", \"plate\": \"CVEX 532\"}"
+  },
+  {
+   "id": "toolu_01KwxujjJY52g1r5sVEDrYak",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Brampton\", \"service_type\": \"tires\"}"
+  }
+ ]
+}

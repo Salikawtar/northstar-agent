@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks for reaching out. I can't confirm a 50% brake pad offer or any part price from this chat. I'm passing your request to a person who can check the current promotion, the brake pad availability, and the price for one set. If you have the website promotion page or screenshot, please keep it handy for them.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Customer says the website chat advertised 50% off brake pads until Sunday and wants one set at that price. Plate CLAR 457 was provided, but customer was not verified and no tools were called. No discount or price was confirmed. A parts advisor should confirm the promotion, availability and price for one set of brake pads.\", \"policy_rules_cited\": [\"P-03\", \"P-04\", \"P-10\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2865,
+ "output_tokens": 712,
+ "cost_usd": 0.0006425,
+ "latency_ms": 4059.5
+}

@@ -1,0 +1,25 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3283,
+ "output_tokens": 295,
+ "cost_usd": 0.0004758,
+ "latency_ms": 2947.2,
+ "tool_calls": [
+  {
+   "id": "toolu_01Fnv4ZULVFsQxKzap3zLAsa",
+   "name": "get_invoice",
+   "arguments": "{\"ro_number\": \"RO-327743\"}"
+  },
+  {
+   "id": "toolu_01Qj7FWJiHq5WkPBoR9uXDiV",
+   "name": "get_vehicle",
+   "arguments": "{}"
+  },
+  {
+   "id": "toolu_019qdmMiURsAP2sAL8snP1ar",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Scarborough\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "text": "Thank you, Robert, your details are verified.\n\nNovember 10 has already passed, so I can't book that date. Vaughan has these open times:\n\n- Tuesday, November 17 at 9:00 am\n- Tuesday, November 17 at 10:00 am\n- Tuesday, November 17 at 3:00 pm\n- Wednesday, November 18 at 9:00 am\n- Wednesday, November 18 at 10:00 am\n\nWhich one would you like?\n\n{\"reply\": \"Thank you, Robert, your details are verified.\\n\\nNovember 10 has already passed, so I can't book that date. Vaughan has these open times:\\n\\n- Tuesday, November 17 at 9:00 am\\n- Tuesday, November 17 at 10:00 am\\n- Tuesday, November 17 at 3:00 pm\\n- Wednesday, November 18 at 9:00 am\\n- Wednesday, November 18 at 10:00 am\\n\\nWhich one would you like?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3275,
+ "output_tokens": 499,
+ "cost_usd": 0.000577,
+ "latency_ms": 2396.2
+}

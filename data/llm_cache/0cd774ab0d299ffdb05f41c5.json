@@ -1,0 +1,15 @@
+{
+ "text": "Bonjour M. Lambert. Pour retrouver votre réparation et vérifier le miroir, j'ai besoin de votre numéro de dossier (RO-######) ou de la plaque de votre véhicule.\n\nJe dois aussi corriger le message précédent : je n'ai pas encore vérifié la date d'arrivée de la pièce, le dépôt ni un rendez-vous demain à 8 h. Dès que votre dossier sera vérifié, je vous donnerai les informations confirmées par notre système.",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3097,
+ "output_tokens": 477,
+ "cost_usd": 0.0005482,
+ "latency_ms": 3154.8,
+ "tool_calls": [
+  {
+   "id": "toolu_01LUYdHDHVkpYbouKN1u4gbY",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Lambert\"}"
+  }
+ ]
+}

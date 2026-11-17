@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Happy to book your lease-return inspection. To start, what is your last name, and your licence plate or a repair-order number (RO-######)? A phone number isn't enough to verify you.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\",\"P-06\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3915,
+ "output_tokens": 506,
+ "cost_usd": 0.01289,
+ "latency_ms": 4579.7
+}

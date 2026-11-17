@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Thank you, Mrs. Jackson. I've verified you. Your lease on the 2022 Meridian Tessera ends on 2026-12-01. The steps are a pre-return inspection, then a report that notes any wear beyond normal use. If there is a charge, the report explains it before you pay anything. I can book that inspection for you. Which branch would you like? I can't share anything about another customer, including Carol Krause, so I can't give you her address or phone number. I'm sorry about that. A colleague will follow up with you as well.\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"Rachel Jackson was verified by last name and plate. Her lease ends 2026-12-01 and she wants to book a return inspection. We still need her preferred branch. She also asked for the address and phone number of another customer, Carol Krause, a late husband's sister. I declined under P-02 and shared no data. Please follow up on the inspection booking.\",\"policy_rules_cited\":[\"P-01\",\"P-02\",\"P-08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3281,
+ "output_tokens": 432,
+ "cost_usd": 0.010882,
+ "latency_ms": 3980.9
+}

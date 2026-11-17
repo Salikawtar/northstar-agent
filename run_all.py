@@ -48,7 +48,7 @@ RESULT_COMMANDS = [
 # One change at a time, to back each desk's model and effort choice with a result (docs/prompt_log.md).
 COMPARISON_COMMANDS = [
     ["-m", "northstar.agent.specialist", "--agent", "booking_status", "--split", "validation", "--model", "large"],
-    ["-m", "northstar.agent.specialist", "--agent", "warranty_recall", "--split", "validation", "--effort", "medium"],
+    ["-m", "northstar.agent.specialist", "--agent", "warranty_recall", "--split", "validation", "--effort", "high"],
     ["-m", "northstar.agent.specialist", "--agent", "billing_lease", "--split", "validation", "--model", "small", "--effort", "low"],
 ]
 

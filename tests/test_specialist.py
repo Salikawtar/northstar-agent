@@ -335,3 +335,18 @@ def test_shared_rules_v3_cover_acting_for_someone_else_and_disputed_findings():
     rules = load_prompt("shared/policy_core_v3.md")
     assert "P-11" in rules and "acting for the customer" in rules
     assert "disputes a technician's finding" in rules
+
+
+def test_claim_tool_is_withheld_when_the_chat_is_not_about_a_warranty(tmp_path, dms):
+    # hw_33: a recall question with no open recall ended with a claim drafted by mistake.
+    client, seen = scripted(tmp_path, [call("draft_warranty_claim", symptom="noise"), final("No open recall.")])
+    res = Specialist("warranty_recall", client=client).run("w11", TURNS, route(RequestType.RECALL_INQUIRY), dms)
+    assert "draft_warranty_claim" not in {t["function"]["name"] for t in seen[0]["tools"]}
+    assert "draft_warranty_claim" in res.denied_tools and res.reply.action != AgentAction.DRAFTED_CLAIM
+
+
+def test_claim_tool_stays_for_a_warranty_request_or_extra_request(tmp_path, dms):
+    sp = Specialist("warranty_recall", client=scripted(tmp_path, [final("ok")])[0])
+    assert sp._withhold(route(RequestType.WARRANTY_CLAIM), False) == ()
+    extra = route(RequestType.RECALL_INQUIRY).model_copy(update={"secondary_types": [RequestType.WARRANTY_CLAIM]})
+    assert sp._withhold(extra, False) == ()

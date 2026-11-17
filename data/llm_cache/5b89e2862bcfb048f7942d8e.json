@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3070,
+ "output_tokens": 239,
+ "cost_usd": 0.0004265,
+ "latency_ms": 2559.4,
+ "tool_calls": [
+  {
+   "id": "toolu_01PDbFKqWP497rXyEKzQfk2i",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Oakville\", \"service_type\": \"diagnosis\"}"
+  }
+ ]
+}

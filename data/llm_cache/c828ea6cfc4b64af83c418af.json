@@ -1,0 +1,20 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2999,
+ "output_tokens": 154,
+ "cost_usd": 0.007538,
+ "latency_ms": 2189.3,
+ "tool_calls": [
+  {
+   "id": "toolu_01Nt9HcW9UhhhekYMnxiGM6G",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Little\", \"plate\": \"CHNJ 395\"}"
+  },
+  {
+   "id": "toolu_015L3hNBN8gShhdBJFxr4idC",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Brampton\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

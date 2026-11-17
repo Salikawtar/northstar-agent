@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je comprends, je vais vérifier le rappel pour vous tout de suite. Pouvez-vous m'envoyer votre nom de famille et votre plaque d'immatriculation (ou un numéro d'ordre de réparation RO-######)?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4033,
+ "output_tokens": 277,
+ "cost_usd": 0.010836,
+ "latency_ms": 3335.5
+}
