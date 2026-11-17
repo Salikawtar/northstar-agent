@@ -49,6 +49,13 @@ Run the hand-written test chats (each one passes or fails):
 python -m northstar.agent.scenarios
 ```
 
+Check the data (free, no model call): diversity in numbers, and the 130 / 30 / 40 split rebuilt and checked for overlap:
+
+```bash
+python -m northstar.datagen.diversity
+python -m northstar.datagen.split --rebuild
+```
+
 Measure the input check (free, no model call):
 
 ```bash

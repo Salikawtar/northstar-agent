@@ -26,7 +26,9 @@ def stage_datagen():
     for args in (["-m", "northstar.datagen.pipeline", "--jobs", "data/source/generation/jobs_designed.jsonl",
                   "--generations", "data/source/generation/generations_v3_conv.jsonl", "--seed", "42",
                   "--out", "outputs/datagen"],
-                 ["-m", "northstar.datagen.export", "--diff"]):
+                 ["-m", "northstar.datagen.export", "--diff"],
+                 ["-m", "northstar.datagen.split", "--rebuild"],
+                 ["-m", "northstar.datagen.diversity"]):
         subprocess.check_call([sys.executable, *args], cwd=ROOT, env={**__import__("os").environ, "PYTHONPATH": str(ROOT / "src")})
 
 

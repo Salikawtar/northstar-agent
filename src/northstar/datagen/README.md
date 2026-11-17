@@ -40,6 +40,15 @@ python -m northstar.datagen.pipeline --jobs data/source/generation/jobs_designed
 Use it to measure a real generator's rejection rate, not to regenerate the project data: the hand review, the QC log
 and the recorded model runs all depend on the v1114 text.
 
+## Diversity and the split check
+
+```bash
+python -m northstar.datagen.diversity          # distinct-2, similarity between chats, names (Faker masked)
+python -m northstar.datagen.split --rebuild    # 160 / 40 replay + 32 logged moves = the 130 / 30 / 40 split; overlap checks
+```
+
+Results: `docs/data_quality.md`.
+
 ## Red team
 
 ```bash
