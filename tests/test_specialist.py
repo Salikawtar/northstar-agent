@@ -305,3 +305,9 @@ def test_retry_cannot_drop_the_plate_that_failed(tmp_path, dms):
 
 def test_decides_what_is_covered_is_not_a_promise():
     assert not flag_promises("The warranty desk decides what is covered after an inspection.")
+
+
+def test_naming_the_free_recall_rule_is_not_a_promise():
+    # hw_33 (team chat): a correct French reply was blocked because "gratuité" matched "gratuit".
+    assert not flag_promises("La gratuité vaut seulement pour un rappel ouvert.")
+    assert flag_promises("La réparation est gratuite.")

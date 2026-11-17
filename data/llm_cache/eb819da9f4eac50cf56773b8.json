@@ -1,0 +1,8 @@
+{
+ "text": "Merci, Mme Dumas, votre identité est vérifiée. À Vaughan, les rendez-vous pour pneus que je peux voir sont cette semaine : le 17 novembre à 8 h ou à 14 h, le 18 novembre à 16 h, ou le 19 novembre à 9 h ou à 12 h. Lequel vous convient? Je peux le réserver tout de suite.\n\n{\"reply\": \"Merci, Mme Dumas, votre identité est vérifiée. À Vaughan, les rendez-vous pour pneus que je peux voir sont cette semaine : le 17 novembre à 8 h ou à 14 h, le 18 novembre à 16 h, ou le 19 novembre à 9 h ou à 12 h. Lequel vous convient? Je peux le réserver tout de suite.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3094,
+ "output_tokens": 476,
+ "cost_usd": 0.0005474,
+ "latency_ms": 2836.4
+}

@@ -64,7 +64,7 @@ class SpecialistFinal(BaseModel):
 # replies for the output check (Jessica) and for evaluation; it does not edit them.
 _PROMISES = [
     (CommitmentKind.WARRANTY_COVERAGE, r"(you'?re covered|is covered|are covered|will be covered|covered under (the )?warranty|est couvert|sont couverts|sera couvert|couvert par la garantie)"),
-    (CommitmentKind.FEE_WAIVER, r"(no charge|free of charge|at no cost|for free|waive[ds]?|sans frais|gratuit|gratuitement|annul\w* les frais)"),
+    (CommitmentKind.FEE_WAIVER, r"(no charge|free of charge|at no cost|for free|waive[ds]?|sans frais|gratuit(?:e|s|es)?\b|gratuitement|annul\w* les frais)"),
     (CommitmentKind.REFUND, r"(we('ll| will) refund|refund (is|has been|will be)|vous serez rembours\w*|remboursement (est|sera))"),
     (CommitmentKind.LOANER, r"(loaner (is|will be|car is)|courtesy car (is|will be)|auto de courtoisie (est|sera)|v[ée]hicule de courtoisie (est|sera))"),
 ]

@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2880,
+ "output_tokens": 81,
+ "cost_usd": 0.00657,
+ "latency_ms": 2012.7,
+ "tool_calls": [
+  {
+   "id": "toolu_01NePPpCGxUbGwY8BGXoPKuj",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Dumas\", \"plate\": \"CVEX 532\"}"
+  }
+ ]
+}

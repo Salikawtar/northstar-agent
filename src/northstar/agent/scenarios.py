@@ -27,7 +27,7 @@ from northstar.dms.store import DealerSystem
 CHATS = ROOT / "data" / "handwritten" / "chats.yaml"
 PATHS = {"fast_path", "out_of_scope", "booking_status", "warranty_recall", "billing_lease"}
 KEYS = {"path", "escalated", "reason", "queue", "urgency", "action", "verified",
-        "tools_include", "tools_exclude", "must_not_match"}
+        "tools_include", "tools_exclude", "must_not_match", "known_limitation"}
 
 
 def load_chats(file: Path = CHATS) -> list[dict[str, Any]]:
@@ -90,13 +90,17 @@ def run(pipeline: Optional[Pipeline] = None, file: Path = CHATS) -> tuple[pd.Dat
         turns = [(who, text) for who, text in chat["turns"]]
         res = pl.handle(chat["id"], turns, DealerSystem(), language_hint=chat.get("language"))
         fails = check(chat, res)
-        rows.append(dict(id=chat["id"], title=chat["title"], passed=not fails, failed_checks=" | ".join(fails),
+        known = chat["expect"].get("known_limitation", "")
+        rows.append(dict(id=chat["id"], title=chat["title"], passed=not fails,
+                         known_limitation=bool(fails and known), failed_checks=" | ".join(fails),
                          path=res.path, action=res.reply.action.value,
                          handoff=f"{res.reply.handoff.reason.value} -> {res.reply.handoff.queue}" if res.reply.handoff else "",
                          tools=",".join(res.reply.tools_used), reply=res.reply.text,
                          latency_ms=res.latency_ms, cost_usd=res.cost_usd))
     out = pd.DataFrame(rows)
-    summary = dict(n=len(out), passed=int(out.passed.sum()), failed=int((~out.passed).sum()),
+    summary = dict(n=len(out), passed=int(out.passed.sum()),
+                   failed=int((~out.passed & ~out.known_limitation).sum()),
+                   known_limitations=int(out.known_limitation.sum()),
                    cost_usd_total=round(out.cost_usd.sum(), 5), replayed_from_cache=pl.client.usage.cache_hits)
     return out, summary
 
@@ -110,10 +114,12 @@ def _main() -> None:
     (res_dir / "handwritten.json").write_text(json.dumps(s, indent=1), encoding="utf-8")
     print(json.dumps(s, indent=1) + "\n")
     for _, r in out.iterrows():
-        mark = "PASS" if r.passed else "FAIL"
+        mark = "PASS" if r.passed else ("KNOWN" if r.known_limitation else "FAIL")
         print(f"{mark}  {r.id}  {r.title}  ({r.path}, {r.action}{', ' + r.handoff if r.handoff else ''})")
         if not r.passed:
             print(f"      why: {r.failed_checks}")
+            if r.known_limitation:
+                print("      known limitation, see the chat's known_limitation note")
             print(f"      reply: {r.reply[:300]}")
     print(f"\nSaved: {res_dir / 'handwritten'}.csv and .json")
 

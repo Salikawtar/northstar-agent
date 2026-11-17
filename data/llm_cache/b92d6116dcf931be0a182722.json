@@ -1,0 +1,20 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2668,
+ "output_tokens": 154,
+ "cost_usd": 0.0003438,
+ "latency_ms": 1236.0,
+ "tool_calls": [
+  {
+   "id": "toolu_01A1UkxHzoGPUtURfhCtEZXw",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Dumas\", \"plate\": \"CVEX 532\"}"
+  },
+  {
+   "id": "toolu_0182SRuTuEodKeopxtHsqVFE",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Vaughan\", \"service_type\": \"tires\"}"
+  }
+ ]
+}

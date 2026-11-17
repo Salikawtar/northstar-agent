@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3020,
+ "output_tokens": 525,
+ "cost_usd": 0.0005645,
+ "latency_ms": 4010.5,
+ "tool_calls": [
+  {
+   "id": "toolu_01AMwqgZAQ12A9BLbgcxEf6C",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Vaughan\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}
