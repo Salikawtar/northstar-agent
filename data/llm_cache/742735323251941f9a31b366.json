@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you, Robert, your identity is verified. November 10 has already passed, so I can't book that date. The next free times at Vaughan are: Tuesday, November 17 at 9:00 am, 10:00 am or 3:00 pm, or Wednesday, November 18 at 9:00 am or 10:00 am. Which one would you like?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2930,
+ "output_tokens": 249,
+ "cost_usd": 0.0004175,
+ "latency_ms": 1709.7
+}

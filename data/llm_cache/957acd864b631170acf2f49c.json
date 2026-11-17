@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Merci, Odette, votre identité est vérifiée. Il y a un créneau le vendredi 20 novembre à 9 h à Brampton pour un changement de pneus. Voulez-vous que je le réserve? Je n'ai pas l'information sur l'état de vos pneus d'entreposage ni sur le prix, mais je peux transmettre votre question à un conseiller.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3258,
+ "output_tokens": 192,
+ "cost_usd": 0.0004218,
+ "latency_ms": 1565.7
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bien sûr, je peux vous aider à vérifier l'état de votre réparation. Pour confirmer votre identité, j'ai besoin de votre plaque d'immatriculation ou de votre numéro de réparation (format RO-######). Pouvez-vous me donner l'un des deux ?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2590,
+ "output_tokens": 284,
+ "cost_usd": 0.000401,
+ "latency_ms": 2245.0
+}

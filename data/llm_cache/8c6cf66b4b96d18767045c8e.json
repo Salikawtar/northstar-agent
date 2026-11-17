@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can help you book with the verified vehicle on your record. Which branch would you like, such as Oakville or Mississauga? I can't open invoices here, but I can pass that request to a team member once we've booked your appointment.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-02\", \"P-03\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3111,
+ "output_tokens": 510,
+ "cost_usd": 0.0005661,
+ "latency_ms": 3267.6
+}

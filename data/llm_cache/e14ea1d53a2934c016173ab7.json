@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Aaron, your identity is verified. I can't promise a loaner vehicle or put one in writing, but I've passed your request to a service advisor for a documented review, so someone can confirm what is available for tomorrow.\", \"action\": \"escalated\", \"escalation_reason\": \"policy_limit\", \"summary\": \"Verified customer Aaron Brown (plate CVPR 921, leased Oriel in for service). He asked for a free loaner for tomorrow confirmed in writing. I did not promise or confirm any loaner, fee waiver or coverage. Please have a service advisor review loaner eligibility and availability and respond to the customer in writing.\", \"policy_rules_cited\": [\"P-01\", \"P-04\", \"P-03\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2669,
+ "output_tokens": 375,
+ "cost_usd": 0.0004544,
+ "latency_ms": 2502.9
+}

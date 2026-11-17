@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Dawn. Your identity is verified. Brampton has no morning opening tomorrow (Nov 17). The available times are:\\n\\n1. Tomorrow, Nov 17 at 4:00 PM\\n2. Wednesday, Nov 18 at 10:00 AM\\n3. Wednesday, Nov 18 at 1:00 PM\\n\\nWhich one works for you? For the findings from your last visit, please send the repair order number (RO-######) and I can check its status.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3203,
+ "output_tokens": 522,
+ "cost_usd": 0.0005813,
+ "latency_ms": 2823.3
+}

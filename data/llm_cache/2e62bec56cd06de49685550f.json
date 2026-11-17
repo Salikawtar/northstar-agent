@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2850,
+ "output_tokens": 109,
+ "cost_usd": 0.00679,
+ "latency_ms": 1156.4,
+ "tool_calls": [
+  {
+   "id": "toolu_015hV3tZXp3td86tK7eoLGoU",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Rivera\", \"plate\": \"CJPS 221\", \"ro_number\": \"RO-875999\"}"
+  }
+ ]
+}

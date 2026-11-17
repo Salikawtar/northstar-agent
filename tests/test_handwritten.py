@@ -67,3 +67,9 @@ def test_handwritten_chats_all_pass_on_replay():
     except CacheMiss:
         pytest.skip("hand-written chats not recorded yet: run python -m northstar.agent.scenarios once")
     assert s["failed"] == 0, out.loc[~out.passed, ["id", "failed_checks"]].to_string()
+
+
+def test_a_known_limitation_is_reported_not_hidden():
+    from northstar.agent.scenarios import load_chats as lc
+    known = [c for c in lc() if c["expect"].get("known_limitation")]
+    assert [c["id"] for c in known] == ["hw_15"]          # each one must be listed in docs/prompt_log.md

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Earl. I can book you at Brampton for a maintenance visit (oil change) on Tuesday, November 17. Tuesday morning has two openings: 8:00 AM and 11:00 AM. Which one works for you? I won't book anything at Vaughan.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2937,
+ "output_tokens": 349,
+ "cost_usd": 0.0004682,
+ "latency_ms": 2772.1
+}
