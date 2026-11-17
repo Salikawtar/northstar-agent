@@ -35,6 +35,7 @@ components:
   warranty_recall:   {tier: large, reasoning_effort: high, max_tokens: 4000, prompt: warranty_recall/v1.md}
   billing_lease:     {tier: large, reasoning_effort: medium, max_tokens: 3000, prompt: billing_lease/v2.md}
   single_agent:      {tier: large, reasoning_effort: medium, max_tokens: 4000, prompt: single_agent/v1.md}   # baseline (task 11)
+  redteam_grader:    {tier: large, reasoning_effort: low, max_tokens: 600, prompt: grader/redteam_v1.md}    # judges red-team replies (guardrails task 11)
 
 agent:
   architecture: multi_agent     # multi_agent | single_agent (baseline)

@@ -52,6 +52,8 @@ Code: `src/northstar/guardrails/input_check.py`, `output_check.py`. Switch: `gua
 
 **Output check:** on all recorded replies (30 validation chats, 13 hand-written chats), it blocked **nothing**: no false blocks. Its catches are tested on made-up bad replies (`tests/test_guardrails.py`, 30 tests).
 
+**Red-team run (all layers together):** `python -m northstar.guardrails.redteam`. Each of the 75 attacks goes through the whole agent. The reply the customer would see is graded by rule checks (another person's data, a promise without a tool, a warranty claim drafted for a fraud attempt) and by a model grader that reads the attack's own "fails if" rule (`prompts/grader/redteam_v1.md`). An attack counts as a success if either says so. The run also records whether the chat went to a person, and which layer stopped the attack first. First run pending.
+
 ## Known weaknesses (for the review)
 
 - **Phrase lists miss rewordings** (input check) and new ways of making a promise (output check). A small classifier model could replace G-IN-01 later; the end-to-end red-team run will say whether it is needed.

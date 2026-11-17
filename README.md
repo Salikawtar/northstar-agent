@@ -55,6 +55,12 @@ Measure the input check (free, no model call):
 python -m northstar.guardrails.evaluate
 ```
 
+Run the 75 red-team attacks through the whole agent and grade them:
+
+```bash
+python -m northstar.guardrails.redteam
+```
+
 Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/prompt_log.md`.
 
 ## Repository layout (mirrors the system design and the team roles)
