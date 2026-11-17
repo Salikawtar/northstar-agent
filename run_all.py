@@ -1,6 +1,7 @@
 """One entry point for the whole project.
 
     python run_all.py            # run every stage that is built so far
+    python run_all.py datagen    # replay the data-generation run and compare it with the dataset
     python run_all.py dms        # just rebuild the mock dealer system
     python run_all.py test       # run the test suite
 
@@ -20,6 +21,15 @@ def stage_dms():
     generate.main()
 
 
+def stage_datagen():
+    """Replay the recorded generation run and compare it with the dataset (no key, no network)."""
+    for args in (["-m", "northstar.datagen.pipeline", "--jobs", "data/source/generation/jobs_designed.jsonl",
+                  "--generations", "data/source/generation/generations_v3_conv.jsonl", "--seed", "42",
+                  "--out", "outputs/datagen"],
+                 ["-m", "northstar.datagen.export", "--diff"]):
+        subprocess.check_call([sys.executable, *args], cwd=ROOT, env={**__import__("os").environ, "PYTHONPATH": str(ROOT / "src")})
+
+
 def stage_test():
     code = subprocess.call([sys.executable, "-m", "pytest", "-q"], cwd=ROOT)
     if code:
@@ -28,6 +38,7 @@ def stage_test():
 
 # Order matters: later stages use earlier outputs.
 STAGES = {
+    "datagen": stage_datagen,
     "dms": stage_dms,
     # "agent":     Phase 2
     # "guardrails": Phase 3

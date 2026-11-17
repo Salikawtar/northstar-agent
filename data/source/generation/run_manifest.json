@@ -1,0 +1,261 @@
+{
+  "dataset": "Northstar Motors synthetic support messages",
+  "dataset_version": "v1108",
+  "prompt_version": "v2",
+  "prompt_sha256": "24cf172a5ac48935b8dafa7bf36a8cdf8b289727e5edf7b48d873c87c547860e",
+  "changelog": [
+    [
+      "v1",
+      "2026-10-24",
+      "Initial Northstar Motors spec: 10 intents, 5 adversarial sub-types tied to cover intents, 8 personas, 3 channels (chat / email / phone transcript), 6 languages incl. 2 code-switched; hard rows defined as boundary / multi-ask / missing-detail; prompt v1",
+      "baseline for the dealership domain",
+      "-"
+    ],
+    [
+      "v2-chat",
+      "2026-11-05",
+      "Scope narrowed to CHAT dialogues only (channel_weights = {chat}); email and phone_transcript kept in the spec as a time-permitting extension; 200 rows; prompt text unchanged (same sha256); v1 email/phone rows retained as the extension set",
+      "professor feedback on the proposal: dealership agent chosen, limit inputs to chat, ~200 examples covering the use cases plus adversarial; add transcripts/email later if time permits",
+      "-"
+    ],
+    [
+      "v3-conv",
+      "2026-11-07",
+      "Records are short CHAT CONVERSATIONS (customer -> agent -> customer, 3 turns) instead of single messages; about half of the customers correct themselves mid-conversation; languages narrowed to English + French (v2 zh/es/hinglish openers rewritten in English or French, Franglais rows rewritten as lightly code-switched French and flagged code_switched); phone and plate generated in strict Ontario formats and every Faker field validated in QC; turn-structure check added; near-duplicates judged on the opening customer turn; coverage matrix exported as target vs sampled vs kept; prompt v2 asks for the dialogue JSON",
+      "criterion-1 rubric detail: 'conversations', 'mid-conversation corrections', 'some French', 'Faker in valid formats', 'coverage matrix with target counts', 'log of what was thrown out and why'",
+      "-"
+    ],
+    [
+      "v1108",
+      "2026-11-08",
+      "warranty_fraud topped up from 5 to 8 by re-typing three adversarial rows (v3_0007, v3_0073, v3_0129) within its allowed cover intents, so every attack type has 8; backend_* columns added to every row (the customer's system-of-record: vehicle, repair-order status, open recall, warranty in force) so agent tools can look records up; a separate 75-attack red-team set generated with its own customers and never placed in train or test",
+      "teammate review of the outline (comments 20-22): attack-type imbalance visible in the coverage matrix; no backend for verification and lookup tests; only 8 adversarial rows in the 40-row test split",
+      "warranty_fraud 5 -> 8; red-team test cases 8 -> 75"
+    ]
+  ],
+  "active_channels": [
+    "chat"
+  ],
+  "extension_channels": [
+    "email",
+    "phone_transcript"
+  ],
+  "seed": 42,
+  "run_tag": "v3",
+  "n_requested": 215,
+  "models_planned": [
+    "openai/gpt-4o-mini",
+    "openai/gpt-4.1-nano",
+    "google/gemini-2.5-flash-lite",
+    "meta-llama/llama-3.3-70b-instruct",
+    "mistralai/mistral-nemo",
+    "deepseek/deepseek-chat",
+    "qwen/qwen-2.5-7b-instruct",
+    "amazon/nova-lite-v1"
+  ],
+  "temperatures_planned": [
+    0.2,
+    0.7,
+    1.0,
+    1.3
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "language_weights": {
+    "en": 13,
+    "fr": 7
+  },
+  "channel_weights": {
+    "chat": 1
+  },
+  "difficulty_weights": {
+    "easy": 0.5,
+    "hard": 0.3,
+    "adversarial": 0.2
+  },
+  "customer_pool_ratio": 0.6,
+  "qc": {
+    "min_chars": 15,
+    "max_chars": 2200,
+    "dup_threshold": 0.8,
+    "dup_method": "char_wb 3-5gram TF-IDF cosine on the OPENING customer turn (placeholder form) + exact normalized match",
+    "faker_formats": {
+      "customer_name": "^\\S+( \\S+)+$",
+      "first_name": "^\\S+$",
+      "last_name": "^\\S+$",
+      "email": "^[a-z0-9.]+@example\\.com$",
+      "phone": "^(\\(\\d{3}\\) |\\d{3}-)555-01\\d{2}$",
+      "vin": "^[A-HJ-NPR-Z0-9]{17}$",
+      "plate": "^C[A-HJ-NPR-Z]{3} \\d{3}$",
+      "year_make_model": "^20(1[89]|2[0-6]) Meridian \\S+( EV)?$",
+      "mileage": "^\\d{1,3}(,\\d{3})* km$",
+      "ro_number": "^RO-\\d{6}$",
+      "dealer_city": "^[A-Za-z ]+$",
+      "appointment_date": "^\\d{4}-\\d{2}-\\d{2}$",
+      "purchase_date": "^\\d{4}-\\d{2}-\\d{2}$",
+      "amount": "^\\$\\d{1,3}(,\\d{3})* CAD$",
+      "advisor_name": "^\\S+$",
+      "parent_name": "^\\S+( \\S+)+$",
+      "fleet_company": "^.{3,}$"
+    },
+    "lang_check": "langdetect if installed, else script-range + stopword fallback"
+  },
+  "summary": {
+    "n_jobs": 215,
+    "n_generated": 215,
+    "n_kept": 200,
+    "n_rejected": 15,
+    "validity_rate": 0.93,
+    "reject_reasons": {
+      "bad_turn_structure": 1,
+      "raw_pii_in_template": 3,
+      "unfilled_placeholder": 3,
+      "boilerplate": 2,
+      "near_duplicate_of": 3,
+      "lang_mismatch": 2,
+      "parse_error": 1
+    },
+    "live_calls": 0,
+    "total_cost_usd": 0.0,
+    "budget_stopped": false,
+    "prompt_version": "v2",
+    "generator": "file",
+    "n_train": 160,
+    "n_test": 40
+  },
+  "split_check": {
+    "method": "StratifiedGroupKFold(n_splits=5) x 40 seeded restarts; fold with the smallest L1 distance to the full intent/lang/difficulty/channel mix (L1=0.050) stratified by intent, grouped by customer; then cross-split near-dup removal at char-ngram cosine >= 0.8",
+    "train_rows_removed_as_test_near_dups": 0,
+    "customers_in_both_splits": 0,
+    "identical_templates_in_both_splits": 0,
+    "max_cross_split_similarity_after": 0.49,
+    "overlap_zero": true,
+    "test_intents_missing": []
+  },
+  "coverage_targets": {
+    "n": 200,
+    "per_intent": 20,
+    "intent_x_difficulty": {
+      "book_service": {
+        "easy": 10,
+        "hard": 6,
+        "adversarial": 4
+      },
+      "repair_status": {
+        "easy": 10,
+        "hard": 6,
+        "adversarial": 4
+      },
+      "warranty_claim": {
+        "easy": 10,
+        "hard": 6,
+        "adversarial": 4
+      },
+      "recall_inquiry": {
+        "easy": 10,
+        "hard": 6,
+        "adversarial": 4
+      },
+      "roadside_assistance": {
+        "easy": 10,
+        "hard": 6,
+        "adversarial": 4
+      },
+      "parts_order": {
+        "easy": 10,
+        "hard": 6,
+        "adversarial": 4
+      },
+      "billing_dispute": {
+        "easy": 10,
+        "hard": 6,
+        "adversarial": 4
+      },
+      "lease_end_return": {
+        "easy": 10,
+        "hard": 6,
+        "adversarial": 4
+      },
+      "out_of_scope": {
+        "easy": 10,
+        "hard": 6,
+        "adversarial": 4
+      },
+      "needs_human": {
+        "easy": 10,
+        "hard": 6,
+        "adversarial": 4
+      }
+    },
+    "intent_x_language": {
+      "book_service": {
+        "en": 13,
+        "fr": 7
+      },
+      "repair_status": {
+        "en": 13,
+        "fr": 7
+      },
+      "warranty_claim": {
+        "en": 13,
+        "fr": 7
+      },
+      "recall_inquiry": {
+        "en": 13,
+        "fr": 7
+      },
+      "roadside_assistance": {
+        "en": 13,
+        "fr": 7
+      },
+      "parts_order": {
+        "en": 13,
+        "fr": 7
+      },
+      "billing_dispute": {
+        "en": 13,
+        "fr": 7
+      },
+      "lease_end_return": {
+        "en": 13,
+        "fr": 7
+      },
+      "out_of_scope": {
+        "en": 13,
+        "fr": 7
+      },
+      "needs_human": {
+        "en": 13,
+        "fr": 7
+      }
+    },
+    "adversarial_type_total": {
+      "prompt_injection": 8,
+      "pii_extraction": 8,
+      "policy_pressure": 8,
+      "manufacturer_impersonation": 8,
+      "warranty_fraud": 8
+    },
+    "hard_mode_total": {
+      "boundary": 20,
+      "multi_ask": 20,
+      "missing_detail": 20
+    },
+    "persona_total": {
+      "angry owner who writes in CAPS and short bursts": 25,
+      "terse mobile typist: fragments, typos, no punctuation": 25,
+      "elderly, very polite, over-explains, formal": 25,
+      "non-native English speaker with small grammar slips": 25,
+      "verbose small-fleet manager, businesslike, lists details": 25,
+      "panicked roadside caller, urgent and disorganized": 25,
+      "caregiver writing on behalf of an elderly parent": 25,
+      "repeat contact, frustrated, references earlier tickets": 25
+    },
+    "correction_share": 0.5,
+    "code_switch_share_of_fr": 0.3
+  },
+  "n_designed": 200,
+  "n_replacements": 15
+}
