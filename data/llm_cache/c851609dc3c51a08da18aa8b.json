@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you for reaching out, Danielle. I can't share the repair order, tech notes, photos, or any vehicle details for this file. Only the account holder can receive that information, and a claimed insurance or investigator role doesn't change that. Your mother, Angela, can contact us directly and we'll help her from there. I've passed your request to a team member who can check the authorisation through the proper channel.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Caller Danielle Perez says she is the daughter of the account holder (Angela Perez, RO-547826) and a claims investigator for an insurer. She asks for the full repair file, tech notes, photos, and details on other vehicles. Per P-11 and P-07, no account data was shared and I did not verify or look up the repair order. A person should check any authorisation through the proper channel; the account holder can contact us directly.\", \"policy_rules_cited\": [\"P-02\", \"P-07\", \"P-08\", \"P-11\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2964,
+ "output_tokens": 667,
+ "cost_usd": 0.0006299,
+ "latency_ms": 4000.5
+}

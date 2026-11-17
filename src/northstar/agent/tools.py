@@ -14,6 +14,7 @@ from __future__ import annotations
 import json
 from typing import Any, Optional
 
+from northstar.agent.consent import customer_chose
 from northstar.config import settings
 from northstar.contracts import ToolError, ToolResult
 from northstar.dms.store import DealerSystem, Session
@@ -78,9 +79,12 @@ PERMISSIONS["single_agent"] = sorted({t for ts in PERMISSIONS.values() for t in 
 
 
 class ToolBox:
-    def __init__(self, dms: DealerSystem, agent: str, withhold: tuple[str, ...] = ()):
+    def __init__(self, dms: DealerSystem, agent: str, withhold: tuple[str, ...] = (),
+                 turns: Optional[list[tuple[str, str]]] = None):
         self.dms = dms
         self.agent = agent
+        # The conversation, so book_slot can check in code that the customer chose the time (D-26).
+        self.turns = turns
         # withhold: tools this desk has but this chat does not need (refused in code, hidden from the model)
         self.allowed = [t for t in PERMISSIONS[agent] if t not in withhold]
         self.session: Optional[Session] = None
@@ -135,6 +139,14 @@ class ToolBox:
             if name == "list_slots":
                 return d.list_slots(a.get("location", ""), a.get("service_type", "maintenance"))
             if name == "book_slot":
+                slot = d.slots.get(str(a.get("slot_id", "")).strip())
+                if slot and self.turns is not None:
+                    customer = [t for who, t in self.turns if who.lower().startswith("customer")]
+                    agent = [t for who, t in self.turns if not who.lower().startswith("customer")]
+                    if not customer_chose(slot["start"], customer, agent[-1] if agent else ""):
+                        return ToolResult(tool="book_slot", ok=False, error=ToolError.INVALID_INPUT,
+                                          message="The customer has not chosen this day and time. Offer two or three "
+                                                  "free times and book only after the customer picks one.")
                 return d.book_slot(s, a.get("slot_id", ""))
             if name == "get_repair_status":
                 return d.get_repair_status(s, a.get("ro_number", ""))

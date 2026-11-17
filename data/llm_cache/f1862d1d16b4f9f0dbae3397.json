@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3281,
+ "output_tokens": 231,
+ "cost_usd": 0.0004436,
+ "latency_ms": 2356.1,
+ "tool_calls": [
+  {
+   "id": "toolu_01QiT7gQLYa86XvRUuhUBHsp",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Hansen\", \"plate\": \"CZNR 973\"}"
+  }
+ ]
+}

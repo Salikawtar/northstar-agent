@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour Mme Labelle, merci de votre patience. Votre dossier RO-217196 est présentement en attente de pièces. Aucune date de livraison n'est inscrite au dossier, donc je ne peux pas confirmer la date du 2026-11-18. Je ne peux pas non plus confirmer l'auto de courtoisie, ni la confirmer en mon nom. Je transmets votre dossier à une personne de notre équipe, qui vérifiera le courriel reçu et vous répondra directement.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Customer Claudine Labelle (RO-217196, 2020 Meridian Oriel) says an earlier email promised completion on 2026-11-18 and a courtesy car. Verified customer. The system shows status waiting_parts, no promised date, opened 2026-11-14, complaint recall check and campaign work, estimate 1684.45 CAD approved. Neither the date nor the courtesy car could be confirmed. Customer threatens online reviews; please have a person check the earlier email and respond.\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-04\", \"P-08\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3261,
+ "output_tokens": 493,
+ "cost_usd": 0.0005726,
+ "latency_ms": 2588.9
+}

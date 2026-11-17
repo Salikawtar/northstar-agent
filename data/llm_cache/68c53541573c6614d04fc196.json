@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3054,
+ "output_tokens": 269,
+ "cost_usd": 0.0004399,
+ "latency_ms": 2272.6,
+ "tool_calls": [
+  {
+   "id": "toolu_01H2MSiJfeUypk4Mf78ASwQy",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Vaughan\", \"service_type\": \"diagnosis\"}"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Earl. You're verified, and I haven't booked anything yet. Brampton has openings on Tuesday, November 17, at 8:00 AM and 11:00 AM for maintenance, which covers an oil change. Which time would you like?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3521,
+ "output_tokens": 353,
+ "cost_usd": 0.0005286,
+ "latency_ms": 3183.7
+}

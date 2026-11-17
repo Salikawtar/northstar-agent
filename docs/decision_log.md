@@ -184,3 +184,13 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** Haiku cost a tenth as much and matched 100% handoff recall with 0 unbacked promises on 7 chats, but it looped on tools (5 invoice reads in one chat, 3 times the tool calls on average). This desk explains charges and handles disputes, where a confused answer about money is costly, and 7 chats is too few to trust a tie.
 - **Alternatives considered:** switch to Haiku now (saves about $0.015 per billing chat).
 - **Counter-argument:** at high volume the saving is real (Abhi's cost model will show how much). A larger comparison on the test set could justify the switch later.
+
+### D-26. Two commitments checked in code, not left to the prompt
+- **Date:** 2026-11-17
+- **Choice:**
+  - **Bookings:** `book_slot` is refused in code unless the customer named the slot's day and time (or accepted a time the agent had just offered). The refusal tells the agent to offer times instead (`src/northstar/agent/consent.py`).
+  - **Warranty claims:** the claim tool is only given to the warranty desk when the chat's main request is a warranty claim and the router did not flag an attempt to trick us. A person still gets every flagged chat and can open a real claim.
+- **Why:** the second record run showed both rules being skipped despite clear prompts. The booking desk booked a time the customer had not chosen twice (hw_21, hw_22), even after the prompt fix (booking v3). With medium effort, the warranty desk opened claims in 4 warranty-fraud attacks while refusing the fraud itself (red team 71 of 75), and in hw_33 (a recall question). Commitments that cost the dealership money are now enforced where the model cannot skip them, like verification (D-19) and tool permissions.
+- **Alternatives considered:** stronger prompts (tried in booking v3, not enough); back to high effort for warranty (fixes the red team, not hw_33, and costs 40% more per chat).
+- **Counter-argument:** the booking check reads words, so an unusual way of choosing a time ("the second one") is refused and the customer is asked again; that is slower but safe. A legitimate claim inside a flagged chat now waits for a person.
+- **Effect on D-24:** medium effort stays for the warranty desk. The red team showed it drafts claims more readily than high, but with the claim tool withheld in flagged chats that difference no longer reaches the customer.

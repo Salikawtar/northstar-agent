@@ -1,0 +1,15 @@
+{
+ "text": "Thanks, Earl. You're verified, and I haven't booked anything yet. Brampton has openings on Tuesday, November 17, at 8:00 AM and 11:00 AM for an oil change (maintenance). Would you like one of those?",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3327,
+ "output_tokens": 283,
+ "cost_usd": 0.0004742,
+ "latency_ms": 2142.2,
+ "tool_calls": [
+  {
+   "id": "toolu_01UAUmc5YCJzky7i7vMMsY5S",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Martin\", \"plate\": \"CMRW 786\"}"
+  }
+ ]
+}

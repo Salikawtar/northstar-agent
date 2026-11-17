@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I'm sorry, I still can't match those details to a repair order, so I can't share its status. I'm passing this to a team member who can check it with you directly. Thank you for your patience.\", \"action\": \"escalated\", \"escalation_reason\": \"verification_failed\", \"summary\": \"Customer asked whether their car (repair order RO-124033) is ready. Verification failed twice, once with last name Cox plus plate CHNJ 395 and once with last name Cox plus RO-124033. No repair or vehicle details were shared. Please verify the customer's identity and help with the repair status.\", \"policy_rules_cited\": [\"P-01\", \"P-08\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3235,
+ "output_tokens": 269,
+ "cost_usd": 0.000458,
+ "latency_ms": 1820.3
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Merci, Mme Drouin, votre identité est confirmée. Votre entretien est réservé à Vaughan le mardi 17 novembre 2026 à 10 h (confirmation BK-00039). À bientôt!\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3504,
+ "output_tokens": 130,
+ "cost_usd": 0.0004154,
+ "latency_ms": 1042.8
+}

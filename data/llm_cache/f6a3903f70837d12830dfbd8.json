@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you, Brian. Your maintenance service is booked for Tuesday, November 17, at 9:00 AM at our Scarborough branch. Your confirmation number is BK-00029. I also checked your vehicle, and our system shows no open recall campaigns for it. If your letter says otherwise, our service team can look at it with you when you arrive.\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3690,
+ "output_tokens": 342,
+ "cost_usd": 0.00054,
+ "latency_ms": 2711.2
+}

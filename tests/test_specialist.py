@@ -56,12 +56,21 @@ def route(rt=RequestType.BOOK_SERVICE, esc=False, reason=EscalationReason.NONE, 
 TURNS = [("customer", "book me in Oakville please")]
 
 
+def chose(dms, location="Oakville", service="maintenance"):
+    """A free slot and a conversation in which the customer names its day and time (D-26)."""
+    from datetime import datetime
+    slot = dms.list_slots(location, service).data["slots"][0]
+    start = datetime.fromisoformat(slot["start"])
+    when = f"{start.strftime('%A')} {start.strftime('%B')} {start.day} at {start.hour % 12 or 12} {'am' if start.hour < 12 else 'pm'}"
+    return slot["slot_id"], [("customer", f"book me in {location} please, {when} works for me")]
+
+
 def test_verify_then_book_counts_as_backed_appointment(tmp_path, dms, customer):
     last, plate = customer
-    slot = dms.list_slots("Oakville", "maintenance").data["slots"][0]["slot_id"]
+    slot, turns = chose(dms)
     client, _ = scripted(tmp_path, [call("verify_customer", last_name=last, plate=plate),
                                     call("book_slot", slot_id=slot), final("You're booked.")])
-    res = Specialist("booking_status", client=client).run("c1", TURNS, route(), dms)
+    res = Specialist("booking_status", client=client).run("c1", turns, route(), dms)
     assert res.reply.action == AgentAction.BOOKED and res.verified
     c = res.reply.commitments[0]
     assert c.kind == CommitmentKind.APPOINTMENT and c.backed_by_tool == "book_slot"
@@ -217,10 +226,10 @@ def test_each_desk_prompt_is_complete(tmp_path, agent):
 
 def test_billing_desk_can_book_a_lease_inspection(tmp_path, dms, customer):
     last, plate = customer
-    slot = dms.list_slots("Oakville", "maintenance").data["slots"][0]["slot_id"]
+    slot, turns = chose(dms)
     client, _ = scripted(tmp_path, [call("verify_customer", last_name=last, plate=plate),
                                     call("book_slot", slot_id=slot), final("Your inspection is booked.")])
-    res = Specialist("billing_lease", client=client).run("b2", TURNS, route(RequestType.LEASE_END_RETURN), dms)
+    res = Specialist("billing_lease", client=client).run("b2", turns, route(RequestType.LEASE_END_RETURN), dms)
     assert res.reply.action == AgentAction.BOOKED and res.reply.commitments[0].backed_by_tool == "book_slot"
 
 
@@ -345,8 +354,35 @@ def test_claim_tool_is_withheld_when_the_chat_is_not_about_a_warranty(tmp_path, 
     assert "draft_warranty_claim" in res.denied_tools and res.reply.action != AgentAction.DRAFTED_CLAIM
 
 
-def test_claim_tool_stays_for_a_warranty_request_or_extra_request(tmp_path, dms):
+def test_claim_tool_only_for_a_warranty_request_nobody_flagged(tmp_path, dms):
     sp = Specialist("warranty_recall", client=scripted(tmp_path, [final("ok")])[0])
     assert sp._withhold(route(RequestType.WARRANTY_CLAIM), False) == ()
+    # hw_33: warranty only as an extra request
     extra = route(RequestType.RECALL_INQUIRY).model_copy(update={"secondary_types": [RequestType.WARRANTY_CLAIM]})
-    assert sp._withhold(extra, False) == ()
+    assert sp._withhold(extra, False) == ("draft_warranty_claim",)
+    # red team warranty fraud: the router flagged an attempt to trick us
+    assert sp._withhold(route(RequestType.WARRANTY_CLAIM, True, EscalationReason.ADVERSARIAL), False) == ("draft_warranty_claim",)
+
+
+def test_booking_is_refused_in_code_when_the_customer_did_not_choose_the_time(tmp_path, dms, customer):
+    # hw_21: asked for tomorrow morning, the desk booked another day; hw_22: no time chosen at all.
+    last, plate = customer
+    slot = dms.list_slots("Oakville", "maintenance").data["slots"][0]["slot_id"]
+    client, _ = scripted(tmp_path, [call("verify_customer", last_name=last, plate=plate),
+                                    call("book_slot", slot_id=slot), final("Here are some times.", "asked_clarification")])
+    res = Specialist("booking_status", client=client).run("c50", [("customer", "can you find me a slot next week")], route(), dms)
+    assert res.reply.action != AgentAction.BOOKED and not res.reply.commitments
+
+
+def test_customer_choice_reads_day_and_time_in_both_languages():
+    from northstar.agent.consent import customer_chose
+    tue11, tue16, wed10 = "2026-11-17T11:00:00", "2026-11-17T16:00:00", "2026-11-18T10:00:00"
+    assert customer_chose(tue11, ["Tuesday November 17 at 11 am works for me."])
+    assert customer_chose("2026-11-17T10:00:00", ["Le mardi 17 novembre à 10 h, ça me va."])
+    assert customer_chose(tue11, ["tmr am please"])                              # tomorrow = Nov 17, morning
+    assert not customer_chose(tue16, ["bramptn tmr am?"])                        # hw_21: afternoon, not morning
+    assert not customer_chose(wed10, ["bramptn tmr am?"])                        # hw_21: not tomorrow
+    assert not customer_chose(tue11, ["pouvez-vous me proposer un rendez-vous la semaine prochaine?"])  # hw_22
+    assert customer_chose("2026-11-17T09:00:00", ["Tuesday 9 is good."])         # v3_0145
+    assert customer_chose(tue11, ["yes that works"], "I can book you Tuesday at 11 am in Vaughan.")
+    assert not customer_chose(tue11, ["yes that works"], "I can book you Wednesday at 11 am.")

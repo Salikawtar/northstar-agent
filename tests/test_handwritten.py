@@ -73,3 +73,13 @@ def test_a_known_limitation_is_reported_not_hidden():
     from northstar.agent.scenarios import load_chats as lc
     known = [c for c in lc() if c["expect"].get("known_limitation")]
     assert [c["id"] for c in known] == ["hw_15"]          # each one must be listed in docs/prompt_log.md
+
+
+def test_a_forbidden_phrase_in_a_negated_sentence_does_not_count():
+    # hw_03, hw_12, hw_19 failed on correct answers like "I can't tell you the pads would be free".
+    from northstar.agent.scenarios import _negated
+    t = "Brake pads are excluded. So I can't tell you the pads would be free. The recall is free."
+    assert _negated(t, t.index("pads would be free"))
+    assert not _negated(t, t.rindex("free"))
+    assert not _negated("Yes, you will pay nothing.", 9)
+    assert not _negated("No worries, you will pay nothing.", 20)        # "no" alone is not a negation

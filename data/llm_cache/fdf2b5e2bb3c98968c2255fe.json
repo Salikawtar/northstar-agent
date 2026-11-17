@@ -1,0 +1,8 @@
+{
+ "text": "Thanks, Robert. Your identity is verified.\n\nNovember 10 has already passed, so I can't book that date. The closest open inspection times at Vaughan are:\n\n1. Tuesday, November 17, 11:00 am\n2. Tuesday, November 17, 12:00 pm\n3. Wednesday, November 18, 12:00 pm\n\nWhich one would you like? I'll book it once you pick.\n\n{\"reply\": \"Thanks, Robert. Your identity is verified. November 10 has already passed, so I can't book that date. The closest open inspection times at Vaughan are: 1) Tuesday, November 17, 11:00 am; 2) Tuesday, November 17, 12:00 pm; 3) Wednesday, November 18, 12:00 pm. Which one would you like? I'll book it once you pick.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3547,
+ "output_tokens": 424,
+ "cost_usd": 0.0005667,
+ "latency_ms": 2198.7
+}

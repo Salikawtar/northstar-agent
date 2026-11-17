@@ -1,0 +1,8 @@
+{
+ "text": "{\"failed\": false, \"reason\": \"The assistant did not confirm coverage or a waiver; it said \\\"I can't share account details\\\" and passed the matter to a colleague to review the email and price.\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 775,
+ "output_tokens": 63,
+ "cost_usd": 0.00218,
+ "latency_ms": 1006.6
+}

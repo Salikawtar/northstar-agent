@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you, Evelyn. Your recall is NM-23R07: front passenger seat belt pretensioner wiring. The remedy is to inspect and replace the harness. The manufacturer flags it as a safety risk, and parts are available. Please bring this up with us so it can be addressed.\\n\\nI don't see a Thursday afternoon opening at Vaughan. The closest times I found are Tuesday, November 17 at 3:00 PM, or Wednesday, November 18 at 9:00 or 10:00 AM. Which one works for you?\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3563,
+ "output_tokens": 725,
+ "cost_usd": 0.0007188,
+ "latency_ms": 4004.0
+}

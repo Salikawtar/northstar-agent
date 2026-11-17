@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3005,
+ "output_tokens": 163,
+ "cost_usd": 0.000382,
+ "latency_ms": 2046.4,
+ "tool_calls": [
+  {
+   "id": "toolu_01UQa2ehqEp5WiduZNhQR7DG",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Grenier\", \"ro_number\": \"RO-961548\"}"
+  }
+ ]
+}

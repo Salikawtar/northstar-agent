@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je comprends, et je vais vérifier tout de suite si votre auto est visée par le rappel. Pour cela, je dois d'abord vous identifier. Pouvez-vous m'envoyer votre nom de famille et votre plaque d'immatriculation?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2993,
+ "output_tokens": 293,
+ "cost_usd": 0.008916,
+ "latency_ms": 4239.7
+}

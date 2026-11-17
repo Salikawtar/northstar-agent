@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2968,
+ "output_tokens": 28,
+ "cost_usd": 0.006216,
+ "latency_ms": 806.0,
+ "tool_calls": [
+  {
+   "id": "toolu_01L4MstLvNdMJtqm6B6BjCPU",
+   "name": "check_recalls",
+   "arguments": "{}"
+  }
+ ]
+}
