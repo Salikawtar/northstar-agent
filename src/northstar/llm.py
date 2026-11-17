@@ -119,7 +119,9 @@ class LLMClient:
                  cache_dir=None, budget_usd: Optional[float] = None, sleep: Callable[[float], None] = time.sleep):
         cfg = settings()["llm_client"]
         _load_dotenv()
-        mode = mode or cfg.get("mode", "auto")
+        # NORTHSTAR_LLM_MODE wins over settings: `run_all.py results` sets it to replay, so a key in .env
+        # can never turn a reproduction run into a paid one.
+        mode = mode or os.environ.get("NORTHSTAR_LLM_MODE") or cfg.get("mode", "auto")
         if mode == "auto":
             mode = "live" if (transport or os.environ.get("OPENROUTER_API_KEY")) else "replay"
         if mode not in ("live", "replay"):

@@ -67,6 +67,9 @@ def _run(commands, keep_key: bool):
     import os
     env = {k: v for k, v in os.environ.items() if keep_key or k != "OPENROUTER_API_KEY"}
     env["PYTHONPATH"] = str(ROOT / "src")
+    # The model client also reads the key from .env, so removing it from the environment is not enough:
+    # replay mode is forced explicitly for reproduction runs.
+    env["NORTHSTAR_LLM_MODE"] = "auto" if keep_key else "replay"
     for args in commands:
         print(f"\n--- python {' '.join(args)}")
         subprocess.check_call([sys.executable, *args], cwd=ROOT, env=env)
@@ -76,8 +79,13 @@ def stage_record():
     """Make the model calls that are not recorded yet (needs OPENROUTER_API_KEY; recorded calls stay free).
     Run once after a prompt or tool change; then `results` reproduces everything at no cost."""
     import os
+    try:                                   # the key usually lives in .env, as the README says
+        from dotenv import load_dotenv
+        load_dotenv(ROOT / ".env")
+    except ImportError:
+        pass
     if not os.environ.get("OPENROUTER_API_KEY"):
-        sys.exit("record needs OPENROUTER_API_KEY in the environment (see .env.example).")
+        sys.exit("record needs OPENROUTER_API_KEY in .env or in the environment (see .env.example).")
     _run(RESULT_COMMANDS + COMPARISON_COMMANDS, keep_key=True)
 
 
