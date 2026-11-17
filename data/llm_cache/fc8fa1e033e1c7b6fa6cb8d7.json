@@ -1,0 +1,25 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3283,
+ "output_tokens": 157,
+ "cost_usd": 0.008136,
+ "latency_ms": 1432.0,
+ "tool_calls": [
+  {
+   "id": "toolu_01R7LeBsbo79in2UUr9t8RjB",
+   "name": "get_invoice",
+   "arguments": "{\"ro_number\": \"RO-327743\"}"
+  },
+  {
+   "id": "toolu_01EraEveAepwAtxvK9RhHrvm",
+   "name": "get_vehicle",
+   "arguments": "{}"
+  },
+  {
+   "id": "toolu_01QU2zSUBFi77vcj7YXAgxKU",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Scarborough\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

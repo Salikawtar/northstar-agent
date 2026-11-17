@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Merci, j'ai noté votre courriel. Pour pouvoir regarder la facture RO-833289 avec vous, j'ai d'abord besoin de vous identifier. Quel est votre nom de famille tel qu'il figure au dossier?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3080,
+ "output_tokens": 349,
+ "cost_usd": 0.00965,
+ "latency_ms": 3376.9
+}

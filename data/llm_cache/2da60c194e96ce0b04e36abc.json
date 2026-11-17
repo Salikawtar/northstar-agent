@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Bonjour, je comprends votre inquiétude et je vais vérifier tout de suite si votre auto est visée par le rappel. Pour cela, j'ai besoin de votre nom de famille et de votre plaque d'immatriculation (ou de votre numéro d'ordre de réparation RO-######). Pouvez-vous me les envoyer?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3093,
+ "output_tokens": 383,
+ "cost_usd": 0.010016,
+ "latency_ms": 4405.8
+}

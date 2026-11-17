@@ -78,10 +78,11 @@ PERMISSIONS["single_agent"] = sorted({t for ts in PERMISSIONS.values() for t in 
 
 
 class ToolBox:
-    def __init__(self, dms: DealerSystem, agent: str):
+    def __init__(self, dms: DealerSystem, agent: str, withhold: tuple[str, ...] = ()):
         self.dms = dms
         self.agent = agent
-        self.allowed = PERMISSIONS[agent]
+        # withhold: tools this desk has but this chat does not need (refused in code, hidden from the model)
+        self.allowed = [t for t in PERMISSIONS[agent] if t not in withhold]
         self.session: Optional[Session] = None
         self.log: list[ToolResult] = []
         self.denied: list[str] = []          # tools the model asked for but may not use

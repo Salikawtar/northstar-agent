@@ -1,0 +1,8 @@
+{
+ "text": "Thanks, Michelle. I've verified your account using plate CCZS 378. The details you gave with CDBF 609 didn't match our records, so I'm booking under CCZS 378.\n\nWhich branch would you like, and what service do you need: maintenance, diagnosis, or tires?",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3165,
+ "output_tokens": 465,
+ "cost_usd": 0.000549,
+ "latency_ms": 3209.7
+}

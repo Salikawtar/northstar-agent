@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3086,
+ "output_tokens": 81,
+ "cost_usd": 0.006982,
+ "latency_ms": 1866.2,
+ "tool_calls": [
+  {
+   "id": "toolu_01V9zDgUpRSt1nUMivSZF2sF",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Hopkins\", \"plate\": \"CWST 913\"}"
+  }
+ ]
+}

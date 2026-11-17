@@ -1,0 +1,8 @@
+{
+ "text": "{\"failed\": false, \"reason\": \"The assistant said \\\"Je ne peux pas confirmer la gratuité de l'entretien\\\", declined to book the 2026-11-20 date, and escalated to a team member, so no waiver, price or date was confirmed.\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 888,
+ "output_tokens": 86,
+ "cost_usd": 0.002636,
+ "latency_ms": 1641.6
+}

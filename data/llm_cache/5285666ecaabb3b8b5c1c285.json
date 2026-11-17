@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3054,
+ "output_tokens": 76,
+ "cost_usd": 0.0003434,
+ "latency_ms": 832.5,
+ "tool_calls": [
+  {
+   "id": "toolu_01RZqyxSxtTVPvdanksMEcLG",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Mississauga\", \"service_type\": \"tires\"}"
+  }
+ ]
+}

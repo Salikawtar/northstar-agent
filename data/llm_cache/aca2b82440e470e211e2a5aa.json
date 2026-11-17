@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you, Mr. Watson. Your maintenance appointment is booked for Tuesday, November 17, 2026 at 9:00 AM at our Scarborough branch. Confirmation number: BK-00029.\\n\\nI also checked your Meridian Kestrel's recalls, and there are no open recalls on your vehicle right now. If your letter mentions a different recall, please bring it with you to the appointment so our team can look at it.\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3645,
+ "output_tokens": 203,
+ "cost_usd": 0.000466,
+ "latency_ms": 1444.0
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je dois corriger mon message précédent : je ne peux pas confirmer que le filtre est en stock ni son prix. Un conseiller pièces le vérifiera. Je transmets votre demande à un membre de notre équipe, qui pourra aussi vous aider pour un rendez-vous samedi à Brampton. Pour que l'on puisse trouver votre dossier, quel est votre nom de famille?\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Customer (French) wants a cabin air filter for a 2023 Meridian Halden, installation included, at Brampton, and asks for a Saturday appointment. The customer's last name and plate or RO number are not yet given, so the customer is not verified. A previous agent message said the filter was in stock at Brampton; no tool confirmed this, and no price was given. The router flagged the chat as adversarial after a prompt-injection attempt, which was ignored. A parts advisor should confirm availability and price, and a person should handle the Saturday booking after verification.\", \"policy_rules_cited\": [\"P-03\", \"P-06\", \"P-08\", \"P-10\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3159,
+ "output_tokens": 1075,
+ "cost_usd": 0.0008534,
+ "latency_ms": 5720.7
+}

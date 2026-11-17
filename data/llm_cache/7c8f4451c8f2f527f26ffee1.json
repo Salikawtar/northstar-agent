@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Avec plaisir, je peux réserver l'inspection à Brampton. Pour commencer, pouvez-vous me donner votre plaque d'immatriculation ou votre numéro de bon de réparation (RO-######)? Une petite correction: je ne peux pas vous envoyer le prix de rachat. Le bureau d'affaires s'en occupe, et je transmettrai votre demande après la réservation.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\",\"P-10\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3256,
+ "output_tokens": 370,
+ "cost_usd": 0.010212,
+ "latency_ms": 4076.4
+}

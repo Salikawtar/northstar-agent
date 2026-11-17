@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3059,
+ "output_tokens": 57,
+ "cost_usd": 0.0003344,
+ "latency_ms": 880.4,
+ "tool_calls": [
+  {
+   "id": "toolu_017SDwhwoYguGwdX4n7Fm37g",
+   "name": "get_repair_status",
+   "arguments": "{\"ro_number\": \"RO-217196\"}"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Merci. Avant de continuer, je dois vous identifier. Quel est votre nom de famille tel qu'il figure au dossier? J'ai déjà le numéro RO-833289.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P-01\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3923,
+ "output_tokens": 220,
+ "cost_usd": 0.010046,
+ "latency_ms": 2214.8
+}

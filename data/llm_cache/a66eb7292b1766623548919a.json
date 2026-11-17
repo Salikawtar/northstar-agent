@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3017,
+ "output_tokens": 148,
+ "cost_usd": 0.0003757,
+ "latency_ms": 1624.1,
+ "tool_calls": [
+  {
+   "id": "toolu_01G4TaHocfuAG7fM2M8ot8q5",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Brampton\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

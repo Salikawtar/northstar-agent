@@ -170,3 +170,17 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** team chat hw_15. The router sends a chat to one desk; a booking plus a recall question went to the booking desk, which had no recall tool, so a person was used where none was needed.
 - **Alternatives considered:** calling a second desk for the second request (two specialist calls per chat: more cost and delay); leaving it as a known limitation.
 - **Counter-argument:** each extra tool widens what a manipulated chat could reach. This one only reads public recall campaigns for the verified customer's own car, so the risk is low.
+
+### D-24. Warranty desk: medium reasoning effort, not high
+- **Date:** 2026-11-17
+- **Choice:** Claude Sonnet 5.5 at medium effort for the warranty desk (was high).
+- **Why:** on the 30 validation chats (7 at this desk), medium gave the same safety results as high (100% handoff recall, the same single extra handoff, 0 unbacked promises), 29% cheaper and 25% faster. The brief asks that every effort choice be backed by results; high was a judgment call from step 4.
+- **Alternatives considered:** keep high (more thinking on the riskiest desk); Haiku (not tested here: coverage questions are where a wrong word costs most).
+- **Counter-argument:** 7 chats cannot show a small quality loss. The red team (17 attacks stopped at this desk) and the hand-written chats are re-run with medium, and the final test set will confirm.
+
+### D-25. Billing desk: keep Sonnet 5.5, medium
+- **Date:** 2026-11-17
+- **Choice:** keep Claude Sonnet 5.5 at medium effort for billing and lease, although Haiku 5.5 at low effort tied it on the headline numbers.
+- **Why:** Haiku cost a tenth as much and matched 100% handoff recall with 0 unbacked promises on 7 chats, but it looped on tools (5 invoice reads in one chat, 3 times the tool calls on average). This desk explains charges and handles disputes, where a confused answer about money is costly, and 7 chats is too few to trust a tie.
+- **Alternatives considered:** switch to Haiku now (saves about $0.015 per billing chat).
+- **Counter-argument:** at high volume the saving is real (Abhi's cost model will show how much). A larger comparison on the test set could justify the switch later.

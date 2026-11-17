@@ -1,0 +1,8 @@
+{
+ "text": "Merci, Madame Dumas, votre identité est vérifiée. À Vaughan, je ne vois aucun créneau pour pneus la semaine prochaine. Les seuls créneaux libres sont cette semaine :\n\n1. Mardi 17 novembre à 8 h\n2. Mardi 17 novembre à 14 h\n3. Mercredi 18 novembre à 16 h\n4. Jeudi 19 novembre à 9 h\n5. Jeudi 19 novembre à 12 h\n\nLequel vous convient? Je peux le réserver tout de suite.\n\n{\"reply\": \"Merci, Madame Dumas, votre identité est vérifiée. À Vaughan, je ne vois aucun créneau pour pneus la semaine prochaine. Les seuls créneaux libres sont cette semaine : mardi 17 novembre à 8 h, mardi 17 novembre à 14 h, mercredi 18 novembre à 16 h, jeudi 19 novembre à 9 h ou jeudi 19 novembre à 12 h. Lequel vous convient? Je peux le réserver tout de suite.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-10\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3393,
+ "output_tokens": 573,
+ "cost_usd": 0.0006258,
+ "latency_ms": 3187.9
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Merci, Mme Drouin. C'est confirmé : entretien à notre atelier de Vaughan le mardi 17 novembre 2026 à 10 h. Votre numéro de confirmation est BK-00039. Y a-t-il autre chose que je peux faire pour vous?\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3413,
+ "output_tokens": 151,
+ "cost_usd": 0.0004168,
+ "latency_ms": 1377.0
+}

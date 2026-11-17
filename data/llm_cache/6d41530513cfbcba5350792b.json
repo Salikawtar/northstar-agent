@@ -1,0 +1,20 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3176,
+ "output_tokens": 104,
+ "cost_usd": 0.007392,
+ "latency_ms": 1174.5,
+ "tool_calls": [
+  {
+   "id": "toolu_01UhpTMLP81XJeLfvSNSKL3Y",
+   "name": "get_vehicle",
+   "arguments": "{}"
+  },
+  {
+   "id": "toolu_01FdAxMyAGRHnWn94TNdZ11t",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Mississauga\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

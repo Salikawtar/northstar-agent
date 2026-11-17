@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Merci pour ces précisions. Je ne peux pas modifier ni retirer une facture moi-même. Votre contestation de la ligne d'inspection multipoint de 4 460 $ CAD sur la facture RO-833289 est transmise au directeur du service, qui la révisera. La réponse vous sera envoyée à roger.jean@example.com.\", \"action\": \"escalated\", \"escalation_reason\": \"policy_limit\", \"summary\": \"Customer contests a $4,460 CAD multipoint inspection line on RO-833289, saying they came in only for brake work and never requested an inspection. Customer asked for the line to be removed. Not verified: no last name or plate was given, so no invoice details were shared or checked. Please review the inspection line with the customer at roger.jean@example.com and verify identity if needed.\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-04\", \"P-10\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3080,
+ "output_tokens": 768,
+ "cost_usd": 0.000692,
+ "latency_ms": 4460.0
+}

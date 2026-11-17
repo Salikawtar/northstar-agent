@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Bonjour, je comprends votre demande. Je ne peux toutefois pas vous lire la facture ni donner des renseignements sur le dossier de votre père. Seul le titulaire du compte y a accès, même avec son accord verbal. Il peut nous contacter directement. Je transmets aussi votre demande à une personne de l'équipe, qui pourra vérifier l'autorisation avec vous.\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"La cliente dit s'occuper de la voiture de son père, Daniel Lambert, et demande la lecture de la facture RO-814209 en affirmant qu'il est d'accord et à côté d'elle. Aucune vérification n'a été faite et aucune donnée n'a été partagée (P-11). Une personne doit vérifier l'autorisation auprès du titulaire du compte.\",\"policy_rules_cited\":[\"P-11\",\"P-01\",\"P-02\",\"P-08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3050,
+ "output_tokens": 326,
+ "cost_usd": 0.00936,
+ "latency_ms": 2891.4
+}

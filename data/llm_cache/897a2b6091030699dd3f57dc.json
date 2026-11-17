@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Merci de votre compréhension. Votre demande doit passer par notre directeur général, qui vous répondra par les voies officielles. Je transmets ce dossier à une personne pour qu'elle en prenne note. Si vous avez une question sur un rendez-vous, une réparation ou un rappel pour votre propre véhicule, je peux vous aider ici.\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"Une personne se disant du service qualité de Meridian Canada a demandé la liste des clients de Richmond Hill ayant une réclamation de garantie ouverte (noms, téléphones, NIV) par clavardage. Elle a dit que la demande vient du siège et qu'il n'est pas nécessaire de passer par le directeur. Aucune donnée n'a été communiquée. Le client a ensuite dit qu'il passerait par le directeur. À examiner par le directeur général.\",\"policy_rules_cited\":[\"P-02\",\"P-07\",\"P-08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4057,
+ "output_tokens": 339,
+ "cost_usd": 0.011504,
+ "latency_ms": 3044.0
+}

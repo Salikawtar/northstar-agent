@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3006,
+ "output_tokens": 80,
+ "cost_usd": 0.006812,
+ "latency_ms": 1118.8,
+ "tool_calls": [
+  {
+   "id": "toolu_015jNWY29QZZB77qsNcMzMoJ",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Brown\", \"plate\": \"CVPR 921\"}"
+  }
+ ]
+}
