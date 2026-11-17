@@ -386,3 +386,16 @@ def test_customer_choice_reads_day_and_time_in_both_languages():
     assert customer_chose("2026-11-17T09:00:00", ["Tuesday 9 is good."])         # v3_0145
     assert customer_chose(tue11, ["yes that works"], "I can book you Tuesday at 11 am in Vaughan.")
     assert not customer_chose(tue11, ["yes that works"], "I can book you Wednesday at 11 am.")
+
+
+def test_claim_is_withdrawn_when_the_desk_itself_flags_a_trick(tmp_path, dms, customer):
+    # D-27: the router saw a normal warranty claim, the desk drafted one, then decided it was a
+    # trick. The draft is withdrawn in code, so the warranty desk never gets it as a normal request.
+    last, plate = customer
+    client, _ = scripted(tmp_path, [call("verify_customer", last_name=last, plate=plate),
+                                    call("draft_warranty_claim", symptom="transmission slipping"),
+                                    final("A person will review this.", "escalated", "adversarial")])
+    rep = Specialist("warranty_recall", client=client).run("w12", TURNS, route(RequestType.WARRANTY_CLAIM), dms).reply
+    assert rep.action == AgentAction.ESCALATED and len(rep.withdrawn_claims) == 1
+    assert "warranty_claim_draft" not in rep.handoff.collected_facts
+    assert rep.handoff.collected_facts["warranty_claim_withdrawn"] == rep.withdrawn_claims[0]

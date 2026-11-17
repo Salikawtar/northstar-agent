@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Hi Dawn, thanks for verifying. I have not booked anything yet. Brampton has no morning slot tomorrow (Nov 17). The closest options for an electrical diagnosis are Wed, Nov 18 at 10:00 AM, Wed, Nov 18 at 1:00 PM, or Thu, Nov 19 at 11:00 AM. Which one would you like? For the last visit's findings, I can check a repair order if you give me the RO number.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3607,
+ "output_tokens": 477,
+ "cost_usd": 0.0005992,
+ "latency_ms": 3018.1
+}

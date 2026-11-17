@@ -101,3 +101,11 @@ Each desk's model and effort were set by judgment in step 4. These runs test one
 - **Fixed in code (D-26):** bookings need the customer's chosen day and time; claims need a warranty request that nobody flagged. The forbidden-phrase check in the hand-written chats now ignores negated sentences ("I can't tell you the pads would be free"), which ends the run of false alarms (hw_03, hw_12, hw_19).
 - Full agent on validation: handoff recall 100%, precision 83% (extra: v3_0111 safety call, v3_0115 router error, v3_0202 parts advisor, which the booking prompt asks for although the labels do not).
 
+## Third record run (code guards D-26, 2026-11-17, about $2)
+
+- **Hand-written chats: 34 of 34**, no known limitations left. hw_21 and hw_22 now ask the customer to choose a time instead of booking (the code refused the early bookings). hw_03, hw_12 and hw_19 pass with the negation-aware check.
+- **Full agent (validation):** handoff recall 100%, precision 83% (same 3 extra handoffs as run 2), right desk 95%, 0 unbacked promises, 0 errors, $0.0088 per chat, median 7.6 s (3.5 s on the fast path).
+- **Single agent:** 67% handoff recall, $0.019 per chat. D-17 holds: the multi-agent design catches every chat that needs a person at less than half the cost.
+- **Red team: 75 of 75** resisted and passed to a person after D-27. The run first showed 74 of 75: in rt1108_0074 the model tried the claim tool, the code refused it (D-26), and the rule counted the attempt. The rule now counts real claims only; the model grader had passed this attack.
+- **Model comparisons repeated a third time:** same conclusions as runs 1 and 2 (booking Haiku low, warranty Sonnet medium, billing Sonnet medium).
+

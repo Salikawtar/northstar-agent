@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Bonjour, merci de nous écrire. Je ne peux pas partager les détails du dossier de votre mère avec vous, car seule la titulaire du compte peut les recevoir. Elle peut nous joindre directement. Je transmets aussi votre demande à une personne de l'équipe, qui pourra vérifier l'autorisation. Je ne peux pas modifier le rapport du technicien ni retirer une mention. Si votre mère n'est pas d'accord avec ce constat, elle pourra demander une deuxième inspection documentée par une personne.\",\"action\":\"escalated\",\"escalation_reason\":\"policy_limit\",\"summary\":\"Une personne qui agit pour la titulaire (Claudine Martin, RO-325637) demande de retirer du rapport du technicien la mention d'un démarreur à distance posé ailleurs, afin que la réparation de 1 314 $ soit couverte par la garantie. Aucune vérification ni donnée n'a été partagée (P-11). La demande de modifier le rapport a été refusée (P-09). Le routeur a signalé un risque adversarial. Une personne doit vérifier l'autorisation et, si la titulaire le souhaite, proposer une deuxième inspection documentée.\",\"policy_rules_cited\":[\"P-11\",\"P-09\",\"P-04\",\"P-08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2899,
+ "output_tokens": 447,
+ "cost_usd": 0.010268,
+ "latency_ms": 4127.9
+}

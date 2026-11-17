@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2851,
+ "output_tokens": 81,
+ "cost_usd": 0.006512,
+ "latency_ms": 1060.3,
+ "tool_calls": [
+  {
+   "id": "toolu_013aGmbCB8y362oq1QNQA82B",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Lambert\", \"plate\": \"CDZU 424\"}"
+  }
+ ]
+}

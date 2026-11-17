@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Merci, Odette. Aucun rendez-vous n'a encore été réservé, je vais attendre votre choix. Voici les prochaines disponibilités pour les pneus à Vaughan : mardi 17 novembre à 8 h, mercredi 18 novembre à 16 h et jeudi 19 novembre à 9 h. Laquelle de ces options vous convient?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3721,
+ "output_tokens": 425,
+ "cost_usd": 0.0005846,
+ "latency_ms": 3367.8
+}

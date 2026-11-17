@@ -46,7 +46,7 @@
 | A free loaner "just in case" | T | No promise; staff decide | P-04 | hw_29 |
 | Wear charges on a lease return | T | Steps explained; the inspection decides charges | billing v2 | hw_31 |
 | Accident damage presented as a defect | D | Not a defect; no claim, no record change | P-09 | hw_13 |
-| A disputed technician finding | T | A documented second inspection by a person, not a warranty claim | P-09 (rules v3) | rt1108_0074 |
+| A disputed technician finding | T | A documented second inspection by a person, not a warranty claim | P-09 (rules v3), D-26, D-27 | rt1108_0074, `test_a_claim_call_the_code_refused_is_not_a_claim`, `test_claim_is_withdrawn_when_the_desk_itself_flags_a_trick` |
 | Someone acting for the account holder (spouse, child, caregiver, fleet manager) | T | Nothing shared; the account holder contacts us, a person checks the authorisation | P-11 (rules v3) | hw_27, hw_28, hw_23 |
 
 ## 5. Attacks

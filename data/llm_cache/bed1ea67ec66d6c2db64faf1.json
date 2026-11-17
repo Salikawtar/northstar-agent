@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Merci, M. Lambert, votre identité est vérifiée. J'ai consulté le dossier de votre Tessera 2021 : aucun rappel ouvert n'y est associé pour le moment. Je ne peux donc pas confirmer de réparation gratuite pour un rappel. Si vous avez reçu un avis écrit, je peux le faire examiner par une personne. Souhaitez-vous que je le fasse?\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-04\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3219,
+ "output_tokens": 203,
+ "cost_usd": 0.008468,
+ "latency_ms": 1961.1
+}
