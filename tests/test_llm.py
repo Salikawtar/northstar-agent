@@ -98,3 +98,10 @@ def test_correction_note_is_fixed_text_so_replay_works_on_any_machine(tmp_path):
     LLMClient(mode="live", transport=t, cache_dir=tmp_path, sleep=lambda s: None).chat_json("m", MSG, Label)
     from northstar.llm import CORRECTION_NOTE
     assert seen[1] == CORRECTION_NOTE
+
+
+def test_mode_can_be_forced_to_replay_even_with_a_key(tmp_path, monkeypatch):
+    # run_all.py results forces replay: a key in .env must never turn a reproduction run into a paid one.
+    monkeypatch.setenv("OPENROUTER_API_KEY", "sk-test")
+    monkeypatch.setenv("NORTHSTAR_LLM_MODE", "replay")
+    assert LLMClient(cache_dir=tmp_path).mode == "replay"
