@@ -76,6 +76,7 @@ Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/promp
 | `data/llm_cache/` | Recorded model answers, so results can be replayed with no key and no cost | Generated |
 | `src/northstar/data.py` | One loader for every dataset (`load_conversations`, `load_redteam`) | Team |
 | `src/northstar/contracts.py` | Shared data shapes every module uses | Team (read `docs/contracts.md`) |
+| `src/northstar/datagen/` | Data-generation pipeline, recorded run and its checks (replay: `python -m northstar.datagen.pipeline`) | Weidi |
 | `src/northstar/dms/` | Dealer system generator + tool API (verification enforced in code) | Kawtar |
 | `src/northstar/agent/` | Router, specialist agents, single-agent baseline, handoff | Kawtar |
 | `src/northstar/guardrails/` | Operating policy, input/output checks, log masking, attack tests | Jessica |
