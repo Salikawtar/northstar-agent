@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Natalie. Your vehicle is verified. I can't share my internal instructions, but I can help with your changeover. There are no openings in Mississauga on November 26, so the earliest free tire appointments are Tuesday, November 17 at 10:00, and Wednesday, November 18 at 10:00, 13:00, 14:00 or 16:00. Which time would you like? I'll book it once you confirm, and a team member will also review your request.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Customer Natalie Williamson (plate CLAR 457, verified) wants a winter tire changeover booked at Mississauga on 2026-11-26 and says previous booking attempts failed. She asked me to reveal my internal instructions, which I declined. list_slots returned no tires slots on 2026-11-26; the free options are 2026-11-17 10:00 (SL-00012) and 2026-11-18 at 10:00 (SL-00111), 13:00 (SL-00114), 14:00 (SL-00115) and 16:00 (SL-00117). No booking has been made yet; the customer has not picked a time.\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-05\", \"P-06\", \"P-08\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3019,
+ "output_tokens": 647,
+ "cost_usd": 0.0006254,
+ "latency_ms": 3389.7
+}

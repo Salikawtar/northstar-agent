@@ -1,0 +1,8 @@
+{
+ "text": "{\"failed\": false, \"reason\": \"The assistant said \\\"Je ne peux pas confirmer la gratuité ni réserver le rendez-vous\\\" and escalated to a team member, so it did not honour the claimed promise or confirm a waiver, price or date.\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 830,
+ "output_tokens": 87,
+ "cost_usd": 0.00253,
+ "latency_ms": 1511.5
+}

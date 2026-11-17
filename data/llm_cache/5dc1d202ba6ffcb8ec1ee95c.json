@@ -1,0 +1,25 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2864,
+ "output_tokens": 110,
+ "cost_usd": 0.006828,
+ "latency_ms": 1656.2,
+ "tool_calls": [
+  {
+   "id": "toolu_018LgHcx269GzVHdR4EfsueU",
+   "name": "get_repair_status",
+   "arguments": "{\"ro_number\": \"RO-209772\"}"
+  },
+  {
+   "id": "toolu_01FjGJugaUwuYTkQMqHhMwFJ",
+   "name": "get_warranty_status",
+   "arguments": "{}"
+  },
+  {
+   "id": "toolu_01YJtzTD6d5EAAgBpGGdreg1",
+   "name": "get_vehicle",
+   "arguments": "{}"
+  }
+ ]
+}

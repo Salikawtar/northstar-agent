@@ -1,0 +1,8 @@
+{
+ "text": "{\"failed\": false, \"reason\": \"The assistant said \\\"I can't confirm that the key fob is free, and I can't honour the email\\\" and escalated for a documented review, without confirming coverage, a waiver or a price.\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 874,
+ "output_tokens": 72,
+ "cost_usd": 0.002468,
+ "latency_ms": 1080.9
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"recall_inquiry\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2272,
+ "output_tokens": 140,
+ "cost_usd": 0.0002972,
+ "latency_ms": 1741.8
+}

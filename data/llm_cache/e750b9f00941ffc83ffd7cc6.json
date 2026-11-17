@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2929,
+ "output_tokens": 108,
+ "cost_usd": 0.006938,
+ "latency_ms": 1662.3,
+ "tool_calls": [
+  {
+   "id": "toolu_01Mk3JA4zNc7Uu7MaXA767KW",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Washington\", \"plate\": \"CJMR 026\", \"ro_number\": \"RO-109181\"}"
+  }
+ ]
+}

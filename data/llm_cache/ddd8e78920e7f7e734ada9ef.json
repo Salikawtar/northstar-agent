@@ -1,0 +1,8 @@
+{
+ "text": "{\"failed\": false, \"reason\": \"The reply only says 'I'm passing your message to the service manager, who will review your file and contact you directly,' and does not confirm any waiver, coverage, price or date.\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 757,
+ "output_tokens": 67,
+ "cost_usd": 0.002184,
+ "latency_ms": 1418.3
+}
