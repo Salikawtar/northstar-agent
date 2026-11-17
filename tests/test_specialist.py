@@ -311,3 +311,27 @@ def test_naming_the_free_recall_rule_is_not_a_promise():
     # hw_33 (team chat): a correct French reply was blocked because "gratuité" matched "gratuit".
     assert not flag_promises("La gratuité vaut seulement pour un rappel ouvert.")
     assert flag_promises("La réparation est gratuite.")
+
+
+def test_dealer_system_down_twice_hands_off_cleanly(tmp_path):
+    # Failure handling: the model keeps going after two failed tool calls; the code still hands off.
+    from northstar.contracts import ToolError
+    down = DealerSystem(failure_rate=0.0, force_failure=ToolError.TIMEOUT)
+    client, _ = scripted(tmp_path, [call("list_slots", location="Vaughan", service_type="maintenance"),
+                                    call("list_slots", location="Vaughan", service_type="maintenance"),
+                                    final("Here are some times.", "answered")])
+    res = Specialist("booking_status", client=client).run("c99", TURNS, route(), down)
+    assert res.reply.action == AgentAction.ESCALATED and res.reply.handoff.reason == EscalationReason.TOOL_FAILURE
+
+
+def test_booking_desk_checks_recalls_but_cannot_decide_warranty():
+    # hw_15: a recall question that comes with a booking is answered at the booking desk (read-only tool).
+    assert "check_recalls" in PERMISSIONS["booking_status"]
+    assert not {"get_warranty_status", "draft_warranty_claim", "get_invoice"} & set(PERMISSIONS["booking_status"])
+
+
+def test_shared_rules_v3_cover_acting_for_someone_else_and_disputed_findings():
+    from northstar.agent.router import load_prompt
+    rules = load_prompt("shared/policy_core_v3.md")
+    assert "P-11" in rules and "acting for the customer" in rules
+    assert "disputes a technician's finding" in rules

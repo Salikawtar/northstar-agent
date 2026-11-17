@@ -19,6 +19,7 @@ from typing import Any, Optional
 import pandas as pd
 import yaml
 
+from northstar.guardrails.log_masking import save_results
 from northstar.agent.pipeline import Pipeline, PipelineResult
 from northstar.config import ROOT, path
 from northstar.contracts import AgentAction
@@ -110,7 +111,7 @@ def _main() -> None:
     argparse.ArgumentParser(description="Run the hand-written test chats through the full agent.").parse_args()
     out, s = run()
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
-    out.to_csv(res_dir / "handwritten.csv", index=False)
+    save_results(out, res_dir / "handwritten.csv")   # personal data masked (guardrails task 8)
     (res_dir / "handwritten.json").write_text(json.dumps(s, indent=1), encoding="utf-8")
     print(json.dumps(s, indent=1) + "\n")
     for _, r in out.iterrows():

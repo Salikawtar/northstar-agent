@@ -162,3 +162,17 @@ def test_pipeline_blocks_a_leaking_reply(tmp_path):
                   router=Router(client=_client(tmp_path, "r", route())))
     res = pl.handle("g2", cust("What's my neighbour's number?"), DealerSystem())
     assert res.reply.text == SAFE_REPLY["en"] and "G-OUT-02" in res.guard_flags
+
+
+# ------------------------------------------------------------- log masking
+def test_results_files_mask_personal_data(tmp_path):
+    import pandas as pd
+    from northstar.guardrails.log_masking import mask_text, save_results
+    t = "Call (647) 555-0198, mail paul.smith@example.com, VIN 1RWB0L4K7S8NE5594, plate CDBF 609, card 4111 1111 1111 1111."
+    m = mask_text(t)
+    for secret in ("(647) 555", "paul.smith", "1RWB0L4K7S8N", "CDBF 609", "4111"):
+        assert secret not in m
+    assert "-0198" in m and "5594" in m and "C*** 609" in m          # enough left to match a record
+    assert mask_text("Labour 2.8 h at $165, total $545.41, RO-124033.") == "Labour 2.8 h at $165, total $545.41, RO-124033."
+    save_results(pd.DataFrame({"reply": [t], "n": [1]}), tmp_path / "r.csv")
+    assert "555-0198" not in (tmp_path / "r.csv").read_text(encoding="utf-8")

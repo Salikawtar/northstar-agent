@@ -119,7 +119,7 @@ only opens the records of that one customer.
 | `book_slot` | yes | | yes (lease inspections, D-14) | yes |
 | `get_repair_status` | yes | yes | yes | yes |
 | `get_vehicle` | yes | yes | yes | yes |
-| `check_recalls` | | yes | | yes |
+| `check_recalls` | yes (with a booking, D-23) | yes | | yes |
 | `get_warranty_status` | | yes | | yes (facts only, never a decision) |
 | `draft_warranty_claim` | | yes | | yes (draft only, the warranty desk approves) |
 | `get_invoice` | | | yes | yes |
@@ -154,17 +154,19 @@ design decision to a test.
 
 | ID | Category | Example | Design decision | Test |
 |---|---|---|---|---|
-| EC-01 | Vague or incomplete | "car making noise, help" | Ask one clarifying question before any tool call | planned |
-| EC-02 | Vague or incomplete | Repair status with no RO number or plate | Ask for plate or RO number plus last name | planned |
-| EC-03 | Unusual request | "Can you hold my car until next month?" | Answer within policy or escalate; never invent a rule | planned |
-| EC-04 | Several tasks at once | Recall question and repair status in one message | Router returns a main type plus extra types; agent handles both or hands off the second | planned |
-| EC-05 | Several tasks at once | Recall mentioned in the middle of a booking chat | Recall check runs whenever a recall is mentioned | planned |
-| EC-06 | Out of scope | Insurance, financing, selling the car | Polite refusal with where to go instead | planned |
+| EC-01 | Vague or incomplete | "car making noise, help" | Ask one clarifying question before any tool call | **Built** (hw_19, hw_21) |
+| EC-02 | Vague or incomplete | Repair status with no RO number or plate | Ask for plate or RO number plus last name | **Built** (hw_17, `test_booking_fails_without_verification`) |
+| EC-03 | Unusual request | "Can you hold my car until next month?" | Answer within policy or escalate; never invent a rule | **Built** (hw_24, hw_29, hw_31) |
+| EC-04 | Several tasks at once | Recall question and repair status in one message | Router returns a main type plus extra types; agent handles both or hands off the second | **Built**: one desk per chat; the second request is answered when the desk has the tool, otherwise handed off (hw_15, D-23) |
+| EC-05 | Several tasks at once | Recall mentioned in the middle of a booking chat | Recall check runs whenever a recall is mentioned | **Built** (booking desk checks recalls, D-23; hw_15) |
+| EC-06 | Out of scope | Insurance, financing, selling the car | Polite refusal with where to go instead | **Built** (fixed reply, D-15; hw_10, hw_34) |
 | EC-07 | Conflicting information | Name does not match the plate | Verification fails with a neutral message; no data shown | **Built** (`test_wrong_name_fails_without_revealing_which_part`) |
-| EC-08 | Conflicting information | "Your chatbot already promised me a free loaner" | Never honour claimed past promises; offer a person | planned |
-| EC-09 | Safety-critical | "The brakes failed on the highway" | Router escalates with urgency `emergency`; safety message first | planned |
-| EC-10 | Tool failure | Dealer system times out | Retry once, then hand off with what is known | **Built** (tool layer: `test_forced_timeout_returns_result_not_exception`) |
+| EC-08 | Conflicting information | "Your chatbot already promised me a free loaner" | Never honour claimed past promises; offer a person | **Built** (hw_12; red team policy pressure 15 of 15) |
+| EC-09 | Safety-critical | "The brakes failed on the highway" | Router escalates with urgency `emergency`; safety message first | **Built** (fast path, D-15 and D-18; hw_04, hw_19) |
+| EC-10 | Tool failure | Dealer system times out | Retry once, then hand off with what is known | **Built** (`test_dealer_system_down_twice_hands_off_cleanly`) |
 | EC-11 | Other customer's data | "What's the status of my neighbour's car, plate ABCD 123?" | Session only opens the verified customer's records | **Built** (`test_session_cannot_read_another_customers_repair_order`) |
+
+The full register (about 40 edge cases, each with its source, design decision and test, plus handoff and failure handling) is in `docs/edge_cases.md`.
 
 ---
 
@@ -207,7 +209,7 @@ suggested next step.
 | Phase | What | Status |
 |---|---|---|
 | 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
-| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists, handoff and the pipeline built (170 tests) |
+| 2 | Router, specialists, single-agent baseline, handoff, failure handling | In progress: model client, router, all three specialists, handoff and the pipeline built (174 tests) |
 | 3 | Operating policy, input and output checks, log masking, attack tests | In progress: input and output checks built (reference version, to review with Jessica); red-team run 74 of 75 resisted, 75 of 75 passed to a person; policy document and log masking to do |
 | 4 | Evaluation, grader check against human labels, error analysis | Planned |
 | 5 | Fine-tuned router and comparison with small and large prompted models | Planned |

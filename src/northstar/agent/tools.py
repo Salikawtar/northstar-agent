@@ -67,7 +67,8 @@ SPECS: dict[str, dict[str, Any]] = {
 
 # Which desk may use which tool (docs/architecture.md, section 5).
 PERMISSIONS: dict[str, list[str]] = {
-    "booking_status": ["verify_customer", "list_slots", "book_slot", "get_repair_status", "get_vehicle"],
+    "booking_status": ["verify_customer", "list_slots", "book_slot", "get_repair_status", "get_vehicle",
+                       "check_recalls"],                    # read-only, for a recall asked with a booking (hw_15)
     "warranty_recall": ["verify_customer", "get_repair_status", "get_vehicle", "check_recalls",
                         "get_warranty_status", "draft_warranty_claim"],
     "billing_lease": ["verify_customer", "get_repair_status", "get_vehicle", "get_invoice",
