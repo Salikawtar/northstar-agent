@@ -3,6 +3,8 @@
     python run_all.py            # run every stage that is built so far
     python run_all.py datagen    # replay the data-generation run and compare it with the dataset
     python run_all.py dms        # just rebuild the mock dealer system
+    python run_all.py results    # reproduce every key result from the recordings (no key, no cost)
+    python run_all.py record     # after a prompt or tool change: make the missing model calls (needs a key)
     python run_all.py test       # run the test suite
 
 Stages are added here as each phase is built, so "python run_all.py" always
@@ -32,6 +34,53 @@ def stage_datagen():
         subprocess.check_call([sys.executable, *args], cwd=ROOT, env={**__import__("os").environ, "PYTHONPATH": str(ROOT / "src")})
 
 
+RESULT_COMMANDS = [
+    ["-m", "northstar.agent.router", "--split", "validation"],
+    ["-m", "northstar.agent.specialist", "--agent", "booking_status", "--split", "validation"],
+    ["-m", "northstar.agent.specialist", "--agent", "warranty_recall", "--split", "validation"],
+    ["-m", "northstar.agent.specialist", "--agent", "billing_lease", "--split", "validation"],
+    ["-m", "northstar.agent.pipeline", "--split", "validation"],
+    ["-m", "northstar.agent.baseline", "--split", "validation"],
+    ["-m", "northstar.agent.scenarios"],
+    ["-m", "northstar.guardrails.evaluate"],
+    ["-m", "northstar.guardrails.redteam"],
+]
+# One change at a time, to back each desk's model and effort choice with a result (docs/prompt_log.md).
+COMPARISON_COMMANDS = [
+    ["-m", "northstar.agent.specialist", "--agent", "booking_status", "--split", "validation", "--model", "large"],
+    ["-m", "northstar.agent.specialist", "--agent", "warranty_recall", "--split", "validation", "--effort", "medium"],
+    ["-m", "northstar.agent.specialist", "--agent", "billing_lease", "--split", "validation", "--model", "small", "--effort", "low"],
+]
+
+
+def stage_results():
+    """Reproduce every key result from the recorded model calls: no key, no cost, same numbers.
+
+    The key is removed from the environment on purpose, so this stage can never spend money.
+    If a recording is missing (a prompt changed and nobody ran it yet), the command stops and
+    says which one: run `python run_all.py record` once with a key, then this stage reproduces it."""
+    _run(RESULT_COMMANDS + COMPARISON_COMMANDS, keep_key=False)
+    print("\nAll results reproduced from recordings: outputs/results/")
+
+
+def _run(commands, keep_key: bool):
+    import os
+    env = {k: v for k, v in os.environ.items() if keep_key or k != "OPENROUTER_API_KEY"}
+    env["PYTHONPATH"] = str(ROOT / "src")
+    for args in commands:
+        print(f"\n--- python {' '.join(args)}")
+        subprocess.check_call([sys.executable, *args], cwd=ROOT, env=env)
+
+
+def stage_record():
+    """Make the model calls that are not recorded yet (needs OPENROUTER_API_KEY; recorded calls stay free).
+    Run once after a prompt or tool change; then `results` reproduces everything at no cost."""
+    import os
+    if not os.environ.get("OPENROUTER_API_KEY"):
+        sys.exit("record needs OPENROUTER_API_KEY in the environment (see .env.example).")
+    _run(RESULT_COMMANDS + COMPARISON_COMMANDS, keep_key=True)
+
+
 def stage_test():
     code = subprocess.call([sys.executable, "-m", "pytest", "-q"], cwd=ROOT)
     if code:
@@ -42,18 +91,20 @@ def stage_test():
 STAGES = {
     "datagen": stage_datagen,
     "dms": stage_dms,
-    # "agent":     Phase 2
-    # "guardrails": Phase 3
+    "results": stage_results,      # agent (Phase 2) and guardrails (Phase 3), replayed
     # "evaluate":  Phase 4
     # "finetune":  Phase 5
     # "economics": Phase 6
     "test": stage_test,
 }
+# Run on request only, never by default: it spends money (python run_all.py record).
+EXTRA = {"record": stage_record}
 
 if __name__ == "__main__":
     wanted = sys.argv[1:] or list(STAGES)
     for name in wanted:
-        if name not in STAGES:
-            sys.exit(f"Unknown stage '{name}'. Choose from: {', '.join(STAGES)}")
+        stage = STAGES.get(name) or EXTRA.get(name)
+        if stage is None:
+            sys.exit(f"Unknown stage '{name}'. Choose from: {', '.join([*STAGES, *EXTRA])}")
         print(f"\n=== {name} ===")
-        STAGES[name]()
+        stage()

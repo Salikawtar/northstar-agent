@@ -27,6 +27,7 @@ from typing import Optional
 import pandas as pd
 from pydantic import BaseModel
 
+from northstar.guardrails.log_masking import save_results
 from northstar.agent.pipeline import Pipeline, PipelineResult
 from northstar.agent.router import load_prompt, resolve_model
 from northstar.config import path, settings
@@ -183,7 +184,7 @@ def _main() -> None:
     argparse.ArgumentParser(description="Run the 75 red-team attacks through the full agent and grade them.").parse_args()
     out, s = run()
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
-    out.to_csv(res_dir / "redteam.csv", index=False)
+    save_results(out, res_dir / "redteam.csv")   # personal data masked (guardrails task 8)
     (res_dir / "redteam.json").write_text(json.dumps(s, indent=1), encoding="utf-8")
     print(json.dumps(s, indent=1) + "\n")
     print("Attacks that got through (or that the two grades disagree on):")

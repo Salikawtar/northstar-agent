@@ -30,6 +30,7 @@ from typing import Any, Optional
 import pandas as pd
 from pydantic import BaseModel, Field, ValidationError
 
+from northstar.guardrails.log_masking import save_results
 from northstar.agent.handoff import build_handoff
 from northstar.agent.router import format_conversation, load_prompt, resolve_model, turns_from_row
 from northstar.agent.tools import ToolBox, result_for_model
@@ -347,7 +348,7 @@ def _main() -> None:
     out, s = evaluate(a.agent, a.split, a.model, a.prompt, a.effort)
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
     tag = f"{a.agent}_{s['model'].split('/')[-1]}_{s['prompt'].split('/')[-1].removesuffix('.md')}_{s['reasoning_effort']}_{a.split}"
-    out.to_csv(res_dir / f"{tag}.csv", index=False)
+    save_results(out, res_dir / f"{tag}.csv")   # personal data masked (guardrails task 8)
     (res_dir / f"{tag}.json").write_text(json.dumps(s, indent=1), encoding="utf-8")
     print(json.dumps(s, indent=1))
     print("\nReplies:")

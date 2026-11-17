@@ -9,9 +9,13 @@ selling the fictional Meridian brand. All data is synthetic.
 ```bash
 pip install -r requirements.txt
 pip install -e .              # lets Python find the project code in src/ (once)
-cp .env.example .env          # add your OpenRouter key (needed from Phase 2)
-python run_all.py             # rebuilds everything built so far and runs the tests
+cp .env.example .env          # add your OpenRouter key (only to make NEW model calls)
+python run_all.py             # rebuilds the data checks and dealer system, reproduces every key result, runs the tests
 ```
+
+**No key needed to reproduce the results.** Every model call the team made is recorded in `data/llm_cache/`, so `python run_all.py results` replays the router, the three desks, the full agent, the single-agent baseline, the hand-written chats and the red-team run with the same numbers, at no cost. The key is removed from that stage on purpose, so it can never spend money.
+
+After a prompt or tool change, `python run_all.py record` (with a key) makes only the model calls that are not recorded yet; recorded calls stay free. Then `results` reproduces everything.
 
 ## Try the router
 
@@ -98,17 +102,29 @@ Each module folder also holds a reference implementation built by Kawtar.
 Teammates' versions plug in through the same contracts, and the evaluation
 compares them on the same test set.
 
+## Extend it in an afternoon
+
+| To add | Change | Then |
+|---|---|---|
+| A tool | Write the function in `src/northstar/dms/store.py`, describe it in `SPECS` and give it to the right desks in `PERMISSIONS` (`src/northstar/agent/tools.py`). A desk that is not listed is refused the tool in code | Add a test in `tests/test_specialist.py` |
+| A desk (specialist) | Add a prompt in `prompts/<desk>/v1.md`, a line in `config/settings.yaml` (model tier, reasoning effort, prompt), its tools in `PERMISSIONS`, and its request types in `DESK_FOR` (`src/northstar/agent/specialist.py`) | `python -m northstar.agent.specialist --agent <desk>` |
+| A prompt change | Copy the prompt to a new version (`v3.md`), point `config/settings.yaml` at it, log what changed and why in `docs/prompt_log.md` | Run the desk on validation; tune on validation only |
+| A rule | Add it to `prompts/shared/` (new version) and to `docs/operating_policy.md`; if it can be checked in code, add a check in `src/northstar/guardrails/` | Add a hand-written chat in `data/handwritten/chats.yaml` |
+| A test chat | Add an entry to `data/handwritten/chats.yaml` with the expected result | `python -m northstar.agent.scenarios` |
+
+Where to read first: `docs/architecture.md` (the design), `docs/edge_cases.md` (each edge case, its decision and its test), `docs/decision_log.md` (why), `docs/prompt_log.md` (what each change did).
+
 ## Status
 
 | Phase | Status |
 |---|---|
 | 1. Contracts, repo, mock dealer system | Done |
-| 2. Agent (router, specialists, baseline, handoff, failures) | In progress (model client, router) |
-| 3. Guardrails and attack test set | To do |
-| 4. Evaluation and error analysis | To do |
-| 5. Fine-tune and 3-model comparison | To do |
-| 6. Cost model | To do |
-| 7. One-command reproduction, final README | In progress (`run_all.py`) |
+| 2. Agent (router, specialists, baseline, handoff, failures) | Done: tested on validation, 34 hand-written chats, single-agent comparison |
+| 3. Guardrails and attack test set | Built: input and output checks, log masking, red team 74 of 75 resisted; policy draft to review with Jessica |
+| 4. Evaluation and error analysis | Development runs done; final evaluation on the test set to do (Libo) |
+| 5. Fine-tune and 3-model comparison | To do (Neeraj) |
+| 6. Cost model | To do (Abhi) |
+| 7. One-command reproduction, final README | Done: `python run_all.py` |
 
 ## Rules
 - Never commit `.env` or any key.

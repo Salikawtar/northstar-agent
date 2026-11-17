@@ -16,6 +16,7 @@ from typing import Optional
 
 import pandas as pd
 
+from northstar.guardrails.log_masking import save_results
 from northstar.agent.router import turns_from_row
 from northstar.agent.specialist import Specialist
 from northstar.config import path
@@ -81,7 +82,7 @@ def _main() -> None:
     out, s = evaluate(a.split)
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
     tag = f"single_agent_{a.split}"
-    out.to_csv(res_dir / f"{tag}.csv", index=False)
+    save_results(out, res_dir / f"{tag}.csv")   # personal data masked (guardrails task 8)
     (res_dir / f"{tag}.json").write_text(json.dumps(s, indent=1), encoding="utf-8")
     print(json.dumps(s, indent=1))
     print("\nChats:")

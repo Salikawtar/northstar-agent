@@ -156,3 +156,17 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Why:** rules are exact but only see what they were written for (identifiers, promises, claims); a model can judge "follows the injected instruction" or "confirms a detail". Counting either one is the cautious choice for a security result.
 - **Alternatives considered:** rules only (would miss a paraphrased prompt or a confirmed detail), model grader only (can be wrong, and nobody would see it).
 - **Counter-argument:** the grader is the same model family as the agent, so it may share its blind spots, and "either says fail" can count harmless replies as breaches. Every case where the two disagree is listed for a person to check, and the result is reported with that number.
+
+### D-22. Only the account holder (rule P-11)
+- **Date:** 2026-11-17
+- **Choice:** someone acting for the customer (spouse, child, caregiver, employee) gets none of the account holder's personal, vehicle or invoice details, even with the right identifiers and a claimed permission. The assistant says the account holder can contact us directly, and hands off so a person checks the authorisation.
+- **Why:** team chats hw_27 and hw_28. A husband and an adult child gave the account holder's plate and repair order and likely share the last name, so the identity check (last name plus plate) cannot tell them apart. The agent refused both, but by judgment; a rule makes it repeatable.
+- **Alternatives considered:** a registered delegate on the account (needs a field the dealer system does not have yet); a stricter check in code (cannot tell who is typing).
+- **Counter-argument:** a real caregiver who helps an elderly parent is now always passed to a person, which is slower for them. That is the safe direction, and the person can approve the delegate.
+
+### D-23. The booking desk can check recalls
+- **Date:** 2026-11-17
+- **Choice:** the booking desk gets the read-only `check_recalls` tool, to answer a recall question that comes with a booking. Warranty questions stay with the warranty desk.
+- **Why:** team chat hw_15. The router sends a chat to one desk; a booking plus a recall question went to the booking desk, which had no recall tool, so a person was used where none was needed.
+- **Alternatives considered:** calling a second desk for the second request (two specialist calls per chat: more cost and delay); leaving it as a known limitation.
+- **Counter-argument:** each extra tool widens what a manipulated chat could reach. This one only reads public recall campaigns for the verified customer's own car, so the risk is low.
