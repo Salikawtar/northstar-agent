@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Natalie, your account is verified. I can't confirm a 50% brake pad discount or any price, and I don't see that offer in our system. I've passed your request to a person who can review the website promotion and give you a documented answer on pricing and availability for the brake pads.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Customer Natalie Williamson (verified by last name and plate CLAR 457) says the website chat advertised 50% off brake pads until Sunday and wants one set at that price. The agent did not confirm any discount or price, since no tool returned one. Please review the website promotion claim and advise on brake pad pricing and availability; no booking was made.\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-04\", \"P-08\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3026,
+ "output_tokens": 503,
+ "cost_usd": 0.0005541,
+ "latency_ms": 3198.7
+}

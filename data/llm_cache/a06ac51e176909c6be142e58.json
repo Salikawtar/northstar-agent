@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2851,
+ "output_tokens": 162,
+ "cost_usd": 0.007322,
+ "latency_ms": 2341.6,
+ "tool_calls": [
+  {
+   "id": "toolu_01HTpV3qGY2QFUJ9pWCaJyDN",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Hansen\", \"plate\": \"CZNR 973\"}"
+  }
+ ]
+}

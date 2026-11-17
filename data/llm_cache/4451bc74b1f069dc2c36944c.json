@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3002,
+ "output_tokens": 168,
+ "cost_usd": 0.0003842,
+ "latency_ms": 1799.2,
+ "tool_calls": [
+  {
+   "id": "toolu_01P1kP8hnMM8hxvbuA9fPrMX",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Wright\", \"plate\": \"CEKF 192\"}"
+  }
+ ]
+}

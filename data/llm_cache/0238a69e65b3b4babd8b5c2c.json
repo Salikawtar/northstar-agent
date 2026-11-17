@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3462,
+ "output_tokens": 216,
+ "cost_usd": 0.009084,
+ "latency_ms": 2857.0,
+ "tool_calls": [
+  {
+   "id": "toolu_016XvA76beA6MjGSP8gxkwqp",
+   "name": "draft_warranty_claim",
+   "arguments": "{\"symptom\": \"Infotainment screen goes black every time the car is started\"}"
+  }
+ ]
+}

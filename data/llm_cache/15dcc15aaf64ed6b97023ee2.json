@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour, je comprends que vous voulez aider votre mère. Pour des raisons de confidentialité, je ne peux pas réserver de rendez-vous ni discuter du dossier au nom de quelqu'un d'autre que le titulaire du compte. Votre mère peut nous contacter directement, et une personne de notre équipe pourra vérifier l'autorisation et répondre à votre demande, y compris au sujet de l'entretien annoncé comme gratuit. Je ne peux pas confirmer cet engagement moi-même.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"A third party (daughter) wrote on behalf of the account holder, Karine Laroche (plate CLYY 676). She asks to book the 2026-11-20 service and to confirm an advisor's (Pierre) promise of a free maintenance as goodwill. I did not verify the customer, did not book, and did not confirm the free service (P-11, P-04). Please check authorisation with the account holder directly and review the free-service claim through a documented review by a person.\", \"policy_rules_cited\": [\"P-11\", \"P-04\", \"P-02\", \"P-08\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2998,
+ "output_tokens": 820,
+ "cost_usd": 0.0007098,
+ "latency_ms": 4478.4
+}

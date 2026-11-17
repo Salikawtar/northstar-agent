@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je comprends, on regarde ça tout de suite. Pour vérifier le rappel de votre Halden, j'ai besoin de votre nom de famille et de votre plaque d'immatriculation. Pouvez-vous me les donner? Si vous voyez de la fumée ou sentez une odeur de brûlé, arrêtez-vous dans un endroit sûr et appelez le 911.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-03\", \"P-10\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2993,
+ "output_tokens": 478,
+ "cost_usd": 0.010766,
+ "latency_ms": 5317.9
+}

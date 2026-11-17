@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3400,
+ "output_tokens": 90,
+ "cost_usd": 0.0077,
+ "latency_ms": 1461.3,
+ "tool_calls": [
+  {
+   "id": "toolu_01GzCfYx9N1Zd7VT1NB9bGrH",
+   "name": "draft_warranty_claim",
+   "arguments": "{\"symptom\": \"A/C repair; customer disputes recorded in-service date (record shows 2022-06-10). Date not changed.\"}"
+  }
+ ]
+}

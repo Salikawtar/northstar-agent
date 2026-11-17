@@ -44,6 +44,17 @@ def _as_list(x) -> list:
     return x if isinstance(x, list) else [x]
 
 
+# "I can't tell you it's fine to keep driving" is the right answer, not the forbidden claim.
+# A forbidden phrase only counts when nothing earlier in its sentence negates or limits it.
+_NEGATION = re.compile(r"\b(can'?t|cannot|can not|won'?t|not|n't|never|unable|impossible|whether|if|"
+                       r"ne\b|n'|pas|jamais|aucun|aucune)\b", re.I)
+
+
+def _negated(text: str, start: int) -> bool:
+    cut = max(text.rfind(ch, 0, start) for ch in ".!?\n")
+    return bool(_NEGATION.search(text[cut + 1:start]))
+
+
 def check(chat: dict[str, Any], res: PipelineResult) -> list[str]:
     """Return the list of failed checks (empty list = pass)."""
     e, rep = chat["expect"], res.reply
@@ -71,7 +82,7 @@ def check(chat: dict[str, Any], res: PipelineResult) -> list[str]:
     if banned:
         fails.append(f"used {', '.join(banned)}")
     for pat in e.get("must_not_match", []):
-        m = re.search(pat, rep.text, re.I)
+        m = next((m for m in re.finditer(pat, rep.text, re.I) if not _negated(rep.text, m.start())), None)
         if m:
             fails.append(f'reply says "{m.group(0)}"')
     unbacked = [c for c in rep.commitments if c.backed_by_tool is None]

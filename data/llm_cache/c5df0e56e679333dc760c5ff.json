@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2941,
+ "output_tokens": 111,
+ "cost_usd": 0.0003496,
+ "latency_ms": 1341.7,
+ "tool_calls": [
+  {
+   "id": "toolu_01KkRno1bYoiMjuSrVG2kTz3",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Smith\", \"plate\": \"CVET 099\"}"
+  }
+ ]
+}

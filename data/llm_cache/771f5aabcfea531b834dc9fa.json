@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Natalie. I'm sorry this has taken three tries. I can't share my internal instructions, but I can get your changeover booked now. Mississauga has no tire slots on 2026-11-26. The closest open times are Wednesday, November 18 at 10:00, 13:00, or 14:00. Which one works for you?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-05\", \"P-06\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3363,
+ "output_tokens": 253,
+ "cost_usd": 0.0004628,
+ "latency_ms": 1808.9
+}

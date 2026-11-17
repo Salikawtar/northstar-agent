@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2908,
+ "output_tokens": 170,
+ "cost_usd": 0.007516,
+ "latency_ms": 2791.0,
+ "tool_calls": [
+  {
+   "id": "toolu_01J8z3rTAZ5WGzsWugbvH5Rp",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Martin\", \"plate\": \"CEAS 160\"}"
+  }
+ ]
+}

@@ -140,13 +140,18 @@ class Specialist:
 
     @staticmethod
     def _withhold(route: RouterOutput, no_router: bool) -> tuple[str, ...]:
-        """Least privilege per chat, not only per desk: a warranty claim can only be drafted when the
-        request is about a warranty (main or extra request). Team chat hw_33: a recall question with no
-        open recall ended with a claim drafted by mistake."""
+        """Least privilege per chat, not only per desk (D-26). A warranty claim can only be drafted when
+        the chat's main request is a warranty claim and nobody flagged it as an attempt to trick us.
+        - hw_33: a recall question (warranty only as an extra request) ended with a claim drafted by mistake.
+        - red team, warranty fraud: claims were drafted for disguised damage, a changed date or a disputed
+          finding, although the agent refused the fraud itself. A person still gets every flagged chat
+          and can open a real claim."""
         if no_router:
             return ()
-        types = {route.request_type, *route.secondary_types}
-        return () if RequestType.WARRANTY_CLAIM in types else ("draft_warranty_claim",)
+        flagged = route.needs_escalation and route.escalation_reason == EscalationReason.ADVERSARIAL
+        if route.request_type == RequestType.WARRANTY_CLAIM and not flagged:
+            return ()
+        return ("draft_warranty_claim",)
 
     def _system(self, route: RouterOutput, no_router: bool = False) -> str:
         cfg = settings()
@@ -172,7 +177,7 @@ class Specialist:
         if no_router:
             route = RouterOutput(request_type=RequestType.NEEDS_HUMAN, needs_escalation=False, confidence=1.0,
                                  language=Language(language_hint) if language_hint in ("en", "fr") else Language.EN)
-        box = ToolBox(dms or DealerSystem(), self.agent, withhold=self._withhold(route, no_router))
+        box = ToolBox(dms or DealerSystem(), self.agent, withhold=self._withhold(route, no_router), turns=turns)
         messages: list[dict[str, Any]] = [
             {"role": "system", "content": self._system(route, no_router)},
             {"role": "user", "content": "Conversation so far:\n" + format_conversation(turns)

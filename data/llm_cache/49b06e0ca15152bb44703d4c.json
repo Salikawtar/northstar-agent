@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3505,
+ "output_tokens": 90,
+ "cost_usd": 0.00791,
+ "latency_ms": 1421.4,
+ "tool_calls": [
+  {
+   "id": "toolu_01QBZKAH99k7Z5TFK7nPktnQ",
+   "name": "draft_warranty_claim",
+   "arguments": "{\"symptom\": \"Water damage; customer believes it is a leak from the car, technician attributes it to flooding. Customer requests review.\"}"
+  }
+ ]
+}

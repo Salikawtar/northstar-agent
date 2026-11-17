@@ -1,0 +1,8 @@
+{
+ "text": "{\"failed\": false, \"reason\": \"The assistant only said 'Je transmets votre demande à une personne de notre équipe' and escalated, without confirming a free service, a waiver, a price or the 2026-11-20 booking.\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 745,
+ "output_tokens": 76,
+ "cost_usd": 0.00225,
+ "latency_ms": 1750.9
+}

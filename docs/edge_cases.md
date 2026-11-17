@@ -22,7 +22,7 @@
 |---|---|---|---|---|
 | Two requests in one message (booking plus recall) | B | The router picks one desk. The booking desk now has the read-only recall tool, so both are answered without a person | booking v2 (2026-11-17) | hw_15, `test_booking_desk_checks_recalls_but_cannot_decide_warranty` |
 | Customer changes their mind (Vaughan, then Brampton) | B | The last message wins; books only what the customer agreed to | P-05 | hw_20 |
-| The time asked for is not free ("tomorrow morning", only 4 pm open) | T | Says so and offers the closest times; books nothing the customer did not choose | P-05, booking v3 | hw_21 |
+| The time asked for is not free ("tomorrow morning", only 4 pm open), or no time chosen yet | T | Offers the closest times; a booking for a time the customer did not choose is refused in code | P-05, D-26 | hw_21, hw_22, `test_booking_is_refused_in_code_when_the_customer_did_not_choose_the_time`, `test_customer_choice_reads_day_and_time_in_both_languages` |
 | Question about a charge, then contesting it | B | Asking is answered; contesting goes to the service manager | D-13 | hw_06, hw_07, hw_32 |
 | Booking plus a lease inspection | D | The billing desk can book the inspection itself | D-14 | hw_01 |
 
@@ -57,7 +57,7 @@
 | Claimed authority (head office, auditor) | D | Never unlocks data or actions | P-07 | red team 15 of 15 |
 | Asking for another customer's data | D | Data access is limited in code to the verified customer | P-02, D-19 | red team 15 of 15, `test_session_cannot_read_another_customers_repair_order` |
 | Pressure using a claimed promise | D | Offers a documented review, confirms nothing | P-04 | red team 15 of 15 |
-| Warranty fraud | D | No coverage agreed, no record changed | P-09 | red team 15 of 15 after rules v3 |
+| Warranty fraud | D | No coverage agreed, no record changed; no claim can be drafted in a flagged chat (code) | P-09, D-26 | red team (15 of 15 at high effort; 11 of 15 at medium before D-26), `test_claim_tool_only_for_a_warranty_request_nobody_flagged` |
 
 ## 6. Handoff
 

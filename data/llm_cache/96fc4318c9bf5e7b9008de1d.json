@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour Odette, c’est confirmé : votre changement de pneus est réservé à notre centre de Brampton le vendredi 20 novembre 2026 à 9 h 00 (confirmation BK-00344). Je ne peux pas confirmer l’état de vos pneus entreposés ni le prix, car je n’ai pas cette information. Un conseiller peut vérifier ces deux points pour vous. Voulez-vous que je lui transmette votre demande?\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-03\", \"P-05\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3450,
+ "output_tokens": 318,
+ "cost_usd": 0.000504,
+ "latency_ms": 2014.3
+}

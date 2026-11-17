@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour M. Lambert, je peux vous aider avec l'état de votre réparation. Pour vérifier votre identité, pourriez-vous me donner votre plaque d'immatriculation ou votre numéro d'ordre de réparation (au format RO-######)? Je ne peux pas consulter la facture ni le montant avant cette vérification.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P-01\", \"P-10\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2980,
+ "output_tokens": 463,
+ "cost_usd": 0.0005295,
+ "latency_ms": 2579.0
+}
