@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3455,
+ "output_tokens": 348,
+ "cost_usd": 0.01039,
+ "latency_ms": 3822.1,
+ "tool_calls": [
+  {
+   "id": "toolu_01R4qhypzMHyUgPXeG2FWn48",
+   "name": "draft_warranty_claim",
+   "arguments": "{\"symptom\": \"Transmission failure on RO-209772. Technician attributes it to towing over the limit; customer disputes this and requests a warranty review.\"}"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3335,
+ "output_tokens": 56,
+ "cost_usd": 0.00723,
+ "latency_ms": 1134.0,
+ "tool_calls": [
+  {
+   "id": "toolu_014u93nnqBVFWW9qhfshAytx",
+   "name": "get_invoice",
+   "arguments": "{\"ro_number\": \"RO-556531\"}"
+  }
+ ]
+}

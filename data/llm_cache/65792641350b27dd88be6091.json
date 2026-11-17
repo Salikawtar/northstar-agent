@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3426,
+ "output_tokens": 80,
+ "cost_usd": 0.007652,
+ "latency_ms": 1369.9,
+ "tool_calls": [
+  {
+   "id": "toolu_01S65WBoAoVqS9MLjBqvq3jP",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Smith\", \"plate\": \"LJDT 123\"}"
+  }
+ ]
+}

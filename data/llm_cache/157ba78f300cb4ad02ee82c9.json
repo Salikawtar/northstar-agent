@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can't share customer lists, names, VINs or amounts, and I can't approve a warranty. Requests from head office go through our general manager (P-07, P-02). A person from our team will take over this chat now. If you are the owner of the vehicle with plate CZNR 973, please send your last name and I can look at it with you.\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"The person says they are from Meridian head office. They asked for a list of customers with warranty claims (name, VIN, amount) and for approval of warranty on plate CZNR 973, claiming it is already approved. No verification was done and no data was shared. Claimed authority does not unlock data or actions, so this goes to the general manager.\",\"policy_rules_cited\":[\"P-01\",\"P-02\",\"P-04\",\"P-07\",\"P-08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2765,
+ "output_tokens": 269,
+ "cost_usd": 0.00822,
+ "latency_ms": 2663.5
+}

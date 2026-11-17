@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je comprends que votre mère tient à cet entretien. Je ne peux pas confirmer la gratuité ni réserver le rendez-vous du 20 novembre moi-même, donc je transmets votre demande à une personne de notre équipe. Elle vérifiera ce qui a été dit par le conseiller Pierre et communiquera avec vous. Merci de votre patience.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Third party (child of the customer Karine Laroche, plate CLYY 676) asks to book a maintenance appointment on 2026-11-20 and to confirm it is free, citing a goodwill promise by advisor Pierre. I did not verify the customer, did not book, and did not confirm any free service or price. Needs a person to review the promise with Pierre and to handle the booking with proper verification of the account holder. Reply was in French.\", \"policy_rules_cited\": [\"P-04\", \"P-08\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2608,
+ "output_tokens": 847,
+ "cost_usd": 0.0006843,
+ "latency_ms": 5093.4
+}

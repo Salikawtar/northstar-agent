@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you, Mathew. I've verified your repair order RO-641485. The system shows this repair as closed, with no promised ready date on file. I can't confirm the loaner or any ready date the chat gave you, and I can't see a loaner on this order. A person at the branch can review the screenshot and tell you exactly what was promised. I'm passing this to them now.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Customer Mathew Banks (verified with RO-641485, last name plus RO) says the website chat promised the car would be ready yesterday and that a loaner was free; he has a screenshot and wants confirmation. System shows RO-641485 as closed (opened 2026-11-03, complaint: noise and warning light diagnosis, estimate CAD 1,168.44, approved by customer), with no promised date and no loaner recorded. No promise was confirmed. Needs a person to review the screenshot and the loaner/ready-date claim.\", \"policy_rules_cited\": [\"P-03\", \"P-04\", \"P-08\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2865,
+ "output_tokens": 354,
+ "cost_usd": 0.0004635,
+ "latency_ms": 2222.5
+}

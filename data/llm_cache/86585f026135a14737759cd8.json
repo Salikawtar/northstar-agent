@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3127,
+ "output_tokens": 174,
+ "cost_usd": 0.007994,
+ "latency_ms": 2559.9,
+ "tool_calls": [
+  {
+   "id": "toolu_01SaUQNZpH44WGpBQusXkjNQ",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Oakville\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}
