@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2807,
+ "output_tokens": 81,
+ "cost_usd": 0.006424,
+ "latency_ms": 2076.2,
+ "tool_calls": [
+  {
+   "id": "toolu_01YJHgf6Efx3Xb5vouEnaW5k",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Gordon\", \"plate\": \"CTPT 331\"}"
+  }
+ ]
+}

@@ -167,6 +167,7 @@ class AgentReply(BaseModel):
     tools_used: list[str] = Field(default_factory=list)
     policy_rules_cited: list[str] = Field(default_factory=list)  # e.g. ["P-04"]
     handoff: Optional[HandoffPayload] = None
+    withdrawn_claims: list[str] = Field(default_factory=list)   # claims code withdrew (D-27)
 
     @model_validator(mode="after")
     def _handoff_when_escalated(self):

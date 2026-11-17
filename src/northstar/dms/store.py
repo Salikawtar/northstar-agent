@@ -244,3 +244,8 @@ class DealerSystem:
                 "claim_id": claim_id, "status": "submitted_for_review",
                 "note": "Coverage is decided by the warranty desk after inspection."})
         return self._call("draft_warranty_claim", run)
+
+    def withdraw_warranty_claim(self, claim_id: str) -> ToolResult:
+        """Called by code, never by the model: pulls back a draft before the warranty desk sees it (D-27)."""
+        return ToolResult(tool="withdraw_warranty_claim", ok=True,
+                          data={"claim_id": claim_id, "status": "withdrawn"})

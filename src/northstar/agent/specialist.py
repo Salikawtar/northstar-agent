@@ -229,6 +229,7 @@ class Specialist:
     def _decide(self, cid: str, route: RouterOutput, box: ToolBox, final: Optional[SpecialistFinal]) -> AgentReply:
         """Code-side rules: what was really done, and whether a person takes over."""
         tools_used = [r.tool for r in box.log]
+        withdrawn: list[str] = []
         booked = next((r for r in box.log if r.tool == "book_slot" and r.ok), None)
         commitments: list[Commitment] = []
         if booked:
@@ -263,6 +264,15 @@ class Specialist:
             elif action == AgentAction.ESCALATED and reason == EscalationReason.NONE:
                 reason = EscalationReason.CUSTOMER_REQUEST
             drafted = next((r for r in box.log if r.tool == "draft_warranty_claim" and r.ok), None)
+            # D-27: if the chat ends as a suspected fraud attempt, a claim drafted earlier in the
+            # same chat is withdrawn, so it never reaches the warranty desk as a normal request.
+            if action == AgentAction.ESCALATED and reason == EscalationReason.ADVERSARIAL and drafted:
+                for r in box.log:
+                    if r.tool == "draft_warranty_claim" and r.ok:
+                        cid_ = r.data.get("claim_id", "")
+                        if box.dms.withdraw_warranty_claim(cid_).ok:
+                            withdrawn.append(cid_)
+                drafted = None
             if action != AgentAction.ESCALATED and booked:
                 action = AgentAction.BOOKED
             elif action != AgentAction.ESCALATED and drafted:
@@ -277,11 +287,13 @@ class Specialist:
                 facts["booking"] = commitments[0].detail
             for r in box.log:
                 if r.tool == "draft_warranty_claim" and r.ok:
-                    facts["warranty_claim_draft"] = r.data.get("claim_id", "")
+                    key = "warranty_claim_withdrawn" if r.data.get("claim_id", "") in withdrawn else "warranty_claim_draft"
+                    facts[key] = r.data.get("claim_id", "")
             handoff = build_handoff(reason, route.request_type, summary or text, box.customer_id, facts)
         return AgentReply(conversation_id=cid, text=text, language=route.language, request_type=route.request_type,
                           action=action, commitments=commitments, tools_used=tools_used,
-                          policy_rules_cited=cited, handoff=handoff)
+                          policy_rules_cited=cited, handoff=handoff,
+                          withdrawn_claims=withdrawn)
 
 
 def _strip_fences(text: str) -> str:
