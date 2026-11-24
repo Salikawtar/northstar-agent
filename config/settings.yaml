@@ -25,7 +25,7 @@ models:
   large: "anthropic/claude-sonnet-5.5"      # $2 / $10
   compare_small: "openai/gpt-6-luna"        # $0.10 / $0.50, other vendor, for a controlled router comparison
   grader: "TO_BE_CHOSEN_IN_PHASE_4"
-  finetuned_router: "TO_BE_CHOSEN_IN_PHASE_5"
+  finetuned_router: "models/finetuned_router"   # folder made by northstar.finetune.train_router final (not in git: 1.1 GB)
 
 # Which tier and reasoning effort each component uses (the starting
 # hypothesis; evaluation results confirm or change it).

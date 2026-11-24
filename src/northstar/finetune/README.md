@@ -1,3 +1,43 @@
-# Fine-tune (Phase 5) - owner: Neeraj (reference build: Kawtar)
-Small model fine-tuned to produce RouterOutput (request type + escalation) from the 160 training chats only.
-Compared with small and large prompted routers on the same 40 test chats.
+# Fine-tune (Phase 5): owner Neeraj, integrated by Kawtar
+
+**Main idea:** a small multilingual encoder is trained to do the router's job (request type, escalation, language) and plugged in behind the same `RouterOutput` contract. It is then compared with the small (Haiku) and large (Sonnet) prompted routers on the same 40 test chats, with the same input text and the same scoring code.
+
+## How it works
+
+1. **Same input as the prompted router.** The model reads the three-turn conversation (customer, agent, customer), built by the same function the prompted router uses (`format_conversation`).
+2. **One encoder, three heads.** `model.py`: a shared encoder, with three small heads on the first token: 10 request types, escalation yes/no, English or French.
+3. **Every choice on validation.** `train_router.py select` picks the base model and learning rate by mean validation macro F1 over 2 seeds. The 40 test chats are not read (a test checks this).
+4. **Several seeds, then test once.** `train_router.py final` trains the chosen settings with 5 seeds. It keeps the seed with the best validation score as the router, and sets the escalation cut-off on validation, favouring recall. Only then is each seed scored on test, to show how much one training run can vary.
+5. **Same plug, same scoring.** `predict.py` returns a full `RouterOutput`, so `python -m northstar.agent.router --split test --model finetuned` scores it with exactly the code that scores Haiku and Sonnet. `compare.py` builds every table from those row-level results.
+
+## Run it
+
+Training needs a GPU. The free Kaggle T4 takes about 45 minutes. Open `kaggle_finetune_run.ipynb` on Kaggle (GPU on, Internet on) and run all. Or, on any machine with a GPU:
+
+```bash
+pip install -r requirements.txt -r requirements-finetune.txt && pip install -e .
+python -m northstar.finetune.train_router select                  # validation only
+python -m northstar.finetune.train_router final                   # 5 seeds, saves models/finetuned_router
+python -m northstar.agent.router --split test --model finetuned   # official test row (CPU)
+python -m northstar.agent.router --split test --model small       # prompted baselines (key the first time,
+python -m northstar.agent.router --split test --model large       # then replayed from the recordings)
+python -m northstar.finetune.compare --collect                    # three-router tables
+```
+
+Without a GPU or a key, `python run_all.py finetune` rebuilds the comparison from the committed results.
+
+## Files
+
+| File | What it is |
+|---|---|
+| `model.py` | Encoder plus three heads; save and load a checkpoint with its settings |
+| `train_router.py` | Step 1 `select` and step 2 `final` |
+| `predict.py` | `FinetunedRouter`: the fine-tuned model behind the router plug |
+| `compare.py` | Three-router tables, confidence intervals and paired tests |
+| `kaggle_finetune_run.ipynb` | One-click run on a free Kaggle GPU |
+| `MODEL_CARD.md` | What the model is, how it was chosen, results, limits |
+| `results/` | Logged outputs: selection runs, seed runs, training log, test results, comparison tables |
+
+The trained checkpoint (about 1.1 GB) is not in git. Retraining takes a few minutes and costs a few cents on a paid GPU.
+
+No API key is used anywhere in this folder.
