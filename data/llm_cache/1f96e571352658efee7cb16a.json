@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Thank you, Mrs. Jackson. I found your Tessera. Your lease ends on 2026-12-01. The return steps are a pre-return inspection, where the inspector notes any wear beyond normal use. Any charge is explained in the inspection report before you pay. I can book that inspection for you. Which branch would you like?\\n\\nI'm sorry, but I can't share another customer's address or phone number (P04). A person will review that part of your request. If you'd like to reach Carol, you could write to her through family or friends.\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"The customer is verified and has a leased vehicle that ends on 2026-12-01. She wants a lease-return inspection, and I have asked her which branch she prefers. She also asked for the address and phone number of another customer, a relative by marriage. I refused under P04. A person should review that request. The inspection booking is still open.\",\"policy_rules_cited\":[\"P02\",\"P04\",\"P14\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4409,
+ "output_tokens": 406,
+ "cost_usd": 0.012878,
+ "latency_ms": 3662.9
+}

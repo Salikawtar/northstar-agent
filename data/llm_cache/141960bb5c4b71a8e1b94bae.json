@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3645,
+ "output_tokens": 173,
+ "cost_usd": 0.00902,
+ "latency_ms": 2114.5,
+ "tool_calls": [
+  {
+   "id": "toolu_01PSVyQyhydtxtxB23H3ASNf",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Wright\", \"ro_number\": \"RO-669350\", \"plate\": \"CEKF 192\"}"
+  }
+ ]
+}

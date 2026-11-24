@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4259,
+ "output_tokens": 78,
+ "cost_usd": 0.009298,
+ "latency_ms": 1139.1,
+ "tool_calls": [
+  {
+   "id": "toolu_01JrLV6BPnnYEcgMccTBwdWg",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Vaughan\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

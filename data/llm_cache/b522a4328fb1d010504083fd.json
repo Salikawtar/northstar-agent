@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3367,
+ "output_tokens": 81,
+ "cost_usd": 0.007544,
+ "latency_ms": 2146.8,
+ "tool_calls": [
+  {
+   "id": "toolu_01NBwSB96Fqve4ZkZwaJQaaJ",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Watkins\", \"plate\": \"CHBS 537\"}"
+  }
+ ]
+}

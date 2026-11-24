@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"C'est confirmé, Diane : votre entretien est réservé à Vaughan le mardi 17 novembre 2026 à 10 h (confirmation BK-00039). Puis-je vous aider pour autre chose?\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P08\", \"P10\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4101,
+ "output_tokens": 135,
+ "cost_usd": 0.0004776,
+ "latency_ms": 1209.0
+}

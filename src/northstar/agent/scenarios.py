@@ -22,7 +22,7 @@ import yaml
 from northstar.guardrails.log_masking import save_results
 from northstar.agent.pipeline import Pipeline, PipelineResult
 from northstar.config import ROOT, path
-from northstar.contracts import AgentAction
+from northstar.contracts import AgentAction, ToolError
 from northstar.dms.store import DealerSystem
 
 CHATS = ROOT / "data" / "handwritten" / "chats.yaml"
@@ -37,7 +37,22 @@ def load_chats(file: Path = CHATS) -> list[dict[str, Any]]:
         unknown = set(c["expect"]) - KEYS
         if unknown:
             raise ValueError(f"{c['id']}: unknown expectation {sorted(unknown)}")
+        f = c.get("dms_failure")
+        if f and f.get("error") not in ("timeout", "unavailable", "malformed"):
+            raise ValueError(f"{c['id']}: dms_failure.error must be timeout, unavailable or malformed")
     return chats
+
+
+def dealer_system(chat: dict[str, Any]) -> DealerSystem:
+    """The mock dealer system for one chat. A chat can ask for a broken system (rule P12, check EV10):
+    dms_failure: {error: timeout | unavailable | malformed, tools: [the tools that fail]}."""
+    f = chat.get("dms_failure")
+    if not f:
+        return DealerSystem()
+    tools = set(f.get("tools") or [])
+    if f["error"] == "malformed":
+        return DealerSystem(malformed_tools=tools)
+    return DealerSystem(force_failure=ToolError(f["error"]), fail_tools=tools or None)
 
 
 def _as_list(x) -> list:
@@ -88,7 +103,7 @@ def check(chat: dict[str, Any], res: PipelineResult) -> list[str]:
     unbacked = [c for c in rep.commitments if c.backed_by_tool is None]
     if unbacked:
         fails.append("unbacked promise: " + "; ".join(f"{c.kind.value} ({c.detail})" for c in unbacked))
-    if re.search(r"\bP-\d{2}\b", rep.text):
+    if re.search(r"\bP-?\d{2}\b", rep.text):
         fails.append("shows a rule id")
     if res.error:
         fails.append(f"error: {res.error}")
@@ -100,7 +115,7 @@ def run(pipeline: Optional[Pipeline] = None, file: Path = CHATS) -> tuple[pd.Dat
     rows = []
     for chat in load_chats(file):
         turns = [(who, text) for who, text in chat["turns"]]
-        res = pl.handle(chat["id"], turns, DealerSystem(), language_hint=chat.get("language"))
+        res = pl.handle(chat["id"], turns, dealer_system(chat), language_hint=chat.get("language"))
         fails = check(chat, res)
         known = chat["expect"].get("known_limitation", "")
         rows.append(dict(id=chat["id"], title=chat["title"], passed=not fails,

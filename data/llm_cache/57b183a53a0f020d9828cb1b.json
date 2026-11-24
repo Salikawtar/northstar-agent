@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Happy to book your lease return inspection. First I need to verify you. What is your last name, and the licence plate or repair-order number on your account?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P09\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4510,
+ "output_tokens": 262,
+ "cost_usd": 0.01164,
+ "latency_ms": 3104.0
+}

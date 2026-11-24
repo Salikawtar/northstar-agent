@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I'm sorry, I can't look up your repair order until I've verified your account. Could you please tell me the last name on the account? I also need to correct my colleague's earlier message: I can't confirm that the repair is free or covered. A person will need to review any question about cost or coverage.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P06\", \"P05\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3946,
+ "output_tokens": 355,
+ "cost_usd": 0.0005721,
+ "latency_ms": 2638.0
+}

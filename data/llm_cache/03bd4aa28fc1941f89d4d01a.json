@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3631,
+ "output_tokens": 347,
+ "cost_usd": 0.0005366,
+ "latency_ms": 3132.8,
+ "tool_calls": [
+  {
+   "id": "toolu_01G697D1XmSLbg3r4WmXamBW",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Piché\", \"plate\": \"CVAB 648\", \"ro_number\": \"RO-950389\"}"
+  }
+ ]
+}

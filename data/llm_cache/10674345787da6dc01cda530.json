@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you, Teresa. Your pre-return inspection is booked at Brampton on Tuesday, November 17, 2026 at 11:00 am. Your confirmation number is BK-00049. Our records show your lease ends on December 23, 2026. The inspector will note any wear beyond normal use. If there is a charge, it will be explained in the inspection report before you pay anything. Is there anything else I can help you with?\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P10\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4385,
+ "output_tokens": 189,
+ "cost_usd": 0.01066,
+ "latency_ms": 1728.7
+}

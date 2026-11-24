@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3583,
+ "output_tokens": 374,
+ "cost_usd": 0.0005453,
+ "latency_ms": 2948.0,
+ "tool_calls": [
+  {
+   "id": "toolu_01AYhdGoPuD7Uq24PpiB5AfG",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Boisvert\", \"plate\": \"CLJC 514\"}"
+  }
+ ]
+}

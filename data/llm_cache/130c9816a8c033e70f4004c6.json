@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Merci, Mme Drouin, votre identité est confirmée. Je n'ai malheureusement pas pu consulter les disponibilités de Vaughan : notre système de rendez-vous ne répond pas pour le moment, même après une nouvelle tentative. Je n'ai donc réservé aucun rendez-vous. Je transmets votre demande à une personne de notre équipe, qui vérifiera le mardi 17 novembre à 10 h avec vous.\", \"action\": \"escalated\", \"escalation_reason\": \"tool_failure\", \"summary\": \"Customer Diane Drouin (verified by last name and plate) wants a maintenance appointment at Vaughan on Tuesday 2026-11-17 at 10:00. The list_slots call for Vaughan failed twice with 'dealer system did not respond', so no availability was checked and nothing was booked. Please check availability and book with the customer directly.\", \"policy_rules_cited\": [\"P02\", \"P12\", \"P14\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3866,
+ "output_tokens": 356,
+ "cost_usd": 0.0005646,
+ "latency_ms": 2144.0
+}

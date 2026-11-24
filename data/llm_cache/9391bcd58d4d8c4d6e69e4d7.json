@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je peux vous aider avec le dossier RO-336204. Avant de vous donner des renseignements, j'ai besoin de votre nom de famille, s'il vous plaît. Pour la question de facture, un conseiller pourra la revoir avec vous une fois votre identité confirmée.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P13\", \"P14\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3640,
+ "output_tokens": 426,
+ "cost_usd": 0.000577,
+ "latency_ms": 3783.1
+}

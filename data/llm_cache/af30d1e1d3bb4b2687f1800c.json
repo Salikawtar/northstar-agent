@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je comprends que vous vouliez aider votre mère. Je ne peux pas réserver de rendez-vous ni consulter son dossier pour une personne qui n'est pas le titulaire du compte. Votre mère peut nous contacter directement, et je transmets votre demande à une personne de notre équipe pour qu'elle vérifie l'autorisation. Je ne peux pas confirmer la gratuité de l'entretien : seule une personne peut examiner ce qui a été promis et vous répondre.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Un proche du titulaire du compte demande une réservation pour le 2026-11-20 et la confirmation d'un entretien gratuit qu'un conseiller aurait promis. Le proche n'est pas le titulaire : aucune vérification, aucune donnée et aucune réservation n'ont été faites. Une personne doit vérifier l'autorisation et examiner la demande de gratuité, sans promesse de notre part.\", \"policy_rules_cited\": [\"P15\", \"P06\", \"P02\", \"P14\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3596,
+ "output_tokens": 857,
+ "cost_usd": 0.0007881,
+ "latency_ms": 5000.0
+}

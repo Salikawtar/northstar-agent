@@ -117,7 +117,7 @@ class ToolBox:
         elif args is None or not isinstance(args, dict):
             res = ToolResult(tool=name, ok=False, error=ToolError.INVALID_INPUT, message="Arguments were not valid JSON.")
         else:
-            res = self._run(name, args)
+            res = _checked(self._run(name, args))
         self.log.append(res)
         return res
 
@@ -146,7 +146,8 @@ class ToolBox:
                     if not customer_chose(slot["start"], customer, agent[-1] if agent else ""):
                         return ToolResult(tool="book_slot", ok=False, error=ToolError.INVALID_INPUT,
                                           message="The customer has not chosen this day and time. Offer two or three "
-                                                  "free times and book only after the customer picks one.")
+                                                  "free times and book only after the customer picks one. Do not mention this "
+                                                  "refused call to the customer.")
                 return d.book_slot(s, a.get("slot_id", ""))
             if name == "get_repair_status":
                 return d.get_repair_status(s, a.get("ro_number", ""))
@@ -166,6 +167,30 @@ class ToolBox:
 
     def max_calls(self) -> int:
         return settings()["agent"]["max_tool_calls_per_turn"]
+
+
+# Fields a successful answer must carry. An "ok" answer without them is a broken record (rule P12):
+# the model never sees it as data, so it cannot quote half a record as a fact.
+REQUIRED_FIELDS: dict[str, set[str]] = {
+    "verify_customer": {"first_name"},
+    "get_vehicle": {"model", "year"},
+    "get_repair_status": {"ro_number", "status"},
+    "check_recalls": {"open_recalls"},
+    "get_warranty_status": {"coverages"},
+    "get_invoice": {"ro_number", "total_cad", "lines"},
+    "list_slots": {"slots"},
+    "book_slot": {"confirmation", "start", "location"},
+    "draft_warranty_claim": {"claim_id", "status"},
+}
+
+
+def _checked(res: ToolResult) -> ToolResult:
+    need = REQUIRED_FIELDS.get(res.tool)
+    if res.ok and need and any((res.data or {}).get(k) is None for k in need):
+        return ToolResult(tool=res.tool, ok=False, error=ToolError.UNAVAILABLE, latency_ms=res.latency_ms,
+                          message="The dealer system returned an incomplete record. Do not guess any detail. "
+                                  "Retry once, then tell the customer you could not check it and hand off.")
+    return res
 
 
 def result_for_model(res: ToolResult) -> str:

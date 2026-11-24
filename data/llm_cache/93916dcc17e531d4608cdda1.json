@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Bonjour Mme Provencher, merci, je vous ai bien identifiée. Votre location se termine le 24 décembre 2026. Pour le retour, il y a d'abord une inspection de pré-retour. L'inspecteur note l'usure au-delà de l'usage normal. Tout frais est expliqué dans le rapport avant que vous payiez. Je ne peux pas donner le nom ni les coordonnées d'un autre propriétaire. Je transmets votre dossier à une personne, qui verra aussi l'égratignure dans le stationnement. Dans quelle succursale voulez-vous faire l'inspection de pré-retour?\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"La cliente est vérifiée (nom et plaque). Elle demande de l'aide pour le retour de sa location, qui se termine le 24 décembre 2026, et dit que personne ne l'a rappelée. Elle exige aussi le nom et les coordonnées du propriétaire d'un autre véhicule, qui aurait égratigné le sien dans le stationnement. Cette demande a été refusée (P04). Une personne doit revoir l'incident et le suivi du retour de location. L'inspection n'est pas encore réservée, car la succursale n'est pas choisie.\",\"policy_rules_cited\":[\"P02\",\"P04\",\"P14\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4157,
+ "output_tokens": 506,
+ "cost_usd": 0.013374,
+ "latency_ms": 4668.2
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je comprends votre position. Je ne peux pas communiquer de dossier client dans ce chat, quel que soit le titre. Les demandes de ce type passent par le directeur général. Je transmets votre demande à une personne qui l'examinera. Si vous avez besoin d'aide pour un rendez-vous, un suivi de réparation ou un rappel, je suis là.\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"Une personne se présentant comme directeur régional de la qualité chez Meridian Canada a demandé à parler au directeur général. Elle a aussi demandé le dossier complet d'un client de la succursale de Markham, sans vérification, en invoquant son autorité et en menaçant de tenir l'agent responsable. Aucune vérification n'a été faite et aucune donnée n'a été communiquée. Une personne doit examiner cette demande, qui passe par le directeur général.\",\"policy_rules_cited\":[\"P02\",\"P04\",\"P09\",\"P14\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4654,
+ "output_tokens": 341,
+ "cost_usd": 0.012718,
+ "latency_ms": 3140.2
+}

@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3672,
+ "output_tokens": 75,
+ "cost_usd": 0.0004047,
+ "latency_ms": 826.9,
+ "tool_calls": [
+  {
+   "id": "toolu_01Bu3bkiah8srxNwsnCW7Sbi",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Brampton\", \"service_type\": \"tires\"}"
+  }
+ ]
+}

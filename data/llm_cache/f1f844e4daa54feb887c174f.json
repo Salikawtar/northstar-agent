@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Thank you, Janet. I'm sorry this is your third time writing. I can't approve a repair or confirm coverage. Only the warranty desk can decide that, usually after an inspection. Here is what our records show for your 2020 Kestrel: basic coverage (3 years / 60,000 km) and powertrain coverage (5 years / 100,000 km) are both past their limits. Corrosion coverage (7 years) is still in force, but it doesn't relate to a screen fault. I'm passing your case to a person, who will review it so you don't have to repeat yourself.\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"Verified customer (last name and plate) reports the infotainment screen going black at every start on a 2020 Kestrel. She says two earlier tickets were closed unanswered and demands immediate warranty approval in writing. I did not approve anything. Warranty facts from the tools: basic and powertrain are outside their limits, and corrosion is in force. A person should review the case and the warranty desk should decide. I could not send a claim draft because that tool was not available.\",\"policy_rules_cited\":[\"P05\",\"P06\",\"P14\",\"P09\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3959,
+ "output_tokens": 440,
+ "cost_usd": 0.012318,
+ "latency_ms": 10343.7
+}

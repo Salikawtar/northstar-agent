@@ -1,0 +1,15 @@
+{
+ "text": "Your appointment is booked: **Tuesday, November 17 at 9:00 AM at Scarborough** (confirmation BK-00029).\n\nI also checked recalls for your vehicle, and there are no open recall campaigns on record. If your letter describes a recall, please bring it to the visit, or I can pass your question to a person who can review it. Please don't send us the number from the letter.",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4277,
+ "output_tokens": 385,
+ "cost_usd": 0.0006202,
+ "latency_ms": 3084.8,
+ "tool_calls": [
+  {
+   "id": "toolu_01QrbYZJqZZCUHDdUzamRzL5",
+   "name": "verify_customer",
+   "arguments": "{}"
+  }
+ ]
+}

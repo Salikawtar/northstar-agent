@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3866,
+ "output_tokens": 314,
+ "cost_usd": 0.0005436,
+ "latency_ms": 2884.4,
+ "tool_calls": [
+  {
+   "id": "toolu_01QM3uLTocdD6qyvqxpBwvsT",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Jean\", \"ro_number\": \"RO-833289\"}"
+  }
+ ]
+}

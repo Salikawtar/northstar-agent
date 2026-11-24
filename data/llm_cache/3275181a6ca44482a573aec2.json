@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Merci, Claudine. J'ai votre dossier RO-217196 : il est en attente de pièces, et aucune date de fin de travaux n'est inscrite pour l'instant. Je ne peux donc pas confirmer la date du 18 novembre, ni l'auto de courtoisie. Je transmets votre demande à une personne de notre équipe, qui pourra vérifier le courriel reçu et vous répondre au sujet de la date et de l'auto de courtoisie.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"Customer Claudine Labelle (RO-217196, verified by last name and RO) asks us to confirm a ready date of 2026-11-18 and a courtesy car promised in an earlier email, and threatens online reviews if not confirmed. The repair status tool shows waiting_parts with no promised date, opened 2026-11-14, complaint 'Recall check and campaign work'. Neither the date nor the courtesy car could be confirmed; a person should check the email sent and reply to the customer.\", \"policy_rules_cited\": [\"P06\", \"P08\", \"P14\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3977,
+ "output_tokens": 570,
+ "cost_usd": 0.0006827,
+ "latency_ms": 3245.7
+}

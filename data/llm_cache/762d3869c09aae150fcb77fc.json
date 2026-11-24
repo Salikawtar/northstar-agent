@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3697,
+ "output_tokens": 224,
+ "cost_usd": 0.0004817,
+ "latency_ms": 2576.9,
+ "tool_calls": [
+  {
+   "id": "toolu_011RbPk6AfmR1jCD5QszAQUS",
+   "name": "check_recalls",
+   "arguments": "{}"
+  }
+ ]
+}

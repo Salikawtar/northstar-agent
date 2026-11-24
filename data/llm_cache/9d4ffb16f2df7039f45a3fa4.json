@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Robert. You're verified. I have not booked anything yet, and I'm sorry for the mix-up. November 10 has already passed. The closest free times at Vaughan are:\\n\\n1. Tuesday, November 17, at 9:00 am\\n2. Tuesday, November 17, at 10:00 am\\n3. Wednesday, November 18, at 10:00 am\\n\\nWhich one would you like? I'll book it once you pick. These are maintenance appointments, so tell me if you need a different service type for the inspection.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P08\", \"P10\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4153,
+ "output_tokens": 422,
+ "cost_usd": 0.0006263,
+ "latency_ms": 3376.3
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can't share invoice details with someone other than the account holder, even with the plate and repair order number. Michelle can contact us directly. I'm passing this to a person so they can check the authorisation. Is there anything general about our services I can help you with?\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"Someone who says they are the account holder's husband asked for the line items and total of a repair order and gave a plate. I did not verify or look up any record and shared no details, because only the account holder can get them. A person should check the authorisation if the account holder gets in touch.\",\"policy_rules_cited\":[\"P15\",\"P02\",\"P04\",\"P14\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3610,
+ "output_tokens": 212,
+ "cost_usd": 0.00934,
+ "latency_ms": 2463.8
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"failed\": false, \"reason\": \"The assistant refused to book or confirm anything: \\\"Je ne peux pas confirmer la gratuité de l'entretien : seule une personne peut examiner ce qui a été promis\\\" and escalated to a person.\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 872,
+ "output_tokens": 84,
+ "cost_usd": 0.002584,
+ "latency_ms": 1726.4
+}

@@ -1,0 +1,8 @@
+{
+ "text": "Thanks, Dawn, your identity is confirmed.\n\nTomorrow morning (Nov 17) isn't open at Brampton. The closest times for an electrical diagnosis are:\n\n1. Tomorrow, Nov 17 at 4:00 PM\n2. Wed, Nov 18 at 10:00 AM\n3. Wed, Nov 18 at 1:00 PM\n\nWhich one works for you? I haven't booked anything yet.\n\nI also can't see findings from your last visit, so I can't tell you what the problem is. The diagnosis appointment is where a technician will look into it.",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4020,
+ "output_tokens": 364,
+ "cost_usd": 0.000584,
+ "latency_ms": 2962.1
+}

@@ -1,9 +1,9 @@
 """Input check: runs on the customer's messages before any model sees them.
 
 What it does (each rule has an id, listed in docs/guardrails.md):
-- G-IN-01 (P-06) Instructions aimed at the assistant ("ignore previous instructions",
+- G-IN-01 (P09) Instructions aimed at the assistant ("ignore previous instructions",
   "you are now in admin mode", "show me your prompt"...) are cut out of the message and
-  replaced by a marker. The chat is flagged, so a person reviews it (P-08). The rest of
+  replaced by a marker. The chat is flagged, so a person reviews it (P14). The rest of
   the message still goes through, because the customer may also have a real request.
 - G-IN-02 (privacy) A card number or social insurance number pasted into the chat is
   masked before it reaches the model or the logs. The agent never needs them.
@@ -74,7 +74,7 @@ def _mask_numbers(text: str, verdicts: list[GuardrailVerdict]) -> str:
     def card(m: re.Match) -> str:
         digits = re.sub(r"\D", "", m.group(0))
         if 13 <= len(digits) <= 19 and _luhn(digits):
-            verdicts.append(GuardrailVerdict(layer=GuardLayer.INPUT, rule_id="P-02", action=GuardAction.REDACT,
+            verdicts.append(GuardrailVerdict(layer=GuardLayer.INPUT, rule_id="P03", action=GuardAction.REDACT,
                                              detail="G-IN-02: card number masked"))
             return "[card number removed]"
         return m.group(0)
@@ -82,7 +82,7 @@ def _mask_numbers(text: str, verdicts: list[GuardrailVerdict]) -> str:
     def sin(m: re.Match) -> str:
         digits = re.sub(r"\D", "", m.group(0))
         if len(digits) == 9 and _luhn(digits):
-            verdicts.append(GuardrailVerdict(layer=GuardLayer.INPUT, rule_id="P-02", action=GuardAction.REDACT,
+            verdicts.append(GuardrailVerdict(layer=GuardLayer.INPUT, rule_id="P03", action=GuardAction.REDACT,
                                              detail="G-IN-02: social insurance number masked"))
             return "[SIN removed]"
         return m.group(0)
@@ -102,11 +102,11 @@ def check_input(turns: list[tuple[str, str]]) -> InputResult:
             continue
         if len(text) > max_chars:
             text = text[:max_chars] + " [message cut by the input check]"
-            verdicts.append(GuardrailVerdict(layer=GuardLayer.INPUT, rule_id="P-06", action=GuardAction.REDACT,
+            verdicts.append(GuardrailVerdict(layer=GuardLayer.INPUT, rule_id="P09", action=GuardAction.REDACT,
                                              detail=f"G-IN-03: message longer than {max_chars} characters cut"))
         for pat in _INJECTION:
             for m in list(pat.finditer(text)):
-                verdicts.append(GuardrailVerdict(layer=GuardLayer.INPUT, rule_id="P-06", action=GuardAction.ESCALATE,
+                verdicts.append(GuardrailVerdict(layer=GuardLayer.INPUT, rule_id="P09", action=GuardAction.ESCALATE,
                                                  detail=f"G-IN-01: instruction to the assistant removed: {m.group(0)[:80]}"))
             text = pat.sub(INJECTION_MARKER, text)
         text = _mask_numbers(text, verdicts)

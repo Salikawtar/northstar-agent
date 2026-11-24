@@ -1,0 +1,20 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3560,
+ "output_tokens": 156,
+ "cost_usd": 0.000434,
+ "latency_ms": 1074.7,
+ "tool_calls": [
+  {
+   "id": "toolu_01Qe2irN2kgZiQZqjthkYLwQ",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Drouin\", \"plate\": \"RKDP 742\"}"
+  },
+  {
+   "id": "toolu_01QTw5VcWgmuezQXYu6sGEpW",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Vaughan\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

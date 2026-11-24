@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3659,
+ "output_tokens": 80,
+ "cost_usd": 0.008118,
+ "latency_ms": 1797.8,
+ "tool_calls": [
+  {
+   "id": "toolu_01EyqGFfStmubz1Ekcd9VZTR",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Ross\", \"plate\": \"CWTC 291\"}"
+  }
+ ]
+}

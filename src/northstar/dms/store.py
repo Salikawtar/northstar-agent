@@ -39,7 +39,8 @@ class Session:
 class DealerSystem:
     def __init__(self, data_dir=None, failure_rate: Optional[float] = None,
                  force_failure: Optional[ToolError] = None, seed: Optional[int] = None,
-                 simulate_latency: bool = False):
+                 simulate_latency: bool = False, fail_tools: Optional[set[str]] = None,
+                 malformed_tools: Optional[set[str]] = None):
         cfg = settings()
         d = data_dir or path("dms_dir")
         load = lambda n: json.load(open(d / f"{n}.json", encoding="utf-8"))
@@ -54,6 +55,10 @@ class DealerSystem:
         self.today = date.fromisoformat(cfg["dms"]["anchor_date"])
         self.failure_rate = cfg["dms"]["failure_rate"] if failure_rate is None else failure_rate
         self.force_failure = force_failure
+        # Failure tests (rule P12, check EV10): limit a forced failure to some tools, so the customer can be
+        # verified first and the repair lookup then fails; or make some tools return an incomplete record.
+        self.fail_tools = set(fail_tools) if fail_tools else None
+        self.malformed_tools = set(malformed_tools or ())
         self.latency_range = cfg["dms"]["simulated_latency_ms"]
         self.simulate_latency = simulate_latency
         self._rng = random.Random(seed if seed is not None else cfg["project"]["seed"])
@@ -64,13 +69,17 @@ class DealerSystem:
     # ------------------------------------------------------------------
     def _call(self, tool: str, fn: Callable[[], ToolResult]) -> ToolResult:
         start = time.perf_counter()
-        if self.force_failure or self._rng.random() < self.failure_rate:
+        forced = self.force_failure and (self.fail_tools is None or tool in self.fail_tools)
+        if forced or (not self.force_failure and self._rng.random() < self.failure_rate):
             err = self.force_failure or self._rng.choice([ToolError.TIMEOUT, ToolError.UNAVAILABLE])
             return ToolResult(tool=tool, ok=False, error=err,
                               message="Dealer system did not respond. Retry once, then hand off.",
                               latency_ms=(time.perf_counter() - start) * 1000)
         if self.simulate_latency:
             time.sleep(self._rng.uniform(*self.latency_range) / 1000)
+        if tool in self.malformed_tools:     # a broken record: "ok", but the fields are missing or garbled
+            return ToolResult(tool=tool, ok=True, data={"record": "#ERR 0x1F partial row", "status": None},
+                              latency_ms=(time.perf_counter() - start) * 1000)
         try:
             res = fn()
         except Exception as e:  # never let a tool crash the conversation

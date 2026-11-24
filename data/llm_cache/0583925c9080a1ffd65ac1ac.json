@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3771,
+ "output_tokens": 76,
+ "cost_usd": 0.0004151,
+ "latency_ms": 939.1,
+ "tool_calls": [
+  {
+   "id": "toolu_01AwxNggioQGwYGG9yxQNJik",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Vaughan\", \"service_type\": \"tires\"}"
+  }
+ ]
+}

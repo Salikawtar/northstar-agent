@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3935,
+ "output_tokens": 207,
+ "cost_usd": 0.000497,
+ "latency_ms": 2168.6,
+ "tool_calls": [
+  {
+   "id": "toolu_01YDRg1hwSPa8dHi9yX67SiV",
+   "name": "book_slot",
+   "arguments": "{\"slot_id\": \"SL-00344\"}"
+  }
+ ]
+}

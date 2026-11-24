@@ -176,3 +176,9 @@ def test_results_files_mask_personal_data(tmp_path):
     assert mask_text("Labour 2.8 h at $165, total $545.41, RO-124033.") == "Labour 2.8 h at $165, total $545.41, RO-124033."
     save_results(pd.DataFrame({"reply": [t], "n": [1]}), tmp_path / "r.csv")
     assert "555-0198" not in (tmp_path / "r.csv").read_text(encoding="utf-8")
+
+
+def test_new_format_rule_ids_are_removed_not_blocked():
+    # Team policy P01 to P15 (2026-11-24): ids are now written P01, not P-01.
+    out = check_output(reply("I can't confirm that (P06). A person will review it, P14."), cust("hi"))
+    assert not out.blocked and "P06" not in out.reply.text and "P14" not in out.reply.text
