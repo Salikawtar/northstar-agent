@@ -80,8 +80,10 @@ def test_coverage_matrix_is_met_by_the_kept_rows(replay):
 
 
 def test_replay_split_is_grouped_by_customer_with_no_near_copies_across(replay):
+    # The fold itself depends on the scikit-learn version (see datagen/split.py), so the replay is checked
+    # for the protections, not for the exact 160 / 40 cut; the recorded cut is checked in test_data_quality.
     check = replay["split_check"]
-    assert (len(replay["train"]), len(replay["test"])) == (160, 40)
+    assert abs(len(replay["test"]) - 40) <= 2 and len(replay["train"]) + len(replay["test"]) == 200
     assert check["customers_in_both_splits"] == 0 and check["overlap_zero"]
 
 
