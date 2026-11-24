@@ -1,14 +1,14 @@
 """Output check: runs on every reply before the customer sees it.
 
 What it does (each rule has an id, listed in docs/guardrails.md):
-- G-OUT-01 (P-04) A promise no tool backs (coverage, free work, refund, waiver, discount,
+- G-OUT-01 (P06) A promise no tool backs (coverage, free work, refund, waiver, discount,
   loaner, a booking no tool made) blocks the reply.
-- G-OUT-02 (P-02) Personal data that did not come from the customer or from a tool call
+- G-OUT-02 (P04) Personal data that did not come from the customer or from a tool call
   for the verified customer (phone, email, VIN, plate, repair order) blocks the reply:
   it may belong to someone else.
-- G-OUT-03 (P-06) Pieces of the assistant's own instructions in the reply (template
+- G-OUT-03 (P09) Pieces of the assistant's own instructions in the reply (template
   slots, section titles, output field names) block it.
-- G-OUT-04 (P-10) Internal rule ids like "(P-01)" are removed from the reply.
+- G-OUT-04 (P13) Internal rule ids like "(P01)" are removed from the reply.
 
 A blocked reply is replaced by a short safe reply in the customer's language, and the
 chat goes to a person with the reason in the summary. The customer never sees the
@@ -25,8 +25,8 @@ from northstar.contracts import (AgentAction, AgentReply, EscalationReason, Guar
 from northstar.agent.handoff import build_handoff
 
 SAFE_REPLY = {
-    "en": "Thank you for your patience. I'm passing your request to a team member, who will get back to you shortly.",
-    "fr": "Merci de votre patience. Je transmets votre demande à une personne de notre équipe, qui vous répondra sous peu.",
+    "en": "Thank you for your patience. I'm passing your request to a team member, who will get back to you.",
+    "fr": "Merci de votre patience. Je transmets votre demande à une personne de notre équipe, qui vous répondra.",
 }
 
 # G-OUT-02: identifiers that point to a person or a vehicle.
@@ -41,7 +41,7 @@ _IDENTIFIERS = {
 _PROMPT_LEAK = re.compile(
     r"\{(policy|context)\}|## (How to work|Your output|Rules you must follow|Context from the system)"
     r"|\"?(policy_rules_cited|escalation_reason)\"?\s*:|You are the [\w ]+ assistant of Northstar", re.I)
-_RULE_IDS = re.compile(r"\s*\((?:P-\d{2}(?:\s*,\s*|\s+(?:and|et)\s+)?)+\)|\bP-\d{2}\b")
+_RULE_IDS = re.compile(r"\s*\((?:P-?\d{2}(?:\s*,\s*|\s+(?:and|et)\s+)?)+\)|\bP-?\d{2}\b")
 
 
 def _norm(s: str) -> str:
@@ -82,13 +82,13 @@ def check_output(reply: AgentReply, turns: list[tuple[str, str]],
     # G-OUT-04: rule ids are for our logs.
     if _RULE_IDS.search(text):
         text = re.sub(r"\s+([.,!?])", r"\1", _RULE_IDS.sub("", text)).strip()
-        verdicts.append(GuardrailVerdict(layer=GuardLayer.OUTPUT, rule_id="P-10", action=GuardAction.REDACT,
+        verdicts.append(GuardrailVerdict(layer=GuardLayer.OUTPUT, rule_id="P13", action=GuardAction.REDACT,
                                          detail="G-OUT-04: rule ids removed"))
 
     # G-OUT-01: declared or detected promises without a backing tool.
     for c in reply.commitments:
         if c.backed_by_tool is None:
-            verdicts.append(GuardrailVerdict(layer=GuardLayer.OUTPUT, rule_id="P-04", action=GuardAction.BLOCK,
+            verdicts.append(GuardrailVerdict(layer=GuardLayer.OUTPUT, rule_id="P06", action=GuardAction.BLOCK,
                                              detail=f"G-OUT-01: promise without a tool behind it: {c.kind.value} ({c.detail})"))
 
     # G-OUT-02: identifiers the customer did not give and no tool returned.
@@ -96,20 +96,20 @@ def check_output(reply: AgentReply, turns: list[tuple[str, str]],
     for kind, pat in _IDENTIFIERS.items():
         for m in pat.finditer(text):
             if _norm(m.group(0)) not in known:
-                verdicts.append(GuardrailVerdict(layer=GuardLayer.OUTPUT, rule_id="P-02", action=GuardAction.BLOCK,
+                verdicts.append(GuardrailVerdict(layer=GuardLayer.OUTPUT, rule_id="P04", action=GuardAction.BLOCK,
                                                  detail=f"G-OUT-02: {kind} not given by the customer or a tool: {m.group(0)}"))
 
     # G-OUT-03: pieces of the prompt.
     m = _PROMPT_LEAK.search(text)
     if m:
-        verdicts.append(GuardrailVerdict(layer=GuardLayer.OUTPUT, rule_id="P-06", action=GuardAction.BLOCK,
+        verdicts.append(GuardrailVerdict(layer=GuardLayer.OUTPUT, rule_id="P09", action=GuardAction.BLOCK,
                                          detail=f"G-OUT-03: part of the instructions in the reply: {m.group(0)[:60]}"))
 
     if not any(v.action == GuardAction.BLOCK for v in verdicts):
         return OutputResult(reply.model_copy(update={"text": text}), verdicts)
 
     # Blocked: safe reply and a handoff. A data or prompt leak is treated as a possible attack.
-    leak = any(v.rule_id in ("P-02", "P-06") and v.action == GuardAction.BLOCK for v in verdicts)
+    leak = any(v.rule_id in ("P04", "P09") and v.action == GuardAction.BLOCK for v in verdicts)
     reason = EscalationReason.ADVERSARIAL if leak else EscalationReason.POLICY_LIMIT
     why = "; ".join(v.detail for v in verdicts if v.action == GuardAction.BLOCK)
     if reply.handoff:

@@ -83,3 +83,12 @@ def test_a_forbidden_phrase_in_a_negated_sentence_does_not_count():
     assert not _negated(t, t.rindex("free"))
     assert not _negated("Yes, you will pay nothing.", 9)
     assert not _negated("No worries, you will pay nothing.", 20)        # "no" alone is not a negation
+
+
+def test_failure_chats_get_a_broken_dealer_system():
+    # Rule P12 / check EV10: hw_35 to hw_37 run with a dealer system that fails on purpose.
+    from northstar.agent.scenarios import dealer_system
+    chats = {c["id"]: c for c in load_chats()}
+    assert dealer_system(chats["hw_35"]).fail_tools == {"get_repair_status"}
+    assert dealer_system(chats["hw_37"]).malformed_tools == {"get_invoice"}
+    assert dealer_system(chats["hw_01"]).force_failure is None

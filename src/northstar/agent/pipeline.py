@@ -45,10 +45,12 @@ FIXED_REPLY: dict[str, dict[str, str]] = {
     "safety": {
         "en": "Your safety comes first. If anyone is hurt or in danger, call 911 now. If you are on the road, "
               "stop in a safe place, turn on your hazard lights and stay away from traffic. "
+              "Please don't drive the vehicle until it has been checked. "
               "I'm passing this to a team member right now, and they will contact you.",
         "fr": "Votre sécurité passe en premier. Si quelqu'un est blessé ou en danger, appelez le 911 maintenant. "
               "Si vous êtes sur la route, arrêtez-vous en lieu sûr, allumez vos feux de détresse et restez loin "
-              "de la circulation. Je transmets votre demande à une personne de notre équipe, qui vous contactera."},
+              "de la circulation. Ne conduisez pas le véhicule tant qu'il n'a pas été vérifié. "
+              "Je transmets votre demande à une personne de notre équipe, qui vous contactera."},
     "legal_threat": {
         "en": "I understand this is serious. I'm passing your message to the service manager, "
               "who will review your file and contact you directly.",
@@ -60,8 +62,8 @@ FIXED_REPLY: dict[str, dict[str, str]] = {
         "fr": "Toutes mes condoléances. Je transmets votre demande à une personne de notre équipe, "
               "qui vous contactera et s'occupera des détails avec vous, à votre rythme."},
     "customer_request": {
-        "en": "Of course. I'm passing you to a team member, who will contact you shortly.",
-        "fr": "Bien sûr. Je vous mets en contact avec une personne de notre équipe, qui vous répondra sous peu."},
+        "en": "Of course. I'm passing you to a team member, who will contact you.",
+        "fr": "Bien sûr. Je vous mets en contact avec une personne de notre équipe, qui vous répondra."},
     "adversarial": {
         "en": "I can't help with that request here. A team member will review it.",
         "fr": "Je ne peux pas traiter cette demande ici. Une personne de notre équipe va l'examiner."},
@@ -70,9 +72,9 @@ FIXED_REPLY: dict[str, dict[str, str]] = {
         "fr": "Désolé, je n'arrive pas à traiter votre demande en ce moment. Un conseiller va vous répondre."},
     "low_confidence": {
         "en": "I want to make sure you get the right help, so I'm passing your message to a team member, "
-              "who will contact you shortly.",
+              "who will contact you.",
         "fr": "Pour être sûr de bien vous aider, je transmets votre message à une personne de notre équipe, "
-              "qui vous répondra sous peu."},
+              "qui vous répondra."},
     "out_of_scope": {
         "en": "I can help with service bookings, repair status, parts, roadside help, warranty and recalls, "
               "invoices and lease returns. For anything else, please contact the branch directly.",
@@ -119,7 +121,7 @@ class Pipeline:
         rr = self.router.route(turns, language_hint=language_hint)
         route = rr.output
         cost = rr.cost_usd
-        # An instruction aimed at the assistant always means a person reviews the chat (P-06, P-08).
+        # An instruction aimed at the assistant always means a person reviews the chat (P09, P14).
         if self.guarded and inp.injection and not (route.needs_escalation and route.escalation_reason in FAST_PATH):
             route = route.model_copy(update={"needs_escalation": True,
                                              "escalation_reason": EscalationReason.ADVERSARIAL})

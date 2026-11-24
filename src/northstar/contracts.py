@@ -165,7 +165,7 @@ class AgentReply(BaseModel):
     action: AgentAction
     commitments: list[Commitment] = Field(default_factory=list)
     tools_used: list[str] = Field(default_factory=list)
-    policy_rules_cited: list[str] = Field(default_factory=list)  # e.g. ["P-04"]
+    policy_rules_cited: list[str] = Field(default_factory=list)  # e.g. ["P06"]
     handoff: Optional[HandoffPayload] = None
     withdrawn_claims: list[str] = Field(default_factory=list)   # claims code withdrew (D-27)
 

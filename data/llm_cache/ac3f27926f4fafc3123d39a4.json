@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Your appointment is booked for Tuesday, November 17 at 9:00 AM at our Scarborough branch (confirmation BK-00029). I also checked recalls for your vehicle, and there are no open recall campaigns on record. If your letter describes a recall, bring it to the visit, or I can pass your question to a person who can review it. Please don't send us the number from the letter.\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P03\", \"P08\", \"P10\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4470,
+ "output_tokens": 404,
+ "cost_usd": 0.000649,
+ "latency_ms": 3059.0
+}

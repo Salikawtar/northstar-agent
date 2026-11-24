@@ -1,6 +1,7 @@
 """Full-agent tests with scripted fake models: offline, free, repeatable.
 Each test name says which rule it protects."""
 import json
+import re
 
 import pytest
 
@@ -111,3 +112,17 @@ def test_handoff_summary_carries_the_last_customer_message(tmp_path):
     pl, _ = build(tmp_path, route_json(needs_escalation=True, escalation_reason="customer_request"))
     res = pl.handle("p10", TURNS, DealerSystem())
     assert "please help" in res.reply.handoff.summary
+
+
+def test_safety_reply_says_not_to_drive_in_both_languages():
+    # Rule P07 / check EV07: tell the customer not to drive a vehicle that may be unsafe.
+    assert "don't drive the vehicle" in FIXED_REPLY["safety"]["en"]
+    assert "Ne conduisez pas le véhicule" in FIXED_REPLY["safety"]["fr"]
+
+
+def test_fixed_replies_promise_no_response_time():
+    # Rule P14: never promise a response time ("shortly", "within the hour", "sous peu").
+    from northstar.guardrails.output_check import SAFE_REPLY
+    texts = [t for d in FIXED_REPLY.values() for t in d.values()] + list(SAFE_REPLY.values())
+    for t in texts:
+        assert not re.search(r"shortly|sous peu|within|minutes|d'ici", t, re.I), t

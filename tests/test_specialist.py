@@ -165,7 +165,7 @@ def test_prompt_is_complete_and_has_no_dataset_chat(tmp_path):
     client, _ = scripted(tmp_path, [final()])
     sp = Specialist("booking_status", client=client)
     system = sp._system(route())
-    assert "{policy}" not in system and "{context}" not in system and "P-04" in system
+    assert "{policy}" not in system and "{context}" not in system and "P06" in system
     assert not any(r.turn_1_customer[:60] in system for r in load_conversations().itertuples())
 
 
@@ -220,7 +220,7 @@ def test_billing_desk_reads_invoices_but_cannot_book_or_draft(tmp_path, dms):
 def test_each_desk_prompt_is_complete(tmp_path, agent):
     client, _ = scripted(tmp_path, [final()])
     system = Specialist(agent, client=client)._system(route())
-    assert "{policy}" not in system and "{context}" not in system and "P-09" in system
+    assert "{policy}" not in system and "{context}" not in system and "P10" in system
     assert not any(r.turn_1_customer[:60] in system for r in load_conversations().itertuples())
 
 
@@ -292,7 +292,7 @@ def test_single_agent_has_every_tool_and_no_router_context(tmp_path, dms):
     names = {t["function"]["name"] for t in seen[0]["tools"]}
     assert names == set(PERMISSIONS["single_agent"]) and {"book_slot", "get_invoice", "draft_warranty_claim"} <= names
     system = seen[0]["messages"][0]["content"]
-    assert "router" not in system.lower() and "{context}" not in system and "P-08" in system
+    assert "router" not in system.lower() and "{context}" not in system and "P14" in system
     assert res.reply.language == Language.FR and res.reply.action == AgentAction.ANSWERED
 
 
@@ -341,8 +341,8 @@ def test_booking_desk_checks_recalls_but_cannot_decide_warranty():
 
 def test_shared_rules_v3_cover_acting_for_someone_else_and_disputed_findings():
     from northstar.agent.router import load_prompt
-    rules = load_prompt("shared/policy_core_v3.md")
-    assert "P-11" in rules and "acting for the customer" in rules
+    rules = load_prompt("shared/policy_core_v4.md")
+    assert "P15" in rules and "acting for the customer" in rules
     assert "disputes a technician's finding" in rules
 
 
@@ -399,3 +399,35 @@ def test_claim_is_withdrawn_when_the_desk_itself_flags_a_trick(tmp_path, dms, cu
     assert rep.action == AgentAction.ESCALATED and len(rep.withdrawn_claims) == 1
     assert "warranty_claim_draft" not in rep.handoff.collected_facts
     assert rep.handoff.collected_facts["warranty_claim_withdrawn"] == rep.withdrawn_claims[0]
+
+
+# --- Team policy P01 to P15 (2026-11-24): failure handling, rule P12 / check EV10 ---------------
+def test_lookup_fails_after_verification_hands_off_without_guessing(tmp_path, customer):
+    # hw_35: the customer is verified, then only the repair lookup times out (twice): a person takes over.
+    from northstar.contracts import ToolError
+    last, plate = customer
+    dms = DealerSystem(force_failure=ToolError.TIMEOUT, fail_tools={"get_repair_status"})
+    client, _ = scripted(tmp_path, [call("verify_customer", last_name=last, plate=plate),
+                                    call("get_repair_status", ro_number="RO-000001"),
+                                    call("get_repair_status", ro_number="RO-000001"),
+                                    final("Your car is ready.", "answered")])
+    res = Specialist("booking_status", client=client).run("c98", TURNS, route(RequestType.REPAIR_STATUS), dms)
+    assert res.reply.action == AgentAction.ESCALATED and res.reply.handoff.reason == EscalationReason.TOOL_FAILURE
+    assert res.reply.handoff.customer_verified
+
+
+def test_incomplete_record_is_refused_in_code(customer):
+    # hw_37: an "ok" answer with missing fields is turned into an error, so the model never reads half a record.
+    from northstar.agent.tools import result_for_model
+    last, plate = customer
+    box = ToolBox(DealerSystem(malformed_tools={"get_vehicle"}), "booking_status")
+    assert box.call("verify_customer", {"last_name": last, "plate": plate}).ok
+    res = box.call("get_vehicle", {})
+    assert not res.ok and res.error.value == "unavailable" and "incomplete record" in res.message
+    assert "#ERR" not in result_for_model(res)
+
+
+def test_new_rule_ids_are_removed_from_the_reply():
+    from northstar.agent.specialist import _strip_rule_ids
+    assert _strip_rule_ids("I need to verify you first (P02, P04).") == "I need to verify you first."
+    assert _strip_rule_ids("Done (P-01).") == "Done."

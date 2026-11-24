@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3798,
+ "output_tokens": 217,
+ "cost_usd": 0.0004883,
+ "latency_ms": 2475.8,
+ "tool_calls": [
+  {
+   "id": "toolu_012eG6HkyuVrReXAP4ViH3bK",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Scarborough\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

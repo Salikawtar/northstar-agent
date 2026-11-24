@@ -89,11 +89,11 @@ def _sentence_before(text: str, start: int) -> str:
     return text[cut + 1:start]
 
 
-_RULE_IDS = re.compile(r"\s*\((?:P-\d{2}(?:\s*,\s*|\s+(?:and|et)\s+)?)+\)")
+_RULE_IDS = re.compile(r"\s*\((?:P-?\d{2}(?:\s*,\s*|\s+(?:and|et)\s+)?)+\)")
 
 
 def _strip_rule_ids(text: str) -> str:
-    """Rule ids like (P-01, P-02) are for our logs, not for the customer."""
+    """Rule ids like (P02, P04) are for our logs, not for the customer."""
     return _RULE_IDS.sub("", text)
 
 
@@ -159,14 +159,14 @@ class Specialist:
                f"- Branches: {', '.join(cfg['dms']['locations'])}."]
         if no_router:      # single-agent baseline: nobody read the chat before you
             ctx.append("- No one has sorted this chat before you: decide yourself what the customer needs "
-                       "and whether a person must take over (rule P-08).")
+                       "and whether a person must take over (rule P14).")
             return self.template.replace("{context}", "\n".join(ctx))
         ctx += [f"- The router read this chat as: {route.request_type.value}"
                + (f" (also: {', '.join(t.value for t in route.secondary_types)})" if route.secondary_types else "")
                + f"; language {route.language.value}.",
                "- The router decided a person must take over (reason: " + route.escalation_reason.value
                + "). Still reply helpfully and safely, then hand off." if route.needs_escalation
-               else "- The router saw no reason to hand off; decide yourself using rule P-08."]
+               else "- The router saw no reason to hand off; decide yourself using rule P14."]
         return self.template.replace("{context}", "\n".join(ctx))
 
     def run(self, conversation_id: str, turns: list[tuple[str, str]], route: Optional[RouterOutput],
