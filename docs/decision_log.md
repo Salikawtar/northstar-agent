@@ -215,3 +215,12 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Result (fourth record run, about $3.50):** red team 75 of 75 resisted and passed to a person; hand-written chats 40 of 40; full agent on validation 100% handoff recall, 88% precision (was 83%), 0 unbacked promises. Details in `docs/prompt_log.md`.
 - **Alternatives considered:** keep the repository ids and add a column linking them to Jessica's (no re-run, but two numbering systems in the report).
 - **Counter-argument:** changing every prompt a few days before submission means all specialist recordings must be redone, and results from before 2026-11-24 cite the old ids (the map is in `docs/operating_policy.md`). The red-team set is not fully untouched (rt1108_0074 shaped rule P10), so a small fresh held-out set is planned with Libo.
+
+### D-29. Pin Faker, and check the recorded split against its rules instead of drawing it again
+- **Date:** 2026-11-24
+- **Choice:**
+  - **Faker pinned to 40.63.0** in `requirements.txt`. This version reproduces every name, VIN, plate and repair order in the dataset.
+  - **The 160 / 40 cut is checked, not drawn again.** `split --rebuild` takes the recorded cut (the dataset split with the 32 logged moves undone, each move checked against the dataset) and verifies it follows the generation run's own rules on the replayed rows: 160 / 40, no customer on both sides, every request type in test, balance no worse than the recorded L1 of 0.05, no near-copy across. A new test shows a broken cut is caught.
+- **Why:** after a package update on the team's Windows setup, three data tests failed: VINs differed (a newer Faker makes different VINs) and the replayed split was a different fold (159 / 41, L1 0.32 instead of 0.05). The fold StratifiedGroupKFold picks depends on the scikit-learn version: no seed from 0 to 3,000 gives the original fold on scikit-learn 1.7, and versions 1.3 to 1.7 all differ. The rows, customers and request types still replay exactly.
+- **Alternatives considered:** pin scikit-learn to the version that made the split (unknown, and newer Python versions may not install it); store the fold as a file and compare with it (same protection, one more file).
+- **Counter-argument:** checking rules is weaker than redrawing the exact fold: a different cut that also met the rules would pass. What protects the test set is unchanged: no shared customer, no near-copy, every test chat reviewed by hand, and the log of every move.

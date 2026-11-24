@@ -44,7 +44,7 @@ and the recorded model runs all depend on the v1114 text.
 
 ```bash
 python -m northstar.datagen.diversity          # distinct-2, similarity between chats, names (Faker masked)
-python -m northstar.datagen.split --rebuild    # 160 / 40 replay + 32 logged moves = the 130 / 30 / 40 split; overlap checks
+python -m northstar.datagen.split --rebuild    # recorded 160 / 40 cut checked against the run's rules + 32 logged moves = the 130 / 30 / 40 split; overlap checks
 ```
 
 Results: `docs/data_quality.md`.
@@ -63,7 +63,7 @@ python -m northstar.datagen.build_redteam --from-csv FILE  # validate a hand-fil
 - the replay keeps 200 and rejects 15 with the recorded reasons, and every rejection carries a reason
 - the replayed ids, customers, request types, difficulties, personas, languages and Faker identifiers equal the dataset's
 - the kept rows meet the coverage matrix (20 per intent, 130 EN / 70 FR, 8 per attack type)
-- the replayed split is grouped by customer with no near-copies across it
+- the replayed split is grouped by customer with no near-copies across it (its exact fold depends on the scikit-learn version, D-29)
 - every Faker field in the dataset still has a valid format
 - the red-team matrix in the code is the one behind `data/redteam/redteam_75.csv` (ids, attack types, customers, languages)
 

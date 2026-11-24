@@ -50,7 +50,24 @@ def test_check_catches_a_customer_in_two_splits_and_a_near_copy():
     assert r["near_copies_across_splits"]["train_vs_test"]["near_copies"] >= 1
 
 
-def test_split_is_rebuilt_exactly_from_the_replay_and_the_logged_moves():
+def test_recorded_split_follows_the_generation_rules_and_the_logged_moves():
+    # The exact fold cannot be drawn again on every scikit-learn version (see split.py), so the recorded
+    # 160 / 40 cut is checked against the run's own rules, and every logged move must match the dataset.
     split, moves = sp_split.rebuild()
     assert len(moves) == 32
     assert {i: s for i, s in DF.set_index("id").split.items()} == split
+    r = sp_split.check_first_cut(sp_split.recorded_first_cut(DF, moves), sp_split.replay_kept())
+    assert r["ok"] and r["l1_balance"] <= sp_split.RECORDED_L1 and r["customers_on_both_sides"] == 0
+
+
+def test_a_cut_that_breaks_the_rules_is_caught():
+    moves = sp_split.logged_moves()
+    kept = sp_split.replay_kept()
+    cut = sp_split.recorded_first_cut(DF, moves)
+    # one test row pulled into train: wrong sizes, and its customer may now sit on both sides
+    some_test = next(i for i, s in cut.items() if s == "test")
+    assert not sp_split.check_first_cut({**cut, some_test: "train"}, kept)["ok"]
+    # every request type moved out of test except one: the balance rule fails
+    lopsided = {i: ("test" if i in set(kept[kept.intent == "book_service"].id[:20]) | set(kept[kept.intent == "parts_order"].id[:20])
+                    else "train") for i in kept.id}
+    assert not sp_split.check_first_cut(lopsided, kept)["ok"]

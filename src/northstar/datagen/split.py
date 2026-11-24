@@ -7,9 +7,16 @@ How the split was made (two steps, both logged):
    and swapped two single-customer rows so the test set holds a data-extraction attack
    (v3_0078 to test, v3_0215 to train). Each move is a row of the QC_log sheet of the workbook.
 
-`--rebuild` replays step 1, applies the logged moves of step 2, and compares the result with the
-`split` column of the dataset. The seed-894 draw itself was made in a notebook and not kept as code,
-so step 2 is rebuilt from its log rather than drawn again; the check below is what protects the test.
+`--rebuild` replays the generation run, checks that the recorded 160 / 40 cut follows the run's own rules,
+applies the logged moves of step 2 and compares the result with the `split` column of the dataset.
+
+Why the cut is checked, not drawn again (2026-11-24): the fold StratifiedGroupKFold picks depends on the
+scikit-learn version. On the versions tried (1.3 to 1.7, and the team's Windows setup) the replay picks a
+different, less balanced fold (L1 0.32) than the generation run did (L1 0.05). The rows, customers and
+request types do replay exactly (tests/test_datagen.py), so the recorded cut (dataset split plus the
+logged moves, undone) is checked against the same rules instead: 160 / 40, no customer on both sides,
+every request type in test, balance no worse than the recorded L1 of 0.05, no near-copy across.
+The seed-894 draw of step 2 was made in a notebook and not kept as code, so step 2 is rebuilt from its log.
 
 `--check` (default) proves the protection on the dataset as it is:
 - no customer in two splits;
@@ -52,8 +59,12 @@ def logged_moves(workbook: Path | None = None) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def first_split() -> dict[str, str]:
-    """Replay the generation run (no key, no network) and return its 160 / 40 split."""
+RECORDED_L1 = 0.05      # balance of the generation run's test fold (run_manifest.json, split_check)
+BALANCE_COLS = ("intent", "lang", "difficulty", "channel")
+
+
+def replay_kept() -> pd.DataFrame:
+    """Replay the generation run (no key, no network) and return the 200 kept rows."""
     with tempfile.TemporaryDirectory() as out:
         cfg = sp.Cfg()
         cfg.seed, cfg.out_dir, cfg.cache_dir = 42, out, str(Path(out) / "cache")
@@ -61,15 +72,45 @@ def first_split() -> dict[str, str]:
         client = sp.LLMClient(generations=sp.load_generations(str(GEN / "generations_v3_conv.jsonl")),
                               generator_name="recorded run", cache_dir=cfg.cache_dir)
         res = sp.run_pipeline(cfg, client, verbose=False)
-    return {**{i: "train" for i in res["train"]["id"]}, **{i: "test" for i in res["test"]["id"]}}
+    return res["kept"].reset_index(drop=True)
+
+
+def recorded_first_cut(df: pd.DataFrame, moves: pd.DataFrame) -> dict[str, str]:
+    """The generation run's 160 / 40 cut: the dataset split with the logged moves undone."""
+    now = df.set_index("id").split
+    split = {i: ("train" if s == "validation" else s) for i, s in now.items()}
+    for _, m in moves.iterrows():
+        if now.get(m.id) != m.after:       # the log must describe the dataset as it is
+            raise ValueError(f"{m.id}: log says it moved to {m.after}, the dataset has {now.get(m.id)}")
+        split[m.id] = m.before
+    return split
+
+
+def check_first_cut(split: dict[str, str], kept: pd.DataFrame) -> dict:
+    """Does the cut follow the generation run's rules? Same checks as pipeline.make_splits."""
+    k = kept.assign(side=kept["id"].map(split))
+    tr, te = k[k.side == "train"], k[k.side == "test"]
+    l1 = sum(float((te[c].value_counts(normalize=True).reindex(k[c].value_counts(normalize=True).index, fill_value=0)
+                    - k[c].value_counts(normalize=True)).abs().sum()) for c in BALANCE_COLS)
+    _, max_sim = sp._cross_dup(tr["raw_message"].astype(str).tolist(), te["raw_message"].astype(str).tolist(),
+                               THRESHOLD)
+    r = dict(sizes=(len(tr), len(te)), unassigned=int(k.side.isna().sum()),
+             customers_on_both_sides=len(set(tr["group"]) & set(te["group"])),
+             request_types_missing_in_test=sorted(set(k["intent"]) - set(te["intent"])),
+             l1_balance=round(l1, 3), max_cross_similarity=round(float(max_sim), 3))
+    r["ok"] = bool(r["sizes"] == (160, 40) and not r["unassigned"] and not r["customers_on_both_sides"]
+                   and not r["request_types_missing_in_test"] and l1 <= RECORDED_L1 + 1e-9 and max_sim < THRESHOLD)
+    return r
 
 
 def rebuild() -> tuple[dict[str, str], pd.DataFrame]:
-    split = first_split()
-    moves = logged_moves()
+    """Check the recorded 160 / 40 cut against the replayed rows, then apply the logged moves."""
+    df, moves = load_conversations(), logged_moves()
+    split = recorded_first_cut(df, moves)
+    r = check_first_cut(split, replay_kept())
+    if not r["ok"]:
+        raise ValueError(f"the recorded 160 / 40 cut breaks the generation run's rules: {r}")
     for _, m in moves.iterrows():
-        if split.get(m.id) != m.before:
-            raise ValueError(f"{m.id}: log says it moved from {m.before}, replay has {split.get(m.id)}")
         split[m.id] = m.after
     return split, moves
 
@@ -111,7 +152,7 @@ def _main() -> None:
     if a.rebuild:
         split, moves = rebuild()
         diff = [i for i, s in df.set_index("id").split.items() if split.get(i) != s]
-        print(f"replayed 160 / 40, applied {len(moves)} logged moves: "
+        print(f"recorded 160 / 40 cut follows the run's rules, applied {len(moves)} logged moves: "
               f"{pd.Series(split).value_counts().to_dict()} | rows that differ from the dataset: {len(diff)} {diff[:10]}")
         if diff:
             sys.exit(1)

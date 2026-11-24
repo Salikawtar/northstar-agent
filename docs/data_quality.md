@@ -42,7 +42,7 @@ Faker values (names, plates, VINs, phones, emails, repair orders) are masked fir
 | Check | Result |
 |---|---|
 | Split | 130 train / 30 validation / 40 test |
-| Rebuilt from the record | Exact: the generation run's 160 / 40 split replayed, plus the 32 moves logged in the QC_log sheet (30 to validation, 2 swapped), gives the dataset's split with 0 differences |
+| Rebuilt from the record | The recorded 160 / 40 cut follows the generation run's rules on the replayed rows (160 / 40, no customer on both sides, every request type in test, balance L1 0.05, no near-copy across); with the 32 moves logged in the QC_log sheet (30 to validation, 2 swapped) it gives the dataset's split with 0 differences. The fold is checked, not drawn again, because scikit-learn picks a different fold on other versions (D-29) |
 | Customers in two splits | 0 |
 | Near-copies across splits (opening message, Faker masked, similarity >= 0.8) | 0. Closest pairs: train vs test 0.454, train vs validation 0.517, validation vs test 0.385 |
 | Test chats reviewed by hand | 40 of 40 |
