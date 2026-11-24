@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Thanks, Joan, you're verified. The 413.06 line is parts. It's the cost of the parts used on repair order RO-124033, in CAD. The invoice doesn't list individual parts. The other line is labour: 2.8 hours at 165.00 per hour, which is 462.00. Together that's 875.06 before tax. The total is 988.82 with taxes included, and the invoice shows as paid. Would you like me to explain anything else on it?\",\"action\":\"answered\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3916,
+ "output_tokens": 261,
+ "cost_usd": 0.010442,
+ "latency_ms": 2436.6
+}

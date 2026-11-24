@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Tina. I'm sorry, I couldn't get the status of RO-871569 from our system. It timed out twice, so I can't tell you whether the car is ready yet. I've passed your request to a person on our service team, who can check it for you and confirm where things stand.\", \"action\": \"escalated\", \"escalation_reason\": \"tool_failure\", \"summary\": \"Customer Tina Garner, verified by last name, plate and RO-871569, asked whether her repair order is ready. The repair-status lookup timed out twice in the dealer system, so no status was returned. Please check the repair order status and let the customer know.\", \"policy_rules_cited\": [\"P02\", \"P08\", \"P12\", \"P14\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3830,
+ "output_tokens": 234,
+ "cost_usd": 0.0005,
+ "latency_ms": 1752.6
+}

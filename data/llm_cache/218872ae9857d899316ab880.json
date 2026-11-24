@@ -1,0 +1,15 @@
+{
+ "text": "Votre dossier RO-961548 est **en attente de pièces**. Le diagnostic de bruit et du voyant d'alerte est en cours, et le devis de 466,41 $ CAD que vous avez approuvé est enregistré. Aucune date de fin n'est indiquée pour le moment.\n\nPour la porte, je ne peux pas confirmer une réparation gratuite sous garantie, ni dire si les dommages sont couverts. Ces décisions reviennent au service de garantie. Je transmets votre demande à une personne qui pourra l'examiner, avec les détails sur les dommages.",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4199,
+ "output_tokens": 575,
+ "cost_usd": 0.0007074,
+ "latency_ms": 3428.6,
+ "tool_calls": [
+  {
+   "id": "toolu_01HPYRQHQCc6rG5x9dhM12hv",
+   "name": "get_repair_status",
+   "arguments": "{\"ro_number\": \"RO-961548\"}"
+  }
+ ]
+}

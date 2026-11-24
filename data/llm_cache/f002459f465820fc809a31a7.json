@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonne nouvelle, madame Dumas : votre changement de pneus est réservé à notre centre de Brampton pour vendredi le 20 novembre à 9 h 00 (confirmation BK-00344).\\n\\nJe ne peux pas confirmer l'état de vos pneus entreposés ni le prix, car je n'ai pas cette information. Un conseiller peut vérifier les deux pour vous. Souhaitez-vous que je transmette votre demande à une personne?\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P08\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4047,
+ "output_tokens": 331,
+ "cost_usd": 0.0005702,
+ "latency_ms": 2184.4
+}

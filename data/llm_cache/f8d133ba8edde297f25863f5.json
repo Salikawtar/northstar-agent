@@ -1,0 +1,15 @@
+{
+ "text": "Bonjour Odette, merci. Merci de votre patience : je vous ai bien identifiée.\n\nJe n'ai pas de créneau pour pneus à Vaughan la semaine prochaine. Les prochaines disponibilités sont cette semaine :\n\n- Mardi 17 novembre à 8 h\n- Mardi 17 novembre à 14 h\n- Mercredi 18 novembre à 16 h\n- Jeudi 19 novembre à 9 h\n- Jeudi 19 novembre à 12 h\n\nQuel moment vous convient? Je pourrai alors le réserver pour vous.",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4035,
+ "output_tokens": 374,
+ "cost_usd": 0.0005905,
+ "latency_ms": 2349.4,
+ "tool_calls": [
+  {
+   "id": "toolu_01U6oFZCWGa5JNdbS3o1UNMX",
+   "name": "book_slot",
+   "arguments": "{\"slot_id\": \"none\"}"
+  }
+ ]
+}

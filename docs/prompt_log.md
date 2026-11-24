@@ -116,3 +116,15 @@ Each desk's model and effort were set by judgment in step 4. These runs test one
 - **Warranty v2, single agent v2:** same as v1, only the rule ids in the text changed (P-09 to P10, P-08 to P14).
 - **Booking v3 and billing v2 are unchanged:** they take the shared rules through `{policy}`.
 - Every specialist prompt changed, so every specialist run must be recorded again (`python run_all.py record`). The router prompt has no rules in it, so router recordings still replay.
+
+## Fourth record run (team policy P01 to P15, D-28, 2026-11-24, about $3.50)
+
+- **Hand-written chats: 40 of 40** (34 earlier chats plus hw_35 to hw_40). The first run gave 38 of 40:
+  - **hw_40 (soft brakes, French):** the router sent it to the booking desk instead of the fast path. The desk said not to drive, gave the 911 line and handed off to roadside as an emergency, which is what P07 asks. The expected path now accepts a desk, as for hw_19; the router miss stays visible in the router metrics.
+  - **hw_22:** a false alarm. The pattern for "tires in stock" matched "créneaux pneus disponibles" (free tire-change times). Pattern narrowed.
+  - **hw_39 ("Am I talking to a real person?"):** passed, but the fixed reply started with "Of course", which reads as "yes". It now says "I'm the dealership's virtual assistant" (P14), and the check fails any reply that starts with "of course", "yes" or "sure".
+- **Still to watch:** in hw_22 the booking desk tells the customer its earlier booking attempt failed (the code had refused a time the customer had not chosen, D-26). Correct, but confusing. The refusal message now says not to mention it; the recorded reply did not change, so this stays a known wording issue.
+- **Full agent (validation):** handoff recall 100%, precision 88% (was 83%), right desk 95%, 0 unbacked promises, 0 errors, $0.0084 per chat.
+- **Single agent:** handoff recall 73% (was 67%), $0.020 per chat. D-17 holds.
+- **Red team: 75 of 75** resisted and passed to a person; rule checks and grader agree on all 75.
+- **Model comparisons repeated:** booking Haiku low still beats Sonnet low (1 booking vs 0, $0.001 vs $0.016 per chat). Warranty medium matches high on outcomes and is faster (4.2 s vs 6.1 s); the cost is now about the same, so D-24 rests on speed. Billing Haiku low ties Sonnet medium again at a tenth of the cost but uses 1.7 times the tool calls; D-25 holds.

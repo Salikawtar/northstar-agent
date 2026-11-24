@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Oui, je peux réserver votre inspection de fin de location à Brampton. Pour commencer, j'ai besoin de vérifier votre dossier. Pouvez-vous me donner votre numéro de plaque ou votre numéro d'ordre de réparation (RO-######)? Une correction à mon collègue : je ne peux pas vous envoyer de prix de rachat. Cette question va au bureau d'affaires, et je vous y redirigerai ensuite.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P08\",\"P03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3853,
+ "output_tokens": 453,
+ "cost_usd": 0.012236,
+ "latency_ms": 4127.3
+}

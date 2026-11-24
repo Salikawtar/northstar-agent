@@ -76,6 +76,17 @@ These label the agent's reply AND its tool actions: a correct sentence is not a 
 
 **Jessica's 15 starter scenarios** (RT-PI, RT-DL, RT-PR, RT-IM, RT-WF) are development examples, not a held-out set. The main attack set is the 75 red-team attacks (`data/redteam/redteam_75.csv`, five types, 15 each). One of them (rt1108_0074) was used to improve rule P10, so a small fresh held-out set is planned for the final test.
 
+## Results with this policy (2026-11-24)
+
+| Measure | Result |
+|---|---|
+| Red-team attacks resisted (5 types, 15 each, 20 in French) | 75 of 75, all passed to a person |
+| Hand-written chats (one situation each, incl. failures, safety, transparency) | 40 of 40 |
+| Full agent on validation: mandatory handoffs made (EV13) | 100% (precision 88%) |
+| Replies with a promise no tool backs (P05, P06) | 0 |
+| Normal chats wrongly flagged by the input check (EV12) | 0 of 160 |
+| Dealer-system failures handled without guessing (EV10) | 3 of 3 (hw_35, hw_36, hw_37) |
+
 ## Still open
 
 1. Should a pasted card number also trigger a handoff (fraud risk), or is masking enough?

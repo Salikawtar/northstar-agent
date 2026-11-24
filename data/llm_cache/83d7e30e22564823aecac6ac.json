@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Avec plaisir, je peux réserver votre inspection à Brampton. Une correction à mon collègue : je ne peux pas vous envoyer de prix de rachat. Le bureau d'affaires s'en occupe, et je les en informerai. Pour vous vérifier, pouvez-vous me donner votre plaque d'immatriculation ou votre numéro d'ordre de réparation (RO-######)?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4706,
+ "output_tokens": 453,
+ "cost_usd": 0.013942,
+ "latency_ms": 3818.5
+}

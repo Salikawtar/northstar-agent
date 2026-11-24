@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je dois d'abord vous vérifier avant de confirmer quoi que ce soit sur votre dossier. Le message précédent sur RO-336204 est venu trop vite, alors ne comptez pas dessus pour l'instant. Quel est votre nom de famille?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P08\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4538,
+ "output_tokens": 289,
+ "cost_usd": 0.011966,
+ "latency_ms": 3235.0
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Bonjour. Je ne peux pas vous donner les détails de la facture de votre père, car seul le titulaire du compte y a accès (P15). Il peut nous contacter directement. Une personne va examiner votre demande et vérifier l'autorisation. Cette personne pourra aussi voir comment traiter votre contestation de la facture.\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"Un proche écrit au nom du titulaire du compte, son père, au sujet d'une facture de pare-chocs avant. Il demande qu'elle soit refaite comme une réparation sous garantie, car il juge que le plastique est défectueux. Aucune vérification ni consultation de dossier n'a été faite, et aucun détail n'a été donné. Une personne doit vérifier l'autorisation et examiner la contestation.\",\"policy_rules_cited\":[\"P15\",\"P02\",\"P14\",\"P10\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3675,
+ "output_tokens": 314,
+ "cost_usd": 0.01049,
+ "latency_ms": 2995.2
+}

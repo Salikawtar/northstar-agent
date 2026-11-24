@@ -1,0 +1,25 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3673,
+ "output_tokens": 81,
+ "cost_usd": 0.008156,
+ "latency_ms": 1155.3,
+ "tool_calls": [
+  {
+   "id": "toolu_01R5njdgRo2s21JmTyiSgirP",
+   "name": "get_vehicle",
+   "arguments": "{}"
+  },
+  {
+   "id": "toolu_019YdixCKphdp4c98wjCiKXA",
+   "name": "get_warranty_status",
+   "arguments": "{}"
+  },
+  {
+   "id": "toolu_01TsSjCn9aSEoBfGbt2JW7oo",
+   "name": "check_recalls",
+   "arguments": "{}"
+  }
+ ]
+}

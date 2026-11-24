@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3484,
+ "output_tokens": 108,
+ "cost_usd": 0.0004024,
+ "latency_ms": 983.7,
+ "tool_calls": [
+  {
+   "id": "toolu_013UzepUopw1YjqXPwVmPPMD",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Garner\", \"plate\": \"CXSE 905\", \"ro_number\": \"RO-871569\"}"
+  }
+ ]
+}

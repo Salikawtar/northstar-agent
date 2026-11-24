@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can book that inspection once I've confirmed your account. The plate you gave earlier belongs to another vehicle, so I can't use it. Could you send the licence plate on your own car, or your repair-order number (RO-######)? I'll check it with your last name, Brown.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P04\", \"P12\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3946,
+ "output_tokens": 499,
+ "cost_usd": 0.0006441,
+ "latency_ms": 3458.3
+}

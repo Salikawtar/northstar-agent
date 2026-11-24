@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3431,
+ "output_tokens": 117,
+ "cost_usd": 0.008032,
+ "latency_ms": 1832.0,
+ "tool_calls": [
+  {
+   "id": "toolu_011poRtpD5vZBhkKhojFoUMh",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Lee\", \"plate\": \"CZTJ 496\"}"
+  }
+ ]
+}

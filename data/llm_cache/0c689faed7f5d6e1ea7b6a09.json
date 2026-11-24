@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3460,
+ "output_tokens": 80,
+ "cost_usd": 0.00772,
+ "latency_ms": 1795.0,
+ "tool_calls": [
+  {
+   "id": "toolu_01N7Xx3bkDBw9jgfhEoHUxK8",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Smith\", \"plate\": \"CEAW 321\"}"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 5294,
+ "output_tokens": 98,
+ "cost_usd": 0.011568,
+ "latency_ms": 1305.7,
+ "tool_calls": [
+  {
+   "id": "toolu_01XGAL5uvXWQwy3PVhUU2SMq",
+   "name": "draft_warranty_claim",
+   "arguments": "{\"symptom\": \"Yellow dashboard warning light (car with squiggly lines) flashing; customer unsure of exact meaning. Needs inspection.\"}"
+  }
+ ]
+}

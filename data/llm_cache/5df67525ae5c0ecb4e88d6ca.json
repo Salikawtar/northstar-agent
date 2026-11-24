@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3662,
+ "output_tokens": 81,
+ "cost_usd": 0.008134,
+ "latency_ms": 2058.8,
+ "tool_calls": [
+  {
+   "id": "toolu_01D2ZD1vv89Uqrr2Zjyso6F3",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Provencher\", \"plate\": \"CGRD 641\"}"
+  }
+ ]
+}

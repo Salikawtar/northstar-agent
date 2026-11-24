@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3596,
+ "output_tokens": 80,
+ "cost_usd": 0.007992,
+ "latency_ms": 1245.9,
+ "tool_calls": [
+  {
+   "id": "toolu_01LPNLs8UjvBM8JZtAWPF8cn",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Little\", \"plate\": \"CHNJ 395\"}"
+  }
+ ]
+}

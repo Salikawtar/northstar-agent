@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3424,
+ "output_tokens": 81,
+ "cost_usd": 0.007658,
+ "latency_ms": 2167.7,
+ "tool_calls": [
+  {
+   "id": "toolu_01Xbd77EhHKe8g7G56tt9UiV",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Arellano\", \"plate\": \"CNZY 228\"}"
+  }
+ ]
+}

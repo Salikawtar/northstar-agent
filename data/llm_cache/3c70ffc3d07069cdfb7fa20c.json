@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour M. Lambert, je peux vous aider à suivre votre réparation. Pour confirmer votre identité, j'ai besoin de votre plaque d'immatriculation ou de votre numéro de réparation (format RO-######). Pouvez-vous me donner l'un des deux ?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P03\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3577,
+ "output_tokens": 434,
+ "cost_usd": 0.0005747,
+ "latency_ms": 2631.1
+}

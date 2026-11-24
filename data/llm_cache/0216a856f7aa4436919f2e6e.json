@@ -1,0 +1,20 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3684,
+ "output_tokens": 155,
+ "cost_usd": 0.008918,
+ "latency_ms": 1486.2,
+ "tool_calls": [
+  {
+   "id": "toolu_018gfUnv9utHDFKKcKToMCvJ",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Watson\", \"plate\": \"CHWU 861\"}"
+  },
+  {
+   "id": "toolu_01RMv9kk214aQBJUF2i7KosQ",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Scarborough\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

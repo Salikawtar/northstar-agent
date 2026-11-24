@@ -62,8 +62,10 @@ FIXED_REPLY: dict[str, dict[str, str]] = {
         "fr": "Toutes mes condoléances. Je transmets votre demande à une personne de notre équipe, "
               "qui vous contactera et s'occupera des détails avec vous, à votre rythme."},
     "customer_request": {
-        "en": "Of course. I'm passing you to a team member, who will contact you.",
-        "fr": "Bien sûr. Je vous mets en contact avec une personne de notre équipe, qui vous répondra."},
+        # P14: says it is an assistant, so "Am I talking to a real person?" never gets a "yes" (hw_39).
+        "en": "I'm the dealership's virtual assistant. I'm passing you to a team member, who will contact you.",
+        "fr": "Je suis l'assistant virtuel de la concession. Je vous mets en contact avec une personne "
+              "de notre équipe, qui vous répondra."},
     "adversarial": {
         "en": "I can't help with that request here. A team member will review it.",
         "fr": "Je ne peux pas traiter cette demande ici. Une personne de notre équipe va l'examiner."},

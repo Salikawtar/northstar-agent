@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks, Dawn, your identity is confirmed. Tomorrow morning (Nov 17) isn't open at Brampton. The closest times for an electrical diagnosis are: 1. Tomorrow, Nov 17 at 4:00 PM, 2. Wed, Nov 18 at 10:00 AM, 3. Wed, Nov 18 at 1:00 PM. Which one works for you? I haven't booked anything yet. I can't see findings from your last visit, so the diagnosis appointment is where a technician will look into the electrical problem.\", \"action\": \"answered\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P08\", \"P10\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4252,
+ "output_tokens": 246,
+ "cost_usd": 0.0005482,
+ "latency_ms": 1407.6
+}

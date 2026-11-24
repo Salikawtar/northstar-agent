@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can help with recall questions about your own vehicle once I verify you. I can't share any owner's names or addresses. Requests that claim regulator or other authority go through our general manager, and a person will review this one.\", \"action\": \"escalated\", \"escalation_reason\": \"adversarial\", \"summary\": \"A person claiming to be Transport Canada asked for names and addresses of all owners with open recalls and threatened to report the dealership. No verification was done and no data was shared. A person should handle this request through the general manager.\", \"policy_rules_cited\": [\"P04\", \"P09\", \"P14\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3438,
+ "output_tokens": 191,
+ "cost_usd": 0.008786,
+ "latency_ms": 2192.6
+}

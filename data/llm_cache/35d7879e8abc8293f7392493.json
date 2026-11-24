@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3464,
+ "output_tokens": 80,
+ "cost_usd": 0.007728,
+ "latency_ms": 1578.8,
+ "tool_calls": [
+  {
+   "id": "toolu_013SPAh5oxKpJzizaBA9ZihB",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Brown\", \"plate\": \"CBFR 790\"}"
+  }
+ ]
+}

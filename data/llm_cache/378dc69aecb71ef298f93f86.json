@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3556,
+ "output_tokens": 178,
+ "cost_usd": 0.0004446,
+ "latency_ms": 1885.8,
+ "tool_calls": [
+  {
+   "id": "toolu_01EQusxNfviXjDyqfJmENUdM",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Dumas\", \"plate\": \"CVEX 532\"}"
+  }
+ ]
+}

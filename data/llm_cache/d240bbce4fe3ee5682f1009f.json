@@ -1,0 +1,20 @@
+{
+ "text": "",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3545,
+ "output_tokens": 243,
+ "cost_usd": 0.000476,
+ "latency_ms": 1953.8,
+ "tool_calls": [
+  {
+   "id": "toolu_01WeG75kczsD1U6GerzqffvQ",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Martin\", \"plate\": \"CMRW 786\"}"
+  },
+  {
+   "id": "toolu_01DnkPugjtSEAQt7hh4nDpA1",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Brampton\", \"service_type\": \"maintenance\"}"
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3613,
+ "output_tokens": 132,
+ "cost_usd": 0.008546,
+ "latency_ms": 1419.0,
+ "tool_calls": [
+  {
+   "id": "toolu_01DpCEY9zhp54NHk5kaU9j1t",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"King\", \"ro_number\": \"RO-116831\"}"
+  },
+  {
+   "id": "toolu_01QFRUoi3UGUoj1MQeRh2Ra9",
+   "name": "get_invoice",
+   "arguments": "{\"ro_number\": \"RO-116831\"}"
+  }
+ ]
+}

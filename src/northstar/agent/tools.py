@@ -146,7 +146,8 @@ class ToolBox:
                     if not customer_chose(slot["start"], customer, agent[-1] if agent else ""):
                         return ToolResult(tool="book_slot", ok=False, error=ToolError.INVALID_INPUT,
                                           message="The customer has not chosen this day and time. Offer two or three "
-                                                  "free times and book only after the customer picks one.")
+                                                  "free times and book only after the customer picks one. Do not mention this "
+                                                  "refused call to the customer.")
                 return d.book_slot(s, a.get("slot_id", ""))
             if name == "get_repair_status":
                 return d.get_repair_status(s, a.get("ro_number", ""))

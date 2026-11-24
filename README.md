@@ -119,8 +119,8 @@ Where to read first: `docs/architecture.md` (the design), `docs/edge_cases.md` (
 | Phase | Status |
 |---|---|
 | 1. Contracts, repo, mock dealer system | Done |
-| 2. Agent (router, specialists, baseline, handoff, failures) | Done: tested on validation, 34 hand-written chats, single-agent comparison |
-| 3. Guardrails and attack test set | Built: input and output checks, log masking, red team 75 of 75 resisted, 34 of 34 hand-written chats pass; policy draft to review with Jessica |
+| 2. Agent (router, specialists, baseline, handoff, failures) | Done: tested on validation, 40 hand-written chats, single-agent comparison |
+| 3. Guardrails and attack test set | Built: input and output checks, log masking, red team 75 of 75 resisted, 40 of 40 hand-written chats pass; operating policy P01 to P15 approved by Jessica (`docs/operating_policy.md`) |
 | 4. Evaluation and error analysis | Development runs done; final evaluation on the test set to do (Libo) |
 | 5. Fine-tune and 3-model comparison | To do (Neeraj) |
 | 6. Cost model | To do (Abhi) |

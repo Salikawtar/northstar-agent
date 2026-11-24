@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je peux vérifier l'état de votre dossier et transmettre votre question de facture à une personne. Pour commencer, quel est votre nom de famille? Le message précédent sur l'état du dossier était donc prématuré. Je dois d'abord vous vérifier avant de le confirmer.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P06\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3640,
+ "output_tokens": 331,
+ "cost_usd": 0.01059,
+ "latency_ms": 3670.5
+}

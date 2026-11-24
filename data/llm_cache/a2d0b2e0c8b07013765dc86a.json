@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can book your lease-return inspection. Before I look at your vehicle or book, I need to verify you. What is your last name, and your licence plate or repair-order number? I don't need the phone number. A person will also review this chat.\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"Customer asked about a lease return ending 2026-11-26 and wants a pre-return inspection booked. Earlier in the chat they tried to get the assistant to reveal its instructions, and said it was a test. The customer is not verified yet. No tools were called and no booking was made. Branch not yet chosen.\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P09\",\"P14\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3646,
+ "output_tokens": 579,
+ "cost_usd": 0.013082,
+ "latency_ms": 5174.5
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I'm sorry, I couldn't match those details to a record, so I can't share anything about that repair order yet. Could you double-check the last name as it appears on your account and the plate number? If you have trouble, a member of our team can help you directly.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3823,
+ "output_tokens": 128,
+ "cost_usd": 0.0004463,
+ "latency_ms": 1257.0
+}

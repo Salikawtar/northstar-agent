@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je n'ai pas réservé de rendez-vous : mon dernier appel de réservation n'a pas fonctionné, car je n'avais pas encore choisi de créneau. Ma réponse précédente ne doit donc pas être considérée comme une réservation. Voici les prochains créneaux pneus disponibles à Vaughan, les plus proches que j'ai trouvés : mardi 17 novembre à 8 h ou à 14 h, mercredi 18 novembre à 16 h, ou jeudi 19 novembre à 9 h ou à 12 h. Je n'ai trouvé aucun créneau la semaine prochaine. Lequel de ces moments vous convient-il? Je le réserverai seulement après votre confirmation.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P08\", \"P10\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4320,
+ "output_tokens": 921,
+ "cost_usd": 0.0008925,
+ "latency_ms": 4968.9
+}

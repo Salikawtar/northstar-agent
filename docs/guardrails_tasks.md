@@ -24,7 +24,7 @@ Status values: **Done**, **Built** (works, to review with Jessica), **Partly bui
 | 14 | Secrets never committed | `.env.example`, `.gitignore`, key read from the environment; check the git history | Code quality criterion | Partly built: `.env.example` and `.gitignore` in place; history check to do |
 | 15 | README | Setup, how to run the agent, one command for the evaluation | Newcomer-friendly README (criterion) | Built: setup, every run command, "extend it in an afternoon"; `python run_all.py results` reproduces every key result with no key. Libo's final evaluation command to add |
 | 16 | Clean-repository test | Fresh clone, install, run every command in replay mode with no key | "All components can be reproduced" | To do |
-| 17 | Test suite width | Tests for data, router, specialists, pipeline, guardrails, evaluation, fine-tune | Code quality criterion | Partly built: 146 tests; evaluation and fine-tune tests come with those modules |
+| 17 | Test suite width | Tests for data, router, specialists, pipeline, guardrails, evaluation, fine-tune | Code quality criterion | Partly built: 189 tests; evaluation and fine-tune tests come with those modules |
 | 18 | Everyone can explain their work | Each member walks through their own code | Brief requirement | To do (team) |
 | 19 | Report page 6 and appendix | Policy, layered safeguards, data handling, attack method and pass rates, residual risks; full policy and attack results in the appendix | Final report | To do |
 

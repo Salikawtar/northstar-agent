@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Merci. Pour consulter la facture RO-833289, je dois d'abord vous vérifier. Quel est votre nom de famille tel qu'il figure au dossier?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3678,
+ "output_tokens": 299,
+ "cost_usd": 0.010346,
+ "latency_ms": 3367.8
+}
