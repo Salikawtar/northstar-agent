@@ -366,6 +366,20 @@ def _get_faker(locale: str):
         return Faker("en_US")
 
 
+def _date_between(fake, start: str, end: str):
+    """Faker's date_between, the same on every computer.
+
+    On Windows, Faker draws the random second with randint (one random draw) instead of uniform (two
+    draws), so every value drawn after a date, the VIN included, came out different on Windows (found
+    2026-11-24). This is Faker's non-Windows path, written out: same dates, same draws, on any system."""
+    import calendar
+    from datetime import datetime as _dt, timezone as _tz
+    from faker.providers.date_time import Provider as _DateTime
+    s = calendar.timegm(_DateTime._parse_date(start).timetuple())
+    e = calendar.timegm(_DateTime._parse_date(end).timetuple())
+    return _dt.fromtimestamp(fake.random.uniform(s, e), _tz.utc).date()
+
+
 def make_customer(lang: str, seed: int) -> Dict[str, str]:
     """Locale-matched, reproducible fake customer + vehicle. Same (lang, seed) -> same customer."""
     name_fake = _get_faker(FAKER_NAME_LOCALE.get(lang, "en_CA"))
@@ -389,8 +403,8 @@ def make_customer(lang: str, seed: int) -> Dict[str, str]:
     plate = "C" + "".join(rnd.choice("ABCDEFGHJKLMNPRSTUVWXYZ") for _ in range(3)) + f" {rnd.randint(0, 999):03d}"
     year = rnd.randint(2018, 2026)
     model = rnd.choice(MODELS_SOLD)
-    purchase = ca.date_between(start_date="-6y", end_date="-2m")
-    appt = ca.date_between(start_date="+1d", end_date="+21d")
+    purchase = _date_between(ca, "-6y", "-2m")
+    appt = _date_between(ca, "+1d", "+21d")
     return {
         "customer_name": customer_name,
         "first_name": first,

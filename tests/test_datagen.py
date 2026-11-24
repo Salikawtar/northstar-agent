@@ -117,3 +117,14 @@ def test_replay_does_not_depend_on_what_is_installed(monkeypatch):
     monkeypatch.setitem(sys.modules, "langdetect", fake)
     assert sp._detect_lang("service sat. am. plate CDBF 609") != "so"
     assert sp._detect_lang("service sat", "langdetect") == "so"   # only when asked for explicitly
+
+
+def test_customers_are_the_same_on_windows(monkeypatch):
+    # On Windows, Faker draws random seconds with randint (one draw) instead of uniform (two), which shifted
+    # every VIN on Windows (2026-11-24). make_customer no longer uses Faker's date code, so the Windows path
+    # (simulated here) gives the same customers as any other system.
+    from faker.providers.date_time import Provider as DateTime
+    linux = [sp.make_customer(lang, seed) for lang in ("en", "fr") for seed in range(50)]
+    monkeypatch.setattr(DateTime, "_rand_seconds", lambda self, s, e: self.generator.random.randint(s, e))
+    windows = [sp.make_customer(lang, seed) for lang in ("en", "fr") for seed in range(50)]
+    assert windows == linux
