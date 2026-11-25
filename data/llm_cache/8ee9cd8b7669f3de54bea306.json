@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Buy-out questions go to our business office” directs the customer to the right source for a price.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Buy-out questions go to our business office” respects P01, and “A person will review it” makes the handoff clear under P14.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Buy-out questions go to our business office” states a known process, not a price or account detail.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will review it” does not promise a price, outcome, or response time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Buy-out questions go to our business office” leads with a clear next step, and the reply is brief.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2519,
+ "output_tokens": 362,
+ "cost_usd": 0.0045808,
+ "latency_ms": 6312.6
+}

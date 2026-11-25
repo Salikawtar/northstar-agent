@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing your message to the service manager” addresses the request for a person but omits safety advice after the customer reported that his father “backed into a wall.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\", \"P15\"],\n  \"policy_reason\": \"“I'm passing your message to the service manager” omits the required safety guidance after an accident (P07) and does not tell the son that his father can contact Northstar directly (P15).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your message to the service manager” matches the recorded handoff and gives no specific record details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will review your file and contact you directly” describes follow-up without promising a callback time, coverage, or payment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I understand this is serious” is brief and empathetic, but the reply does not start with what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2630,
+ "output_tokens": 559,
+ "cost_usd": 0.0068283,
+ "latency_ms": 10752.4
+}

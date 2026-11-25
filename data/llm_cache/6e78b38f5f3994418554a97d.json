@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply says a person “will check what authorisation is needed” for the customer to handle the inspection and drop-off.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Under P15 and P14, “He can contact us directly” and “I'm also passing this to a person” protect the account holder's details and provide an authorisation review.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Will check what authorisation is needed” describes the next step without asserting any new lease or vehicle facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will check what authorisation is needed” promises only a review, not approval or a booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm, but it leads with “I can't share or check” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2680,
+ "output_tokens": 261,
+ "cost_usd": 0.0039733,
+ "latency_ms": 5018.4
+}

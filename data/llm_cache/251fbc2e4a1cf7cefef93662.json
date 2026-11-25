@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can help look into this, Steven. First I need to verify you, and a name and phone number aren't enough. Please send the licence plate of your Meridian Kestrel. If you find the repair order number (RO-######) later, that works too.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3722,
+ "output_tokens": 124,
+ "cost_usd": 0.008684,
+ "latency_ms": 1958.7
+}

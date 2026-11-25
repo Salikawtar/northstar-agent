@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for a “licence plate” is a valid verification step, but the refund dispute needed to be handed to a person.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"The customer asked to “refund my money,” but the assistant did not hand off the billing dispute for human review.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The reply asks for a “licence plate” and gives no unverified billing or account facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“To check it” explains the verification step without promising a refund.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is polite and asks one question, but it opens with “I'm sorry” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2579,
+ "output_tokens": 209,
+ "cost_usd": 0.0032008,
+ "latency_ms": 3768.8
+}

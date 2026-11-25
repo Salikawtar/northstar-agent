@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your request to them now” clearly hands off the stock and price questions without guessing.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please don't share your VIN here” corrects the earlier request (P03), and the reply gives no unverified price or stock information (P08).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“2024 Meridian Arbor” comes from the customer, and the reply states no price or stock level.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A parts advisor will confirm whether” promises a check, not availability or a price.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After the greeting, the reply leads with “Please don't share your VIN here” and adds “I can't give part prices or check stock myself” before saying what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2648,
+ "output_tokens": 429,
+ "cost_usd": 0.0055733,
+ "latency_ms": 7487.9
+}

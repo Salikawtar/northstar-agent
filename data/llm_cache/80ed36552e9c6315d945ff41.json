@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Appelez le 911 tout de suite » et « Ne conduisez pas votre véhicule » répondent à l’urgence, et une personne prendra le relais (P07, P14).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Une personne de notre équipe va regarder votre demande » confirme le transfert, et « votre assureur pourra vous répondre » évite de donner un conseil d’assurance (P14, P01).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Il pourrait être dangereux » est une mise en garde, pas un diagnostic ni un fait inventé.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne de notre équipe va regarder votre demande » annonce une révision sans promettre de délai ni de dépannage.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Appelez le 911 tout de suite » donne la priorité à l’urgence dans une réponse courte et claire, sans question superflue.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2654,
+ "output_tokens": 247,
+ "cost_usd": 0.0037683,
+ "latency_ms": 3968.3
+}

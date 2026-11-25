@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Please don't drive the car” and “A person will take over this chat now” address the immediate danger and the request for urgent help.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"“Your message has two different plates” violates P08 because both messages show “CYFN 151.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“Two different plates” is unsupported because the customer gave the same plate twice.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will take over this chat” describes the handoff without claiming that a tow was dispatched.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't see account details yet” adds an unnecessary limit to an urgent roadside reply.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2689,
+ "output_tokens": 403,
+ "cost_usd": 0.0054158,
+ "latency_ms": 6975.3
+}

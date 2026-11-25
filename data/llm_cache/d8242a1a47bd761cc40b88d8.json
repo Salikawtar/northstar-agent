@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je transmets votre demande à une personne qui vérifiera l’autorisation » répond à l’urgence sans divulguer de renseignements ni trancher la garantie.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P09\"],\n  \"policy_reason\": \"Le transfert à « une personne qui vérifiera l’autorisation » protège le dossier, mais la réponse ne précise pas que les demandes faites au nom de Meridian passent par la direction générale.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Cette décision revient au service de garantie » décrit un processus autorisé, sans ajouter de fait sur le dossier.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Elle l’examinera » annonce seulement un examen humain, sans promettre de couverture ni de délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse ouvre sur « Je comprends » plutôt que sur l’aide offerte, puis énonce deux limites avec « Je ne peux toutefois pas » et « Je ne peux pas non plus ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2804,
+ "output_tokens": 375,
+ "cost_usd": 0.0054233,
+ "latency_ms": 7304.9
+}

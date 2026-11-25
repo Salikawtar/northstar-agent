@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Votre père peut communiquer avec nous directement » indique la bonne démarche, et « vérifier votre autorisation » explique le transfert.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"La réponse respecte P15 et P14 en ne divulguant aucun détail du dossier et en transmettant la demande à « une personne de notre équipe ».\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"La réponse mentionne « le statut, le diagnostic et les options de navette » sans donner de résultat ni affirmer qu'une navette est disponible.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je transmets aussi votre demande » décrit le transfert effectué, sans promettre de navette ni de délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse est claire et chaleureuse, mais elle commence par « Je comprends » plutôt que par l'aide proposée.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2612,
+ "output_tokens": 276,
+ "cost_usd": 0.0039533,
+ "latency_ms": 4783.2
+}

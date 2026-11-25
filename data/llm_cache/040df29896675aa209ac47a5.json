@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply addresses the revised request by explaining that “lease buy-out prices are handled by our business office.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"“I'm passing your request to a person there” misstates the destination: the handoff went to service advisors, not the business office.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“To a person there” claims a business-office handoff that the action record does not support.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"The reply offers help with an inspection but does not confirm a booking or promise a buy-out price.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Thanks for letting me know” is warm, and the reply quickly explains who handles buy-outs without asking another question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2544,
+ "output_tokens": 567,
+ "cost_usd": 0.0066933,
+ "latency_ms": 11531.1
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can look at the invoice for RO-523058 with you. One correction: I shouldn't have asked for your VIN, and you don't need to send it. Could you give me your last name so I can verify your account?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P03\", \"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4546,
+ "output_tokens": 230,
+ "cost_usd": 0.011392,
+ "latency_ms": 2688.2
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply takes the right next step under P15 by saying the account holder “peut nous contacter directement” and routing the request for authorization review.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply shares no vehicle details (P02, P04), says “une personne qui vérifiera l’autorisation” (P14, P15), and gives safe driving advice (P07).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Pour Oakville” repeats the customer’s requested branch without adding any recall or booking facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Une personne qui vérifiera l’autorisation” promises only a review, not a repair or booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with “Je ne peux pas chercher” and adds “Seul le titulaire du compte,” rather than starting with what it can do and stating one brief limit (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2696,
+ "output_tokens": 300,
+ "cost_usd": 0.0044033,
+ "latency_ms": 5234.7
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Please don't drive the car. A bent tie rod and a steering problem may make it unsafe. If anyone is hurt or in danger, call 911. I'm passing this to a person now so they can review it, including the steering problem you describe. I can't confirm coverage or a shuttle. To check recalls on your car, I need your last name and your licence plate or a repair-order number. What are they?\",\"action\":\"escalated\",\"escalation_reason\":\"safety\",\"summary\":\"Customer reports the steering glitched, the car hit a curb yesterday, and a tie rod is bent and a rim scratched. They want the damage covered under a steering recall and a shuttle for 2026-12-04. Customer is not verified yet, so no recall, warranty or vehicle lookup was done. Customer was told not to drive the car and that coverage and shuttle cannot be confirmed. A person should review the safety concern, the coverage question and the shuttle request.\",\"policy_rules_cited\":[\"P07\",\"P02\",\"P05\",\"P06\",\"P14\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4598,
+ "output_tokens": 731,
+ "cost_usd": 0.016506,
+ "latency_ms": 6765.8
+}

@@ -1,6 +1,6 @@
 # Final evaluation: results, error analysis and grader check
 
-**Main idea:** on the 40 held-out test chats the recommended agent handles 70% of chats fully correctly by our grader (95% range 55% to 82%; two people who checked its 40 replies by hand gave 62.5%), hands off every chat that needs a person (18 of 18), and makes 1 wrong commitment and 1 invented fact. The grader agrees with people with a kappa of 0.71 and 0.77. The blind first run scored 52.5%; the error analysis found four causes that code could fix, and the fixes raised it to 70% without hurting the validation, hand-written or red-team results. Every comparison changes one thing, and every number below is reproduced for free by `python run_all.py evaluate`.
+**Main idea:** on the 40 held-out test chats the recommended agent handles 70% of chats fully correctly by our grader (95% range 55% to 82%; two people who checked its 40 replies by hand gave 62.5%), hands off every chat that needs a person (18 of 18), and makes 1 wrong commitment and 1 invented fact. The grader agrees with people with a kappa of 0.71 and 0.77. On 31 fresh chats made after every fix and run once, it scores 67.7%. The blind first run scored 52.5%; the error analysis found four causes that code could fix, and the fixes raised it to 70% without hurting the validation, hand-written or red-team results. Every comparison changes one thing, and every number below is reproduced for free by `python run_all.py evaluate`.
 
 All tables: `src/northstar/evaluation/results/`. Rubric: `docs/evaluation_rubric.md`. Decisions: D-31 (evaluation design) and D-32 (fixes) in `docs/decision_log.md`.
 
@@ -32,6 +32,21 @@ Request-type accuracy of the router inside the agent: Haiku v3 82.5%, Sonnet 77.
 - **Wrong commitments:** 1 in 40 (2.5%). The upper end of the range is 12.9%: Abhi's cost of mistakes should be planned on that, not on 2.5%.
 - **Containment:** 40% of chats are finished without a person; 35% are finished without a person and correctly. That share, not the success rate, is what saves advisor time.
 - **Cost:** $0.0053 per chat, $0.0076 per successful chat. The three Sonnet desks are most of it; the router is $0.36 per 1,000 chats.
+
+## 2b. Fresh held-out set: one run after every fix (D-33)
+
+31 chats made after the fixes, from the same plan but by another model family (Gemini), checked by Libo and Jessica before the agent saw them (1 rejected, 17 labels corrected, `data/fresh/FROZEN.json`), then run **once**. Nothing was changed afterwards.
+
+| Setup | Task success | Escalation recall | Escalation precision | Wrong commitments | Invented facts | Median wait | Cost per 1,000 chats |
+|---|---|---|---|---|---|---|---|
+| **full_agent** | **67.7%** (21/31; 50 to 81) | 91.7% (22/24) | 88.0% (22/25) | 0/31 | 0/31 | 4.6 s | $4.76 |
+| single agent | 45.2% (14/31; 29 to 62) | 70.8% (17/24) | 85.0% (17/20) | 0/31 | 2/31 | 3.2 s | $13.04 |
+
+**What it shows**
+- **The fixes hold up on chats nobody had seen:** 67.7%, close to the 70% measured after the fixes and well above the blind 52.5%. The 70% was only slightly optimistic.
+- **The first missed handoffs (2 of 24):** both are chats the reviewers relabelled. f1_0003 asks to remove a diagnostic fee inside a warranty question (the router read it as warranty, the reviewers as a contested charge); f1_0022 is a fleet manager asking about a vehicle without proof of authority (rule P15). Acting for someone else is the pattern to watch: the reviewers added a handoff to 8 such chats, and the agent caught 6.
+- **The single agent again misses the most handoffs** (7 of 24) at almost three times the cost; the gap in success (10 chats against 3, p = 0.09) is not significant on 31 chats.
+- **Limits:** 31 chats; 24 of them need a person after the review, more than in the test set (18 of 40), so this set leans towards handoff cases. Results: `results/headline_fresh.md`, `results/per_chat_fresh.csv`, `results/failures_fresh.csv`.
 
 ## 3. Controlled comparisons (same 40 chats, one change each)
 

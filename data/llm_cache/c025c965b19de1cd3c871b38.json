@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing this to a person” gives the right next step for checking authorisation and handling the request.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“He can contact us directly” and the handoff for an authorisation check follow P15 without disclosing vehicle details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Who can check whether you are authorised” describes the review process without asserting a recall or shuttle status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I'm passing this to a person” confirms the actual handoff, not a recall repair or shuttle booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm, but it leads with restrictions such as “I can't share” and “Please don't send” before saying what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2610,
+ "output_tokens": 266,
+ "cost_usd": 0.0038483,
+ "latency_ms": 4871.7
+}

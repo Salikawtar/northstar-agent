@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply says « Ne conduisez pas le véhicule » and « Je transmets votre demande à une personne », addressing the immediate roadside danger.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P07 and P14 by saying « appelez le 911 » if anyone is hurt or in danger and handing the chat to « une personne de notre équipe ».\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je ne peux confirmer ni remorquage ni heure d'arrivée » states no unsupported dispatch status or arrival time.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui organisera l'aide avec vous » describes the handoff without promising a tow, an arrival time, or a billing outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Ni remorquage ni heure d'arrivée, alors n'en tenez pas compte » lists unconfirmed items and leaves the customer unsure what to disregard.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2711,
+ "output_tokens": 305,
+ "cost_usd": 0.0044908,
+ "latency_ms": 5547.9
+}

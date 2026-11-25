@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply says “Please don't drive the car,” directs the customer to call 911 if anyone is hurt or in danger, and hands the case to a person.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing this to a person now” addresses the safety risk under P07 and P14, and the reply asks for verification before sharing vehicle details under P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A bent tie rod and a steering problem” reflects what the customer reported, and the reply states no recall or booking status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't confirm coverage or a shuttle” makes no unsupported promise.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “Please don't drive the car” rather than what it can do and lists two limits in “I can't confirm coverage or a shuttle.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2635,
+ "output_tokens": 287,
+ "cost_usd": 0.0041208,
+ "latency_ms": 5046.5
+}

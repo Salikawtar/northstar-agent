@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I'm sorry about this charge, Steven. I can't open your account with a phone number or an advisor's name. To check it, I need your last name plus either your licence plate or your repair-order number (RO-######). Could you send me your licence plate?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4563,
+ "output_tokens": 130,
+ "cost_usd": 0.010426,
+ "latency_ms": 2869.3
+}

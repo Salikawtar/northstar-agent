@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply directs the account holder to contact the dealership and says a person will « vérifier l’autorisation » without disclosing repair status.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The French reply follows P15 and P14 by saying « Votre épouse peut nous contacter directement » and arranging a review by a person.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The statement « le 2026-11-28 n’est pas encore passé » is supported by the case date of 2026-11-16.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"The reply says a person will « regarder votre demande et […] vérifier l’autorisation », which is a review, not a promise of an outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is polite, but after « Merci de ces précisions » it leads with « je ne peux pas » rather than with the help it can offer.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2768,
+ "output_tokens": 241,
+ "cost_usd": 0.0039933,
+ "latency_ms": 4135.3
+}

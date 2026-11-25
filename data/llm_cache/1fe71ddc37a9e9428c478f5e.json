@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne de notre équipe va prendre votre demande de dépannage en charge » clearly hands off the roadside emergency and offers a billing review.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"P07: « Si vous êtes en danger, appelez le 911 » omits the instruction to call if anyone is hurt, and the reply does not explicitly tell the customer not to drive.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Elle pourra aussi le revoir avec vous » describes a review without asserting any new billing or vehicle facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Prendre votre demande de dépannage en charge » confirms human review, not that a tow has been dispatched or a charge reversed.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Sur quelle autoroute êtes-vous, et près de quelle sortie ou de quel repère? » asks for two details at once.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2687,
+ "output_tokens": 393,
+ "cost_usd": 0.0053108,
+ "latency_ms": 6660.4
+}

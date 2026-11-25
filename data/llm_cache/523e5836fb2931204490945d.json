@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person … will check whether you’re authorised to act for him” addresses the request without confirming the drop-off.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“He can contact us directly” and “I’m also passing this to a person” satisfy P15 and P14 without disclosing account details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“2026-11-26” is the customer’s requested date, and “pre-return inspection” describes the known lease-return process.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will check whether you’re authorised” promises a review, not authorisation or a booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply adds “please don’t send his phone number or VIN” after the longer “I can’t share or check details” limit.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2714,
+ "output_tokens": 324,
+ "cost_usd": 0.0046883,
+ "latency_ms": 5305.2
+}

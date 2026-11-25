@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Thanks for the details. I can check recalls and warranty facts, but first I need to verify you. Could you give me your last name and the licence plate for this vehicle, or a repair-order number (RO-######)? You don't need to send the VIN again.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3773,
+ "output_tokens": 129,
+ "cost_usd": 0.008836,
+ "latency_ms": 1666.6
+}

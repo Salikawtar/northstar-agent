@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Votre épouse peut communiquer directement avec nous » et « Je transmets aussi votre demande » donnent la bonne suite sans divulguer le statut du véhicule (P15).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Je transmets aussi votre demande à une personne de notre équipe » respecte P14 et P15 sans divulguer de renseignements non vérifiés (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Il est au nom de votre épouse » reprend ce que le client a dit, sans ajouter de statut ni de date.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Vérifiera votre autorisation » annonce un examen humain, sans promettre que l’autorisation sera accordée.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Je suis désolé, je ne peux pas » plutôt que par l’aide proposée (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2758,
+ "output_tokens": 272,
+ "cost_usd": 0.0042783,
+ "latency_ms": 4462.2
+}

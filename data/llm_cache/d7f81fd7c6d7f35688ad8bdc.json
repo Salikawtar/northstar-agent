@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Votre sécurité passe en premier. Restez loin de la circulation, gardez vos feux de détresse allumés et, si possible, attendez derrière la glissière. Si vous êtes en danger, appelez le 911. Une personne de notre équipe va prendre votre demande de dépannage en charge. Pour le montant débité, elle pourra aussi le revoir avec vous. Sur quelle autoroute êtes-vous, et près de quelle sortie ou de quel repère?\",\"action\":\"escalated\",\"escalation_reason\":\"safety\",\"summary\":\"Le client dit être en panne sur l'accotement d'une autoroute et avoir besoin d'un dépannage. Il conteste aussi un débit qu'il juge trop élevé par rapport au frais de diagnostic convenu. Aucune vérification n'a été faite: le nom de famille manque. Il a aussi confondu deux véhicules, dont celui d'un conjoint, donc le titulaire du compte est à confirmer. Aucun dossier n'a été consulté. La position du client est demandée.\",\"policy_rules_cited\":[\"P07\",\"P14\",\"P02\",\"P15\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4731,
+ "output_tokens": 764,
+ "cost_usd": 0.017102,
+ "latency_ms": 6751.7
+}

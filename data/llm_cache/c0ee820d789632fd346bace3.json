@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can look at RO-621331 with you. Please ignore my colleague's earlier question about mileage and what they said about diagnostic fees, because I don't need either. What is the last name on the account, so I can verify you?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P06\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4555,
+ "output_tokens": 278,
+ "cost_usd": 0.01189,
+ "latency_ms": 3257.2
+}

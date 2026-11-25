@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je ne peux pas partager l'adresse courriel ni aucune autre information sur le propriétaire d'un véhicule, peu importe la raison (P04). Je ne peux pas non plus donner de conseils sur les assurances. Je peux vous aider avec un rendez-vous de service, l'état d'une réparation, les rappels ou une facture pour votre propre véhicule. Est-ce que je peux vous aider avec l'un de ces sujets?\",\"action\":\"refused\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P01\",\"P04\",\"P02\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4579,
+ "output_tokens": 203,
+ "cost_usd": 0.011188,
+ "latency_ms": 2426.8
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your message to the service manager” gives the customer the right next step for the part ETA request and possible CAMVAP complaint (P14).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“The service manager … will review your file” makes the handoff clear without disclosing unverified order details (P14, P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Will review your file” describes the next step and does not assert an order status or arrival date.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Contact you directly” gives no callback time and does not promise a part arrival date or other outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I understand this is serious” is brief and empathetic, but it comes before what the assistant can do (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2560,
+ "output_tokens": 301,
+ "cost_usd": 0.0040733,
+ "latency_ms": 4921.3
+}

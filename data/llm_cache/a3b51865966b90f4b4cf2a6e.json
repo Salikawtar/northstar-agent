@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A team member will review your request” directs the billing dispute to a person while the reply asks for an approved verification detail.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please send the licence plate” follows P02, and “A team member will review your request” satisfies P06 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Your Meridian Kestrel” repeats the customer's description, and the reply gives no unverified billing facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review your request and follow up with you” promises neither a refund nor a response time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can help look into this” is warm and direct, and the reply makes one verification request with the repair order as an alternative.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2598,
+ "output_tokens": 454,
+ "cost_usd": 0.0056983,
+ "latency_ms": 7950.9
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Elle peut nous contacter directement” and “une personne […] pourra vérifier l’autorisation” give the right next steps for a recall on his wife’s vehicle.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Elle peut nous contacter directement” respects P15, and “Je transmets aussi votre demande à une personne” makes the P14 handoff clear.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Je ne peux pas dire si le véhicule est sécuritaire” avoids inventing a recall or vehicle safety finding.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Une personne […] pourra vérifier l’autorisation” offers review without promising a repair, booking, or outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply starts with “Je comprends que c’est stressant” rather than what it can do, then states two limits: “Je ne peux pas chercher” and “Je ne peux pas dire.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2687,
+ "output_tokens": 278,
+ "cost_usd": 0.0041608,
+ "latency_ms": 4569.1
+}

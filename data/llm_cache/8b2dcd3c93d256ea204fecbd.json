@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thank you, Mr. Hart. I can help with the appointment. Vaughan has openings on Tuesday, November 17 at 9:00 AM, 10:00 AM and 3:00 PM, and on Wednesday, November 18 at 9:00 AM and 10:00 AM. Before I can book one, I need to verify your account. Could you please give me the licence plate on the vehicle?\\n\\nFor the mirror part, a parts advisor will confirm availability, price and arrival date with you. I can't check those myself.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P03\", \"P08\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4084,
+ "output_tokens": 654,
+ "cost_usd": 0.0007354,
+ "latency_ms": 3692.5
+}

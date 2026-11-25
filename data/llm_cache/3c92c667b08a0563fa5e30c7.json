@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing this to a person so they can review it” gives the customer the right next step for checking the instrument-cluster ETA.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply requests “your last name and either your licence plate or your repair-order number” without disclosing order details (P02) and hands off for review (P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Confirm the part's arrival date and price” describes a review step without stating an ETA or price.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“So they can review it” promises only a review, not a delivery date or price.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm sorry about the trouble” is warm, but it delays the useful next step and the reply asks for details after announcing the handoff.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2614,
+ "output_tokens": 303,
+ "cost_usd": 0.0042283,
+ "latency_ms": 5204.5
+}

@@ -1,0 +1,2 @@
+setup,change,success_full_agent,success_setup,only_full_agent_right,only_setup_right,p_value
+single_agent,"architecture: one Sonnet 5.5 agent with every tool, no router",0.677,0.452,10,3,0.0923

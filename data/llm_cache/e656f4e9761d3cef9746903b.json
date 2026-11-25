@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Under P15, offering to have “a person who can check the authorisation” review the request is the right next step for someone booking on behalf of the account holder.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P15 by saying “He can contact us directly” and handing off without sharing account details.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Squeaky brakes can also be a safety concern” is general safety advice, not a diagnosis or a new vehicle fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I'm passing this to a person who can check the authorisation” describes the handoff without promising a booking or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After a brief thank-you, the reply leads with “I can't open his file” instead of what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2607,
+ "output_tokens": 316,
+ "cost_usd": 0.0043408,
+ "latency_ms": 5476.3
+}

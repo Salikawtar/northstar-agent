@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Il peut nous contacter directement » et « une personne […] va vérifier l’autorisation » donnent la bonne marche à suivre sans divulguer le dossier (P15).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Je transmets aussi ta demande à une personne » annonce le transfert sans divulguer de renseignements sur le titulaire (P14, P15).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Une personne […] va vérifier l’autorisation » décrit la prochaine étape sans ajouter de faits sur la réparation ou la navette.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je transmets aussi ta demande à une personne » annonce seulement le transfert, sans promettre de navette ni de délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"Après « Merci de checker pour ton père », la réponse commence par « Je ne peux pas » plutôt que par ce qu’elle peut faire (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2584,
+ "output_tokens": 279,
+ "cost_usd": 0.0039133,
+ "latency_ms": 4921.9
+}

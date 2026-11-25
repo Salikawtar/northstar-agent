@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Please don't drive the vehicle” and “I'm passing this to a team member” address the immediate safety risk and leave the recall and coverage questions for human review (P07, P14).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“If anyone is hurt or in danger, call 911 now” and “I'm passing this to a team member” follow P07 and P14 without disclosing vehicle records or promising coverage.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the recorded handoff, and the reply gives no unverified recall or service details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes human follow-up without promising a tow, shuttle, booking, or payment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't confirm a tow or an arrival time” adds a limit about a tow the customer did not request (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2641,
+ "output_tokens": 338,
+ "cost_usd": 0.0046458,
+ "latency_ms": 5826.9
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply offers the requested Tuesday and Wednesday openings and asks for the “licence plate” as the next verification step.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply says “I need to verify your account” and shares only appointment availability, not account or vehicle records.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The listed “Tuesday, November 17” and “Wednesday, November 18” openings match the tool results, and no part arrival date is stated.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"The reply offers “openings” without confirming a booking, part price, or arrival date.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply asks for the “licence plate” but does not briefly clarify that the number requested earlier was not needed (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2852,
+ "output_tokens": 399,
+ "cost_usd": 0.0057833,
+ "latency_ms": 7589.3
+}

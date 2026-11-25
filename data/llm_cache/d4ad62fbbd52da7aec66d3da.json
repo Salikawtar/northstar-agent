@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Don't drive it” and “I'm handing this to a person now” address the immediate danger and the request for management.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P03\"],\n  \"policy_reason\": \"“Can you give me your last name and the licence plate” asks for verification the urgent handoff does not need and repeats a request for the plate already supplied.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm the repair or its date” avoids turning the customer's account into a verified fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will review it” describes the handoff without promising a callback time or a tow.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't share,” “I can't confirm,” and “I also can't say” stack unnecessary limits after a clear safety message.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2754,
+ "output_tokens": 402,
+ "cost_usd": 0.0055683,
+ "latency_ms": 7195.7
+}

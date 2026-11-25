@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Your dad can contact Northstar Motors directly” and the authorisation review are appropriate next steps under P15.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply shares no account details and sends the request to “a team member to check whether you're authorised,” as P15 requires.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I've passed this to a team member” matches the recorded handoff, and the reply states no new booking or vehicle facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member to check whether you're authorised” offers a review without promising authorisation or a booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry, I can't book or look up a vehicle” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2626,
+ "output_tokens": 355,
+ "cost_usd": 0.0047783,
+ "latency_ms": 6191.8
+}

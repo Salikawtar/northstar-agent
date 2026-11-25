@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Appelez le 911 tout de suite, surtout si quelqu'un est blessé ou en danger. Ne conduisez pas votre véhicule, il pourrait être dangereux. Si c'est possible, restez dans un endroit sûr, loin de la circulation. Une personne de notre équipe va regarder votre demande. Pour votre franchise d'assurance, votre assureur pourra vous répondre.\",\"action\":\"escalated\",\"escalation_reason\":\"safety\",\"summary\":\"Le client dit avoir été frappé par un autre véhicule sur l'autoroute près de Markham. Il voulait une dépanneuse et sa franchise d'assurance. Il a ensuite dit qu'il appelait le 911. Aucune vérification ni consultation de dossier n'a été faite. Il a corrigé le numéro où le joindre, et ce numéro est dans le chat. Une personne doit regarder la situation et voir si un suivi est nécessaire.\",\"policy_rules_cited\":[\"P07\",\"P14\",\"P01\",\"P11\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4728,
+ "output_tokens": 350,
+ "cost_usd": 0.012956,
+ "latency_ms": 3139.8
+}

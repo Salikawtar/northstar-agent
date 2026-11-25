@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply asks for “the last name on the account” instead of sending the disputed diagnostic fee to a person for review.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"P06 and P14 require a person to review the billing dispute, but the reply only asks for “the last name on the account.”\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-621331” came from the customer, and the reply adds no billing or vehicle facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can look at RO-621331 with you” does not promise a fee waiver or confirm the advisor’s promise.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply starts with “I can look at RO-621331 with you,” briefly corrects the earlier message, and asks one question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2559,
+ "output_tokens": 366,
+ "cost_usd": 0.0047208,
+ "latency_ms": 6143.1
+}

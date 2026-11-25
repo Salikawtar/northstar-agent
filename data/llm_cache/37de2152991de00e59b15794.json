@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“He can contact us directly” and “I'm passing this to a person” give the right next steps for authorisation, the recall and the shuttle question (P15).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing this to a person who can check your authorisation” follows P15 without disclosing vehicle details or requesting more VIN information (P03).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Help with the recall and the shuttle question” does not state a recall status or shuttle availability.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Help with the recall and the shuttle question” offers a review without promising a repair or a shuttle.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"It opens with “I can't look up” and repeats the limit with “Only the account holder,” rather than starting with what it can do (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2597,
+ "output_tokens": 236,
+ "cost_usd": 0.0035158,
+ "latency_ms": 3874.9
+}

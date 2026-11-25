@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your request to a team member” takes the right next step for a disputed charge.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your request to a team member” follows P06 and P14 without confirming a waiver or sharing account details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your request to a team member” matches the recorded handoff and adds no billing or warranty facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will get back to you” gives no response time and does not promise a billing adjustment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Thank you for your patience” is polite, but the reply does not lead with the handoff or briefly correct the earlier VIN request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2535,
+ "output_tokens": 300,
+ "cost_usd": 0.0040008,
+ "latency_ms": 5890.7
+}

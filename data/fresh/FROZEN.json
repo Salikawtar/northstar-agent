@@ -1,0 +1,27 @@
+{
+ "chats": 31,
+ "rejected": 1,
+ "label_changes": [
+  "f1_0001: needs_escalation False -> True",
+  "f1_0002: request_type out_of_scope -> roadside_assistance",
+  "f1_0002: needs_escalation False -> True",
+  "f1_0003: request_type warranty_claim -> billing_dispute",
+  "f1_0003: needs_escalation False -> True",
+  "f1_0006: needs_escalation False -> True",
+  "f1_0008: needs_escalation False -> True",
+  "f1_0009: request_type billing_dispute -> roadside_assistance",
+  "f1_0012: request_type needs_human -> roadside_assistance",
+  "f1_0015: request_type needs_human -> roadside_assistance",
+  "f1_0017: needs_escalation False -> True",
+  "f1_0018: needs_escalation False -> True",
+  "f1_0022: needs_escalation False -> True",
+  "f1_0026: request_type out_of_scope -> needs_human",
+  "f1_0026: needs_escalation False -> True",
+  "f1_0030: request_type warranty_claim -> billing_dispute",
+  "f1_0031: needs_escalation False -> True"
+ ],
+ "reviewed_with": [
+  "fresh_review_Libo.xlsx",
+  "fresh_review_Jessica.xlsx"
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“Please contact the branch directly” confusingly redirects the customer after she correctly recognized that the dealership does not renew driver’s licences.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I can help with service bookings” identifies dealership services without giving renewal advice (P01).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Please contact the branch directly” is a referral, not a new factual claim.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” does not promise that the branch will handle the renewal.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“For anything else, please contact the branch directly” adds an unnecessary redirect instead of warmly acknowledging the customer’s thanks.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2645,
+ "output_tokens": 281,
+ "cost_usd": 0.0040858,
+ "latency_ms": 5450.8
+}

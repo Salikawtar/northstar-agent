@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply sends the disputed fee for human review: “The service manager will review your dispute.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P06 and P14 by sending the dispute to the service manager, and follows P02 by asking “what is your last name?” before sharing invoice details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-621331” came from the customer, and the reply adds no invoice or warranty facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't confirm what the advisor said or waive the fee” leaves the decision to the service manager.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry, my earlier message was wrong” rather than leading with what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2588,
+ "output_tokens": 249,
+ "cost_usd": 0.0036233,
+ "latency_ms": 3867.6
+}

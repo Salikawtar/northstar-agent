@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Please don't drive the vehicle” and “A person will review your request” give the right safety advice and next step under P07 and P14.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please call 911” addresses immediate danger, and “go through the general manager” handles the claimed authority without sharing records (P02, P07, P09, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I've passed this to our team” matches the recorded handoff.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't promise a callback time” does not confirm the requested five-minute callback.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm sorry this happened” is warm, but the reply states two limits: “I can't promise a callback time” and “I can't send repair documents.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2661,
+ "output_tokens": 228,
+ "cost_usd": 0.0035958,
+ "latency_ms": 3645.3
+}

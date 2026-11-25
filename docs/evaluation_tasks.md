@@ -23,7 +23,7 @@ Status values: **Done**, **Partly built**, **To do**.
 | 13 | Hand results to the team | Final metrics and failure examples to Members 2, 3, 5 and 6 | Fine-tune comparison, guardrail rates, economics | Done in the repository: section 7 of `docs/evaluation_results.md` and `results/economics_inputs.json`; to send to the team |
 | 14 | Report page 5 and appendix | Success criteria, method, held-out set, metrics, grader check, errors, fixes; full tables and rubric in the appendix | Final report | Draft written (shared as a doc), grader-check numbers included |
 
-**Headline (40 test chats, recommended agent):** 70% task success (55 to 82), 18 of 18 needed handoffs made, 1 wrong commitment, 1 invented fact, 5.6 s median wait, $5.34 per 1,000 chats. The blind run before the fixes: 52.5%.
+**Headline (40 test chats, recommended agent):** 70% task success (55 to 82), 18 of 18 needed handoffs made, 1 wrong commitment, 1 invented fact, 5.6 s median wait, $5.34 per 1,000 chats. The blind run before the fixes: 52.5%. Fresh held-out set (31 new chats, one run after the fixes, D-33): 67.7%.
 
 ## Reminder before submission
 

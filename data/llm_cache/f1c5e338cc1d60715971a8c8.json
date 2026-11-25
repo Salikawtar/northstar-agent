@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Bonjour, je peux vous aider avec votre bail et votre rendez-vous. Je corrige mon collègue: je n'ai pas besoin de votre NIV, et le prix de rachat vient du bureau d'affaires, pas de moi. Quel est votre nom de famille, pour que je puisse vérifier votre dossier avec la plaque CVGJ 046?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3886,
+ "output_tokens": 414,
+ "cost_usd": 0.011912,
+ "latency_ms": 3882.0
+}

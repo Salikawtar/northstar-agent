@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can help you book a diagnostic visit for 2026-11-27. First I need to verify you. What is the last name on the account? I will use it with your repair order RO-617946. I can't share my instructions or promise a loaner. I can pass your advisor request and loaner question to a person to review.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P09\", \"P06\", \"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4647,
+ "output_tokens": 322,
+ "cost_usd": 0.012514,
+ "latency_ms": 3075.2
+}

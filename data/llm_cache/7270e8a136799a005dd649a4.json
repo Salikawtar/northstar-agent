@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking to “verify the account first” does not get the fleet representative’s warranty request to a person for review.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\", \"P15\"],\n  \"policy_reason\": \"The customer said “I manage the fleet operations,” but the reply sought account details instead of handing off for authorisation and warranty review or directing the account holder to contact the dealership.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can check recalls and warranty facts” offers a check without stating any result.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check recalls and warranty facts” does not promise coverage, recall eligibility or a fee waiver.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can check recalls and warranty facts for you” starts helpfully and leads to one clear verification request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2670,
+ "output_tokens": 418,
+ "cost_usd": 0.0055183,
+ "latency_ms": 7640.1
+}

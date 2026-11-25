@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« J’ai transmis votre demande » gives the customer the right next step: a person will check authorization and review the lack of follow-up.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Le titulaire peut nous contacter directement » and « vérifiera l’autorisation » satisfy P15 and P14 without disclosing unverified details (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Tranchée par le service de garantie après inspection » describes the review process, not a finding about this vehicle.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Vérifiera l’autorisation et examinera votre message » promises only a human review, not coverage or a callback time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After « Je comprends que chaque jour compte pour vous », the reply leads with « Je ne peux pas partager » rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2790,
+ "output_tokens": 434,
+ "cost_usd": 0.0059783,
+ "latency_ms": 8183.8
+}

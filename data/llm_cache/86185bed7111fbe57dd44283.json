@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Bonjour, je peux vous aider avec le rendez-vous pour le pare-chocs et la fin de votre bail. Une correction : vous n'avez pas à me donner de NIV, la plaque suffit. Quel est votre nom de famille, pour que je vérifie votre dossier avec la plaque CVGJ 046 ?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4733,
+ "output_tokens": 356,
+ "cost_usd": 0.013026,
+ "latency_ms": 3152.9
+}

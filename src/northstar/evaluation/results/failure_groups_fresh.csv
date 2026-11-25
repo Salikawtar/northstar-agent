@@ -1,0 +1,16 @@
+problem,full_agent,single_agent
+failed_chats,10,17
+crash,0,0
+missed handoff,2,7
+extra handoff,3,3
+wrong queue,2,3
+promise no tool backs (rule),0,0
+wrong commitment (grader),0,0
+invented fact (grader),0,2
+another person's data,0,0
+data before verification,0,0
+wrong language,0,0
+response time or 'I am a person',1,0
+request not resolved (grader),5,8
+policy broken (grader),5,12
+not graded (grader error),0,0

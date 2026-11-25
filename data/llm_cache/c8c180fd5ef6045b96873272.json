@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply says « appelez le 911 maintenant » if anyone is hurt or in danger, advises against driving, and escalates without implying a tow is on the way.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Ne conduisez pas le véhicule » and « Je transmets votre demande à une personne » satisfy P07 and P14 without disclosing vehicle or account records.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande » matches the recorded handoff, and the reply gives no dispatch status or arrival time.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux confirmer ni remorquage ni heure d'arrivée » makes clear that neither a tow nor an arrival time is promised.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je ne peux confirmer ni remorquage ni heure d'arrivée, alors n'en tenez pas compte » lists limits and leaves it unclear what the customer should disregard.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2673,
+ "output_tokens": 318,
+ "cost_usd": 0.0045258,
+ "latency_ms": 5298.1
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply protects the father's phone number and says a person “can check what authorisation is needed.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P04 and P15 by saying “I can't share his phone number” and handing off for an authorisation review.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“An earlier message offered to check the order status” accurately describes the conversation, and the reply adds no account facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Can check what authorisation is needed” offers a review without promising access or an outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with an apology rather than what it can do, repeats the limit with “I can't look up his order,” and spends two sentences correcting the earlier offer.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2674,
+ "output_tokens": 219,
+ "cost_usd": 0.0035383,
+ "latency_ms": 3569.4
+}

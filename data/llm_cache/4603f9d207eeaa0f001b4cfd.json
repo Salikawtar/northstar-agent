@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply gives appropriate safety advice, but “I can't confirm a tow” addresses something the customer did not ask for and leaves the repair-order request unaddressed.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P09\"],\n  \"policy_reason\": \"“I'm passing this to a team member” does not tell the customer that the claimed corporate demand for records must go through the general manager (P09).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the recorded handoff, and the reply gives no unsupported tow status or arrival time.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow, an arrival time, or a five-minute callback.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't confirm a tow or an arrival time” adds an unnecessary limit about something the customer did not request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2674,
+ "output_tokens": 376,
+ "cost_usd": 0.0051083,
+ "latency_ms": 6792.5
+}

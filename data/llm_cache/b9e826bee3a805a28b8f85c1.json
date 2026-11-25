@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Not the dealership” addresses the customer's correction, and “I'm happy to help” redirects to dealership services.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply stays within P01 by offering help with “a service appointment, a repair status, a recall check or an invoice.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Driver's licence renewals go through ServiceOntario” is a general direction, not a claim about a dealership record or a tool result.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I'm happy to help” offers assistance without promising a booking or any other outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“No bother at all, Katrina” is warm, but the reply does not lead with what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2663,
+ "output_tokens": 351,
+ "cost_usd": 0.0048308,
+ "latency_ms": 5800.6
+}

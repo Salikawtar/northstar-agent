@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"La réponse retient « Markham, pour votre Meridian Kestrel » et demande les renseignements nécessaires avant de vérifier le rappel.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"La réponse demande « votre nom de famille et votre plaque d’immatriculation (ou votre numéro de bon de réparation RO-######) », comme l’exige P02, et ne promet pas de véhicule de courtoisie (P06).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Markham, pour votre Meridian Kestrel » reprend la correction du client sans affirmer que le véhicule est visé par le rappel.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux pas confirmer de véhicule de courtoisie » ne promet ni véhicule ni réservation.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse énonce deux limites : « je ne peux pas utiliser le NIV » et « je ne peux pas confirmer de véhicule de courtoisie ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2666,
+ "output_tokens": 303,
+ "cost_usd": 0.0043583,
+ "latency_ms": 4838.4
+}

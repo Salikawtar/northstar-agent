@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply notes « Markham, et votre Meridian Kestrel » and asks for the details needed to verify the vehicle before checking the recall.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Asking for « votre nom de famille et de votre plaque d’immatriculation (ou de votre numéro d’ordre de réparation) » follows P02, and « Je ne peux pas confirmer de véhicule de courtoisie » follows P06.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Markham, et votre Meridian Kestrel » repeats what the customer said, and the reply gives no recall or availability status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux pas confirmer de véhicule de courtoisie » makes no promise of a loaner, and no booking is confirmed.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Merci, c’est noté » is a warm acknowledgment, and « Pouvez-vous me les donner? » is the reply’s only question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2654,
+ "output_tokens": 291,
+ "cost_usd": 0.0042083,
+ "latency_ms": 4641.9
+}

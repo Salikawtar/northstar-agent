@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply asks “Which of those can you give me?” instead of sending the disputed diagnostic fee to a person for review.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"“To check your coverage” starts a verification step but does not provide the required handoff for a billing dispute.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The warranty desk decides that after an inspection” describes a review process without stating a specific coverage outcome or record detail.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't confirm that any fee will be waived” corrects the earlier promise without making a new one.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry about the dead screen” and adds “Please don't share your VIN here” before saying what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2641,
+ "output_tokens": 394,
+ "cost_usd": 0.0052058,
+ "latency_ms": 6276.1
+}

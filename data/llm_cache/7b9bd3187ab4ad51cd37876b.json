@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I'm sorry about the trouble with your instrument cluster. I can't look up your account by phone number. I can check once you give me your last name and either your licence plate or your repair-order number. A parts advisor will also need to confirm the part's arrival date and price. I'm passing this to a person so they can review it. Which of those details can you give me?\", \"action\": \"escalated\", \"escalation_reason\": \"customer_request\", \"summary\": \"Customer is upset about a warranty decision on an instrument cluster that was declined as wear-and-tear. They say they paid a deposit and ordered an OEM replacement part, and they want its arrival date. They mentioned contacting CAMVAP. They gave only a phone number, so they are not verified. No account data was shared. A parts advisor needs to confirm the part order status and ETA. The customer may also want a documented review of the warranty decision.\", \"policy_rules_cited\": [\"P02\", \"P08\", \"P14\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4655,
+ "output_tokens": 309,
+ "cost_usd": 0.0124,
+ "latency_ms": 3213.7
+}

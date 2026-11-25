@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply says to “call 911” if anyone is hurt or in danger, says “don't drive the vehicle,” and hands off urgently without implying a tow is on the way.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please don't drive the vehicle” and “I'm passing this to a team member right now” satisfy P07 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm a tow or an arrival time” avoids stating an unverified dispatch status or ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow or an arrival time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Your safety comes first” is clear and appropriate, but the reply does not open with what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2663,
+ "output_tokens": 317,
+ "cost_usd": 0.0044908,
+ "latency_ms": 5484.5
+}
