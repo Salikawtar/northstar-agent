@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply explains that the car is listed as “owned, with no lease end date” and sends both the booking request and billing dispute for review.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply reports the conflicting records and says “A person will review both points,” as required by P12 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The “$688.79 CAD, taxes included” total and the “owned” status are supported by the tool results and the tax rule.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"The reply says “I have not booked the inspection yet” and commits only to a review, not to removing the charge.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"It leads with “I have not booked the inspection yet” rather than what it found or can do, then repeats the booking limit.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 3023,
+ "output_tokens": 375,
+ "cost_usd": 0.0059708,
+ "latency_ms": 6412.3
+}

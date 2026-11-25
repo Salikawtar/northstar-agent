@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Quel est votre nom de famille » demande une vérification au lieu de confirmer que la contestation sera examinée par une personne.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"« Je dois d'abord vous vérifier » n'informe pas le client qu'une personne examinera sa contestation.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« RO-833289 » reprend le numéro fourni par le client sans ajouter de fait sur la facture.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je dois d'abord vous vérifier » ne promet ni retrait des frais ni remboursement.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"Après « Merci », la réponse commence par « je dois d'abord vous vérifier » plutôt que par l'aide que l'assistant peut apporter.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2483,
+ "output_tokens": 287,
+ "cost_usd": 0.0038272,
+ "latency_ms": 4952.6
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing your message to a team member” sidesteps the same-visit question instead of asking for the details needed to verify the customer.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your message to a team member” makes the handoff clear under P14 without disclosing vehicle details or promising a response time.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your message to a team member” matches the recorded action, and the reply adds no vehicle or service facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” gives no callback time and promises no booking, price, or coverage.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I want to make sure you get the right help” is warm and brief, and the reply gives a clear next step without adding limits or questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2581,
+ "output_tokens": 382,
+ "cost_usd": 0.0049358,
+ "latency_ms": 6407.8
+}

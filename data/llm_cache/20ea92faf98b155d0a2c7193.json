@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for « votre nom de famille et votre plaque d’immatriculation » is the right next step, but « vous donner le numéro de la demande » leaves the customer expecting an unconfirmed number.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P08\"],\n  \"policy_reason\": \"The reply repeats the colleague’s unsupported promise with « vous donner le numéro de la demande » instead of offering a review without promising a number.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Le service de garantie décide après inspection » describes a review process, not a specific claim number, status or coverage decision.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"« Vous donner le numéro de la demande » promises a number that no tool or person has confirmed.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply opens with « Je peux », keeps the correction brief, and asks one verification question in French.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2694,
+ "output_tokens": 665,
+ "cost_usd": 0.0080483,
+ "latency_ms": 11003.8
+}

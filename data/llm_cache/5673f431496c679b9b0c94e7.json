@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je vous mets en contact avec une personne de notre équipe » annonce clairement la prise en charge sans promettre de numéro de réclamation.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Une personne de notre équipe […] vous répondra » annonce un suivi humain sans divulguer de dossier ni promettre de délai.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je vous mets en contact » décrit le transfert effectué sans ajouter de fait sur le dossier.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous répondra » annonce un suivi humain sans garantir de délai ni l’ouverture d’une réclamation.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Je suis l’assistant virtuel » plutôt que par l’aide offerte et ne rectifie pas la promesse précédente d’un numéro de dossier.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2635,
+ "output_tokens": 384,
+ "cost_usd": 0.0041092,
+ "latency_ms": 6653.2
+}

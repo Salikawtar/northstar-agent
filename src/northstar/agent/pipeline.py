@@ -43,14 +43,19 @@ FAST_PATH = {EscalationReason.SAFETY, EscalationReason.LEGAL_THREAT, EscalationR
 
 FIXED_REPLY: dict[str, dict[str, str]] = {
     "safety": {
+        # D-32: the second-last sentence was added after the test-set error analysis. In 5 of 40 test chats
+        # (and 4 of 30 validation chats) a colleague had already written "a tow is on the way" or an arrival
+        # time that nothing confirmed, and the fixed reply left the customer believing it (P08).
         "en": "Your safety comes first. If anyone is hurt or in danger, call 911 now. If you are on the road, "
               "stop in a safe place, turn on your hazard lights and stay away from traffic. "
               "Please don't drive the vehicle until it has been checked. "
-              "I'm passing this to a team member right now, and they will contact you.",
+              "I can't confirm a tow or an arrival time from here, so please don't count on one yet. "
+              "I'm passing this to a team member right now, and they will arrange help with you.",
         "fr": "Votre sécurité passe en premier. Si quelqu'un est blessé ou en danger, appelez le 911 maintenant. "
               "Si vous êtes sur la route, arrêtez-vous en lieu sûr, allumez vos feux de détresse et restez loin "
               "de la circulation. Ne conduisez pas le véhicule tant qu'il n'a pas été vérifié. "
-              "Je transmets votre demande à une personne de notre équipe, qui vous contactera."},
+              "De mon côté, je ne peux confirmer ni remorquage ni heure d'arrivée, alors n'en tenez pas compte pour l'instant. "
+              "Je transmets votre demande à une personne de notre équipe, qui organisera l'aide avec vous."},
     "legal_threat": {
         "en": "I understand this is serious. I'm passing your message to the service manager, "
               "who will review your file and contact you directly.",
@@ -67,8 +72,12 @@ FIXED_REPLY: dict[str, dict[str, str]] = {
         "fr": "Je suis l'assistant virtuel de la concession. Je vous mets en contact avec une personne "
               "de notre équipe, qui vous répondra."},
     "adversarial": {
-        "en": "I can't help with that request here. A team member will review it.",
-        "fr": "Je ne peux pas traiter cette demande ici. Une personne de notre équipe va l'examiner."},
+        # D-32: names the general manager, as rule P09 asks for claimed authority (2 of 40 test chats).
+        "en": "I can't help with that request here. Requests made on behalf of the manufacturer, head office "
+              "or any other authority go through our general manager. A team member will review this chat.",
+        "fr": "Je ne peux pas traiter cette demande ici. Les demandes faites au nom du fabricant, du siège social "
+              "ou d'une autre autorité passent par notre directeur général. Une personne de notre équipe va examiner "
+              "cette conversation."},
     "tool_failure": {
         "en": "Sorry, I can't complete this right now. An advisor will get back to you.",
         "fr": "Désolé, je n'arrive pas à traiter votre demande en ce moment. Un conseiller va vous répondre."},
@@ -83,6 +92,25 @@ FIXED_REPLY: dict[str, dict[str, str]] = {
         "fr": "Je peux vous aider pour les rendez-vous d'entretien, l'état des réparations, les pièces, "
               "l'assistance routière, la garantie et les rappels, les factures et les retours de location. "
               "Pour toute autre question, veuillez contacter directement la succursale."},
+}
+
+
+# The two fixed replies as they were before the test-set error analysis (D-32). Only used by the
+# evaluation setup full_agent_before_fixes, so the effect of the fix is measured one change at a time.
+FIXED_REPLY_BEFORE_D32: dict[str, dict[str, str]] = {
+    **FIXED_REPLY,
+    "safety": {
+        "en": "Your safety comes first. If anyone is hurt or in danger, call 911 now. If you are on the road, "
+              "stop in a safe place, turn on your hazard lights and stay away from traffic. "
+              "Please don't drive the vehicle until it has been checked. "
+              "I'm passing this to a team member right now, and they will contact you.",
+        "fr": "Votre sécurité passe en premier. Si quelqu'un est blessé ou en danger, appelez le 911 maintenant. "
+              "Si vous êtes sur la route, arrêtez-vous en lieu sûr, allumez vos feux de détresse et restez loin "
+              "de la circulation. Ne conduisez pas le véhicule tant qu'il n'a pas été vérifié. "
+              "Je transmets votre demande à une personne de notre équipe, qui vous contactera."},
+    "adversarial": {
+        "en": "I can't help with that request here. A team member will review it.",
+        "fr": "Je ne peux pas traiter cette demande ici. Une personne de notre équipe va l'examiner."},
 }
 
 
@@ -110,10 +138,12 @@ class Pipeline:
         self.specialists = specialists or {}
         self.floor = settings()["agent"].get("router_confidence_floor", 0.55)
         self.guarded = settings().get("guardrails", {}).get("enabled", True)
+        self.reply_fixes = settings()["agent"].get("reply_fixes", True)    # D-32
 
     def _specialist(self, name: str) -> Specialist:
         if name not in self.specialists:
             self.specialists[name] = Specialist(name, client=self.client)
+            self.specialists[name].reply_fixes = self.reply_fixes
         return self.specialists[name]
 
     def handle(self, conversation_id: str, turns: list[tuple[str, str]],
@@ -155,7 +185,7 @@ class Pipeline:
             res = self._specialist(desk).run(conversation_id, turns, route, dms or DealerSystem())
             reply, cost = res.reply, cost + res.cost_usd
             if self.guarded:     # output check: nothing reaches the customer unchecked
-                out = check_output(reply, turns, res.tool_data)
+                out = check_output(reply, turns, res.tool_data, ignore_format_examples=self.reply_fixes)
                 reply, flags = out.reply, flags + out.flags
             # Recorded model times, so a replayed run reports the latency a customer would see.
             return PipelineResult(route, reply, desk, round(rr.latency_ms + res.latency_ms, 1),
@@ -166,7 +196,8 @@ class Pipeline:
 
     def _fixed(self, cid: str, turns: list[tuple[str, str]], route: RouterOutput, escalate: bool) -> AgentReply:
         key = route.escalation_reason.value if escalate else "out_of_scope"
-        if key not in FIXED_REPLY:
+        table = FIXED_REPLY if self.reply_fixes else FIXED_REPLY_BEFORE_D32
+        if key not in table:
             key = "customer_request"
         lang = "fr" if route.language == Language.FR else "en"
         handoff = None
@@ -175,7 +206,7 @@ class Pipeline:
             summary = (f"Sent straight to a person by the router (reason: {route.escalation_reason.value}, "
                        f"request: {route.request_type.value}). Last customer message: {last[:400]}")
             handoff = build_handoff(route.escalation_reason, route.request_type, summary)
-        return AgentReply(conversation_id=cid, text=FIXED_REPLY[key][lang], language=route.language,
+        return AgentReply(conversation_id=cid, text=table[key][lang], language=route.language,
                           request_type=route.request_type,
                           action=AgentAction.ESCALATED if escalate else AgentAction.ANSWERED,
                           handoff=handoff)

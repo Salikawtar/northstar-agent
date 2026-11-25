@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person will review both points” is the right next step because the invoice and ownership records conflict with the customer’s account.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Our records also show your car as owned” identifies the discrepancy for human review under P12, and “the service manager will look at the dispute” follows P06 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The total is $688.79 CAD, taxes included” matches the invoice tool and the dealership’s stated tax rules.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I have not booked the inspection yet” leaves the booking unconfirmed, and “the service manager will look at the dispute” promises only a review.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with “I have not booked the inspection yet” rather than what it can do, then repeats the limit with “I can’t book a lease-return inspection.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2987,
+ "output_tokens": 339,
+ "cost_usd": 0.0056072,
+ "latency_ms": 6173.2
+}

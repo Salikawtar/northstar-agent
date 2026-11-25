@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Pour consulter la facture » redirects a billing dispute to verification without telling the customer that a person will review the charge.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"« Quel est votre nom de famille » asks for verification but does not tell the customer that a person will review the dispute.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« RO-833289 » comes from the customer, and the reply states no new invoice facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je dois d’abord vous vérifier » does not promise an adjustment or any other outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After « Merci », the reply leads with « je dois d’abord vous vérifier » rather than what the assistant can do about the dispute.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2519,
+ "output_tokens": 307,
+ "cost_usd": 0.0040308,
+ "latency_ms": 5406.6
+}

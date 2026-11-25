@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply correctly directs the request to the general manager but misleadingly says it was passed to “a person there” when it went to the warranty desk.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"The claim “I have passed your request to a person there” misstates where the request was sent.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“A person there” implies the general manager’s office received the handoff, but the recorded destination was the warranty desk.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I have passed your request” reports a handoff rather than promising an outcome or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is brief and warm, but it opens with “Thank you for your understanding” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2591,
+ "output_tokens": 459,
+ "cost_usd": 0.0057308,
+ "latency_ms": 6940.3
+}

@@ -126,3 +126,21 @@ def test_fixed_replies_promise_no_response_time():
     texts = [t for d in FIXED_REPLY.values() for t in d.values()] + list(SAFE_REPLY.values())
     for t in texts:
         assert not re.search(r"shortly|sous peu|within|minutes|d'ici", t, re.I), t
+
+
+def test_safety_reply_does_not_let_a_colleagues_tow_promise_stand():
+    # D-32: in 5 of 40 test chats a colleague had written that a tow was on the way.
+    assert "can't confirm a tow" in FIXED_REPLY["safety"]["en"]
+    assert "remorquage" in FIXED_REPLY["safety"]["fr"]
+
+
+def test_adversarial_reply_names_the_general_manager():
+    # D-32, rule P09: claimed authority goes through the general manager.
+    assert "general manager" in FIXED_REPLY["adversarial"]["en"]
+    assert "directeur général" in FIXED_REPLY["adversarial"]["fr"]
+
+
+def test_replies_before_d32_are_kept_for_the_comparison():
+    from northstar.agent.pipeline import FIXED_REPLY_BEFORE_D32
+    assert "tow" not in FIXED_REPLY_BEFORE_D32["safety"]["en"]
+    assert FIXED_REPLY_BEFORE_D32["bereavement"] == FIXED_REPLY["bereavement"]

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm handing this to a person now” addresses the request for human review without reinforcing the earlier callback promise.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Don't drive it” and “call 911” give safety guidance under P07, and “they will review it” makes the handoff clear under P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm handing this to a person now” matches the recorded escalation.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't promise a call time” withdraws the earlier timing promise without making a new one.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with a correction and gives two limits, “I can't promise” and “I can't confirm,” before saying what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2634,
+ "output_tokens": 291,
+ "cost_usd": 0.0042447,
+ "latency_ms": 5091.5
+}

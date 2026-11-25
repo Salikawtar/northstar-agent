@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the last name is the right next step for the 56k service, and “nothing has been booked yet” corrects the earlier impression.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for the “last name to verify your account” (P02) without confirming a booking or an unverified parts status (P08, P10).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Nothing has been booked yet” matches the actions taken, and the reply gives no unverified slot or roof rack status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A parts advisor can confirm that” offers a check without promising a booking or installation.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The opening is helpful, but “I can’t confirm that the roof rack has arrived or add its installation” lists multiple limits.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2646,
+ "output_tokens": 363,
+ "cost_usd": 0.0049083,
+ "latency_ms": 6303.5
+}

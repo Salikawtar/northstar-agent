@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking “What is your last name?” is the right verification step before sharing the inspection report.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks “What is your last name?” to verify the customer and does not disclose any account information (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The “$277 charge” repeats the amount the customer reported.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can pass your $277 charge to the service manager for review” offers a review without promising an outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm and asks one question, but opens with “I'm sorry this is stressful” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2601,
+ "output_tokens": 432,
+ "cost_usd": 0.0054858,
+ "latency_ms": 7624.6
+}

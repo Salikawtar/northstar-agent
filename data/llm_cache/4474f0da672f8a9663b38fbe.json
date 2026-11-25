@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"For the out-of-scope request, the reply says “I can help with service bookings” and directs the customer to the branch.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please contact the branch directly” stays within P01 without repeating the earlier offer to send the spec sheet.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can help with service bookings” describes the assistant’s scope without adding any case facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” does not promise to send the spec sheet or take any other action.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“For anything else” is too generic to clarify what happened to the earlier offer to send the spec sheet.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2541,
+ "output_tokens": 293,
+ "cost_usd": 0.0039458,
+ "latency_ms": 5305.1
+}

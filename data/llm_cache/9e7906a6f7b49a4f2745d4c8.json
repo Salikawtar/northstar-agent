@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"It directs valuation, buyout and sale questions to the “business office” and leaves account authorization to a person.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The “business office” referral respects P01, and “He can contact us directly” plus the authorization handoff follows P15.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The “business office” referral is an allowed process fact, and the reply adds no unsupported account or vehicle details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person, who can check what authorisation is in place” describes a review without promising an outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After “Thank you, Brooke,” the reply leads with “I can't share or check” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2653,
+ "output_tokens": 302,
+ "cost_usd": 0.0043158,
+ "latency_ms": 4784.1
+}

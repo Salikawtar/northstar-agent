@@ -4,6 +4,7 @@
     python run_all.py datagen    # replay the data-generation run and compare it with the dataset
     python run_all.py dms        # just rebuild the mock dealer system
     python run_all.py results    # reproduce every key result from the recordings (no key, no cost)
+    python run_all.py evaluate   # final evaluation on the 40 test chats: 8 setups, graded, tables (Phase 4)
     python run_all.py finetune   # three-router comparison on the test chats (Phase 5)
     python run_all.py record     # after a prompt or tool change: make the missing model calls (needs a key)
     python run_all.py test       # run the test suite
@@ -82,6 +83,21 @@ def _run(commands, keep_key: bool):
         subprocess.check_call([sys.executable, *args], cwd=ROOT, env=env)
 
 
+# Phase 4: every setup on the 40 test chats, graded by rules and the model grader, plus the development
+# run on validation and the grader's self-consistency check (src/northstar/evaluation/).
+EVALUATION_COMMANDS = [
+    ["-m", "northstar.evaluation", "--split", "validation", "--setups", "full_agent", "full_agent_before_fixes"],
+    ["-m", "northstar.evaluation"],
+    ["-m", "northstar.evaluation", "consistency"],
+    ["-m", "northstar.evaluation", "check"],          # grader vs the team's hand labels (waits for the sheet)
+]
+
+
+def stage_evaluate():
+    """Final evaluation, replayed from the recordings (no key, no cost). Tables: src/northstar/evaluation/results/."""
+    _run(EVALUATION_COMMANDS, keep_key=False)
+
+
 def stage_record():
     """Make the model calls that are not recorded yet (needs OPENROUTER_API_KEY; recorded calls stay free).
     Run once after a prompt or tool change; then `results` reproduces everything at no cost."""
@@ -93,7 +109,7 @@ def stage_record():
         pass
     if not os.environ.get("OPENROUTER_API_KEY"):
         sys.exit("record needs OPENROUTER_API_KEY in .env or in the environment (see .env.example).")
-    _run(RESULT_COMMANDS + COMPARISON_COMMANDS + FINETUNE_BASELINE_COMMANDS, keep_key=True)
+    _run(RESULT_COMMANDS + COMPARISON_COMMANDS + FINETUNE_BASELINE_COMMANDS + EVALUATION_COMMANDS, keep_key=True)
 
 
 def stage_finetune():
@@ -124,7 +140,7 @@ STAGES = {
     "datagen": stage_datagen,
     "dms": stage_dms,
     "results": stage_results,      # agent (Phase 2) and guardrails (Phase 3), replayed
-    # "evaluate":  Phase 4
+    "evaluate": stage_evaluate,    # Phase 4: final evaluation on the test chats, replayed
     "finetune": stage_finetune,    # Phase 5: fine-tuned vs small vs large prompted router
     # "economics": Phase 6
     "test": stage_test,

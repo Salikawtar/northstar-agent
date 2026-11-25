@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I've passed your request to a person” addresses the billing dispute and corrects the earlier warranty answer without changing the invoice.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Warranty decisions are made by the warranty desk” leaves coverage to the proper reviewer without disclosing unverified account details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-287266” came from the customer, and “billing disputes are reviewed by the service manager” is an allowed process fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will review the bill” promises only a review, not coverage or a billing adjustment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is empathetic but stacks three limits: “I can't say,” “I can't give,” and “I also can't send.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2705,
+ "output_tokens": 315,
+ "cost_usd": 0.0034262,
+ "latency_ms": 5335.2
+}

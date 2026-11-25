@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for « votre plaque d’immatriculation ou le numéro de bon de réparation » to check warranty facts and directs resale questions to « le bureau des affaires ».\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P02 by asking for « votre plaque d’immatriculation ou le numéro de bon de réparation » before sharing warranty facts.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je vérifie les faits de garantie » describes a next step without asserting any warranty coverage.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne en prendra connaissance » is a review statement, and « Je ne peux pas promettre de délai de rappel » sets no callback time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with « La date d’achat seule ne suffit pas » rather than what it can do and adds another limit with « Je ne peux pas promettre de délai de rappel ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2645,
+ "output_tokens": 457,
+ "cost_usd": 0.0059322,
+ "latency_ms": 7668.4
+}

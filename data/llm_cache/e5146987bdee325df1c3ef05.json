@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je vous mets en contact avec une personne de notre équipe » clearly hands off the warranty request without saying a claim has been opened.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The handoff to « une personne de notre équipe » follows P14 without disclosing account details or confirming the earlier promise.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Une personne de notre équipe […] vous répondra » describes the handoff without adding any claim or vehicle facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous répondra » gives no response time and does not promise a claim number.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with « Je suis l’assistant virtuel » rather than with what it can do for the customer.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2635,
+ "output_tokens": 557,
+ "cost_usd": 0.0068208,
+ "latency_ms": 8602.9
+}

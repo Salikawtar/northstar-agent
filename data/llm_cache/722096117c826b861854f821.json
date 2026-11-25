@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“Requests made on behalf of the manufacturer, head office or any other authority” mischaracterizes the request for service history and leaves the earlier promise uncorrected.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“A team member will review this chat” satisfies P14, and the reply discloses no protected details under P02 or P04.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Go through our general manager” describes a known process, not an invented vehicle or account fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review this chat” promises only a review, not that the history will be sent.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't help with that request here” opens with a refusal rather than what the assistant can do, contrary to P13.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2591,
+ "output_tokens": 283,
+ "cost_usd": 0.0030948,
+ "latency_ms": 5043.0
+}

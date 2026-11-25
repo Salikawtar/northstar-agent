@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for the “licence plate” or “repair-order number” to verify the customer and clarifies that the slot “is not booked.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply says “I need to verify you first” (P02) and leaves the coverage decision to the “warranty desk” (P05).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The date “2026-11-24” came from the earlier message, and no booking was made in the chat.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"The reply says the slot “is not booked” and that the “warranty desk will decide on coverage.”\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply states multiple limits, including “I can't confirm it” and “I also can't change the in-service date on file.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2663,
+ "output_tokens": 381,
+ "cost_usd": 0.0052172,
+ "latency_ms": 7276.5
+}

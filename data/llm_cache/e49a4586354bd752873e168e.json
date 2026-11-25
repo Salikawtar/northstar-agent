@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for the “last name” needed to verify the account and clarifies that “I haven't booked anything yet.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for the “last name” before sharing account details and says not to treat “the 7:30 tomorrow as confirmed.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“7:30 tomorrow” refers to the earlier offer without asserting that the slot is available or booked.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I haven't booked anything yet” withdraws the booking implication, and the reply promises only a parts check, not an installation.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply stacks limits by saying “don't treat the 7:30 tomorrow as confirmed” and then “I also can't confirm” the part's arrival or add the installation.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2630,
+ "output_tokens": 387,
+ "cost_usd": 0.0051947,
+ "latency_ms": 7355.3
+}

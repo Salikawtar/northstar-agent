@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for « votre nom de famille et votre plaque d’immatriculation » to verify the vehicle without telling the customer it is safe to drive.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P02 by asking for « votre nom de famille et votre plaque d’immatriculation » before sharing vehicle-specific recall information.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Si votre auto est visée par un rappel » leaves the vehicle’s recall status open.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je vais vérifier » offers to check and does not promise a result or a response time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Je comprends » opens warmly in French, and the reply states one limit and asks one verification question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2597,
+ "output_tokens": 435,
+ "cost_usd": 0.0055922,
+ "latency_ms": 7849.1
+}

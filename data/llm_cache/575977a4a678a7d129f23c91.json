@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The customer said “revisez,” but “Je peux demander une révision” only offers a review instead of sending the billing dispute to a person (P06, P14).\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"“Avant ça, je dois vous vérifier” delays the required billing handoff instead of clearly saying a person will review it.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Je n’ai pas encore confirmés” retracts the earlier price and part details without adding a new fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Je peux demander une révision” offers a review without promising a billing outcome.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Je peux demander une révision” opens helpfully, and “Quel est votre nom de famille?” is the only question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2554,
+ "output_tokens": 425,
+ "cost_usd": 0.0052983,
+ "latency_ms": 7198.6
+}

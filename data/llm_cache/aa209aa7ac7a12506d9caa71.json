@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing this to a member of our team” tells the customer that a person will help with the next steps.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing this to a member of our team” satisfies P14’s bereavement handoff requirement without promising a callback time.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a member of our team” matches the recorded handoff and adds no unsupported case details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will contact you” gives no callback time and promises no specific outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm very sorry for your loss” is warm, but the reply opens with condolences rather than what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2521,
+ "output_tokens": 341,
+ "cost_usd": 0.0036678,
+ "latency_ms": 5972.5
+}

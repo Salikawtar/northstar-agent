@@ -1,0 +1,19 @@
+passes,question,n,agreement,kappa
+0 vs 1,resolved_correctly,40,0.95,0.827
+0 vs 1,policy_followed,40,0.975,0.844
+0 vs 1,escalation_correct,40,1.0,1.0
+0 vs 1,invented_facts,40,1.0,1.0
+0 vs 1,wrong_commitment,40,1.0,1.0
+0 vs 1,all five good,40,0.975,0.942
+0 vs 2,resolved_correctly,40,0.975,0.908
+0 vs 2,policy_followed,40,0.925,0.531
+0 vs 2,escalation_correct,40,1.0,1.0
+0 vs 2,invented_facts,40,0.975,0.655
+0 vs 2,wrong_commitment,40,1.0,1.0
+0 vs 2,all five good,40,0.975,0.942
+1 vs 2,resolved_correctly,40,0.925,0.725
+1 vs 2,policy_followed,40,0.95,0.722
+1 vs 2,escalation_correct,40,1.0,1.0
+1 vs 2,invented_facts,40,0.975,0.655
+1 vs 2,wrong_commitment,40,1.0,1.0
+1 vs 2,all five good,40,1.0,1.0

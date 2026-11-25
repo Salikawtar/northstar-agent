@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The handoff was appropriate, but the reply disclosed “waiting for parts” before the fleet representative’s authorization was checked.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P15\"],\n  \"policy_reason\": \"P15 bars sharing “waiting for parts” with someone acting for the fleet account holder before a person checks authorization.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Waiting for parts” came from the repair-order tool, which did not identify the part or give an ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I've noted that you want a text” acknowledges the preference without promising a text or a delivery date.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I need to correct my colleague's earlier message” and repeats “I can't confirm” instead of giving one brief correction.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2811,
+ "output_tokens": 437,
+ "cost_usd": 0.0061472,
+ "latency_ms": 8270.9
+}

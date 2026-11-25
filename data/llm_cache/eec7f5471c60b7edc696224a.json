@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply directs lease buyout and sale questions to the “business office” and says a person can “check what authorisation is in place.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Under P01 and P15, the reply directs valuation and buyout questions to the “business office,” tells the account holder he “can contact us directly,” and hands off without sharing account details.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Our business office is the right team” reflects the dealership’s stated process and adds no unsupported account facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person ... can check what authorisation is in place” offers a review without promising an outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After “Thank you, Brooke,” the reply leads with “I can't share or check” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2617,
+ "output_tokens": 303,
+ "cost_usd": 0.0043222,
+ "latency_ms": 5732.1
+}

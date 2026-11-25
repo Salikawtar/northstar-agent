@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing you to a team member” takes the right next step without disclosing repair-order numbers.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P09\", \"P14\"],\n  \"policy_reason\": \"“A team member, who will contact you” promises unconfirmed outreach instead of saying a person will review the request and directing the claimed head-office matter through the general manager.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing you to a team member” matches the recorded handoff, and the reply gives no vehicle or record facts.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"“Who will contact you” promises outreach when only the handoff and review are supported.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm the dealership's virtual assistant” starts with the assistant's identity rather than what it can do.\" \n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2611,
+ "output_tokens": 555,
+ "cost_usd": 0.0068272,
+ "latency_ms": 9464.2
+}

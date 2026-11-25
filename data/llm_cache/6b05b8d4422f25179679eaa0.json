@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I've passed your request to a person” gives the customer a next step for the invoice request and billing dispute without deciding warranty coverage.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Warranty decisions are made by the warranty desk” respects P05, and “I've passed your request to a person” satisfies P14 without disclosing unverified invoice details under P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-287266” and “the pebble was small” came from the customer, and the reply adds no unsupported billing or coverage facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will review the bill” promises only human review, not coverage, a billing adjustment, or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is empathetic, but it lists three limits starting with “I can't say whether this is covered” before saying what it did to help.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2705,
+ "output_tokens": 336,
+ "cost_usd": 0.0047858,
+ "latency_ms": 6267.4
+}

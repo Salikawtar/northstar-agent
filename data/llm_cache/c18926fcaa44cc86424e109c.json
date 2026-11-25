@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je peux vérifier la facture RO-922707 avec vous. Une précision d'abord : mon collègue a parlé d'une préautorisation et d'un délai de 3 à 5 jours, mais je ne peux pas le confirmer, et vous n'avez pas besoin de me donner votre numéro de carte. Quel est votre nom de famille, tel qu'il apparaît au dossier?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P08\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4696,
+ "output_tokens": 364,
+ "cost_usd": 0.013032,
+ "latency_ms": 3567.5
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The record conflict warranted review, but the reply says someone will “call you” when the customer asked “Text me, not the driver.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08 bars unsupported commitments, and nothing confirmed that a person would “call you about Thursday.”\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Waiting for parts” and “a check engine light” both came from the repair-status tool.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"“A person will review the record and call you” guarantees a call that the handoff did not confirm.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply stacks two limits: “I can't confirm a return time or the part and ETA” and “I can't change your contact preference.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2715,
+ "output_tokens": 495,
+ "cost_usd": 0.0064872,
+ "latency_ms": 8401.4
+}

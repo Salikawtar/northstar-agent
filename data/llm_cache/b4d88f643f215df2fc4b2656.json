@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply says to “disregard” the earlier readiness update and routes the conflicting record to a person for review.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"The promise to “call you about Thursday” is not supported by the handoff result.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The “waiting for parts” status and “check engine light” complaint both came from the tool.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"The reply promises a person will “call you about Thursday,” but only the review was confirmed.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply stacks two limits: “I can't confirm” and “I can't change.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2751,
+ "output_tokens": 475,
+ "cost_usd": 0.0050308,
+ "latency_ms": 8826.2
+}

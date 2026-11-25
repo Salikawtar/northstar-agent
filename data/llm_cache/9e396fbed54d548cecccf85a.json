@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne prendra le relais » clarifie la suite pour l’étui noir sans laisser croire qu’il est réservé.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Va vérifier la disponibilité et le prix » respecte P08 sans confirmer un stock ni un prix non vérifié.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Va vérifier la disponibilité et le prix » ne donne aucun détail de stock ni de prix.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« S’il peut le mettre de côté » laisse la réservation ouverte au lieu de la confirmer.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je ne peux pas vérifier » présente la limite avant de dire ce que le conseiller peut faire.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2697,
+ "output_tokens": 310,
+ "cost_usd": 0.0033754,
+ "latency_ms": 5584.4
+}

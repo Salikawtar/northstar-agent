@@ -40,6 +40,8 @@ class GraderVerdict(BaseModel):
     invented_reason: str = ""
     wrong_commitment: bool
     commitment_reason: str = ""
+    tone_ok: bool = True               # reply quality only (P13 tone advice); not part of success
+    tone_reason: str = ""
 
 
 def _labels(row: pd.Series) -> str:
@@ -81,14 +83,16 @@ class ModelGrader:
         self.system = load_prompt(cfg["prompt"]).replace(
             "{policy}", load_prompt(settings()["agent"]["shared_rules"]))
 
-    def grade(self, row: pd.Series, run: Run) -> tuple[Optional[GraderVerdict], float, str]:
-        """Returns (verdict, cost, error). A crashed run has nothing to grade."""
+    def grade(self, row: pd.Series, run: Run, repeat: int = 0) -> tuple[Optional[GraderVerdict], float, str]:
+        """Returns (verdict, cost, error). A crashed run has nothing to grade.
+        repeat > 0 asks the same question again as a separate recording (grader self-consistency)."""
         if run.record.reply is None:
             return None, 0.0, "no reply to grade (run crashed)"
         try:
             v, resp = self.client.chat_json(self.model, [{"role": "system", "content": self.system},
                                                          {"role": "user", "content": case_text(row, run)}],
-                                            GraderVerdict, reasoning_effort=self.effort, max_tokens=self.max_tokens)
+                                            GraderVerdict, reasoning_effort=self.effort, max_tokens=self.max_tokens,
+                                            cache_tag=f"repeat-{repeat}" if repeat else None)
             return v, resp.cost_usd, ""
         except CacheMiss:
             raise

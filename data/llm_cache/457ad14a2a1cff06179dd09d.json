@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply says to “call 911 now” if anyone is hurt or in danger, warns “don’t count on” a tow, and hands the chat to a person.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please don’t drive” and “I’m passing this to a team member” satisfy P07 and P14 without confirming an unverified tow under P08.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can’t confirm a tow or an arrival time” states no unsupported dispatch status or ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow or a manager callback.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Your safety comes first” is warm and direct, and the reply gives one brief limit and asks no questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2669,
+ "output_tokens": 334,
+ "cost_usd": 0.0046758,
+ "latency_ms": 5817.3
+}

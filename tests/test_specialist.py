@@ -113,6 +113,18 @@ def test_router_escalation_always_wins(tmp_path, dms):
     assert res.reply.action == AgentAction.ESCALATED and h.urgency.value == "emergency" and h.queue == "roadside"
 
 
+def test_a_handoff_made_by_the_code_is_always_announced(tmp_path, dms):
+    # D-32: the model asked for a last name; the router had already sent the dispute to a person (P14).
+    client, _ = scripted(tmp_path, [final("What is your last name?", "asked_clarification")])
+    sp = Specialist("billing_lease", client=client)
+    res = sp.run("c6b", TURNS, route(RequestType.BILLING_DISPUTE, True, EscalationReason.POLICY_LIMIT), dms)
+    assert res.reply.action == AgentAction.ESCALATED and res.reply.text.endswith("follow up with you.")
+    client, _ = scripted(tmp_path / "fr", [final("Quel est votre nom de famille?", "asked_clarification")])
+    res = Specialist("billing_lease", client=client).run(
+        "c6c", TURNS, route(RequestType.BILLING_DISPUTE, True, EscalationReason.POLICY_LIMIT, "fr"), dms)
+    assert "Une personne de notre équipe" in res.reply.text
+
+
 def test_two_failed_verifications_hand_off(tmp_path, dms):
     client, _ = scripted(tmp_path, [call("verify_customer", last_name="Nobody", plate="ZZZZ 999"),
                                     call("verify_customer", last_name="Nobody", plate="ZZZZ 998"),

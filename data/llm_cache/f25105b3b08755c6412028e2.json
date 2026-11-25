@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can book you in at Markham for 2026-11-26, but I need to verify you first. What is your last name and licence plate? (Please don't send your VIN here.) One correction: I can't confirm that the repair will be same-day or that it's covered. The warranty desk decides that after an inspection. I also can't promise a loaner. I can ask a person to review that request with you.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P05\",\"P06\",\"P10\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4539,
+ "output_tokens": 387,
+ "cost_usd": 0.012948,
+ "latency_ms": 3725.5
+}

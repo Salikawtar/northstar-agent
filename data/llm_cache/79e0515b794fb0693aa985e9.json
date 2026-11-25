@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je peux transmettre votre demande de révision à une personne. Avant ça, je dois vous vérifier. Mon message précédent a donné des détails avant cette étape, et je ne peux pas les confirmer pour l'instant. Quel est votre nom de famille?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3719,
+ "output_tokens": 473,
+ "cost_usd": 0.012168,
+ "latency_ms": 4847.0
+}

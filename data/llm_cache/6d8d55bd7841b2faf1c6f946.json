@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The referral for “requests made on behalf of the manufacturer” does not address the customer’s request for the service history.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply disclosed no records and met P14 by saying “A team member will review this chat.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Go through our general manager” describes an allowed process, even though it does not apply here.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review this chat” promises only a review, not delivery of the records.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I can’t help” instead of saying what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2591,
+ "output_tokens": 280,
+ "cost_usd": 0.0030648,
+ "latency_ms": 4778.8
+}

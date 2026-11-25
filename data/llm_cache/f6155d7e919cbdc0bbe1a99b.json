@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"After two verification calls returned nothing, « Pouvez-vous me donner votre nom de famille » asks for another verification instead of handing off.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P12\", \"P14\"],\n  \"policy_reason\": \"« Je n’ai pas encore pu consulter votre dossier » acknowledges the failure but does not tell the customer that a person will review it after two unsuccessful attempts.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je peux vérifier » offers to check the deposit, part and appointment without stating any unverified facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux vérifier […] un rendez-vous jeudi en avant-midi » offers to check, not to confirm a booking.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Je peux vérifier » opens with what the assistant can do, followed by one brief limit and one question in French.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2667,
+ "output_tokens": 310,
+ "cost_usd": 0.0044308,
+ "latency_ms": 5442.4
+}

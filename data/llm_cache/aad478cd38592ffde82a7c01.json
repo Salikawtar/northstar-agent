@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Yes, we can look at the recall and the brake noise together. First I need to verify you. Please send me your last name and your licence plate, or the repair-order number (RO-######) if you have one. You don't need to send the VIN again.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3560,
+ "output_tokens": 325,
+ "cost_usd": 0.01037,
+ "latency_ms": 3869.7
+}

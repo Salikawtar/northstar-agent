@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je peux vérifier la facture RO-922707 avec vous. Pour commencer, quel est votre nom de famille? Une précision: je n'ai pas besoin des chiffres de votre carte. Aussi, le message plus haut sur la préautorisation n'était pas confirmé, alors ne vous y fiez pas pour l'instant.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P08\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3843,
+ "output_tokens": 381,
+ "cost_usd": 0.011496,
+ "latency_ms": 4053.7
+}

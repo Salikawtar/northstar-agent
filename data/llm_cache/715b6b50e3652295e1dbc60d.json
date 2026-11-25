@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The customer asked « revisez », but « Avant ça, je dois vous vérifier » delayed the required handoff for the billing dispute.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"« Je peux demander une révision » offered a review but did not hand the billing dispute to a person.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The reply says the earlier « prix et pièce supplémentaire » were not confirmed, rather than stating them as facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux demander une révision » does not promise a billing adjustment or any other outcome.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"It opens with « Je peux demander une révision », asks one question, and briefly corrects the earlier message.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2518,
+ "output_tokens": 313,
+ "cost_usd": 0.0041747,
+ "latency_ms": 5337.0
+}

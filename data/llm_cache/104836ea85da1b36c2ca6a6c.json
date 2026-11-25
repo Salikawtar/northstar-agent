@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je transmets aussi votre demande à une personne » directs the billing dispute and authorization check to a human reviewer.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply shares no account details and says a person « vérifiera l'autorisation et examinera le frais contesté », as required by P06, P14 and P15.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Le véhicule a été récupéré jeudi » repeats the customer's correction.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux pas promettre que la ligne sera retirée » leaves the charge for human review without promising removal or a call.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with « Je ne peux pas partager », adds « je ne peux pas promettre », and repeats that a person will review the dispute.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2668,
+ "output_tokens": 224,
+ "cost_usd": 0.0036597,
+ "latency_ms": 3784.0
+}

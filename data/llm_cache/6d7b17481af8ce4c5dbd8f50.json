@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"It gives immediate safety advice, escalates urgently, and corrects the earlier tow assurance with “please don't count on one yet.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Call 911 now,” “don't drive the vehicle,” and “I'm passing this to a team member right now” satisfy P07 and P14 without confirming dispatch.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm a tow or an arrival time” avoids asserting an unverified dispatch status or ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow or an arrival time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Your safety comes first” leads into clear, practical steps, with one brief limit and no questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2603,
+ "output_tokens": 383,
+ "cost_usd": 0.004096,
+ "latency_ms": 6214.0
+}

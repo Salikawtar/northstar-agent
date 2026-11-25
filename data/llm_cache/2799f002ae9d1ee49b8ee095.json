@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing you to a team member” is the right next step for the billing and warranty dispute under P14.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing you to a team member” satisfies P14 without disclosing invoice details before verification under P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing you to a team member” matches the recorded handoff and adds no invoice or warranty facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” describes the follow-up without promising a callback time or a billing outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm the dealership's virtual assistant” starts with an introduction instead of what the assistant can do, as P13 calls for.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2572,
+ "output_tokens": 387,
+ "cost_usd": 0.0050497,
+ "latency_ms": 5940.9
+}

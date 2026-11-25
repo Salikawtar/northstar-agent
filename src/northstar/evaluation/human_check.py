@@ -50,7 +50,7 @@ INSTRUCTIONS = [
     "   invented_facts: does it state a fact that is in neither the chat nor the tool results?",
     "   wrong_commitment: does it promise something only a tool or a person may grant?",
     "3. Write your name in 'reviewer'. Add a note when you hesitate.",
-    "4. Do not look at the model grader's results before you finish (they are not in this file on purpose).",
+    "4. Do not look at the model grader's results or at sheet_key.csv (it says which setup wrote each reply) before you finish.",
     "5. A second reviewer: save a copy as test_review_sheet_reviewer2.xlsx and fill it on your own.",
     "Then run: python -m northstar.evaluation check",
 ]
@@ -63,6 +63,8 @@ def make_sheet(per_chat: pd.DataFrame, seed: int = 894) -> Path:
     from openpyxl.worksheet.datavalidation import DataValidation
 
     rows = per_chat[per_chat.setup.isin(SHEET_SETUPS) & per_chat.case.notna()].copy()
+    if rows.empty:                 # a run of other setups only: keep the existing sheet
+        return SHEET
     rows = rows.sample(frac=1.0, random_state=seed).reset_index(drop=True)
     rows["review_id"] = [f"R{i + 1:02d}" for i in range(len(rows))]
     REVIEW_DIR.mkdir(parents=True, exist_ok=True)

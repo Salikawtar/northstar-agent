@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je peux vous aider pour les rendez-vous d'entretien » redirects the out-of-scope transfer question to services the dealership can help with.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Pour toute autre question, veuillez contacter directement la succursale » stays within P01 without repeating the earlier legal advice.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Les factures et les retours de location » lists supported services without adding any vehicle or transaction facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Veuillez contacter directement la succursale » is a referral, not a promise.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Pour toute autre question » sounds generic and does not acknowledge that the previous agent offered to send the steps.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2624,
+ "output_tokens": 382,
+ "cost_usd": 0.0050433,
+ "latency_ms": 6764.2
+}

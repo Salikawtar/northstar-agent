@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne de notre équipe va l’examiner » confirme la prise en charge sans divulguer de données.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Une personne de notre équipe va l’examiner » annonce le transfert requis (P14) sans divulguer de renseignements clients (P04).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Une personne de notre équipe va l’examiner » décrit le suivi sans ajouter de fait non vérifié.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Va l’examiner » annonce un examen sans promettre de résultat ni de délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par une limite, « Je ne peux pas traiter cette demande ici », plutôt que par l’aide proposée (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2577,
+ "output_tokens": 334,
+ "cost_usd": 0.0044458,
+ "latency_ms": 5434.8
+}

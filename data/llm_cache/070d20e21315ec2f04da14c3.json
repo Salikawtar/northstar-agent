@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je vous mets en contact avec une personne de notre équipe » gives the customer a clear next step without confirming that a claim was opened.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P05\", \"P14\"],\n  \"policy_reason\": \"« Qui vous répondra » says someone will reply, but does not say that a person will review the request or explain that the warranty desk makes the decision.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je vous mets en contact avec une personne de notre équipe » matches the recorded handoff.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous répondra » gives no response time and does not promise a claim number.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je suis l’assistant virtuel de la concession » opens with the assistant’s identity rather than what it can do for the customer.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2599,
+ "output_tokens": 524,
+ "cost_usd": 0.0064872,
+ "latency_ms": 8462.1
+}

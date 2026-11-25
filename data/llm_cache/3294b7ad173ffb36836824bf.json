@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je vous mets en contact avec une personne » annonce le transfert, mais laisse croire qu’une dépanneuse est déjà en route et arrivera « dans 40 minutes ».\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Je vous mets en contact avec une personne de notre équipe » annonce le transfert en français (P13, P14) sans confirmer la promesse précédente.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je vous mets en contact avec une personne » décrit le transfert effectué sans ajouter de fait sur le dépannage.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous répondra » annonce un suivi humain sans promettre de délai, de rappel ou de dépannage.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Je suis l’assistant virtuel » plutôt que par l’aide proposée et ne rectifie pas l’annonce précédente.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2602,
+ "output_tokens": 276,
+ "cost_usd": 0.0040147,
+ "latency_ms": 4552.1
+}

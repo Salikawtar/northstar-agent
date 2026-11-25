@@ -5,6 +5,7 @@
     python -m northstar.evaluation --split validation   # same harness on the validation chats (development)
     python -m northstar.evaluation sheet                # rebuild the blind hand-review sheet
     python -m northstar.evaluation check                # model grader vs the team's hand labels (kappa)
+    python -m northstar.evaluation consistency          # grade the main agent's test replies 2 more times
 
 What one run does, for each setup (src/northstar/evaluation/setups.py):
 1. Runs the 40 test chats through it (harness.py) -> one RunRecord per chat.
@@ -20,6 +21,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import pandas as pd
@@ -43,13 +45,17 @@ def evaluate_setup(name: str, split: str, client: LLMClient, grader: ModelGrader
     gold = load_conversations(split).set_index("id")
     runs = Harness(setup, client=client).run(split)
     save_runs(runs, split, name)
-    rows, grade_records = [], []
+    golds = []
     for run in runs:
+        row = gold.loc[run.record.conversation_id].copy()
+        row["id"] = run.record.conversation_id
+        golds.append(row)
+    with ThreadPoolExecutor(max_workers=8) as pool:      # grader calls are independent
+        verdicts = list(pool.map(grader.grade, golds, runs))
+    rows, grade_records = [], []
+    for run, row, (verdict, gcost, gerr) in zip(runs, golds, verdicts):
         cid = run.record.conversation_id
-        row = gold.loc[cid].copy()
-        row["id"] = cid
         rg = rules.grade(row, run)
-        verdict, gcost, gerr = grader.grade(row, run)
         llm = verdict.model_dump() if verdict else None
         if verdict:
             grade_records.append(to_grade_record(cid, name, verdict).model_dump(mode="json"))
@@ -64,6 +70,7 @@ def evaluate_setup(name: str, split: str, client: LLMClient, grader: ModelGrader
             resolved_reason=(llm or {}).get("resolved_reason", ""), policy_reason=(llm or {}).get("policy_reason", ""),
             invented_reason=(llm or {}).get("invented_reason", ""),
             commitment_reason=(llm or {}).get("commitment_reason", ""),
+            grader_tone_ok=(llm or {}).get("tone_ok"), tone_reason=(llm or {}).get("tone_reason", ""),
             rules_broken=",".join((llm or {}).get("rules_broken", [])), grader_error=gerr,
             action=rep.action.value if rep else "", tools=",".join(rep.tools_used) if rep else "",
             guard_flags=";".join(run.trace.get("guard_flags", [])),
@@ -137,10 +144,47 @@ def _economics_inputs(s: dict) -> None:
     (RESULTS / "economics_inputs.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
 
 
+def consistency(client: LLMClient, grader: ModelGrader, passes: int = 3) -> pd.DataFrame:
+    """How often does the grader give the same answer to the same question? Grades the main agent's
+    40 test replies `passes` times (pass 0 is the one in the results) and compares every pair of passes.
+    Disagreement here is noise the human check cannot remove, so it is reported next to it."""
+    gold = load_conversations("test").set_index("id")
+    runs = Harness(SETUPS[MAIN], client=client).run("test")
+    golds = []
+    for run in runs:
+        row = gold.loc[run.record.conversation_id].copy()
+        row["id"] = run.record.conversation_id
+        golds.append(row)
+    grades = {}
+    for k in range(passes):
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            grades[k] = list(pool.map(lambda rr: grader.grade(rr[0], rr[1], repeat=k), zip(golds, runs)))
+    rows = []
+    qs = human_check.QUESTIONS
+    for a in range(passes):
+        for b in range(a + 1, passes):
+            pairs = [(x[0], y[0]) for x, y in zip(grades[a], grades[b]) if x[0] and y[0]]
+            for q in qs + ["all five good"]:
+                if q == "all five good":
+                    va = pd.Series([all(getattr(x, k) == human_check.GOOD_ANSWER[k] for k in qs) for x, _ in pairs])
+                    vb = pd.Series([all(getattr(y, k) == human_check.GOOD_ANSWER[k] for k in qs) for _, y in pairs])
+                else:
+                    va = pd.Series([getattr(x, q) for x, _ in pairs])
+                    vb = pd.Series([getattr(y, q) for _, y in pairs])
+                rows.append(dict(passes=f"{a} vs {b}", question=q, n=len(pairs),
+                                 agreement=round(float((va == vb).mean()), 3), kappa=human_check.kappa(va, vb)))
+    out = pd.DataFrame(rows)
+    out.to_csv(RESULTS / "grader_consistency.csv", index=False)
+    summary = out.groupby("question").agg(agreement=("agreement", "mean"), kappa=("kappa", "mean")).round(3)
+    summary.to_csv(RESULTS / "grader_consistency_summary.csv")
+    print(summary.to_string())
+    return out
+
+
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description="Final evaluation: run, grade and compare setups on the test chats.")
-    ap.add_argument("command", nargs="?", default="run", choices=["run", "sheet", "check"])
+    ap.add_argument("command", nargs="?", default="run", choices=["run", "sheet", "check", "consistency"])
     ap.add_argument("--split", default="test", choices=["validation", "test"])
     ap.add_argument("--setups", nargs="+", default=list(SETUPS), choices=list(SETUPS))
     a = ap.parse_args()
@@ -154,6 +198,9 @@ def main() -> None:
         return
     client = LLMClient()
     grader, rules = ModelGrader(client), RuleGrader(DealerSystem())
+    if a.command == "consistency":
+        consistency(client, grader)
+        return
     frames = []
     for name in a.setups:
         print(f"--- {name}: {SETUPS[name].changes}")

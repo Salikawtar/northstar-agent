@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the customer's “last name and your licence plate (or a repair-order number)” is the right first step under P02.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for “your last name and your licence plate (or a repair-order number)” under P02 without requesting a full VIN under P03.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can check the recall and your warranty facts together” does not assert a recall or coverage status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check” offers a lookup without promising coverage, free work, or a booking.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Yes, I can check” opens warmly and leads to one clear request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2592,
+ "output_tokens": 244,
+ "cost_usd": 0.0035833,
+ "latency_ms": 4225.3
+}

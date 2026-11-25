@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Pouvez-vous me donner votre nom de famille… » amorce la vérification, mais la demande « personne va voir la différence » exigeait un transfert à une personne.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\", \"P14\"],\n  \"policy_reason\": \"Après « un char m’a accroché » et « personne va voir la différence », la réponse ne donne ni consigne de sécurité ni transfert à une personne.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je dois plutôt vous vérifier d’abord » décrit le processus sans ajouter de fait sur le véhicule, le rappel ou le prix.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je m’en occupe » introduit la vérification sans promettre de couverture ni de prix.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Oui, je m’en occupe » ouvre chaleureusement, puis la réponse corrige brièvement le message précédent et pose une seule question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2552,
+ "output_tokens": 359,
+ "cost_usd": 0.0047197,
+ "latency_ms": 6450.1
+}

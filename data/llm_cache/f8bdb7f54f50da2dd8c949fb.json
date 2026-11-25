@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply asks « Quel est votre nom de famille? » but does not tell the customer that a person will review the disputed charges.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"« Je dois d'abord vous vérifier » does not disclose that the billing dispute was handed to a person for review.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je n'ai pas confirmé qu'il s'agit d'une préautorisation » avoids making an unsupported claim about the charges.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je n'ai pas confirmé qu'il s'agit d'une préautorisation » makes no promise about a refund or when the charge will clear.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is polite and asks one question, but it leads with « Je dois d'abord vous vérifier » rather than what it can do to help.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2622,
+ "output_tokens": 320,
+ "cost_usd": 0.0045047,
+ "latency_ms": 5585.0
+}

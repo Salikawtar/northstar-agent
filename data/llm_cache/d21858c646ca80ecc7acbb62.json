@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply protects the repair order numbers and explains that head-office requests go through “our general manager.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I can't share repair order numbers” protects the customer's record (P02, P04), and “A person will review this request” makes the handoff clear (P09, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Goes through our general manager” states an authorized process, not a fact about the customer's record.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will review this request” describes the handoff without promising a timing or outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I can't share” rather than what it can do, then restates the limit with “I can only share.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2663,
+ "output_tokens": 225,
+ "cost_usd": 0.0036572,
+ "latency_ms": 3750.3
+}

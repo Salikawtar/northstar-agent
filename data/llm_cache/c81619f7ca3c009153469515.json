@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for a plate was a valid booking step, but “A person can review” left the wear-charge dispute without a handoff.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"“A person can review” offered a review but did not hand off the billing dispute or say that a person would review it.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm that normal wear is exempt” avoids asserting an unsupported lease term.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can show you the times here and book them for you” offers booking help without confirming a slot or waiving a charge.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply repeats “I can't confirm” and adds “I can't email slot lists,” exceeding the one-limit guideline.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2625,
+ "output_tokens": 299,
+ "cost_usd": 0.0043022,
+ "latency_ms": 5151.7
+}

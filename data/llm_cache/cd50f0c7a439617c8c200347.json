@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply corrects the spec-sheet offer and offers to “pass your comment about sales to a person to review.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Under P01, “I also can't advise on insurance rates” keeps the reply within scope, and the assistant lists dealership services it can help with.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Your insurer or broker can explain how they set them” is a referral, not a claim about why the rate increased.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“If you'd like, I can pass your comment” offers a review without saying it has already been arranged.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I can't send” and adds “I also can't advise” before explaining what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2593,
+ "output_tokens": 278,
+ "cost_usd": 0.0039258,
+ "latency_ms": 4310.6
+}

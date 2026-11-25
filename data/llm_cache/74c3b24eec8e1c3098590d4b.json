@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4625,
+ "output_tokens": 279,
+ "cost_usd": 0.01204,
+ "latency_ms": 3407.0,
+ "tool_calls": [
+  {
+   "id": "toolu_01L1HvB7aaUAodjf2yMd2JWG",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Wilson\", \"plate\": \"CYMG 744\", \"ro_number\": \"RO-199746\"}"
+  }
+ ]
+}

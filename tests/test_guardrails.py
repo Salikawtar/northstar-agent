@@ -104,6 +104,15 @@ def test_data_nobody_gave_is_blocked_as_a_possible_attack(leak):
     assert out.reply.handoff.queue == "service_manager"
 
 
+def test_format_examples_from_our_tool_descriptions_are_not_blocked():
+    # D-32, test chat v3_0027: an example repair-order number is nobody's data.
+    out = check_output(reply("I need your plate or your repair-order number (it looks like RO-123456)."),
+                       cust("charge on my card, no idea what for"))
+    assert not out.blocked
+    before = check_output(reply("It looks like RO-123456."), cust("hi"), ignore_format_examples=False)
+    assert before.blocked                     # the check as it was before D-32, kept for the comparison
+
+
 def test_data_from_a_tool_for_this_customer_passes():
     out = check_output(reply("Your plate CFEC 566, repair RO-124033, VIN 406YA53X6P93K4966."),
                        cust("Joan Cox, RO-124033"), [{"plate": "CFEC 566", "vin": "406YA53X6P93K4966"}])

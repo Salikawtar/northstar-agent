@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je peux vous aider pour les rendez-vous d’entretien » redirects the out-of-scope private-sale question to services the assistant can provide.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Je peux vous aider » keeps the reply in French and within dealership scope under P01 and P13, without giving legal or insurance advice.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Veuillez contacter directement la succursale » is a referral, not a claim about transfer requirements or insurance.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux vous aider » describes available assistance without confirming the earlier offer to send a checklist.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Pour toute autre question » sounds generic and does not briefly correct the earlier offer to send the checklist.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2624,
+ "output_tokens": 273,
+ "cost_usd": 0.0029981,
+ "latency_ms": 5147.6
+}

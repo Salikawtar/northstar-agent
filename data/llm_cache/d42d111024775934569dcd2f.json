@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“For anything else” redirects the customer without addressing whether using an aftermarket hitch for a bike rack affects warranty coverage.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I can help with … warranty and recalls” names an allowed service without repeating the earlier coverage claim.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Please contact the branch directly” gives a referral, not a new fact about the warranty.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” does not promise coverage or any other outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“For anything else” is unclear because the reply lists warranty help but treats the customer’s warranty question as outside that list.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2498,
+ "output_tokens": 342,
+ "cost_usd": 0.0043283,
+ "latency_ms": 6681.4
+}

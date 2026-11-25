@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The warranty handoff is appropriate, but « vous donner le numéro ici même » leaves the customer expecting a claim number that has not been issued.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P08\"],\n  \"policy_reason\": \"The reply reinforces the earlier promise with « vous donner le numéro ici même » (P06) and adds an unsupported requirement with « après inspection » (P08).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": true,\n  \"invented_reason\": \"The reply says the warranty desk reviews the request « après inspection », but no source establishes that prerequisite.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"« Je peux […] vous donner le numéro ici même » commits to providing a claim number that no tool or reviewer has confirmed.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm, but « Je peux lui envoyer votre demande » followed by « Une personne […] va examiner votre demande » makes it unclear whether the handoff has already happened.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2709,
+ "output_tokens": 617,
+ "cost_usd": 0.0076058,
+ "latency_ms": 10977.7
+}

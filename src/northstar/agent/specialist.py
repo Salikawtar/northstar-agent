@@ -51,6 +51,13 @@ DESK_FOR: dict[RequestType, str] = {
 
 TOOL_LIMIT_NOTE = "You have used all the tool calls allowed for this turn. Give your final JSON answer now."
 
+# D-32: when the CODE hands the chat to a person (the router's decision, failed verification, a failing
+# dealer system) but the model wrote a normal reply, the customer must still be told (P14). In 3 of 40
+# test chats the billing desk asked for a last name on a dispute the code had already passed to the
+# service manager, and never said a person would review it.
+HANDOFF_NOTE = {"en": "A team member will review your request and follow up with you.",
+                "fr": "Une personne de notre équipe va examiner votre demande et faire le suivi avec vous."}
+
 
 class SpecialistFinal(BaseModel):
     """The model's final answer for this turn, checked before anything is sent."""
@@ -135,6 +142,7 @@ class Specialist:
         self.effort = reasoning_effort or cfg.get("reasoning_effort")
         self.max_tokens = cfg.get("max_tokens", 2000)
         self.prompt_name = prompt or cfg["prompt"]
+        self.reply_fixes = settings()["agent"].get("reply_fixes", True)    # D-32
         self.template = load_prompt(self.prompt_name).replace(
             "{policy}", load_prompt(settings()["agent"].get("shared_rules", "shared/policy_core.md")))
 
@@ -273,6 +281,8 @@ class Specialist:
                         if box.dms.withdraw_warranty_claim(cid_).ok:
                             withdrawn.append(cid_)
                 drafted = None
+            if action == AgentAction.ESCALATED and final.action != AgentAction.ESCALATED and self.reply_fixes:
+                text = f"{text.rstrip()} {HANDOFF_NOTE['fr' if route.language == Language.FR else 'en']}"
             if action != AgentAction.ESCALATED and booked:
                 action = AgentAction.BOOKED
             elif action != AgentAction.ESCALATED and drafted:

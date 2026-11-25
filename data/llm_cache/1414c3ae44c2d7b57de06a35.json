@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person on the service manager's team will review your dispute” gives the right next step without implying that a refund has been approved.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Will review your dispute” routes the billing issue to a person without disclosing unverified invoice details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-168471” came from the customer, and “will review your dispute” reflects the recorded handoff.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't promise a refund, a refund method or a timeline” makes no refund or timing commitment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry” rather than the next step and lists limits with “a refund, a refund method or a timeline.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2635,
+ "output_tokens": 361,
+ "cost_usd": 0.0048608,
+ "latency_ms": 5987.9
+}

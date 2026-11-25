@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking « quel est votre nom de famille? » starts verification but does not route the duplicate-charge dispute to a person for written confirmation.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"« Je peux vérifier la facture » does not hand the billing dispute to a person for review as P06 and P14 require.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« La préautorisation n'était pas confirmée » corrects the earlier suggestion without asserting a billing status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux vérifier la facture » offers a check without promising a refund or confirming a preauthorization.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Je peux vérifier la facture […] avec vous » is a clear, helpful opening, followed by one question and a brief correction.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2654,
+ "output_tokens": 274,
+ "cost_usd": 0.0040383,
+ "latency_ms": 4355.3
+}

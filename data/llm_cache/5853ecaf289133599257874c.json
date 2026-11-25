@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person will review your request” gives the right next step for the dispute without implying the invoice was sent.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“A person will review your request” meets P14, and the reply neither shares the invoice nor changes the bill.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The warranty desk and the service manager make those decisions” reflects the dealership’s stated review process.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will review your request” promises only a review, not coverage or a billing adjustment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I need to correct my colleague’s earlier message” and states two limits: “I can’t say whether the warranty covers this” and “I can’t give insurance advice.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2633,
+ "output_tokens": 441,
+ "cost_usd": 0.0057422,
+ "latency_ms": 7500.5
+}

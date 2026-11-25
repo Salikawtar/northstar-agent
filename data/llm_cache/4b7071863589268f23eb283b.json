@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person on the service manager's team will review your dispute” gives the customer the right next step without promising refund approval or timing.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“A person on the service manager's team will review your dispute” satisfies P06 and P14, and no invoice details were disclosed before verification under P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-168471” came from the customer, and the service manager review matches the documented process.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't promise a refund, a refund method or a timeline” does not confirm any of those outcomes.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry” instead of the action it took and lists three limits in “a refund, a refund method or a timeline.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2599,
+ "output_tokens": 319,
+ "cost_usd": 0.0044372,
+ "latency_ms": 5473.7
+}

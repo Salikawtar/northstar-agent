@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply correctly asks for the account holder’s last name and warns « ne vous déplacez pas encore », but « je peux transmettre » leaves the billing dispute without a handoff.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"« Je peux transmettre » only offers a handoff, but P06 and P14 require a person to review the billing dispute.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« La voiture est prête » is quoted only to explain that the earlier status was not verified.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne qui examinera l’écart » describes a review without promising an adjustment or confirming the quoted price.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is clear and asks one question, but it starts with « Je n’ai pas encore pu confirmer » rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2560,
+ "output_tokens": 407,
+ "cost_usd": 0.0051333,
+ "latency_ms": 7408.6
+}

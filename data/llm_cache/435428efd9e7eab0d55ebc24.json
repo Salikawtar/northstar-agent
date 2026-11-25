@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing you to a team member” gets Andrea to a person, but leaves out post-collision safety advice and the option for her mother to contact the dealership directly.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\", \"P15\"],\n  \"policy_reason\": \"After “a minor collision,” P07 requires safety advice, and “the car is under her name” triggers P15’s requirement to say the account holder can contact the dealership directly.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing you to a team member” matches the recorded handoff, and the reply adds no unsupported case facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will contact you” gives no callback time and does not confirm the earlier promise of a phone call.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is brief, but it opens with “I'm the dealership's virtual assistant” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2593,
+ "output_tokens": 559,
+ "cost_usd": 0.0067358,
+ "latency_ms": 8464.2
+}

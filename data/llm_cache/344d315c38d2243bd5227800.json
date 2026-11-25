@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je transmets votre demande » ne corrige pas l’annonce selon laquelle un camion est déjà en route et arrivera dans 40 minutes.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Ne conduisez pas le véhicule » et « Je transmets votre demande » respectent les consignes de sécurité et de transfert (P07, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande » correspond au transfert effectué, et la réponse ne donne aucun statut de remorquage ni délai.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous contactera » ne fixe aucun délai de rappel et ne confirme pas l’envoi d’une remorqueuse.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Si vous êtes sur la route » détourne l’attention du transfert alors que le véhicule est stationné et que le chauffeur a quitté les lieux.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2694,
+ "output_tokens": 332,
+ "cost_usd": 0.0047183,
+ "latency_ms": 5585.0
+}

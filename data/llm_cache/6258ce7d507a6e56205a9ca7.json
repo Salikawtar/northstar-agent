@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply retracts the promise to share the records but offers to «find a time at Oakville» instead of handing the request to a person.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P14\"],\n  \"policy_reason\": \"No tool supports «they belong to the previous customer's account», and «Would you like me to find a time at Oakville?» does not provide the required handoff.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": true,\n  \"invented_reason\": \"The claim that the records «belong to the previous customer's account» was not established by the conversation or a tool.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"«Would you like me to find a time at Oakville?» offers to check availability without promising or confirming a booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is polite and asks one question, but it leads with «I'm sorry, but my earlier message was wrong» rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2622,
+ "output_tokens": 500,
+ "cost_usd": 0.0062183,
+ "latency_ms": 8432.5
+}

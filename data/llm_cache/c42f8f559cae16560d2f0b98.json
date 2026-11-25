@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your request to a person on our team” routes the dispute for review without implying that the invoice was emailed.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your request to a person” satisfies P14, and the reply discloses no unverified invoice details under P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Whether the crack can be looked at as a warranty matter” describes a review, not a coverage finding or a new record detail.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't switch the bill to a warranty claim” leaves the decision to staff without promising coverage or a billing adjustment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with “I'm sorry” rather than what it can do and states separate limits with “I can't switch” and “I also can't send.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2697,
+ "output_tokens": 344,
+ "cost_usd": 0.0048458,
+ "latency_ms": 5589.9
+}

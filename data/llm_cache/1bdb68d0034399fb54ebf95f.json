@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply says « Ne conduisez pas le véhicule » and « je ne peux confirmer ni remorquage ni heure d'arrivée », then hands off the urgent request.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P15\"],\n  \"policy_reason\": \"Under P15, « Je transmets votre demande » is not enough: the reply should also say the aunt can contact Northstar directly and that a person can check authorization.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande à une personne » matches the actual handoff, and no dispatch status or arrival time is asserted.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux confirmer ni remorquage ni heure d'arrivée » makes clear that neither a tow nor an arrival time is promised.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je ne peux confirmer ni remorquage ni heure d'arrivée » lists limits before stating what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2739,
+ "output_tokens": 398,
+ "cost_usd": 0.0054908,
+ "latency_ms": 6392.6
+}

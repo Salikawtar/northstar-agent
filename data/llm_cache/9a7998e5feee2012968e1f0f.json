@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply offers « mardi 17 novembre à 9 h 00 » and asks for a plate or repair-order number before booking.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"« Je transmets votre demande à une personne du bureau d'affaires » contradicts the actual handoff to service advisors.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": true,\n  \"invented_reason\": \"The claimed transfer to « une personne du bureau d'affaires » is not supported by the handoff record.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Avant de la réserver » makes clear that the appointment is not booked, and no buyout price is promised.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply opens with « À Scarborough, il y a une place » and asks one clear question for verification.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2872,
+ "output_tokens": 661,
+ "cost_usd": 0.0069029,
+ "latency_ms": 11437.8
+}

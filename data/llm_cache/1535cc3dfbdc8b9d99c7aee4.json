@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply focuses on an unrequested tow with “please don't count on one yet” instead of addressing the customer’s expectation of a manager’s call.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply gives the required safety advice under P07 and says “I'm passing this to a team member” as required by P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm a tow or an arrival time” does not assert either as fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow or callback time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Turn on your hazard lights” and “please don't count on one yet” add confusing roadside advice after the customer said the vehicle was already at a tow yard.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2685,
+ "output_tokens": 529,
+ "cost_usd": 0.0055642,
+ "latency_ms": 8831.3
+}

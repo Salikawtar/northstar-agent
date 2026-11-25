@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the “last name on the account” is the right next step to verify the customer before checking the repair order and recall.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply says it will “check the recall status once you're verified,” following P02 without sharing unverified details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The reply repeats “RO-275786” from the customer and states no repair or recall status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"The reply says it “can't yet confirm that the recall work will be added,” so it does not promise same-visit work.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"It opens with “I can help,” asks one question, and states one brief limit.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2592,
+ "output_tokens": 209,
+ "cost_usd": 0.0023549,
+ "latency_ms": 3392.2
+}

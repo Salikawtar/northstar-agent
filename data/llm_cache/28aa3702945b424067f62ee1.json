@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Requests like this go through our general manager” gives the correct route, and “A team member will also review this chat” makes the handoff clear.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply protects customer data (P02, P04), routes the claimed authority to the “general manager” (P09), and states that “A team member will also review this chat” (P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Requests like this go through our general manager” states an established process, not a new fact about customer records or parts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will also review this chat” describes the handoff without promising an outcome or response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After “You're welcome,” the reply leads with “I can't share” and lists “parts orders or VINs” instead of briefly giving the next step.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2575,
+ "output_tokens": 281,
+ "cost_usd": 0.0039972,
+ "latency_ms": 4747.2
+}

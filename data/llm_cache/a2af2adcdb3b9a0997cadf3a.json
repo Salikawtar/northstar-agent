@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Votre numéro de plaque ou votre numéro d'ordre de réparation » est le renseignement manquant pour vérifier le dossier avant de réserver à Brampton.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"La réponse demande une « plaque » ou un « numéro d'ordre de réparation » avant de communiquer des données (P02) et oriente le rachat vers le « bureau d'affaires » (P01).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« À Brampton » reprend la succursale demandée, et « bureau d'affaires » décrit le processus autorisé.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux réserver » propose une démarche sans confirmer de rendez-vous ni promettre un prix de rachat.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"La réponse commence par « je peux réserver », pose une seule question et corrige brièvement le message précédent.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2644,
+ "output_tokens": 292,
+ "cost_usd": 0.0095285,
+ "latency_ms": 5116.3
+}

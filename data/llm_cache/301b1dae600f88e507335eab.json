@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for the last name was the right next step, but “I can book the 56k service at Burlington for 2026-11-23” implied the requested date was available without a check.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"“I can book the 56k service at Burlington for 2026-11-23” implied availability that no tool returned.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"The customer requested “2026-11-23,” but “I can book” presented that date as available for the 56k service without verification.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Nothing is booked yet” makes clear that no appointment was confirmed.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Sorry for the missed replies” is warm, and “What is your last name?” is the only question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2637,
+ "output_tokens": 447,
+ "cost_usd": 0.0057258,
+ "latency_ms": 6610.4
+}

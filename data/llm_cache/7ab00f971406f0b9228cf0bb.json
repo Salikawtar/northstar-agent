@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for “the last name on the repair order” is the right next step under P02 before checking whether the repair and recall are related.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Under P02, “I need the last name” requests the missing verification detail without disclosing any vehicle or repair information.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-275786” came from the customer, and the reply states no repair or recall status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check this for you now” offers to start checking without promising an outcome or a response deadline.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can check this for you now” opens helpfully, and “What is it?” asks one clear question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2505,
+ "output_tokens": 216,
+ "cost_usd": 0.0031722,
+ "latency_ms": 3783.8
+}

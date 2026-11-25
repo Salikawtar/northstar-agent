@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply lists “lease returns” but does not explain the return process or direct buyout and valuation questions to the business office.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I can help with … lease returns” stays within P01 and reveals no account details under P02 or P15.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Please contact the branch directly” adds no specific facts about the lease or vehicle.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” makes no promise or confirmation.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can help” opens positively, and the reply is brief, with one limit and no questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2589,
+ "output_tokens": 299,
+ "cost_usd": 0.0032546,
+ "latency_ms": 5332.8
+}

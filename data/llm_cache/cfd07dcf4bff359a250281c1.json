@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne de notre équipe va examiner votre demande » gives the customer the right next step for the billing dispute (P06, P14).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Quel est votre nom de famille » requests the missing verification detail without disclosing invoice information (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« RO-833289 » repeats the customer's reference, and the reply adds no invoice facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« va examiner votre demande et faire le suivi avec vous » promises only review and follow-up, not a billing adjustment or a deadline.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After « Merci », the reply leads with « je dois d'abord vous vérifier » rather than the review it has arranged (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2535,
+ "output_tokens": 290,
+ "cost_usd": 0.0039008,
+ "latency_ms": 4897.4
+}

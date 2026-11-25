@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je peux vous aider pour les rendez-vous d’entretien » redirects the customer to in-scope services without giving legal or insurance advice.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Under P01 and P13, « Je peux vous aider » offers dealership services in French without repeating the earlier transfer advice.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Les factures et les retours de location » lists supported services without adding any specific facts about the sale or vehicle.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Veuillez contacter directement la succursale » is a referral, not a promise of action or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Pour toute autre question » is a generic redirect that does not briefly correct the earlier offer to send the transfer steps.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2588,
+ "output_tokens": 377,
+ "cost_usd": 0.0049897,
+ "latency_ms": 7359.3
+}

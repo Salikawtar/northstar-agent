@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“Je transmets votre message” skips the next step: asking for verification so the assistant can check Thursday availability and whether the deposit was applied.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Je transmets votre message à une personne” makes the handoff clear (P14) without disclosing unverified account details (P02).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Je transmets votre message” reflects the recorded handoff and adds no unsupported facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Qui vous répondra” gives no response time and confirms neither a booking nor a deposit deduction.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Pour être sûr de bien vous aider, je transmets votre message” is brief, warm French and gives a clear next step.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2624,
+ "output_tokens": 469,
+ "cost_usd": 0.0059133,
+ "latency_ms": 7756.7
+}

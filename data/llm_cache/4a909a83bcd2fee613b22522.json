@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“What is your last name?” is the right next step because the customer already provided the repair-order number.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“First I need to verify you” follows P02 without confirming any repair or pickup details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-491601” came from the customer, and the reply states no pickup time or repair status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can help with your pickup time” does not confirm a pickup or promise availability.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can help” starts the reply on a helpful note, and “What is your last name?” is the only question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2538,
+ "output_tokens": 201,
+ "cost_usd": 0.0031047,
+ "latency_ms": 3282.5
+}

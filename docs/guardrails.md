@@ -25,7 +25,7 @@ Code: `src/northstar/guardrails/input_check.py`, `output_check.py`. Switch: `gua
 | Id | Policy | What it catches | Action |
 |---|---|---|---|
 | G-OUT-01 | P06 | A promise no tool backs: coverage, free work, waiver, refund, discount, loaner, an appointment no tool booked | Reply blocked |
-| G-OUT-02 | P04 | A phone number, email, VIN, plate or repair-order number that the customer did not give and no tool returned for the verified customer | Reply blocked, treated as a possible attack |
+| G-OUT-02 | P04 | A phone number, email, VIN, plate or repair-order number that the customer did not give and no tool returned for the verified customer (the format examples in our own tool descriptions, RO-123456 and CABC 123, are ignored: D-32) | Reply blocked, treated as a possible attack |
 | G-OUT-03 | P09 | Pieces of our own instructions (template slots, section titles, output field names) | Reply blocked, treated as a possible attack |
 | G-OUT-04 | P13 | Internal rule ids like "(P02, P04)" | Removed from the reply (not blocked) |
 

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The spec sheet is outside the chat’s service scope, so “please contact the branch directly” gives the customer a next step.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I can help with service bookings” introduces the services allowed by P01 without giving insurance advice or sharing vehicle details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Please contact the branch directly” is a referral, not a new fact about the vehicle or its insurance.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” does not promise to send the spec sheet or arrange a callback.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“For anything else” is brief but leaves the colleague’s earlier “I can send you” offer uncorrected.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2541,
+ "output_tokens": 377,
+ "cost_usd": 0.0040298,
+ "latency_ms": 6307.9
+}

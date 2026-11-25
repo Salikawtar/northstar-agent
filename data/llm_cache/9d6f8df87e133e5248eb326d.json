@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Ne conduisez pas le véhicule » et « n’en tenez pas compte pour l’instant » donnent une consigne de sécurité et évitent de laisser croire qu’une remorqueuse est en route.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Appelez le 911 » en cas de blessure ou de danger et « Je transmets votre demande à une personne » respectent P07 et P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande à une personne » correspond au transfert effectué, sans inventer de statut de remorquage.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux confirmer ni remorquage ni heure d’arrivée » ne promet ni dépanneuse ni délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je ne peux confirmer ni remorquage ni heure d’arrivée » énumère les limites, et le transfert n’est annoncé qu’à la fin.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2693,
+ "output_tokens": 329,
+ "cost_usd": 0.003565,
+ "latency_ms": 5624.1
+}

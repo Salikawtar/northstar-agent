@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person will review your request” gives the right next step for the disputed bill without claiming the invoice was sent.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“A person will review your request” follows P14, and “I haven't changed anything on the bill” respects P10.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The warranty desk and the service manager make those decisions” describes the dealership’s stated review process.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will review your request” promises only a review, not coverage, a billing change, or invoice delivery.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"It starts with “I need to correct my colleague's earlier message” instead of what it can do, then states two limits.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2669,
+ "output_tokens": 275,
+ "cost_usd": 0.0040858,
+ "latency_ms": 4625.2
+}

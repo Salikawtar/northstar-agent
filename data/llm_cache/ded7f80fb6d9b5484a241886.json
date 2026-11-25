@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"For the out-of-scope spec sheet and sales feedback requests, it says what dealership services it can help with and directs the customer to the branch.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply stays within P01 by listing dealership services without giving insurance advice.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Please contact the branch directly” is a referral, not a new fact about the vehicle or its insurance.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can help with service bookings” describes scope without confirming a booking or promising to send the sheet.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“For anything else” is generic and leaves the earlier “I can send you” offer unaddressed.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2541,
+ "output_tokens": 296,
+ "cost_usd": 0.0032198,
+ "latency_ms": 6132.2
+}

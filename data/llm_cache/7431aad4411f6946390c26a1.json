@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"For the out-of-scope request, the reply says what it can help with and directs the customer to “contact the branch directly.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply stays within P01 by offering help with “service bookings, repair status, parts” and other dealership service topics.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Please contact the branch directly” states no new facts about the vehicle or the customer's account.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” does not promise to send the sheet or confirm the earlier offer.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“For anything else” is too generic to clarify the earlier offer to send the spec sheet.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2505,
+ "output_tokens": 387,
+ "cost_usd": 0.0048822,
+ "latency_ms": 7802.3
+}

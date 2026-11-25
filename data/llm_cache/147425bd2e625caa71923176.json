@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Yes, I can check the recall and your warranty facts together. To start, please send your last name and your licence plate (or a repair-order number like RO-123456). You don't need to send the VIN again.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3560,
+ "output_tokens": 382,
+ "cost_usd": 0.01094,
+ "latency_ms": 4046.7
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for “the last name on the account” is the right next step before confirming repair status.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for “the last name on the account” under P02 and does not repeat the earlier repair status or coverage claim.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm that the repair is free or covered” adds no new fact about the repair.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will need to review” describes the process without promising coverage or free work.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I can't look up your repair order” and adds a second limit with “I can't confirm.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2564,
+ "output_tokens": 373,
+ "cost_usd": 0.0048897,
+ "latency_ms": 7320.6
+}

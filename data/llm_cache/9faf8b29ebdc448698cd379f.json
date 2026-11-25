@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply says “I'm passing this to a team member” but does not acknowledge “the Main Street gym by the library” or address the request for a written explanation.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P13\"],\n  \"policy_reason\": \"The reply does not correct the earlier unsupported statement “Tow dispatched.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the recorded handoff, and the rest is safety advice.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will contact you” gives no callback time and does not confirm a tow.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2184,
+ "output_tokens": 460,
+ "cost_usd": 0.0057457,
+ "latency_ms": 8725.2
+}

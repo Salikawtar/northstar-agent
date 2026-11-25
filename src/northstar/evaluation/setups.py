@@ -7,6 +7,7 @@ recommend), so a difference in the results can only come from that change.
 | Setup                       | The one change from full_agent                        |
 |-----------------------------|-------------------------------------------------------|
 | full_agent                  | (reference: settings.yaml as it is)                   |
+| full_agent_before_fixes     | the three reply fixes from the error analysis off (D-32): the agent as it was when the test set was first run |
 | full_agent_router_sonnet    | router model: Claude Sonnet 5.5 instead of Haiku 5.5   |
 | full_agent_router_finetuned | router model: Neeraj's fine-tuned XLM-RoBERTa          |
 | full_agent_router_v2        | router prompt version: v2 instead of v3                |
@@ -18,6 +19,7 @@ Adding a setup is one entry in SETUPS.
 """
 from __future__ import annotations
 
+import threading
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -39,6 +41,7 @@ class Setup:
     router_prompt: Optional[str] = None
     desk_effort: dict = field(default_factory=dict)   # e.g. {"warranty_recall": "high"}
     guardrails: bool = True
+    reply_fixes: bool = True                     # False = fixed replies as before the test error analysis (D-32)
 
     def setup_id(self) -> SetupId:
         cfg = settings()["components"]
@@ -56,11 +59,14 @@ class Setup:
                        agent_model="; ".join(f"{d}={resolve_model(cfg[d]['tier']).split('/')[-1]}" for d in desks),
                        reasoning_effort="; ".join(f"{d}={e}" for d, e in desks.items()),
                        prompt_version=(self.router_prompt or r["prompt"]).split("/")[-1].removesuffix(".md"),
-                       architecture="multi_agent" if self.guardrails else "multi_agent_no_guardrails")
+                       architecture=("multi_agent" if self.guardrails else "multi_agent_no_guardrails")
+                       + ("" if self.reply_fixes else "_before_d32"))
 
 
 SETUPS: dict[str, Setup] = {s.name: s for s in [
     Setup("full_agent", "reference: the recommended agent (settings.yaml)"),
+    Setup("full_agent_before_fixes", "before the error analysis: D-32 reply fixes off (the blind test result)",
+          reply_fixes=False),
     Setup("full_agent_router_sonnet", "router model: Sonnet 5.5 instead of Haiku 5.5", router_model="large"),
     Setup("full_agent_router_finetuned", "router model: fine-tuned XLM-RoBERTa instead of Haiku 5.5",
           router_model="finetuned"),
@@ -90,7 +96,15 @@ class RecordedRouter:
     def __init__(self, recording: Path = FINETUNED_RECORDING, name: str = "finetuned-xlm-roberta-base"):
         self.rows = pd.read_csv(recording).set_index("id")
         self.model, self.prompt_name, self.effort = name, "none", "none"
-        self.current_id: Optional[str] = None
+        self._local = threading.local()      # chats run in parallel threads: one current chat per thread
+
+    @property
+    def current_id(self) -> Optional[str]:
+        return getattr(self._local, "cid", None)
+
+    @current_id.setter
+    def current_id(self, cid: str) -> None:
+        self._local.cid = cid
 
     def route(self, turns, language_hint: Optional[str] = None) -> RouteResult:
         r = self.rows.loc[self.current_id]

@@ -1,0 +1,15 @@
+{
+ "text": "Je peux vous aider avec le déflecteur, le rendez-vous de jeudi et la vérification du dépôt. Pour accéder à votre dossier, j'ai besoin de votre nom de famille et de votre plaque d'immatriculation ou de votre numéro d'ordre de réparation (RO-######). Pouvez-vous me les donner?",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3924,
+ "output_tokens": 436,
+ "cost_usd": 0.0006104,
+ "latency_ms": 3564.6,
+ "tool_calls": [
+  {
+   "id": "toolu_012RoFQeaqFznY6LbgQWwZ2B",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"Pending\"}"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person will review your screenshot and the possible charge” addresses the dispute, and the reply asks for verification before proceeding with the inspection.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for a “licence plate or repair-order number” for verification (P02) and sends the “possible charge” to a person for review (P06, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The reply calls it a “possible charge” and gives no unsupported amount, inspection time, or lease term.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will review” promises only a review, not a waiver or a confirmed booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply gives two limits (“I can't confirm” and “not by email”) and asks for verification details and a branch at the same time (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2664,
+ "output_tokens": 324,
+ "cost_usd": 0.0035121,
+ "latency_ms": 5458.7
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply correctly flags the conflicting repair record, but says someone will “call you” instead of passing along the request to “Text me, not the driver.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08: The handoff supports “A person will review the record,” but nothing confirms that they will “call you.”\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The tool supports “waiting for parts” and “a check engine light,” and the reply gives no new ETA.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"“A person will review the record and call you” promises a call that the handoff did not confirm.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't confirm” and “I can't change” state two limits rather than one.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2751,
+ "output_tokens": 498,
+ "cost_usd": 0.0065208,
+ "latency_ms": 8931.8
+}

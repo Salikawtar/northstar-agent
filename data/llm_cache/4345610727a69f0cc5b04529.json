@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply explains the warranty limits and offers a “warranty review request” without deciding whether the warning is covered.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The assistant verified the customer before sharing vehicle details and followed P05 by stating that “The warranty desk decides.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The warranty limits and the “software update of about 45 minutes” match the tool results.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“It's a request only, not an approval” makes clear that warranty coverage was not promised.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“It's a request only, not an approval” repeats the limit already stated in “I can't tell ... whether it's covered.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2896,
+ "output_tokens": 365,
+ "cost_usd": 0.0056397,
+ "latency_ms": 6985.3
+}

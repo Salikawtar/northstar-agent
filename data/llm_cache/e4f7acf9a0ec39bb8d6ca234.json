@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply withdraws the unverified « oui » and asks for « votre nom de famille, et la plaque » before checking the recall and proceeding with the booking.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply requests verification (P02), refuses to share « les coordonnées de votre beau-frère » (P04, P15), and says « Une personne de l'équipe va aussi revoir votre demande » (P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Ne tenez pas compte du “oui” » withdraws the earlier recall answer without asserting a new recall or booking status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne de l'équipe va aussi revoir votre demande » promises only human review, not a Thursday booking.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"It opens with « Je peux vérifier le rappel », briefly corrects the earlier reply, and ends with one verification question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2684,
+ "output_tokens": 415,
+ "cost_usd": 0.0055233,
+ "latency_ms": 6420.5
+}

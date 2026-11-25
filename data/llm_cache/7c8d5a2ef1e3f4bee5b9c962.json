@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A team member will review it” gives the right next step without sending another customer's service history.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“A team member will review it” confirms the required handoff (P14) without disclosing another customer's information (P04).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A team member will review it” describes the next step without adding any unsupported facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review it” promises only a review, not delivery of the service history.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't help with that request here” leads with a limit and does not clearly correct the earlier promise to share the full service history.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2570,
+ "output_tokens": 280,
+ "cost_usd": 0.0038883,
+ "latency_ms": 4979.1
+}

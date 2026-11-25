@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for a “plate or repair-order number,” the right next step to identify the charge using the last name already provided.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P02 by asking for a “plate or repair-order number” without disclosing account details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-123456” is presented as an example, not as the customer's repair-order number.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can look into this charge” offers help without promising any billing outcome.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"It opens with “I can look into this charge” and asks one clear question: “Which one do you have?”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2549,
+ "output_tokens": 543,
+ "cost_usd": 0.0056906,
+ "latency_ms": 9308.0
+}

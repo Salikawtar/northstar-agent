@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing this to a team member” does not clear up the earlier claim that a tow was already being dispatched to Hwy 403 instead of the corrected Hwy 407 location.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please don't drive the vehicle” and “I'm passing this to a team member right now” satisfy the safety and handoff rules (P07, P14) without repeating the earlier dispatch claim.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the recorded escalation, and the reply gives no new dispatch status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will contact you” gives no callback time and does not confirm a tow.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Your safety comes first” is warm, but it does not open with what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2634,
+ "output_tokens": 555,
+ "cost_usd": 0.0068847,
+ "latency_ms": 9677.1
+}

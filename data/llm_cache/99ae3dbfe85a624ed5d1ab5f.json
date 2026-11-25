@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for the “last name and your licence plate or repair-order number” and makes clear the Markham visit is not yet booked.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P02 by asking to verify first and respects P05 and P06 by leaving warranty to the “warranty desk” and not promising a loaner.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'll check the open slots once you're verified” does not claim that any slot is available.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I haven't confirmed a time” and “I can't offer a loaner from here” make clear that neither is promised.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can help you book the Markham visit” starts helpfully, and the reply makes one clear verification request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2601,
+ "output_tokens": 579,
+ "cost_usd": 0.0069558,
+ "latency_ms": 8191.2
+}

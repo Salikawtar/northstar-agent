@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply says « Je transmets votre demande » but leaves the customer believing the earlier claim « Une remorqueuse part vers vous » even though no tow was confirmed.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply says « appelez le 911 », « Ne conduisez pas le véhicule » and « Je transmets votre demande à une personne », satisfying P07 and P14 without repeating the earlier promises.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande à une personne de notre équipe » matches the actual handoff, and the reply states no tow status or arrival time.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous contactera » gives no callback time and does not confirm the earlier tow or one-hour callback.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"Under P13, the brief reply should have corrected « Une remorqueuse part vers vous » rather than leaving that earlier claim unaddressed.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2661,
+ "output_tokens": 308,
+ "cost_usd": 0.0043958,
+ "latency_ms": 5654.4
+}

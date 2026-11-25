@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je transmets votre demande de dépannage à une personne » handles the request without leaving the customer expecting a truck in 40 minutes.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P03\"],\n  \"policy_reason\": \"« Pouvez-vous m’indiquer l’adresse exacte du stationnement » asks for an address in chat, which P03 prohibits.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Le véhicule est à Oakville » and the updates about the keys and driver all came from the customer.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux pas confirmer qu’un camion est en route ni une heure d’arrivée » avoids promising a dispatch or an ETA.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with a correction and gives two limits, « je ne peux pas confirmer » and « Je ne peux pas non plus appeler », before saying what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2728,
+ "output_tokens": 371,
+ "cost_usd": 0.0051933,
+ "latency_ms": 5964.7
+}

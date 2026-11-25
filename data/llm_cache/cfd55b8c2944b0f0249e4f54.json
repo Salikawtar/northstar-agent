@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for « votre nom de famille et la plaque de votre véhicule ou du numéro de bon de réparation » is the right next step before checking the order and deposit.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Under P02, « Avant de consulter votre dossier » correctly puts verification before disclosure.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je peux vous aider à regrouper la pièce et l’inspection à Oakville » offers help without asserting a new fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux vous aider à regrouper » does not confirm a booking, coverage, or a deposit deduction.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply lists things it cannot confirm: « l’arrivée de la pièce, la garantie ou le dépôt ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2648,
+ "output_tokens": 242,
+ "cost_usd": 0.0037897,
+ "latency_ms": 4187.7
+}

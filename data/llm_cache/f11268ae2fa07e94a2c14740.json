@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Quel est votre nom de famille » lance une vérification, mais ne transmet pas la contestation du double débit à une personne.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"« Je peux vérifier la facture » ne remplace pas la transmission à une personne pour examiner la contestation de facturation.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"Le « délai de 3 à 5 jours » est cité comme une affirmation du collègue, pas comme un fait établi.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux pas le confirmer » ne promet ni remboursement ni délai.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"La réponse commence par « Je peux vérifier », corrige brièvement le collègue et pose une seule question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2666,
+ "output_tokens": 289,
+ "cost_usd": 0.0042183,
+ "latency_ms": 5005.6
+}

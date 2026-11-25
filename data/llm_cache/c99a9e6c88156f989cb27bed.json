@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The safety handoff was appropriate, but “I can't confirm a tow or an arrival time” addresses a tow the customer did not request and leaves their expectation of a GM call unaddressed.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please don't drive the vehicle” and “I'm passing this to a team member right now” satisfy the safety and handoff requirements (P07, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“If you are on the road” is conditional advice, not a claim about the customer's location or the vehicle's status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I'm passing this to a team member right now” describes the handoff without promising a callback time or a tow.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't confirm a tow or an arrival time” adds an unnecessary limit after the customer already said the vehicle was at a tow yard.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2685,
+ "output_tokens": 368,
+ "cost_usd": 0.0039542,
+ "latency_ms": 6649.7
+}

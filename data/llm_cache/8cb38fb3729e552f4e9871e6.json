@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I've passed your request to a person on our team” gives the customer the right next step for a bereavement.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“A person on our team … will review it” satisfies P14 without disclosing account details or promising a callback time.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“After 10 works best for you” restates the customer's preference, and the handoff matches the recorded action.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I've noted that after 10 works best for you” acknowledges a preference without confirming a callback.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is sympathetic, but “I can't promise a callback time” and “I can't share any account or vehicle details” state two limits.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2572,
+ "output_tokens": 281,
+ "cost_usd": 0.0039033,
+ "latency_ms": 4352.4
+}

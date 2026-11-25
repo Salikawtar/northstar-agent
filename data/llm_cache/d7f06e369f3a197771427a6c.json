@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“What is your last name?” asks for the missing verification detail needed to check the repair order and recall.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“As soon as I verify you” follows P02 by withholding vehicle and repair details until verification.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can check” offers to look up the repair and recall without stating either status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check” offers a lookup without promising an outcome or a response time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can check your repair order and your recall status” starts with what the assistant can do and leads to one clear question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2500,
+ "output_tokens": 197,
+ "cost_usd": 0.0029697,
+ "latency_ms": 3631.4
+}

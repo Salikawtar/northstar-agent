@@ -1,0 +1,8 @@
+{
+ "text": "Bonjour M. Larouche. Mardi 17 novembre à 9 h 00, il y a une place à Scarborough pour l'inspection de retour. Avant de la réserver, je dois vérifier votre dossier. Pouvez-vous m'indiquer votre plaque d'immatriculation ou votre numéro d'ordre de réparation (RO-######)?\n\nUne petite correction : pour le rachat, c'est le bureau d'affaires qui répond à cette question, et je ne peux pas promettre qu'un montant vous sera envoyé.",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4255,
+ "output_tokens": 441,
+ "cost_usd": 0.01292,
+ "latency_ms": 4462.0
+}

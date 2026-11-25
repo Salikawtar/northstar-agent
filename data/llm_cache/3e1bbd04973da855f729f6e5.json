@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je peux vérifier le déflecteur, le dépôt et un rendez-vous jeudi en avant-midi à Oakville. Je n'ai pas encore pu consulter votre dossier, donc je ne peux pas confirmer les informations de mon collègue. Pouvez-vous me donner votre nom de famille et votre plaque d'immatriculation ou votre numéro d'ordre de réparation (RO-######)?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4138,
+ "output_tokens": 517,
+ "cost_usd": 0.0006723,
+ "latency_ms": 3163.4
+}

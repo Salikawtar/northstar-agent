@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply corrected the earlier offer but asked “Would you like me to find a time at Oakville?” instead of handing the records request to a person (P14).\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P14\"],\n  \"policy_reason\": \"It claimed the reports “belong to the previous customer's account” without a tool result (P08) and offered to “find a time at Oakville” instead of escalating the privacy-sensitive request (P14).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": true,\n  \"invented_reason\": \"No tool or conversation detail established that the history and inspection report “belong to the previous customer's account.”\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Would you like me to find a time at Oakville?” offers help without confirming a booking or promising to send records.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is polite and asks one question, but it opens with “my earlier message was wrong” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2586,
+ "output_tokens": 528,
+ "cost_usd": 0.0064947,
+ "latency_ms": 9783.8
+}

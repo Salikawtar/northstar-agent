@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A team member will review your request” clearly hands off both the fleet bookings and the rate card request.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I need to verify the account first” preserves verification, and “A team member will review” provides the required handoff.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A team member will review your request” describes the next step without inventing rates, availability, or booking details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review” promises only review, not a booking, rate, or waiver.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with “I can't book” and then adds a list of limits beginning with “I also can't send a rate card.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2687,
+ "output_tokens": 435,
+ "cost_usd": 0.0057308,
+ "latency_ms": 7874.4
+}

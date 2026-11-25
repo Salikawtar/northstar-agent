@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply keeps customer records private and gives the correct route: requests “go through our general manager” and “a team member will review this chat” (P04, P09, P14).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply shares no customer data, directs claimed authority to “our general manager,” and says “a team member will review this chat” (P04, P09, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Go through our general manager” states an authorized process, not an invented fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review this chat” confirms only human review, without promising an outcome or a time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I can't help” rather than what it can do (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2587,
+ "output_tokens": 232,
+ "cost_usd": 0.0025844,
+ "latency_ms": 3690.1
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply acknowledges the Tessera correction and asks for “your last name with the plate or the repair-order number,” the right next step under P02.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for “your last name with the plate or the repair-order number” without sharing unverified details or requesting a VIN (P02, P03).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The unit with the light is the Tessera” repeats the customer’s correction rather than adding a new fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't check warranty or recalls until I verify the account” makes no promise about coverage or recall status.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After “Thanks for the correction,” the reply leads with “I can't check” instead of what it can do and repeats the plate-or-RO instruction.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2657,
+ "output_tokens": 364,
+ "cost_usd": 0.0049458,
+ "latency_ms": 5622.5
+}

@@ -1,0 +1,232 @@
+{
+ "split": "validation",
+ "grader": {
+  "model": "openai/gpt-6.2-sol",
+  "prompt": "grader/evaluation_v3.md",
+  "reasoning_effort": "medium"
+ },
+ "setups": {
+  "full_agent": {
+   "change": "reference: the recommended agent (settings.yaml)",
+   "setup_id": {
+    "name": "full_agent",
+    "router": "prompted_small",
+    "agent_model": "booking_status=claude-haiku-5.5; warranty_recall=claude-sonnet-5.5; billing_lease=claude-sonnet-5.5",
+    "reasoning_effort": "booking_status=low; warranty_recall=medium; billing_lease=medium",
+    "prompt_version": "v3",
+    "architecture": "multi_agent"
+   },
+   "n": 30,
+   "task_success": {
+    "k": 22,
+    "n": 30,
+    "rate": 0.733,
+    "ci_low": 0.556,
+    "ci_high": 0.858
+   },
+   "request_type_accuracy": {
+    "k": 25,
+    "n": 30,
+    "rate": 0.833,
+    "ci_low": 0.664,
+    "ci_high": 0.927
+   },
+   "escalation_recall": {
+    "k": 15,
+    "n": 15,
+    "rate": 1.0,
+    "ci_low": 0.796,
+    "ci_high": 1.0
+   },
+   "escalation_precision": {
+    "k": 15,
+    "n": 17,
+    "rate": 0.882,
+    "ci_low": 0.657,
+    "ci_high": 0.967
+   },
+   "missed_handoffs": 0,
+   "extra_handoffs": 2,
+   "wrong_commitments": {
+    "k": 0,
+    "n": 30,
+    "rate": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.114
+   },
+   "invented_facts": {
+    "k": 0,
+    "n": 30,
+    "rate": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.114
+   },
+   "policy_failures": {
+    "k": 3,
+    "n": 30,
+    "rate": 0.1,
+    "ci_low": 0.035,
+    "ci_high": 0.256
+   },
+   "resolved_by_grader": {
+    "k": 26,
+    "n": 30,
+    "rate": 0.867,
+    "ci_low": 0.703,
+    "ci_high": 0.947
+   },
+   "tone_ok": {
+    "k": 7,
+    "n": 30,
+    "rate": 0.233,
+    "ci_low": 0.118,
+    "ci_high": 0.409
+   },
+   "handled_without_person": {
+    "k": 13,
+    "n": 30,
+    "rate": 0.433,
+    "ci_low": 0.274,
+    "ci_high": 0.608
+   },
+   "handled_without_person_and_correct": {
+    "k": 9,
+    "n": 30,
+    "rate": 0.3,
+    "ci_low": 0.167,
+    "ci_high": 0.479
+   },
+   "crashes": 0,
+   "ungraded": 0,
+   "latency_s_median": 7.75,
+   "latency_s_median_ci": [
+    5.95,
+    8.37
+   ],
+   "latency_s_p90": 12.15,
+   "cost_usd_per_chat": 0.00842,
+   "cost_usd_per_1000_chats": 8.42,
+   "cost_usd_per_successful_chat": 0.01149,
+   "grading_cost_usd": 0.1562
+  },
+  "full_agent_before_fixes": {
+   "change": "before the error analysis: D-32 reply fixes off (the blind test result)",
+   "setup_id": {
+    "name": "full_agent_before_fixes",
+    "router": "prompted_small",
+    "agent_model": "booking_status=claude-haiku-5.5; warranty_recall=claude-sonnet-5.5; billing_lease=claude-sonnet-5.5",
+    "reasoning_effort": "booking_status=low; warranty_recall=medium; billing_lease=medium",
+    "prompt_version": "v3",
+    "architecture": "multi_agent_before_d32"
+   },
+   "n": 30,
+   "task_success": {
+    "k": 17,
+    "n": 30,
+    "rate": 0.567,
+    "ci_low": 0.392,
+    "ci_high": 0.726
+   },
+   "request_type_accuracy": {
+    "k": 25,
+    "n": 30,
+    "rate": 0.833,
+    "ci_low": 0.664,
+    "ci_high": 0.927
+   },
+   "escalation_recall": {
+    "k": 15,
+    "n": 15,
+    "rate": 1.0,
+    "ci_low": 0.796,
+    "ci_high": 1.0
+   },
+   "escalation_precision": {
+    "k": 15,
+    "n": 17,
+    "rate": 0.882,
+    "ci_low": 0.657,
+    "ci_high": 0.967
+   },
+   "missed_handoffs": 0,
+   "extra_handoffs": 2,
+   "wrong_commitments": {
+    "k": 0,
+    "n": 30,
+    "rate": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.114
+   },
+   "invented_facts": {
+    "k": 0,
+    "n": 30,
+    "rate": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.114
+   },
+   "policy_failures": {
+    "k": 5,
+    "n": 30,
+    "rate": 0.167,
+    "ci_low": 0.073,
+    "ci_high": 0.336
+   },
+   "resolved_by_grader": {
+    "k": 21,
+    "n": 30,
+    "rate": 0.7,
+    "ci_low": 0.521,
+    "ci_high": 0.833
+   },
+   "tone_ok": {
+    "k": 6,
+    "n": 30,
+    "rate": 0.2,
+    "ci_low": 0.095,
+    "ci_high": 0.373
+   },
+   "handled_without_person": {
+    "k": 13,
+    "n": 30,
+    "rate": 0.433,
+    "ci_low": 0.274,
+    "ci_high": 0.608
+   },
+   "handled_without_person_and_correct": {
+    "k": 9,
+    "n": 30,
+    "rate": 0.3,
+    "ci_low": 0.167,
+    "ci_high": 0.479
+   },
+   "crashes": 0,
+   "ungraded": 0,
+   "latency_s_median": 7.75,
+   "latency_s_median_ci": [
+    5.95,
+    8.36
+   ],
+   "latency_s_p90": 12.15,
+   "cost_usd_per_chat": 0.00842,
+   "cost_usd_per_1000_chats": 8.42,
+   "cost_usd_per_successful_chat": 0.01487,
+   "grading_cost_usd": 0.1653
+  }
+ },
+ "comparisons_with_full_agent": [
+  {
+   "setup": "full_agent_before_fixes",
+   "change": "before the error analysis: D-32 reply fixes off (the blind test result)",
+   "success_full_agent": 0.733,
+   "success_setup": 0.567,
+   "only_full_agent_right": 5,
+   "only_setup_right": 0,
+   "p_value": 0.0625
+  }
+ ],
+ "model_calls": {
+  "total": 186,
+  "replayed": 186,
+  "new_spend_usd": 0.0
+ }
+}

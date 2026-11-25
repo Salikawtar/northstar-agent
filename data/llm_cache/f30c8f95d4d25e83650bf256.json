@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply protects customer details and directs the head-office request to the right channel: “Requests like this go through our general manager.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I can't share any customer's details” protects customer data under P04, and the general-manager referral and team review satisfy P09 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Requests like this go through our general manager” states an authorized process, not an unsupported fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will also review this chat” confirms only a handoff, with no promised outcome or timing.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After “You're welcome,” the reply leads with a list of withheld details rather than what it can do, and adds an unnecessary booking offer.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2611,
+ "output_tokens": 266,
+ "cost_usd": 0.0038508,
+ "latency_ms": 4903.5
+}

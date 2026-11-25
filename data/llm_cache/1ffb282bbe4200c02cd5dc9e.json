@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I've passed your request to a person” is the right next step for the billing dispute and warranty request (P05, P06, P14).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Warranty decisions are made by the warranty desk” leaves the decision to the right team without disclosing invoice details (P02, P05).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-287266” came from the customer, and the reply adds no unverified billing or coverage facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will review the bill” promises a review, not coverage, an adjustment, or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is empathetic but delays the helpful next step and stacks three limits starting with “I can't say whether this is covered.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2705,
+ "output_tokens": 340,
+ "cost_usd": 0.0036762,
+ "latency_ms": 6288.4
+}

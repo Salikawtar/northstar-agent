@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for the « nom de famille du titulaire » was the right next step for repair status, but « je peux transmettre » left the billing dispute without a handoff.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"P06 and P14 require a human handoff for a billing dispute, but « je peux transmettre » only offered one.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« La voiture est prête » is quoted as an unverified earlier statement, not presented as a confirmed status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux transmettre votre demande » offers a review without promising a billing adjustment or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is clear and asks one question, but opens with « Je n’ai pas encore pu confirmer » rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2524,
+ "output_tokens": 363,
+ "cost_usd": 0.0046897,
+ "latency_ms": 5986.2
+}

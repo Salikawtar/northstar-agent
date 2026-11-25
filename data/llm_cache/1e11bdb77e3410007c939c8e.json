@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"It asks for the missing “last name” and tells the customer not to treat “the 7:30 tomorrow as confirmed.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"It asks to “verify your account” before sharing vehicle or order details and does not confirm a booking.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"It mentions “the 7:30 tomorrow” only to clarify that the earlier time was not confirmed.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I haven't booked anything yet” corrects the earlier impression without promising an appointment or installation.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"It stacks limits by saying “don't treat the 7:30 tomorrow as confirmed” and “I also can't confirm” the carrier or add the installation.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2666,
+ "output_tokens": 437,
+ "cost_usd": 0.0056983,
+ "latency_ms": 8167.8
+}

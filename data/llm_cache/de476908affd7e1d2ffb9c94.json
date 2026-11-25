@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing this to a team member” is a safe handoff, but it leaves the customer believing the earlier “Tow dispatched” claim and does not acknowledge the corrected pickup location.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Call 911 now” if anyone is hurt or in danger, “don't drive,” and “I'm passing this to a team member” satisfy P07 and P14 without repeating the earlier dispatch claim.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the recorded handoff, and the reply gives no dispatch status or arrival time.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will contact you” gives no callback time and does not confirm that a tow was dispatched.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Your safety comes first” is clear, but the reply does not briefly correct the earlier “Tow dispatched” claim as P13 advises.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2610,
+ "output_tokens": 364,
+ "cost_usd": 0.0048283,
+ "latency_ms": 6184.0
+}

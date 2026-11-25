@@ -8,20 +8,22 @@ Status values: **Done**, **Partly built**, **To do**.
 
 | # | Task | What it is | Where it is used | Status |
 |---|---|---|---|---|
-| 1 | Success definition | Request resolved correctly, policy followed, right escalation, nothing invented (above all no coverage, price or loaner promised) | Report page 5; the rubric | Partly built: drafted in the project outline; measured in the development runs |
-| 2 | Shared rubric | One grading rubric agreed by the team before the final test | Fair, repeatable grading (brief requirement) | To do |
-| 3 | Evaluation harness | One command runs any setup on the 40 test chats and writes run and grade records | Report page 5; the README's single evaluation command | To do (`src/northstar/evaluation/`; contracts `RunRecord` and `GradeRecord` ready) |
-| 4 | Rule-based grading | Checks a program can decide: route, escalation and queue, tools used, promises without a tool, verification | Accuracy, escalation quality, policy failures | Partly built: these checks already run in the pipeline, baseline and hand-written chat runs |
-| 5 | Model grader | A model grades what rules cannot: invented facts, policy followed, reply quality | Hallucination and policy metrics | To do |
-| 6 | Grader check | Model grader against the team's hand review of the 40 test chats: percent agreement and Cohen's kappa | Brief requirement ("validate against human judgments") | To do (hand-review labels exist, data task 7) |
-| 7 | Same cases for every setup | The 40 test chats through: the three routers (with Neeraj), the full agent, the single-agent baseline | Report pages 4 and 5 | To do |
-| 8 | One change at a time | Each comparison changes one thing: model, reasoning effort or prompt version | Controlled experiments (brief requirement) | Partly built: router runs on validation compared prompt v1/v2/v3, effort and model one at a time |
-| 9 | Metrics | Task success, accuracy, latency, cost, policy failures, invented facts, escalation recall and precision | Headline results table | Partly built: all except invented facts and task success are measured in the development runs |
-| 10 | Confidence ranges | 40 chats is small: show a range around each main rate | Honest results (outline promise) | To do |
-| 11 | Error analysis | Group the errors, find the cause, propose or make a fix, re-test | Report page 5 | Partly built: development errors analysed and fixed (router mistakes, checker false alarms, verification gap) in `docs/prompt_log.md` |
-| 12 | Results exports | Tables and failure examples saved to files, reproducible from recordings | Appendix; inputs for Abhi | To do |
-| 13 | Hand results to the team | Final metrics and failure examples to Members 2, 3, 5 and 6 | Fine-tune comparison, guardrail rates, economics | To do |
-| 14 | Report page 5 and appendix | Success criteria, method, held-out set, metrics, grader check, errors, fixes; full tables and rubric in the appendix | Final report | To do |
+| 1 | Success definition | Request resolved correctly, policy followed, right escalation, nothing invented (above all no coverage, price or loaner promised) | Report page 5; the rubric | Done: five questions, all must pass (`docs/evaluation_rubric.md`, D-31) |
+| 2 | Shared rubric | One grading rubric agreed by the team before the final test | Fair, repeatable grading (brief requirement) | Done: v1.0 with decision rules and examples, used by the grader; team sign-off table (section 8) to fill |
+| 3 | Evaluation harness | One command runs any setup on the 40 test chats and writes run and grade records | Report page 5; the README's single evaluation command | Done: `python -m northstar.evaluation` (or `python run_all.py evaluate`), replays in about 10 seconds, `RunRecord` and `GradeRecord` written |
+| 4 | Rule-based grading | Checks a program can decide: route, escalation and queue, tools used, promises without a tool, verification | Accuracy, escalation quality, policy failures | Done: `src/northstar/evaluation/rules.py` (handoff, queue, unbacked promises, other people's data, data before verification, language, response-time claims) |
+| 5 | Model grader | A model grades what rules cannot: invented facts, policy followed, reply quality | Hallucination and policy metrics | Done: GPT-6.2 Sol, blind to the setup, tool results shown (`prompts/grader/evaluation_v3.md`); developed on validation only (v1 to v3, `docs/prompt_log.md`) |
+| 6 | Grader check | Model grader against the team's hand review of the 40 test chats: percent agreement and Cohen's kappa | Brief requirement ("validate against human judgments") | Partly built: self-consistency done (3 passes, 98.3% agreement, kappa 0.96); blind sheet of 80 replies ready (`src/northstar/evaluation/human_review/`) and scoring code tested; **team labels to fill**, then `python -m northstar.evaluation check` |
+| 7 | Same cases for every setup | The 40 test chats through: the three routers (with Neeraj), the full agent, the single-agent baseline | Report pages 4 and 5 | Done: 8 setups on the same 40 chats (`results/headline.md`) |
+| 8 | One change at a time | Each comparison changes one thing: model, reasoning effort or prompt version | Controlled experiments (brief requirement) | Done: router model (Sonnet, fine-tuned), router prompt (v2), warranty effort (high), checks off, architecture, fixes off; exact McNemar tests (`results/comparisons.csv`) |
+| 9 | Metrics | Task success, accuracy, latency, cost, policy failures, invented facts, escalation recall and precision | Headline results table | Done: plus containment, cost per successful chat and tone, each tied to a business outcome (`metrics.py`) |
+| 10 | Confidence ranges | 40 chats is small: show a range around each main rate | Honest results (outline promise) | Done: 95% Wilson intervals on every rate, bootstrap range on median latency |
+| 11 | Error analysis | Group the errors, find the cause, propose or make a fix, re-test | Report page 5 | Done: 19 blind failures in 9 groups; 4 fixed in code (D-32), re-tested on test, validation, hand-written chats and red team; 1 side effect and 5 proposals reported (`docs/evaluation_results.md`) |
+| 12 | Results exports | Tables and failure examples saved to files, reproducible from recordings | Appendix; inputs for Abhi | Done: `src/northstar/evaluation/results/` (headline, comparisons, slices, failures, failure groups, per chat, grade records, economics inputs) |
+| 13 | Hand results to the team | Final metrics and failure examples to Members 2, 3, 5 and 6 | Fine-tune comparison, guardrail rates, economics | Done in the repository: section 7 of `docs/evaluation_results.md` and `results/economics_inputs.json`; to send to the team |
+| 14 | Report page 5 and appendix | Success criteria, method, held-out set, metrics, grader check, errors, fixes; full tables and rubric in the appendix | Final report | Draft written (shared as a doc); grader-check numbers to add after the labels |
+
+**Headline (40 test chats, recommended agent):** 70% task success (55 to 82), 18 of 18 needed handoffs made, 1 wrong commitment, 1 invented fact, 5.6 s median wait, $5.34 per 1,000 chats. The blind run before the fixes: 52.5%.
 
 ## Reminder before submission
 

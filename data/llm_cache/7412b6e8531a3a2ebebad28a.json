@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“What is your last name?” is the right next step, and “nothing is booked yet” corrects the earlier impression.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"“I can book the 56k service at Burlington for 2026-11-23” implies availability that no tool confirmed.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“I can book … for 2026-11-23” presents the requested date as bookable without a tool result.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Nothing is booked yet” makes clear that no reservation was confirmed.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Thanks, and sorry for the missed replies” is warm, but it opens with an apology rather than what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2601,
+ "output_tokens": 507,
+ "cost_usd": 0.0063222,
+ "latency_ms": 9135.5
+}

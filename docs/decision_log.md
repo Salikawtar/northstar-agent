@@ -236,3 +236,30 @@ Add new decisions at the bottom. When results confirm or overturn a decision, ad
 - **Counter-argument:** 30 validation chats is a small, noisy basis for choosing a model, so the choice may not be the true best one. Two seeds per setting reduce that noise, and the test spread over 5 seeds shows how much it matters.
 - **Result (Kaggle T4, 2026-11-24):** XLM-RoBERTa base at 3e-5 chosen on validation. On the 40 test chats: request type 67.5% (Haiku 82.5%, Sonnet 77.5%; paired tests p = 0.15 and 0.45), escalation recall 88.9%, 249 ms per chat on CPU, $0 per chat. Five seeds ranged from 62.5% to 75%. Inside the agent, the confidence floor sends 8 of its 13 type mistakes to a person, so 2 wrongly routed chats reach a specialist (Haiku 2, Sonnet 4). Details in `src/northstar/finetune/MODEL_CARD.md`.
 - **Known limits of the fine-tuned router:** it does not learn an escalation reason (the dataset has no reason labels; a fixed rule picks the reason that sends the chat to the right queue) and gives no secondary request types.
+
+### D-31. Final evaluation: rules where a program can decide, a model grader from another vendor for the rest
+- **Date:** 2026-11-25
+- **Choice:**
+  - **Success** = the five rubric questions all pass: request resolved, policy followed, handoff correct (and to the right queue), no invented fact, no wrong commitment (`docs/evaluation_rubric.md`). A chat the grader could not grade counts as failed.
+  - **Rules** decide handoff, queue, promises with no tool behind them, other people's data, data before verification, language and response-time claims (`src/northstar/evaluation/rules.py`).
+  - **Model grader:** OpenAI GPT-6.2 Sol at medium effort, blind to the setup, with the tool results in front of it (`prompts/grader/evaluation_v3.md`).
+  - **Eight setups**, each one change from the recommended agent: router model (Sonnet, fine-tuned), router prompt (v2), warranty effort (high), checks off, single agent, and the agent before the error-analysis fixes (D-32). All on the same 40 test chats, compared with an exact McNemar test; every rate with a 95% Wilson interval.
+  - **The fine-tuned router** runs inside the full agent from its recorded test decisions (its 1.1 GB checkpoint is not in git); with the checkpoint on disk the live model is used.
+- **Why:** rules are free, exact and do not drift, so they take everything that is a fact about what the agent did. A grader from another vendor avoids a Claude model rewarding Claude's style. Seeing the tool results makes "invented" mean "not in the tools". The brief asks for controlled, one-change comparisons and a grader validated against people.
+- **Grader development on validation only:** v1 counted tone advice as a policy failure in 20 of 30 chats (13% success); v2 separated tone and listed the agent's known processes (57%); v3 added the lease-return process v2 still called invented (validation chat v3_0114). Logged in `docs/prompt_log.md`.
+- **Checks on the grader:** three grading passes agree on 98.3% of overall verdicts (kappa 0.96). The check against people uses a blind sheet of 80 replies (`python -m northstar.evaluation check`); its labels are still to be filled by the team.
+- **Alternatives considered:** Claude Sonnet as grader (same family as the agents); rules only (cannot judge "resolved" or "invented"); people only (does not scale to 320 replies and every re-run).
+- **Counter-argument:** a model grader can still be wrong in ways all three passes share, which only the human check can show; until the team's labels are in, the success rates rest on the grader. The rule checks also have known false alarms (a negation more than three words before "waiver").
+
+### D-32. Four fixes from the test-set error analysis, kept switchable for a before/after comparison
+- **Date:** 2026-11-25
+- **Choice:** four code changes, all behind `agent.reply_fixes` in `config/settings.yaml` (on), so the evaluation can run the agent exactly as it was (setup `full_agent_before_fixes`):
+  1. **Safety fixed reply** adds: "I can't confirm a tow or an arrival time from here, so please don't count on one yet" (and French).
+  2. **Adversarial fixed reply** says requests made on behalf of the manufacturer, head office or another authority go through the general manager (P09).
+  3. **A handoff made by the code is always announced:** when the router, failed verification or a failing dealer system hands the chat off but the model wrote a normal reply, a fixed sentence says a team member will review it (P14).
+  4. **Output check G-OUT-02** ignores the two format examples in our own tool descriptions (RO-123456, CABC 123).
+- **Why:** the blind test run (52.5% success) failed 19 chats. Five safety chats left a colleague's false "tow on the way" standing (also 4 of 30 validation chats); one dispute was handed off without telling the customer (and two more showed the same pattern); one fake head-office request was refused without naming the general manager; one correct reply was blocked because it quoted "RO-123456" as an example. Each cause is in code that does not read the chat, so a code fix is general and does not tune a prompt to the test chats.
+- **Result:** test 52.5% to 70.0% (8 chats fixed, 1 worse: v3_0078, where the new adversarial wording does not fit a data-extraction attack); validation 56.7% to 73.3% (5 fixed, none worse); hand-written chats 40 of 40; red team 75 of 75 resisted and handed to a person; 5 new unit tests.
+- **Alternatives considered:** let a model write the safety reply (slower and riskier on the one path where speed matters); change the router prompt for the extra handoffs (would fit the test set; left as a proposal to test on validation).
+- **Counter-argument:** the 70% is measured on chats we looked at, so it is optimistic; the blind 52.5% is the honest held-out number and both are reported. v3_0078 shows a fixed reply cannot fit every attack; a reply per attack type needs the router to return the attack type, a contract change for the team.
+

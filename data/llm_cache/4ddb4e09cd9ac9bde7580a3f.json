@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“They will contact you” leaves the customer expecting the earlier, unconfirmed GM call “within the hour.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Call 911,” “don't drive,” and “I'm passing this to a team member right now” satisfy P07 and P14 without repeating the promised callback time.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member right now” matches the recorded handoff, and the safety advice adds no case facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will contact you” describes follow-up without promising a specific caller or callback time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with “Your safety comes first” rather than the handoff, and “If you are on the road” adds advice for a vehicle already at a tow yard.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2663,
+ "output_tokens": 577,
+ "cost_usd": 0.0070908,
+ "latency_ms": 9561.2
+}

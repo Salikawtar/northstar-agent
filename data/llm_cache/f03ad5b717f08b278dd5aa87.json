@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply offers « mardi 17 novembre à 9 h 00 » and asks for the missing verification detail before booking.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"The reply says « Je transmets votre demande à une personne du bureau d’affaires », but the handoff went to service advisors.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": true,\n  \"invented_reason\": \"The claimed transfer to « une personne du bureau d’affaires » does not match the recorded queue.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Avant de la réserver » makes clear the slot is not booked, and the reply promises no amount or response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Une petite correction » addresses the buyout but leaves the earlier assurance « le jour même, avant toute facturation » uncorrected.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2836,
+ "output_tokens": 616,
+ "cost_usd": 0.0079997,
+ "latency_ms": 12191.3
+}

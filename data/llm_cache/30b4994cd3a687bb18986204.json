@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply says a person « vérifiera l’autorisation et examinera la ligne contestée » and notes both the Thursday pickup and Denise’s call preference.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply says « Elle peut nous contacter directement » and sends the dispute for human review without disclosing invoice details (P06, P14, P15).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« La voiture a été récupérée jeudi » repeats the customer’s correction rather than adding a dealer-system fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Vous préférez un appel à vous » records a preference without promising a callback or a fee removal.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with « Je ne peux pas partager » and adds more limits, including « Je ne peux toutefois pas promettre de délai ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2719,
+ "output_tokens": 283,
+ "cost_usd": 0.0031076,
+ "latency_ms": 4747.5
+}

@@ -12,6 +12,7 @@ and gives the same records. Records are written with personal data masked
 from __future__ import annotations
 
 import json
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
@@ -43,10 +44,13 @@ class Harness:
             self.pipeline = None
         else:
             router = build_router(setup, self.client)
-            specialists = {d: Specialist(d, client=self.client, reasoning_effort=e)
-                           for d, e in setup.desk_effort.items()}
+            specialists = {d: Specialist(d, client=self.client, reasoning_effort=setup.desk_effort.get(d))
+                           for d in ("booking_status", "warranty_recall", "billing_lease")}
+            for sp in specialists.values():
+                sp.reply_fixes = setup.reply_fixes
             self.pipeline = Pipeline(client=self.client, router=router, specialists=specialists)
             self.pipeline.guarded = setup.guardrails
+            self.pipeline.reply_fixes = setup.reply_fixes
 
     def run_one(self, row) -> Run:
         cid, turns, lang = row["id"], turns_from_row(row), row["language"]
@@ -73,9 +77,23 @@ class Harness:
             return Run(RunRecord(conversation_id=cid, setup=self.setup_id, latency_ms=0.0,
                                  error=f"{type(e).__name__}: {str(e)[:300]}"), dict(path="crash", tool_data=[]))
 
-    def run(self, split: str = "test") -> list[Run]:
+    def run(self, split: str = "test", workers: int = 8) -> list[Run]:
+        """Chats are independent (each gets a fresh dealer system), so they run in parallel.
+        The order of the records stays the order of the dataset."""
         df = load_conversations(split)
-        return [self.run_one(r) for _, r in df.iterrows()]
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            return list(pool.map(self.run_one, [r for _, r in df.iterrows()]))
+
+
+def _mask(obj: Any) -> Any:
+    """Mask the text values only (masking the JSON line itself would also hit numbers like costs)."""
+    if isinstance(obj, str):
+        return mask_text(obj)
+    if isinstance(obj, dict):
+        return {k: _mask(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_mask(v) for v in obj]
+    return obj
 
 
 def save_runs(runs: list[Run], split: str, name: str) -> None:
@@ -84,5 +102,5 @@ def save_runs(runs: list[Run], split: str, name: str) -> None:
     out.mkdir(parents=True, exist_ok=True)
     with open(out / f"{name}.jsonl", "w", encoding="utf-8") as f:
         for r in runs:
-            line = json.dumps({"run": r.record.model_dump(mode="json"), "trace": r.trace}, ensure_ascii=False)
-            f.write(mask_text(line) + "\n")
+            rec = {"run": r.record.model_dump(mode="json"), "trace": r.trace}
+            f.write(json.dumps(_mask(rec), ensure_ascii=False, default=str) + "\n")

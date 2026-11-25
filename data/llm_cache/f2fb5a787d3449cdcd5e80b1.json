@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“What is your last name, please?” requests the missing verification detail, and “A team member will review your request” addresses the disputed charge.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for a last name “to verify you” under P02 and routes the billing dispute to the “service manager” under P06 and P14.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A team member will review your request” describes the handoff without asserting any inspection or billing facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Review your request and follow up with you” promises neither a billing outcome nor a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry this is stressful” rather than starting with what it can do, as P13 directs.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2627,
+ "output_tokens": 337,
+ "cost_usd": 0.0036384,
+ "latency_ms": 5480.7
+}

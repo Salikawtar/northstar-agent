@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Thanks, and sorry for the missed replies. I can book the 56k service at Burlington for 2026-11-23. First, I need to verify you. What is your last name? One correction to my colleague's message: nothing is booked yet, and I can't confirm the roof rack arrived. A parts advisor will confirm that.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P08\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4615,
+ "output_tokens": 387,
+ "cost_usd": 0.0131,
+ "latency_ms": 4703.1
+}

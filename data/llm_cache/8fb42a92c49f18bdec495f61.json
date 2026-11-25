@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply corrects the unconfirmed dispatch with « je ne peux pas confirmer qu’un camion est en route » and hands the roadside request to a person.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P03\"],\n  \"policy_reason\": \"Asking for « l’adresse exacte du stationnement » violates P03’s rule against requesting an address in chat.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The details about « Oakville » and « la boîte à clés du client » came from the customer.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne, qui la examinera » promises only a review, not a tow, a call or an arrival time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with « Je dois corriger » and states two limits before saying what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2692,
+ "output_tokens": 368,
+ "cost_usd": 0.0051597,
+ "latency_ms": 6296.6
+}

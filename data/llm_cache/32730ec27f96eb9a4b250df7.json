@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can help with the screen and the booking. To verify your account, please give me your last name and the licence plate on the vehicle. The Markham times I can see are November 17 to 20, not November 26. Once you're verified, I can book one of those for you. I can't offer a loaner, and a warranty desk person decides coverage.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P06\", \"P08\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 4216,
+ "output_tokens": 319,
+ "cost_usd": 0.0005811,
+ "latency_ms": 2147.4
+}

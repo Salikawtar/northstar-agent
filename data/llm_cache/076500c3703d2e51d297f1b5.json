@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your request to a team member” is the right next step for the disputed charge under P06 and P14.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your request to a team member” follows P06 and P14 without disclosing unverified account details under P02.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your request to a team member” matches the recorded handoff and adds no billing facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will get back to you” gives no response time and promises no billing outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Thank you for your patience” is polite, but it opens with thanks rather than what the assistant can do under P13.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2541,
+ "output_tokens": 351,
+ "cost_usd": 0.0045258,
+ "latency_ms": 5973.7
+}

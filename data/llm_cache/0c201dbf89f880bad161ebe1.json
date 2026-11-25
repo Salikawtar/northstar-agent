@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply focuses on whether to “count on” a tow instead of routing the request for someone to explain the next steps after the collision.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply gives conditional 911 advice and says “I’m passing this to a team member” without sharing account details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can’t confirm a tow or an arrival time” does not assert either as fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow or a callback time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can’t confirm a tow or an arrival time” adds a limit about something the customer never asked for.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2660,
+ "output_tokens": 558,
+ "cost_usd": 0.0058517,
+ "latency_ms": 9920.3
+}

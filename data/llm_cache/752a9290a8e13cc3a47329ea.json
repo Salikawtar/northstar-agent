@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je transmets votre demande » ne dissipe pas l’impression laissée par « J’envoie une demande de remorquage » qu’un remorqueur est déjà en route.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Appelez le 911 », « Ne conduisez pas le véhicule » et « Je transmets votre demande » respectent P07 et P14 sans confirmer l’envoi d’un remorqueur.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande » correspond au transfert effectué, et la réponse ne donne ni statut de remorquage ni délai.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous contactera » annonce un suivi humain sans promettre de délai ni confirmer un remorquage.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Votre sécurité passe en premier » est bienveillant, mais la réponse aurait gagné en clarté en annonçant d’emblée le transfert et en corrigeant brièvement le message précédent.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2671,
+ "output_tokens": 598,
+ "cost_usd": 0.0074072,
+ "latency_ms": 12561.0
+}

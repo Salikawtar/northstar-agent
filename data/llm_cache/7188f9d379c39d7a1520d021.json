@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply notes the corrected location on the “407” and hands off the roadside request while clarifying “I can't confirm that a tow is dispatched.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"“Stays well away from traffic” is useful advice, but P07 also requires telling the customer not to drive the potentially unsafe vehicle.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The 407, just east of the Mississauga exit” came from the customer, and the reply gives no unverified dispatch status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't confirm that a tow is dispatched” leaves confirmation to the person taking over without promising a tow or an ETA.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm and asks one question, but “or send an ETA” adds a limit the customer did not ask about.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2665,
+ "output_tokens": 599,
+ "cost_usd": 0.0074022,
+ "latency_ms": 10363.3
+}

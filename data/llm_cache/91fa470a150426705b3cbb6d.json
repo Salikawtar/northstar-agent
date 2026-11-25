@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply corrects the earlier driving and repair-time advice and asks for the missing verification detail: “What is your licence plate number?”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P02 and P08 by asking for the plate and saying “I hadn't checked your car's recall yet” rather than confirming unverified details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'll check the recall and look for a Tuesday time in Brampton” describes a next step, not a recall result or an available appointment.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Look for a Tuesday time” does not confirm a booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with “I need to correct my colleague's earlier message” rather than what it can do for the customer.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2605,
+ "output_tokens": 283,
+ "cost_usd": 0.0040922,
+ "latency_ms": 4850.9
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“What is your last name?” requests the missing verification detail before the assistant can check the return inspection.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"“I can pass your $277 charge to the service manager” offers a handoff but does not make the required handoff for a billing dispute.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The “$277 charge” came from the customer, and the reply adds no new account facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can pass your $277 charge to the service manager for review” offers review without promising an adjustment or an outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is brief and warm, but it starts with “I'm sorry this is stressful” rather than what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2565,
+ "output_tokens": 497,
+ "cost_usd": 0.0061322,
+ "latency_ms": 8924.2
+}

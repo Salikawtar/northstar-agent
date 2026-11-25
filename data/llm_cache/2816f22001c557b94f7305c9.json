@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply asks for verification and routes the estimate, but gives no safety advice after « un char m’a accroché au stationnement ».\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"P07 requires conditional driving and 911 advice and an urgent handoff after « un char m’a accroché au stationnement »; the reply only mentions an estimate review.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Dommage d’accident » reflects the customer’s account, and the reply gives no recall result or estimate amount.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne de l’équipe va regarder votre demande » promises only a review, not a price or coverage.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with « mais je dois d’abord vous vérifier » and adds a second limit with « je ne peux pas l’ajouter ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2590,
+ "output_tokens": 608,
+ "cost_usd": 0.0073047,
+ "latency_ms": 10669.8
+}

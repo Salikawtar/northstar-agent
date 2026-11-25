@@ -10,7 +10,7 @@ Status values: **Done**, **Partly available**, **To do**.
 |---|---|---|---|---|
 | 1 | Business problem | Service advisors and a call centre answer chats today; what AI changes and where a rules-based bot would be enough | Memo (page 1) and economics (page 7) | To do |
 | 2 | Status quo baseline | Advisor time per chat and hourly wage, from a public source | Cost comparison | To do |
-| 3 | Measured inputs | Cost per chat per setup, share handled without a person, wrong-commitment rate, handoff rate | Every calculation | Partly available: validation numbers ($0.0085 per chat for the full agent, $0.018 for the single agent, 16 of 30 chats handed off, 0 unbacked promises); final numbers come from the test run |
+| 3 | Measured inputs | Cost per chat per setup, share handled without a person, wrong-commitment rate, handoff rate | Every calculation | Available: final test numbers for every setup in `src/northstar/evaluation/results/economics_inputs.json` (full agent $0.0053 per chat, $0.0076 per successful chat, 60% handed off, wrong commitments 1 of 40 with an upper 95% bound of 12.9%) |
 | 4 | Three model options | Operating cost of small prompted, large prompted and fine-tuned routers | Comparison table (brief requirement) | To do (needs Neeraj's results) |
 | 5 | Cost per task | Cost per chat and cost per successfully resolved chat, for each option | Page 7 | To do |
 | 6 | Volume scenarios | 1,000, 100,000 and 1,000,000 chats per month | Page 7 table | To do |

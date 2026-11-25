@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing this to a person now” handles the urgent tow request and “I haven't dispatched a tow” corrects the earlier claim.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"“Get your car as far onto the shoulder as possible” does not tell the customer not to drive a vehicle that may be unsafe, as P07 requires.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“QEW heading toward Burlington, just past the mall exit” restates the customer's location.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I haven't dispatched a tow” makes clear that no tow has been confirmed.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm but opens with “I'm sorry you're stuck” and repeats the handoff instead of leading with what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2595,
+ "output_tokens": 354,
+ "cost_usd": 0.0047772,
+ "latency_ms": 6392.0
+}

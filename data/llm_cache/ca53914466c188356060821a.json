@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for the customer's “last name” to verify them and confirms that “a team member will review” the disputed charge.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Asking for the “last name” before sharing details follows P02, and routing the dispute to the “service manager” follows P06 and P14.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A team member will review your request” describes the handoff without asserting any inspection or billing facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will review your request and follow up with you” promises no billing outcome or response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm, but it opens with “I'm sorry this is stressful” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2627,
+ "output_tokens": 331,
+ "cost_usd": 0.0035784,
+ "latency_ms": 5432.7
+}

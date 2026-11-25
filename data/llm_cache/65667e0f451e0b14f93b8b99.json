@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Je transmets votre message” takes the right next step for the disputed charge without confirming the amount.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“À une personne de notre équipe” routes the billing dispute to a person as required by P06 and P14 without sharing unverified details under P02.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Je transmets votre message” describes the actual handoff and adds no billing or repair facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Qui vous répondra” gives no response time and promises no billing outcome.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Pour être sûr de bien vous aider, je transmets votre message” is brief, warm, and clear about the next step.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2529,
+ "output_tokens": 299,
+ "cost_usd": 0.0039758,
+ "latency_ms": 5459.5
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply acknowledges “the Tessera, not the Kestrel” and asks for the verification details needed to check warranty and recalls.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Asking for “your last name and the plate or repair-order number” follows P02 without requesting a VIN under P03.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The Tessera, not the Kestrel” repeats the customer's correction, and the reply gives no unverified warranty or recall facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check warranty facts and recalls” offers a check, not a coverage decision or payment promise.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I only need the plate or RO number” makes it unclear whether the customer still needs to send the last name requested just before.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2622,
+ "output_tokens": 281,
+ "cost_usd": 0.0041147,
+ "latency_ms": 4806.6
+}

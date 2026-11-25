@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing your request to a team member” skips the verification needed to help with the request to check both concerns in one visit.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your request to a team member” makes the handoff clear without disclosing unverified information (P02, P14).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your request to a team member” matches the recorded handoff, and the reply adds no vehicle or service facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will get back to you” describes follow-up without promising a response time or a service outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Thank you for your patience” is polite, but the reply does not start with what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2538,
+ "output_tokens": 435,
+ "cost_usd": 0.0054447,
+ "latency_ms": 7987.1
+}

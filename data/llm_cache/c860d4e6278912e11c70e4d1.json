@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je vous mets en contact avec une personne de notre équipe » explique le transfert sans présenter la réclamation comme déjà ouverte.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Une personne de notre équipe […] vous répondra » annonce le transfert sans divulguer de données ni promettre de décision.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je vous mets en contact avec une personne de notre équipe » correspond au transfert effectué.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous répondra » ne promet ni délai de réponse ni numéro de réclamation.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Je suis l’assistant virtuel de la concession » plutôt que par l’aide qu’elle peut apporter.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2635,
+ "output_tokens": 428,
+ "cost_usd": 0.0045492,
+ "latency_ms": 7458.5
+}

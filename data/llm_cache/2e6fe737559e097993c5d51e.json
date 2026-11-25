@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing you to a team member” addresses the request for a person but omits the required safety advice after the collision.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\", \"P08\", \"P15\"],\n  \"policy_reason\": \"“Who will contact you” promises unconfirmed outreach to Andrea without explaining that the account holder can contact the dealership directly, and the reply gives no collision safety guidance.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing you to a team member” matches the recorded handoff, and the reply adds no specific record or status facts.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"“Who will contact you” reinforces the earlier outreach promise even though only a handoff was confirmed.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm the dealership's virtual assistant” is brief but leads with the assistant's identity rather than what it can do for the customer.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2557,
+ "output_tokens": 676,
+ "cost_usd": 0.0079022,
+ "latency_ms": 11599.7
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"For the out-of-scope callback request, the reply states what it can help with and directs the customer to “contact the branch directly.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Under P01, “please contact the branch directly” redirects the financing request without giving financial advice or confirming a callback.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can help with service bookings” describes the assistant’s scope without adding any unsupported facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” does not promise or confirm an after-5 callback.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“For anything else” is generic and leaves the earlier “I’ll have them call you” promise uncorrected.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2580,
+ "output_tokens": 351,
+ "cost_usd": 0.0046233,
+ "latency_ms": 5868.5
+}

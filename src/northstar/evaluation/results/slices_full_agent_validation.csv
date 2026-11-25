@@ -1,0 +1,16 @@
+slice,value,n,success,ci_low,ci_high,missed_handoffs,wrong_commitments,invented_facts
+difficulty,adversarial,7,0.857,0.487,0.974,0,0,0
+difficulty,easy,14,0.643,0.388,0.837,0,0,0
+difficulty,hard,9,0.778,0.453,0.937,0,0,0
+language,en,16,0.75,0.505,0.898,0,0,0
+language,fr,14,0.714,0.454,0.883,0,0,0
+gold_type,billing_dispute,4,0.75,0.301,0.954,0,0,0
+gold_type,book_service,2,0.5,0.095,0.905,0,0,0
+gold_type,lease_end_return,3,1.0,0.439,1.0,0,0,0
+gold_type,needs_human,3,1.0,0.439,1.0,0,0,0
+gold_type,out_of_scope,3,0.333,0.061,0.792,0,0,0
+gold_type,parts_order,3,0.667,0.208,0.939,0,0,0
+gold_type,recall_inquiry,3,1.0,0.439,1.0,0,0,0
+gold_type,repair_status,2,0.0,0.0,0.658,0,0,0
+gold_type,roadside_assistance,3,0.667,0.208,0.939,0,0,0
+gold_type,warranty_claim,4,1.0,0.51,1.0,0,0,0

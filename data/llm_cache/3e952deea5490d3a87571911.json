@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The customer asked “revisez,” but “Je peux demander une révision” offers a review without handing off the billing dispute.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"“Je peux demander une révision” does not send the billing dispute to a person or tell the customer that a person will review it.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Je ne peux pas les confirmer pour l’instant” adds no unverified price, repair status, or record detail.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Je peux demander une révision” does not promise a billing adjustment or confirm the disputed price.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"It opens with “Je peux demander une révision,” asks one clear question, and briefly corrects the earlier message.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2550,
+ "output_tokens": 418,
+ "cost_usd": 0.0052183,
+ "latency_ms": 7158.8
+}

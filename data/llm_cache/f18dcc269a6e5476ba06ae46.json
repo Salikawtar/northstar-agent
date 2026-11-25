@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je comprends, et merci de votre patience. Je dois d'abord vous vérifier pour regarder la facture RO-922707. Quel est votre nom de famille? Une correction : je n'ai pas confirmé qu'il s'agit d'une préautorisation, et je n'ai pas besoin des chiffres de votre carte.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3856,
+ "output_tokens": 424,
+ "cost_usd": 0.011952,
+ "latency_ms": 4480.2
+}
