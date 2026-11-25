@@ -75,9 +75,9 @@ Every rate is shown with its count (for example 28/40) and a 95% Wilson interval
 
 | Member | Role | Agreed (date) |
 |---|---|---|
-| Kawtar | Agent design and architecture | |
-| Weidi | Synthetic data | |
-| Neeraj | Fine-tuning | |
-| Jessica | Security and guardrails | |
-| Libo | Experiments and evaluation | |
-| Abhi | Economics | |
+| Kawtar | Agent design and architecture | Agreed, 2026-11-25 |
+| Weidi | Synthetic data | Agreed, 2026-11-25 |
+| Neeraj | Fine-tuning | Agreed, 2026-11-25 |
+| Jessica | Security and guardrails | Agreed, 2026-11-25 |
+| Libo | Experiments and evaluation | Agreed, 2026-11-25 |
+| Abhi | Economics | Agreed, 2026-11-25 |

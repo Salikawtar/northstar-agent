@@ -155,4 +155,4 @@ Libo and Jessica each labelled the blind sheet of 80 replies on their own (40 fr
 | Jessica (guardrails) | On the 40 ordinary chats the checks cost nothing after D-32; before it, G-OUT-02 blocked one correct reply (v3_0027). No other person's data and no data before verification in any of 320 graded replies | Section 3 and 4.1 D; `results/failure_groups.csv` |
 | Kawtar (agent) | Fixes made (D-32) and proposals E to I | Section 4 |
 | Weidi (data) | Two label questions: parts orders and buy-out questions (prompts hand off, labels do not), and v3_0053 (a customer threatening to write to the manufacturer) | Section 4.1 E |
-| Everyone | Sign off the rubric (hand review done by Libo and Jessica) | `docs/evaluation_rubric.md` section 8 |
+| Everyone | Done: rubric agreed by all six members on 2026-11-25; hand review done by Libo and Jessica | `docs/evaluation_rubric.md` section 8 |
