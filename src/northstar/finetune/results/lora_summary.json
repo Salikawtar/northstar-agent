@@ -1,0 +1,27 @@
+{
+ "lora_settings": {
+  "r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.1,
+  "target_modules": [
+   "query",
+   "value"
+  ]
+ },
+ "lora_best_lr": 0.001,
+ "rule": "LoRA learning rate chosen by mean validation macro F1 over 3 seeds",
+ "lora": {
+  "val_macro_f1_mean": 0.702,
+  "val_macro_f1_std": 0.07,
+  "val_type_accuracy_mean": 0.733,
+  "trainable_params": 599821,
+  "minutes_per_run": 0.65
+ },
+ "split_used": "validation (30 chats); test not touched",
+ "full_finetuning": {
+  "val_macro_f1_mean": 0.753,
+  "val_macro_f1_std": 0.06,
+  "val_type_accuracy_mean": 0.787,
+  "minutes_per_run": 1.33
+ }
+}

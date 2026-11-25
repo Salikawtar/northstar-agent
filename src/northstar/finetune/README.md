@@ -51,7 +51,7 @@ Without a GPU or a key, `python run_all.py finetune` rebuilds the comparison fro
 | `kaggle_finetune_run.ipynb` | One-click run on a free Kaggle GPU |
 | `kaggle_datasize_run.ipynb` | Data-size runs (25% to 100% of training chats) and LoRA vs full fine-tuning, validation only, about 20 to 25 minutes |
 | `MODEL_CARD.md` | What the model is, how it was chosen, results, limits |
-| `results/` | Logged outputs: selection runs, seed runs, training log, test results, comparison tables |
+| `results/` | Logged outputs: selection runs, seed runs, training log, test results, comparison tables, break-even, data-size and LoRA runs |
 
 The trained checkpoint (about 1.1 GB) is not in git. Retraining takes a few minutes and costs a few cents on a paid GPU.
 

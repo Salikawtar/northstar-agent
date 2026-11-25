@@ -9,7 +9,7 @@ Status values: **Done**, **Decided**, **Partly built**, **To do**.
 | # | Task | What it is | Where it is used | Status |
 |---|---|---|---|---|
 | 1 | Narrow task | Classify the request type and decide whether a person must take over (the router's job) | Report page 4; runs on every chat, so speed and cost matter | Decided (project outline) |
-| 2 | Base model and method | Pick a small base model and a training method, and say why | Report page 4 | Done: XLM-RoBERTa base, learning rate 3e-5, chosen on validation macro F1 (DistilBERT multilingual lower; mDeBERTa crashed under mixed precision, logged) |
+| 2 | Base model and method | Pick a small base model and a training method, and say why | Report page 4 | Done: XLM-RoBERTa base, learning rate 3e-5, chosen on validation macro F1 (DistilBERT multilingual lower; mDeBERTa crashed under mixed precision, logged). Method: full fine-tuning beat LoRA on validation (macro F1 0.75 vs 0.70, escalation recall 93% vs 80%) |
 | 3 | Training data | The 130 training chats as input and output pairs (chat in, `RouterOutput` JSON out); the 30 validation chats for tuning; never the 40 test chats | Training run | Done in code: same three-turn text as the prompted router; train 130, validation 30, test never read during choices (a test checks this) |
 | 4 | Training run | Train and record model version, hyperparameters, epochs, settings and training cost | Report page 4 and appendix; training cost for Abhi | Done: 5 seeds on a Kaggle T4, 1.3 min per run, 16 GPU minutes in all (about $0.12); `results/training_log.json` |
 | 5 | Plug into the agent | The fine-tuned model answers in the `RouterOutput` format, chosen in `config/settings.yaml` | End-to-end agent with the fine-tuned router | Done: `predict.py` returns a full `RouterOutput`; `python -m northstar.agent.router --model finetuned` |
@@ -22,7 +22,7 @@ Status values: **Done**, **Decided**, **Partly built**, **To do**.
 | 12 | When fine-tuning pays off | Monthly volume where the training cost is paid back by cheaper calls (with Abhi) | Report pages 4 and 7 | Done: one CPU server ($71 a month) makes it cheaper than Haiku above about 197,000 chats a month and Sonnet above 12,800 (`breakeven.py`; server price in `config/settings.yaml`, shared with Abhi's model) |
 | 13 | Honest negative result | With about 16 training chats per type the fine-tune may lose; if so, say why and estimate the data size where it would win | Report page 4 (brief: "report a negative result clearly") | Done: accuracy rises about 28 points per doubling with no plateau; about 190 chats would close the test gap if the trend held, a few hundred to be safe (`datasize.py`, `MODEL_CARD.md`) |
 | 14 | Scripts and logs in the repo | Training script, settings, model reference, training logs; no keys | GitHub submission; reproducibility | Done: `src/northstar/finetune/` (scripts, Kaggle notebook, logs, results); `python run_all.py finetune` |
-| 15 | Report page 4 and appendix | Task, base model, splits, training setup, three-model table; hyperparameters and full tables in the appendix | Final report | Partly built: page 4 draft written; LoRA sentence to add after its Kaggle run |
+| 15 | Report page 4 and appendix | Task, base model, splits, training setup, three-model table; hyperparameters and full tables in the appendix | Final report | Done: page 4 draft written (to merge into the team report) |
 
 ## Reminder before submission
 
