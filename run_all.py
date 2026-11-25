@@ -89,6 +89,7 @@ def _run(commands, keep_key: bool):
 EVALUATION_COMMANDS = [
     ["-m", "northstar.evaluation", "--split", "validation", "--setups", "full_agent", "full_agent_before_fixes"],
     ["-m", "northstar.evaluation"],
+    ["-m", "northstar.evaluation", "--split", "fresh", "--setups", "full_agent", "single_agent"],   # D-33, run once
     ["-m", "northstar.evaluation", "consistency"],
     ["-m", "northstar.evaluation", "check"],          # grader vs the team's hand labels (waits for the sheet)
 ]
