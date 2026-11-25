@@ -161,8 +161,24 @@ def score(results_dir: Path) -> Optional[dict[str, Any]]:
         both = labelled.merge(h2, on=["review_id"], suffixes=("_a", "_b"))
         for q in QUESTIONS:
             rows.append(_agreement(both[f"{q}_a"], both[f"{q}_b"], q, "person vs second person"))
+        m2 = h2.rename(columns={q: f"{q}_human" for q in QUESTIONS}).merge(grades, on=["setup", "id"], how="inner")
+        for q in QUESTIONS:
+            rows.append(_agreement(m2[f"{q}_human"], m2[f"grader_{q}"].astype(bool), q, "model grader vs second person"))
+        h2_ok = np.logical_and.reduce([m2[f"{q}_human"] == GOOD_ANSWER[q] for q in QUESTIONS])
+        g2_ok = np.logical_and.reduce([m2[f"grader_{q}"].astype(bool) == GOOD_ANSWER[q] for q in QUESTIONS])
+        rows.append(_agreement(pd.Series(h2_ok), pd.Series(g2_ok), "overall: all five good", "model grader vs second person"))
+        second = dict(zip(m2.review_id, h2_ok))           # matched by review id, not by row order
+        m = m.assign(second_person_ok=m.review_id.map(second))
     table = pd.DataFrame(rows)
     table.to_csv(results_dir / "grader_check.csv", index=False)
+
+    # Does the grader rank the setups the way people do? Success rate per setup, each way.
+    m = m.assign(person_ok=human_ok, grader_ok=grader_ok)
+    cols = dict(rows=("id", "size"), person=("person_ok", "mean"), model_grader=("grader_ok", "mean"),
+                final_grade=("success", "mean"))
+    if "second_person_ok" in m:
+        cols["second_person"] = ("second_person_ok", "mean")
+    m.groupby("setup").agg(**cols).round(3).to_csv(results_dir / "grader_check_by_setup.csv")
 
     dis = []
     for _, r in m.iterrows():

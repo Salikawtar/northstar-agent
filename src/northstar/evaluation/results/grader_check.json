@@ -1,0 +1,207 @@
+{
+ "rows_labelled": 80,
+ "reviewers": [
+  "Libo"
+ ],
+ "table": [
+  {
+   "question": "resolved_correctly",
+   "compared": "model grader vs person",
+   "n": 80,
+   "agreement": 0.85,
+   "kappa": 0.6,
+   "kappa_ci_low": 0.381,
+   "kappa_ci_high": 0.784,
+   "human_yes": 60,
+   "grader_yes": 60
+  },
+  {
+   "question": "policy_followed",
+   "compared": "model grader vs person",
+   "n": 80,
+   "agreement": 0.887,
+   "kappa": 0.647,
+   "kappa_ci_low": 0.412,
+   "kappa_ci_high": 0.828,
+   "human_yes": 69,
+   "grader_yes": 60
+  },
+  {
+   "question": "escalation_correct",
+   "compared": "model grader vs person",
+   "n": 80,
+   "agreement": 1.0,
+   "kappa": 1.0,
+   "kappa_ci_low": 1.0,
+   "kappa_ci_high": 1.0,
+   "human_yes": 63,
+   "grader_yes": 63
+  },
+  {
+   "question": "invented_facts",
+   "compared": "model grader vs person",
+   "n": 80,
+   "agreement": 0.95,
+   "kappa": 0.475,
+   "kappa_ci_low": -0.031,
+   "kappa_ci_high": 0.851,
+   "human_yes": 3,
+   "grader_yes": 5
+  },
+  {
+   "question": "wrong_commitment",
+   "compared": "model grader vs person",
+   "n": 80,
+   "agreement": 0.95,
+   "kappa": -0.026,
+   "kappa_ci_low": -0.049,
+   "kappa_ci_high": 0.0,
+   "human_yes": 2,
+   "grader_yes": 2
+  },
+  {
+   "question": "overall: all five good",
+   "compared": "model grader vs person",
+   "n": 80,
+   "agreement": 0.863,
+   "kappa": 0.712,
+   "kappa_ci_low": 0.54,
+   "kappa_ci_high": 0.848,
+   "human_yes": 50,
+   "grader_yes": 47
+  },
+  {
+   "question": "overall: all five good",
+   "compared": "final grade (rules + model) vs person",
+   "n": 80,
+   "agreement": 0.85,
+   "kappa": 0.688,
+   "kappa_ci_low": 0.513,
+   "kappa_ci_high": 0.826,
+   "human_yes": 50,
+   "grader_yes": 46
+  },
+  {
+   "question": "resolved_correctly",
+   "compared": "person vs second person",
+   "n": 80,
+   "agreement": 0.963,
+   "kappa": 0.902,
+   "kappa_ci_low": 0.766,
+   "kappa_ci_high": 1.0,
+   "human_yes": 60,
+   "grader_yes": 59
+  },
+  {
+   "question": "policy_followed",
+   "compared": "person vs second person",
+   "n": 80,
+   "agreement": 0.95,
+   "kappa": 0.817,
+   "kappa_ci_low": 0.59,
+   "kappa_ci_high": 0.96,
+   "human_yes": 69,
+   "grader_yes": 65
+  },
+  {
+   "question": "escalation_correct",
+   "compared": "person vs second person",
+   "n": 80,
+   "agreement": 1.0,
+   "kappa": 1.0,
+   "kappa_ci_low": 1.0,
+   "kappa_ci_high": 1.0,
+   "human_yes": 63,
+   "grader_yes": 63
+  },
+  {
+   "question": "invented_facts",
+   "compared": "person vs second person",
+   "n": 80,
+   "agreement": 0.988,
+   "kappa": 0.794,
+   "kappa_ci_low": 0.0,
+   "kappa_ci_high": 1.0,
+   "human_yes": 3,
+   "grader_yes": 2
+  },
+  {
+   "question": "wrong_commitment",
+   "compared": "person vs second person",
+   "n": 80,
+   "agreement": 1.0,
+   "kappa": 1.0,
+   "kappa_ci_low": 1.0,
+   "kappa_ci_high": 1.0,
+   "human_yes": 2,
+   "grader_yes": 2
+  },
+  {
+   "question": "resolved_correctly",
+   "compared": "model grader vs second person",
+   "n": 80,
+   "agreement": 0.863,
+   "kappa": 0.639,
+   "kappa_ci_low": 0.444,
+   "kappa_ci_high": 0.812,
+   "human_yes": 59,
+   "grader_yes": 60
+  },
+  {
+   "question": "policy_followed",
+   "compared": "model grader vs second person",
+   "n": 80,
+   "agreement": 0.912,
+   "kappa": 0.745,
+   "kappa_ci_low": 0.542,
+   "kappa_ci_high": 0.905,
+   "human_yes": 65,
+   "grader_yes": 60
+  },
+  {
+   "question": "escalation_correct",
+   "compared": "model grader vs second person",
+   "n": 80,
+   "agreement": 1.0,
+   "kappa": 1.0,
+   "kappa_ci_low": 1.0,
+   "kappa_ci_high": 1.0,
+   "human_yes": 63,
+   "grader_yes": 63
+  },
+  {
+   "question": "invented_facts",
+   "compared": "model grader vs second person",
+   "n": 80,
+   "agreement": 0.938,
+   "kappa": 0.259,
+   "kappa_ci_low": -0.04,
+   "kappa_ci_high": 0.661,
+   "human_yes": 2,
+   "grader_yes": 5
+  },
+  {
+   "question": "wrong_commitment",
+   "compared": "model grader vs second person",
+   "n": 80,
+   "agreement": 0.95,
+   "kappa": -0.026,
+   "kappa_ci_low": -0.049,
+   "kappa_ci_high": 0.0,
+   "human_yes": 2,
+   "grader_yes": 2
+  },
+  {
+   "question": "overall: all five good",
+   "compared": "model grader vs second person",
+   "n": 80,
+   "agreement": 0.887,
+   "kappa": 0.767,
+   "kappa_ci_low": 0.61,
+   "kappa_ci_high": 0.897,
+   "human_yes": 48,
+   "grader_yes": 47
+  }
+ ],
+ "disagreements": 29
+}

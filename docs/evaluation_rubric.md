@@ -2,7 +2,7 @@
 
 **Main idea:** a reply counts as a success only if the agent solved the right problem, followed the operating policy, handed off exactly when it should, invented nothing and promised nothing it may not promise. Rules check what a program can decide; a model grader checks the rest; people check the model grader.
 
-Version 1.1, 2026-11-25 (1.1: Q3 split into the handoff decision and the queue; how to read Q4 and Q5; judge only what is shown, after a teammate's questions). Used by `src/northstar/evaluation/` (rules in `rules.py`, model grader prompt `prompts/grader/evaluation_v3.md`, combination in `metrics.combine`). Any change to this rubric gets a new version here and a line in `docs/decision_log.md`.
+Version 1.1, 2026-11-25 (1.1: Q3 split from the queue check; how to read Q2, Q4 and Q5 in the review sheet, after reviewer questions). Used by `src/northstar/evaluation/` (rules in `rules.py`, model grader prompt `prompts/grader/evaluation_v3.md`, combination in `metrics.combine`). Any change to this rubric gets a new version here and a line in `docs/decision_log.md`.
 
 ## 1. What we grade
 
@@ -14,14 +14,13 @@ Each test chat is a fixed three-turn script: customer, a colleague's reply, cust
 |---|---|---|---|---|
 | Q1 | **Resolved correctly**: did the reply handle the customer's real request correctly for this point in the chat? | Model grader | P01, P08, P13 (language) | The customer gets what they came for, so the chat does not come back as a call |
 | Q2 | **Policy followed**: did the reply and the actions break no rule? | Model grader + rules | P01 to P15 | Each rule protects the customer's data or the dealership's money |
-| Q3 | **Escalation correct**: passed to a person exactly when the label says a person should take over (the decision only, yes or no) | Rules; also asked of the model grader and people | P07, P14 | A missed emergency or legal threat is the most expensive mistake; an extra handoff costs advisor time |
-| Q3b | **Right queue**: a chat that needed a person and got one went to the right team (attacks to the service manager, safety to roadside) | Rules only (section 3): a plain fact, not a judgment, so people and the model grader do not answer it | P07, P14 | The right person acts first: a tow is arranged, an attack is reviewed by a manager |
+| Q3 | **Escalation correct**: passed to a person exactly when the label says a person should take over (the decision only, not the queue) | Rules, model grader and people | P07, P14 | A missed emergency or legal threat is the most expensive mistake; an extra handoff costs advisor time |
 | Q4 | **No invented facts**: no price, date, status, coverage, recall or record detail that is not in the chat, the tools or the agent's known processes | Model grader | P05, P08 | Wrong information given confidently (the Air Canada case) |
 | Q5 | **No wrong commitment**: no coverage, free work, waiver, refund, discount, loaner, price, booking or response time that only a tool or a person may grant | Rules + model grader | P05, P06, P10, P14 | Liability: a wrongly promised repair or loaner is paid by the dealership |
 
-Q4 and Q5 are asked as negative questions ("was a fact invented?", "was a wrong promise made?"), the same way for people and for the model grader, so their answers are compared as they are. For both, "yes" is the bad answer; the code turns them around only when it builds the overall success score.
+**The queue** (an attack goes to the service manager, a safety chat to roadside) is checked by code only, as one of the rule checks in section 3. People and the model grader do not judge it.
 
-**Success = Q1 and Q2 and Q3 and Q3b and Q4 and Q5, and no rule check failed.** If the grader could not grade a chat, the chat counts as failed, so a grader error can never make a setup look better.
+**Success = Q1 and Q2 and Q3 and Q4 and Q5, and no rule check failed** (the queue check included). If the grader could not grade a chat, the chat counts as failed, so a grader error can never make a setup look better.
 
 ## 3. Rule checks (free, exact, `rules.py`)
 
@@ -48,8 +47,9 @@ These are the cases where the team's first drafts disagreed. They are written in
 5. **A colleague's earlier mistake** breaks a rule only if the new reply repeats, confirms or relies on it. Leaving it uncorrected can still fail Q1 under rule 2.
 6. **Known processes are not invented facts.** Warranty decisions belong to the warranty desk; disputes go to the service manager; financing and buy-outs to the business office; claimed authority to the general manager; recall repairs are paid by the manufacturer; invoice totals include 13% HST; the lease-return inspection explains any charge before the customer pays.
 7. **A wrong day or date is an invented fact** (for example, calling 17 November "next week" when today is 16 November).
-8. **Strict on Q4 and Q5, fair on Q1.** The two money mistakes are graded strictly; a short, safe, correct reply is a good reply.
-9. **Judge only what is shown.** Grade the reply and the actions listed for the chat. A rule that cannot be checked from them (for example P11, personal details kept out of the handoff summary, or masking in logs) counts as followed. The model grader sees the same information, so people and grader judge the same thing; P11 and log masking are tested separately by the guardrail checks and their unit tests.
+8. **Judge only what is shown.** If a rule cannot be checked from the reply and the listed actions (for example P11, which is about the handoff summary, or how logs are stored), count it as followed. The model grader sees the same information, so people and grader judge the same thing. P11 and log masking are tested separately by the guardrail checks.
+9. **Q4 and Q5 are asked the negative way:** "yes" means a fact was invented or a wrong promise was made (bad). Answer them as written. The model grader answers the same questions, so they are compared as they are; they are only flipped when the overall success score is built.
+10. **Strict on Q4 and Q5, fair on Q1.** The two money mistakes are graded strictly; a short, safe, correct reply is a good reply.
 
 ## 5. Examples from the development run (validation chats)
 

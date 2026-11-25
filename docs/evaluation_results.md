@@ -1,6 +1,6 @@
 # Final evaluation: results, error analysis and grader check
 
-**Main idea:** on the 40 held-out test chats the recommended agent handles 70% of chats fully correctly (95% range 55% to 82%), hands off every chat that needs a person (18 of 18), and makes 1 wrong commitment and 1 invented fact. The blind first run scored 52.5%; the error analysis found four causes that code could fix, and the fixes raised it to 70% without hurting the validation, hand-written or red-team results. Every comparison changes one thing, and every number below is reproduced for free by `python run_all.py evaluate`.
+**Main idea:** on the 40 held-out test chats the recommended agent handles 70% of chats fully correctly by our grader (95% range 55% to 82%; two people who checked its 40 replies by hand gave 62.5%), hands off every chat that needs a person (18 of 18), and makes 1 wrong commitment and 1 invented fact. The grader agrees with people with a kappa of 0.71 and 0.77. The blind first run scored 52.5%; the error analysis found four causes that code could fix, and the fixes raised it to 70% without hurting the validation, hand-written or red-team results. Every comparison changes one thing, and every number below is reproduced for free by `python run_all.py evaluate`.
 
 All tables: `src/northstar/evaluation/results/`. Rubric: `docs/evaluation_rubric.md`. Decisions: D-31 (evaluation design) and D-32 (fixes) in `docs/decision_log.md`.
 
@@ -43,7 +43,7 @@ Request-type accuracy of the router inside the agent: Haiku v3 82.5%, Sonnet 77.
 | Router prompt v2 | 3 | 2 | 1.0 | Keep v3: same success, but v2 missed the contested charge v3_0187 that the v3 dispute rule exists for |
 | Warranty desk high effort | 2 | 0 | 0.50 | Keep medium (D-24 confirmed on test): no gain, 4% dearer, slower at the 90th percentile |
 | Input and output checks off | 0 | 0 | 1.0 | Keep the checks: on ordinary chats they now cost nothing; their value is on attacks (red team 75 of 75, `docs/guardrails.md`) |
-| Single agent | 14 | 4 | 0.031 | Keep the multi-agent design (D-17 confirmed on test) |
+| Single agent | 14 | 4 | 0.031 | Keep the multi-agent design (D-17 confirmed on test, on handoffs and cost; the people who checked the grader did not confirm the gap in task success, see 5.3) |
 
 **Why the fine-tuned router loses inside the agent.** On its own it is 15 points behind Haiku on request type (67.5% vs 82.5%, Neeraj's comparison). Inside the agent the gap doubles (40% vs 70% success) for a reason the router test cannot see: the fine-tuned model has no escalation reason, so 8 of its 17 handoffs went to the wrong queue: 7 attacks did not reach the service manager (5 went to general advisors, 1 to the warranty desk, 1 to roadside) and 1 safety chat went to advisors instead of roadside. It also saves less than it seems: the router is 7% of the agent's cost, so replacing it cuts the cost per chat by 16% only ($4.51 vs $5.34 per 1,000 chats).
 
@@ -107,9 +107,32 @@ The grader is stable on the money questions and least stable on "policy followed
 
 ### 5.3 Against people (brief requirement)
 
-`src/northstar/evaluation/human_review/test_review_sheet.xlsx` holds 80 replies (main agent and single agent, shuffled, setup hidden, no model grades). Two team members fill it on their own (about 2 minutes a row, instructions in the file), then `python -m northstar.evaluation check` writes `results/grader_check.csv` (agreement and kappa per question, with a bootstrap range, and person against person) and `results/grader_disagreements.csv`.
+Libo and Jessica each labelled the blind sheet of 80 replies on their own (40 from the main agent, 40 from the single agent; `python -m northstar.evaluation check`, tables in `results/grader_check.csv`, `results/grader_check_by_setup.csv`, `results/grader_disagreements.csv`).
 
-**Status: waiting for the team's labels.** Target: kappa of at least 0.6 on overall success. If it is lower, the disagreements are read, the rubric or the grader prompt is changed on the validation chats, and everything is re-graded.
+| Question | Grader vs Libo: agreement, kappa | Grader vs Jessica: agreement, kappa | Libo vs Jessica: agreement, kappa |
+|---|---|---|---|
+| **Overall success (all five good)** | **86.3%, 0.71** (0.54 to 0.85) | **88.8%, 0.77** (0.61 to 0.90) | not computed (see per question) |
+| Escalation correct | 100%, 1.00 | 100%, 1.00 | 100%, 1.00 |
+| Resolved correctly | 85.0%, 0.60 | 86.3%, 0.64 | 96.3%, 0.90 |
+| Policy followed | 88.8%, 0.65 | 91.3%, 0.75 | 95.0%, 0.82 |
+| Invented facts | 95.0%, 0.48 | 93.8%, 0.26 | 98.8%, 0.79 |
+| Wrong commitment | 95.0%, -0.03 | 95.0%, -0.03 | 100%, 1.00 |
+
+**What it shows**
+- **The target is met:** kappa on overall success is 0.71 and 0.77, above the 0.6 we set, and in the "substantial" band.
+- **Handoffs are certain:** people and grader agree on every one of the 80 handoff decisions.
+- **People agree with each other more than with the grader** (kappa 0.82 to 1.00 per question): the grader is good, not as good as a second person.
+- **The money questions cannot be validated with this sample.** Only 2 to 5 of 80 replies were flagged for an invented fact or a wrong commitment, so one disagreement swings kappa (agreement is still 94% to 95%). The two people flagged a booking date offered without a slot check; the grader flagged promises of a callback or a claim number, which the rubric also counts. In a pilot, a person should review every reply flagged for a commitment.
+- **The grader does not rank the two setups the way people do:**
+
+| Setup | Success, Libo | Success, Jessica | Success, model grader | Final grade (rules + grader) |
+|---|---|---|---|---|
+| Main agent (40 replies) | 62.5% | 62.5% | 70.0% | 70.0% |
+| Single agent (40 replies) | 62.5% | 57.5% | 47.5% | 45.0% |
+
+  People are stricter than the grader on the main agent's fixed replies that leave a colleague's earlier offer uncorrected (v3_0003, v3_0031, v3_0038: decision rule 2 lets these pass when the false belief is not risky). They are kinder to the single agent's safety replies, which the grader failed on P07 (v3_0047, v3_0170, v3_0188).
+- **What still holds:** the multi-agent design's lead rests on handoffs, where people and grader agree fully: the single agent missed 7 of 18 needed handoffs, the main agent none, at a third of the cost. The 25-point gap in task success between the two is not confirmed by people; their gap is 0 to 5 points. The report should say this.
+- **Next step, if there is time:** tighten decision rule 2 (an uncorrected colleague's offer fails Q1 whenever the customer would act on it) and re-grade on validation first.
 
 ### 5.4 Known limits of the rule checks
 
@@ -132,4 +155,4 @@ The grader is stable on the money questions and least stable on "policy followed
 | Jessica (guardrails) | On the 40 ordinary chats the checks cost nothing after D-32; before it, G-OUT-02 blocked one correct reply (v3_0027). No other person's data and no data before verification in any of 320 graded replies | Section 3 and 4.1 D; `results/failure_groups.csv` |
 | Kawtar (agent) | Fixes made (D-32) and proposals E to I | Section 4 |
 | Weidi (data) | Two label questions: parts orders and buy-out questions (prompts hand off, labels do not), and v3_0053 (a customer threatening to write to the manufacturer) | Section 4.1 E |
-| Everyone | Fill the hand-review sheet; sign off the rubric | Section 5.3; `docs/evaluation_rubric.md` section 8 |
+| Everyone | Sign off the rubric (hand review done by Libo and Jessica) | `docs/evaluation_rubric.md` section 8 |
