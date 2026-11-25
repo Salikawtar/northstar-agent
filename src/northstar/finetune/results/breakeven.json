@@ -1,0 +1,30 @@
+{
+ "base_case": {
+  "monthly_fixed_usd": 71.36,
+  "vs_haiku_chats_per_month": 197000,
+  "vs_sonnet_chats_per_month": 12800
+ },
+ "sensitivity": {
+  "committed_1_year_price": {
+   "monthly_fixed_usd": 51.87,
+   "vs_haiku_chats_per_month": 143000,
+   "vs_sonnet_chats_per_month": 9300
+  },
+  "two_servers_for_redundancy": {
+   "monthly_fixed_usd": 142.68,
+   "vs_haiku_chats_per_month": 393000,
+   "vs_sonnet_chats_per_month": 25700
+  }
+ },
+ "capacity_chats_per_month_per_server": 5270000,
+ "inputs": {
+  "server": "AWS c7i.large: 2 vCPU, 4 GiB, ca-central-1 (Canadian data residency)",
+  "usd_per_hour": 0.0977,
+  "retrain_cost_usd": 0.12,
+  "retrains_per_year": 4,
+  "haiku_usd_per_chat": 0.000363,
+  "sonnet_usd_per_chat": 0.00556,
+  "finetuned_ms_per_chat": 249.4
+ },
+ "not_included": "labelling new chats for retraining (people's time), engineering time to run the server, and the cost of mistakes (Phase 6 economics adds these)"
+}

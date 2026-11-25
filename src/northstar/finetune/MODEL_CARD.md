@@ -83,8 +83,21 @@ Full tables: `results/comparison_per_class.csv` and `results/comparison_by_slice
 ## Cost
 
 - **Training:** about 1.3 minutes per run on a T4 GPU. All 13 training runs (8 for selection, 5 final) took 16 GPU minutes, about $0.12 at $0.45 per GPU hour, and $0 on free Kaggle.
-- **Running:** no cost per chat. A small CPU server is enough, so the cost is hosting, not per chat.
+- **Running:** no cost per chat, but a server must run all month. One small CPU server (AWS c7i.large in Canada, $0.0977 per hour) costs about **$71 a month** and can handle about 5 million chats a month at half load.
 - **Prompted routers on the same 40 chats:** Haiku $0.015, Sonnet $0.22.
+
+**When it pays off** (`breakeven.py`, `results/breakeven.csv`):
+
+| Chats per month | Fine-tuned | Haiku | Sonnet |
+|---|---|---|---|
+| 1,000 | $71 | **$0.36** | $5.56 |
+| 100,000 | $71 | **$36** | $556 |
+| 1,000,000 | **$71** | $363 | $5,560 |
+
+- **Break-even:** cheaper than Haiku above about **197,000 chats a month**, and cheaper than Sonnet above about 12,800.
+- **Sensitivity:** with a 1-year committed price, the break-even with Haiku falls to about 143,000 chats a month. With a second server for redundancy, it rises to about 393,000.
+- **What this means:** for a single dealership, the router is a small cost either way (Haiku: $36 a month at 100,000 chats). So the choice should rest on accuracy and safety, not on router cost. Fine-tuning pays off on cost only at the scale of a large dealer group or a manufacturer-wide service.
+- **Not included:** people's time to label new chats for retraining, engineering time to run the server, and the cost of mistakes. The economics section (Phase 6) adds these.
 
 ## Limits
 

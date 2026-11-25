@@ -1,0 +1,4 @@
+chats_per_month,finetuned_usd,finetuned_servers,haiku_usd,sonnet_usd,cheapest
+1000,71.36,1,0.36,5.56,haiku
+100000,71.36,1,36.3,556.0,haiku
+1000000,71.36,1,363.0,5560.0,finetuned

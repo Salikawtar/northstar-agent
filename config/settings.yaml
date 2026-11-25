@@ -69,3 +69,14 @@ llm_client:
   max_retries: 2
   budget_usd: 25.0              # hard stop for a whole run
   use_response_format: false    # JSON is asked for in the prompt and checked by the contracts; not every provider accepts response_format
+
+# Fine-tuned router running costs (Phase 5, break-even in src/northstar/finetune/breakeven.py).
+# The economics model (Phase 6) reads the same values, so the two pages agree.
+finetuned_router_hosting:
+  server: "AWS c7i.large: 2 vCPU, 4 GiB, ca-central-1 (Canadian data residency)"
+  usd_per_hour: 0.0977          # on-demand, checked 2026-11-24 (doit.com AWS price list, ca-central-1)
+  usd_per_hour_committed: 0.071 # 1-year reserved, same server (devzero.io price list), for the sensitivity row
+  hours_per_month: 730          # the router must answer at any hour, so the server runs all month
+  servers: 1                    # one server is enough up to millions of chats a month (see capacity)
+  max_utilisation: 0.5          # plan for half load, so peaks do not slow replies
+  retrains_per_year: 4          # refresh with new labelled chats each quarter

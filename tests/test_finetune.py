@@ -113,3 +113,48 @@ def test_comparison_uses_one_scoring_function_for_all(monkeypatch, tmp_path):
     stats = json.loads((tmp_path / "comparison_stats.json").read_text())
     assert stats["paired_tests_type_accuracy"]["A vs C"]["only_second_right"] == 10
     assert (tmp_path / "comparison_per_class.csv").exists() and (tmp_path / "comparison_by_slice.csv").exists()
+
+
+def test_datasize_subsets_keep_every_type_and_never_touch_test(tiny_model, monkeypatch, tmp_path):
+    from northstar.finetune import train_router as tr
+    data = tr.split_frames()
+    for frac in tr.DATASIZE_FRACTIONS:
+        sub = tr.stratified_subset(data["train"], frac, seed=1)
+        assert sub.request_type.nunique() == 10 and len(sub) <= len(data["train"])
+    poisoned = {**data, "test": data["test"].assign(text=None)}
+    monkeypatch.setattr(tr, "RESULTS_DIR", tmp_path)
+    monkeypatch.setattr(tr, "DATASIZE_FRACTIONS", [0.25, 1.0])
+    monkeypatch.setattr(tr, "DATASIZE_SEEDS", [1])
+    args = type("A", (), dict(model=tiny_model, lr=2e-5, quiet=True))()
+    tr.run_datasize(args, poisoned, torch.device("cpu"), dict(tr.DEFAULTS, epochs=1))
+    runs = pd.read_csv(tmp_path / "datasize_runs.csv")
+    assert list(runs.train_chats) == [33, 130]
+
+
+def test_datasize_extrapolation(monkeypatch, tmp_path):
+    from northstar.finetune import datasize
+    # Accuracy rises 5 points per doubling from 50% at 32 chats: 80% needs 32 * 2**6 = 2,048 chats.
+    rows = [dict(train_chats=n, seed=s, val_type_accuracy=0.5 + 0.05 * np.log2(n / 32), val_macro_f1=0.5)
+            for n in (32, 64, 96, 128) for s in (1, 2, 3)]
+    monkeypatch.setattr(datasize, "HERE", tmp_path)
+    pd.DataFrame(rows).to_csv(tmp_path / "datasize_runs.csv", index=False)
+    s = datasize.build(target=0.8)
+    assert abs(s["training_chats_to_match_haiku"] - 2050) <= 10
+    assert s["fit"]["gain_per_doubling_points"] == pytest.approx(5.0)
+
+
+def test_breakeven_is_fixed_cost_over_cost_per_chat(monkeypatch, tmp_path):
+    from northstar.finetune import breakeven
+    pd.DataFrame([{"router": breakeven.FT, "latency_ms_median": 250, "cost_usd_per_chat": 0.0},
+                  {"router": breakeven.SMALL, "latency_ms_median": 2000, "cost_usd_per_chat": 0.0005},
+                  {"router": breakeven.LARGE, "latency_ms_median": 1000, "cost_usd_per_chat": 0.005}]
+                 ).to_csv(tmp_path / "comparison_table.csv", index=False)
+    (tmp_path / "training_log.json").write_text(json.dumps({"cost_usd_all_runs": 0.0}))
+    monkeypatch.setattr(breakeven, "HERE", tmp_path)
+    hosting = dict(server="test", usd_per_hour=0.1, usd_per_hour_committed=0.05, hours_per_month=700,
+                   servers=1, max_utilisation=0.5, retrains_per_year=4)
+    monkeypatch.setattr(breakeven, "settings", lambda: {"finetuned_router_hosting": hosting})
+    scen, s = breakeven.build()
+    assert s["base_case"]["monthly_fixed_usd"] == 70.0
+    assert s["base_case"]["vs_haiku_chats_per_month"] == 140_000      # 70 / 0.0005
+    assert scen.set_index("chats_per_month").loc[1_000_000, "cheapest"] == "finetuned"

@@ -108,6 +108,9 @@ def stage_finetune():
     else:
         print("No local checkpoint: building the comparison from the committed test results.")
         _run([["-m", "northstar.finetune.compare"]], keep_key=False)
+    _run([["-m", "northstar.finetune.breakeven"]], keep_key=False)
+    if (ROOT / "src" / "northstar" / "finetune" / "results" / "datasize_runs.csv").exists():
+        _run([["-m", "northstar.finetune.datasize"]], keep_key=False)
 
 
 def stage_test():

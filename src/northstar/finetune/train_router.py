@@ -10,6 +10,10 @@ Two steps, run in order (both need a GPU to be quick; about 45 minutes in total 
     #    (to show how much a single training run can vary).
     python -m northstar.finetune.train_router final --out models/finetuned_router
 
+    # 3. (Optional, task 13) How accuracy grows with training data: train on 25%, 50%, 75%
+    #    and 100% of the training chats, 3 seeds each, scored on validation only.
+    python -m northstar.finetune.train_router datasize
+
 Then the official comparison row comes from the same script that scores the prompted routers:
 
     python -m northstar.agent.router --split test --model finetuned
@@ -50,6 +54,8 @@ CANDIDATE_MODELS = ["xlm-roberta-base", "distilbert-base-multilingual-cased", "m
 CANDIDATE_LRS = [1e-5, 2e-5, 3e-5]
 SELECT_SEEDS = [1, 2]
 FINAL_SEEDS = [1, 2, 3, 4, 5]
+DATASIZE_FRACTIONS = [0.25, 0.5, 0.75, 1.0]
+DATASIZE_SEEDS = [1, 2, 3]
 
 DEFAULTS = dict(epochs=30, patience=6, batch_size=16, max_length=320, warmup_ratio=0.1,
                 weight_decay=0.01, dropout=0.2)
@@ -310,9 +316,39 @@ def run_final(args, data, device, cfg) -> None:
     print("Next: python -m northstar.agent.router --split test --model finetuned")
 
 
+# ---------------------------------------------------------------------------
+# Step 3 (optional): learning curve over training-set size, validation only
+# ---------------------------------------------------------------------------
+def stratified_subset(train: pd.DataFrame, fraction: float, seed: int) -> pd.DataFrame:
+    """Keep the same share of every request type (at least 1 chat each), drawn with the seed."""
+    parts = [g.sample(n=max(1, round(fraction * len(g))), random_state=seed) for _, g in train.groupby("request_type")]
+    return pd.concat(parts).reset_index(drop=True)
+
+
+def run_datasize(args, data, device, cfg) -> None:
+    sel_path = RESULTS_DIR / "selection_summary.json"
+    sel = json.loads(sel_path.read_text()) if sel_path.exists() else {}
+    model_name = args.model or sel.get("chosen_model") or "xlm-roberta-base"
+    lr = args.lr or sel.get("chosen_lr") or 2e-5
+    rows = []
+    for frac in DATASIZE_FRACTIONS:
+        for seed in DATASIZE_SEEDS:
+            sub = {**data, "train": stratified_subset(data["train"], frac, seed)}
+            print(f"\n[datasize] {len(sub['train'])} training chats ({frac:.0%})  seed={seed}")
+            model, _, _, vp, info = train_one(model_name, lr, seed, sub, device, cfg, verbose=not args.quiet)
+            rows.append(dict(info, fraction=frac, train_chats=len(sub["train"]),
+                             **{f"val_{k}": v for k, v in scores(data["validation"], vp).items()}))
+            del model
+            free(device)
+            pd.DataFrame(rows).to_csv(RESULTS_DIR / "datasize_runs.csv", index=False)   # saved after every run
+    out = pd.DataFrame(rows).groupby("train_chats")[["val_type_accuracy", "val_macro_f1"]].agg(["mean", "std"])
+    print("\n" + out.round(3).to_string())
+    print("Next (no GPU): python -m northstar.finetune.datasize")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("step", choices=["select", "final"])
+    ap.add_argument("step", choices=["select", "final", "datasize"])
     ap.add_argument("--models", nargs="+", default=CANDIDATE_MODELS)
     ap.add_argument("--lrs", nargs="+", type=float, default=CANDIDATE_LRS)
     ap.add_argument("--model", default=None, help="final: override the base model chosen in step 1")
@@ -327,7 +363,7 @@ def main() -> None:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     data = split_frames()
     print({k: len(v) for k, v in data.items()})
-    (run_select if a.step == "select" else run_final)(a, data, device, cfg)
+    {"select": run_select, "final": run_final, "datasize": run_datasize}[a.step](a, data, device, cfg)
 
 
 if __name__ == "__main__":
