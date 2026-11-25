@@ -1,0 +1,78 @@
+# Northstar Motors cost model (Phase 6): every assumption in one place.
+# Measured numbers (cost per reply, containment, error rates, router server price) are NOT typed here:
+# the model reads them from the evaluation and fine-tune results files. This file holds only what
+# the tests cannot measure, each with its source or the word "assumption" and a low / high range
+# for the sensitivity table. Change a value here and rerun `python run_all.py economics`.
+
+currency:
+  cad_per_usd: 1.42             # Bank of Canada daily rate, mid-November 2026 (USD/CAD about 1.40 to 1.43); model costs are billed in USD
+
+volumes: [1000, 100000, 1000000]   # chats per month asked for by the brief
+northstar_volume: 20000            # assumption: 11 branches x about 1,800 service chats a month; used for the memo's "at our size" line
+
+status_quo:                         # service advisors and the call centre answer every chat today
+  advisor_wage_cad_per_hour: 21.50  # Job Bank, NOC 64409 (automobile dealership service representative), Ontario median, updated 2025-11-19
+  advisor_wage_range: [17.60, 33.17]  # same source, Ontario low and high
+  payroll_overhead: 0.25            # assumption: employer CPP, EI, vacation and benefits on top of the wage (80.6% of Ontario workers in NOC 64409 get benefits, Job Bank)
+  minutes_per_chat: 8.42            # LiveChat Customer Service Report (2024 data): average chat lasts 8 min 25 s
+  minutes_range: [5.0, 12.0]        # Sprinklr 2026 average handle time 6 min 10 s; Comm100 2020 chat duration 9 min 45 s; 12 for long dealership chats (assumption)
+  first_contact_resolution: 0.702   # Zendesk live-chat benchmark quoted by Zoom: 70.2% resolved on first contact (used only for cost per resolved chat)
+  wrong_commitment_rate: 0.01       # assumption: people also promise callbacks or times they cannot keep; range below
+  wrong_commitment_range: [0.0, 0.025]
+
+agent_operation:
+  replies_per_conversation: 3       # assumption: the test measures one reply at the decision point; a full chat is about verify, answer, close
+  replies_range: [2, 5]
+  retry_overhead: 0.05              # assumption: calls that time out or fail and are retried (llm_client.max_retries = 2); recorded costs already include JSON retries
+  handoff_time_factor: 1.0          # a handed-off chat still takes the person a full chat (conservative: the masked summary and verification may save time)
+  handoff_time_range: [0.8, 1.0]
+  failed_containment_rework: 1.5    # assumption: a chat the agent closed wrongly comes back and takes 1.5 chats of a person's time
+  qa_review_share: 0.05             # assumption: a person reads 5% of the chats the agent finished alone (monitoring P05, P06, P08)
+  qa_minutes_per_review: 2.0        # assumption
+
+fixed_monthly:
+  app_servers_min: 2                # two servers so one failure does not stop the chat (same AWS c7i.large price as the fine-tuned router, config/settings.yaml)
+  chats_per_app_server: 300000      # assumption: the agent mostly waits on the model API (5.6 s median), so one small server serves many chats at once
+  monitoring_usd: 100               # assumption: log storage, dashboards and alerts for a small deployment
+  monitoring_usd_per_chat: 0.0002   # assumption: masked logs grow with volume
+  evaluation_usd: 5                 # measured: a full re-run of the evaluation costs under $5 (docs/evaluation_results.md); run monthly on fresh chats
+  engineer_wage_cad_per_hour: 48.08 # Job Bank, NOC 21232 (software developers and programmers), Ontario median, updated 2025-11-19
+  engineer_hours_by_volume:         # assumption: monitoring, prompt fixes, incident handling, re-testing; grows with volume
+    - [10000, 10]                   # up to 10,000 chats a month: 10 hours
+    - [100000, 20]
+    - [1000000000, 40]
+  engineer_hours_scale_range: [0.5, 2.0]
+  build_hours: 400                  # assumption: one-time build and pilot set-up (code, data, evaluation), paid back over the period below
+  build_payback_months: 24
+
+mistakes:                           # what one mistake costs the dealership (USD unless named _cad)
+  recovery_minutes: 15              # assumption: an advisor calls the customer back to correct a promise or a wrong fact
+  recovery_minutes_range: [5, 30]
+  goodwill_cad: 0                   # base: no credit for a missed callback or a wrong date; the high case adds a small goodwill credit
+  goodwill_range_cad: [0, 50]
+  # High severity: a promise of money or coverage that the dealership then honours (P05, P06).
+  repair_usd: 838                   # Kelley Blue Book / Cox Automotive: average repair bill $838 (a wrongly promised covered repair)
+  loaner_cad_per_day: 58            # KAYAK Canada: medium car rental about C$58 a day (a wrongly promised free loaner)
+  loaner_days: 3                    # assumption
+  tribunal_award_cad: 812           # Moffatt v. Air Canada, 2024 BCCRT 149: C$812 ordered after a chatbot's wrong promise (damages, interest, fees)
+  dispute_minutes: 30               # assumption: a manager's time to review a disputed promise
+  # Missed handoff: a safety, legal or dispute chat that should have gone to a person and did not.
+  missed_handoff_usd: 500           # assumption: most missed handoffs are disputes or complaints (a manager's time, a lost customer); safety is the rare tail
+  missed_handoff_range: [100, 10000]
+
+warranty_automation:                # task 9: what if the agent were allowed to approve warranty claims (it is not: P05)
+  review_minutes_saved: 20          # assumption: warranty administrator time to review one claim
+  review_minutes_range: [10, 40]
+
+pilot:                              # the deployment we recommend first (see docs/decision_memo.md)
+  chats_per_month: 5000             # assumption: three branches for one month gives the 5,000 chats the gate needs
+  money_desks: [billing_lease, warranty_recall]   # replies that could carry a money or coverage promise
+  approval_minutes: 1.0             # assumption: an advisor reads the drafted reply and clicks send; an expensive promise is caught here
+
+high_severity_planning:             # how to plan for an expensive wrong promise that the tests never saw
+  base: measured                    # base case: the rate measured on every graded reply (0 so far); stress cases below
+  stress: [jeffreys_mean, wilson_upper_95]
+
+monte_carlo:
+  draws: 10000                      # measured rates drawn from their Beta posteriors (Jeffreys prior); assumptions at base
+  clean_pilot_chats: 5000           # "what if": a pilot of this many chats with no missed handoff and no expensive promise

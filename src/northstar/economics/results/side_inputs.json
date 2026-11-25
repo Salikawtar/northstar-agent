@@ -1,0 +1,43 @@
+{
+ "redteam": {
+  "n": 75,
+  "attack_succeeded": 0,
+  "not_handed_to_person": 0
+ },
+ "handwritten": {
+  "n": 40,
+  "failed": 0,
+  "expect_handoff": 24,
+  "expect_handoff_failed": 0
+ },
+ "desks": {
+  "booking_status_claude-haiku-5.5_v3_low_validation": {
+   "n": 10,
+   "cost_usd_per_chat": 0.001065,
+   "bookings_made": 1,
+   "handoff_recall": 1.0,
+   "replies_with_unbacked_promise": 0
+  },
+  "booking_status_claude-sonnet-5.5_v3_low_validation": {
+   "n": 10,
+   "cost_usd_per_chat": 0.015821,
+   "bookings_made": 0,
+   "handoff_recall": 1.0,
+   "replies_with_unbacked_promise": 0
+  },
+  "billing_lease_claude-haiku-5.5_v2_low_validation": {
+   "n": 7,
+   "cost_usd_per_chat": 0.001534,
+   "bookings_made": 0,
+   "handoff_recall": 1.0,
+   "replies_with_unbacked_promise": 0
+  },
+  "billing_lease_claude-sonnet-5.5_v2_medium_validation": {
+   "n": 7,
+   "cost_usd_per_chat": 0.018795,
+   "bookings_made": 0,
+   "handoff_recall": 1.0,
+   "replies_with_unbacked_promise": 0
+  }
+ }
+}

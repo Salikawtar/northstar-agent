@@ -1,0 +1,14 @@
+assumption,pessimistic,optimistic,saving_pessimistic_20000,saving_optimistic_20000,saving_pessimistic_100000,saving_optimistic_100000
+Expensive promises (0 in 185; Wilson upper),0.02034297527663396,0.0,-333712.0,11086.0,-1661363.0,62629.0
+Missed handoffs per chat (0 in 132; Wilson upper),0.012725998515918538,0.0,-116174.0,11086.0,-573671.0,62629.0
+Goodwill per small mistake (C$),50.0,0.0,-17083.0,11086.0,-78216.0,62629.0
+Finished alone and correct (test 95% range),0.221,0.505,808.0,23436.0,11236.0,124380.0
+Advisor minutes per chat,5.0,12.0,4074.0,18426.0,27569.0,99330.0
+Invented facts (test 95% range),0.129,0.0044267174077949195,1245.0,13033.0,13421.0,72363.0
+Small wrong commitments (test 95% range),0.129,0.0044267174077949195,1245.0,13033.0,13421.0,72363.0
+Advisor wage (C$/h),17.6,33.17,8687.0,18265.0,50633.0,98524.0
+Handed-off chat time (share of a full chat),1.0,0.8,11086.0,17461.0,62629.0,94501.0
+Recovery minutes per small mistake,30.0,5.0,7301.0,13610.0,43703.0,75247.0
+People's own wrong-promise rate,0.0,0.025,10140.0,12506.0,57898.0,69726.0
+Engineering hours (x base),2.0,0.5,9534.0,11862.0,61077.0,63405.0
+Replies per conversation,2.0,5.0,11198.0,10862.0,63190.0,61508.0
