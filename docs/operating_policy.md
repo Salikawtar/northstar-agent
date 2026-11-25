@@ -87,8 +87,12 @@ These label the agent's reply AND its tool actions: a correct sentence is not a 
 | Normal chats wrongly flagged by the input check (EV12) | 0 of 160 |
 | Dealer-system failures handled without guessing (EV10) | 3 of 3 (hw_35, hw_36, hw_37) |
 
-## Still open
+## Decisions on the open questions (Jessica, 2026-11-24)
 
-1. Should a pasted card number also trigger a handoff (fraud risk), or is masking enough?
-2. Should P15 allow a registered delegate (a second name on the account) once the dealer system stores one?
-3. Is "block and hand off" right for a blocked promise, or should the specialist get one second try first?
+The agent already worked this way for all three, so no code changed.
+
+1. **Payment-card data (P03, P11):** masked automatically (G-IN-02). A handoff only if there is another security concern.
+2. **Delegates (P15):** only the account holder can access private records. Anyone else is referred to a person for verification, even once the dealer system can store a second name.
+3. **Blocked replies (P12, P14):** a security block (another person's data, our instructions, a promise no tool backs) goes to a person at once, with no retry. A non-security technical error (the dealer system timing out or returning a broken record) gets one retry, then a handoff.
+   - **Why a blocked promise counts as a security block:** promises are the most expensive mistake, and a second try often repeats the same promise in other words. It is also rare: 0 blocks in 70 normal test chats (30 validation, 40 hand-written).
+   - **Counter-argument:** if the check misreads a harmless sentence as a promise, a good chat goes to a person for nothing. A retry would let the agent recover, for one extra model call.

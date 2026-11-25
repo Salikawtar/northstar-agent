@@ -91,7 +91,7 @@ Code: `src/northstar/guardrails/input_check.py`, `output_check.py`. Switch: `gua
 - **G-OUT-02 compares text.** A number written differently ("905.555.0124" vs "(905) 555-0124") is matched after removing spaces and punctuation, but a plate spelled out in words would pass.
 - **Blocking is all or nothing.** A good reply with one bad sentence is fully replaced. Rewriting only the bad sentence would need another model call.
 
-## Still open (with Jessica)
+## Decided with Jessica (2026-11-24)
 
-1. Should a pasted card number also trigger a handoff (fraud risk), or is masking enough?
-2. Is "block and hand off" the right action for G-OUT-01, or should a blocked promise get a second try from the specialist first?
+1. **A pasted card number** is masked (G-IN-02); a handoff only if there is another security concern.
+2. **G-OUT-01 (blocked promise):** block and hand off, no second try. A promise counts as a security block, like G-OUT-02 and G-OUT-03; only technical errors (dealer system down) get one retry. Full reasons in `docs/operating_policy.md`.
