@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne de notre équipe va examiner votre demande » oriente le montant contesté vers une révision humaine sans confirmer les détails précédents.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Quel est votre nom de famille? » demande l’élément manquant pour la vérification (P02), et « une personne […] va examiner votre demande » annonce la révision du litige (P06, P14).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je ne peux pas les confirmer pour l’instant » n’ajoute aucun montant ni statut au dossier.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Va examiner votre demande et faire le suivi » annonce une révision sans promettre de résultat ni de délai.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"La réponse commence par « Je peux transmettre votre demande » et pose une seule question : « Quel est votre nom de famille? »\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2566,
+ "output_tokens": 362,
+ "cost_usd": 0.0038823,
+ "latency_ms": 5490.7
+}

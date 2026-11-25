@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for a “licence plate, or the repair-order number” is the right next step before checking the recall.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08 is broken because “It was sent before any check” is not established by the records provided.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“It was sent before any check” asserts an unsupported fact about what the earlier agent did.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I'm happy to check your recall” offers help without confirming a recall or promising a booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The correction lists “your car, driving it and the repair time” and adds “please don't share your VIN here” instead of staying brief.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2613,
+ "output_tokens": 507,
+ "cost_usd": 0.0063522,
+ "latency_ms": 8263.9
+}

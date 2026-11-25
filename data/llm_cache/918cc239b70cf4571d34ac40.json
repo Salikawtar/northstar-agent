@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Un conseiller aux pièces […] va vérifier la disponibilité et le prix » répond à la demande sans laisser croire que l’étui noir est réservé.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Va vérifier la disponibilité et le prix » respecte P08 en ne présentant ni le stock ni le prix comme confirmés.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Va vérifier la disponibilité et le prix » décrit la prochaine étape sans inventer de stock ni de prix.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Vous indiquer s’il peut le mettre de côté » ne promet pas de réservation.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « J’ai bien noté le nouveau numéro » plutôt que par l’aide proposée pour l’étui.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2697,
+ "output_tokens": 407,
+ "cost_usd": 0.0054758,
+ "latency_ms": 7498.5
+}

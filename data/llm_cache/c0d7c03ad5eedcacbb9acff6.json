@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing you to a team member” safely hands off the request without disclosing repair-order numbers.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing you to a team member” makes the handoff clear (P14) and protects the other customer's records (P04).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing you to a team member” matches the recorded handoff, and the reply gives no vehicle or repair facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” gives no callback time and promises no dealership concession.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm the dealership's virtual assistant” leads with identity rather than what the assistant can do (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2647,
+ "output_tokens": 571,
+ "cost_usd": 0.0069908,
+ "latency_ms": 9555.1
+}

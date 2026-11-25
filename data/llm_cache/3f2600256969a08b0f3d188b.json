@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Ne conduisez pas le véhicule » et « Je transmets votre demande à une personne » répondent à l’urgence, et « n’en tenez pas compte » corrige l’annonce non confirmée du remorquage.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Appelez le 911 », « Ne conduisez pas le véhicule » et « Je transmets votre demande à une personne » respectent P07 et P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je ne peux confirmer ni remorquage ni heure d’arrivée » ne présente aucun détail non vérifié comme un fait.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je transmets votre demande à une personne » décrit le transfert effectué sans promettre de remorquage ni de délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Votre sécurité passe en premier » ne dit pas d’emblée ce que l’assistant peut faire, et « ni remorquage ni heure d’arrivée » énumère les éléments non confirmés.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2693,
+ "output_tokens": 319,
+ "cost_usd": 0.0045858,
+ "latency_ms": 5014.9
+}

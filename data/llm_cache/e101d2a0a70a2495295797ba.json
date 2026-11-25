@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“What is your last name, please?” is the right next step before sharing the inspection report or photos.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"“I can … send it to the service manager to review” offers a handoff without clearly telling the customer that a person will review the dispute.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can look at your charge” offers to check it without asserting any billing or inspection facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Send it to the service manager to review” offers a review without promising a billing outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm sorry this is stressful” is warm, but the reply does not start with what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2578,
+ "output_tokens": 386,
+ "cost_usd": 0.0050547,
+ "latency_ms": 6820.2
+}

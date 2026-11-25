@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour, je peux vous aider à planifier l'entretien. Pour vérifier le dossier avant de réserver, j'ai besoin d'une plaque de l'un des deux véhicules, ici dans le clavardage. Pouvez-vous me l'indiquer?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P03\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3801,
+ "output_tokens": 776,
+ "cost_usd": 0.0007681,
+ "latency_ms": 5225.0
+}

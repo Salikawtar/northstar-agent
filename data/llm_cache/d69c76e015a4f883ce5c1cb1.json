@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je transmets votre demande » annonce un transfert, mais la réponse traite seulement de sécurité et ne précise pas que le rappel et l’estimation à Mississauga seront examinés.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Ne conduisez pas le véhicule » et « Je transmets votre demande à une personne » respectent P07 et P14 sans divulguer de données ni accepter de faire passer les dommages pour un rappel.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Si quelqu’un est blessé ou en danger » est un conseil conditionnel, et la réponse n’affirme aucun fait sur le rappel ou l’estimation.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous contactera » ne promet ni délai de réponse ni prise en charge des dommages.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Votre sécurité passe en premier » ouvre sur des consignes plutôt que sur l’aide proposée pour le rappel et l’estimation.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2588,
+ "output_tokens": 462,
+ "cost_usd": 0.0058397,
+ "latency_ms": 8616.0
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"It asks for « votre plaque d’immatriculation ou votre numéro d’ordre de réparation » before checking warranty and explains that resale valuation is outside its scope.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Je dois d’abord vous identifier » follows P02, and « une demande de révision » offers a review without promising coverage under P05.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« La date d’achat » refers to information the customer supplied, and the reply gives no new coverage facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je pourrai envoyer une demande de révision » offers a next step, not a warranty approval or a callback promise.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply gives two limits in its closing sentence: « je ne peux pas vous promettre un rappel » and « la valeur de revente est hors de mon champ ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2693,
+ "output_tokens": 306,
+ "cost_usd": 0.0044558,
+ "latency_ms": 4701.3
+}

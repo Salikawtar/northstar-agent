@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for « votre nom de famille et votre plaque d’immatriculation » is appropriate, but « vous donner le numéro ici même » implies a claim number can be provided before the warranty desk has issued one.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P08\", \"P14\"],\n  \"policy_reason\": \"« Vous donner le numéro ici même » renews an unsupported promise (P06), « après inspection » adds an unsupported requirement (P08), and « Je peux lui envoyer votre demande » does not tell the customer that a person will review the handoff (P14).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": true,\n  \"invented_reason\": \"« Après inspection » presents an inspection as a prerequisite for warranty review without support.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"« Vous donner le numéro ici même » commits to providing a claim number that the warranty desk has not issued.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Je comprends votre frustration » is warm, and « Pour commencer, pouvez-vous m’indiquer… » introduces one concise verification question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2657,
+ "output_tokens": 691,
+ "cost_usd": 0.0083022,
+ "latency_ms": 11742.6
+}

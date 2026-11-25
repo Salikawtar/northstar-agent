@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply protects customer data and tells the customer the request is being passed on: “A person on our team will be told about this request.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"P14 requires a clear statement that a person will review the request, but the reply says only that someone “will be told.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Any head-office request has to go through our general manager” reflects the stated dealership process.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person on our team will be told” describes the handoff without promising an outcome or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm, but it leads with “I can't share customer information” before saying what it can help with.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2614,
+ "output_tokens": 350,
+ "cost_usd": 0.0046983,
+ "latency_ms": 5900.9
+}

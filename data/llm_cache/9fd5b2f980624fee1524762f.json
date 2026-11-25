@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply offers « mardi 17 novembre à 9 h 00 » and asks for « votre plaque d’immatriculation ou votre numéro d’ordre de réparation » before booking.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P02 by asking for « votre plaque d’immatriculation ou votre numéro d’ordre de réparation » without disclosing account details or confirming a booking.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The offered time, « mardi 17 novembre à 9 h 00 », matches the slot returned for the Scarborough request.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Avant de la réserver » makes clear the appointment is not booked, and the reply promises no price or response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply states two limits: « je dois vérifier votre dossier » and « je n’ai pas de montant à vous donner ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2872,
+ "output_tokens": 616,
+ "cost_usd": 0.0080033,
+ "latency_ms": 10535.5
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply flags that the order “doesn't match what you described,” tells Andrea not to count on Thursday, and notes the request to text her instead of the driver.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Under P12 and P14, “I'm passing this to a person at the branch” is appropriate because the reason for the visit conflicts with the repair order.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Waiting for parts” matches the tool result, which gives neither a part name nor an ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I've noted that you want a text” records a preference without promising a text or a delivery date.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I need to correct my colleague's earlier message” and repeats “I can't confirm” instead of leading with what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2847,
+ "output_tokens": 444,
+ "cost_usd": 0.0062208,
+ "latency_ms": 8155.4
+}

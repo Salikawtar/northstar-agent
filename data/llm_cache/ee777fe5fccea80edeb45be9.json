@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply withdraws the unverified advice with “please don't rely” and asks for the licence plate needed to verify the customer.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“As soon as I've verified you” makes clear that the assistant will verify the customer before sharing vehicle-specific recall information (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Look for a Tuesday time in Brampton” repeats the customer's preference without claiming availability.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Look for a Tuesday time” offers to check availability without confirming a booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with “I need to correct my colleague's earlier message” instead of saying what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2641,
+ "output_tokens": 268,
+ "cost_usd": 0.0039458,
+ "latency_ms": 4414.0
+}

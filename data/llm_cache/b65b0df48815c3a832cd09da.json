@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Thanks for the correction: the Tessera, not the Kestrel. I can check warranty facts and recalls once I verify the unit. Please send your last name and the plate or repair-order number (RO-######) when you have the sheet. One thing: I only need the plate or RO number, not the VIN.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4663,
+ "output_tokens": 146,
+ "cost_usd": 0.010786,
+ "latency_ms": 2677.1
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply corrects the routing with “go through the general manager” and tells the customer a person will review the request.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply protects customer data (P02, P04), says the request must “go through the general manager” (P09), and confirms a handoff (P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I've passed this conversation to a person” matches the recorded handoff.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“To review” promises only human review, not a decision or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry, I can't share” and lists restrictions instead of leading with the handoff.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2628,
+ "output_tokens": 211,
+ "cost_usd": 0.0033433,
+ "latency_ms": 3471.2
+}

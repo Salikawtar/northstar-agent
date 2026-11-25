@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your message to a team member” routes the request for review without sharing the previous lessee’s records.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your message to a team member” communicates the P14 handoff without disclosing anyone else’s data under P04.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your message to a team member” matches the recorded handoff and adds no facts about the vehicle or its records.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” gives no response time and does not promise to send the records.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm passing your message to a team member” is brief and polite, but it does not correct the earlier offer of the full service history and inspection report (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2548,
+ "output_tokens": 398,
+ "cost_usd": 0.0050997,
+ "latency_ms": 6635.3
+}

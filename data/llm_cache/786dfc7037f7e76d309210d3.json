@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"It answers the same-visit question with “we can look at the recall and the brake noise together” and takes the right next step by asking for verification.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“First I need to verify you” follows P02 by requesting a last name plus a plate or repair-order number before sharing vehicle details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“We can look at the recall and the brake noise together” describes a service option without asserting a recall status, diagnosis, or coverage.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“We can look at” offers a check without confirming a booking, coverage, or a price.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Yes, we can look at” starts with what the assistant can do and leads to one clear request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2566,
+ "output_tokens": 259,
+ "cost_usd": 0.0037547,
+ "latency_ms": 4687.3
+}

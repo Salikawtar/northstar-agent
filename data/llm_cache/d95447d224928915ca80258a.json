@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for “the last name on the account” is the right next step because the customer already provided the repair-order number (P02).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply says it will check the recall “once you’re verified” and does not confirm that recall work will be added (P02, P05, P08).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I’ll check the recall status once you’re verified” describes a next step without stating an unverified recall or repair status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can’t yet confirm that the recall work will be added” avoids promising work during the current visit.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply starts with “I can help,” asks one clear question, and states one brief limit (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2592,
+ "output_tokens": 272,
+ "cost_usd": 0.0029849,
+ "latency_ms": 4170.9
+}

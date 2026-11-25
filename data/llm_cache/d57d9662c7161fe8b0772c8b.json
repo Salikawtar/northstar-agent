@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"It asks for « votre nom de famille et votre plaque d’immatriculation » to verify the recall and sends the Mississauga estimate request for human review.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"The reply acknowledges « l’accrochage » but omits P07’s advice not to drive if the vehicle may be unsafe and to call 911 if anyone is hurt or in danger.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« La porte arrière enfoncée par l’accrochage » repeats the customer’s account, and the reply gives no unverified recall status or estimate.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne […] va la revoir avec vous » promises only human review, not a price, coverage, or response time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Je peux vérifier le rappel de votre Oriel » opens helpfully in French, with one verification request and one clear limit.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2626,
+ "output_tokens": 510,
+ "cost_usd": 0.0063283,
+ "latency_ms": 8568.7
+}

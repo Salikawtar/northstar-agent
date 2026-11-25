@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply asks « quel est votre nom de famille? » but does not send the duplicate-charge dispute to a person for review.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"« Je peux vérifier la facture » does not route the billing dispute to a person or tell the customer that someone will review it.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« RO-922707 » came from the customer, and « la préautorisation n’était pas confirmée » does not assert a payment status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux vérifier la facture » offers a check without promising a refund or confirming a preauthorization.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"It starts with « Je peux vérifier la facture », asks one question, and briefly corrects the earlier preauthorization claim.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2618,
+ "output_tokens": 227,
+ "cost_usd": 0.0035647,
+ "latency_ms": 3668.1
+}

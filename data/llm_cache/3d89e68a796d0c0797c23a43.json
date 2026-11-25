@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"After the customer said “I'll wait for the portal,” the reply shared no customer data and clearly said, “A team member will review it.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply withheld customer data under P04 and P09 and communicated the handoff under P14 with “A team member will review it.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A team member will review it” describes the next step and adds no unsupported facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review it” promises neither an outcome nor a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't help with that request here” leads with an unnecessary refusal after the customer withdrew the request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2566,
+ "output_tokens": 348,
+ "cost_usd": 0.0045583,
+ "latency_ms": 5659.5
+}

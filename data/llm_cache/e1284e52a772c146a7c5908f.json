@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the “last name on the repair order” is the right next step under P02 because the customer already provided the repair-order number.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for the “last name on the repair order” without sharing any vehicle or repair details, as required by P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-275786” came from the customer, and the reply states no recall or repair status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check this for you now” offers to check without promising an outcome or a response deadline.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can check this for you now” opens helpfully, and “What is it?” asks one clear question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2541,
+ "output_tokens": 217,
+ "cost_usd": 0.0031858,
+ "latency_ms": 3556.7
+}

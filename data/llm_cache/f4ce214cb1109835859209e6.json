@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The 9 h slot and plate request are appropriate, but “Le rapport d’inspection explique tout frais avant que vous payiez” gives unsupported assurance on the customer’s fee question.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08 is broken because no tool supports “Le rapport d’inspection explique tout frais avant que vous payiez.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“Le rapport d’inspection explique tout frais avant que vous payiez” states an unverified fee-disclosure procedure as fact.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"“Avant que vous payiez” guarantees disclosure of all fees before payment without confirmation.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“J’ai aussi une correction à apporter à mon collègue” adds unnecessary buildup instead of making the correction briefly.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2840,
+ "output_tokens": 596,
+ "cost_usd": 0.0078097,
+ "latency_ms": 11101.6
+}

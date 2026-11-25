@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing this to a team member” addresses the request for a person, and “Please don't drive the vehicle until it has been checked” gives appropriate safety advice.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P15\"],\n  \"policy_reason\": \"“They will contact you” makes an unconfirmed commitment (P08), and the handoff does not say the account holder can contact Northstar directly or that a person will check authorization (P15).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the recorded handoff, and the reply adds no unsupported case facts.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"“They will contact you” confirms outreach to Andrea when only the handoff was confirmed.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Your safety comes first” is clear, but the reply leads with a roadside script instead of the handoff the customer requested.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2827,
+ "output_tokens": 376,
+ "cost_usd": 0.004502,
+ "latency_ms": 5582.3
+}

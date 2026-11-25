@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“What is your last name?” asks for the missing detail needed to verify the customer before sharing the inspection report and photos.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“First I need to verify you” follows P02, and “service manager for review” is the right route under P06.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Service manager for review” describes an established process, not a new fact about the bill.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can send your charge to the service manager for review” offers a review without promising an outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm and asks one clear question, but it opens with “I’m sorry this is stressful” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2563,
+ "output_tokens": 501,
+ "cost_usd": 0.0061672,
+ "latency_ms": 9602.1
+}

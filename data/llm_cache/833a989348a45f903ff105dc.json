@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"After two unsuccessful verification attempts, the reply asked « Pouvez-vous me donner votre nom de famille » instead of handing the chat to a person.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P12\", \"P14\"],\n  \"policy_reason\": \"The reply says « Je n’ai pas encore pu consulter votre dossier » but asks for verification details again instead of arranging human review after two attempts returned nothing.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Jeudi en avant-midi à Oakville » repeats the customer’s preference without stating that a slot is available.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux vérifier le déflecteur, le dépôt et un rendez-vous » offers to check, without confirming a booking or a deposit deduction.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply opens with « Je peux vérifier », gives one brief limitation, and asks one clear question in French.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2631,
+ "output_tokens": 306,
+ "cost_usd": 0.0043872,
+ "latency_ms": 4981.4
+}

@@ -1,0 +1,7 @@
+question,agreement,kappa
+all five good,0.983,0.961
+escalation_correct,1.0,1.0
+invented_facts,0.983,0.77
+policy_followed,0.95,0.699
+resolved_correctly,0.95,0.82
+wrong_commitment,1.0,1.0

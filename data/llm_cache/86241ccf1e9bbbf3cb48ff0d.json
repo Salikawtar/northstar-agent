@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“Please confirm the exact part name” puts identification back on the customer, and the reply does not address whether they can install the shield themselves.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P13\"],\n  \"policy_reason\": \"“I've passed your request to a parts advisor” overstates the recorded routing (P08), and “I can't quote the price, delivery time or fitting time” opens with a list of limits (P13).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": true,\n  \"invented_reason\": \"The reply says “passed your request to a parts advisor,” but the recorded handoff was to the service advisors queue.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will reply to you directly” gives no response time and does not promise a price, fitting, or booking.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2225,
+ "output_tokens": 472,
+ "cost_usd": 0.0059682,
+ "latency_ms": 8091.4
+}

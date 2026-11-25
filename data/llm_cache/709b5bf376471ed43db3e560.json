@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for a “plate or your repair-order number” is the right next step to verify Jones before looking up the charge (P02).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for a “plate or your repair-order number” without disclosing account details or deciding a billing dispute (P02, P06).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-123456” is a format example, not a claim about the customer’s record.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can look into this charge” offers help without promising a refund or any other outcome.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply opens with “I can look into this charge” and asks one clear question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2549,
+ "output_tokens": 321,
+ "cost_usd": 0.0042458,
+ "latency_ms": 5712.0
+}

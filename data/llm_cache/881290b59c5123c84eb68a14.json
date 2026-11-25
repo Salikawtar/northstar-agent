@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The urgent handoff was appropriate, but the reply left the customer believing « Une remorqueuse part vers vous » when no tow was confirmed.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply says « appelez le 911 » and « Ne conduisez pas le véhicule », completes the urgent handoff, and does not repeat the earlier promises (P07, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande à une personne de notre équipe » matches the recorded handoff, and the reply adds no unsupported service facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous contactera » gives no callback time and does not confirm a tow.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The French reply is brief and calm, but it does not correct the earlier « Une remorqueuse part vers vous » assurance.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2625,
+ "output_tokens": 311,
+ "cost_usd": 0.0044222,
+ "latency_ms": 5880.3
+}

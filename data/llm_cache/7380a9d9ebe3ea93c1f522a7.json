@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can help you book the Markham visit. First, I need to verify your account. Please send your last name and your licence plate or repair-order number (RO-######). I haven't confirmed a time on 26 November yet, so I'll check the open slots once you're verified. I can't offer a loaner from here. A person can review that request, along with the warranty question, which the warranty desk decides.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P05\", \"P06\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3648,
+ "output_tokens": 876,
+ "cost_usd": 0.0008028,
+ "latency_ms": 5959.9
+}

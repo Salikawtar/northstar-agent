@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person will review your screenshot and the possible charge” addresses the dispute without implying that either inspection is booked.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for verification before sharing vehicle details (P02) and says “A person will review” the disputed charge (P06, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The possible charge” refers to the customer’s account without adding a price or an available slot.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can help set up the pre-return inspection” offers help without confirming a booking or waiving a charge.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"It asks for verification details and then adds “Which branch would you like?”, rather than asking for one thing at a time.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2664,
+ "output_tokens": 354,
+ "cost_usd": 0.0038121,
+ "latency_ms": 6666.4
+}

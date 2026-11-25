@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for the last name and plate was appropriate, but the reply presented the slots as “Markham times” without branch confirmation and did not offer to check the loaner request.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08: The tool returned slot dates and times but did not identify them as “Markham times.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“Markham times” assigns a branch to the returned slots that the tool did not specify.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can book one of those for you” offers a next step without confirming a booking.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can help with the screen and the booking” opens positively, and the reply makes one short verification request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2735,
+ "output_tokens": 450,
+ "cost_usd": 0.0060008,
+ "latency_ms": 7970.4
+}

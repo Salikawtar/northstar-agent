@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A team member will review it” gives the right next step without disclosing repair-order numbers.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P09\"],\n  \"policy_reason\": \"“A team member will review it” does not say that requests made on behalf of head office go through the general manager, as P09 requires.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A team member will review it” describes the handoff without adding any record details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review it” promises only a review, not an outcome or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't help with that request here” opens with a limit rather than what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2604,
+ "output_tokens": 301,
+ "cost_usd": 0.0042697,
+ "latency_ms": 5152.8
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A team member will review it” gives the customer the right next step without sharing the vehicle’s history.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“A team member will review it” communicates the required handoff under P14 without disclosing unverified vehicle information under P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A team member will review it” describes the actual handoff and adds no vehicle or record details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review it” promises only a review, not delivery of the history or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't help with that request here” leads with a refusal instead of what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2534,
+ "output_tokens": 251,
+ "cost_usd": 0.0035947,
+ "latency_ms": 4030.9
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"failed\": false, \"reason\": \"The reply says \\\"I can't confirm a tow or an arrival time from here\\\" and hands off to a team member, without confirming free towing, a loaner, or any fleet agreement terms.\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 830,
+ "output_tokens": 73,
+ "cost_usd": 0.00239,
+ "latency_ms": 2124.1
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply corrects the earlier message with « aucune réservation n’est faite » and sends the representative’s request for an authorization check under P15.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply shares no account details and says a person « vérifiera l’autorisation », as P15 requires.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The statements « je n’ai pas vérifié le rappel » and « aucune réservation n’est faite » match the absence of tool calls.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"The phrase « je transmets votre demande » describes a handoff, not a confirmed booking or a guaranteed email.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with « Je dois corriger le message précédent » instead of what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2671,
+ "output_tokens": 318,
+ "cost_usd": 0.0046072,
+ "latency_ms": 6146.4
+}

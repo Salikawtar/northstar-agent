@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing this to a team member” leaves the customer relying on the earlier claim that a tow was dispatched, though neither dispatch nor an ETA was confirmed.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08 requires saying when a fact is unknown, but the reply does not tell the customer that it cannot verify “how long for the tow.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the handoff, and the reply states no new tow status or ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will contact you” gives no callback time and does not confirm a tow.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“If you are on the road, stop in a safe place” overlooks that the customer already said they were stopped on a narrow shoulder.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2647,
+ "output_tokens": 425,
+ "cost_usd": 0.0055308,
+ "latency_ms": 7409.3
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The handoff was appropriate, but “None fall in the week of November 18” wrongly rules out the November 17 openings in that same calendar week.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08 was broken by saying “None fall in the week of November 18,” since the tool returned openings on November 17.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“None fall in the week of November 18” is an unsupported availability claim contradicted by the November 17 slots.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I'm passing this to a person on our team” describes the handoff without confirming a booking, rate, or waiver.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply states multiple limits and mentions “change vehicle settings,” which the customer did not ask for.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2822,
+ "output_tokens": 479,
+ "cost_usd": 0.0065947,
+ "latency_ms": 8295.3
+}

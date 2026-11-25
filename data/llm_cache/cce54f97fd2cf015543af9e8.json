@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je transmets votre demande » ne corrige pas « remorqueuse envoyée » et laisse croire qu’un chauffeur est déjà en route.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Les consignes « appelez le 911 » et « Ne conduisez pas le véhicule » ainsi que le transfert à une personne respectent P07 et P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande » correspond au transfert effectué et n’ajoute aucun fait précis sur le remorquage.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous contactera » ne promet aucun délai et ne confirme pas l’envoi d’une remorqueuse.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Si vous êtes sur la route » s’adresse à Luc plutôt qu’à son père, et la réponse ne rectifie pas brièvement « remorqueuse envoyée ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2674,
+ "output_tokens": 504,
+ "cost_usd": 0.0064747,
+ "latency_ms": 8642.0
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply directs questions about “buying out the lease or the car’s value” to the business office.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply directs valuation questions to “our business office” without giving financial advice or disclosing account details (P01, P15).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Go to our business office” describes an allowed process, not a new vehicle or account fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person … will check what authorisation you have” promises a review, not an approval or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After the greeting, “I can’t share or check” leads with a restriction instead of help with lease options.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2607,
+ "output_tokens": 418,
+ "cost_usd": 0.0054472,
+ "latency_ms": 7697.6
+}

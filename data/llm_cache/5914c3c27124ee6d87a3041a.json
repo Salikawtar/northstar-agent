@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je vous mets en contact avec une personne » répond à la demande, mais laisse croire que la remorqueuse est en route et omet les consignes de sécurité.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"Après « un PNEU qui s’est DÉTACHÉ sur l’autoroute », le transfert ne remplace pas les consignes de ne pas conduire et d’appeler le 911 si quelqu’un est blessé ou en danger.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je vous mets en contact avec une personne » correspond au transfert effectué et n’ajoute aucun fait non vérifié.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous répondra » annonce un suivi humain sans promettre de délai ni confirmer l’envoi d’une remorqueuse.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse est courte et claire, mais commence par « Je suis l’assistant virtuel » plutôt que par l’aide proposée.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2605,
+ "output_tokens": 307,
+ "cost_usd": 0.0042458,
+ "latency_ms": 4534.9
+}

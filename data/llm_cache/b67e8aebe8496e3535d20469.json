@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for « le numéro de votre ordre de réparation […] ou la plaque » is the right next step before checking the part or booking the installation.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P02 by saying « Je dois d'abord vérifier votre dossier » and does not confirm any unverified details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The reply says « Je ne peux pas confirmer la date d'arrivée » and supplies no new order or booking facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"The reply says it cannot confirm « le rendez-vous de demain ni le dépôt », so it makes no booking or payment commitment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm but lists several limits and repeats them with « Je ne peux pas non plus confirmer ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2628,
+ "output_tokens": 260,
+ "cost_usd": 0.0038333,
+ "latency_ms": 4253.6
+}

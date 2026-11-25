@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for « votre nom de famille et votre plaque d’immatriculation, ou votre numéro d’ordre de réparation » is the right next step before checking the order and deposit.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks to « vérifier votre dossier » before sharing any account details (P02) and leaves the coverage decision to « le service de garantie » (P05).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Jeudi en avant-midi » repeats the customer's preference without claiming availability, and the reply gives no new parts, warranty or billing facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux vous aider à regrouper » offers help without confirming a booking, coverage or a deposit deduction.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens helpfully but states two limits: « je ne peux pas dire si la garantie couvre » and « je ne peux pas confirmer le montant du dépôt ni sa déduction ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2681,
+ "output_tokens": 434,
+ "cost_usd": 0.0057922,
+ "latency_ms": 7200.4
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"It asks for the “nom de famille” and a plate or repair order before checking the recall, and says “Une personne de l'équipe va regarder votre demande d'estimation à Mississauga.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The request for “nom de famille” plus a plate or repair order follows P02, and “je ne peux pas l'ajouter à un rappel” with human review follows P10 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Dommage d'accident” reflects the customer's account that “un char m'a accroché au stationnement.”\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Va regarder votre demande d'estimation” promises only a human review, not a price or approval.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with “mais je dois d'abord vous vérifier” and adds a second limit with “je ne peux pas l'ajouter à un rappel.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2626,
+ "output_tokens": 510,
+ "cost_usd": 0.0063283,
+ "latency_ms": 9277.8
+}

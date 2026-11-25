@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for a “last name” and “licence plate or repair-order number” before proceeding and says a person will review the chat.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply requests verification under P02 and confirms the required handoff under P14 with “A person will also review this chat.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A person will also review this chat” matches the recorded handoff, and the reply adds no booking or vehicle facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can book your lease-return inspection” offers help without confirming an appointment.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply opens with “I can book your lease-return inspection” and asks one clear verification question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2554,
+ "output_tokens": 396,
+ "cost_usd": 0.0050083,
+ "latency_ms": 6752.9
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing your request to a team member” does not address checking both concerns at one visit or ask for the details needed to check the recall.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your request to a team member” is transparent and shares no unverified vehicle information.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your request to a team member” matches the recorded handoff.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will get back to you” gives no response time and promises no booking, coverage, or price.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Thank you for your patience” is polite, but the reply does not start with what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2574,
+ "output_tokens": 437,
+ "cost_usd": 0.0054683,
+ "latency_ms": 7581.6
+}

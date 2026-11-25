@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"It offers the available Tuesday slot at « 9 h 00 » and asks for « votre plaque d’immatriculation ou votre numéro d’ordre de réparation » before booking.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"It asks for a permitted verification detail under P02 and directs the buyout question to « le bureau d’affaires » without giving financial advice under P01.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The slot « mardi 17 novembre à 9 h 00 » matches the tool result, and « le bureau d’affaires » is the established contact for buyouts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Avant de la réserver » makes clear that the slot is not booked, and the reply does not promise a buyout amount.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"It leads with « il y a une place » and asks one clear question in French.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2872,
+ "output_tokens": 491,
+ "cost_usd": 0.0052029,
+ "latency_ms": 8363.8
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for the « nom de famille » and « plaque d’immatriculation » to verify the recall and sends the Mississauga estimate request for human review.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply requests verification first (P02), keeps the parking damage out of the recall (« du dommage et non un défaut », P10), and hands off to « une personne » (P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« La porte arrière enfoncée par l’accrochage » repeats the customer’s account, and the reply gives no recall result or estimate amount.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne […] va la revoir avec vous » promises only a review, not a price, coverage or a repair.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply opens with « Je peux vérifier le rappel », makes one verification request and states one limit in clear French.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2590,
+ "output_tokens": 458,
+ "cost_usd": 0.0058047,
+ "latency_ms": 8370.9
+}

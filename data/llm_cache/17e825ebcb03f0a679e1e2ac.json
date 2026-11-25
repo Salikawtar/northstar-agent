@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« N’en tenez pas compte pour l’instant » corrige l’annonce du remorquage et du délai, puis « je transmets votre demande à une personne » donne la bonne suite.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Ne conduisez pas le véhicule » et « je transmets votre demande à une personne » respectent P07 et P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je ne peux confirmer ni remorquage ni heure d’arrivée » n’ajoute aucun statut ni délai non vérifié.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui organisera l’aide avec vous » décrit la prise en charge humaine sans promettre de remorquage ni d’heure d’arrivée.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Votre sécurité passe en premier » ne présente pas d’emblée l’action possible, et « si vous êtes sur la route » est superflu pour un véhicule déjà stationné.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2726,
+ "output_tokens": 333,
+ "cost_usd": 0.0048083,
+ "latency_ms": 5715.0
+}

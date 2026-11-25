@@ -1,0 +1,2 @@
+setup,change,success_full_agent,success_setup,only_full_agent_right,only_setup_right,p_value
+full_agent_before_fixes,before the error analysis: D-32 reply fixes off (the blind test result),0.733,0.567,5,0,0.0625

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The handoff is appropriate, but “I can't confirm a tow” addresses a tow that already happened and leaves the earlier one-hour callback expectation uncorrected.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply says “call 911,” “don't drive the vehicle,” and “I'm passing this to a team member,” meeting P07 and P14 without repeating the callback promise.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm a tow or an arrival time” does not assert any tow status or timing.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow or a callback time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“If you are on the road” and “I can't confirm a tow” add irrelevant guidance and a limit after the customer said the vehicle was already at the yard.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2685,
+ "output_tokens": 406,
+ "cost_usd": 0.0054358,
+ "latency_ms": 6641.7
+}

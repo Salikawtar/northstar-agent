@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing you to a team member” gives the right next step without claiming the invoice was sent.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing you to a team member” satisfies P14 without disclosing unverified invoice details under P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing you to a team member” matches the recorded handoff and adds no invoice or warranty facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” gives no callback time and does not promise to send the invoice or change the bill.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm the dealership's virtual assistant” is clear but opens with the assistant's identity rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2608,
+ "output_tokens": 325,
+ "cost_usd": 0.0044333,
+ "latency_ms": 5727.6
+}

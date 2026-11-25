@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« N’en tenez pas compte pour l’instant » corrige l’annonce précédente, et « je transmets votre demande à une personne » donne la bonne suite.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Ne conduisez pas le véhicule » et « je transmets votre demande à une personne » respectent P07 et P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je ne peux confirmer ni remorquage ni heure d’arrivée » n’ajoute aucun fait non vérifié.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je transmets votre demande à une personne » annonce un transfert, sans promettre de remorquage ni de délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Votre sécurité passe en premier » plutôt que par le transfert et ajoute des conseils routiers peu pertinents pour un véhicule stationné.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2726,
+ "output_tokens": 330,
+ "cost_usd": 0.0035783,
+ "latency_ms": 5669.1
+}

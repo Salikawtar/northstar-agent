@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je transmets votre demande » leaves Simone believing the earlier « arrivée estimée dans 40 minutes » is still confirmed.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Ne conduisez pas le véhicule » and « Je transmets votre demande » follow P07 and P14 without repeating or confirming the earlier dispatch claim.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande » matches the actual handoff, and the reply gives no new dispatch status or ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous contactera » describes follow-up without promising a callback time or confirming a tow.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Votre sécurité passe en premier » delays the useful handoff, and « Si vous êtes sur la route » is unnecessary after Simone said the driver had left.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2658,
+ "output_tokens": 339,
+ "cost_usd": 0.0047847,
+ "latency_ms": 6264.4
+}

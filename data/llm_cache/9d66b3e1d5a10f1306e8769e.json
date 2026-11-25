@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I can help with … warranty and recalls” lists services but does not address the bike-rack clarification or offer to check the warranty facts.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I can help with … warranty and recalls” describes the assistant’s scope without repeating the earlier warranty assurance.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can help with” introduces a list of services, not any new warranty or vehicle facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” does not promise coverage or any other outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“For anything else, please contact the branch directly” sounds generic and dismissive after the customer clarified that the hitch is for a bike rack.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2462,
+ "output_tokens": 391,
+ "cost_usd": 0.0048147,
+ "latency_ms": 7408.8
+}

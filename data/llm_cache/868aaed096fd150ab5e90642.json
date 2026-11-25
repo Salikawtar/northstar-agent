@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Quel est votre nom de famille? » demande une vérification sans dire qu’une personne examinera le double débit signalé.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"« Je dois d’abord vous vérifier » présente la vérification comme prochaine étape sans annoncer le transfert au service responsable.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je n’ai pas confirmé qu’il s’agit d’une préautorisation » n’ajoute aucun fait sur le paiement.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je n’ai pas confirmé qu’il s’agit d’une préautorisation » ne confirme ni la préautorisation ni un remboursement.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"Le ton est chaleureux, mais « Je dois d’abord vous vérifier » met l’accent sur un obstacle plutôt que sur l’aide proposée.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2658,
+ "output_tokens": 287,
+ "cost_usd": 0.0041783,
+ "latency_ms": 4617.3
+}

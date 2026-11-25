@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for the plate is a valid booking step, but “A person can review” leaves the disputed wear charges without a handoff.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"P14 requires a handoff for the requested charge decision, but “A person can review” only offers one.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can show you the times here” offers a next step without stating any unverified slots or charges.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Once I verify you” makes the booking help conditional, and no booking or fee waiver is confirmed.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply starts helpfully but repeats limits with “I can't confirm” twice and “I can't email slot lists.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2661,
+ "output_tokens": 381,
+ "cost_usd": 0.0051258,
+ "latency_ms": 7043.6
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"For the out-of-scope transfer question, « Je peux vous aider pour les rendez-vous d'entretien » politely redirects to dealership services.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The French reply stays within P01 by offering « les pièces, l'assistance routière, la garantie et les rappels » rather than giving legal or insurance advice.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Veuillez contacter directement la succursale » is a suggestion, not a new fact about the transfer or any record.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux vous aider » offers assistance without promising an outcome or confirming the earlier offer to send the steps.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply opens politely with « Je peux vous aider », gives one redirection, and asks no questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2624,
+ "output_tokens": 361,
+ "cost_usd": 0.0038781,
+ "latency_ms": 6226.0
+}

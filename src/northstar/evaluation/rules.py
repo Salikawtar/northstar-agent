@@ -43,7 +43,8 @@ def expected_queues(row: pd.Series) -> Optional[set[str]]:
     if rtype == "billing_dispute":
         return {"service_manager"}                   # contested charges (D-13)
     if rtype == "needs_human":
-        return {"service_advisors", "service_manager"}   # bereavement / request -> advisors, legal -> manager
+        # bereavement / request -> advisors, legal -> manager, a stranded driver who also wants a manager -> roadside
+        return {"service_advisors", "service_manager", "roadside"}
     return None                                       # any queue is acceptable
 
 

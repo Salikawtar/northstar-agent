@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply lists « la garantie et les rappels » but neither explains whether the purchase date helps nor asks for the plate or repair-order number needed to check the warranty.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply stays within P01 by listing « la garantie et les rappels » and discloses no customer or vehicle records under P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je peux vous aider » introduces a list of services, not an unsupported price, date, status, or coverage fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Veuillez contacter directement la succursale » does not promise a callback, appraisal, or warranty coverage.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The generic « Pour toute autre question » sounds dismissive after repeated requests and gives no tailored next step for the warranty check.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2600,
+ "output_tokens": 344,
+ "cost_usd": 0.0046897,
+ "latency_ms": 6613.0
+}

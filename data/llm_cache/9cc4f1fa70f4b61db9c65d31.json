@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply corrects the unbooked appointment, but treats November 27 as unavailable without confirming that date and leaves « Ramenez-les au bureau » unanswered.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"« Aucune disponibilité à Oakville pour cette date » goes beyond the tool results, which only listed slots on November 17–19.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"The tools did not establish « aucune disponibilité à Oakville » on November 27.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Rien n'est encore réservé » makes clear that no appointment was booked, and the reply does not promise a ride.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is polite and asks one question, but opens with « Une correction » rather than what it can do for the customer.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 3105,
+ "output_tokens": 449,
+ "cost_usd": 0.0070022,
+ "latency_ms": 8904.4
+}

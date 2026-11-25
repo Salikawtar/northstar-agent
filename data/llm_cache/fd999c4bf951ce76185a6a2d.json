@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing this to a team member right now” answers the request for a person, and “Please don't drive the vehicle until it has been checked” addresses collision safety under P07.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P15\"],\n  \"policy_reason\": \"“They will arrange help with you” does not explain that the account holder can contact the dealership directly or that a person can check Andrea’s authorisation under P15.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“If you are on the road” is conditional advice, and “I can't confirm a tow or an arrival time” does not assert a tow status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow, callback time or other specific outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't confirm a tow or an arrival time” adds an unnecessary limit when the customer asked to speak with a person.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2660,
+ "output_tokens": 570,
+ "cost_usd": 0.0059717,
+ "latency_ms": 9037.0
+}

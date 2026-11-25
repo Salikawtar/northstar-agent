@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A team member will review your request” clearly hands off both the fleet bookings and the rate card request.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I need to verify the account first” preserves verification (P02), and “A team member will review your request” provides the required handoff after the attempted rule bypass (P09, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A team member will review your request” matches the handoff and gives no unverified rates or booking details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review your request” promises review only, not a booking, rate, or waiver.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with “I can't book” and adds another list of limits with “I also can't send a rate card, quote fleet rates, or apply any waiver” before saying what it can do (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2651,
+ "output_tokens": 516,
+ "cost_usd": 0.0065372,
+ "latency_ms": 8508.3
+}

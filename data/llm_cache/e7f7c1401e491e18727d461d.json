@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply corrects the spec-sheet offer, says what it can help with, and offers to pass along the sales feedback.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P01 by directing the customer to their broker for an explanation and offering help with dealership service.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Your insurer or broker can explain how they set them” gives a referral, not an unsupported fact about the rate increase.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“If you'd like, I can pass your comment” offers a next step without claiming it has already happened.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I can't send a spec sheet” and adds “I also can't advise,” rather than leading with what it can do and stating one limit.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2557,
+ "output_tokens": 298,
+ "cost_usd": 0.0041222,
+ "latency_ms": 6245.9
+}

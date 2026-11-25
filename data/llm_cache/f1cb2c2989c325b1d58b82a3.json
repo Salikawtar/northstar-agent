@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing this to a team member right now” addresses the request for a person and pairs the handoff with appropriate safety advice.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Call 911 now,” “don't drive the vehicle,” and “I'm passing this to a team member” satisfy P07 and P14 without disclosing account details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the recorded handoff, and the reply adds no unsupported case facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will contact you” gives no callback time and does not reaffirm the earlier “within the hour” promise.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“If you are on the road” adds unnecessary instructions for a vehicle already at a tow yard, while the requested handoff comes last.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2627,
+ "output_tokens": 408,
+ "cost_usd": 0.0053972,
+ "latency_ms": 7204.1
+}

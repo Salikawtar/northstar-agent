@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing you to a team member” gives the customer the right next step for a bereavement request.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing you to a team member” meets P14 without disclosing account details or promising a callback time.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing you to a team member” matches the recorded handoff and adds no unsupported case facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” describes the follow-up without promising a time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm the dealership's virtual assistant” opens with a role disclosure rather than a warm acknowledgment or the action being taken.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2506,
+ "output_tokens": 290,
+ "cost_usd": 0.0038283,
+ "latency_ms": 5008.3
+}

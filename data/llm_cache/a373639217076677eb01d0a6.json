@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply uses the corrected vehicle, “Tessera,” and asks for the “licence plate” or “repair-order number” needed to verify the account using the last name already provided.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P02 and P03 by asking for a “licence plate” or “repair-order number” before sharing vehicle information and saying not to send the VIN.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Tessera” came from the customer’s correction, and the reply states no recall or warranty findings.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check recalls and warranty facts” offers a check after verification, not a promise of coverage.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Thanks for the correction, Brooke” is warm, and the reply promptly offers help, gives one brief limit, and asks one question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2618,
+ "output_tokens": 298,
+ "cost_usd": 0.0042747,
+ "latency_ms": 4768.7
+}

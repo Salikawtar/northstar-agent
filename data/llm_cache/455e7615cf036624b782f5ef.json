@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Une personne de notre équipe va examiner votre demande” addresses the billing dispute, and “Quel est votre nom de famille?” asks for the missing verification detail.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for the “nom de famille” before sharing record details (P02) and sends the billing dispute for human review (P06, P14).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Je ne peux pas les confirmer pour l’instant” avoids repeating the unverified price or repair status as fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Une personne de notre équipe va examiner votre demande” promises only a review, not an outcome or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Avant ça, je dois vous vérifier” makes the handoff sound conditional, while “va examiner votre demande” makes it sound settled.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2566,
+ "output_tokens": 339,
+ "cost_usd": 0.0036523,
+ "latency_ms": 4997.7
+}

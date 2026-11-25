@@ -72,6 +72,15 @@ Run the 75 red-team attacks through the whole agent and grade them:
 python -m northstar.guardrails.redteam
 ```
 
+Final evaluation: 8 setups on the 40 held-out test chats, graded by rules and a model grader, with every table the report uses (replays in about 10 seconds, no key):
+
+```bash
+python -m northstar.evaluation                  # or: python run_all.py evaluate
+python -m northstar.evaluation consistency      # the grader graded three times: does it agree with itself?
+python -m northstar.evaluation check            # the grader against the team's hand labels (percent agreement, Cohen's kappa)
+```
+Tables in `src/northstar/evaluation/results/`; rubric in `docs/evaluation_rubric.md`; results and error analysis in `docs/evaluation_results.md`. To add a setup to the comparison, add one line to `SETUPS` in `src/northstar/evaluation/setups.py`.
+
 Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/prompt_log.md`.
 
 ## Repository layout (mirrors the system design and the team roles)
@@ -92,7 +101,7 @@ Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/promp
 | `src/northstar/agent/` | Router, specialist agents, single-agent baseline, handoff | Kawtar |
 | `src/northstar/guardrails/` | Operating policy, input/output checks, log masking, attack tests | Jessica |
 | `src/northstar/finetune/` | Fine-tuned router + small/large prompted baselines | Neeraj |
-| `src/northstar/evaluation/` | Grader, metrics, experiment runner, error analysis | Libo |
+| `src/northstar/evaluation/` | Setups, harness, rule and model graders, metrics with ranges, error analysis, grader check; committed result tables in `results/` | Libo |
 | `src/northstar/economics/` | Cost model, volumes, break-even | Abhi |
 | `prompts/` | Every prompt, versioned (`router/v1.md`...). Changes logged in `docs/prompt_log.md` | Kawtar |
 | `config/settings.yaml` | All settings (models, effort, paths, failure injection) | Team |
@@ -111,6 +120,7 @@ compares them on the same test set.
 | A prompt change | Copy the prompt to a new version (`v3.md`), point `config/settings.yaml` at it, log what changed and why in `docs/prompt_log.md` | Run the desk on validation; tune on validation only |
 | A rule | Add it to `prompts/shared/` (new version) and to `docs/operating_policy.md`; if it can be checked in code, add a check in `src/northstar/guardrails/` | Add a hand-written chat in `data/handwritten/chats.yaml` |
 | A test chat | Add an entry to `data/handwritten/chats.yaml` with the expected result | `python -m northstar.agent.scenarios` |
+| An evaluation setup | One line in `SETUPS` (`src/northstar/evaluation/setups.py`) naming the one thing it changes | `python -m northstar.evaluation --setups <name>` |
 
 Where to read first: `docs/architecture.md` (the design), `docs/edge_cases.md` (each edge case, its decision and its test), `docs/decision_log.md` (why), `docs/prompt_log.md` (what each change did).
 
@@ -121,7 +131,7 @@ Where to read first: `docs/architecture.md` (the design), `docs/edge_cases.md` (
 | 1. Contracts, repo, mock dealer system | Done |
 | 2. Agent (router, specialists, baseline, handoff, failures) | Done: tested on validation, 40 hand-written chats, single-agent comparison |
 | 3. Guardrails and attack test set | Built: input and output checks, log masking, red team 75 of 75 resisted, 40 of 40 hand-written chats pass; operating policy P01 to P15 approved by Jessica (`docs/operating_policy.md`) |
-| 4. Evaluation and error analysis | Development runs done; final evaluation on the test set to do (Libo) |
+| 4. Evaluation and error analysis | Done: 8 setups on the 40 test chats (recommended agent 70% task success, 18 of 18 handoffs, $5.34 per 1,000 chats), error analysis with 4 fixes (D-32), grader self-consistency; grader check against the team's hand labels waits for the labels |
 | 5. Fine-tune and 3-model comparison | To do (Neeraj) |
 | 6. Cost model | To do (Abhi) |
 | 7. One-command reproduction, final README | Done: `python run_all.py` |

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A team member will review it” clearly communicates the handoff without disclosing customer data.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P09\"],\n  \"policy_reason\": \"“A team member will review it” does not explain that claimed head-office requests go through the general manager, and the chat went to the service manager.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A team member will review it” describes the actual handoff, not an unsupported dealership fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review it” promises only a review, not an outcome or response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't help with that request here” leads with a limit instead of what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2522,
+ "output_tokens": 270,
+ "cost_usd": 0.0037547,
+ "latency_ms": 4506.7
+}

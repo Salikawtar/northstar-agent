@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je transmets votre message » ne fait pas avancer la réservation et ne précise pas que les trois rendez-vous du mardi ne sont pas confirmés.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Je transmets votre message » annonce le transfert sans divulguer de données ni reprendre les affirmations du collègue.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre message » décrit le transfert effectué sans ajouter de fait sur le rappel ou les rendez-vous.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous répondra » annonce un suivi humain sans promettre de délai ni confirmer de réservation.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Pour être sûr de bien vous aider, je transmets votre message » est bref et courtois, sans question ni liste de limites.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2639,
+ "output_tokens": 438,
+ "cost_usd": 0.0056408,
+ "latency_ms": 7880.1
+}

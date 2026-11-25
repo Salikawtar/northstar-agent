@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« J’ai besoin de votre nom de famille et de la plaque de votre véhicule ou du numéro de bon de réparation » amorce la vérification requise avant de consulter le dossier (P02).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Avant de consulter votre dossier » place la vérification avant toute divulgation, conformément à P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je ne peux pas confirmer l’arrivée de la pièce, la garantie ou le dépôt » n’ajoute aucun fait non vérifié.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux vous aider à regrouper la pièce et l’inspection » propose de l’aide sans confirmer de rendez-vous.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je ne peux pas confirmer l’arrivée de la pièce, la garantie ou le dépôt » énumère les éléments non confirmés au lieu de donner une seule limite concise (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2684,
+ "output_tokens": 308,
+ "cost_usd": 0.0044533,
+ "latency_ms": 4340.0
+}

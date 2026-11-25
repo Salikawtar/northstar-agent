@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Une personne du service va examiner votre contestation” takes the right next step on the billing dispute, and the reply asks for the second invoice reference.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P15\"],\n  \"policy_reason\": \"The reply disclosed “761,24 $ CAD, taxes incluses” to Roger, who identified himself as acting “pour Jefferson and Sons,” without establishing that he was the account holder.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“3,7 heures de main-d’œuvre à 165 $ l’heure” and “761,24 $ CAD” match the returned invoice, and the reply does not claim the second invoice does not exist.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Une personne du service va examiner votre contestation” promises only a review, not an outcome or a deadline.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Je n’ai pas non plus accès” and “je ne peux pas vous promettre” add two limits before the next step.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2867,
+ "output_tokens": 715,
+ "cost_usd": 0.0089808,
+ "latency_ms": 12148.4
+}

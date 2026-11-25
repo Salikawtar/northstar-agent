@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je transmets votre demande » takes the right next step for the updated location without implying a tow is on its way.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Ne conduisez pas le véhicule » and « appelez le 911 » provide P07 safety guidance, and « je transmets votre demande » states the P14 handoff without disclosing account details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je ne peux confirmer ni remorquage ni heure d'arrivée » asserts no dispatch status or arrival time.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui organisera l'aide avec vous » describes the next step without promising a tow or an arrival time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je ne peux confirmer ni remorquage ni heure d'arrivée » lists two limits when a brief correction about the tow would suffice.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2742,
+ "output_tokens": 377,
+ "cost_usd": 0.0052883,
+ "latency_ms": 6305.9
+}

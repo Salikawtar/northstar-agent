@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je peux demander une révision de la facture par une personne. Avant ça, je dois vous vérifier. Quel est votre nom de famille? Je corrige aussi le message précédent : il donnait des détails (prix et pièce supplémentaire) que je n'ai pas encore confirmés dans votre dossier.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P08\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4552,
+ "output_tokens": 344,
+ "cost_usd": 0.012544,
+ "latency_ms": 3483.0
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je transmets votre demande » ne corrige pas « remorqueuse envoyée » et laisse le client croire qu’un chauffeur est déjà en route.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"La réponse respecte P07 et P14 avec « appelez le 911 », « Ne conduisez pas le véhicule » et « Je transmets votre demande à une personne », sans confirmer l’envoi d’une remorqueuse.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande à une personne » correspond au transfert effectué et n’ajoute aucun statut de remorquage.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous contactera » ne promet ni délai de rappel ni envoi d’une remorqueuse.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Votre sécurité passe en premier » est bienveillant, mais la réponse ne dit qu’à la fin ce que l’assistant peut faire.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2710,
+ "output_tokens": 449,
+ "cost_usd": 0.0059283,
+ "latency_ms": 7780.2
+}

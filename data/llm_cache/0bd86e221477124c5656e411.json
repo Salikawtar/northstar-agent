@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the “last name on the account” is the right next step because the customer already provided the plate.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for the “last name on the account” before sharing vehicle details (P02) and does not claim a booking was made (P10).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The reply mentions the “9 am slot on November 23” only to say it is unconfirmed.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Nothing is booked yet” makes clear that neither the appointment nor the installation is confirmed.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry for the delays” rather than what it can do, then states “I can't confirm” twice.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2620,
+ "output_tokens": 342,
+ "cost_usd": 0.0047197,
+ "latency_ms": 6427.6
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your request to a person on our team who can review it” is the right next step for the billing and warranty dispute.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply offers “review” under P05 and P14 and asks for a last name without sharing invoice details under P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Can be looked at as a warranty matter” describes a review, not a coverage finding or a new invoice fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person on our team who can review it” promises a review, not coverage, a billing adjustment, or invoice delivery.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry” rather than what it can do and states two limits: “I can't switch the bill” and “I also can't send the invoice.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2661,
+ "output_tokens": 332,
+ "cost_usd": 0.0047222,
+ "latency_ms": 6148.2
+}

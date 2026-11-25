@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the “last name and your licence plate or repair-order number” is the right next step, and “I haven't confirmed a time” makes clear the visit isn't booked.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for verification before giving account details (P02), makes no booking or loaner promise (P10, P06), and says the “warranty desk decides” (P05).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'll check the open slots” does not claim that an appointment is available.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I haven't confirmed a time” and “I can't offer a loaner from here” make no booking, loaner, or coverage commitment.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can help you book the Markham visit” opens with help and follows with one clear verification request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2565,
+ "output_tokens": 430,
+ "cost_usd": 0.0054622,
+ "latency_ms": 7604.1
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can look into this charge with you. First I need to verify you. Can you give me your licence plate or the repair-order number (RO-######)? Your last name, Jones, is already noted.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4530,
+ "output_tokens": 108,
+ "cost_usd": 0.01014,
+ "latency_ms": 1776.9
+}

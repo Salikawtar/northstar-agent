@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je peux demander une révision de la facture par le gestionnaire de service. Avant ça, je dois vous vérifier. Quel est votre nom de famille? Aussi, mon collègue a donné des détails avant cette vérification. Je ne peux pas les confirmer pour l'instant.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P06\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3706,
+ "output_tokens": 342,
+ "cost_usd": 0.010832,
+ "latency_ms": 3582.7
+}

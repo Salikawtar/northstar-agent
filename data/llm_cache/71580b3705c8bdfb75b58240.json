@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply says a person “will review your dispute” but does not address “Don't close this ticket until the refund shows on my card.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P03\", \"P08\", \"P13\"],\n  \"policy_reason\": \"“What is your last name?” is unnecessary for the handoff (P03), “only the service manager can decide” is unsupported (P08), and “a refund, a refund method or a timeline” lists limits (P13).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“Only the service manager can decide that” states an exclusive approval policy not established by the conversation or tools.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will review your dispute” promises only a review, not a refund or a deadline.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2209,
+ "output_tokens": 482,
+ "cost_usd": 0.0060282,
+ "latency_ms": 8753.5
+}

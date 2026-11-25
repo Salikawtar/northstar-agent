@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply lists « la garantie » but does not say whether the purchase date helps or ask for the plate or repair-order number needed to check.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply stays within scope (P01) and lists « la garantie et les rappels » without disclosing unverified information (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je peux vous aider » introduces a list of services, not any new vehicle or warranty facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Veuillez contacter directement la succursale » is a referral, not a promise of coverage or a callback.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Je peux vous aider » opens a brief, polite French reply with one redirect and no questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2636,
+ "output_tokens": 436,
+ "cost_usd": 0.0056133,
+ "latency_ms": 7910.1
+}

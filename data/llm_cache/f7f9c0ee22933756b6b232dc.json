@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing this to a member of our team” gives the customer the right next step for a bereavement request.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The handoff satisfies P14, and “who will contact you” does not promise a callback time.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a member of our team” matches the recorded handoff.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” describes follow-up without confirming the requested after-10 time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm and brief, but it opens with “I'm very sorry for your loss” rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2485,
+ "output_tokens": 329,
+ "cost_usd": 0.0042522,
+ "latency_ms": 5667.0
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Please don’t count on one yet” corrects the impression that a tow is on the way, and “I’m passing this to a team member” gives the right next step.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Call 911 now” if anyone is hurt or in danger, “please don’t drive,” and the roadside handoff satisfy P07 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can’t confirm a tow or an arrival time” avoids stating a dispatch status or ETA without evidence.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow or an arrival time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Your safety comes first” is warm and clear, but it does not open with what the assistant can do: pass the request to roadside assistance.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2632,
+ "output_tokens": 316,
+ "cost_usd": 0.0044033,
+ "latency_ms": 5021.6
+}

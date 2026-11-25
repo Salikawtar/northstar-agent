@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the customer's “last name” is the right next step before checking whether morning pickup is possible.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for the “last name” to complete verification under P02 and does not repeat the earlier claims as facts.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I haven't been able to check” makes clear that the earlier details are unverified.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check the current status and the pickup details” offers a check without confirming pickup.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The correction lists “the 4 pm ready time, the cost, or a shuttle” instead of briefly saying the earlier details were unverified.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2600,
+ "output_tokens": 242,
+ "cost_usd": 0.0036697,
+ "latency_ms": 3659.6
+}

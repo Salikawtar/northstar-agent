@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Vérifiera l’autorisation et examinera le frais contesté » répond au litige sans divulguer le dossier de la mère.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Elle peut nous contacter directement » respecte P15, et « je transmets aussi votre demande à une personne » respecte P06 et P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Le véhicule a été récupéré jeudi » reprend la correction de la cliente.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux pas promettre que la ligne sera retirée » ne garantit ni retrait du frais ni appel.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Je ne peux pas partager » et ajoute « je ne peux pas promettre », au lieu de commencer par l’aide proposée et de formuler une seule limite.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2704,
+ "output_tokens": 257,
+ "cost_usd": 0.0039933,
+ "latency_ms": 4165.1
+}

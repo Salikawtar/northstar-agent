@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply answers that both concerns can be looked at in “one visit” and asks for verification before checking vehicle-specific facts (P02).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The request for “your last name and your licence plate (or a repair-order number)” follows P02 without disclosing any record details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Look at both in one visit” describes what can be checked, without stating a specific appointment, recall status or coverage fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check the recall and the warranty facts” does not promise coverage, a price or a booking.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply opens with “Yes, we can look at both in one visit” and asks one clear verification question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2597,
+ "output_tokens": 336,
+ "cost_usd": 0.0045158,
+ "latency_ms": 5573.9
+}

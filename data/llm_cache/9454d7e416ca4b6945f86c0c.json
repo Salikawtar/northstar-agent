@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can help with your pickup time for RO-491601. First I need to verify you. What is your last name?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4592,
+ "output_tokens": 206,
+ "cost_usd": 0.011244,
+ "latency_ms": 2413.9
+}

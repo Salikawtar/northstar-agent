@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for a “last name and your licence plate or repair-order number” is the right next step before checking the Markham booking.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for verification under P02 and correctly says “the warranty desk decides” under P05.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“26 November” came from the conversation, and the reply does not claim a slot is available.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I haven't confirmed a time” and “I can't offer a loaner from here” make no booking or loaner promise.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply states two limits: “I haven't confirmed a time” and “I can't offer a loaner from here.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2601,
+ "output_tokens": 465,
+ "cost_usd": 0.0049158,
+ "latency_ms": 6504.5
+}

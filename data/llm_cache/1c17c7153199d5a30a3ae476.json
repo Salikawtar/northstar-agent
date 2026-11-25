@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Avant ça, je dois vous vérifier » présente la vérification comme préalable à la révision de la facture, alors que la demande a déjà été transmise.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"« Je peux transmettre » ne dit pas clairement qu’une personne examinera la contestation de la facture, comme l’exige P14.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je ne peux pas les confirmer » ne reprend aucun prix ni statut de réparation non vérifié.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux transmettre votre demande de révision » ne promet ni ajustement de facture ni résultat.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je dois vous vérifier » et « je ne peux pas les confirmer » énoncent deux limites au lieu d’une.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2550,
+ "output_tokens": 338,
+ "cost_usd": 0.0044183,
+ "latency_ms": 5902.6
+}

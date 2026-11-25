@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je transmets votre demande à une personne » fait avancer la demande d’étui noir sans confirmer le stock annoncé précédemment.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Je ne peux pas vérifier le stock ni mettre une pièce de côté » corrige l’annonce non vérifiée conformément aux règles P06 et P08.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Confirmera la disponibilité et le prix » décrit la prochaine étape sans annoncer de stock ni de prix.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je transmets votre demande à une personne » ne promet ni réservation ni délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Je dois corriger » plutôt que par l’aide proposée, et « qui la examinera » est maladroit.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2662,
+ "output_tokens": 489,
+ "cost_usd": 0.0062947,
+ "latency_ms": 9209.4
+}

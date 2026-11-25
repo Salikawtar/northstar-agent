@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The customer asked for a morning “next week,” but the reply confirmed “Tuesday, November 17,” which was the next day.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The verified reply reported the actual booking, “BK-00029,” and the recall result without adding unsupported claims.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“November 17, at 9:00 AM,” “Scarborough,” and “none are on file” all match the tool results.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“BK-00029” was returned by the booking tool, even though it was for the wrong week.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply leads with “Your maintenance appointment is booked” and gives a clear next step: “Just bring the letter to your appointment.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2833,
+ "output_tokens": 590,
+ "cost_usd": 0.0076458,
+ "latency_ms": 10609.7
+}

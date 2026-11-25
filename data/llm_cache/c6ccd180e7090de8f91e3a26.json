@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Je n’ai pas confirmé qu’il s’agit d’une préautorisation” corrects the earlier impression, and “une personne de notre équipe va examiner votre demande” gives the right next step under P06 and P14.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Quel est votre nom de famille?” requests the missing verification detail under P02, and “une personne de notre équipe va examiner votre demande” satisfies P06 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-922707” came from the customer, and the reply states no new billing facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Va examiner votre demande et faire le suivi avec vous” promises review without promising a refund or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “Je comprends, et merci de votre patience” and puts the verification requirement before saying what the team can do (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2674,
+ "output_tokens": 311,
+ "cost_usd": 0.0033831,
+ "latency_ms": 4531.3
+}

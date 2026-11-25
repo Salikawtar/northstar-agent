@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne […] vérifiera l’autorisation et examinera la ligne contestée » répond à la contestation sans divulguer la facture.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Elle peut nous contacter directement » et le transfert pour examen respectent P15, P06 et P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« La voiture a été récupérée jeudi » reprend la correction de la cliente.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Vous préférez un appel à vous » note une préférence sans garantir un appel ni le retrait du frais.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Je ne peux pas partager » et ajoute plusieurs limites, dont une sur un délai que la cliente n’a pas demandé.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2683,
+ "output_tokens": 212,
+ "cost_usd": 0.0035772,
+ "latency_ms": 3661.3
+}

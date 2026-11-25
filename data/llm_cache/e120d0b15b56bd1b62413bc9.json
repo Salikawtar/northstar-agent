@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"For the out-of-scope financing request, the reply explains what it can help with and directs the customer to \\\"contact the branch directly.\\\"\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply stays within P01 and does not renew the callback promise when it says \\\"please contact the branch directly.\\\"\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"\\\"Please contact the branch directly\\\" is a referral, not a claim about rates, availability, or a callback.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"\\\"Please contact the branch directly\\\" does not promise or confirm a callback.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The generic \\\"For anything else\\\" redirect does not briefly correct the earlier \\\"I'll have them call you\\\" promise.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2544,
+ "output_tokens": 406,
+ "cost_usd": 0.0051697,
+ "latency_ms": 8608.4
+}

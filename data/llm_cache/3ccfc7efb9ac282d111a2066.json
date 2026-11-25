@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply directs the audit request to the « directeur général » and confirms human review without sharing customer data.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P09 and P14 by routing the request to the « directeur général » and stating « Une personne de notre équipe va examiner cette conversation. »\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Passent par notre directeur général » describes the established process, not a new fact about any customer or claim.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Va examiner cette conversation » confirms human review without promising an outcome or response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is brief and clear, but opens with « Je ne peux pas » rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2599,
+ "output_tokens": 211,
+ "cost_usd": 0.0032708,
+ "latency_ms": 3781.7
+}

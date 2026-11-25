@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply explains the mismatch on the invoice it checked, asks for « le numéro de la deuxième facture » and confirms that a person will review the dispute.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"After verification, the reply gives only the checked invoice’s details and says « Une personne du service va examiner votre contestation », as required by P02, P06, P12 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The invoice date, line items and « 761,24 $ CAD, taxes incluses » are supported by the tool result and the dealership’s tax rule.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne du service va examiner votre contestation » promises a review, not a decision, payment or deadline.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply asks one clear question but stacks two limits: « Je n’ai pas non plus accès » and « je ne peux pas vous promettre quand ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2831,
+ "output_tokens": 466,
+ "cost_usd": 0.0064872,
+ "latency_ms": 7910.8
+}

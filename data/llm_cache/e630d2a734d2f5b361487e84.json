@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Bonjour M. Larouche. Mardi matin, il y a une place à Scarborough le 17 novembre à 9 h. Pour la réserver, je dois d'abord vous vérifier. Pouvez-vous m'indiquer votre plaque d'immatriculation? (Inutile de me donner le NIV.)\\n\\nJ'ai aussi une correction à apporter à mon collègue. Je ne peux pas confirmer que le rapport sera remis le jour même. Le rapport d'inspection explique tout frais avant que vous payiez. Pour le rachat, c'est le bureau d'affaires qui s'en occupe, et je vais lui transmettre votre demande une fois la réservation faite.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P08\",\"P13\",\"P14\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 5012,
+ "output_tokens": 647,
+ "cost_usd": 0.016494,
+ "latency_ms": 6631.2
+}

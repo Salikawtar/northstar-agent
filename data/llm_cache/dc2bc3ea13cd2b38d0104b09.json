@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je transmets votre demande à une personne de l’équipe » fait examiner l’autorisation et le frais contesté sans divulguer le dossier (P06, P14, P15).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Elle peut aussi nous contacter directement » respecte P15, et le transfert permet l’examen de la contestation exigé par P06 et P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« La voiture a été récupérée jeudi » reprend la correction de la cliente sans ajouter de fait inédit.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Examinera cette ligne de facture » annonce un examen sans promettre le retrait du frais.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « je ne peux pas partager » plutôt que par l’aide proposée et énonce ensuite une autre limite avec « personne ne peut promettre » (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2716,
+ "output_tokens": 338,
+ "cost_usd": 0.0048333,
+ "latency_ms": 5739.1
+}

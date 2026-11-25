@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the “licence plate” or “repair-order number” is the right next step to identify the charge under Jones.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P02 by asking for a “licence plate” or “repair-order number” before sharing account details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can look into this charge with you” does not claim what the charge was for.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can look into this charge with you” offers help without promising a billing outcome.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can look into this charge with you” is a helpful opening followed by one clear question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2522,
+ "output_tokens": 311,
+ "cost_usd": 0.0041647,
+ "latency_ms": 5570.0
+}

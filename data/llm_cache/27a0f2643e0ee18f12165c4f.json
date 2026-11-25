@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I've passed your request to a parts advisor” gives the customer a clear next step and corrects the earlier delivery and fitting estimates.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please don't rely on” withdraws the unsupported estimates, and the reply shares no vehicle or account details.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The two-day delivery or the 20-minute fitting” refers to earlier estimates the reply explicitly withdraws.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will reply to you directly” describes follow-up without promising a response time, price or booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't quote” opens with a limitation rather than what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2615,
+ "output_tokens": 298,
+ "cost_usd": 0.0042672,
+ "latency_ms": 5557.0
+}

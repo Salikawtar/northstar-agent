@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking “what is your last name?” is a valid verification step for the invoice, but it does not address the required handoff for the billing dispute.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"The reply says “only the warranty desk can decide” but does not pass the billing dispute and suspected warranty fraud to a person.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-287266” came from the customer, and “only the warranty desk can decide” reflects the dealership’s process.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can’t email the invoice in this chat” does not promise delivery, and the reply leaves coverage to the warranty desk.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“First, I need to correct my colleague” foregrounds the correction rather than what the assistant can do to help.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2632,
+ "output_tokens": 318,
+ "cost_usd": 0.0044233,
+ "latency_ms": 5387.5
+}

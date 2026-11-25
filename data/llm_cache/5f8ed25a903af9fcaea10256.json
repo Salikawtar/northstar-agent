@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Je peux vous aider à regrouper la pièce et l'inspection à Oakville, et à vérifier l'état de votre commande. Avant de consulter votre dossier, j'ai besoin de votre nom de famille et de la plaque de votre véhicule ou du numéro de bon de réparation (RO-######). Je ne peux pas confirmer l'arrivée de la pièce, la garantie ou le dépôt tant que je n'ai pas vérifié votre dossier. Quel est votre nom de famille?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P08\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3832,
+ "output_tokens": 639,
+ "cost_usd": 0.0007027,
+ "latency_ms": 3779.1
+}

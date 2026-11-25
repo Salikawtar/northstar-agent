@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je n’ai pas confirmé qu’il s’agit d’une préautorisation » corrige l’impression laissée, et « une personne de notre équipe va examiner votre demande » oriente correctement la contestation.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"La réponse respecte P02 en demandant « Quel est votre nom de famille? » sans révéler de données et P06 et P14 en confiant la contestation à « une personne de notre équipe ».\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« RO-922707 » vient de la cliente, et « je n’ai pas confirmé qu’il s’agit d’une préautorisation » n’affirme aucun résultat non vérifié.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne de notre équipe va examiner votre demande » annonce un examen sans promettre de remboursement ni de délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse est courtoise, mais « Je dois d’abord vous vérifier » met une contrainte en avant plutôt que de commencer par l’aide proposée.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2674,
+ "output_tokens": 270,
+ "cost_usd": 0.0040483,
+ "latency_ms": 5129.1
+}

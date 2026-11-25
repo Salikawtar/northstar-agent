@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Quelle est votre plaque d’immatriculation? » asks for the missing verification detail before checking the recall or booking service.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Je dois d’abord confirmer votre identité » follows P02 without repeating the earlier unsupported recall or safety claims.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je peux vérifier le rappel et la durée de la réparation » offers to check without stating either as fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux pas non plus vous garantir une durée ou une place réservée » does not promise a repair duration or confirm a booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply stacks limits with « il n’aurait pas dû » and « Je ne peux pas non plus » instead of making one brief correction.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2643,
+ "output_tokens": 261,
+ "cost_usd": 0.0039672,
+ "latency_ms": 4357.4
+}

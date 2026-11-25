@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I'm sorry this is stressful. I can send your charge to the service manager for review. First I need to verify you. What is your last name?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4622,
+ "output_tokens": 270,
+ "cost_usd": 0.011944,
+ "latency_ms": 3350.5
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the Tessera’s “licence plate” or “repair-order number” is the right next step because the customer already gave her last name.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply says “once I verify the account” and shares no vehicle or account details before verification (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Tessera” came from the customer, and the reply states no recall or coverage facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check recalls and warranty facts” offers a check without promising coverage or payment.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Thanks for the correction” is warm, “Please don't send the VIN” briefly corrects the earlier advice, and the reply asks one clear question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2654,
+ "output_tokens": 219,
+ "cost_usd": 0.0034883,
+ "latency_ms": 3419.1
+}

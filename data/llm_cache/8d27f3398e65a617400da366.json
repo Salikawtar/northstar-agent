@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I'm sorry this is stressing you out. I can send the charge to the service manager for review, but first I need to verify you. What is your last name? I'll use it with your plate, CZHP 369. One correction to my colleague's earlier message: I can't pull the inspection report myself. I can check your invoice and lease details once you're verified.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3768,
+ "output_tokens": 359,
+ "cost_usd": 0.011126,
+ "latency_ms": 4183.0
+}

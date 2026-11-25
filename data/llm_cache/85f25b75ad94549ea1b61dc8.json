@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The safety advice and handoff are appropriate, but the reply leaves the customer relying on the unverified “45 min” tow ETA.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please don't drive” and “I'm passing this to a team member” satisfy the safety and handoff rules without repeating the earlier tow claim.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the action taken, and the reply gives no tow status or ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will contact you” describes the handoff without promising when contact will happen or confirming a tow.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is clear and brief, but it does not correct the earlier “ETA about 45 minutes” claim.\" \n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2614,
+ "output_tokens": 381,
+ "cost_usd": 0.0050083,
+ "latency_ms": 6795.5
+}

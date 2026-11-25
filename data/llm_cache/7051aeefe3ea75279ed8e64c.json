@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je vous mets en contact » ne corrige pas l’annonce non confirmée d’un camion en route avec une arrivée « dans 40 minutes ».\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Une personne de notre équipe » annonce le transfert prévu par P14 sans confirmer l’envoi du camion.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je vous mets en contact » correspond au transfert effectué, sans ajouter de détail sur le dépannage.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous répondra » annonce un suivi humain sans promettre de délai ni de dépannage.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Je suis l’assistant virtuel » plutôt que par l’aide proposée et ne corrige pas brièvement l’annonce précédente.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2638,
+ "output_tokens": 262,
+ "cost_usd": 0.0038783,
+ "latency_ms": 4698.5
+}

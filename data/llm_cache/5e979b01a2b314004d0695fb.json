@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your message to a team member” clearly explains the handoff without making unsupported claims about the brakes or coverage.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your message to a team member” makes the handoff clear under P14 without disclosing vehicle records under P02.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your message to a team member” matches the recorded action and adds no facts about the vehicle or recall.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” describes follow-up without promising when it will happen or what the outcome will be.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I'm passing your message to a team member” is a short, warm explanation of the next step, with no limits or questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2545,
+ "output_tokens": 370,
+ "cost_usd": 0.0048122,
+ "latency_ms": 7069.4
+}

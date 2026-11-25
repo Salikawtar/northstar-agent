@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The urgent handoff is right, but the reply leaves the customer believing the earlier claim that “a tow is being dispatched.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Call 911 now” if anyone is hurt or in danger, “don't drive,” and “I'm passing this to a team member” satisfy P07 and P14 without repeating the tow claim.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the action taken, and the reply states no new dispatch or vehicle facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will contact you” gives no callback time and does not confirm a tow.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Your safety comes first” is clear and warm, but the reply does not briefly correct “a tow is being dispatched” as P13 calls for.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2581,
+ "output_tokens": 306,
+ "cost_usd": 0.0041758,
+ "latency_ms": 5046.9
+}

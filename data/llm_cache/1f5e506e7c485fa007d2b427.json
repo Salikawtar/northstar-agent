@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply lists “lease returns” but does not explain how it can help with a return or direct buy-out and valuation questions to the business office.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply offers help with “lease returns” without giving financial advice or disclosing the father’s account details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The list ending in “invoices and lease returns” describes services without asserting any vehicle or lease facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” is a referral, not a promise or confirmation.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply opens with “I can help,” stays brief, and asks no questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2553,
+ "output_tokens": 278,
+ "cost_usd": 0.0039122,
+ "latency_ms": 5191.3
+}

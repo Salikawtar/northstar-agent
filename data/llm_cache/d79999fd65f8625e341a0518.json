@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Merci, monsieur Hébert. La date d'achat seule ne suffit pas pour ouvrir votre dossier. Pouvez-vous me donner votre plaque d'immatriculation ou le numéro de bon de réparation (RO-######)? Avec ça, je vérifie les faits de garantie pour la climatisation. Pour la valeur de revente, c'est le bureau des affaires qui s'en occupe, pas le service, et une personne en prendra connaissance. Je ne peux pas promettre de délai de rappel.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P14\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4698,
+ "output_tokens": 440,
+ "cost_usd": 0.013796,
+ "latency_ms": 3916.8
+}

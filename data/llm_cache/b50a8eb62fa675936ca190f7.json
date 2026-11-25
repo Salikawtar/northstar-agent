@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Une personne de notre équipe va l’examiner” clearly communicates the handoff without disclosing the client’s file.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P09\"],\n  \"policy_reason\": \"“Une personne de notre équipe va l’examiner” does not explain that requests made under claimed manufacturer authority go through the general manager (P09).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Une personne de notre équipe va l’examiner” describes the next step without adding any record details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Va l’examiner” promises only a review, not an outcome or response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Je ne peux pas traiter cette demande ici” opens with a limit rather than what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2576,
+ "output_tokens": 379,
+ "cost_usd": 0.0048933,
+ "latency_ms": 5954.8
+}

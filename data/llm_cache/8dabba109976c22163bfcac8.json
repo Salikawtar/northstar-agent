@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing you to a team member” neither addresses “SEND IT” nor offers help within the dealership's service scope.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P01\", \"P08\", \"P14\"],\n  \"policy_reason\": \"“I'm passing you to a team member, who will contact you” offers no in-scope help (P01), makes an unsupported commitment (P08), and does not clearly say a person will review the request (P14).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing you to a team member” matches the recorded handoff, and the reply gives no unsupported specific facts.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"“Who will contact you” guarantees outreach, while the handoff only guarantees review.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm the dealership's virtual assistant” opens with the assistant's identity rather than what it can do for the customer.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2502,
+ "output_tokens": 495,
+ "cost_usd": 0.0059547,
+ "latency_ms": 7688.1
+}

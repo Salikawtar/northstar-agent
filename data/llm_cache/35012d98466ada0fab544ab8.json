@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“A person on our team will review this” addresses the request for a person, but the reply omits the required collision safety guidance.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"After the reported “minor collision,” P07 requires urgent handoff and advice not to drive a potentially unsafe car and to call 911 if anyone is hurt or in danger.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm glad she's safe” reflects the customer's report that “she's fine” and does not say the car is safe to drive.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't promise a call or a time” corrects the earlier promise, and “will review this” is an allowed handoff statement.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry for the earlier message” rather than what it can do and stacks “I can't promise” with “I can't share or check.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2668,
+ "output_tokens": 358,
+ "cost_usd": 0.0049133,
+ "latency_ms": 5346.4
+}

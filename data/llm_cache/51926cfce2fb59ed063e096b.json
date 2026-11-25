@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Please don't count on one yet” corrects the earlier tow assurance, and “I'm passing this to a team member right now” gives the customer a clear next step.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Call 911 now” if anyone is hurt or in danger, “don't drive the vehicle,” and “I'm passing this to a team member right now” satisfy P07 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm a tow or an arrival time” does not assert an unsupported dispatch status or ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow or an arrival time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Your safety comes first” is warm and clear, but the reply does not lead with what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2692,
+ "output_tokens": 331,
+ "cost_usd": 0.0035849,
+ "latency_ms": 5219.2
+}

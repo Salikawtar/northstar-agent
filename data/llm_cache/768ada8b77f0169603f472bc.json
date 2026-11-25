@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je transmets votre message à une personne de notre équipe » clearly tells the customer that a person will take over.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply says « je transmets votre message » without disclosing account details or confirming a booking.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre message » matches the logged handoff and adds no unsupported facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous répondra » gives no response time and promises no booking, coverage or deposit adjustment.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Pour être sûr de bien vous aider, je transmets votre message » is brief, warm and clear, with no limits or questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2588,
+ "output_tokens": 387,
+ "cost_usd": 0.0050897,
+ "latency_ms": 7068.8
+}

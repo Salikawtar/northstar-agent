@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The customer disputed the charge, but “I can send the charge to the service manager for review” only offered a handoff instead of making it.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"“But first I need to verify you” delayed the human review required for a billing dispute under P06 and P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can check your invoice and lease details once you're verified” describes a next step without stating any new invoice or lease facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can send the charge to the service manager for review” offers review without promising a billing adjustment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm sorry this is stressing you out” is warm, but the reply does not lead with what it can do and gives two limits: “first I need to verify you” and “I can't pull the inspection report myself.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2643,
+ "output_tokens": 463,
+ "cost_usd": 0.0059008,
+ "latency_ms": 7382.0
+}

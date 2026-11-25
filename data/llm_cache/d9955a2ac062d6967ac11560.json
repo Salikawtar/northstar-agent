@@ -1,0 +1,15 @@
+{
+ "text": "",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 5043,
+ "output_tokens": 532,
+ "cost_usd": 0.015406,
+ "latency_ms": 6901.4,
+ "tool_calls": [
+  {
+   "id": "toolu_017RwiYjfscx5ZtkhauqdZhc",
+   "name": "list_slots",
+   "arguments": "{\"location\": \"Oakville\", \"service_type\": \"tires\"}"
+  }
+ ]
+}

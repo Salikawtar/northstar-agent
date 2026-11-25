@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for “the licence plate on your own vehicle, or your repair-order number” is the right next step before booking.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"“Any charge is explained in the report before you pay” states a dealership billing procedure that no tool confirmed.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“Any charge is explained in the report before you pay” adds an unsupported detail about what the report contains and when it is provided.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can book your pre-return inspection at Scarborough once I verify you” offers a next step without confirming a booking or promising a price or waiver.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't confirm that no service is needed, or how long the inspection takes” lists two things the assistant cannot confirm instead of giving one brief correction.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2581,
+ "output_tokens": 429,
+ "cost_usd": 0.0054922,
+ "latency_ms": 6855.4
+}

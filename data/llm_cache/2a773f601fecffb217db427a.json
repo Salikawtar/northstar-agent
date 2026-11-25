@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing this to a team member” is a safe handoff, but it leaves the customer thinking a tow is already being sent to the wrong highway.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Call 911 now,” “don't drive the vehicle,” and “I'm passing this to a team member” meet the safety and handoff requirements (P07, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member” matches the recorded handoff, and the reply gives no tow status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will contact you” gives no response time, and the reply does not promise a tow.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm passing this to a team member” is clear, but the reply does not briefly correct the earlier claim that a tow was being dispatched (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2670,
+ "output_tokens": 379,
+ "cost_usd": 0.0051283,
+ "latency_ms": 6292.4
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I've passed your request to a person on our team” is the right next step for a bereavement request about estate documents.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P14 by saying a person “will review it” without sharing account details or promising a callback time.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“After 10 works best for you” repeats the customer's stated preference, and the handoff matches the recorded action.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't promise a callback time” makes clear that the customer's preference is not a scheduled callback.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm, but “I can't promise” and “I can't share” add two limits the customer did not ask about.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2536,
+ "output_tokens": 264,
+ "cost_usd": 0.0037297,
+ "latency_ms": 4498.5
+}

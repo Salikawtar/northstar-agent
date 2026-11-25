@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can check this for you now. I need the last name on the repair order to open RO-275786. What is it?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4570,
+ "output_tokens": 162,
+ "cost_usd": 0.01076,
+ "latency_ms": 2357.4
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your message to a team member” safely hands off the request without promising to send the service history.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your message to a team member” makes the P14 handoff clear without disclosing any protected information.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your message to a team member” matches the recorded handoff and adds no unsupported record details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” gives no callback time and does not promise to release the records.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I want to make sure you get the right help” is warm, and the reply gives a clear next step without adding a limit or a question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2584,
+ "output_tokens": 442,
+ "cost_usd": 0.0055433,
+ "latency_ms": 7412.5
+}

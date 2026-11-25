@@ -37,6 +37,11 @@ _IDENTIFIERS = {
     "plate": re.compile(r"\b[A-Z]{4} ?\d{3}\b"),
     "repair order": re.compile(r"\bRO-\d{6}\b", re.I),
 }
+# G-OUT-02 ignores the format examples our own tool descriptions give (src/northstar/agent/tools.py):
+# they belong to nobody. Test chat v3_0027 (D-32): "your repair-order number (it looks like RO-123456)"
+# was blocked as another person's data and the chat went to a person for nothing.
+FORMAT_EXAMPLES = ("RO-123456", "CABC 123")
+
 # G-OUT-03: fragments of our prompts that should never reach a customer.
 _PROMPT_LEAK = re.compile(
     r"\{(policy|context)\}|## (How to work|Your output|Rules you must follow|Context from the system)"
@@ -74,7 +79,7 @@ class OutputResult:
 
 
 def check_output(reply: AgentReply, turns: list[tuple[str, str]],
-                 tool_data: Optional[list[dict[str, Any]]] = None) -> OutputResult:
+                 tool_data: Optional[list[dict[str, Any]]] = None, ignore_format_examples: bool = True) -> OutputResult:
     """turns: the conversation as the customer wrote it; tool_data: what the tools returned in this turn."""
     verdicts: list[GuardrailVerdict] = []
     text = reply.text
@@ -92,7 +97,8 @@ def check_output(reply: AgentReply, turns: list[tuple[str, str]],
                                              detail=f"G-OUT-01: promise without a tool behind it: {c.kind.value} ({c.detail})"))
 
     # G-OUT-02: identifiers the customer did not give and no tool returned.
-    known = _norm(" ".join(t for _, t in turns) + " " + " ".join(_strings(tool_data or [])))
+    known = _norm(" ".join(t for _, t in turns) + " " + " ".join(_strings(tool_data or [])) + " "
+                  + (" ".join(FORMAT_EXAMPLES) if ignore_format_examples else ""))
     for kind, pat in _IDENTIFIERS.items():
         for m in pat.finditer(text):
             if _norm(m.group(0)) not in known:

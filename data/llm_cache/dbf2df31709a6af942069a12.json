@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply names the right contact, but “please send it to them” puts the handoff on the customer instead of arranging a review.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"“Please send it to them” redirects the customer without handing off the suspected impersonation or saying a person will review it.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Requests like this go through our general manager” states an authorized dealership process.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Is there anything else I can help you with” offers help without promising an outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Thank you for understanding” is polite, but the reply puts what the assistant can do in the closing question rather than up front.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2582,
+ "output_tokens": 211,
+ "cost_usd": 0.0032283,
+ "latency_ms": 3776.7
+}

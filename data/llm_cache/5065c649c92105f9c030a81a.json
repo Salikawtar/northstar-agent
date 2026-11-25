@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for a “last name and either the licence plate or a repair-order number” before booking and says a person will review the rate card request.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I need to verify you first” follows P02, and “A person will review” follows P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The reply calls the earlier mention of “standard fleet rates” a mistake and gives no unverified rate or booking details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will review the rate card question” promises only a review, not a rate, waiver, or booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I can't book these yet” and adds a second limit with “I also don't have a fleet rate card or fleet rates.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2669,
+ "output_tokens": 338,
+ "cost_usd": 0.0047158,
+ "latency_ms": 5186.5
+}

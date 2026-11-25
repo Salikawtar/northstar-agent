@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking “what is your last name?” is a valid verification step, but the billing dispute still needed to go to a person.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"Saying “only the warranty desk can decide” identifies who makes the decision but does not hand off the billing dispute or suspected warranty fraud.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Only the warranty desk can decide” states the dealership’s process, not a new coverage fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can’t email the invoice in this chat” does not promise delivery, and the reply makes no coverage commitment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“First, I need to correct my colleague” leads with a correction and two limits rather than with what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2596,
+ "output_tokens": 332,
+ "cost_usd": 0.0045597,
+ "latency_ms": 7052.8
+}

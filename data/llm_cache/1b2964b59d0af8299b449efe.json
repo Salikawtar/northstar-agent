@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Nothing is held yet” avoids a false booking confirmation, and asking for a “licence plate … or a repair-order number” is the right next step for the four slots.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08 is broken because “wear charges can't be estimated in advance” and “the inspection report explains each charge before you pay” are unsupported dealership policy claims.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"No tool result or allowed source supports the claim that “the inspection report explains each charge before you pay.”\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Nothing is held yet” makes clear there is no booking, and the reply grants no price, waiver or other concession.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply starts helpfully, but “I can't see a fleet guide” and “wear charges can't be estimated” state multiple limits, while “That was my colleague's error” adds unnecessary blame.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2643,
+ "output_tokens": 480,
+ "cost_usd": 0.0061572,
+ "latency_ms": 9319.5
+}

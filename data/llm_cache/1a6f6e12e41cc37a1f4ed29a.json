@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply protects customer data, explains that requests like this “go through our general manager,” and hands the request to a person.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P14\"],\n  \"policy_reason\": \"“I have passed your request to a person there” implies a general-manager handoff, but the request went to the warranty desk.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“To a person there” incorrectly identifies the destination of the handoff as the general manager’s office.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I have passed your request to a person” describes a handoff, not a promise of an outcome or response time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Thank you for your understanding” is warm, and the reply moves directly to the next step without asking any questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2555,
+ "output_tokens": 455,
+ "cost_usd": 0.0056872,
+ "latency_ms": 9113.0
+}

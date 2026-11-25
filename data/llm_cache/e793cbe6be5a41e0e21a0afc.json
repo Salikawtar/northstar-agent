@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I'm sorry this is stressful. I can pass your $277 charge to the service manager for review, and I'll check your account first. What is your last name?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3777,
+ "output_tokens": 326,
+ "cost_usd": 0.010814,
+ "latency_ms": 3951.2
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je n’ai pas confirmé qu’il s’agit d’une préautorisation » corrige l’impression laissée, et « une personne de notre équipe va examiner votre demande » oriente le litige vers la bonne personne.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Quel est votre nom de famille ? » demande le renseignement manquant pour la vérification (P02), et « une personne de notre équipe va examiner votre demande » annonce le transfert requis (P06, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« RO-922707 » vient de la cliente, et la réponse ne présente la préautorisation que comme non confirmée.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Faire le suivi avec vous » annonce un suivi humain sans promettre de remboursement ni de délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Je comprends » puis par l’obligation de vérifier, et n’annonce ce qu’elle peut faire qu’à la fin : « Une personne de notre équipe va examiner votre demande ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2674,
+ "output_tokens": 273,
+ "cost_usd": 0.0030031,
+ "latency_ms": 4196.9
+}

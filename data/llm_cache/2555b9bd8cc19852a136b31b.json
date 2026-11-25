@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for the last name is a valid next step (P02), but the customer plans to “drive me over tomorrow morning” and the reply leaves them believing the car is ready.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for “the last name on the account” without disclosing repair details or confirming the earlier claims.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm that the repair is free or covered” adds no new repair or coverage facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will need to review” does not promise coverage, waive a charge, or give a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I can't look up your repair order” and adds a second limit with “I can't confirm.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2600,
+ "output_tokens": 388,
+ "cost_usd": 0.0050433,
+ "latency_ms": 6868.3
+}

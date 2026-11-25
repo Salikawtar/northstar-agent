@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for a “licence plate or a repair-order number” to verify the account before booking and explains how wear charges are determined.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Once I verify your account” makes verification the next step, and “nothing is held yet” avoids confirming an unmade booking.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Nothing is held yet” matches the lack of a booking, and the wear-charge explanation matches the stated lease-return process.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Nothing is held yet” makes clear that no slots have been reserved.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can book the inspections and services” leads with help, followed by one clear verification question and a brief correction.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2670,
+ "output_tokens": 404,
+ "cost_usd": 0.0043127,
+ "latency_ms": 6312.1
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"No bother at all. Any review from head office will need to go through our general manager. If you need help with your own Meridian, such as a booking, a repair status, a recall or an invoice, I'm happy to help.\", \"action\": \"refused\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P04\", \"P09\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4609,
+ "output_tokens": 116,
+ "cost_usd": 0.010378,
+ "latency_ms": 1841.5
+}

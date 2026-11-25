@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The customer asked “what are our options then?” but the reply only listed “lease returns” without explaining the general return process or directing buyout questions to the business office.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I can help with … lease returns” stayed within dealership scope and disclosed no account details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Please contact the branch directly” added no unsupported facts about the lease or vehicle.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” did not promise any action or outcome.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can help” starts with what the assistant can do, and the reply is brief with one redirect and no questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2589,
+ "output_tokens": 293,
+ "cost_usd": 0.0040658,
+ "latency_ms": 4894.9
+}

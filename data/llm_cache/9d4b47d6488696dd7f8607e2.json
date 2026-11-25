@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The handoff addresses the conflicting repair record, but “call you” substitutes an unconfirmed phone call for the requested text.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08: “A person will ... call you” makes a commitment the tools did not support.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Waiting for parts” and “check engine light” both came from the repair-status tool.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"“Will ... call you” promises a phone call rather than just a human review.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't confirm” and “I can't change” state two separate limits.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2751,
+ "output_tokens": 522,
+ "cost_usd": 0.0055008,
+ "latency_ms": 9550.0
+}

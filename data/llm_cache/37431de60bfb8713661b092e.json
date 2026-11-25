@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Vérifiera l’autorisation et examinera la ligne contestée” addresses the billing dispute without disclosing invoice details.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Elle peut nous contacter directement” protects the account holder’s information (P15), and “examinera la ligne contestée” routes the dispute to a person (P06, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“La voiture a été récupérée jeudi” repeats the customer’s correction.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Vous préférez un appel” records a preference, and “on ne peut pas vous promettre que cette ligne sera retirée” makes no billing commitment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply starts with “Je ne peux pas partager” and adds multiple limits, including “Je ne peux toutefois pas promettre de délai.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2719,
+ "output_tokens": 318,
+ "cost_usd": 0.0034576,
+ "latency_ms": 4976.1
+}

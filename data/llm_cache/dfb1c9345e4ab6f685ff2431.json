@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I've passed your request to a parts advisor” gives the customer a clear next step for identifying the shield and getting a quote.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please don't rely on the two-day delivery or the 20-minute fitting” corrects the earlier estimates without presenting them as facts (P08).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“They will confirm” describes what the advisor will check, not a finding about fit, stock, or price.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will reply to you directly” gives no response time and promises neither an order nor an installation.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't quote” leads with a limit instead of what the assistant can do (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2651,
+ "output_tokens": 326,
+ "cost_usd": 0.0045508,
+ "latency_ms": 5848.5
+}

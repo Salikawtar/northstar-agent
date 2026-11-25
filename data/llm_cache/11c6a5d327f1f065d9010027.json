@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"It directs the transfer question to “ServiceOntario” and the reimbursement question to “votre assureur,” while offering dealership help.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"It follows P01 by declining advice on “le transfert de propriété” and “l’assurance” and offering help with “le service de votre véhicule.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Demander à ServiceOntario” is a referral, not a claim that the kit is mandatory.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Votre assureur peut vous dire ce qui est remboursé” does not promise reimbursement.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"It opens with “Je ne peux pas vous aider” and repeats the refusal with “Je ne vous enverrai pas de liste d’étapes.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2711,
+ "output_tokens": 221,
+ "cost_usd": 0.0036508,
+ "latency_ms": 3269.3
+}

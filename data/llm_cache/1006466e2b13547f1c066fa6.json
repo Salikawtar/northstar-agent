@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Thanks for the correction, Brooke. I can check recalls and warranty facts for the Tessera once I verify the account. Please don't send the VIN, because I don't need it. Could you give me the licence plate of the Tessera, or a repair-order number (RO-######) if you have one?\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P03\", \"P08\", \"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3732,
+ "output_tokens": 407,
+ "cost_usd": 0.011534,
+ "latency_ms": 5166.9
+}

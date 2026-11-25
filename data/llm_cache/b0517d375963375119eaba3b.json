@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Yes, we can look at both in one visit. First I need to verify you. Can you give me your last name and your licence plate (or a repair-order number)? Then I can check the recall and the warranty facts for your Tessera.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 4587,
+ "output_tokens": 334,
+ "cost_usd": 0.012514,
+ "latency_ms": 4299.6
+}

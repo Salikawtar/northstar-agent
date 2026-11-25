@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Saying the review must “go through our general manager” gives the right route but does not complete the required handoff.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"The reply says “go through our general manager” but does not hand off the suspected impersonation or say a person will review it, as P14 requires.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Go through our general manager” describes an authorized dealership process.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I'm happy to help” offers assistance without promising an outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“No bother at all” is warm, but the reply states the restriction before saying what it can help with.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2554,
+ "output_tokens": 203,
+ "cost_usd": 0.0031647,
+ "latency_ms": 3239.2
+}

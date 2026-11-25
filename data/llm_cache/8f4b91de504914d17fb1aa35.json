@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The customer asked “what are our options then?” but the reply listed “lease returns” without explaining the general return process or directing buyout questions to the business office.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I can help with … lease returns” stayed within P01 and disclosed no account details under P02 and P15.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can help with … lease returns” describes the assistant’s scope and asserts no facts about the vehicle or lease.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” is a referral, not a promise.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The reply starts with “I can help,” stays brief, and gives one limit without asking a question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2589,
+ "output_tokens": 294,
+ "cost_usd": 0.0032046,
+ "latency_ms": 4907.0
+}

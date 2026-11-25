@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for a “licence plate or a repair-order number” is the right next step before booking, and “nothing is held yet” makes the booking status clear.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08 is broken because no tool supports the statement that “the inspection report explains any charge before you pay.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"The claims “Wear charges can't be estimated in advance” and “the inspection report explains any charge before you pay” are unsupported.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Nothing is held yet” makes clear that no booking was confirmed, and the reply promises no price or concession.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can book the inspections and services once I verify your account” leads with help and is followed by one clear question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2634,
+ "output_tokens": 448,
+ "cost_usd": 0.0058147,
+ "latency_ms": 7892.6
+}

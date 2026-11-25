@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne de notre équipe va examiner votre demande » répond à la contestation de la facture sans confirmer les détails non vérifiés.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Quel est votre nom de famille? » demande le renseignement manquant pour la vérification (P02), et « va examiner votre demande » annonce la révision humaine requise (P06, P14).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je ne peux pas les confirmer pour l’instant » évite de reprendre le prix ou le statut non vérifiés.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Va examiner votre demande et faire le suivi » annonce une révision sans promettre de résultat ni de délai.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Je peux transmettre votre demande de révision » ouvre sur une aide concrète, puis la réponse pose une seule question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2566,
+ "output_tokens": 430,
+ "cost_usd": 0.0053783,
+ "latency_ms": 6250.1
+}

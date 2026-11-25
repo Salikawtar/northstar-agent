@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne de notre équipe va examiner cette conversation » confirme la prise en charge sans divulguer le dossier.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Passent par notre directeur général » respecte P09, et « va examiner cette conversation » annonce la prise en charge prévue par P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Passent par notre directeur général » décrit la procédure autorisée sans ajouter de fait sur le dossier.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Va examiner cette conversation » annonce un examen humain sans promettre de délai ni de résultat.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je ne peux pas traiter cette demande ici » commence par une limite plutôt que par l’aide proposée.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2598,
+ "output_tokens": 206,
+ "cost_usd": 0.0032183,
+ "latency_ms": 3253.8
+}

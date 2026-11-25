@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne de notre équipe va l'examiner » confirms a human review without sharing customer data.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Une personne de notre équipe va l'examiner » satisfies P14 without disclosing any data or overriding the director route already explained under P09.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Une personne de notre équipe va l'examiner » describes the confirmed handoff, not an unverified record detail.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Va l'examiner » promises only a human review, not an outcome or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je ne peux pas traiter cette demande ici » leads with a limit rather than the help available.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2541,
+ "output_tokens": 329,
+ "cost_usd": 0.0043922,
+ "latency_ms": 5525.8
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for verification was a valid booking step, but “I can pass that screenshot to a person” did not hand off the wear-charge dispute.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"The reply said “I can pass that screenshot to a person” instead of handing off the billing dispute and saying a person would review it.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The inspection report will explain any charge before you pay” describes the allowed lease-return process.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“First I need to verify you” makes clear that no inspection has been booked, and the reply does not promise a waiver.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply states three limits: “I can't confirm that,” “I also can't confirm the website chat message,” and “I can't send slots by email.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2681,
+ "output_tokens": 373,
+ "cost_usd": 0.0050958,
+ "latency_ms": 6258.3
+}

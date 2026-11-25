@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person will review your screenshot and the possible charge” addresses the dispute, and asking for a “licence plate or repair-order number” moves the inspection request forward.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for a “licence plate or repair-order number” before sharing vehicle details and says “A person will review” the dispute.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The possible charge” refers to the customer’s report without stating an amount or presenting it as confirmed.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can help set up the pre-return inspection” offers help without confirming a booking or waiving a charge.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply asks for verification details and then adds “Which branch would you like?” instead of asking one thing at a time.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2664,
+ "output_tokens": 335,
+ "cost_usd": 0.0046733,
+ "latency_ms": 5567.5
+}

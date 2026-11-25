@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for verification is the right next step, but “I can book you in at Markham for 2026-11-26” makes the proposed slot sound available without a check.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"“I can book you in at Markham for 2026-11-26” states availability that no tool returned (P08).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Markham for 2026-11-26” repeats the earlier offer rather than introducing a new slot, though it was not verified.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I need to verify you first” leaves the booking pending, and “I also can't promise a loaner” makes no loaner commitment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't confirm” and “I also can't promise” stack multiple limits instead of keeping the correction brief.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2604,
+ "output_tokens": 659,
+ "cost_usd": 0.0077633,
+ "latency_ms": 11291.1
+}

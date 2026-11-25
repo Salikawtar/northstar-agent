@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for verification is appropriate, but « vous donner le numéro ici » leads the customer to expect an official claim number that has not been confirmed.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"« Vous donner le numéro ici » is a commitment no tool result supports (P08).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Vous donner le numéro ici » is a promise, not a claim that a number has already been issued.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"« Vous donner le numéro ici » promises to provide a warranty claim number without confirmation that one can be issued.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"It opens with « Je peux », corrects the earlier message briefly, and asks one clear question in French.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2653,
+ "output_tokens": 625,
+ "cost_usd": 0.0076322,
+ "latency_ms": 10633.2
+}

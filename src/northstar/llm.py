@@ -20,6 +20,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import threading
 import time
 from dataclasses import dataclass, field
 from typing import Any, Callable, Optional, Type, TypeVar
@@ -135,19 +136,25 @@ class LLMClient:
         self._transport = transport
         self._sleep = sleep
         self.usage = Usage()
+        self._lock = threading.Lock()     # the evaluation runs chats in parallel threads on one client
 
     # -- public ------------------------------------------------------------
     def chat(self, model: str, messages: list[dict[str, str]], *, temperature: Optional[float] = None,
              max_tokens: int = 800, reasoning_effort: Optional[str] = None, json_mode: bool = False,
-             tools: Optional[list[dict[str, Any]]] = None) -> LLMResponse:
+             tools: Optional[list[dict[str, Any]]] = None, cache_tag: Optional[str] = None) -> LLMResponse:
         req = dict(model=model, messages=messages, temperature=temperature, max_tokens=max_tokens,
                    reasoning_effort=reasoning_effort, json=json_mode)
         if tools:
             req["tools"] = tools          # only added when used, so older recordings keep their keys
+        if cache_tag:
+            # Part of the recording key only, never sent to the model: asks the same question again as a
+            # separate recording (used to measure how consistent the grader is with itself).
+            req["cache_tag"] = cache_tag
         key = self._key(req)
         cached = self._read_cache(key)
         if cached is not None:
-            self.usage.cache_hits += 1
+            with self._lock:
+                self.usage.cache_hits += 1
             return self._record(LLMResponse(**cached, from_cache=True))
         if self.mode == "replay":
             raise CacheMiss(f"Replay mode: no recorded answer for this call to {model}. "
@@ -171,7 +178,8 @@ class LLMClient:
                                latency_ms=round((time.perf_counter() - t0) * 1000, 1),
                                tool_calls=raw.get("tool_calls", []))
             self._write_cache(key, resp)
-            self.usage.spent_usd += resp.cost_usd
+            with self._lock:
+                self.usage.spent_usd += resp.cost_usd
             return self._record(resp)
         raise LLMError(f"Model call to {model} failed after {self.max_retries + 1} attempts: {last_err}")
 
@@ -193,12 +201,13 @@ class LLMClient:
 
     # -- internals -----------------------------------------------------------
     def _record(self, r: LLMResponse) -> LLMResponse:
-        u = self.usage
-        u.calls += 1
-        u.input_tokens += r.input_tokens
-        u.output_tokens += r.output_tokens
-        u.cost_usd += r.cost_usd
-        u.by_model[r.model] = u.by_model.get(r.model, 0.0) + r.cost_usd
+        with self._lock:
+            u = self.usage
+            u.calls += 1
+            u.input_tokens += r.input_tokens
+            u.output_tokens += r.output_tokens
+            u.cost_usd += r.cost_usd
+            u.by_model[r.model] = u.by_model.get(r.model, 0.0) + r.cost_usd
         return r
 
     @staticmethod

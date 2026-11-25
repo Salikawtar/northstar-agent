@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing this to a member of our team” gives the right next step for a bereavement request under P14.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing this to a member of our team” makes the P14 handoff clear without sharing account details or promising a callback time.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a member of our team” matches the recorded escalation and adds no specific facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will contact you” describes the next step without confirming the customer's requested time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm very sorry for your loss” is warm, but the reply opens with condolences rather than the action it can take, as P13 directs.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2521,
+ "output_tokens": 369,
+ "cost_usd": 0.0046558,
+ "latency_ms": 5467.4
+}

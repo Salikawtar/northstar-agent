@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply says a team member will “arrange help with you,” but frames the handoff around a tow rather than the requested guidance on the car and what to take to the insurer.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P15\"],\n  \"policy_reason\": \"The customer said “the car is under her name,” but the reply did not tell Andrea that her mother could contact Northstar directly or route the handoff for an authorization check.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm a tow or an arrival time” does not claim that a tow was dispatched or give an ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” is a general handoff statement, not a promise of a tow or a callback time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't confirm a tow or an arrival time” adds a limit the customer did not ask about.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2660,
+ "output_tokens": 579,
+ "cost_usd": 0.0071033,
+ "latency_ms": 9383.9
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can look into this charge. To check your account, I need your plate or your repair-order number (it looks like RO-123456). Which one do you have?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P03\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3685,
+ "output_tokens": 95,
+ "cost_usd": 0.00832,
+ "latency_ms": 1645.2
+}

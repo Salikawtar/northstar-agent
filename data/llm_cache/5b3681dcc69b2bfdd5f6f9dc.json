@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Ne reprenez pas la route » gives immediate safety advice, and « je ne peux pas confirmer l'envoi d'une remorqueuse » corrects the earlier assurance.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply follows P07 and P14 with « appelez le 911 » and « je transmets votre dossier tout de suite à une personne ».\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre dossier » matches the recorded handoff, and the reply adds no unsupported dispatch status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je ne peux pas confirmer l'envoi d'une remorqueuse ni l'heure d'un appel » withdraws both unsupported promises.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm, but « sur quelle autoroute », « dans quelle direction » and « près de quelle sortie ou de quel repère » ask for three details at once.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2659,
+ "output_tokens": 322,
+ "cost_usd": 0.0046172,
+ "latency_ms": 5216.2
+}
