@@ -24,6 +24,7 @@ All numbers come from the files in `results/`. Rebuild the tables with `python -
 | Step | What was done | Split used |
 |---|---|---|
 | 1. Base model | XLM-RoBERTa base, DistilBERT multilingual and mDeBERTa v3, 2 seeds each, learning rate 2e-5 | Validation |
+| 1b. Training method | Full fine-tuning vs LoRA (see below) | Validation |
 | 2. Learning rate | 1e-5, 2e-5 and 3e-5 for the best base model, 2 seeds each | Validation |
 | 3. Final training | Chosen settings, 5 seeds; the router is the seed with the best validation macro F1 | Validation |
 | 4. Escalation cut-off | Chosen per seed on validation with F2 (recall counts twice) | Validation |
@@ -98,6 +99,23 @@ Full tables: `results/comparison_per_class.csv` and `results/comparison_by_slice
 - **Sensitivity:** with a 1-year committed price, the break-even with Haiku falls to about 143,000 chats a month. With a second server for redundancy, it rises to about 393,000.
 - **What this means:** for a single dealership, the router is a small cost either way (Haiku: $36 a month at 100,000 chats). So the choice should rest on accuracy and safety, not on router cost. Fine-tuning pays off on cost only at the scale of a large dealer group or a manufacturer-wide service.
 - **Not included:** people's time to label new chats for retraining, engineering time to run the server, and the cost of mistakes. The economics section (Phase 6) adds these.
+
+## Training method: full fine-tuning vs LoRA (`results/lora_summary.json`)
+
+Same base model, data and settings, scored on validation only. LoRA freezes the encoder and trains small add-ons in its attention layers (rank 16 on query and value); its learning rate was chosen from 3e-4 and 1e-3 on validation.
+
+| On 30 validation chats | Full fine-tuning (5 seeds) | LoRA, lr 1e-3 (3 seeds) |
+|---|---|---|
+| Weights trained | 278 million | 0.6 million (0.2%) |
+| Request type accuracy | **78.7%** | 73.3% |
+| Macro F1 | **0.75** (± 0.06) | 0.70 (± 0.07) |
+| Escalation recall | **93.3%** | 80.0% |
+| Minutes per run (T4) | 1.33 | **0.65** |
+
+- **Full fine-tuning kept:** it scored higher on every measure, most clearly on escalation recall, which matters most for safety.
+- **The gap is small next to the noise:** the macro F1 difference (0.05) is within one standard deviation across seeds. LoRA is not clearly worse on type, only on escalation.
+- **LoRA's real advantages** (half the training time, a checkpoint of a few MB instead of 1.1 GB) do not matter here: a full run already takes about a minute and the model fits easily on a free GPU.
+- At learning rate 3e-4, LoRA was still improving at the 30-epoch limit, so that setting was under-trained. At 1e-3 it stopped earlier on its own.
 
 ## How much data would it need? (`datasize.py`, `results/datasize_curve.png`)
 
