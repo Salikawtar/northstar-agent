@@ -14,6 +14,10 @@ Two steps, run in order (both need a GPU to be quick; about 45 minutes in total 
     #    and 100% of the training chats, 3 seeds each, scored on validation only.
     python -m northstar.finetune.train_router datasize
 
+    # 4. (Optional) Training method: LoRA (frozen encoder, small trained add-ons) against full
+    #    fine-tuning, same base model and data, 3 seeds per learning rate, validation only.
+    python -m northstar.finetune.train_router lora
+
 Then the official comparison row comes from the same script that scores the prompted routers:
 
     python -m northstar.agent.router --split test --model finetuned
@@ -45,7 +49,7 @@ from transformers import AutoTokenizer, get_linear_schedule_with_warmup
 
 from northstar.agent.router import format_conversation, turns_from_row
 from northstar.data import load_conversations
-from northstar.finetune.model import LANGUAGES, REQUEST_TYPES, RouterClassifier, save_checkpoint
+from northstar.finetune.model import LANGUAGES, REQUEST_TYPES, RouterClassifier, save_checkpoint, trainable_parameters
 
 RESULTS_DIR = Path(__file__).parent / "results"
 
@@ -56,6 +60,9 @@ SELECT_SEEDS = [1, 2]
 FINAL_SEEDS = [1, 2, 3, 4, 5]
 DATASIZE_FRACTIONS = [0.25, 0.5, 0.75, 1.0]
 DATASIZE_SEEDS = [1, 2, 3]
+LORA = dict(r=16, lora_alpha=32, lora_dropout=0.1, target_modules=["query", "value"])
+LORA_LRS = [3e-4, 1e-3]          # LoRA needs a higher learning rate than full fine-tuning
+LORA_SEEDS = [1, 2, 3]
 
 DEFAULTS = dict(epochs=30, patience=6, batch_size=16, max_length=320, warmup_ratio=0.1,
                 weight_decay=0.01, dropout=0.2)
@@ -139,14 +146,15 @@ def choose_threshold(frame: pd.DataFrame, esc_probs: np.ndarray) -> float:
     return float(best)
 
 
-def train_one(model_name: str, lr: float, seed: int, data: dict, device, cfg: dict, verbose: bool = True):
+def train_one(model_name: str, lr: float, seed: int, data: dict, device, cfg: dict, verbose: bool = True,
+              lora: dict | None = None):
     """Train on the 130 training chats; keep the epoch with the lowest validation loss."""
     set_seed(seed)
     tok = AutoTokenizer.from_pretrained(model_name)
     tr = make_loader(tok, data["train"], cfg["batch_size"], cfg["max_length"], shuffle=True, seed=seed)
     va = make_loader(tok, data["validation"], cfg["batch_size"], cfg["max_length"], shuffle=False)
-    model = RouterClassifier(model_name, dropout=cfg["dropout"]).to(device)
-    opt = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=cfg["weight_decay"])
+    model = RouterClassifier(model_name, dropout=cfg["dropout"], lora=lora).to(device)
+    opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=lr, weight_decay=cfg["weight_decay"])
     steps = len(tr) * cfg["epochs"]
     sched = get_linear_schedule_with_warmup(opt, int(cfg["warmup_ratio"] * steps), steps)
     use_amp = device.type == "cuda"
@@ -190,7 +198,8 @@ def train_one(model_name: str, lr: float, seed: int, data: dict, device, cfg: di
     model.load_state_dict(best[1])
     val_probs = predict_probs(model, va, device)
     info = dict(model=model_name, lr=lr, seed=seed, best_epoch=best[2], epochs_run=len(hist),
-                val_loss=best[0], train_time_sec=round(time.time() - t0, 1))
+                val_loss=best[0], train_time_sec=round(time.time() - t0, 1),
+                trainable_params=trainable_parameters(model))
     return model, tok, hist, val_probs, info
 
 
@@ -346,9 +355,46 @@ def run_datasize(args, data, device, cfg) -> None:
     print("Next (no GPU): python -m northstar.finetune.datasize")
 
 
+# ---------------------------------------------------------------------------
+# Step 4 (optional): LoRA against full fine-tuning, validation only
+# ---------------------------------------------------------------------------
+def run_lora(args, data, device, cfg) -> None:
+    sel_path = RESULTS_DIR / "selection_summary.json"
+    sel = json.loads(sel_path.read_text()) if sel_path.exists() else {}
+    model_name = args.model or sel.get("chosen_model") or "xlm-roberta-base"
+    rows = []
+    for lr in LORA_LRS:
+        for seed in LORA_SEEDS:
+            print(f"\n[lora] {model_name}  lr={lr}  seed={seed}")
+            model, _, _, vp, info = train_one(model_name, lr, seed, data, device, cfg, verbose=not args.quiet, lora=LORA)
+            rows.append(dict(info, method="lora", **{f"val_{k}": v for k, v in scores(data["validation"], vp).items()}))
+            del model
+            free(device)
+            pd.DataFrame(rows).to_csv(RESULTS_DIR / "lora_runs.csv", index=False)
+    lora = pd.DataFrame(rows)
+    best_lr = lora.groupby("lr").val_macro_f1.mean().idxmax()
+    best = lora[lora.lr == best_lr]
+    summary = {"lora_settings": LORA, "lora_best_lr": float(best_lr),
+               "rule": "LoRA learning rate chosen by mean validation macro F1 over 3 seeds",
+               "lora": {"val_macro_f1_mean": round(best.val_macro_f1.mean(), 3), "val_macro_f1_std": round(best.val_macro_f1.std(), 3),
+                        "val_type_accuracy_mean": round(best.val_type_accuracy.mean(), 3),
+                        "trainable_params": int(best.trainable_params.iloc[0]),
+                        "minutes_per_run": round(best.train_time_sec.mean() / 60, 2)},
+               "split_used": "validation (30 chats); test not touched"}
+    full_path = RESULTS_DIR / "final_seed_runs.csv"
+    if full_path.exists():                       # full fine-tuning, same model and data, 5 seeds (step 2)
+        full = pd.read_csv(full_path)
+        summary["full_finetuning"] = {"val_macro_f1_mean": round(full.val_macro_f1.mean(), 3),
+                                      "val_macro_f1_std": round(full.val_macro_f1.std(), 3),
+                                      "val_type_accuracy_mean": round(full.val_type_accuracy.mean(), 3),
+                                      "minutes_per_run": round(full.train_time_sec.mean() / 60, 2)}
+    (RESULTS_DIR / "lora_summary.json").write_text(json.dumps(summary, indent=1, default=float), encoding="utf-8")
+    print(json.dumps(summary, indent=1, default=float))
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("step", choices=["select", "final", "datasize"])
+    ap.add_argument("step", choices=["select", "final", "datasize", "lora"])
     ap.add_argument("--models", nargs="+", default=CANDIDATE_MODELS)
     ap.add_argument("--lrs", nargs="+", type=float, default=CANDIDATE_LRS)
     ap.add_argument("--model", default=None, help="final: override the base model chosen in step 1")
@@ -363,7 +409,7 @@ def main() -> None:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     data = split_frames()
     print({k: len(v) for k, v in data.items()})
-    {"select": run_select, "final": run_final, "datasize": run_datasize}[a.step](a, data, device, cfg)
+    {"select": run_select, "final": run_final, "datasize": run_datasize, "lora": run_lora}[a.step](a, data, device, cfg)
 
 
 if __name__ == "__main__":

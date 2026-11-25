@@ -158,3 +158,20 @@ def test_breakeven_is_fixed_cost_over_cost_per_chat(monkeypatch, tmp_path):
     assert s["base_case"]["monthly_fixed_usd"] == 70.0
     assert s["base_case"]["vs_haiku_chats_per_month"] == 140_000      # 70 / 0.0005
     assert scen.set_index("chats_per_month").loc[1_000_000, "cheapest"] == "finetuned"
+
+
+def test_lora_trains_far_fewer_weights_and_never_touches_test(tiny_model, monkeypatch, tmp_path):
+    pytest.importorskip("peft")
+    from northstar.finetune import train_router as tr
+    from northstar.finetune.model import RouterClassifier, trainable_parameters
+    full, lora = RouterClassifier(tiny_model), RouterClassifier(tiny_model, lora=tr.LORA)
+    assert trainable_parameters(lora) < trainable_parameters(full) / 10
+    data = tr.split_frames()
+    poisoned = {**data, "test": data["test"].assign(text=None)}
+    monkeypatch.setattr(tr, "RESULTS_DIR", tmp_path)
+    monkeypatch.setattr(tr, "LORA_LRS", [1e-3])
+    monkeypatch.setattr(tr, "LORA_SEEDS", [1])
+    args = type("A", (), dict(model=tiny_model, quiet=True))()
+    tr.run_lora(args, poisoned, torch.device("cpu"), dict(tr.DEFAULTS, epochs=1))
+    s = json.loads((tmp_path / "lora_summary.json").read_text())
+    assert s["lora_best_lr"] == 1e-3 and "test not touched" in s["split_used"]

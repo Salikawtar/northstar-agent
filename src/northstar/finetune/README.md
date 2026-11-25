@@ -49,7 +49,7 @@ Without a GPU or a key, `python run_all.py finetune` rebuilds the comparison fro
 | `breakeven.py` | Monthly volume where the fine-tuned router becomes cheaper (server price in `config/settings.yaml`) |
 | `datasize.py` | Learning curve over training-set size: how many chats it would need to match Haiku |
 | `kaggle_finetune_run.ipynb` | One-click run on a free Kaggle GPU |
-| `kaggle_datasize_run.ipynb` | The data-size runs (25% to 100% of training chats), about 15 minutes |
+| `kaggle_datasize_run.ipynb` | Data-size runs (25% to 100% of training chats) and LoRA vs full fine-tuning, validation only, about 20 to 25 minutes |
 | `MODEL_CARD.md` | What the model is, how it was chosen, results, limits |
 | `results/` | Logged outputs: selection runs, seed runs, training log, test results, comparison tables |
 

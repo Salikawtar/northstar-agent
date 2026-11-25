@@ -29,7 +29,7 @@ LANGUAGES = [lang.value for lang in Language]
 
 
 class RouterClassifier(nn.Module):
-    def __init__(self, model_name: str, dropout: float = 0.2, pretrained: bool = True):
+    def __init__(self, model_name: str, dropout: float = 0.2, pretrained: bool = True, lora: dict | None = None):
         super().__init__()
         self.model_name = model_name
         # pretrained=False builds the same shape with random numbers; used when
@@ -37,6 +37,11 @@ class RouterClassifier(nn.Module):
         self.encoder = (AutoModel.from_pretrained(model_name) if pretrained
                         else AutoModel.from_config(AutoConfig.from_pretrained(model_name)))
         hidden = self.encoder.config.hidden_size
+        if lora:
+            # LoRA: the encoder's own weights are frozen; small low-rank add-ons in the attention
+            # layers are trained instead (the three heads below are always trained in full).
+            from peft import LoraConfig, get_peft_model
+            self.encoder = get_peft_model(self.encoder, LoraConfig(**lora))
         self.dropout = nn.Dropout(dropout)
         self.type_head = nn.Linear(hidden, len(REQUEST_TYPES))
         self.escalation_head = nn.Linear(hidden, 1)
@@ -46,6 +51,10 @@ class RouterClassifier(nn.Module):
         h = self.encoder(input_ids=input_ids, attention_mask=attention_mask).last_hidden_state[:, 0, :]
         h = self.dropout(h)
         return self.type_head(h), self.escalation_head(h).squeeze(-1), self.language_head(h)
+
+
+def trainable_parameters(model: nn.Module) -> int:
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 
 def save_checkpoint(model: RouterClassifier, folder: Path, config: dict) -> None:
