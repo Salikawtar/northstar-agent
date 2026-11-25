@@ -1,0 +1,8 @@
+{
+ "text": "Le client a deux demandes : la valeur de revente (hors périmètre) et la couverture de garantie pour la climatisation. La demande principale qu'on peut traiter est la garantie. La valeur de revente va en secondary_types comme out_of_scope. Il corrige une date, ce qui n'est pas adversarial. Il est frustré et se répète, mais il ne demande pas une personne et ne menace pas. Pas d'escalade.\n\n{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"fr\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2494,
+ "output_tokens": 220,
+ "cost_usd": 0.007188,
+ "latency_ms": 2148.3
+}

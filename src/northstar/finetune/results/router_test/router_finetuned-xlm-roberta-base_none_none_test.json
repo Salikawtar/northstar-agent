@@ -1,0 +1,22 @@
+{
+ "model": "finetuned-xlm-roberta-base",
+ "prompt": "none",
+ "reasoning_effort": "none",
+ "split": "test",
+ "n": 40,
+ "type_accuracy": 0.675,
+ "escalation_recall": 0.889,
+ "escalation_precision": 0.941,
+ "language_accuracy": 1.0,
+ "accuracy_by_difficulty": {
+  "adversarial": 0.333,
+  "easy": 0.833,
+  "hard": 0.692
+ },
+ "fallbacks": 0,
+ "latency_ms_median": 249.4,
+ "latency_ms_p90": 276.0,
+ "cost_usd_total": 0.0,
+ "cost_usd_per_chat": 0.0,
+ "replayed_from_cache": 0
+}

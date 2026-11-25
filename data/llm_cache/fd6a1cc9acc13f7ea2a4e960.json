@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"parts_order\", \"secondary_types\": [], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.97, \"language\": \"fr\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2521,
+ "output_tokens": 62,
+ "cost_usd": 0.005662,
+ "latency_ms": 1101.1
+}

@@ -4,6 +4,7 @@
     python run_all.py datagen    # replay the data-generation run and compare it with the dataset
     python run_all.py dms        # just rebuild the mock dealer system
     python run_all.py results    # reproduce every key result from the recordings (no key, no cost)
+    python run_all.py finetune   # three-router comparison on the test chats (Phase 5)
     python run_all.py record     # after a prompt or tool change: make the missing model calls (needs a key)
     python run_all.py test       # run the test suite
 
@@ -52,6 +53,12 @@ COMPARISON_COMMANDS = [
     ["-m", "northstar.agent.specialist", "--agent", "billing_lease", "--split", "validation", "--model", "small", "--effort", "low"],
 ]
 
+# Phase 5: the two prompted routers on the 40 test chats, for the three-router comparison.
+FINETUNE_BASELINE_COMMANDS = [
+    ["-m", "northstar.agent.router", "--split", "test", "--model", "small"],
+    ["-m", "northstar.agent.router", "--split", "test", "--model", "large"],
+]
+
 
 def stage_results():
     """Reproduce every key result from the recorded model calls: no key, no cost, same numbers.
@@ -86,7 +93,21 @@ def stage_record():
         pass
     if not os.environ.get("OPENROUTER_API_KEY"):
         sys.exit("record needs OPENROUTER_API_KEY in .env or in the environment (see .env.example).")
-    _run(RESULT_COMMANDS + COMPARISON_COMMANDS, keep_key=True)
+    _run(RESULT_COMMANDS + COMPARISON_COMMANDS + FINETUNE_BASELINE_COMMANDS, keep_key=True)
+
+
+def stage_finetune():
+    """Three-router comparison (Phase 5). Prompted routers are replayed from the recordings.
+    The fine-tuned router is rerun if its checkpoint is on this machine (1.1 GB, not in git);
+    otherwise its committed test results are used. Training itself needs a GPU:
+    python -m northstar.finetune.train_router select, then final (see src/northstar/finetune/README.md)."""
+    _run(FINETUNE_BASELINE_COMMANDS, keep_key=False)
+    if (ROOT / "models" / "finetuned_router" / "weights.pt").exists():
+        _run([["-m", "northstar.agent.router", "--split", "test", "--model", "finetuned"],
+              ["-m", "northstar.finetune.compare", "--collect"]], keep_key=False)
+    else:
+        print("No local checkpoint: building the comparison from the committed test results.")
+        _run([["-m", "northstar.finetune.compare"]], keep_key=False)
 
 
 def stage_test():
@@ -101,7 +122,7 @@ STAGES = {
     "dms": stage_dms,
     "results": stage_results,      # agent (Phase 2) and guardrails (Phase 3), replayed
     # "evaluate":  Phase 4
-    # "finetune":  Phase 5
+    "finetune": stage_finetune,    # Phase 5: fine-tuned vs small vs large prompted router
     # "economics": Phase 6
     "test": stage_test,
 }

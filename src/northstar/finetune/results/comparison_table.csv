@@ -1,0 +1,4 @@
+router,model,type_accuracy,macro_f1,escalation_recall,escalation_precision,escalation_accuracy,missed_escalations,language_accuracy,en_type_accuracy,fr_type_accuracy,latency_ms_median,latency_ms_p90,agent_wrong_type_reaching_specialist,agent_missed_escalations,agent_handoffs,agent_unneeded_handoffs,cost_usd_per_chat,cost_usd_per_1000_chats,n
+Fine-tuned (XLM-R),finetuned-xlm-roberta-base,0.675,0.6602,0.8889,0.9412,0.925,2,1.0,0.6538,0.7143,249.4,276.01,2,1,22,5,0.0,0.0,40
+Small prompted (Haiku),anthropic/claude-haiku-5.5,0.825,0.8261,1.0,0.8571,0.925,0,1.0,0.7692,0.9286,2443.25,3067.22,2,0,21,3,0.000363,0.3627,40
+Large prompted (Sonnet),anthropic/claude-sonnet-5.5,0.775,0.7719,0.9444,0.8947,0.925,1,1.0,0.7692,0.7857,1047.3,1594.25,4,1,19,2,0.00556,5.5596,40

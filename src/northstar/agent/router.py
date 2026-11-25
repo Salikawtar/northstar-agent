@@ -16,6 +16,10 @@ then replays for free):
     python -m northstar.agent.router --split validation
     python -m northstar.agent.router --split validation --model compare_small
     python -m northstar.agent.router --split validation --prompt router/v2.md --effort none
+
+The fine-tuned router (Phase 5) goes through this same evaluation, so all three routers
+are scored by the same code on the same chats (needs a trained checkpoint, no key):
+    python -m northstar.agent.router --split test --model finetuned
 """
 from __future__ import annotations
 
@@ -140,10 +144,15 @@ def _main() -> None:
     ap.add_argument("--model", default=None, help="small | large | compare_small | an OpenRouter id (default: settings)")
     ap.add_argument("--prompt", default=None, help="prompt file under prompts/, e.g. router/v2.md (default: settings)")
     ap.add_argument("--effort", default=None, help="reasoning effort: none | low | medium | high (default: settings)")
+    ap.add_argument("--checkpoint", default=None, help="--model finetuned only: folder of the trained router")
     a = ap.parse_args()
     if a.split == "test":
         print("Note: the test split is for the final evaluation. Tune prompts on validation only.")
-    out, summary = evaluate(a.split, a.model, prompt=a.prompt, effort=a.effort)
+    router = None
+    if a.model == "finetuned":
+        from northstar.finetune.predict import FinetunedRouter   # needs torch; only imported when asked for
+        router = FinetunedRouter(a.checkpoint)
+    out, summary = evaluate(a.split, a.model, router=router, prompt=a.prompt, effort=a.effort)
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
     prompt_v = summary["prompt"].split("/")[-1].removesuffix(".md")
     tag = f"router_{summary['model'].split('/')[-1]}_{prompt_v}_{summary['reasoning_effort']}_{a.split}"

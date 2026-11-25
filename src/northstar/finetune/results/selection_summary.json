@@ -1,0 +1,13 @@
+{
+ "chosen_model": "xlm-roberta-base",
+ "chosen_lr": 3e-05,
+ "rule": "highest mean validation macro F1 over seeds; ties broken by lower validation loss",
+ "seeds": [
+  1,
+  2
+ ],
+ "split_used": "validation (30 chats); test not touched",
+ "excluded": {
+  "microsoft/mdeberta-v3-base": "failed: Attempting to unscale FP16 gradients."
+ }
+}

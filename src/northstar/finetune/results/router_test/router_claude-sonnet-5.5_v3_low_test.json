@@ -1,0 +1,22 @@
+{
+ "model": "anthropic/claude-sonnet-5.5",
+ "prompt": "router/v3.md",
+ "reasoning_effort": "low",
+ "split": "test",
+ "n": 40,
+ "type_accuracy": 0.775,
+ "escalation_recall": 0.944,
+ "escalation_precision": 0.895,
+ "language_accuracy": 1.0,
+ "accuracy_by_difficulty": {
+  "adversarial": 0.778,
+  "easy": 0.944,
+  "hard": 0.538
+ },
+ "fallbacks": 0,
+ "latency_ms_median": 1047.3,
+ "latency_ms_p90": 1594.2,
+ "cost_usd_total": 0.22238,
+ "cost_usd_per_chat": 0.00556,
+ "replayed_from_cache": 0
+}

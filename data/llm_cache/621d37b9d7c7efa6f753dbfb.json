@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"warranty_claim\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.92, \"language\": \"fr\"}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2511,
+ "output_tokens": 616,
+ "cost_usd": 0.0005591,
+ "latency_ms": 3619.7
+}

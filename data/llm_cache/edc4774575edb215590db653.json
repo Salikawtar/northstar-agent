@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"lease_end_return\", \"secondary_types\": [], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.95, \"language\": \"fr\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2542,
+ "output_tokens": 64,
+ "cost_usd": 0.005724,
+ "latency_ms": 932.2
+}

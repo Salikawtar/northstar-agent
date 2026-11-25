@@ -1,0 +1,6 @@
+# Phase 5 only (fine-tuned router). The rest of the project does not need these.
+# Install with: pip install -r requirements.txt -r requirements-finetune.txt
+torch>=2.3
+transformers>=4.44
+sentencepiece>=0.2   # XLM-R tokenizer
+protobuf>=4.25      # mDeBERTa tokenizer

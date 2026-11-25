@@ -1,0 +1,22 @@
+{
+ "model": "anthropic/claude-haiku-5.5",
+ "prompt": "router/v3.md",
+ "reasoning_effort": "low",
+ "split": "test",
+ "n": 40,
+ "type_accuracy": 0.825,
+ "escalation_recall": 1.0,
+ "escalation_precision": 0.857,
+ "language_accuracy": 1.0,
+ "accuracy_by_difficulty": {
+  "adversarial": 0.667,
+  "easy": 0.944,
+  "hard": 0.769
+ },
+ "fallbacks": 0,
+ "latency_ms_median": 2443.2,
+ "latency_ms_p90": 3067.2,
+ "cost_usd_total": 0.01451,
+ "cost_usd_per_chat": 0.000363,
+ "replayed_from_cache": 0
+}
