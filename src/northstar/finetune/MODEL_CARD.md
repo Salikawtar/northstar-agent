@@ -99,9 +99,21 @@ Full tables: `results/comparison_per_class.csv` and `results/comparison_by_slice
 - **What this means:** for a single dealership, the router is a small cost either way (Haiku: $36 a month at 100,000 chats). So the choice should rest on accuracy and safety, not on router cost. Fine-tuning pays off on cost only at the scale of a large dealer group or a manufacturer-wide service.
 - **Not included:** people's time to label new chats for retraining, engineering time to run the server, and the cost of mistakes. The economics section (Phase 6) adds these.
 
+## How much data would it need? (`datasize.py`, `results/datasize_curve.png`)
+
+The chosen settings were trained on 25%, 50%, 75% and 100% of the training chats (3 seeds each) and scored on validation only.
+
+| Training chats | 33 | 63 | 97 | 130 |
+|---|---|---|---|---|
+| Validation accuracy (mean of 3) | 26% | 56% | 68% | 83% |
+
+- **Still climbing fast:** about 28 points each time the data doubles, with no sign of levelling off. The model is clearly limited by data.
+- **Validation flatters it:** at 130 chats it matches Haiku on validation (83%), but validation chose its settings. On test it is 15 points behind.
+- **Estimate:** if the climb held, about 190 training chats (about 19 per request type) would close the test gap. Curves flatten near the top, so this is a lower bound: plan for a few hundred labelled chats (20 to 50 per type).
+
 ## Limits
 
-- **Small data:** 130 training chats. Two seeds per setting reduce the noise in the choices, but 30 validation chats is a small basis for choosing.
+- **Small data:** 130 training chats, and the data-size study shows accuracy still rising steeply. Two seeds per setting reduce the noise in the choices, but 30 validation chats is a small basis for choosing.
 - **Learning rate at the top of the range:** 3e-5 was the highest value tried. A higher one might help a little.
 - **mDeBERTa not compared:** it crashed under mixed precision, so it was logged as excluded.
 - **Escalation reason** comes from a rule, not from the model.

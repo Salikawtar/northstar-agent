@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne de notre équipe va l’examiner » annonce clairement la prise en charge sans divulguer de données.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P09\", \"P13\"],\n  \"policy_reason\": \"« Une personne de notre équipe » ne précise pas que la demande relève du directeur général (P09), et « Je ne peux pas » ouvre sur une limite plutôt que sur l’aide offerte (P13).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Une personne de notre équipe va l’examiner » correspond au transfert effectué.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Va l’examiner » annonce seulement un examen humain, sans promettre de délai ni de résultat.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2151,
+ "output_tokens": 308,
+ "cost_usd": 0.0041432,
+ "latency_ms": 5360.9
+}

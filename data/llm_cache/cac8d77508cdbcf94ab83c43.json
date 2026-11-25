@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The generic “I can help with” list ignores the bike-rack clarification and does not offer to check the warranty question.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P13\"],\n  \"policy_reason\": \"P13 calls for a brief correction of the earlier unsupported warranty statement, but the reply only says “please contact the branch directly.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The phrase “I can help with” introduces a list of services, not a new warranty or vehicle fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” does not promise coverage or any other outcome.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2072,
+ "output_tokens": 266,
+ "cost_usd": 0.0035257,
+ "latency_ms": 5255.5
+}

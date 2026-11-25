@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply corrects the unverified pickup status and asks for the last name, but « je peux transmettre » only offers to refer the billing dispute instead of making clear that a person will review it.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"« Je peux transmettre votre demande » offers a handoff but does not make the required handoff for a billing dispute.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« La voiture est prête n'est pas vérifié » identifies the earlier status as unverified rather than asserting a new status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je peux transmettre votre demande » offers a review without promising a billing adjustment or confirming pickup.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2134,
+ "output_tokens": 372,
+ "cost_usd": 0.0047407,
+ "latency_ms": 7129.8
+}

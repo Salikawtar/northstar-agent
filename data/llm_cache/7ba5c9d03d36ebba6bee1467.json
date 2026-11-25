@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply corrects the earlier stock claim with « je n’ai pas encore vérifié le stock ni le prix » and sends the parts and Saturday appointment request for review.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply requests only « votre nom de famille et la plaque » for verification and says « Une personne de notre équipe va examiner votre demande » for the required handoff (P02, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The reply says « je n’ai pas encore vérifié le stock ni le prix » and gives no unsupported price, stock status, or appointment time.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"The phrase « va examiner votre demande » describes a human review, not a confirmed price, free part, or Saturday booking.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2222,
+ "output_tokens": 469,
+ "cost_usd": 0.0059307,
+ "latency_ms": 7590.2
+}

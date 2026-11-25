@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne du service va examiner votre contestation » confirme le transfert, et la demande du numéro de la deuxième facture permet d’inclure les deux factures dans la révision.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P13\"],\n  \"policy_reason\": \"P08 : « taxes incluses » ne vient pas de l’outil; P13 : après « Je n’ai pas non plus accès à une deuxième facture », la réponse ajoute une limite sur le délai de révision que le client n’a pas demandé.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"L’outil a renvoyé un total de 761,24 $ CAD sans préciser « taxes incluses ».\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne du service va examiner votre contestation » annonce une révision sans promettre de délai ni de résultat.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2441,
+ "output_tokens": 411,
+ "cost_usd": 0.0058982,
+ "latency_ms": 6674.0
+}

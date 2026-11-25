@@ -133,14 +133,14 @@ def test_datasize_subsets_keep_every_type_and_never_touch_test(tiny_model, monke
 
 def test_datasize_extrapolation(monkeypatch, tmp_path):
     from northstar.finetune import datasize
-    # Accuracy rises 5 points per doubling from 50% at 32 chats: 80% needs 32 * 2**6 = 2,048 chats.
+    # Accuracy rises 5 points per doubling; a 10-point gap needs 2 more doublings: 128 * 4 = 512 chats.
     rows = [dict(train_chats=n, seed=s, val_type_accuracy=0.5 + 0.05 * np.log2(n / 32), val_macro_f1=0.5)
             for n in (32, 64, 96, 128) for s in (1, 2, 3)]
     monkeypatch.setattr(datasize, "HERE", tmp_path)
     pd.DataFrame(rows).to_csv(tmp_path / "datasize_runs.csv", index=False)
-    s = datasize.build(target=0.8)
-    assert abs(s["training_chats_to_match_haiku"] - 2050) <= 10
-    assert s["fit"]["gain_per_doubling_points"] == pytest.approx(5.0)
+    s = datasize.build(haiku_val=0.8, gap=0.10)
+    assert s["gain_per_doubling_points"] == pytest.approx(5.0)
+    assert abs(s["chats_to_close_test_gap_if_trend_holds"] - 510) <= 10
 
 
 def test_breakeven_is_fixed_cost_over_cost_per_chat(monkeypatch, tmp_path):

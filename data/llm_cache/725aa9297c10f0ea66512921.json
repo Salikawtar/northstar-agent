@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the “last name” is the right next step because the customer already gave the plate, and the reply notes the correction to “hitch cargo carrier.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P13\"],\n  \"policy_reason\": \"The reply lists multiple limits with “don't treat the 7:30 tomorrow as confirmed” and “can't confirm that your hitch cargo carrier has arrived or add its installation.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“7:30 tomorrow” came from the earlier message, and the reply explicitly says it is not confirmed.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I haven't booked anything yet” avoids confirming an appointment, and “A parts advisor will check” promises no outcome.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2240,
+ "output_tokens": 366,
+ "cost_usd": 0.0049457,
+ "latency_ms": 5999.8
+}

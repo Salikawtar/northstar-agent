@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Please don't drive the car” corrects the unsafe advice, and the urgent handoff covers towing and the warranty question (P07, P14).\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P13\"],\n  \"policy_reason\": \"“I can't tell you what's wrong or that it's safe to drive” lists two things the assistant cannot confirm (P13).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“May mean it's unsafe” is a safety precaution based on the reported symptoms, not a diagnosis or an unsupported vehicle fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Help with the tow and the warranty question” offers human assistance without promising a tow or warranty coverage.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2251,
+ "output_tokens": 368,
+ "cost_usd": 0.0049932,
+ "latency_ms": 5869.0
+}

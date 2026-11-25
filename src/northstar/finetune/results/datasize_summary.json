@@ -1,0 +1,52 @@
+{
+ "curve_validation": [
+  {
+   "train_chats": 33,
+   "acc_mean": 0.256,
+   "acc_std": 0.107,
+   "f1_mean": 0.237,
+   "runs": 3
+  },
+  {
+   "train_chats": 63,
+   "acc_mean": 0.556,
+   "acc_std": 0.084,
+   "f1_mean": 0.517,
+   "runs": 3
+  },
+  {
+   "train_chats": 97,
+   "acc_mean": 0.678,
+   "acc_std": 0.051,
+   "f1_mean": 0.629,
+   "runs": 3
+  },
+  {
+   "train_chats": 130,
+   "acc_mean": 0.833,
+   "acc_std": 0.033,
+   "f1_mean": 0.814,
+   "runs": 3
+  }
+ ],
+ "gain_per_doubling_points": 28.3,
+ "levelling_off": false,
+ "validation": {
+  "finetuned_at_full_data": 0.833,
+  "haiku": 0.833,
+  "note": "validation chose the fine-tuned settings, so its validation score is optimistic"
+ },
+ "test_gap_points": 15.0,
+ "chats_to_close_test_gap_if_trend_holds": 190,
+ "per_request_type": 19,
+ "range_80pct": [
+  180,
+  200
+ ],
+ "fit": {
+  "formula": "accuracy = a + b * ln(training chats)",
+  "a": -1.1658,
+  "b": 0.4089
+ },
+ "caveat": "Learning curves flatten as they approach their ceiling, so this is a lower bound: a few hundred chats is a safer planning figure. Four sizes, 30 validation chats."
+}

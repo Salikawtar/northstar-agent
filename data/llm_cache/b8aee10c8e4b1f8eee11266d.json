@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Une personne de notre équipe va l’examiner » annonce clairement une prise en charge humaine sans divulguer le dossier.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P09\", \"P13\"],\n  \"policy_reason\": \"La réponse commence par « Je ne peux pas » et dit « une personne de notre équipe » sans préciser que la demande doit passer par le directeur général.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Une personne de notre équipe va l’examiner » correspond au transfert effectué.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Va l’examiner » annonce un examen humain sans promettre de délai ni de résultat.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2150,
+ "output_tokens": 269,
+ "cost_usd": 0.0037507,
+ "latency_ms": 4454.2
+}

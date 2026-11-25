@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Je transmets votre demande » is a safe handoff, but it leaves the customer thinking a tow may already be on the way and does not say the arrival time is unknown.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P13\"],\n  \"policy_reason\": \"« Je transmets votre demande » neither acknowledges that the arrival time is unknown (P08) nor corrects the earlier impression that a tow was dispatched (P13).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je transmets votre demande » reflects the actual handoff, and no dispatch status, arrival time or coverage fact is stated.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous contactera » gives no callback time and does not confirm a tow.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2281,
+ "output_tokens": 609,
+ "cost_usd": 0.0074782,
+ "latency_ms": 10916.7
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the “licence plate” or “repair-order number” is the right next step before checking the booking and warranty details.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P13\", \"P14\"],\n  \"policy_reason\": \"The reply gives two limits (“I can't confirm it” and “I also can't change”), and “can … send a warranty review request” does not hand off the requested coverage decision.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“That Mississauga slot on 2026-11-24 is not booked” reflects that the earlier agent proposed the slot but did not book it.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“The warranty desk will decide on coverage” leaves the decision to the desk, and “I can't confirm it” makes no booking commitment.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2273,
+ "output_tokens": 535,
+ "cost_usd": 0.0067182,
+ "latency_ms": 8552.3
+}

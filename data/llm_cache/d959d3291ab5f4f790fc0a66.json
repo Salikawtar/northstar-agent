@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking « Quel est votre nom de famille » shifts to invoice access instead of confirming that a person will review the disputed charge.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"The reply says « je dois d'abord vous vérifier » but does not tell the customer that a person will review the billing dispute.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« RO-833289 » came from the customer, and the reply adds no new invoice facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je dois d'abord vous vérifier » does not promise an invoice adjustment or any other outcome.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2093,
+ "output_tokens": 175,
+ "cost_usd": 0.0026682,
+ "latency_ms": 2933.9
+}

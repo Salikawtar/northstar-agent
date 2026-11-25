@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for the “last name on the account” is appropriate, but correcting only “free or covered” leaves the customer relying on the unverified claim that the car is ready for pickup.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P13\"],\n  \"policy_reason\": \"The reply opens with “I can't look up your repair order” and adds “I can't confirm,” rather than starting with what it can do and stating the limit once.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm that the repair is free or covered” adds no new repair, billing, or warranty facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will need to review” describes a review without promising an outcome or a response time.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2174,
+ "output_tokens": 474,
+ "cost_usd": 0.0058607,
+ "latency_ms": 8860.4
+}

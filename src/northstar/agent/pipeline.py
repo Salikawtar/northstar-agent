@@ -97,6 +97,9 @@ class PipelineResult:
     error: str = ""
     verified: bool = False    # did the customer pass verify_customer in this turn
     guard_flags: list = None  # input and output check rules that fired (G-IN-.., G-OUT-..)
+    tool_data: list = None    # what the tools returned (the evaluation grader checks facts against it)
+    input_tokens: int = 0
+    output_tokens: int = 0
 
 
 class Pipeline:
@@ -156,9 +159,10 @@ class Pipeline:
                 reply, flags = out.reply, flags + out.flags
             # Recorded model times, so a replayed run reports the latency a customer would see.
             return PipelineResult(route, reply, desk, round(rr.latency_ms + res.latency_ms, 1),
-                                  cost, rr.fallback, res.error or rr.error, res.verified, flags)
+                                  cost, rr.fallback, res.error or rr.error, res.verified, flags,
+                                  res.tool_data, rr.input_tokens + res.input_tokens, rr.output_tokens + res.output_tokens)
         return PipelineResult(route, reply, path_taken, round(rr.latency_ms + (time.perf_counter() - t1) * 1000, 1),
-                              cost, rr.fallback, rr.error, False, flags)
+                              cost, rr.fallback, rr.error, False, flags, [], rr.input_tokens, rr.output_tokens)
 
     def _fixed(self, cid: str, turns: list[tuple[str, str]], route: RouterOutput, escalate: bool) -> AgentReply:
         key = route.escalation_reason.value if escalate else "out_of_scope"

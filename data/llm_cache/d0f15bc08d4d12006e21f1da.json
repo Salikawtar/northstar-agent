@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for “the licence plate on your own vehicle, or your repair-order number” is the right next step before booking.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P13\"],\n  \"policy_reason\": \"“Any charge is explained in the report before you pay” states an unsupported policy, and “no service is needed, or how long the inspection takes” lists two things the assistant cannot confirm.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“Any charge is explained in the report before you pay” is a dealership policy not established by the conversation or any tool result.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Once I verify you” makes clear that the assistant has not booked or confirmed an appointment.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2191,
+ "output_tokens": 420,
+ "cost_usd": 0.0053632,
+ "latency_ms": 7803.0
+}

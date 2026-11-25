@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply withdraws the unverified « oui » and booking offer, then asks for the last name and plate to check the recall.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply asks for « votre nom de famille, et la plaque de votre Halden », withholds the relative’s details, and states that a person will review the request.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je n’avais encore rien vérifié » accurately reflects the lack of verification without asserting a recall or appointment status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne de l’équipe va aussi revoir votre demande » commits only to a review, not a booking or a response time.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2258,
+ "output_tokens": 309,
+ "cost_usd": 0.0033215,
+ "latency_ms": 5758.4
+}

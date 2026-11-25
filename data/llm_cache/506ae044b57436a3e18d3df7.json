@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A team member will review it” clearly communicates the handoff without sharing the customer’s file.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P09\", \"P13\"],\n  \"policy_reason\": \"“I can't help with that request here” opens with a refusal and does not say the request goes through the general manager.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A team member will review it” reflects the recorded handoff and adds no unsupported facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review it” promises neither a decision nor a response time.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2142,
+ "output_tokens": 266,
+ "cost_usd": 0.0037007,
+ "latency_ms": 4314.4
+}

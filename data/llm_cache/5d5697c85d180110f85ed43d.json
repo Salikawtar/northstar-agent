@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The safety advice was appropriate, but “a team member” did not address the request for a manager, and the reply left the tow ETA unanswered.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P13\", \"P14\"],\n  \"policy_reason\": \"The reply did not say the tow ETA was unknown (P08), correct “a tow is being dispatched” and “will call you today” (P13), or say a person would review the complaint (P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing this to a team member right now” matches the recorded handoff, and the reply states no tow status or ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will contact you” gives no callback time and does not confirm a tow or a manager callback.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2221,
+ "output_tokens": 441,
+ "cost_usd": 0.0056482,
+ "latency_ms": 7248.2
+}

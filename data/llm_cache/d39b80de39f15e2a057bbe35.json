@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“Please contact the branch directly” gives a next step but leaves the customer unsure whether the previously promised call will happen after 5 p.m.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P13\"],\n  \"policy_reason\": \"“For anything else, please contact the branch directly” does not correct the earlier unsupported promise, “I'll have them call you.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Please contact the branch directly” is a referral, not a new factual claim.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” does not promise a callback or a callback time.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2154,
+ "output_tokens": 282,
+ "cost_usd": 0.0038907,
+ "latency_ms": 5299.9
+}

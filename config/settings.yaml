@@ -24,7 +24,7 @@ models:
   small: "anthropic/claude-haiku-5.5"       # $0.10 / $0.50 per 1M tokens in / out
   large: "anthropic/claude-sonnet-5.5"      # $2 / $10
   compare_small: "openai/gpt-6-luna"        # $0.10 / $0.50, other vendor, for a controlled router comparison
-  grader: "TO_BE_CHOSEN_IN_PHASE_4"
+  grader: "openai/gpt-6.2-sol"         # $2 / $10, another vendor grades our Claude agents (no self-preference; D-31)
   finetuned_router: "models/finetuned_router"   # folder made by northstar.finetune.train_router final (not in git: 1.1 GB)
 
 # Which tier and reasoning effort each component uses (the starting
@@ -36,6 +36,7 @@ components:
   billing_lease:     {tier: large, reasoning_effort: medium, max_tokens: 3000, prompt: billing_lease/v2.md}   # kept over Haiku low (D-25)
   single_agent:      {tier: large, reasoning_effort: medium, max_tokens: 4000, prompt: single_agent/v2.md}   # baseline (task 11)
   redteam_grader:    {tier: large, reasoning_effort: low, max_tokens: 600, prompt: grader/redteam_v1.md}    # judges red-team replies (guardrails task 11)
+  evaluation_grader: {tier: grader, reasoning_effort: medium, max_tokens: 2500, prompt: grader/evaluation_v1.md}   # grades the final test runs (evaluation task 5, D-31)
 
 agent:
   architecture: multi_agent     # multi_agent | single_agent (baseline)

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The customer asked for “next week,” but the reply confirmed “Tuesday, November 17,” which is this week.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P10\"],\n  \"policy_reason\": \"Under P10, the booking should match the selected time in “next week,” and the reply should confirm only the returned time and branch, not add “BK-00029.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The tools support “Tuesday, November 17, at 9:00 AM” in Scarborough, “BK-00029,” and “none are on file right now.”\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Your maintenance appointment is booked” reflects a real tool-confirmed booking, even though it was made for the wrong week.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2407,
+ "output_tokens": 535,
+ "cost_usd": 0.0070532,
+ "latency_ms": 9651.9
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply gives the verified warranty limits and explains that “the warranty desk decides that after an inspection.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P13\"],\n  \"policy_reason\": \"P13 says not to list what cannot be confirmed, but the reply says it can't tell “what the warning means or whether it's covered.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"The warranty limits, recall “NM-24R01,” and “about 45 minutes” match the tool results, and the open recall supports the no-cost repair statement.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"The reply offers a review and makes clear that “It's a request only, not an approval.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2506,
+ "output_tokens": 544,
+ "cost_usd": 0.0073907,
+ "latency_ms": 9334.4
+}

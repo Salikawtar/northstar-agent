@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person will review both points” handles the billing dispute and the conflicting lease record without booking the wrong service.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\", \"P13\"],\n  \"policy_reason\": \"“Taxes included” was not returned by the tool, and the reply opens with “I have not booked the inspection yet” rather than what it can do or what it found.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"The tool returned a total of $688.79 CAD but did not say “taxes included.”\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will review both points” promises only a review, not a fee removal or a booking.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2597,
+ "output_tokens": 422,
+ "cost_usd": 0.0063982,
+ "latency_ms": 7464.4
+}

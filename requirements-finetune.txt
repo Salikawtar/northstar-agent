@@ -4,4 +4,4 @@ torch>=2.3
 transformers>=4.44
 sentencepiece>=0.2   # XLM-R tokenizer
 protobuf>=4.25      # mDeBERTa tokenizer
-peft>=0.12          # LoRA comparison (optional step)
+peft>=0.22          # LoRA comparison (optional step); older versions crash on Kaggle's old torchao
