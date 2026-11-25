@@ -64,6 +64,8 @@ def make_sheet(per_chat: pd.DataFrame, seed: int = 894) -> Path:
     from openpyxl.styles import Alignment, Font
     from openpyxl.worksheet.datavalidation import DataValidation
 
+    if SHEET.exists() and not _read(SHEET).dropna(subset=QUESTIONS).empty:
+        return SHEET               # the team's labels are in it: never overwrite them
     rows = per_chat[per_chat.setup.isin(SHEET_SETUPS) & per_chat.case.notna()].copy()
     if rows.empty:                 # a run of other setups only: keep the existing sheet
         return SHEET

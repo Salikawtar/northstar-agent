@@ -237,6 +237,13 @@ def build(seed: int | None = None) -> dict[str, list[dict]]:
                     available=rng.random() > 0.35,
                 ))
 
+    # Fresh held-out customers (D-33), added LAST with their own random generator, so every record
+    # above (and so every recorded model call) stays exactly as it was.
+    fresh_file = path("fresh") if "fresh" in cfg["paths"] else None
+    if fresh_file and fresh_file.exists():
+        _add_customers(pd.read_csv(fresh_file), random.Random(seed + 2611), today,
+                       customers, vehicles, ros, invoices)
+
     def dump(items):
         return [json.loads(x.model_dump_json()) for x in items]
 
@@ -245,6 +252,50 @@ def build(seed: int | None = None) -> dict[str, list[dict]]:
         "invoices": dump(invoices), "recalls": dump(RECALLS), "warranty_terms": dump(WARRANTY),
         "service_slots": dump(slots),
     }
+
+
+def _add_customers(df: pd.DataFrame, rng: random.Random, today: date, customers, vehicles, ros, invoices) -> None:
+    """Same records as the main loop in build(), for chats outside the main dataset (the fresh set)."""
+    for cid, g in df.groupby("customer_id", sort=True):
+        first = g.iloc[0]
+        text = " ".join(g["conversation"].astype(str))
+        fn, ln = split_name(first["faker_customer_name"])
+        is_fleet = g["customer_type"].astype(str).str.contains("fleet").any()
+        leased = (g["request_type"] == "lease_end_return").any()
+        m = re.search(r"(20\d\d)\s+Meridian\s+(" + "|".join(LINEUP) + ")", text)
+        year, model = (int(m.group(1)), m.group(2)) if m else (rng.randint(2018, 2026), rng.choice(LINEUP))
+        city = next((c for c in ONTARIO_CITIES if c.lower() in text.lower()), rng.choice(ONTARIO_CITIES))
+        km_m = re.search(r"\b(\d{1,3})[ ,.]?(\d{3})\s?(?:km|kms|kilom)", text, re.I)
+        age_years = max(0.3, (today - date(year - 1, 9, 1)).days / 365)
+        odo = int(km_m.group(1) + km_m.group(2)) if km_m else int(age_years * rng.randint(12000, 24000))
+        in_service = min(date(year, rng.randint(1, 6), rng.randint(1, 28)), today - timedelta(days=30))
+        customers.append(Customer(customer_id=cid, first_name=fn, last_name=ln, email=first["faker_email"],
+                                  phone=first["faker_phone"], language=Language(first["language"]), city=city,
+                                  is_fleet=bool(is_fleet)))
+        vehicles.append(Vehicle(vin=first["faker_vin"], customer_id=cid, plate=first["faker_plate"], model=model,
+                                year=year, in_service_date=in_service, odometer_km=odo,
+                                ownership="fleet" if is_fleet else ("leased" if leased else "owned"),
+                                lease_end_date=(today + timedelta(days=rng.randint(10, 75))) if leased else None))
+        types = set(g["request_type"])
+        kind = ("repair_status" if "repair_status" in types else "warranty_claim" if "warranty_claim" in types
+                else "billing_dispute" if "billing_dispute" in types else "default")
+        opened = today - timedelta(days=rng.randint(1, 10) if kind != "billing_dispute" else rng.randint(12, 60))
+        status = rng.choice(RO_STATUSES_OPEN) if kind in ("repair_status", "warranty_claim") else "closed"
+        if kind == "warranty_claim" and status in ("in_repair", "ready_for_pickup"):
+            status = "diagnosing"
+        labour, parts = round(rng.uniform(1.0, 4.5), 1), round(rng.uniform(40, 650), 2)
+        est = round(labour * 165 + parts, 2)
+        ro = RepairOrder(ro_number=first["faker_ro_number"], vin=first["faker_vin"], customer_id=cid, status=status,
+                         opened=opened, promised=(opened + timedelta(days=rng.randint(1, 6))) if status != "closed" else None,
+                         complaint=rng.choice(COMPLAINTS[kind]),
+                         lines=[{"type": "labour", "hours": labour, "rate_cad": 165}, {"type": "parts", "amount_cad": parts}],
+                         estimate_cad=est,
+                         approved_by_customer=status not in ("checked_in", "diagnosing", "waiting_customer_approval"))
+        ros.append(ro)
+        if status == "closed":
+            invoices.append(Invoice(invoice_id=f"INV-{ro.ro_number[3:]}", customer_id=cid, ro_number=ro.ro_number,
+                                    issued=opened + timedelta(days=1), lines=ro.lines, total_cad=round(est * 1.13, 2),
+                                    status="disputed" if kind == "billing_dispute" else rng.choice(["paid", "paid", "unpaid"])))
 
 
 def main() -> None:

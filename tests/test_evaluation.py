@@ -205,3 +205,5 @@ def test_grader_check_scores_a_filled_sheet(tmp_path, monkeypatch):
     overall = next(r for r in s["table"] if r["question"] == "overall: all five good"
                    and r["compared"] == "model grader vs person")
     assert s["rows_labelled"] == 12 and overall["agreement"] == 1.0 and overall["kappa"] == 1.0
+    human_check.make_sheet(per_chat)                    # a later run must never wipe the team's labels
+    assert load_workbook(tmp_path / "sheet.xlsx")["review"]["C2"].value == "tester"

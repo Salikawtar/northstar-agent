@@ -18,6 +18,9 @@ from northstar.config import path
 
 
 def load_conversations(split: str | None = None) -> pd.DataFrame:
+    if split == "fresh":            # the fresh held-out set (D-33): its own file, frozen after the team review
+        from northstar.datagen.fresh import load_fresh
+        return load_fresh()
     df = pd.read_csv(path("conversations"))
     return df if split is None else df[df["split"] == split].reset_index(drop=True)
 

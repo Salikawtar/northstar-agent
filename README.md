@@ -78,6 +78,7 @@ Final evaluation: 8 setups on the 40 held-out test chats, graded by rules and a 
 python -m northstar.evaluation                  # or: python run_all.py evaluate
 python -m northstar.evaluation consistency      # the grader graded three times: does it agree with itself?
 python -m northstar.evaluation check            # the grader against the team's hand labels (percent agreement, Cohen's kappa)
+python -m northstar.evaluation --split fresh --setups full_agent   # once only: the fresh held-out set (D-33), after its review and freeze
 ```
 Tables in `src/northstar/evaluation/results/`; rubric in `docs/evaluation_rubric.md`; results and error analysis in `docs/evaluation_results.md`. To add a setup to the comparison, add one line to `SETUPS` in `src/northstar/evaluation/setups.py`.
 

@@ -185,7 +185,7 @@ def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description="Final evaluation: run, grade and compare setups on the test chats.")
     ap.add_argument("command", nargs="?", default="run", choices=["run", "sheet", "check", "consistency"])
-    ap.add_argument("--split", default="test", choices=["validation", "test"])
+    ap.add_argument("--split", default="test", choices=["validation", "test", "fresh"])
     ap.add_argument("--setups", nargs="+", default=list(SETUPS), choices=list(SETUPS))
     a = ap.parse_args()
     (RESULTS / "grade_records").mkdir(parents=True, exist_ok=True)
