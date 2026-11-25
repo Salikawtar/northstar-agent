@@ -279,8 +279,9 @@ def run_final(args, data, device, cfg) -> None:
     stab.to_csv(RESULTS_DIR / "final_seed_runs.csv", index=False)
     pd.DataFrame(hists).to_csv(RESULTS_DIR / "training_history.csv", index=False)
 
-    gpu_min = (sum(r.get("train_time_sec", 0) for r in pd.read_csv(RESULTS_DIR / "selection_runs.csv").to_dict("records"))
-               if (RESULTS_DIR / "selection_runs.csv").exists() else 0) / 60 + stab.train_time_sec.sum() / 60
+    sel_runs = RESULTS_DIR / "selection_runs.csv"
+    sel_sec = pd.read_csv(sel_runs)["train_time_sec"].sum() if sel_runs.exists() else 0   # failed runs have no time
+    gpu_min = (sel_sec + stab.train_time_sec.sum()) / 60
     log = dict(
         base_model=model_name, learning_rate=lr, router_seed=int(best[1]), seeds=FINAL_SEEDS, **cfg,
         loss="cross-entropy (type) + binary cross-entropy (escalation) + cross-entropy (language), summed",

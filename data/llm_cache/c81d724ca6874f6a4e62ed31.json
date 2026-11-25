@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"parts_order\", \"secondary_types\": [\"book_service\", \"warranty_claim\", \"billing_dispute\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"fr\"}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 2506,
+ "output_tokens": 402,
+ "cost_usd": 0.0004516,
+ "latency_ms": 2857.2
+}

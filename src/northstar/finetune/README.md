@@ -2,6 +2,18 @@
 
 **Main idea:** a small multilingual encoder is trained to do the router's job (request type, escalation, language) and plugged in behind the same `RouterOutput` contract. It is then compared with the small (Haiku) and large (Sonnet) prompted routers on the same 40 test chats, with the same input text and the same scoring code.
 
+## Result in one table (40 test chats)
+
+| | Fine-tuned (XLM-R) | Haiku (prompted) | Sonnet (prompted) |
+|---|---|---|---|
+| Request type accuracy | 67.5% | 82.5% | 77.5% |
+| Escalation recall | 88.9% | 100% | 94.4% |
+| In the agent: wrong type reaching a specialist | 2 | 2 | 4 |
+| Median time per chat | 249 ms | 2,443 ms | 1,047 ms |
+| Cost per 1,000 chats | $0 | $0.36 | $5.56 |
+
+The prompted routers are more accurate, but the gaps are not statistically clear on 40 chats. Inside the agent, the confidence floor sends most of the fine-tuned model's mistakes to a person. Details, limits and the 5-seed spread are in `MODEL_CARD.md`.
+
 ## How it works
 
 1. **Same input as the prompted router.** The model reads the three-turn conversation (customer, agent, customer), built by the same function the prompted router uses (`format_conversation`).

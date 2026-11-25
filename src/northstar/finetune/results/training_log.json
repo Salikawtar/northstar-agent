@@ -1,0 +1,45 @@
+{
+ "base_model": "xlm-roberta-base",
+ "learning_rate": 3e-05,
+ "router_seed": 3,
+ "seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "epochs": 30,
+ "patience": 6,
+ "batch_size": 16,
+ "max_length": 320,
+ "warmup_ratio": 0.1,
+ "weight_decay": 0.01,
+ "dropout": 0.2,
+ "loss": "cross-entropy (type) + binary cross-entropy (escalation) + cross-entropy (language), summed",
+ "optimizer": "AdamW, linear warmup then decay, gradient clipping 1.0, mixed precision on GPU",
+ "checkpoint_rule": "epoch with lowest validation loss (early stop after 6 epochs without improvement)",
+ "router_rule": "seed with the highest validation macro F1; escalation cut-off chosen on validation (F2)",
+ "splits": {
+  "train": 130,
+  "validation": 30,
+  "test": 40
+ },
+ "hardware": "Tesla T4",
+ "minutes_per_final_run": 1.33,
+ "total_gpu_minutes_all_runs": 16.4,
+ "cost_usd_per_final_run": 0.01,
+ "cost_usd_all_runs": 0.12,
+ "cost_assumption": "0.45 USD per GPU hour (on-demand T4); cash cost on free Kaggle is 0",
+ "test_type_accuracy_over_seeds": {
+  "mean": 0.685,
+  "std": 0.045,
+  "min": 0.625,
+  "max": 0.75
+ },
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "python": "3.13.16"
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "type_accuracy_95ci": {
+  "Fine-tuned (XLM-R)": [
+   0.52,
+   0.799
+  ],
+  "Small prompted (Haiku)": [
+   0.68,
+   0.913
+  ],
+  "Large prompted (Sonnet)": [
+   0.625,
+   0.877
+  ]
+ },
+ "paired_tests_type_accuracy": {
+  "Fine-tuned (XLM-R) vs Small prompted (Haiku)": {
+   "only_first_right": 3,
+   "only_second_right": 9,
+   "p_value": 0.146
+  },
+  "Fine-tuned (XLM-R) vs Large prompted (Sonnet)": {
+   "only_first_right": 6,
+   "only_second_right": 10,
+   "p_value": 0.454
+  }
+ },
+ "note": "40 test chats: a 10-point gap is 4 chats. Read the intervals before reading the gap."
+}

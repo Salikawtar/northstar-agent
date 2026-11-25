@@ -92,7 +92,7 @@ def _fake_run(n=40, wrong_every=None, cost=0.0, latency=5.0):
     return pd.DataFrame(dict(id=test.id, gold_type=test.request_type, pred_type=pred,
                              gold_escalation=test.needs_escalation.astype(bool), pred_escalation=test.needs_escalation.astype(bool),
                              gold_language=test.language, pred_language=test.language, difficulty=test.difficulty,
-                             adversarial_type=test.adversarial_type.fillna(""), latency_ms=latency, cost_usd=cost,
+                             adversarial_type=test.adversarial_type.fillna(""), latency_ms=latency, cost_usd=cost, confidence=0.9,
                              type_correct=test.request_type == pred))
 
 

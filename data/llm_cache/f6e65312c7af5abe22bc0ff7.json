@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"repair_status\", \"secondary_types\": [\"recall_inquiry\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2366,
+ "output_tokens": 70,
+ "cost_usd": 0.005432,
+ "latency_ms": 985.7
+}

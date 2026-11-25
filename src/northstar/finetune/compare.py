@@ -14,6 +14,10 @@ Writes to src/northstar/finetune/results/:
     comparison_per_class.csv   accuracy for each of the 10 request types
     comparison_by_slice.csv    accuracy by language, difficulty and adversarial type
     comparison_stats.json      95% confidence intervals and paired tests (40 chats is small)
+
+The table also shows the router inside the agent: the pipeline sends any chat to a person
+when the router's confidence is below agent.router_confidence_floor (settings), so a
+low-confidence mistake reaches a person instead of the wrong specialist.
 """
 from __future__ import annotations
 
@@ -27,7 +31,7 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import f1_score
 
-from northstar.config import path
+from northstar.config import path, settings
 from northstar.contracts import RequestType
 
 HERE = Path(__file__).parent / "results"
@@ -60,6 +64,8 @@ def collect() -> None:
 def headline(df: pd.DataFrame, js: dict) -> dict:
     esc, flagged = df[df.gold_escalation], df[df.pred_escalation]
     by_lang = df.groupby("gold_language").type_correct.mean()
+    floor = settings()["agent"].get("router_confidence_floor", 0.55)
+    to_person = df.pred_escalation | (pd.to_numeric(df.confidence, errors="coerce") < floor)   # same rule as pipeline.py
     return {
         "type_accuracy": df.type_correct.mean(),
         "macro_f1": f1_score(df.gold_type, df.pred_type, labels=LABELS, average="macro", zero_division=0),
@@ -72,6 +78,10 @@ def headline(df: pd.DataFrame, js: dict) -> dict:
         "fr_type_accuracy": by_lang.get("fr", np.nan),
         "latency_ms_median": df.latency_ms.median(),
         "latency_ms_p90": df.latency_ms.quantile(0.9),
+        "agent_wrong_type_reaching_specialist": int((~df.type_correct & ~to_person).sum()),
+        "agent_missed_escalations": int((df.gold_escalation & ~to_person).sum()),
+        "agent_handoffs": int(to_person.sum()),
+        "agent_unneeded_handoffs": int((to_person & ~df.gold_escalation).sum()),
         "cost_usd_per_chat": df.cost_usd.mean(),
         "cost_usd_per_1000_chats": df.cost_usd.mean() * 1000,
         "n": len(df),
@@ -107,7 +117,7 @@ def build() -> pd.DataFrame:
     assert all(i == ids[0] for i in ids), "the three routers were not scored on the same chats"
 
     table = pd.DataFrame([{"router": k, "model": js["model"], **headline(df, js)} for k, (df, js) in frames.items()])
-    table.round(4).to_csv(HERE / "comparison_table.csv", index=False)
+    table.round(4).assign(cost_usd_per_chat=table.cost_usd_per_chat.round(6)).to_csv(HERE / "comparison_table.csv", index=False)
 
     per_class = pd.DataFrame({k: df.groupby("gold_type").type_correct.mean() for k, (df, _) in frames.items()})
     per_class.insert(0, "n", frames[next(iter(frames))][0].gold_type.value_counts())
@@ -139,7 +149,7 @@ def main() -> None:
         collect()
     t = build()
     with pd.option_context("display.width", 200):
-        print(t.round(3).to_string(index=False))
+        print(t.round(3).assign(cost_usd_per_chat=t.cost_usd_per_chat.round(6)).T.to_string(header=False))
     print(json.dumps(json.loads((HERE / "comparison_stats.json").read_text()), indent=1))
 
 

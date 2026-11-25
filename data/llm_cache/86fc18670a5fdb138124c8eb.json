@@ -1,0 +1,8 @@
+{
+ "text": "{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"fr\"}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 2750,
+ "output_tokens": 72,
+ "cost_usd": 0.00622,
+ "latency_ms": 1043.1
+}
