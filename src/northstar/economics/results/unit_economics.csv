@@ -1,0 +1,7 @@
+option,label,model_usd_per_reply,model_usd_per_successful_reply,model_usd_per_conversation,success_rate,handled_alone_correct,all_in_usd_per_chat_at_100000,all_in_usd_per_successful_chat_at_100000,all_in_usd_per_chat_without_missed_handoff_cost
+status_quo,People answer every chat (today),,,0.0,0.702,0.0,2.703,3.851,2.703
+small_prompted,"Small prompted router (Haiku 5.5), recommended agent",0.00534,0.00762,0.0168,0.7,0.35,2.077,2.967,2.077
+large_prompted,Large prompted router (Sonnet 5.5),0.01193,0.01835,0.0376,0.65,0.375,14.65,22.539,2.15
+finetuned,Fine-tuned router (XLM-RoBERTa),0.00451,0.01128,0.0142,0.4,0.25,15.294,38.236,2.794
+single_agent,"Single Sonnet agent, no router (baseline)",0.01602,0.0356,0.0505,0.45,0.3,90.471,201.046,2.971
+small_prompted_pilot,"Recommended agent, person approves billing and warranty replies (pilot)",0.00534,0.00762,0.0168,0.7,0.35,2.179,3.114,2.179

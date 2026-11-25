@@ -81,6 +81,13 @@ python -m northstar.evaluation check            # the grader against the team's 
 ```
 Tables in `src/northstar/evaluation/results/`; rubric in `docs/evaluation_rubric.md`; results and error analysis in `docs/evaluation_results.md`. To add a setup to the comparison, add one line to `SETUPS` in `src/northstar/evaluation/setups.py`.
 
+Cost model: a month of chats with people only vs the agent, for each model option, at 1,000 / 100,000 / 1,000,000 chats, with the cost of mistakes and the break-even points (about 5 seconds, no key):
+
+```bash
+python -m northstar.economics                   # or: python run_all.py economics
+```
+Assumptions and their sources in `config/economics.yaml`; results in `src/northstar/economics/results/`; write-ups in `docs/economics.md` (page 7) and `docs/decision_memo.md` (page 1).
+
 Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/prompt_log.md`.
 
 ## Repository layout (mirrors the system design and the team roles)
@@ -102,7 +109,8 @@ Decisions and their reasons: `docs/decision_log.md`. Prompt changes: `docs/promp
 | `src/northstar/guardrails/` | Operating policy, input/output checks, log masking, attack tests | Jessica |
 | `src/northstar/finetune/` | Fine-tuned router + small/large prompted baselines | Neeraj |
 | `src/northstar/evaluation/` | Setups, harness, rule and model graders, metrics with ranges, error analysis, grader check; committed result tables in `results/` | Libo |
-| `src/northstar/economics/` | Cost model, volumes, break-even | Abhi |
+| `src/northstar/economics/` | Cost model, volumes, cost of mistakes, break-even, sensitivity | Abhi |
+| `config/economics.yaml` | Every economics assumption, with its source and the range tested | Abhi |
 | `prompts/` | Every prompt, versioned (`router/v1.md`...). Changes logged in `docs/prompt_log.md` | Kawtar |
 | `config/settings.yaml` | All settings (models, effort, paths, failure injection) | Team |
 | `tests/` | Unit tests for every module | Everyone |
@@ -132,8 +140,8 @@ Where to read first: `docs/architecture.md` (the design), `docs/edge_cases.md` (
 | 2. Agent (router, specialists, baseline, handoff, failures) | Done: tested on validation, 40 hand-written chats, single-agent comparison |
 | 3. Guardrails and attack test set | Built: input and output checks, log masking, red team 75 of 75 resisted, 40 of 40 hand-written chats pass; operating policy P01 to P15 approved by Jessica (`docs/operating_policy.md`) |
 | 4. Evaluation and error analysis | Done: 8 setups on the 40 test chats (recommended agent 70% task success, 18 of 18 handoffs, $5.34 per 1,000 chats), error analysis with 4 fixes (D-32), grader self-consistency; grader check against the team's hand labels waits for the labels |
-| 5. Fine-tune and 3-model comparison | To do (Neeraj) |
-| 6. Cost model | To do (Abhi) |
+| 5. Fine-tune and 3-model comparison | Done: XLM-RoBERTa vs Haiku vs Sonnet routers on the 40 test chats, break-even volume, data-size study (`src/northstar/finetune/MODEL_CARD.md`) |
+| 6. Cost model and decision memo | Done: `python run_all.py economics`; recommended agent saves 21% at 20,000 chats a month, break-even 2,200 chats; gated pilot recommended (`docs/decision_memo.md`) |
 | 7. One-command reproduction, final README | Done: `python run_all.py` |
 
 ## Rules

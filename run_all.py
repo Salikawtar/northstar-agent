@@ -6,6 +6,7 @@
     python run_all.py results    # reproduce every key result from the recordings (no key, no cost)
     python run_all.py evaluate   # final evaluation on the 40 test chats: 8 setups, graded, tables (Phase 4)
     python run_all.py finetune   # three-router comparison on the test chats (Phase 5)
+    python run_all.py economics  # cost model, break-even points and memo numbers (Phase 6)
     python run_all.py record     # after a prompt or tool change: make the missing model calls (needs a key)
     python run_all.py test       # run the test suite
 
@@ -129,6 +130,11 @@ def stage_finetune():
         _run([["-m", "northstar.finetune.datasize"]], keep_key=False)
 
 
+def stage_economics():
+    """Cost model (Phase 6): reads the evaluation and fine-tune results, writes src/northstar/economics/results/."""
+    _run([["-m", "northstar.economics"]], keep_key=False)
+
+
 def stage_test():
     code = subprocess.call([sys.executable, "-m", "pytest", "-q"], cwd=ROOT)
     if code:
@@ -142,7 +148,7 @@ STAGES = {
     "results": stage_results,      # agent (Phase 2) and guardrails (Phase 3), replayed
     "evaluate": stage_evaluate,    # Phase 4: final evaluation on the test chats, replayed
     "finetune": stage_finetune,    # Phase 5: fine-tuned vs small vs large prompted router
-    # "economics": Phase 6
+    "economics": stage_economics,  # Phase 6: cost model, break-even, numbers for the memo
     "test": stage_test,
 }
 # Run on request only, never by default: it spends money (python run_all.py record).
