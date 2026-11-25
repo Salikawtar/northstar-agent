@@ -6,3 +6,4 @@ outputs/
 .venv/
 *.egg-info/
 models/
+.vscode/
