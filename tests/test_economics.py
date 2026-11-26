@@ -103,3 +103,25 @@ def test_memo_and_page7_quote_the_model(summary):
     assert f"{round(100 * mc[clean]['20000']['probability_saving_positive'])}% chance" in memo
     assert f"{round(100 * mc['as_built']['20000']['probability_saving_positive'])}% without a pilot" in memo
     assert math.isclose(round(sav["20000"]["small_prompted"] * 12, -3), 133_000)
+
+
+def test_fresh_check_reprices_the_same_agent_with_fresh_rates(summary, ctx):
+    # The fresh held-out set sits beside the base case: its counts come from the evaluation files,
+    # and the only difference between its two savings is the price of the missed handoffs.
+    a, _, _ = ctx
+    f = summary["fresh_set_check"]
+    s = json.loads((ROOT / "src/northstar/evaluation/results/summary_fresh.json").read_text())["setups"][f["setup"]]
+    assert f["chats"] == s["n"] and f["task_success_k"] == s["task_success"]["k"]
+    assert (f["handoffs_made"], f["handoffs_needed"]) == (s["escalation_recall"]["k"], s["escalation_recall"]["n"])
+    assert f["missed_handoffs"] == f["handoffs_needed"] - f["handoffs_made"] == s["missed_handoffs"]
+    assert f["finished_alone_correct"] == s["handled_without_person_and_correct"]["k"]
+    assert f["handoffs_needed_before_review"] + f["handoffs_added_by_review"] == f["handoffs_needed"]
+    miss_per_chat = f["missed_handoffs"] / f["chats"] * f["missed_handoff_usd"]
+    for v, sav in f["saving_at"].items():
+        assert sav["missed_handoffs_not_priced"] - sav["missed_handoffs_priced"] == pytest.approx(int(v) * miss_per_chat, abs=1)
+    p = f["pilot"]["saving_usd_per_month"]
+    assert p["missed_handoffs_not_priced"] - p["missed_handoffs_priced"] == pytest.approx(
+        a["pilot"]["chats_per_month"] * miss_per_chat, abs=1)
+    # The base case is still the 40 test chats: the fresh rates are lower, so its saving must be the larger one.
+    assert summary["saving_at"]["20000"]["small_prompted"] > f["saving_at"]["20000"]["missed_handoffs_not_priced"]
+

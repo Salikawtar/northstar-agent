@@ -17,6 +17,7 @@ No key, no network, about 5 seconds. It reads committed results only.
 3. **Per month:** servers, monitoring, a monthly evaluation run, engineering hours (grow with volume) and the build paid back over 24 months. The fine-tuned option adds its own server (from `finetune/results/breakeven.json`).
 4. **Break-even points:** volume, expensive-promise rate, small-mistake rate and containment at which the saving reaches zero; the warranty-approval break-even; the fine-tuned router inside the agent.
 5. **Uncertainty:** one-at-a-time sensitivity and 10,000 draws of the measured rates from their Beta posteriors.
+6. **Checks beside the base case:** the same agent re-priced with the rates of the fresh held-out set (31 chats, run once), at 20,000 and 100,000 chats and for the pilot month, and the model grader against two people. The base case stays on the 40 test chats; these are shown next to it, not mixed in (`fresh_set_check` and `grader_vs_people` in `results/summary.json`, last two tables of `results/tables.md`).
 
 ## Files
 
