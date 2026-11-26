@@ -875,6 +875,35 @@ def chart(a, mes, ev, hosting, be) -> None:
     fig.savefig(OUT / "cost_per_chat_vs_volume.png")
     plt.close(fig)
 
+    # The same curves once more, wide and short, for report page 7: at page width the chart above
+    # would be half a page tall, and shrunk to fit its labels are too small to read.
+    short = {"small_prompted": "Recommended agent", "small_prompted_pilot": "Agent in the pilot (approvals)",
+             "large_prompted": "Sonnet router*", "finetuned": "Fine-tuned router*"}
+    fig, ax = plt.subplots(figsize=(6.5, 2.2), dpi=200)
+    ax.plot(vols, [status_quo(v, a)["total"] / v for v in vols], color="#3f3f46", lw=1.8, label="People only (today)")
+    for key, (col, ls, drop_miss, _) in style.items():
+        ys = []
+        for v in vols:
+            c = agent_month(v, a, mes[key], key, ev["measured"], hosting)
+            ys.append((c["total"] - (c["mistakes_missed_handoff"] if drop_miss else 0)) / v)
+        ax.plot(vols, ys, color=col, ls=ls, lw=1.8, label=short[key])
+    if bv:
+        ax.axvline(bv, color="#2563eb", lw=0.8, alpha=0.5)
+        ax.annotate(f"break-even {bv:,} chats", (bv, 1.62), fontsize=7.5, color="#2563eb", ha="left", xytext=(3, 0), textcoords="offset points")
+    ax.set_xscale("log")
+    ax.xaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda x, _: f"{x:,.0f}"))
+    ax.set_xlim(700, 1_500_000)
+    ax.set_ylim(1.5, 4)                      # the axis starts at $1.50, and says so: below it there is nothing to see
+    ax.set_xlabel("Chats per month (log scale)   * its missed handoff not priced", fontsize=8)
+    ax.set_ylabel("All-in cost per chat\n(USD, axis from 1.50)", fontsize=8)
+    ax.tick_params(labelsize=8)
+    for s in ("top", "right"):
+        ax.spines[s].set_visible(False)
+    ax.legend(frameon=False, fontsize=7.5, loc="upper right", ncol=2, columnspacing=1.2, handlelength=2.2)
+    fig.tight_layout(pad=0.4)
+    fig.savefig(OUT / "cost_per_chat_vs_volume_page7.png")
+    plt.close(fig)
+
 
 def main() -> None:
     s = build()
