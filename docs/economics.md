@@ -1,6 +1,6 @@
 # Economics: business case, unit economics, cost of mistakes and break-even (report page 7 and appendix)
 
-**Main idea:** today a person answers every service chat, at about $2.70 a chat. With the recommended agent, people still handle 65% of chats, but the agent finishes 35% alone and correctly, so a chat costs about $2.08 all in, mistakes included. The agent pays for itself above about 2,200 chats a month and saves about 20% to 24% from 20,000 chats a month. The model calls are under 1% of the cost: the money is in how many chats the agent finishes correctly and in how rarely it makes an expensive mistake. That second number is the weak point: our tests saw no expensive mistake in 185 checks, but the business case needs fewer than about 1 in 1,400, which only a pilot of about 4,000 to 5,000 chats can show.
+**Main idea:** today a person answers every service chat, at about $2.70 a chat. With the recommended agent, people still handle 65% of chats, but the agent finishes 35% alone and correctly, so a chat costs about $2.08 all in at 100,000 chats a month, mistakes included. The agent pays for itself above about 2,200 chats a month and saves about 20% to 24% from 20,000 chats a month. The model calls are under 1% of the cost: the money is in how many chats the agent finishes correctly and in how rarely it makes an expensive mistake. That second number is the weak point: our tests saw no expensive mistake in 185 checks, but the business case needs fewer than about 1 in 1,400, which only a pilot of about 4,000 to 5,000 chats can show. A fresh set of 31 chats, run once after every fix, is the harder check: there the agent finished 3 of 31 chats alone and correctly and made 22 of 24 handoffs, which cuts the saving at 20,000 chats from 21% to about 2% before the two missed handoffs are priced (section 7).
 
 Every number below comes from `python run_all.py economics` (or `python -m northstar.economics`), which reads the measured results of the final evaluation and the fine-tune comparison and the assumptions in `config/economics.yaml`. Generated tables: `src/northstar/economics/results/tables.md`. All amounts are US dollars (model prices are billed in USD; Canadian wages are converted at 1.42 CAD per USD).
 
@@ -50,11 +50,11 @@ Every number below comes from `python run_all.py economics` (or `python -m north
 | Wrongly promised covered repair (average repair $838, KBB / Cox Automotive, plus 30 minutes of review) | $847 | 0 in 185 checks |
 | Wrongly promised free loaner (3 days at C$58, KAYAK) | $132 | 0 in 185 checks |
 | A tribunal orders a chatbot promise paid (Moffatt v. Air Canada) | $581 | 0 in 185 checks |
-| Missed handoff (safety, legal or dispute chat not passed to a person) | $500 (assumption) | 0 in 132 chats that needed a person |
+| Missed handoff (safety, legal or dispute chat not passed to a person) | $500 (assumption) | 0 in 132 chats that needed a person on the four earlier sets; 2 in 24 on the fresh set (section 7) |
 
 - **Every wrong commitment we saw was cheap.** Across all 8 test setups the grader found 12 wrong commitments in 320 replies: callbacks, a contact promise and claim numbers (`results/mistakes_seen.csv`). One was flagged by the waiver rule, in the run with the checks switched off, and it is the known false positive of the promise checker (`docs/evaluation_results.md`, 5.4). None was a refund, waiver, free loaner or coverage promise.
 - **Why expensive promises are rare by design.** No desk has a tool that approves, refunds or waives (P05, P06, P10), the output check blocks promise wording (G-OUT-01), and the 30 red-team attacks built to extract such promises all failed.
-- **Why we still cannot ignore them.** 0 in 185 only proves the rate is below about 1.6% (rule of three). Section 5 shows the business case needs it below 0.07%.
+- **Why we still cannot ignore them.** 0 in 185 only proves the rate is below about 1.6% (rule of three; 2.0% with the Wilson bound the tables use). Section 5 shows the business case needs it below 0.07%.
 
 ## 5. Break-even points
 
@@ -63,7 +63,7 @@ Every number below comes from `python run_all.py economics` (or `python -m north
 | Volume where the agent starts to save | **2,200 chats a month** (2,600 with approvals during the pilot) | Fixed costs about $1,400 a month at that size | Too small for one branch; fine for the group |
 | Expensive-promise rate that wipes out the saving | **0.074% (1 in 1,350) at 100,000 chats; 0.065% at 20,000** | 0 in 185 (upper bound 2.0%) | About 4,100 to 4,600 clean chats are needed to show it (rule of three) |
 | Small wrong commitments that wipe out the saving | 15.7% at 100,000 chats | 2.5% (up to 12.9%) | Safe margin even at the pessimistic end |
-| Share of chats finished alone and correctly needed | 11.4% at 100,000; 14.1% at 20,000 | 35% (22% to 50%) | Safe margin |
+| Share of chats finished alone and correctly needed | 11.4% at 100,000; 14.1% at 20,000 | 35% (22% to 50%) on the test chats; 9.7% (3 of 31) on the fresh set | Margin on the test chats, none on the fresh set (section 7) |
 | Wrong-approval rate above which automating warranty decisions loses money | **0.74% (1 wrong approval in 134 claims)**; 0.37% to 1.5% with 10 to 40 minutes of review saved | Wrong commitments up to 12.9% on 40 chats; 4 warranty chats | **Do not automate warranty approvals.** The saving is a reviewer's 20 minutes ($6.31); one wrong approval costs $847 |
 | Fine-tuned router (alone vs Haiku, Neeraj) | 197,000 chats a month | Server $71 a month | Inside the agent it never pays: it saves $0.0025 a chat but finishes 10 points fewer chats correctly, which costs $0.27 a chat in people's time (100 times more) |
 
@@ -85,6 +85,19 @@ A larger model pays for itself if it avoids one mistake every (cost of that mist
 - **At the measured rates** the agent saves money at every volume above 2,200 chats a month.
 - **At the pessimistic end of every test range** (35% containment falling to 22%, wrong commitments and invented facts at 12.9%) it loses about $19,000 a month at 20,000 chats. 40 test chats are too few to rule this out.
 - **Drawing every measured rate from its uncertainty** (10,000 draws, Jeffreys prior), the chance that the agent saves money at 20,000 chats a month is 14% as built, 40% with a person approving billing and warranty replies, and **82% after a clean pilot of 5,000 chats** (87% at 100,000). The never-seen expensive mistakes drive almost all of the doubt.
+
+**The fresh set is the harder check.** The base case uses the 40 test chats, which the team had read during the error analysis. The 31 fresh chats were written after every fix by another model family, reviewed by two team members and run once (`docs/evaluation_results.md`, 2b). Same agent, same assumptions, fresh rates (`results/tables.md`, fresh held-out set):
+
+| Rates used | Finished alone and correctly | Needed a person and got one | Saving at 20,000 chats | at 100,000 | Pilot month (5,000 chats, with approvals) |
+|---|---|---|---|---|---|
+| 40 test chats (base case) | 35% (14 of 40) | 18 of 18 | $11,086 (+21%) | $62,629 (+23%) | $1,333 |
+| 31 fresh chats, missed handoffs not priced | 9.7% (3 of 31) | 22 of 24 | $1,291 (+2%) | $13,653 (+5%) | -$1,214 |
+| 31 fresh chats, missed handoffs at $500 each | 9.7% (3 of 31) | 22 of 24 | -$643,870 | -$3,212,153 | -$162,504 |
+
+- **Why containment is lower:** 24 of the 31 fresh chats need a person (77%), against 18 of 40 test chats (45%). By the rule behind the test labels the fresh set also stood at 45% (14 of 31). The two reviewers then added a handoff to 10 chats: 6 where someone acts for another person (rule P15: a spouse, a child, a fleet manager), 2 legal threats, a collision and a contested fee (`data/fresh/FROZEN.json` and the two review files). The test labels do not do this: there, a fleet manager who asks for a repair status (v3_0096) needs no person. So part of the gap is the labels, not the agent. If Northstar applies its policy the way the reviewers did, containment is near 10%, not 35%.
+- **Why the saving stays above zero** although 9.7% is below the 14.1% of section 5: that line keeps the test-chat mistakes (1 wrong commitment and 1 invented fact in 40), and the fresh set had none.
+- **The two missed handoffs** were both on the warranty desk: the agent asked for identification where a person should have taken over (a contested diagnostic fee, a fleet manager without proof of authority). At $500 each, the price every missed handoff pays in this model, they cost about $32 a chat. That price was set for disputes and complaints; here nothing wrong was said or done yet, so the true cost is probably lower, but we did not measure it.
+- **What it changes:** not the recommendation, its weight. Sections 2 and 3 are the optimistic end. The pilot month is cheap either way (+$1,333 to -$1,214 before missed handoffs), and an advisor approves every billing and warranty reply, so both missed cases reach a person before the reply goes out. The gates decide the rest: no missed safety or dispute handoff, and at least 25% finished alone and correctly (the fresh set gives 10%, range 3% to 25%).
 
 This is why the memo recommends a gated pilot rather than a full launch.
 
@@ -132,6 +145,9 @@ Measured inputs, read from files: cost per reply, task success, containment, wro
 | Red-team attacks | 0 of 75 attacks succeeded | 0 of 75 (all must go to a person) |
 | Hand-written chats | 0 of 40 failed | 0 of 24 that expect a handoff |
 | **Total** | **0 of 185** (95% upper bound 2.0%) | **0 of 132** (95% upper bound 2.8%) |
+| Fresh chats (run once, after the model was built; not in the totals) | 0 of 31 (rule check) | 2 of 24 |
+
+The totals are what the model uses in sections 2 to 6 and in A4. Section 7 sets the fresh set beside them.
 
 ## A3. Sensitivity (saving per month, one assumption at a time)
 
@@ -163,4 +179,5 @@ Measured rates are drawn from Beta posteriors (Jeffreys prior). Containment and 
 - The 40 test chats are synthetic; real containment could differ, which is the first thing the pilot measures.
 - The model prices one reply's measured cost three times per chat; longer real chats cost more, but even 5 replies change the saving by under 2%.
 - Revenue effects are left out on purpose (24/7 bookings may win work; a bad experience may lose a customer), so the case rests on cost alone.
-- The model grader is not yet checked against the team's hand labels (`docs/evaluation_results.md`, 5.3). If people grade more strictly, containment falls; the break-even containment (11% to 14%) leaves room.
+- Two team members checked the model grader on 80 replies (`docs/evaluation_results.md`, 5.3): kappa 0.71 and 0.77, but they scored the recommended agent 62.5% where the grader gives 70%. Containment (35%) was not recomputed from their labels, so it may be a little high too.
+- The 185 checks and the 132 handoffs pool sets the team had already read and fixed against (test, validation, red team, hand-written chats). Only the fresh set was run once with nothing changed afterwards, which is why section 7 sets it beside the base case.

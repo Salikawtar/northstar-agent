@@ -125,3 +125,23 @@ def test_fresh_check_reprices_the_same_agent_with_fresh_rates(summary, ctx):
     # The base case is still the 40 test chats: the fresh rates are lower, so its saving must be the larger one.
     assert summary["saving_at"]["20000"]["small_prompted"] > f["saving_at"]["20000"]["missed_handoffs_not_priced"]
 
+
+def test_memo_and_page7_report_the_fresh_set_and_the_people_check(summary):
+    # The memo must not show only the kinder set, and must not say the grader is still unchecked.
+    memo = (ROOT / "docs/decision_memo.md").read_text(encoding="utf-8")
+    page = (ROOT / "docs/economics.md").read_text(encoding="utf-8")
+    f, g = summary["fresh_set_check"], summary["grader_vs_people"]
+    for text in (memo, page):
+        assert f"{f['handoffs_made']} of {f['handoffs_needed']}" in text
+        assert f"{f['finished_alone_correct']} of {f['chats']}" in text
+        assert "not yet checked" not in text
+    assert f"{100 * f['task_success']:.1f}%" in memo
+    for person in g["main_agent_success_by_people"]:
+        assert f"{100 * person:.1f}%" in memo
+    assert f"${summary['usd_per_chat_at']['20000']:.2f}" in memo          # the cost per chat at Northstar's own volume
+    for v in ("20000", "100000"):
+        assert f"${_fmt(f['saving_at'][v]['missed_handoffs_not_priced'])}" in page
+        assert f"-${_fmt(-f['saving_at'][v]['missed_handoffs_priced'])}" in page
+    pilot, fresh_pilot = summary["pilot"]["saving_usd_per_month"], f["pilot"]["saving_usd_per_month"]["missed_handoffs_not_priced"]
+    assert f"${_fmt(pilot)}" in page and f"-${_fmt(-fresh_pilot)}" in page
+    assert f"${_fmt(round(pilot, -2))}" in memo and f"${_fmt(round(-fresh_pilot, -2))}" in memo

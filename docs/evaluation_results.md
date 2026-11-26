@@ -44,7 +44,7 @@ Request-type accuracy of the router inside the agent: Haiku v3 82.5%, Sonnet 77.
 
 **What it shows**
 - **The fixes hold up on chats nobody had seen:** 67.7%, close to the 70% measured after the fixes and well above the blind 52.5%. The 70% was only slightly optimistic.
-- **The first missed handoffs (2 of 24):** both are chats the reviewers relabelled. f1_0003 asks to remove a diagnostic fee inside a warranty question (the router read it as warranty, the reviewers as a contested charge); f1_0022 is a fleet manager asking about a vehicle without proof of authority (rule P15). Acting for someone else is the pattern to watch: the reviewers added a handoff to 8 such chats, and the agent caught 6.
+- **The first missed handoffs (2 of 24):** both are chats the reviewers relabelled. f1_0003 asks to remove a diagnostic fee inside a warranty question (the router read it as warranty, the reviewers as a contested charge); f1_0022 is a fleet manager asking about a vehicle without proof of authority (rule P15). Acting for someone else is the pattern to watch: the reviewers added a handoff to 6 such chats (of the 10 they added), and the agent caught 5.
 - **The single agent again misses the most handoffs** (7 of 24) at almost three times the cost; the gap in success (10 chats against 3, p = 0.09) is not significant on 31 chats.
 - **Limits:** 31 chats; 24 of them need a person after the review, more than in the test set (18 of 40), so this set leans towards handoff cases. Results: `results/headline_fresh.md`, `results/per_chat_fresh.csv`, `results/failures_fresh.csv`.
 
