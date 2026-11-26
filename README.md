@@ -143,7 +143,7 @@ Where to read first: `docs/architecture.md` (the design), `docs/edge_cases.md` (
 | 2. Agent (router, specialists, baseline, handoff, failures) | Done: tested on validation, 40 hand-written chats, single-agent comparison |
 | 3. Guardrails and attack test set | Built: input and output checks, log masking, red team 75 of 75 resisted, 40 of 40 hand-written chats pass; operating policy P01 to P15 approved by Jessica (`docs/operating_policy.md`) |
 | 4. Evaluation and error analysis | Done: 8 setups on the 40 test chats (recommended agent 70% task success by the model grader and 62.5% by the two people who checked it, 18 of 18 handoffs, $5.34 per 1,000 chats), error analysis with 4 fixes (D-32), grader self-consistency, grader checked against two team members' hand labels (kappa 0.71 and 0.77), one run on 31 fresh chats made after the fixes (67.7%, D-33) |
-| 5. Fine-tune and 3-model comparison | Done: XLM-RoBERTa vs Haiku vs Sonnet routers on the 40 test chats, break-even volume, data-size study (`src/northstar/finetune/MODEL_CARD.md`) |
+| 5. Fine-tune and 3-model comparison | Done: XLM-RoBERTa vs Haiku vs Sonnet routers on the 40 test chats, break-even volume, data-size study (`src/northstar/finetune/MODEL_CARD.md`). Inside the whole agent the fine-tuned router reaches 40% task success against 70%, so the Haiku router stays |
 | 6. Cost model and decision memo | Done: `python run_all.py economics`; recommended agent saves 21% at 20,000 chats a month on the test-chat rates (about 2% on the fresh-set rates), break-even 2,200 chats; gated pilot recommended (`docs/decision_memo.md`) |
 | 7. One-command reproduction, final README | Done: `python run_all.py` |
 
