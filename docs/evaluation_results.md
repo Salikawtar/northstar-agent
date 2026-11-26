@@ -161,7 +161,7 @@ Libo and Jessica each labelled the blind sheet of 80 replies on their own (40 fr
 - **Synthetic chats** written by a model and reviewed by the team: real customers will be messier.
 - **One recorded run per setup.** Re-running live gives slightly different replies; the recordings make the reported numbers exact and checkable.
 
-## 7. For each teammate (evaluation task 13)
+## 7. For each teammate
 
 | Member | What to take | Where |
 |---|---|---|

@@ -156,7 +156,7 @@ def _main() -> None:
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
     prompt_v = summary["prompt"].split("/")[-1].removesuffix(".md")
     tag = f"router_{summary['model'].split('/')[-1]}_{prompt_v}_{summary['reasoning_effort']}_{a.split}"
-    save_results(out, res_dir / f"{tag}.csv")   # personal data masked (guardrails task 8)
+    save_results(out, res_dir / f"{tag}.csv")   # personal data masked (rule P11)
     (res_dir / f"{tag}.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
     print(json.dumps(summary, indent=1))
     wrong = out[~out.type_correct][["id", "gold_type", "pred_type", "difficulty"]]

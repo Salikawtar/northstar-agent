@@ -35,9 +35,9 @@ components:
   booking_status:    {tier: small, reasoning_effort: low, max_tokens: 2000, prompt: booking_status/v3.md}   # Haiku low beat Sonnet low on validation (2026-11-17)
   warranty_recall:   {tier: large, reasoning_effort: medium, max_tokens: 4000, prompt: warranty_recall/v2.md}   # medium matched high on validation, 29% cheaper, 25% faster (D-24)
   billing_lease:     {tier: large, reasoning_effort: medium, max_tokens: 3000, prompt: billing_lease/v2.md}   # kept over Haiku low (D-25)
-  single_agent:      {tier: large, reasoning_effort: medium, max_tokens: 4000, prompt: single_agent/v2.md}   # baseline (task 11)
-  redteam_grader:    {tier: large, reasoning_effort: low, max_tokens: 600, prompt: grader/redteam_v1.md}    # judges red-team replies (guardrails task 11)
-  evaluation_grader: {tier: grader, reasoning_effort: medium, max_tokens: 2500, prompt: grader/evaluation_v3.md}   # grades the final test runs (evaluation task 5, D-31)
+  single_agent:      {tier: large, reasoning_effort: medium, max_tokens: 4000, prompt: single_agent/v2.md}   # baseline for the multi-agent comparison (D-17)
+  redteam_grader:    {tier: large, reasoning_effort: low, max_tokens: 600, prompt: grader/redteam_v1.md}    # judges red-team replies (D-21)
+  evaluation_grader: {tier: grader, reasoning_effort: medium, max_tokens: 2500, prompt: grader/evaluation_v3.md}   # grades the final test runs (D-31)
 
 agent:
   architecture: multi_agent     # multi_agent | single_agent (baseline)

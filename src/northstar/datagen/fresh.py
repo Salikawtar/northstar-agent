@@ -19,7 +19,7 @@ Steps:
     python -m northstar.datagen.fresh freeze    # applies the review; the set is frozen
     python -m northstar.evaluation --split fresh --setups full_agent   # ONE run, no change afterwards
 
-Escalation labels follow the team rule (docs/data_tasks.md, task 9): roadside, needs_human and
+Escalation labels follow the team rule (docs/data_dictionary.md, "Escalation rule"): roadside, needs_human and
 every attack need a person; a billing dispute needs one when it contests a charge (the generator's
 label is kept there, for the reviewers to confirm); everything else does not.
 """

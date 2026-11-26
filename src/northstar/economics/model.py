@@ -355,7 +355,7 @@ def breakeven_containment(volume: int, a: dict, m: dict, option: str, hosting: d
 
 
 def warranty_automation(a: dict) -> dict:
-    """Task 9: if the agent approved warranty claims itself, the saving per claim is the
+    """If the agent approved warranty claims itself, the saving per claim is the
     reviewer's time; each wrong approval costs a honoured repair. Break-even = saving / cost."""
     w, per_min = a["warranty_automation"], advisor_usd_per_minute(a)
     cost = mistake_costs(a)["high_severity"]
@@ -372,7 +372,7 @@ def warranty_automation(a: dict) -> dict:
 # ---------------------------------------------------------------- bigger or smaller model
 
 def bigger_model(a: dict, mes: dict, mix: dict, volume: int) -> pd.DataFrame:
-    """Task 10: is the larger model worth its extra cost, desk by desk?
+    """Is the larger model worth its extra cost, desk by desk?
     A larger model pays if it avoids one mistake every (cost of that mistake / extra cost) chats."""
     rpc = a["agent_operation"]["replies_per_conversation"]
     c = mistake_costs(a)
@@ -615,7 +615,7 @@ def build() -> dict:
     rpc = a["agent_operation"]["replies_per_conversation"]
     OUT.mkdir(exist_ok=True)
 
-    # 1. Unit economics per option (tasks 4 and 5).
+    # 1. Unit economics per option.
     unit = []
     sq_chat = status_quo(1, a)["total"]
     unit.append({"option": "status_quo", "label": "People answer every chat (today)",
@@ -637,7 +637,7 @@ def build() -> dict:
                      "all_in_usd_per_chat_without_missed_handoff_cost": round(no_miss, 3)})
     unit = pd.DataFrame(unit)
 
-    # 2. Volume scenarios with every cost line (tasks 6 and 7).
+    # 2. Volume scenarios with every cost line.
     rows = []
     for v in all_volumes:
         s = status_quo(v, a)
@@ -652,12 +652,12 @@ def build() -> dict:
                          "saving_pct": round(100 * sav / s["total"], 1)})
     scen = pd.DataFrame(rows).fillna(0)
 
-    # 3. Cost of mistakes (task 8).
+    # 3. Cost of mistakes.
     costs = mistake_costs(a)
     mistakes = pd.DataFrame([{"mistake": k, "usd_per_event": round(x, 2)} for k, x in costs["examples"].items()])
     seen = mistakes_seen()
 
-    # 4. Break-even points (task 9).
+    # 4. Break-even points.
     m = mes[RECOMMENDED]
     be = {
         "volume": {k: breakeven_volume(a, mes[k], k, ev["measured"], hosting) for k in mes},
@@ -678,7 +678,7 @@ def build() -> dict:
         "finetuned_router_alone_vs_haiku_chats_per_month": json.loads((FINETUNE / "breakeven.json").read_text())["base_case"]["vs_haiku_chats_per_month"],
     }
 
-    # 5. Larger or smaller model (task 10), sensitivity and uncertainty (task 13 appendix).
+    # 5. Larger or smaller model, sensitivity and uncertainty (the appendix of docs/economics.md).
     big = bigger_model(a, mes, mix, 100_000)
     sens = sensitivity(a, m, hosting, ev, ho, [northstar, 100_000])
     mc = monte_carlo(a, m, hosting, ev, ho, [northstar, 100_000])

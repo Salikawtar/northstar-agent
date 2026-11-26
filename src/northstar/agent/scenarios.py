@@ -1,4 +1,4 @@
-"""Hand-written test chats (task 19): run the full agent on data/handwritten/chats.yaml
+"""Hand-written test chats: run the full agent on data/handwritten/chats.yaml
 and check each chat against its expected result.
 
 Unlike the dataset runs, which measure averages, each chat here tests ONE situation and
@@ -137,7 +137,7 @@ def _main() -> None:
     argparse.ArgumentParser(description="Run the hand-written test chats through the full agent.").parse_args()
     out, s = run()
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
-    save_results(out, res_dir / "handwritten.csv")   # personal data masked (guardrails task 8)
+    save_results(out, res_dir / "handwritten.csv")   # personal data masked (rule P11)
     (res_dir / "handwritten.json").write_text(json.dumps(s, indent=1), encoding="utf-8")
     print(json.dumps(s, indent=1) + "\n")
     for _, r in out.iterrows():

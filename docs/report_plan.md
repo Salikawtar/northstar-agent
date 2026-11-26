@@ -28,9 +28,9 @@
 | Fine-tune numbers match page 4 | `test_page4_quotes_the_finetune_results`: 67.5% / 82.5% / 77.5% type accuracy; 249 ms vs 2,443 ms; break-even 197,000 chats (`src/northstar/finetune/results/`); 40% against 70% inside the whole agent. The model card says the same: `test_model_card_gives_the_end_to_end_result` |
 | Every number reproduces | `python run_all.py` on a fresh clone (new environment from `requirements.txt`, no key). Afterwards `git status` may list a few result files: they differ only in latency (a replay re-measures a few milliseconds of local time), replay counters, line endings or a chart drawn again. No rate, cost or count changes, and `data/dms/` no longer changes |
 | Model names and versions are the same everywhere | Claude Haiku 5.5 (router, booking desk), Claude Sonnet 5.5 (billing and warranty desks), GPT-6.2 Sol (grader), XLM-RoBERTa base (fine-tuned router), as in `config/settings.yaml` |
-| No em dashes, no real personal data, no keys | Search the report text; the secrets check in `docs/guardrails_tasks.md` |
+| No em dashes, no real personal data, no keys | Search the report text; the git history was scanned for keys on 2026-11-25 (`README.md`, Status, row 7) |
 | Page count | 7 pages before the appendix. The memo and pages 2 to 7 are one page each: `test_memo_stays_within_one_page` and `test_each_page_stays_within_one_page` cap their words, then check them in the final layout |
 
 ## Reminder
 
-- [ ] Decide whether to keep this file and the task trackers before sharing the repository with the evaluators.
+- [ ] Decide whether to keep this file before sharing the repository with the evaluators (the six task trackers have been removed).

@@ -1,4 +1,4 @@
-"""How much training data would the fine-tuned router need to match Haiku? (Phase 5, task 13)
+"""How much training data would the fine-tuned router need to match Haiku? (Phase 5)
 
 Reads the learning-curve runs (`train_router.py datasize`: 25%, 50%, 75% and 100% of the
 130 training chats, 3 seeds each, scored on the 30 validation chats). Fits a straight line

@@ -1,4 +1,4 @@
-"""The 130 / 30 / 40 split: rebuild it from the record, and check that it is protected (data task 21).
+"""The 130 / 30 / 40 split: rebuild it from the record, and check that it is protected (results in docs/data_quality.md).
 
 How the split was made (two steps, both logged):
 1. The generation run cut 160 train / 40 test, grouped by customer and stratified by request
