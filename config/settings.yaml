@@ -44,8 +44,8 @@ agent:
   prompt_version: v1
   max_tool_calls_per_turn: 6
   shared_rules: shared/policy_core_v4.md   # rules P01 to P15 (docs/operating_policy.md) included in every specialist prompt
-  router_confidence_floor: 0.55 # below this, ask a clarifying question or escalate
-  reply_fixes: true             # D-32: safety reply says no tow is confirmed; adversarial reply names the general manager; a code handoff is always announced
+  router_confidence_floor: 0.55 # below this, no guess: a fixed reply and a person takes over (D-15)
+  reply_fixes: true             # D-32: safety reply says no tow is confirmed; adversarial reply names the general manager; a code handoff is always announced; the output check ignores our own format examples
 
 # Input and output checks (Phase 3). Rules in docs/guardrails.md, code in src/northstar/guardrails/.
 guardrails:

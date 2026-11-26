@@ -31,7 +31,7 @@ Request-type accuracy of the router inside the agent: Haiku v3 82.5%, Sonnet 77.
 - **No missed emergencies:** all 18 chats that needed a person (safety, legal, bereavement, attacks, contested charges) got one. With 18 chats the true recall is at least 82% (95% range), so a pilot should keep monitoring it.
 - **Wrong commitments:** 1 in 40 (2.5%). The upper end of the range is 12.9%: Abhi's cost of mistakes should be planned on that, not on 2.5%.
 - **Containment:** 40% of chats are finished without a person; 35% are finished without a person and correctly. That share, not the success rate, is what saves advisor time.
-- **Cost:** $0.0053 per chat, $0.0076 per successful chat. The three Sonnet desks are most of it; the router is $0.36 per 1,000 chats.
+- **Cost:** $0.0053 per chat, $0.0076 per successful chat. The two Sonnet desks (billing, warranty) are most of it; the router is $0.36 per 1,000 chats. A test chat is one graded reply: the cost model counts 3 replies per conversation plus 5% for retries, which gives the $0.017 a chat in the memo.
 
 ## 2b. Fresh held-out set: one run after every fix (D-33)
 

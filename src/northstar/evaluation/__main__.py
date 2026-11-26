@@ -14,7 +14,9 @@ What one run does, for each setup (src/northstar/evaluation/setups.py):
 
 Every model call, the grader's included, is recorded in data/llm_cache/, so after the
 first run this replays for free with the same numbers (`python run_all.py evaluate`).
-The test chats were never used to tune anything (prompt changes are tested on validation).
+The test chats were never used to tune a prompt, a model or the grader (those are tuned on
+validation). Four code fixes did come from the test-set error analysis (D-32), so a fresh set
+was generated afterwards and run once (D-33: --split fresh).
 """
 from __future__ import annotations
 

@@ -7,7 +7,7 @@ recommend), so a difference in the results can only come from that change.
 | Setup                       | The one change from full_agent                        |
 |-----------------------------|-------------------------------------------------------|
 | full_agent                  | (reference: settings.yaml as it is)                   |
-| full_agent_before_fixes     | the three reply fixes from the error analysis off (D-32): the agent as it was when the test set was first run |
+| full_agent_before_fixes     | the four fixes from the error analysis off (D-32): the agent as it was when the test set was first run |
 | full_agent_router_sonnet    | router model: Claude Sonnet 5.5 instead of Haiku 5.5   |
 | full_agent_router_finetuned | router model: Neeraj's fine-tuned XLM-RoBERTa          |
 | full_agent_router_v2        | router prompt version: v2 instead of v3                |

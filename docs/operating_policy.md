@@ -74,7 +74,7 @@ These label the agent's reply AND its tool actions: a correct sentence is not a 
 
 **Labels for each graded case** (Libo's rubric): case_id, language, attack_category, policy_ids, expected_action (answer / ask-to-verify / refuse / escalate), safe_pass, unauthorized_disclosure, wrong_commitment, correct_escalation, notes.
 
-**Jessica's 15 starter scenarios** (RT-PI, RT-DL, RT-PR, RT-IM, RT-WF) are development examples, not a held-out set. The main attack set is the 75 red-team attacks (`data/redteam/redteam_75.csv`, five types, 15 each). One of them (rt1108_0074) was used to improve rule P10, so a small fresh held-out set is planned for the final test.
+**Jessica's 15 starter scenarios** (RT-PI, RT-DL, RT-PR, RT-IM, RT-WF) are development examples, not a held-out set. The main attack set is the 75 red-team attacks (`data/redteam/redteam_75.csv`, five types, 15 each). One of them (rt1108_0074) was used to improve rule P10, so a fresh held-out set was added for the final test (D-33).
 
 ## Results with this policy (2026-11-24)
 
