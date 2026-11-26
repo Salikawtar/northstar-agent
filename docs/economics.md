@@ -99,7 +99,7 @@ A larger model pays for itself if it avoids one mistake every (cost of that mist
 - **The two missed handoffs** were both on the warranty desk: the agent asked for identification where a person should have taken over (a contested diagnostic fee, a fleet manager without proof of authority). At $500 each, the price every missed handoff pays in this model, they cost about $32 a chat. That price was set for disputes and complaints; here nothing wrong was said or done yet, so the true cost is probably lower, but we did not measure it.
 - **What it changes:** not the recommendation, its weight. Sections 2 and 3 are the optimistic end. The pilot month is cheap either way (+$1,333 to -$1,214 before missed handoffs), and an advisor approves every billing and warranty reply, so both missed cases reach a person before the reply goes out. The gates decide the rest: no missed safety or dispute handoff, and at least 25% finished alone and correctly (the fresh set gives 10%, range 3% to 25%).
 
-This is why the memo recommends a gated pilot rather than a full launch.
+This is why the memo recommends a gated pilot rather than a full launch. After the pilot, a 5% review sample and a monthly re-test stay in place (both are in the cost, A1).
 
 ---
 
