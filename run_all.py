@@ -128,7 +128,8 @@ def stage_finetune():
         _run([["-m", "northstar.finetune.compare"]], keep_key=False)
     _run([["-m", "northstar.finetune.breakeven"]], keep_key=False)
     if (ROOT / "src" / "northstar" / "finetune" / "results" / "datasize_runs.csv").exists():
-        _run([["-m", "northstar.finetune.datasize"]], keep_key=False)
+        _run([["-m", "northstar.finetune.datasize"],
+              ["-m", "northstar.finetune.report_figure"]], keep_key=False)     # the figure of report page 4
 
 
 def stage_economics():

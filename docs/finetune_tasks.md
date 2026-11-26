@@ -22,7 +22,7 @@ Status values: **Done**, **Decided**, **Partly built**, **To do**.
 | 12 | When fine-tuning pays off | Monthly volume where the training cost is paid back by cheaper calls (with Abhi) | Report pages 4 and 7 | Done: one CPU server ($71 a month) makes it cheaper than Haiku above about 197,000 chats a month and Sonnet above 12,800 (`breakeven.py`; server price in `config/settings.yaml`, shared with Abhi's model) |
 | 13 | Honest negative result | With about 16 training chats per type the fine-tune may lose; if so, say why and estimate the data size where it would win | Report page 4 (brief: "report a negative result clearly") | Done: accuracy rises about 28 points per doubling with no plateau; about 190 chats would close the test gap if the trend held, a few hundred to be safe (`datasize.py`, `MODEL_CARD.md`) |
 | 14 | Scripts and logs in the repo | Training script, settings, model reference, training logs; no keys | GitHub submission; reproducibility | Done: `src/northstar/finetune/` (scripts, Kaggle notebook, logs, results); `python run_all.py finetune` |
-| 15 | Report page 4 and appendix | Task, base model, splits, training setup, three-model table; hyperparameters and full tables in the appendix | Final report | Done: page 4 draft written (to merge into the team report) |
+| 15 | Report page 4 and appendix | Task, base model, splits, training setup, three-model table; hyperparameters and full tables in the appendix | Final report | Done: page 4 draft written (to merge into the team report); a one-page version built from the repository is in `docs/report/page4_finetune.md`, with its figure and a test |
 
 ## Reminder before submission
 
