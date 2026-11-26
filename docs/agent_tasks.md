@@ -22,7 +22,7 @@ Status values: **Done**, **Designed** (agreed on paper, not yet built), **Partly
 | 12 | Prompt version log | What changed in each prompt version, why, and the measured effect | Prompting criterion ("iteration"); report appendix | Ongoing: router v1 to v3, specialists v1 and v2, shared rules v2 logged with results (`docs/prompt_log.md`) |
 | 13 | First run on validation chats | Run the agent on the 30 validation chats; first accuracy, latency and cost | Model and effort choices (task 3); prompt fixes (task 12) | Done: router, the three specialists and the full pipeline (results in `docs/prompt_log.md`) |
 | 14 | Hand-off to evaluation | A stable, runnable agent setup in `config/settings.yaml` | Libo's evaluation on the 40 test chats | Done: setup frozen after the third record run (34 of 34 hand-written chats, 75 of 75 red-team attacks, 100% handoff recall on validation). `python run_all.py results` reproduces every number for free |
-| 15 | Report page 3 and appendix | Architecture, model choices, prompt strategy, edge cases, handoff and failure paths; full prompts in the appendix | Final report | To do |
+| 15 | Report page 3 and appendix | Architecture, model choices, prompt strategy, edge cases, handoff and failure paths; full prompts in the appendix | Final report | One-page draft: `docs/report/page3_design_agents.md` |
 | 16 | Pipeline | Connects router and specialists; fast path straight to a person for safety, legal, bereavement, manager requests (D-15) | The agent Libo evaluates; latency and cost per chat (Abhi) | Built and run on validation: handoff recall 100%, right desk 95%, $0.0085 per chat (`src/northstar/agent/pipeline.py`) |
 
 ## Reminder before submission

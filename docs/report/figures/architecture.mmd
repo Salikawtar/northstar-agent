@@ -1,0 +1,26 @@
+%% Report figure for page 3. Same parts and arrows as the diagram in docs/architecture.md,
+%% drawn left to right with short labels so it stays readable at page width.
+%% Export: mmdc -i docs/report/figures/architecture.mmd -o docs/report/figures/architecture.png -s 3 -b white
+%%{init: {"flowchart": {"nodeSpacing": 14, "rankSpacing": 30, "padding": 6, "wrappingWidth": 150}, "themeVariables": {"fontSize": "15px"}}}%%
+flowchart LR
+    A([Customer<br/>message]) --> B[Input check<br/>injections,<br/>card numbers]
+    B --> C{{Router<br/>Haiku 5.5}}
+    C --> D1[Booking and status<br/>Haiku 5.5]
+    C --> D2[Warranty and recalls<br/>Sonnet 5.5]
+    C --> D3[Billing and lease<br/>Sonnet 5.5]
+    C -. fast path .-> F[Fixed reply<br/>no model]
+    D1 --> T[(Dealer tools<br/>verified customer,<br/>own tools only)]
+    D2 --> T
+    D3 --> T
+    T --> E[Output check<br/>promises,<br/>others' data]
+    E --> R([Reply])
+    E -- blocked<br/>or limit --> H([Person takes over<br/>masked summary])
+    F --> H
+    F --> R
+
+    classDef safety fill:#FAECE7,stroke:#993C1D,color:#712B13;
+    classDef model fill:#E1F5EE,stroke:#0F6E56,color:#085041;
+    classDef plain fill:#F4F4F5,stroke:#52525B,color:#27272A;
+    class B,E safety;
+    class C,D1,D2,D3 model;
+    class A,T,F,R,H plain;

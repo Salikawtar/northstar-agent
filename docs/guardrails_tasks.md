@@ -26,7 +26,7 @@ Status values: **Done**, **Built** (works, to review with Jessica), **Partly bui
 | 16 | Clean-repository test | Fresh clone, install, run every command in replay mode with no key | "All components can be reproduced" | Done (2026-11-24): fresh clone from GitHub, new Python 3.13 environment, `pip install -r requirements.txt` and `pip install -e .`, no `.env`: `run_all.py datagen dms results test` all pass (red team 75 of 75, hand-written 40 of 40, 190 tests), no tracked file changed. Repeated on 2026-11-25 for the full `python run_all.py` (all seven stages) in a new Python 3.10 environment on Linux, after matplotlib was added to `requirements.txt`: 224 tests pass, 1 skipped (the fine-tune tests need torch), 1 expected failure. Afterwards only latency columns, replay counters, the line endings of two JSON files and one chart file differ |
 | 17 | Test suite width | Tests for data, router, specialists, pipeline, guardrails, evaluation, fine-tune | Code quality criterion | Partly built: 189 tests; evaluation and fine-tune tests come with those modules |
 | 18 | Everyone can explain their work | Each member walks through their own code | Brief requirement | To do (team) |
-| 19 | Report page 6 and appendix | Policy, layered safeguards, data handling, attack method and pass rates, residual risks; full policy and attack results in the appendix | Final report | To do |
+| 19 | Report page 6 and appendix | Policy, layered safeguards, data handling, attack method and pass rates, residual risks; full policy and attack results in the appendix | Final report | One-page draft for Jessica to edit: `docs/report/page6_security.md` |
 
 ## Reminder before submission
 

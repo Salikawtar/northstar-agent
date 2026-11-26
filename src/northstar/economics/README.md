@@ -31,6 +31,7 @@ No key, no network, about 5 seconds. It reads committed results only.
 | `results/mistake_costs.csv`, `results/mistakes_seen.csv` | Cost of one mistake; every wrong commitment the grader found, with its severity |
 | `results/bigger_model.csv` | When a larger model is worth its cost, part by part |
 | `results/sensitivity.csv` | Saving when one assumption moves to its low or high value |
-| `results/cost_per_chat_vs_volume.png` | Page 7 figure |
+| `results/cost_per_chat_vs_volume.png` | Cost per chat against volume (shown in `docs/economics.md`) |
+| `results/cost_per_chat_vs_volume_page7.png` | The same curves, wide and short, for report page 7 |
 
 Write-ups: `docs/economics.md` (page 7 and appendix) and `docs/decision_memo.md` (page 1).

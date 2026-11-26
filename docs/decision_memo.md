@@ -19,7 +19,7 @@
 **Cost and benefit.** All in, mistakes included, a chat costs **$2.08 instead of $2.70** at 100,000 chats a month and $2.15 at our 20,000, which saves **about $11,000 a month (21%), $133,000 a year**. Break-even is **2,200 chats a month**. The pilot (5,000 chats) should save about $1,300. At the fresh-chat rates it loses about $1,200 and the 21% falls to about 2%, before pricing the two missed handoffs.
 
 **Key risks.**
-- **Rare expensive promises (main risk).** The saving disappears above about **1 expensive wrong promise in 1,400 chats**; none in 185 checks only shows the rate is below about 1.6%. Control: advisor approval in the pilot; no tool can approve or refund.
+- **Rare expensive promises.** The saving disappears above about **1 expensive wrong promise in 1,400 chats**; none in 185 checks only shows the rate is below about 1.6%. Control: advisor approval in the pilot; no tool can approve or refund.
 - **A missed handoff.** None in the 132 earlier cases, 2 of 24 on the fresh chats (the warranty desk asked for identification first). At our assumed $500 a miss, that outweighs the saving. Control: a fixed reply for safety chats; in the pilot every handoff is reviewed and every warranty reply approved.
 - **Lower containment on real chats.** The case needs at least 14% finished alone. We measured 35% on the test chats but 10% on the fresh ones, where reviewers sent three chats in four to a person.
 
