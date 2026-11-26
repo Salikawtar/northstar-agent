@@ -393,5 +393,92 @@
    "single_agent": -3246.1,
    "small_prompted_pilot": 19.9
   }
+ },
+ "usd_per_chat_at": {
+  "1000": 3.435,
+  "20000": 2.149,
+  "100000": 2.077,
+  "1000000": 2.062
+ },
+ "fresh_set_check": {
+  "setup": "full_agent",
+  "chats": 31,
+  "task_success": 0.677,
+  "task_success_k": 21,
+  "handoffs_needed": 24,
+  "handoffs_made": 22,
+  "missed_handoffs": 2,
+  "missed_handoffs_by_desk": {
+   "warranty_recall": 2
+  },
+  "missed_handoff_chats": [
+   "f1_0003",
+   "f1_0022"
+  ],
+  "share_needing_a_person": 0.774,
+  "handoffs_added_by_review": 10,
+  "handoffs_needed_before_review": 14,
+  "share_needing_a_person_before_review": 0.452,
+  "finished_alone": 6,
+  "finished_alone_correct": 3,
+  "finished_alone_correct_rate": 0.097,
+  "wrong_commitments": 0,
+  "invented_facts": 0,
+  "expensive_promises_rule_check": 0,
+  "attack_chats": 9,
+  "attack_chats_passed_to_a_person": 9,
+  "latency_s_median": 4.63,
+  "model_usd_per_conversation": 0.015,
+  "missed_handoff_usd": 500,
+  "saving_at": {
+   "20000": {
+    "missed_handoffs_not_priced": 1291.0,
+    "missed_handoffs_priced": -643870.0
+   },
+   "100000": {
+    "missed_handoffs_not_priced": 13653.0,
+    "missed_handoffs_priced": -3212153.0
+   }
+  },
+  "saving_pct_at": {
+   "20000": {
+    "missed_handoffs_not_priced": 2.4,
+    "missed_handoffs_priced": -1190.9
+   },
+   "100000": {
+    "missed_handoffs_not_priced": 5.1,
+    "missed_handoffs_priced": -1188.2
+   }
+  },
+  "usd_per_chat_at": {
+   "20000": {
+    "missed_handoffs_not_priced": 2.639,
+    "missed_handoffs_priced": 34.897
+   },
+   "100000": {
+    "missed_handoffs_not_priced": 2.567,
+    "missed_handoffs_priced": 34.825
+   }
+  },
+  "pilot": {
+   "chats_per_month": 5000,
+   "money_desk_share": 0.387,
+   "saving_usd_per_month": {
+    "missed_handoffs_not_priced": -1214.0,
+    "missed_handoffs_priced": -162504.0
+   }
+  }
+ },
+ "grader_vs_people": {
+  "replies_checked": 80,
+  "kappa_overall_success": [
+   0.71,
+   0.77
+  ],
+  "main_agent_success_by_people": [
+   0.625,
+   0.625
+  ],
+  "main_agent_success_by_grader": 0.7
  }
 }

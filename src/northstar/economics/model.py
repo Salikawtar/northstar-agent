@@ -17,6 +17,9 @@ Where the numbers come from (nothing measured is typed by hand here):
                                                     (outputs/ is rebuilt by `run_all.py results`; a committed
                                                     snapshot, results/side_inputs.json, is used without it)
     src/northstar/finetune/results/breakeven.json   server cost of the fine-tuned router (Neeraj)
+    src/northstar/evaluation/results/summary_fresh.json, per_chat_fresh.csv
+                                                    the fresh held-out set, shown beside the base case (fresh_check)
+    src/northstar/evaluation/results/grader_check*.csv   the grader against two people (people_check)
     config/settings.yaml                            server price
     config/economics.yaml                           everything the tests cannot measure, with sources
 
@@ -299,7 +302,8 @@ def agent_month(volume: int, a: dict, m: dict, option: str, high_rate: float, ho
         "mistakes_expensive_promise": volume * high_rate * cost["high_severity"],
     }
     if pilot:
-        money_share = sum(desk_mix().get(d, 0) for d in a["pilot"]["money_desks"])
+        # Share of chats a money desk answers: the test chats by default, or the set these rates come from.
+        money_share = m.get("money_desk_share", sum(desk_mix().get(d, 0) for d in a["pilot"]["money_desks"]))
         var["people_approval"] = volume * money_share * a["pilot"]["approval_minutes"] * per_min
     fixed = fixed_costs(volume, a, option, hosting)
     total = sum(var.values()) + sum(fixed.values())
@@ -504,6 +508,98 @@ def monte_carlo(a: dict, m: dict, hosting: dict, ev: dict, ho: dict, volumes: li
     return out
 
 
+# ---------------------------------------------------------------- checks beside the base case
+
+def fresh_check(a: dict, m: dict, hosting: dict, volumes: list[int]) -> dict | None:
+    """The fresh held-out set (D-33) next to the base case.
+
+    The base case stays on the 40 test chats: every break-even, range and draw above was built on
+    them. But the test chats were read during the error analysis, and the fresh set (31 chats made
+    after every fix, run once) is the only set nobody could tune to. This block re-prices the
+    recommended agent with the rates measured on it and changes nothing else, so the memo can show
+    both side by side instead of the kinder one.
+
+    Missed handoffs are priced two ways, because their cost is our least certain assumption: not
+    priced, and at the price per miss that every other option in the model pays. The pilot month
+    is priced the same two ways, with the share of fresh chats that a money desk answered."""
+    f_sum, f_chat = EVAL / "summary_fresh.json", EVAL / "per_chat_fresh.csv"
+    if not (f_sum.exists() and f_chat.exists()):
+        return None                                  # the model still runs where the fresh set was never run
+    s = json.loads(f_sum.read_text(encoding="utf-8"))["setups"].get(m["setup"])
+    if s is None:
+        return None
+    d = pd.read_csv(f_chat)
+    d = d[d.setup == m["setup"]]
+    n, rec = s["n"], s["escalation_recall"]
+    alone, correct = s["handled_without_person"]["k"], s["handled_without_person_and_correct"]["k"]
+    attacks = d[d.adversarial_type.fillna("").astype(str) != ""]
+    missed = d[d.missed_handoff.astype(bool)]
+    # Counts over n, not the summary's rounded rates: with 31 chats the third decimal moves the result.
+    rates = {**m, "cost_per_reply": s["cost_usd_per_chat"], "handled_alone": alone / n,
+             "handled_alone_correct": correct / n, "wrong_commitment": s["wrong_commitments"]["k"] / n,
+             "invented": s["invented_facts"]["k"] / n, "missed_handoff_rate": s["missed_handoffs"] / n,
+             "money_desk_share": float(d.path.isin(a["pilot"]["money_desks"]).mean())}
+    # How many of these chats need a person only because the two reviewers said so: the share that needs
+    # a person drives containment, and the review moved it more than anything the agent did.
+    frozen = ROOT / "data" / "fresh" / "FROZEN.json"
+    changes = json.loads(frozen.read_text(encoding="utf-8")).get("label_changes", []) if frozen.exists() else []
+    kept = set(d.id.astype(str))
+    added = sum(1 for c in changes if c.split(":")[0] in kept and "needs_escalation False -> True" in c)
+    removed = sum(1 for c in changes if c.split(":")[0] in kept and "needs_escalation True -> False" in c)
+    op = a["agent_operation"]
+    out = {
+        "setup": m["setup"], "chats": n,
+        "task_success": s["task_success"]["rate"], "task_success_k": s["task_success"]["k"],
+        "handoffs_needed": rec["n"], "handoffs_made": rec["k"], "missed_handoffs": s["missed_handoffs"],
+        "missed_handoffs_by_desk": {str(k): int(v) for k, v in missed.path.value_counts().items()},
+        "missed_handoff_chats": sorted(missed.id.astype(str)),
+        "share_needing_a_person": round(rec["n"] / n, 3),
+        "handoffs_added_by_review": added - removed,
+        "handoffs_needed_before_review": rec["n"] - added + removed,
+        "share_needing_a_person_before_review": round((rec["n"] - added + removed) / n, 3),
+        "finished_alone": alone, "finished_alone_correct": correct,
+        "finished_alone_correct_rate": round(correct / n, 3),
+        "wrong_commitments": s["wrong_commitments"]["k"], "invented_facts": s["invented_facts"]["k"],
+        "expensive_promises_rule_check": int(d.unbacked_promises.notna().sum()),
+        "attack_chats": len(attacks), "attack_chats_passed_to_a_person": int(attacks.escalated.astype(bool).sum()),
+        "latency_s_median": s["latency_s_median"],
+        "model_usd_per_conversation": round(s["cost_usd_per_chat"] * op["replies_per_conversation"] * (1 + op["retry_overhead"]), 4),
+        "missed_handoff_usd": mistake_costs(a)["missed_handoff"],
+        "saving_at": {}, "saving_pct_at": {}, "usd_per_chat_at": {},
+        # The decision asked is the pilot, so the pilot month is priced with these rates too.
+        "pilot": {"chats_per_month": a["pilot"]["chats_per_month"],
+                  "money_desk_share": round(rates["money_desk_share"], 3), "saving_usd_per_month": {}},
+    }
+    cases = (("missed_handoffs_not_priced", {**rates, "missed_handoff_rate": 0.0}), ("missed_handoffs_priced", rates))
+    for v in volumes:
+        today = status_quo(v, a)["total"]
+        for tag, mm in cases:
+            cost = agent_month(v, a, mm, RECOMMENDED, 0.0, hosting)["total"]
+            out["saving_at"].setdefault(str(v), {})[tag] = round(today - cost, 0)
+            out["saving_pct_at"].setdefault(str(v), {})[tag] = round(100 * (today - cost) / today, 1)
+            out["usd_per_chat_at"].setdefault(str(v), {})[tag] = round(cost / v, 3)
+    for tag, mm in cases:
+        out["pilot"]["saving_usd_per_month"][tag] = round(
+            saving(a["pilot"]["chats_per_month"], a, mm, "small_prompted_pilot", 0.0, hosting), 0)
+    return out
+
+
+def people_check() -> dict | None:
+    """The model grader against the two team members who labelled 80 replies blind
+    (evaluation/human_check.py). Read here, so the memo quotes the result files and not a typed number."""
+    f_setup, f_all = EVAL / "grader_check_by_setup.csv", EVAL / "grader_check.csv"
+    if not (f_setup.exists() and f_all.exists()):
+        return None                                  # the hand labels are optional for the cost model
+    by = pd.read_csv(f_setup).set_index("setup")
+    g = pd.read_csv(f_all)
+    overall = g[g.question.str.startswith("overall") & g.compared.str.startswith("model grader")]
+    main = by.loc[OPTIONS[RECOMMENDED][0]]
+    return {"replies_checked": int(overall.n.iloc[0]),
+            "kappa_overall_success": [round(float(k), 2) for k in overall.kappa],
+            "main_agent_success_by_people": [float(main.person), float(main.second_person)],
+            "main_agent_success_by_grader": float(main.final_grade)}
+
+
 # ---------------------------------------------------------------- build everything
 
 def build() -> dict:
@@ -596,6 +692,10 @@ def build() -> dict:
                        "pilot_all_test_rates_pessimistic": round(saving(v, a, stress_m, "small_prompted_pilot", 0.0, hosting), 0)}
               for v in all_volumes}
 
+    # Checks beside the base case: the fresh held-out set and the grader-vs-people check.
+    fresh = fresh_check(a, m, hosting, [northstar, 100_000])
+    people = people_check()
+
     per_min = advisor_usd_per_minute(a)
     summary = {
         "currency": "USD unless a field ends in _cad",
@@ -622,6 +722,11 @@ def build() -> dict:
                                for k in mes} for v in all_volumes},
         "saving_pct_at": {str(v): {k: float(scen[(scen.chats_per_month == v) & (scen.option == k)].saving_pct.iloc[0])
                                    for k in mes} for v in all_volumes},
+        # All-in cost per chat of the recommended agent at each volume (the memo quotes Northstar's own volume).
+        "usd_per_chat_at": {str(v): float(scen[(scen.chats_per_month == v) & (scen.option == RECOMMENDED)].usd_per_chat.iloc[0])
+                            for v in all_volumes},
+        "fresh_set_check": fresh,
+        "grader_vs_people": people,
     }
 
     unit.to_csv(OUT / "unit_economics.csv", index=False)
@@ -687,6 +792,39 @@ def write_tables(summary, unit, scen, mistakes, big, sens, a) -> None:
     for _, r in sens.iterrows():
         L.append(f"| {r.assumption} | {r.pessimistic:.4g} / {r.optimistic:.4g} | {_money(r[f'saving_pessimistic_{vols[0]}'])} | "
                  f"{_money(r[f'saving_optimistic_{vols[0]}'])} | {_money(r['saving_pessimistic_100000'])} | {_money(r['saving_optimistic_100000'])} |")
+    f, base = summary.get("fresh_set_check"), summary["measured"][RECOMMENDED]
+    if f:
+        test_ho = summary["handoff_evidence"]["by_source"]["test chats"]
+
+        def cell(x, pct):
+            return f"{_money(x)} ({pct:+.1f}%)"
+
+        L += ["", "## Fresh held-out set beside the base case (recommended agent, USD per month)", "",
+              f"| Rates used | Finished alone and correct | Needed a person and got one | Saving at {vols[0]:,} chats | Saving at 100,000 chats |",
+              "|---|---|---|---|---|",
+              f"| {base['n']} test chats (base case of the model) | {100 * base['handled_alone_correct']:.1f}% ({base['handled_alone_correct_k']} of {base['n']}) | "
+              f"{test_ho['needed_a_person'] - test_ho['missed']} of {test_ho['needed_a_person']} | "
+              + " | ".join(cell(summary["saving_at"][str(v)][RECOMMENDED], summary["saving_pct_at"][str(v)][RECOMMENDED]) for v in vols) + " |"]
+        for tag, label in (("missed_handoffs_not_priced", "missed handoffs not priced"),
+                           ("missed_handoffs_priced", f"missed handoffs at {_money(f['missed_handoff_usd'])} each")):
+            L.append(f"| {f['chats']} fresh chats, {label} | {100 * f['finished_alone_correct_rate']:.1f}% ({f['finished_alone_correct']} of {f['chats']}) | "
+                     f"{f['handoffs_made']} of {f['handoffs_needed']} | "
+                     + " | ".join(cell(f["saving_at"][str(v)][tag], f["saving_pct_at"][str(v)][tag]) for v in vols) + " |")
+        fp, bp = f["pilot"], summary["pilot"]
+        pilot_line = (f"Pilot month ({fp['chats_per_month']:,} chats, a person approves billing and warranty replies): "
+                      f"{_money(bp['saving_usd_per_month'])} at the test-chat rates; "
+                      f"{_money(fp['saving_usd_per_month']['missed_handoffs_not_priced'])} at the fresh-chat rates with missed handoffs not priced "
+                      f"({100 * fp['money_desk_share']:.1f}% of fresh chats go to a money desk, {100 * bp['money_desk_share']:.1f}% of test chats); "
+                      f"{_money(fp['saving_usd_per_month']['missed_handoffs_priced'])} with them priced.")
+        L += ["", pilot_line]
+    g = summary.get("grader_vs_people")
+    if g:
+        people = " and ".join(f"{100 * x:.1f}%" for x in g["main_agent_success_by_people"])
+        row = (f"| {g['replies_checked']} | {' and '.join(f'{k:.2f}' for k in g['kappa_overall_success'])} | {people} | "
+               f"{100 * g['main_agent_success_by_grader']:.1f}% |")
+        L += ["", "## Model grader against people (recommended agent, test replies)", "",
+              "| Replies checked by two people | Agreement on overall success (Cohen's kappa) | Success by the two people | Success by the grader |",
+              "|---|---|---|---|", row]
     (OUT / "tables.md").write_text("\n".join(L) + "\n", encoding="utf-8")
 
 

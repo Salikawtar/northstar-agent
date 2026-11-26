@@ -100,3 +100,19 @@
 | People's own wrong-promise rate | 0 / 0.025 | $10,140 | $12,506 | $57,898 | $69,726 |
 | Engineering hours (x base) | 2 / 0.5 | $9,534 | $11,862 | $61,077 | $63,405 |
 | Replies per conversation | 2 / 5 | $11,198 | $10,862 | $63,190 | $61,508 |
+
+## Fresh held-out set beside the base case (recommended agent, USD per month)
+
+| Rates used | Finished alone and correct | Needed a person and got one | Saving at 20,000 chats | Saving at 100,000 chats |
+|---|---|---|---|---|
+| 40 test chats (base case of the model) | 35.0% (14 of 40) | 18 of 18 | $11,086 (+20.5%) | $62,629 (+23.2%) |
+| 31 fresh chats, missed handoffs not priced | 9.7% (3 of 31) | 22 of 24 | $1,291 (+2.4%) | $13,653 (+5.1%) |
+| 31 fresh chats, missed handoffs at $500 each | 9.7% (3 of 31) | 22 of 24 | $-643,870 (-1190.9%) | $-3,212,153 (-1188.2%) |
+
+Pilot month (5,000 chats, a person approves billing and warranty replies): $1,333 at the test-chat rates; $-1,214 at the fresh-chat rates with missed handoffs not priced (38.7% of fresh chats go to a money desk, 32.5% of test chats); $-162,504 with them priced.
+
+## Model grader against people (recommended agent, test replies)
+
+| Replies checked by two people | Agreement on overall success (Cohen's kappa) | Success by the two people | Success by the grader |
+|---|---|---|---|
+| 80 | 0.71 and 0.77 | 62.5% and 62.5% | 70.0% |
