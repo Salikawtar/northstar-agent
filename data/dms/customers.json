@@ -1953,7 +1953,7 @@
   "email": "cassidy.barton@example.com",
   "phone": "(343) 555-0183",
   "language": "en",
-  "city": "Gatineau",
+  "city": "Kingston",
   "is_fleet": false,
   "in_conversations": true
  },
@@ -1975,7 +1975,7 @@
   "email": "gabrielle.dubois@example.com",
   "phone": "(226) 555-0135",
   "language": "fr",
-  "city": "Burlington",
+  "city": "Brampton",
   "is_fleet": false,
   "in_conversations": true
  },
@@ -1986,7 +1986,7 @@
   "email": "penelope.morissette@example.com",
   "phone": "(705) 555-0174",
   "language": "fr",
-  "city": "Hamilton",
+  "city": "Brampton",
   "is_fleet": false,
   "in_conversations": true
  },
@@ -1997,7 +1997,7 @@
   "email": "lucie.gilbert@example.com",
   "phone": "343-555-0148",
   "language": "fr",
-  "city": "Gatineau",
+  "city": "Brampton",
   "is_fleet": false,
   "in_conversations": true
  },

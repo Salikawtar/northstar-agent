@@ -91,7 +91,7 @@ EVALUATION_COMMANDS = [
     ["-m", "northstar.evaluation"],
     ["-m", "northstar.evaluation", "--split", "fresh", "--setups", "full_agent", "single_agent"],   # D-33, run once
     ["-m", "northstar.evaluation", "consistency"],
-    ["-m", "northstar.evaluation", "check"],          # grader vs the team's hand labels (waits for the sheet)
+    ["-m", "northstar.evaluation", "check"],          # grader vs the two reviewers' hand labels (evaluation/human_review/)
 ]
 
 
