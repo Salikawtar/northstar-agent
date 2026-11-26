@@ -145,3 +145,12 @@ def test_memo_and_page7_report_the_fresh_set_and_the_people_check(summary):
     pilot, fresh_pilot = summary["pilot"]["saving_usd_per_month"], f["pilot"]["saving_usd_per_month"]["missed_handoffs_not_priced"]
     assert f"${_fmt(pilot)}" in page and f"-${_fmt(-fresh_pilot)}" in page
     assert f"${_fmt(round(pilot, -2))}" in memo and f"${_fmt(round(-fresh_pilot, -2))}" in memo
+
+
+def test_memo_stays_within_one_page():
+    # The brief asks for a one-page memo. About 540 words fit beside the results table at 11 pt,
+    # normal margins and Word's default spacing. The memo had grown to 650 and then 770 words.
+    memo = (ROOT / "docs/decision_memo.md").read_text(encoding="utf-8")
+    lines = [line for line in memo.split("\n")[1:] if not (line and set(line) <= set("|- "))]
+    words = [w for w in " ".join(lines).replace("|", " ").split() if w != "·"]
+    assert len(words) <= 540, f"{len(words)} words: cut something before adding (page 1 is one page)"

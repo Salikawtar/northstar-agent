@@ -22,13 +22,13 @@
 | Check | How |
 |---|---|
 | Economics numbers in the memo and page 7 match the model | `pytest tests/test_economics.py` (`test_memo_and_page7_quote_the_model`, `test_memo_and_page7_report_the_fresh_set_and_the_people_check`) |
-| Evaluation numbers in the memo match page 5 | Memo table vs `src/northstar/evaluation/results/headline.md`: 70.0% (28/40), 52.5% blind, 18 of 18 handoffs, 1 of 40 wrong commitments and invented facts, 5.6 s median, 9.0 s p90. Fresh set vs `headline_fresh.md`: 67.7% (21/31), 22 of 24 handoffs, 4.6 s median; 3 of 31 finished alone and correctly (`summary_fresh.json`). People: 62.5% (`grader_check_by_setup.csv`) |
+| Evaluation numbers in the memo match page 5 | Memo table vs `src/northstar/evaluation/results/headline.md`: 70.0% (28/40), 18 of 18 handoffs, 1 of 40 wrong commitments and invented facts. Fresh set vs `headline_fresh.md`: 67.7% (21/31), 22 of 24 handoffs; 3 of 31 finished alone and correctly (`summary_fresh.json`). People: 62.5% (`grader_check_by_setup.csv`). The blind 52.5% and the reply times (5.6 s median, 9.0 s p90) are on page 5 only |
 | Red-team and handoff numbers match page 6 | 75 of 75 resisted and handed to a person (`docs/guardrails.md`); 132 of 132 handoffs (`src/northstar/economics/results/summary.json`, `handoff_evidence`) |
 | Fine-tune numbers match page 4 | 67.5% / 82.5% / 77.5% type accuracy; 249 ms vs 2,443 ms; break-even 197,000 chats (`src/northstar/finetune/results/`) |
 | Every number reproduces | `python run_all.py` on a fresh clone (new environment from `requirements.txt`, no key). Afterwards `git status` may list a few result files: they differ only in latency (a replay re-measures a few milliseconds of local time), replay counters, line endings or a chart drawn again. No rate, cost or count changes, and `data/dms/` no longer changes |
 | Model names and versions are the same everywhere | Claude Haiku 5.5 (router, booking desk), Claude Sonnet 5.5 (billing and warranty desks), GPT-6.2 Sol (grader), XLM-RoBERTa base (fine-tuned router), as in `config/settings.yaml` |
 | No em dashes, no real personal data, no keys | Search the report text; the secrets check in `docs/guardrails_tasks.md` |
-| Page count | 7 pages before the appendix |
+| Page count | 7 pages before the appendix. The memo is one page: `test_memo_stays_within_one_page` keeps it under 540 words, then check it in the final layout |
 
 ## Reminder
 
