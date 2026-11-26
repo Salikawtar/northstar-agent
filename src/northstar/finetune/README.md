@@ -8,11 +8,12 @@
 |---|---|---|---|
 | Request type accuracy | 67.5% | 82.5% | 77.5% |
 | Escalation recall | 88.9% | 100% | 94.4% |
-| In the agent: wrong type reaching a specialist | 2 | 2 | 4 |
+| Routing step: wrong type reaching a specialist | 2 | 2 | 4 |
+| Whole agent: task success (final evaluation) | 40.0% | 70.0% | 65.0% |
 | Median time per chat | 249 ms | 2,443 ms | 1,047 ms |
 | Cost per 1,000 chats | $0 | $0.36 | $5.56 |
 
-The prompted routers are more accurate, but the gaps are not statistically clear on 40 chats. Inside the agent, the confidence floor sends most of the fine-tuned model's mistakes to a person. Details, limits and the 5-seed spread are in `MODEL_CARD.md`.
+The prompted routers are more accurate on request type, but those gaps are not statistically clear on 40 chats. The confidence floor sends most of the fine-tuned model's mistakes to a person. Inside the whole agent the gap is clear (40% against 70% task success, p = 0.0005): the model gives no escalation reason, so 8 of its 17 needed handoffs went to the wrong queue. The recommended agent keeps the Haiku router. Details, limits and the 5-seed spread are in `MODEL_CARD.md`.
 
 ## How it works
 

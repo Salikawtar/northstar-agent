@@ -1,6 +1,6 @@
 # Model card: fine-tuned router (XLM-RoBERTa base)
 
-**Main idea:** a small multilingual model trained on 130 chats does the router's job in about a quarter of a second, on a plain CPU, at no cost per chat. It is less accurate than the prompted routers (67.5% vs 82.5% and 77.5% on request type). But it knows when it is unsure, so inside the agent most of its mistakes go to a person instead of to the wrong specialist.
+**Main idea:** a small multilingual model trained on 130 chats does the router's job in about a quarter of a second, on a plain CPU, at no cost per chat. It is less accurate than the prompted routers (67.5% vs 82.5% and 77.5% on request type). It knows when it is unsure, so most of its mistakes go to a person instead of to the wrong specialist. That is not enough inside the agent: in the final end-to-end evaluation the agent with this router handles 40% of the test chats correctly, against 70% with Haiku, mainly because the model gives no escalation reason and its handoffs land in the wrong queue.
 
 All numbers come from the files in `results/`. Rebuild the tables with `python -m northstar.finetune.compare`.
 
@@ -10,7 +10,7 @@ All numbers come from the files in `results/`. Rebuild the tables with `python -
 |---|---|
 | The three-turn conversation (customer, agent, customer): the same text the prompted router reads | Request type (10 labels), escalation yes/no, language, confidence |
 
-- **Escalation reason** is not learned, because the dataset has no reason labels. A fixed rule picks the reason that sends the chat to the right queue (`predict.py`).
+- **Escalation reason** is not learned, because the dataset has no reason labels. A fixed rule picks a reason from the request type (`predict.py`). The rule cannot say that a chat is an attack, so it does not always pick the right queue (see "Inside the agent").
 - **Secondary request types** are not given.
 
 ## Data
@@ -61,16 +61,40 @@ All numbers come from the files in `results/`. Rebuild the tables with `python -
 
 ## Inside the agent
 
-The pipeline sends a chat to a person when the router's confidence is below 0.55 (`agent.router_confidence_floor`). The fine-tuned model's confidence is meaningful: the median is 0.95 when it is right and 0.50 when it is wrong. So the floor catches most of its mistakes.
+Two views, and they do not say the same thing. The first is computed from the router's own output. The second is the whole agent, graded with the team rubric. The second is the business comparison.
 
-| On the 40 test chats | Fine-tuned | Haiku | Sonnet |
+### The routing step alone (router test, `results/comparison_table.csv`)
+
+The pipeline sends a chat to a person when the router's confidence is below 0.55 (`agent.router_confidence_floor`). The fine-tuned model's confidence is meaningful: the median is 0.95 when it is right and 0.50 when it is wrong. So 11 of its 13 type mistakes go to a person (8 of them through the floor) and 2 reach a specialist.
+
+| On the 40 test chats, routing step only | Fine-tuned | Haiku | Sonnet |
 |---|---|---|---|
 | Wrong type that reaches a specialist | **2** | **2** | 4 |
 | Missed escalations | 1 | **0** | 1 |
 | Chats sent to a person | 22 | 21 | 19 |
 | ...of which did not need one | 5 | 3 | **2** |
 
-**What this means:** in the agent, the fine-tuned router does about as well as Haiku on safety: the same number of wrongly routed chats, and one more missed escalation. It sends two more chats to a person that did not need one. This is the router's job, so the business comparison is made here.
+**What this shows, and what it cannot:** at the routing step the fine-tuned router looks about as safe as Haiku: the same number of wrongly routed chats, and one more missed escalation. But this table does not check which queue a handoff goes to, or what the customer is told.
+
+### The whole agent (final evaluation, `docs/evaluation_results.md` section 3)
+
+The same 40 chats through the whole agent, with only the router changed (`src/northstar/evaluation/results/summary.json`, setup `full_agent_router_finetuned`).
+
+| On the 40 test chats, whole agent | Fine-tuned router | Haiku router (recommended) | Sonnet router |
+|---|---|---|---|
+| Task success | 40.0% (16 of 40) | **70.0%** (28 of 40) | 65.0% (26 of 40) |
+| Needed handoffs made | 17 of 18 | **18 of 18** | 17 of 18 |
+| ...of which reached the right queue | 9 of 17 | **18 of 18** | 16 of 17 |
+| Handoffs that were not needed | 8 | 6 | 6 |
+| Invented facts | 3 | 1 | 1 |
+| Median wait | 0.3 s | 5.6 s | 5.0 s |
+| Cost per 1,000 chats | $4.51 | $5.34 | $11.93 |
+
+- **It loses clearly:** the agent with Haiku was right on 12 chats where the agent with the fine-tuned router was wrong, and never the reverse (paired test p = 0.0005). This is the only router gap that is statistically clear on 40 chats.
+- **Why:** the reason for a handoff picks the queue. The fine-tuned model gives no reason, and the rule in `predict.py` only knows the request type. So 7 attacks did not reach the service manager (5 went to general advisors, 1 to the warranty desk, 1 to roadside), and 1 safety chat went to advisors instead of roadside.
+- **A mistake sent to a person still costs:** 18 chats got a fixed reply and a handoff with no desk involved (12 with Haiku), and 4 of these did not need a person (1 with Haiku). The customer is safe, but the request is not handled.
+- **The speed and cost numbers flatter it:** the median wait is 0.3 s because 22 of its 40 chats got a fixed reply that no model writes (16 with Haiku). The cost per chat falls by 16%, but the router is only $0.36 of the $5.34: the rest of the saving is desk calls that did not happen.
+- **What this means:** the recommended agent keeps the Haiku router. To be usable, the fine-tuned model would need an escalation-reason head (and reason labels in the data) and more training chats (see the data-size study below).
 
 ## Where it wins and where it loses
 
@@ -98,6 +122,7 @@ Full tables: `results/comparison_per_class.csv` and `results/comparison_by_slice
 - **Break-even:** cheaper than Haiku above about **197,000 chats a month**, and cheaper than Sonnet above about 12,800.
 - **Sensitivity:** with a 1-year committed price, the break-even with Haiku falls to about 143,000 chats a month. With a second server for redundancy, it rises to about 393,000.
 - **What this means:** for a single dealership, the router is a small cost either way (Haiku: $36 a month at 100,000 chats). So the choice should rest on accuracy and safety, not on router cost. Fine-tuning pays off on cost only at the scale of a large dealer group or a manufacturer-wide service.
+- **Inside the agent it does not pay at any volume today:** the cost model finds it saves $0.0025 a chat in model calls and finishes 10 points fewer chats alone and correctly, which costs about $0.27 a chat in people's time (`docs/economics.md` section 5).
 - **Not included:** people's time to label new chats for retraining, engineering time to run the server, and the cost of mistakes. The economics section (Phase 6) adds these.
 
 ## Training method: full fine-tuning vs LoRA (`results/lora_summary.json`)
@@ -134,7 +159,7 @@ The chosen settings were trained on 25%, 50%, 75% and 100% of the training chats
 - **Small data:** 130 training chats, and the data-size study shows accuracy still rising steeply. Two seeds per setting reduce the noise in the choices, but 30 validation chats is a small basis for choosing.
 - **Learning rate at the top of the range:** 3e-5 was the highest value tried. A higher one might help a little.
 - **mDeBERTa not compared:** it crashed under mixed precision, so it was logged as excluded.
-- **Escalation reason** comes from a rule, not from the model.
+- **Escalation reason** comes from a rule, not from the model. In the end-to-end test, 8 of its 17 needed handoffs went to the wrong queue.
 - **Synthetic data:** results on real customer chats may differ.
 
 ## Reproduce
