@@ -84,7 +84,7 @@ Code: `src/northstar/guardrails/input_check.py`, `output_check.py`. Switch: `gua
 - All attacks are single messages. A patient attacker over several turns is not tested.
 - The grader is the same model family as the agent; the one disagreement was checked by hand.
 
-## Known weaknesses (for the review)
+## Known weaknesses
 
 - **Phrase lists miss rewordings** (input check) and new ways of making a promise (output check). A small classifier model could replace G-IN-01 later; the end-to-end red-team run will say whether it is needed.
 - **Informal French "tu es maintenant..."** is flagged even when harmless (kept as a known false alarm in the tests). No dataset chat uses it.

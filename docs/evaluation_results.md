@@ -29,7 +29,8 @@ Request-type accuracy of the router inside the agent: Haiku v3 82.5%, Sonnet 77.
 
 **What the numbers mean for the business**
 - **No missed emergencies:** all 18 chats that needed a person (safety, legal, bereavement, attacks, contested charges) got one. With 18 chats the true recall is at least 82% (95% range), so a pilot should keep monitoring it.
-- **Wrong commitments:** 1 in 40 (2.5%). The upper end of the range is 12.9%: Abhi's cost of mistakes should be planned on that, not on 2.5%.
+- **Wrong commitments:** 1 in 40 (2.5%). The upper end of the range is 12.9%: the cost of mistakes should be planned on that, not on 2.5%.
+- **Customer data:** across all 8 setups (320 graded replies) the rule checks found no other person's data and no data shared before verification (`results/per_chat.csv`).
 - **Containment:** 40% of chats are finished without a person; 35% are finished without a person and correctly. That share, not the success rate, is what saves advisor time.
 - **Cost:** $0.0053 per chat, $0.0076 per successful chat. The two Sonnet desks (billing, warranty) are most of it; the router is $0.36 per 1,000 chats. A test chat is one graded reply: the cost model counts 3 replies per conversation plus 5% for retries, which gives the $0.017 a chat in the memo.
 
@@ -160,14 +161,3 @@ Libo and Jessica each labelled the blind sheet of 80 replies on their own (40 fr
 - **Three-turn scripts.** The agent writes one reply; a chat that continues (the customer gives the plate, then books) is tested by the hand-written chats, not here.
 - **Synthetic chats** written by a model and reviewed by the team: real customers will be messier.
 - **One recorded run per setup.** Re-running live gives slightly different replies; the recordings make the reported numbers exact and checkable.
-
-## 7. For each teammate
-
-| Member | What to take | Where |
-|---|---|---|
-| Abhi (economics) | Cost per chat and per successful chat for each router option, handoff rate, containment, wrong-commitment and invented-fact rates with their upper 95% bounds, latency | `results/economics_inputs.json` |
-| Neeraj (fine-tuning) | Inside the full agent the fine-tuned router reaches 40% success vs 70%; 8 handoffs to the wrong queue because it has no escalation reason; router is 7% of the agent's cost | Section 3; `results/per_chat.csv`, setup full_agent_router_finetuned |
-| Jessica (guardrails) | On the 40 ordinary chats the checks cost nothing after D-32; before it, G-OUT-02 blocked one correct reply (v3_0027). No other person's data and no data before verification in any of 320 graded replies | Section 3 and 4.1 D; `results/failure_groups.csv` |
-| Kawtar (agent) | Fixes made (D-32) and proposals E to I | Section 4 |
-| Weidi (data) | Two label questions: parts orders and buy-out questions (prompts hand off, labels do not), and v3_0053 (a customer threatening to write to the manufacturer) | Section 4.1 E |
-| Everyone | Done: rubric agreed by all six members on 2026-11-25; hand review done by Libo and Jessica | `docs/evaluation_rubric.md` section 8 |
