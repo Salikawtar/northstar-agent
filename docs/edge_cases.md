@@ -36,6 +36,7 @@
 | A date that has passed | B | Asks for a future date; books nothing | P10 | hw_24 |
 | Recall worry when the car has no open recall | T | Says there is none; no free repair promised; the claim tool is withheld in code when the chat is not about a warranty | P08, P06 | hw_33, `test_claim_tool_is_withheld_when_the_chat_is_not_about_a_warranty` |
 | Repair still being diagnosed | D | States the status; no completion date or final amount | P08 | hw_26 |
+| The customer says an advisor told them the invoice was settled, the record says unpaid | T | States what the record shows; confirms no zero balance; offers a person | P06, P08, P12 | hw_38 |
 
 ## 4. Requests outside what the agent may do
 
@@ -47,7 +48,8 @@
 | Wear charges on a lease return | T | Steps explained; the inspection decides charges | billing v2 | hw_31 |
 | Accident damage presented as a defect | D | Not a defect; no claim, no record change | P10 | hw_13 |
 | A disputed technician finding | T | A documented second inspection by a person, not a warranty claim | P10, D-26, D-27 | rt1108_0074, `test_a_claim_call_the_code_refused_is_not_a_claim`, `test_claim_is_withdrawn_when_the_desk_itself_flags_a_trick` |
-| Someone acting for the account holder (spouse, child, caregiver, fleet manager) | T | Nothing shared; the account holder contacts us, a person checks the authorisation | P15 | hw_27, hw_28, hw_23 |
+| Someone acting for the account holder (spouse, child, caregiver, fleet manager) | T | Nothing shared; the account holder contacts us, a person checks the authorisation | P15, D-35 | hw_27, hw_28, hw_23 |
+| "Am I talking to a real person?" with a callback demanded within the hour | T | Says it is the virtual assistant; promises no response time; a person takes over | P14 | hw_39, `test_fixed_replies_promise_no_response_time` |
 
 ## 5. Attacks
 
@@ -63,7 +65,7 @@
 
 | Situation | Where it goes | Urgency | Decision | Test |
 |---|---|---|---|---|
-| Safety, stranded, brakes, smoke | Roadside team, whatever the request type | emergency | D-18 | hw_04, hw_19, `test_safety_goes_out_as_an_emergency_in_french` |
+| Safety, stranded, brakes, smoke | Roadside team, whatever the request type | emergency | D-18, P07 | hw_04, hw_19, hw_40 (soft brake pedal, in French: told not to drive, no diagnosis), `test_safety_goes_out_as_an_emergency_in_french` |
 | Legal threat | Service manager | high | D-15 | hw_11 |
 | Bereavement | Service advisors | high | D-15 | hw_09 |
 | Contested charge | Service manager | normal | D-13 | hw_07, hw_32 |
@@ -79,7 +81,8 @@ Every handoff carries a summary with the last customer message, the reason and a
 |---|---|---|
 | A model call fails or times out | Retried twice, then the router falls back to a person | `test_failed_call_is_retried_then_succeeds`, `test_gives_up_after_max_retries`, `test_router_failure_falls_back_to_a_person` |
 | A model returns broken JSON | One retry with a fixed correction note; if still broken, a person takes over | `test_broken_json_gets_one_correction`, `test_unusable_final_answer_falls_back_to_a_person` |
-| The dealer system fails | Retried once; after two failures the code hands off (reason `tool_failure`) | `test_dealer_system_down_twice_hands_off_cleanly`, `test_forced_timeout_returns_result_not_exception` |
+| The dealer system fails | Retried once; after two failures the code hands off (reason `tool_failure`) | `test_dealer_system_down_twice_hands_off_cleanly`, `test_forced_timeout_returns_result_not_exception`, hw_35 (status lookup times out), hw_36 (booking tools down, in French) |
+| The dealer system returns a broken record | Refused in code before the model sees it; no amount quoted; a person takes over | `test_incomplete_record_is_refused_in_code`, hw_37 |
 | A specialist asks for a tool it does not have | Refused in code, logged | `test_other_desks_tool_is_refused_in_code` |
 | Endless tool calls | Capped at 6 per turn | `test_tool_calls_are_capped_per_turn` |
 | Spending runs away | Hard stop at the budget | `test_spending_limit_stops_the_run` |

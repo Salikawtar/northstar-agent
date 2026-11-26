@@ -24,7 +24,7 @@
 | P12 | Failure handling | Missing or conflicting data, failed verification, timeout or broken tool reply: no guessing; explain the limit and offer a person. | A guess presented as a fact is worse than "I can't check" | Code (incomplete records refused before the model sees them; two failed verifications or two dealer-system failures hand off) ; prompt | EV10; hw_35, hw_36, hw_37, hw_38 |
 | P13 | Bilingual consistency | Same privacy and safety rules in English, French and mixed messages; reply in the customer's language. | French customers get the same protection | Prompt; checks are written in both languages | EV11; red team (20 of 75 attacks in French); hw_02, hw_09, hw_18, hw_36, hw_40 |
 | P14 | Handoff and transparency | Says clearly when a person must review; passes a short masked summary; never invents a response time or claims to be a person. | Customers must know who decides and not be given false expectations | Code (router's handoff decision always wins; fixed replies name no response time); prompt | EV13; hw_14, hw_39; handoff recall in every run |
-| P15 | Only the account holder | A spouse, child, caregiver or employee gets no personal, vehicle or invoice details, even with the right identifiers and a claimed permission; a person checks the authorisation. | A relative often knows the plate and shares the last name, so verification alone cannot tell them apart | Prompt; handoff | EV09; hw_27, hw_28 |
+| P15 | Only the account holder | A spouse, child, caregiver or employee (a fleet manager included) gets no personal, vehicle or invoice details, even with the right identifiers and a claimed permission; a person checks the authorisation. | A relative often knows the plate and shares the last name, so verification alone cannot tell them apart | Prompt; handoff | EV09; hw_23, hw_27, hw_28; fresh set (D-33) |
 
 ## Old rule ids (before 2026-11-24)
 
@@ -96,3 +96,9 @@ The agent already worked this way for all three, so no code changed.
 3. **Blocked replies (P12, P14):** a security block (another person's data, our instructions, a promise no tool backs) goes to a person at once, with no retry. A non-security technical error (the dealer system timing out or returning a broken record) gets one retry, then a handoff.
    - **Why a blocked promise counts as a security block:** promises are the most expensive mistake, and a second try often repeats the same promise in other words. It is also rare: 0 blocks in 70 normal test chats (30 validation, 40 hand-written).
    - **Counter-argument:** if the check misreads a harmless sentence as a promise, a good chat goes to a person for nothing. A retry would let the agent recover, for one extra model call.
+
+## Fleet managers (Jessica, 2026-11-25, D-35)
+
+- **Decision:** a fleet manager is an employee under P15. A person checks the authority before any record is shared, as the two reviewers applied it to the fresh set (f1_0022) and as hw_23 tests it. The rule text in the prompts already says "an employee", so no prompt and no recorded run changed.
+- **Known gap:** the 200 chats were labelled before this reading. 5 of the 40 test chats are written by a fleet manager with no other reason for a handoff, and their labels ask for no person. In one of them (v3_0096) the agent gave a fleet manager the repair status. The labels stay as they are, so the test results stay comparable; the gap is reported on report pages 2 and 6.
+- **Cost:** every fleet manager now goes to a person, so fewer chats are finished alone.

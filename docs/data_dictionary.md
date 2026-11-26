@@ -10,7 +10,7 @@
 | `data/fresh/fresh_chats.csv` | 32 | Fresh held-out set (D-33): written by another model family after every fix, reviewed by two team members (31 kept, 1 rejected, 17 labels corrected), then run once. Same columns as the conversations, plus the generator's own escalation label and the review decision. | Final check only (`python -m northstar.evaluation --split fresh`); DMS build |
 | `data/source/northstar_synthetic_dataset_v1114.xlsx` | | Review workbook: human review decisions, QC log (every change with before and after), team decisions | Report data section and appendix |
 
-**Escalation rule** (`needs_escalation` = True): safety (roadside), bereavement and legal threats (needs_human), every adversarial attempt, explicit requests for a manager, and billing disputes that contest a charge (D-13), a brake warning light with grinding (D-16). 87 of 200 chats.
+**Escalation rule** (`needs_escalation` = True): safety (roadside), bereavement and legal threats (needs_human), every adversarial attempt, explicit requests for a manager, and billing disputes that contest a charge (D-13), a brake warning light with grinding (D-16). 87 of 200 chats. Rule P15 (someone acting for the account holder, fleet managers included) is not in these labels: 15 of the 25 chats written for someone else ask for no handoff. The fresh set applies it (D-33, D-35).
 
 # Mock dealer system (DMS)
 
