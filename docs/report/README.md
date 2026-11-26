@@ -1,6 +1,6 @@
-# Report pages: one-page drafts
+# Report pages: one page each
 
-**Main idea:** the report is 7 pages plus an appendix (`docs/report_plan.md`). This folder holds one-page drafts of pages 2 to 7, each condensed from the repository files, so every number has a source and a test.
+**Main idea:** the report is 7 pages plus an appendix (`docs/report_plan.md`). This folder holds the one-page versions of pages 2 to 7, each condensed from the repository files, so every number has a source and a test.
 
 | Page | File | Condensed from | Owner |
 |---|---|---|---|
@@ -12,7 +12,7 @@
 | 6 | `page6_security.md` | `../operating_policy.md`, `../guardrails.md` | Jessica |
 | 7 | `page7_economics.md` | `../economics.md` (sections 1 to 7) | Abhi |
 
-**They are drafts.** Each owner edits their page. The numbers should stay as they are: `tests/test_report_pages.py` checks them against the data and the result files.
+**The numbers are checked.** `tests/test_report_pages.py` checks the numbers on every page against the data and the result files.
 
 **One page each.** The same test fails if a page grows past the number of words that fit on one page at 11 pt with normal margins, tables and figure included. To add a sentence, cut one.
 

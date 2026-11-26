@@ -4,16 +4,16 @@
 
 ## Page budget
 
-| Page | Content | Criterion (marks) | Source in the repository | Owner | Status |
+| Page | Content | Criterion (marks) | Source in the repository | One-page version | Owner |
 |---|---|---|---|---|---|
-| 1 | Decision memo: problem, recommendation, measured results, cost and benefit, risks, pilot gates | Economics and memo (20) | `docs/decision_memo.md` | Abhi (reference: Kawtar) | Ready |
-| 2 | Synthetic data: design, personas, coverage, Faker, quality control with rejected and fixed examples, protected test set | Data (12) | `docs/data_quality.md`, `docs/generation_record.md`, `docs/data_dictionary.md` | Weidi | One-page draft for Weidi to edit: `docs/report/page2_data.md` |
-| 3 | System design and agents: architecture diagram, router and three desks, tools and permissions, model and effort per component with the validation result behind it, edge cases, handoff, failure handling, prompt iteration | Design (12), agents and prompting (10) | `docs/architecture.md`, `docs/edge_cases.md`, `docs/prompt_log.md`, `docs/decision_log.md` | Kawtar | One-page draft: `docs/report/page3_design_agents.md` |
-| 4 | Fine-tuned router vs small and large prompted routers: accuracy, latency, cost, why it lost, volume where it pays, data-size study | Fine-tune (8) | `src/northstar/finetune/MODEL_CARD.md`, `src/northstar/finetune/README.md` | Neeraj | One-page draft from the repository, LoRA sentence included, for Neeraj to merge with his own: `docs/report/page4_finetune.md` |
-| 5 | Evaluation: success definition, 8 setups changing one thing each, ranges and paired tests, error analysis and fixes, grader checks | Evaluation (14) | `docs/evaluation_results.md`, `docs/evaluation_rubric.md` | Libo | One-page draft from the repository for Libo to merge with the shared doc: `docs/report/page5_evaluation.md`; grader check against people done (kappa 0.71 and 0.77) |
-| 6 | Security and guardrails: policy P01 to P15, layers, red team 75 of 75, what still gets through | Security (12) | `docs/operating_policy.md`, `docs/guardrails.md` | Jessica | One-page draft for Jessica to edit: `docs/report/page6_security.md` |
-| 7 | Economics: business case, unit economics, volumes, cost of mistakes, break-even, model trade-offs, uncertainty | Economics and memo (20) | `docs/economics.md` (sections 1 to 7) | Abhi (reference: Kawtar) | One-page version: `docs/report/page7_economics.md`; the full text stays in `docs/economics.md` |
-| Appendix | Operating policy, key prompts, sample data, full results tables, economics assumptions and sensitivity | All | `docs/operating_policy.md`, `prompts/`, `data/conversations/` (sample rows), `src/northstar/evaluation/results/headline.md`, `docs/economics.md` (appendix A1 to A5), `src/northstar/economics/results/tables.md` | Assembler | Sources ready |
+| 1 | Decision memo: problem, recommendation, measured results, cost and benefit, risks, pilot gates | Economics and memo (20) | `docs/decision_memo.md` | The same file | Abhi |
+| 2 | Synthetic data: design, personas, coverage, Faker, quality control with rejected and fixed examples, protected test set | Data (12) | `docs/data_quality.md`, `docs/generation_record.md`, `docs/data_dictionary.md` | `docs/report/page2_data.md` | Weidi |
+| 3 | System design and agents: architecture diagram, router and three desks, tools and permissions, model and effort per component with the validation result behind it, edge cases, handoff, failure handling, prompt iteration | Design (12), agents and prompting (10) | `docs/architecture.md`, `docs/edge_cases.md`, `docs/prompt_log.md`, `docs/decision_log.md` | `docs/report/page3_design_agents.md` | Kawtar |
+| 4 | Fine-tuned router vs small and large prompted routers: accuracy, latency, cost, why it lost, volume where it pays, data-size study | Fine-tune (8) | `src/northstar/finetune/MODEL_CARD.md`, `src/northstar/finetune/README.md` | `docs/report/page4_finetune.md` | Neeraj |
+| 5 | Evaluation: success definition, 8 setups changing one thing each, ranges and paired tests, error analysis and fixes, grader checks | Evaluation (14) | `docs/evaluation_results.md`, `docs/evaluation_rubric.md` | `docs/report/page5_evaluation.md` | Libo |
+| 6 | Security and guardrails: policy P01 to P15, layers, red team 75 of 75, what still gets through | Security (12) | `docs/operating_policy.md`, `docs/guardrails.md` | `docs/report/page6_security.md` | Jessica |
+| 7 | Economics: business case, unit economics, volumes, cost of mistakes, break-even, model trade-offs, uncertainty | Economics and memo (20) | `docs/economics.md` (sections 1 to 7) | `docs/report/page7_economics.md` | Abhi |
+| Appendix | Operating policy, key prompts, sample data, full results tables, economics assumptions and sensitivity | All | `docs/operating_policy.md`, `prompts/`, `data/conversations/` (sample rows), `src/northstar/evaluation/results/headline.md`, `docs/economics.md` (appendix A1 to A5), `src/northstar/economics/results/tables.md` | Copied from the sources when the report is assembled | Team |
 
 **Format:** 11 pt body text, normal margins. If a page runs over, cut words, never the font (keep every policy rule and every number with its range). Figures: architecture diagram (page 3, `docs/report/figures/architecture.png`), fine-tune data-size and break-even charts (page 4, `src/northstar/finetune/results/page4_figure.png`), economics cost-per-chat chart (page 7, `src/northstar/economics/results/cost_per_chat_vs_volume_page7.png`, a wide and short copy of the chart in `docs/economics.md`).
 
@@ -30,7 +30,3 @@
 | Model names and versions are the same everywhere | Claude Haiku 5.5 (router, booking desk), Claude Sonnet 5.5 (billing and warranty desks), GPT-6.2 Sol (grader), XLM-RoBERTa base (fine-tuned router), as in `config/settings.yaml` |
 | No em dashes, no real personal data, no keys | Search the report text; the git history was scanned for keys on 2026-11-25 (`README.md`, Status, row 7) |
 | Page count | 7 pages before the appendix. The memo and pages 2 to 7 are one page each: `test_memo_stays_within_one_page` and `test_each_page_stays_within_one_page` cap their words, then check them in the final layout |
-
-## Reminder
-
-- [ ] Decide whether to keep this file before sharing the repository with the evaluators (the six task trackers have been removed).

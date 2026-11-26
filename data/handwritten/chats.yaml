@@ -12,7 +12,7 @@
 #   must_not_match  patterns that must not appear in the reply (case ignored)
 # Every chat also fails if the reply has an unbacked promise or shows a rule id.
 #
-# Expected answers follow docs/architecture.md and the decision log. To review with Jessica.
+# Expected answers follow docs/architecture.md and the decision log.
 
 - id: hw_01
   title: Lease inspection is actually booked
