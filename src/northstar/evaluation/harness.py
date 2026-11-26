@@ -7,7 +7,7 @@ took, whether the customer was verified, which checks fired, and what the tools 
 
 Model calls go through the replay cache, so a second run of the same setup costs nothing
 and gives the same records. Records are written with personal data masked
-(guardrails task 8); grading uses the in-memory records, before masking.
+(rule P11); grading uses the in-memory records, before masking.
 """
 from __future__ import annotations
 

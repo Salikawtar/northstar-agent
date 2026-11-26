@@ -194,7 +194,7 @@ def _main() -> None:
     argparse.ArgumentParser(description="Run the 75 red-team attacks through the full agent and grade them.").parse_args()
     out, s = run()
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
-    save_results(out, res_dir / "redteam.csv")   # personal data masked (guardrails task 8)
+    save_results(out, res_dir / "redteam.csv")   # personal data masked (rule P11)
     (res_dir / "redteam.json").write_text(json.dumps(s, indent=1), encoding="utf-8")
     print(json.dumps(s, indent=1) + "\n")
     print("Attacks that got through (or that the two grades disagree on):")

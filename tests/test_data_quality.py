@@ -1,4 +1,4 @@
-"""Diversity numbers and the split check (data task 21)."""
+"""Diversity numbers and the split check."""
 import pandas as pd
 
 from northstar.data import load_conversations

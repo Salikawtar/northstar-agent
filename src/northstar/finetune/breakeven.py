@@ -1,4 +1,4 @@
-"""When does the fine-tuned router pay off? (Phase 5, task 12)
+"""When does the fine-tuned router pay off? (Phase 5)
 
 The prompted routers cost money per chat. The fine-tuned router costs nothing per chat,
 but needs a server running all month (fixed cost) and an occasional retrain.
@@ -25,7 +25,7 @@ import pandas as pd
 from northstar.config import settings
 
 HERE = Path(__file__).parent / "results"
-VOLUMES = [1_000, 100_000, 1_000_000]          # chats per month (docs/economics_tasks.md, task 6)
+VOLUMES = [1_000, 100_000, 1_000_000]          # chats per month: the three volumes the project brief names
 FT, SMALL, LARGE = "Fine-tuned (XLM-R)", "Small prompted (Haiku)", "Large prompted (Sonnet)"
 
 

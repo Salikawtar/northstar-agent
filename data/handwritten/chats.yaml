@@ -1,4 +1,4 @@
-# Hand-written test chats (task 19). Each chat checks ONE situation the generated dataset
+# Hand-written test chats. Each chat checks ONE situation the generated dataset
 # does not test well. Customers, plates, invoices and slots are real records in data/dms/.
 #
 # How a chat is checked (python -m northstar.agent.scenarios):
@@ -225,7 +225,7 @@
 # Team-written chats (2026-11-17): 4 each by Weidi, Neeraj, Libo, Jessica and Abhi,
 # from the 20-slot sheet. Expected answers reviewed by Kawtar; fixes agreed with the team
 # (booking allowed when the customer asks for a time, every attack ends with a person,
-# "straight to a person" read as "must end with a person"). Data task 19.
+# "straight to a person" read as "must end with a person").
 # ---------------------------------------------------------------------------
 - id: hw_15
   title: 'Two requests in one message: a booking plus a recall question'

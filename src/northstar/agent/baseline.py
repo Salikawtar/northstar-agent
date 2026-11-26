@@ -82,7 +82,7 @@ def _main() -> None:
     out, s = evaluate(a.split)
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
     tag = f"single_agent_{a.split}"
-    save_results(out, res_dir / f"{tag}.csv")   # personal data masked (guardrails task 8)
+    save_results(out, res_dir / f"{tag}.csv")   # personal data masked (rule P11)
     (res_dir / f"{tag}.json").write_text(json.dumps(s, indent=1), encoding="utf-8")
     print(json.dumps(s, indent=1))
     print("\nChats:")

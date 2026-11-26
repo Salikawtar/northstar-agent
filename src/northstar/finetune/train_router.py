@@ -10,7 +10,7 @@ Two steps, run in order (both need a GPU to be quick; about 45 minutes in total 
     #    (to show how much a single training run can vary).
     python -m northstar.finetune.train_router final --out models/finetuned_router
 
-    # 3. (Optional, task 13) How accuracy grows with training data: train on 25%, 50%, 75%
+    # 3. (Optional) How accuracy grows with training data: train on 25%, 50%, 75%
     #    and 100% of the training chats, 3 seeds each, scored on validation only.
     python -m northstar.finetune.train_router datasize
 

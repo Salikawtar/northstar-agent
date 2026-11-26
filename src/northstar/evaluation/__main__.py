@@ -128,7 +128,7 @@ def write_tables(df: pd.DataFrame, split: str, client: LLMClient, grader: ModelG
 
 
 def _economics_inputs(s: dict) -> None:
-    """The measured numbers Abhi's cost model reads (economics tasks 3 to 5, 8), in one file.
+    """The measured numbers Abhi's cost model reads, in one file.
     Upper ends of the 95% ranges are given on purpose: with 0 mistakes in 40 chats the true
     rate can still be up to about 9%, and the cost of mistakes should be planned on that."""
     out = {}

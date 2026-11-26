@@ -60,7 +60,7 @@ mistakes:                           # what one mistake costs the dealership (USD
   missed_handoff_usd: 500           # assumption: most missed handoffs are disputes or complaints (a manager's time, a lost customer); safety is the rare tail
   missed_handoff_range: [100, 10000]
 
-warranty_automation:                # task 9: what if the agent were allowed to approve warranty claims (it is not: P05)
+warranty_automation:                # what if the agent were allowed to approve warranty claims (it is not: P05)
   review_minutes_saved: 20          # assumption: warranty administrator time to review one claim
   review_minutes_range: [10, 40]
 

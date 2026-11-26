@@ -385,7 +385,7 @@ def _main() -> None:
     out, s = evaluate(a.agent, a.split, a.model, a.prompt, a.effort)
     res_dir = path("results_dir"); res_dir.mkdir(parents=True, exist_ok=True)
     tag = f"{a.agent}_{s['model'].split('/')[-1]}_{s['prompt'].split('/')[-1].removesuffix('.md')}_{s['reasoning_effort']}_{a.split}"
-    save_results(out, res_dir / f"{tag}.csv")   # personal data masked (guardrails task 8)
+    save_results(out, res_dir / f"{tag}.csv")   # personal data masked (rule P11)
     (res_dir / f"{tag}.json").write_text(json.dumps(s, indent=1), encoding="utf-8")
     print(json.dumps(s, indent=1))
     print("\nReplies:")

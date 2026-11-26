@@ -1,4 +1,4 @@
-"""Checks on the hand-written test chats (task 19).
+"""Checks on the hand-written test chats.
 
 1. The file itself is valid: unique ids, known paths, the last turn is the customer's,
    and every customer, plate and slot it names exists in the dealer system.

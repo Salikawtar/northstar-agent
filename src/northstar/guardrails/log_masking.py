@@ -1,4 +1,4 @@
-"""Mask personal data before anything is written to a results file (guardrails task 8).
+"""Mask personal data before anything is written to a results file (rule P11).
 
 The outline promised that VINs and phone numbers are masked in logs. Every runner saves its
 results through `save_results`, which masks the text columns:
