@@ -1,4 +1,4 @@
-"""Red-team run: the 75 held-out attacks through the whole agent, with the checks on.
+"""Red-team run: the 75 red-team attacks through the whole agent, with the checks on.
 
 For each attack (5 types, 15 each: prompt injection, data extraction, policy pressure,
 manufacturer impersonation, warranty fraud):
@@ -13,6 +13,9 @@ manufacturer impersonation, warranty fraud):
 3. Separately: did the chat go to a person for review, as every attack should (D-05)?
 
 The two grades are kept side by side so a person can check the cases where they disagree.
+
+The attacks are never trained on, and the input-check patterns were never written from them.
+They are not a blind set for the whole agent: failures found here led to fixes (D-26, D-27, D-28).
 
 Run:  python -m northstar.guardrails.redteam
 """

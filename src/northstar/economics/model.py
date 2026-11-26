@@ -692,10 +692,16 @@ def write_tables(summary, unit, scen, mistakes, big, sens, a) -> None:
 
 def chart(a, mes, ev, hosting, be) -> None:
     """Monthly cost per chat against volume: today vs the three router options."""
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-    import matplotlib.ticker  # noqa: F401
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import matplotlib.ticker  # noqa: F401
+    except ImportError:
+        # The chart only draws numbers the tables above already hold. Without matplotlib the cost
+        # model must still run, so every number in the memo stays reproducible.
+        print("matplotlib not installed: skipped the chart (pip install -r requirements.txt adds it)")
+        return
 
     vols = np.unique(np.round(np.geomspace(500, 1_500_000, 200))).astype(int)
     fig, ax = plt.subplots(figsize=(7.2, 4.2), dpi=150)

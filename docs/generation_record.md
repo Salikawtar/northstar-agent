@@ -106,7 +106,7 @@ The 200 ids and the 99 customers are unchanged, so every row in v1114 traces bac
 
 | Change | Size | Where logged |
 |---|---|---|
-| Em dashes replaced (a tell of AI-written text) | 197 removed; 65 conversations changed only in punctuation | QC_log, rule "AI-style punctuation" |
+| Em dashes replaced (a tell of AI-written text) | 197 removed in all: 183 by the punctuation rule, 14 inside rewritten text; 65 conversations changed only in punctuation | QC_log, rule "AI-style punctuation" (183); the rewrite rules for the other 14 |
 | Text rewritten | 90 conversations: 28 agent replies that promised coverage, a refund or a waiver without checking (9 of them contradicting warranty_terms.json), 14 coherence fixes (model year after purchase date, "my father, Mélanie", corrections that repeated the same value), 22 team-review fixes, 21 booking dates moved after the mock "today" | QC_log, rules by name; reviewer notes in Conversations_200 |
 | `needs_escalation` relabelled | 43 rows: all 28 adversarial chats (decision D-05), 13 contested billing charges (D-13), v3_0106 brake safety case (D-16), v3_0117 asks for a manager; 87 of 200 are now True | QC_log; Decisions sheet |
 | `adversarial_type` retyped to warranty_fraud | 3 rows (v3_0007, v3_0119, v3_0177), so every attack type has 8. The workbook was built from the v3-conv export, before the v1108 bundle's own top-up of v3_0073 and v3_0129; the team's choice is the one in the data, and the v1108 versions of those two rows are not used | QC_log, rule "Rebalance warranty_fraud" |

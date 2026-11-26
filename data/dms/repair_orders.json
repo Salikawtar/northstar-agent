@@ -3125,44 +3125,44 @@
   "ro_number": "RO-621331",
   "vin": "T826B6EN940KK0573",
   "customer_id": "cust_en_920190",
-  "status": "diagnosing",
-  "opened": "2026-11-06",
-  "promised": "2026-11-10",
-  "complaint": "Transmission shudder at low speed",
+  "status": "closed",
+  "opened": "2026-09-27",
+  "promised": null,
+  "complaint": "Tire change and storage",
   "lines": [
    {
     "type": "labour",
-    "hours": 3.2,
+    "hours": 3.8,
     "rate_cad": 165
    },
    {
     "type": "parts",
-    "amount_cad": 561.19
+    "amount_cad": 426.08
    }
   ],
-  "estimate_cad": 1089.19,
-  "approved_by_customer": false
+  "estimate_cad": 1053.08,
+  "approved_by_customer": true
  },
  {
   "ro_number": "RO-872094",
   "vin": "2GJTK1K04PSHL0315",
   "customer_id": "cust_en_988148",
   "status": "closed",
-  "opened": "2026-11-12",
+  "opened": "2026-11-10",
   "promised": null,
-  "complaint": "Oil change and inspection",
+  "complaint": "Cabin filter replacement",
   "lines": [
    {
     "type": "labour",
-    "hours": 2.7,
+    "hours": 2.9,
     "rate_cad": 165
    },
    {
     "type": "parts",
-    "amount_cad": 416.74
+    "amount_cad": 171.65
    }
   ],
-  "estimate_cad": 862.24,
+  "estimate_cad": 650.15,
   "approved_by_customer": true
  },
  {
@@ -3176,59 +3176,59 @@
   "lines": [
    {
     "type": "labour",
-    "hours": 3.4,
+    "hours": 3.3,
     "rate_cad": 165
    },
    {
     "type": "parts",
-    "amount_cad": 408.57
+    "amount_cad": 219.53
    }
   ],
-  "estimate_cad": 969.57,
+  "estimate_cad": 764.03,
   "approved_by_customer": true
  },
  {
   "ro_number": "RO-333018",
   "vin": "HXEW7CZL12GXX0933",
   "customer_id": "cust_fr_932115",
-  "status": "in_repair",
-  "opened": "2026-11-15",
-  "promised": "2026-11-21",
+  "status": "checked_in",
+  "opened": "2026-11-11",
+  "promised": "2026-11-16",
   "complaint": "Noise from front suspension",
   "lines": [
    {
     "type": "labour",
-    "hours": 3.9,
+    "hours": 4.5,
     "rate_cad": 165
    },
    {
     "type": "parts",
-    "amount_cad": 533.54
+    "amount_cad": 383.48
    }
   ],
-  "estimate_cad": 1177.04,
-  "approved_by_customer": true
+  "estimate_cad": 1125.98,
+  "approved_by_customer": false
  },
  {
   "ro_number": "RO-969978",
   "vin": "UEV9LMTYX00W31930",
   "customer_id": "cust_fr_941796",
   "status": "closed",
-  "opened": "2026-11-14",
+  "opened": "2026-11-06",
   "promised": null,
-  "complaint": "Oil change and inspection",
+  "complaint": "Multi-point inspection",
   "lines": [
    {
     "type": "labour",
-    "hours": 4.3,
+    "hours": 3.3,
     "rate_cad": 165
    },
    {
     "type": "parts",
-    "amount_cad": 647.29
+    "amount_cad": 609.33
    }
   ],
-  "estimate_cad": 1356.79,
+  "estimate_cad": 1153.83,
   "approved_by_customer": true
  },
  {

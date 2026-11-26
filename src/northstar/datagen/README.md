@@ -24,10 +24,13 @@ python -m northstar.datagen.pipeline --jobs data/source/generation/jobs_designed
 python -m northstar.datagen.export --diff      # outputs/datagen/conversations_generated.csv, compared with data/conversations/conversations.csv
 ```
 
-Expected: 215 generated, 200 kept, 15 rejected (reasons listed), split 160 / 40 with no customer in both. The diff shows
-0 differences on ids, customers, request types, difficulties, personas, languages and Faker identifiers, and the
-differences the team's QC log accounts for: 155 conversations with edited text (65 punctuation only, 90 rewritten),
-43 `needs_escalation` relabels, 3 `adversarial_type` retypes, and the 130 / 30 / 40 re-split.
+Expected: 215 generated, 200 kept, 15 rejected (reasons listed), split 160 / 40 with no customer in both. With
+scikit-learn 1.7 the replay prints 159 / 41: the fold depends on the scikit-learn version (D-29), and the split check
+below passes on every version. The diff shows 0 differences on ids, customers, request types, difficulties, personas,
+languages and Faker identifiers, and the differences the team's QC log accounts for: 155 conversations with edited
+text (65 punctuation only, 90 rewritten), 43 `needs_escalation` relabels, 4 rows with another `adversarial_type`
+(the dataset retyped v3_0119 and v3_0177 where the replayed bundle retyped v3_0073 and v3_0129: generation record,
+section 7), 3 rows whose correction flag differs (the three rows that top-up retyped), and the 130 / 30 / 40 re-split.
 
 ## Live run (writes a new dataset; do not replace v1114 with it)
 
