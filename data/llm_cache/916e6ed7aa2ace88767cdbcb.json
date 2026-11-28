@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing this to a team member” answers the request to speak to someone, and “Please don't drive the vehicle until it has been checked” addresses accident safety.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P15\"],\n  \"policy_reason\": \"After the customer said “Im reaching out for my dad,” the reply did not say that the account holder could contact Northstar directly or that a person would check authorisation.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can't confirm a tow or an arrival time” does not assert that a tow was dispatched or give an unsupported time.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will arrange help with you” describes the handoff without promising a tow, payment, or callback time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't confirm a tow or an arrival time” adds an unsolicited limit instead of focusing on the customer's request to speak to someone about the dispute.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2693,
+ "output_tokens": 578,
+ "cost_usd": 0.0071758,
+ "latency_ms": 9544.6
+}

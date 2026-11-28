@@ -158,93 +158,117 @@ def test_page3_quotes_the_evaluation(test_run, fresh_run):
     assert side["handwritten"]["failed"] == 0 and f"All {side['handwritten']['n']} hand-written chats pass" in t
 
 
-def test_page4_quotes_the_finetune_results(cost, test_run):
-    t = page("page4_finetune.md")
-    table = pd.read_csv(TUNE / "comparison_table.csv").set_index("router")
-    stats = json.loads((TUNE / "comparison_stats.json").read_text(encoding="utf-8"))
-    runs = {k: router_test(k) for k in (FT, SMALL, LARGE)}
+STUDY = ROOT / "src" / "northstar" / "finetune" / "study"
+STUDY_NAMES = {"ft": "Fine-tuned, balanced", "haiku": "Haiku (team's router)", "sonnet": "Sonnet",
+               "jev": "Jev, same information"}
+ORDER = ("ft", "haiku", "sonnet", "jev")
+AGENT_SETUPS = {"ft": "full_agent_router_finetuned_lora", "haiku": "full_agent", "sonnet": "full_agent_router_sonnet",
+                "jev": "full_agent_router_jev"}
 
-    # the head-to-head table
-    def accuracy(k):
-        low, high = stats["type_accuracy_95ci"][k]
-        return f"{100 * table.type_accuracy[k]:.1f}%", f"({100 * low:.0f} to {100 * high:.0f})"
 
-    (a, ra), (b, rb), (c, rc) = accuracy(FT), accuracy(SMALL), accuracy(LARGE)
-    assert f"| Request type right (95% range) | {a} {ra} | **{b}** {rb} | {c} {rc} |" in t
-    flagged = {k: f"{int((d.gold_escalation & d.pred_escalation).sum())} of {int(d.gold_escalation.sum())}" for k, d in runs.items()}
-    assert f"| Needed handoffs flagged | {flagged[FT]} | **{flagged[SMALL]}** | {flagged[LARGE]} |" in t
-    ms = {k: f"{table.latency_ms_median[k]:,.0f} ms" for k in runs}
-    assert f"| Median time per chat | **{ms[FT]}**, on a CPU | {ms[SMALL]} | {ms[LARGE]} |" in t
-    assert table.cost_usd_per_chat[FT] == 0
-    assert f"| Cost per 1,000 chats | **$0**, plus a server | ${table.cost_usd_per_1000_chats[SMALL]:.2f} | ${table.cost_usd_per_1000_chats[LARGE]:.2f} |" in t
-    whole = [f"{100 * test_run[s]['task_success']['rate']:.1f}%" for s in ("full_agent_router_finetuned", "full_agent", "full_agent_router_sonnet")]
-    assert f"| Task success, whole agent | {whole[0]} | **{whole[1]}** | {whole[2]} |" in t
-    assert len(runs[FT]) == 40 and "| On the 40 test chats |" in t
+def final_seeds():
+    return json.loads((STUDY / "config" / "final_settings.json").read_text(encoding="utf-8"))["fine_tuned_common"]["seeds"]
+
+
+def test_page4_quotes_the_finetune_results(cost, test_run, fresh_run):
+    """Page 4 reports the fine-tuning study (src/northstar/finetune/study/): its final scores on the test and fresh
+    chats, the whole agent with each router (evaluation setups), and the first fine-tuned version for reference."""
+    t = page("page4_finetune.md").replace("**", "")
+    scores = pd.read_csv(STUDY / "results" / "step06" / "final_scores.csv")
+    scores = scores[scores.input == "first_message"]
+
+    def row(dataset, key):
+        d = scores[(scores.dataset == dataset) & scores.router.str.startswith(STUDY_NAMES[key])]
+        assert len(d) == 1, (dataset, key)
+        return d.iloc[0]
+
+    test, fresh = {k: row("test", k) for k in ORDER}, {k: row("fresh", k) for k in ORDER}
+    pct = lambda x: f"{100 * x:.1f}%"
+
+    def table_row(label, cells):
+        line = f"| {label} | " + " | ".join(cells) + " |"
+        assert line in t, line
+
+    # the head-to-head table (the first message, as the study chose; five seeds averaged for the fine-tuned router)
+    assert all(r.chats == 40 for r in test.values()) and all(r.chats == 31 for r in fresh.values())
+    table_row("Request type right (95% range)",
+              [f"{pct(test[k].type_accuracy)} ({100 * test[k].type_ci_low:.0f} to {100 * test[k].type_ci_high:.0f})" for k in ORDER])
+    table_row("Routing step right", [pct(test[k].handled_right) for k in ORDER])
+    table_row("Needed handoffs flagged", [f"{int(test[k].caught)} of {int(test[k].needs_person)}" for k in ORDER])
+    table_row("31 fresh chats: type right", [pct(fresh[k].type_accuracy) for k in ORDER])
+    assert test["ft"].usd_per_1000 == 0
+    # the fine-tuned router as scored averages five trained models: timed live on CPU in the study's notebook 08
+    # (step 06 timed one model, results/step06/fine_tuned_cpu_latency.csv)
+    live = json.loads((STUDY / "results" / "step08" / "live_router_check.json").read_text(encoding="utf-8"))
+    assert live["models"] == len(final_seeds()) and live["same_request_type"] == live["same_person_needed"] == live["same_reason"] == 1.0
+    ft_seconds = live["median_ms"] / 1000
+    table_row("Median time per chat", [f"{ft_seconds:.2f} s, on a CPU"] + [f"{test[k].seconds:.2f} s" for k in ORDER[1:]])
+    table_row("Cost per 1,000 chats", ["$0, plus a server"] + [f"${test[k].usd_per_1000:.2f}" for k in ORDER[1:]])
+    table_row("Task success, whole agent", [pct(test_run[AGENT_SETUPS[k]]["task_success"]["rate"]) for k in ORDER])
 
     # how it was built
-    log = json.loads((TUNE / "training_log.json").read_text(encoding="utf-8"))
-    weights = pd.read_csv(TUNE / "datasize_runs.csv").trainable_params.max()
-    assert f"{weights / 1e6:.0f} million weights" in t
-    assert f"trained on {log['splits']['train']} chats" in t and f"the {log['splits']['validation']} validation chats" in t
-    ranking = pd.read_csv(TUNE / "selection_ranking.csv")
-    chosen = json.loads((TUNE / "selection_summary.json").read_text(encoding="utf-8"))
-    best = ranking[ranking.model == chosen["chosen_model"]]
-    assert len(best) == 3 and f"({chosen['chosen_lr']:.0e}, of three)".replace("e-0", "e-") in t
-    assert ranking[ranking.model.str.contains("distilbert")].val_macro_f1.max() < best.val_macro_f1.min() and "DistilBERT scored lower" in t
-    assert any("mdeberta" in m for m in chosen["excluded"]) and "mDeBERTa crashed" in t
-    lora = json.loads((TUNE / "lora_summary.json").read_text(encoding="utf-8"))
-    assert f"macro F1 {lora['full_finetuning']['val_macro_f1_mean']:.2f} against {lora['lora']['val_macro_f1_mean']:.2f}" in t
-    full_recall = pd.read_csv(TUNE / "final_seed_runs.csv").val_escalation_recall.mean()
-    lora_runs = pd.read_csv(TUNE / "lora_runs.csv")
-    lora_recall = lora_runs[lora_runs.lr == lora["lora_best_lr"]].val_escalation_recall.mean()
-    assert f"handoff recall {100 * full_recall:.0f}% against {100 * lora_recall:.0f}%" in t
-    assert f"At most {log['epochs']} epochs" in t and f"batch {log['batch_size']}" in t
-    assert f"weight decay {log['weight_decay']}" in t and f"dropout {log['dropout']}" in t
-    assert f"{log['total_gpu_minutes_all_runs']:.0f} GPU minutes in all" in t
+    first = pd.read_csv(TUNE / "comparison_table.csv").set_index("router").type_accuracy[FT]
+    assert f"reached {pct(first)} on request type and {pct(test_run['full_agent_router_finetuned']['task_success']['rate'])} task success" in t
+    from northstar.finetune.study import protocol as SP
+    assert f"on the {len(SP.pool(SP.load_all()))} training and validation chats ({SP.N_FOLDS} folds by customer, {len(SP.CV_SEEDS)} seeds)" in t
+    final = json.loads((STUDY / "config" / "final_settings.json").read_text(encoding="utf-8"))["fine_tuned"]["balanced"]
+    assert final["input"] == "first_message" and final["training"]["lora"] and "attack" in final["training"]["heads"]
+    variants = pd.read_csv(STUDY / "results" / "comparison" / "training_variants.csv")
+    chosen = variants[(variants.setup == "LoRA 3e-4, 60 epochs + attack answer") & (variants.input == "first_message")]
+    assert f"LoRA ({chosen.trained_numbers.iloc[0] / 1e6:.1f} million trained weights), {final['training']['epochs']} epochs" in t
 
-    # why it lost
+    # why it lost, and where it wins
     chats = pd.read_csv(ROOT / "data/conversations/conversations.csv")
     train = chats[chats.split == "train"]
     assert len(train) / train.request_type.nunique() == 13 and "About 13 training chats per request type" in t
-    seeds = log["test_type_accuracy_over_seeds"]
-    assert len(log["seeds"]) == 5 and f"five training runs ranged from {100 * seeds['min']:g}% to {100 * seeds['max']:g}% on test" in t
-    size = json.loads((TUNE / "datasize_summary.json").read_text(encoding="utf-8"))
-    assert f"about {size['gain_per_doubling_points']:.0f} points each time the data doubles" in t
-    assert f"about {size['chats_to_close_test_gap_if_trend_holds']} chats would close the gap" in t
-    attacks = {k: d[d.difficulty == "adversarial"] for k, d in runs.items()}
-    right = {k: int(d.type_correct.sum()) for k, d in attacks.items()}
-    assert f"{right[FT]} of {len(attacks[FT])} attack chats labelled right (Haiku {right[SMALL]}, Sonnet {right[LARGE]})" in t
-    missed = runs[FT][runs[FT].gold_escalation & ~runs[FT].pred_escalation]
-    assert len(missed) == 2 and (missed.difficulty == "adversarial").all() and "both handoffs it missed were attacks" in t
-    inside = pd.read_csv(EVAL / "per_chat.csv")
-    inside = inside[inside.setup == "full_agent_router_finetuned"]
-    made = inside[inside.gold_escalation & inside.escalated]
-    wrong_queue = int((made.queue_ok.astype(str) == "False").sum())
-    assert f"{wrong_queue} of its {len(made)} needed handoffs went to the wrong queue" in t
-    versus = json.loads((EVAL / "summary.json").read_text(encoding="utf-8"))["comparisons_with_full_agent"]
-    v = next(x for x in versus if x["setup"] == "full_agent_router_finetuned")
-    assert v["only_setup_right"] == 0 and f"lost {v['only_full_agent_right']} chats and won none (p = {p_text(v['p_value'])})" in t
-    paired = stats["paired_tests_type_accuracy"][f"{FT} vs {SMALL}"]
-    assert f"the gap to Haiku is not clear (p = {p_text(paired['p_value'])})" in t
-    assert round(table.latency_ms_median[SMALL] / table.latency_ms_median[FT]) == 10 and "10 times faster than Haiku" in t
+    assert f"it fell to {pct(fresh['ft'].type_accuracy)}" in t
+    pool = pd.read_csv(STUDY / "results" / "comparison" / "routers_pool.csv")
+    pool = pool[pool.input == "first_message"].set_index("router")
+    by_type, attack = pool.loc["Fine-tuned XLM-R, LoRA (reason guessed from type)"], pool.loc["Fine-tuned XLM-R, LoRA + attack answer"]
+    assert f"{by_type.attacks_right_team} of {by_type.attacks} attacks reached the right team" in t
+    assert f"the attack answer raised it to {attack.attacks_right_team}" in t
+    versus = {c["setup"]: c for c in json.loads((EVAL / "summary.json").read_text(encoding="utf-8"))["comparisons_with_full_agent"]}
+    v = versus[AGENT_SETUPS["ft"]]
+    assert v["only_setup_right"] == 0 and f"lost {v['only_full_agent_right']} chats to Haiku and won none (p = {p_text(v['p_value'])})" in t
+    assert round(test["haiku"].seconds / ft_seconds) == 3 and "3 times faster than Haiku" in t
+    weights = sum(f.stat().st_size for f in (STUDY / "results/step06/fine_tuned/balanced").glob("seed*_trained_weights.pt"))
+    assert f"{weights / 1e6:.0f} MB of trained weights" in t
 
-    # when it pays
+    # Jev: bare questions, then the prompt's rules and examples (cross-validation pool), then inside the agent
+    bare, ruled = pool.loc["Jev 1.14"], pool.loc["Jev 1.14, same information"]
+    assert f"Bare, it routed {pct(bare.handled_right)} of training chats right" in t
+    assert ruled.handled_right == pool.loc["Claude Haiku 5.5 (team's router)"].handled_right and f"examples, {pct(ruled.handled_right)}, level with Haiku" in t
+    j = versus[AGENT_SETUPS["jev"]]
+    assert j["only_setup_right"] == 0
+    assert f"{pct(test_run[AGENT_SETUPS['jev']]['task_success']['rate'])} on test (lost {j['only_full_agent_right']}, won none, p = {p_text(j['p_value'])})" in t
+    fresh_versus = {c["setup"]: c for c in json.loads((EVAL / "summary_fresh.json").read_text(encoding="utf-8"))["comparisons_with_full_agent"]}
+    assert f"{pct(fresh_run[AGENT_SETUPS['jev']]['task_success']['rate'])} on fresh chats against Haiku's " \
+           f"{pct(fresh_run['full_agent']['task_success']['rate'])} (p = {p_text(fresh_versus[AGENT_SETUPS['jev']]['p_value'])})" in t
+
+    # when it pays (the break-even of the first version holds: same base model on the same CPU server)
     be = json.loads((TUNE / "breakeven.json").read_text(encoding="utf-8"))["base_case"]
     assert f"One CPU server is ${be['monthly_fixed_usd']:.0f} a month" in t
-    assert f"above {be['vs_haiku_chats_per_month']:,} chats a month and Sonnet above {be['vs_sonnet_chats_per_month']:,}" in t
-    home = cost["northstar_volume"]
-    assert f"At Northstar's {home:,} the Haiku router costs ${home * table.cost_usd_per_chat[SMALL]:.0f} a month" in t
+    assert f"Haiku on cost above {be['vs_haiku_chats_per_month']:,} chats a month," in t and f"Sonnet above {be['vs_sonnet_chats_per_month']:,} (right chart)" in t
     agent = cost["breakeven"]["finetuned_router_inside_agent"]
-    assert f"saves ${agent['router_saving_usd_per_conversation']:.4f} a chat" in t
-    assert f"finishes {agent['containment_loss_points']:.0f} points fewer chats alone and correctly" in t
-    assert f"worth ${agent['people_cost_of_that_loss_usd_per_conversation']:.2f} a chat in people's time" in t
+    assert agent["router_saving_usd_per_conversation"] < 0 and f"costs ${-agent['router_saving_usd_per_conversation']:.4f} more a chat" in t
+    assert f"finishes {agent['containment_loss_points']:.1f} points fewer alone and correctly" in t
 
     # the figure draws the same files
-    n = report_figure.numbers()
-    assert n["breakeven"] == {SMALL: be["vs_haiku_chats_per_month"], LARGE: be["vs_sonnet_chats_per_month"]}
-    assert n["northstar_volume"] == home and n["test_accuracy"][FT] == table.type_accuracy[FT]
-    assert [x for x, _ in n["curve"]][-1] == log["splits"]["train"]
-    assert "(../../src/northstar/finetune/results/page4_figure.png)" in t and (TUNE / "page4_figure.png").exists()
+    from northstar.finetune.study import report_figure as study_figure
+    n = study_figure.numbers()
+    assert {k: n["breakeven"][k] for k in (SMALL, LARGE)} == {SMALL: be["vs_haiku_chats_per_month"], LARGE: be["vs_sonnet_chats_per_month"]}
+    keys = {"ft": study_figure.FT, "haiku": study_figure.SMALL, "sonnet": study_figure.LARGE, "jev": study_figure.JEV}
+    assert all(n["routing"][keys[k]] == {"test": test[k].handled_right, "fresh": fresh[k].handled_right} for k in ORDER)
+    assert f"Jev above {n['breakeven'][study_figure.JEV]:,}" in t
+    assert "(../../src/northstar/finetune/study/results/page4_figure.png)" in t and study_figure.OUT.exists()
+
+
+def test_study_figure_is_drawn_from_the_result_files(tmp_path):
+    pytest.importorskip("matplotlib")
+    from northstar.finetune.study import report_figure as study_figure
+    out = tmp_path / "page4.png"
+    study_figure.draw(study_figure.numbers(), out)
+    assert out.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
 
 
 def test_page4_figure_is_drawn_from_the_result_files(tmp_path):
@@ -265,10 +289,11 @@ def test_page5_quotes_the_evaluation(test_run, fresh_run):
     summary = json.loads((EVAL / "summary.json").read_text(encoding="utf-8"))
     versus = {c["setup"]: c for c in summary["comparisons_with_full_agent"]}
     names = {"full_agent": "**Recommended agent**", "full_agent_before_fixes": "Before the fixes",
-             "full_agent_router_sonnet": "Router: Sonnet 5.5", "full_agent_router_finetuned": "Router: fine-tuned",
+             "full_agent_router_sonnet": "Router: Sonnet 5.5", "full_agent_router_finetuned": "Router: first fine-tuned",
+             "full_agent_router_finetuned_lora": "Router: final fine-tuned", "full_agent_router_jev": "Router: Jev 1.14",
              "full_agent_router_v2": "Router prompt v2", "full_agent_warranty_high": "Warranty: high effort",
              "full_agent_no_guardrails": "Checks off", "single_agent": "Single Sonnet agent"}
-    assert list(test_run) == list(names) and "Eight setups, one change each" in t      # every setup of the evaluation, in its order
+    assert list(test_run) == list(names) and "Ten setups, one change each" in t      # every setup of the evaluation, in its order
 
     # the table: one row per setup
     for setup, name in names.items():
@@ -297,8 +322,8 @@ def test_page5_quotes_the_evaluation(test_run, fresh_run):
     assert agent["wrong_commitments"]["k"] == agent["invented_facts"]["k"] == 1 and agent["wrong_commitments"]["ci_high"] == agent["invented_facts"]["ci_high"]
     assert f"Its 1 wrong promise and 1 invented fact in {agent['n']} could each be as high as {100 * agent['wrong_commitments']['ci_high']:.1f}%" in t
     clear = [setup for setup, v in versus.items() if v["p_value"] < 0.05]
-    assert clear == ["full_agent_before_fixes", "full_agent_router_finetuned", "single_agent"]
-    assert "Three gaps are clear at 5%: the fixes, the fine-tuned router and the single agent" in t
+    assert clear == ["full_agent_before_fixes", "full_agent_router_finetuned", "full_agent_router_jev", "single_agent"]
+    assert "Four gaps are clear at 5%: the fixes, the first fine-tuned router, Jev and the single agent" in t
     assert f"missed {single['escalation_recall']['n'] - single['escalation_recall']['k']} handoffs at three times the cost" in t
     assert round(single["cost_usd_per_1000_chats"] / agent["cost_usd_per_1000_chats"]) == 3
     assert test_run["full_agent_no_guardrails"]["task_success"]["k"] == agent["task_success"]["k"] and "The checks do not change success here" in t

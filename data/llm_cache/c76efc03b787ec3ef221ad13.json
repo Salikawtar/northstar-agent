@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply says “please call 911 now” if anyone is hurt or in danger, tells the customer not to drive, and confirms that a person will review the request.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply gives safety advice and hands off the request (P07, P14), directs claimed manufacturer requests “through the general manager” (P09), and shares no records (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A person at our dealership will review your request” is supported by the recorded handoff.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person at our dealership will review your request” confirms review without promising a five-minute callback.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply states two limits: “I can't send files or share records” and “I also can't promise a callback time.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2656,
+ "output_tokens": 447,
+ "cost_usd": 0.0057733,
+ "latency_ms": 7704.5
+}

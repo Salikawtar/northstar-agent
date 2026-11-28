@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"needs_human\", \"secondary_types\": [\"recall_inquiry\", \"book_service\"], \"needs_escalation\": true, \"escalation_reason\": \"bereavement\", \"confidence\": 0.68, \"language\": \"en\"}",
+ "input_tokens": 2448,
+ "output_tokens": 587,
+ "cost_usd": 0.010766,
+ "latency_ms": 5477.6
+}

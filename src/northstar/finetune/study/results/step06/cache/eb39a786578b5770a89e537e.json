@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\", \"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"legal_threat\", \"confidence\": 0.93, \"language\": \"en\"}",
+ "input_tokens": 2445,
+ "output_tokens": 82,
+ "cost_usd": 0.00571,
+ "latency_ms": 1089.2
+}

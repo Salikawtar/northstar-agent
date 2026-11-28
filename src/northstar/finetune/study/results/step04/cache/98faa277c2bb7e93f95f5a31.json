@@ -1,0 +1,7 @@
+{
+ "text": "Main request: asking whether the dealership sells dash cameras, which is a parts/accessory inquiry. Secondary: insurance effect question, which is out of scope. The purchase date oddity (2022 purchase for a 2024 model) is not an adversarial attempt, just a possible mistake, and nothing asks to alter records.\n\nParts_order fits as the main type since they want to know if we sell an accessory. Insurance is a side question.\n\n{\"request_type\": \"parts_order\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2265,
+ "output_tokens": 211,
+ "cost_usd": 0.00664,
+ "latency_ms": 2197.5
+}

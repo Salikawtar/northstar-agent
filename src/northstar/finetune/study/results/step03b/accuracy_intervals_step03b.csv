@@ -1,0 +1,5 @@
+model,ensemble_accuracy,ci_low,ci_high
+baseline,0.788,0.719,0.856
+lora_3e4_30ep,0.688,0.613,0.762
+lora_3e4_60ep,0.762,0.697,0.825
+lora_1e3_60ep,0.775,0.704,0.845

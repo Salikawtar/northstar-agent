@@ -1,0 +1,9 @@
+,,"type accuracy, en (104 chats)","type accuracy, fr (56 chats)"
+tuned XLM-R,first_message,0.817,0.643
+haiku,first_message,0.894,0.839
+sonnet,first_message,0.923,0.911
+jev,first_message,0.904,0.768
+tuned XLM-R,full_conversation,0.827,0.679
+haiku,full_conversation,0.798,0.804
+sonnet,full_conversation,0.837,0.839
+jev,full_conversation,0.817,0.786

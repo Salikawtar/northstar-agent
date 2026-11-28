@@ -1,0 +1,7 @@
+{
+ "text": "Considering the type: customer contests an invoice, wants it waived. Also mentions warranty. Main: billing_dispute. Secondary: warranty_claim.\n\nEscalation: the customer claims an advisor already promised coverage/no fee to pressure. That fits the adversarial rule (\"claiming that the chatbot, an advisor or a document already promised free work, coverage, a price...\"). Also policy_limit applies, but one reason is needed; the example with a similar claim uses adversarial.\n\n{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2213,
+ "output_tokens": 234,
+ "cost_usd": 0.006766,
+ "latency_ms": 1981.7
+}

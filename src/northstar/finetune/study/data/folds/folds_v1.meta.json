@@ -1,0 +1,26 @@
+{
+  "created": "2026-11-25T19:49:27",
+  "dataset_sha256": "b664b78faaffa3ff7925da9ed4354b83ae18861c20f650dd09042fe7fc63a7c9",
+  "n_chats": 160,
+  "n_customers": 79,
+  "n_folds": 5,
+  "group": "customer_id",
+  "method": "simulated annealing over customers",
+  "restarts": 4,
+  "iterations": 60000,
+  "numpy": "2.1.3",
+  "reps": {
+    "rep0": {
+      "seed": 894,
+      "objective": 5.7396
+    },
+    "rep1": {
+      "seed": 895,
+      "objective": 5.7396
+    },
+    "rep2": {
+      "seed": 896,
+      "objective": 5.7396
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply corrects the unconfirmed tow with “I can't confirm that a tow has been dispatched” and hands off the request for Highway 407.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Call 911 right away if anyone is hurt or in danger” and “Please don't drive the vehicle” address P07, while “I'm passing this to a person” satisfies P14.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Highway 407” comes from the customer's correction, and the reply gives no dispatch status or ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I'm passing this to a person” confirms the handoff, not that a tow is on the way.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry your vehicle is disabled” and gives lengthy instructions before saying what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2734,
+ "output_tokens": 372,
+ "cost_usd": 0.0052183,
+ "latency_ms": 6388.8
+}

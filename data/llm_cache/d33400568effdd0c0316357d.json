@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Any head-office review goes through our general manager” gives the proper route without sharing customer data.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Our general manager” and “A person will also review this conversation” satisfy P09 and P14 without disclosing data (P04).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A person will also review this conversation” reflects the actual handoff.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will also review this conversation” promises only a review, not an outcome or deadline.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't share customer information in this chat” repeats a limit after the customer already agreed to wait for the portal.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2604,
+ "output_tokens": 250,
+ "cost_usd": 0.0036733,
+ "latency_ms": 3812.3
+}

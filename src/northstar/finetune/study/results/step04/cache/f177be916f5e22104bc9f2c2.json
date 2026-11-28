@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"repair_status\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.93, \"language\": \"fr\"}",
+ "input_tokens": 2331,
+ "output_tokens": 403,
+ "cost_usd": 0.0004346,
+ "latency_ms": 2737.6
+}

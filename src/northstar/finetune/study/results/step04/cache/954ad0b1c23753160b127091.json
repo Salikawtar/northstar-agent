@@ -1,0 +1,7 @@
+{
+ "text": "Tie-break check: the car is stuck right now, so this is roadside_assistance by default. The customer also says a repair we did (RO-366757) did not fix the same problem, which is close to \"a repair we did caused it\". They do not say we caused it, only that it was not fixed. They also do not demand a manager or a person. So the roadside default holds. They also ask for a written explanation of the earlier repair, which is a repair_status request, so I'm listing that as secondary.\n\nEscalation: every roadside_assistance request is a safety escalation.\n\n{\"request_type\": \"roadside_assistance\", \"secondary_types\": [\"repair_status\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2246,
+ "output_tokens": 243,
+ "cost_usd": 0.006922,
+ "latency_ms": 2377.2
+}

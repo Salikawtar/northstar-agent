@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je transmets votre demande à une personne » handles the third-party recall request under P15, and « ne le conduisez pas » addresses the safety concern under P07.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"« C'est elle, la titulaire du compte » states an account detail that was not checked (P08).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"« La titulaire du compte » goes beyond the customer's statement that the Halden belongs to his wife.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne, qui vérifiera l'autorisation » promises only a review, not an outcome or a timeline.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is warm, but « Je ne peux pas chercher » comes before the help it can offer: « Je transmets votre demande » (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2693,
+ "output_tokens": 524,
+ "cost_usd": 0.0066358,
+ "latency_ms": 9340.4
+}

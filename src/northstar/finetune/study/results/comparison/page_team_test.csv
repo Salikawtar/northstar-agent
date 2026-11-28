@@ -1,0 +1,4 @@
+key,router,type_right,type_range,english,french,caught,precision,router_ms,router_usd,success,success_range,agent_caught,right_queue,extra,agent_seconds,agent_usd,p_vs_haiku
+ft,Fine-tuned XLM-R (Kawtar's version),67.5,52–80,65.4,71.4,16,94.1,249,0.0,40.0,26–55,17,9,8,0.3,4.51,"0.0005 (Haiku agent right on 12 chats, this one on 0)"
+haiku,Claude Haiku 5.5 (team's router),82.5,68–91,76.9,92.9,18,85.7,2443,0.36,70.0,55–82,18,18,6,5.6,5.34,reference
+sonnet,Claude Sonnet 5.5,77.5,62–88,76.9,78.6,17,89.5,1047,5.56,65.0,50–78,17,16,6,5.0,11.93,0.63 (3 vs 1)

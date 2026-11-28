@@ -1,0 +1,7 @@
+{
+ "text": "Decision: the car is stuck right now, so roadside_assistance is the starting point. The tie-break says it goes to needs_human only if the customer reports that a repair we did caused the failure, or demands a manager.\n\nHere, the customer says the battery was \"tested fine\" last time and that the test was wrong. That is a complaint about a diagnosis, not a claim that our repair caused the breakdown. The customer does not ask for a manager or a person. So the type stays roadside_assistance.\n\nEscalation: every roadside_assistance request gets the safety reason.\n\nSecondary types: the customer wants the car fixed properly, which could be warranty_claim or book_service. The best fit is book_service for a diagnosis and repair, with repair_status as a weaker option. I'll list book_service.\n\n{\"request_type\": \"roadside_assistance\", \"secondary_types\": [\"book_service\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2264,
+ "output_tokens": 321,
+ "cost_usd": 0.007738,
+ "latency_ms": 2864.0
+}

@@ -50,7 +50,9 @@ OUT = Path(__file__).parent / "results"
 OPTIONS = {
     "small_prompted": ("full_agent", "Small prompted router (Haiku 5.5), recommended agent"),
     "large_prompted": ("full_agent_router_sonnet", "Large prompted router (Sonnet 5.5)"),
-    "finetuned": ("full_agent_router_finetuned", "Fine-tuned router (XLM-RoBERTa)"),
+    # The fine-tuning study's final router (LoRA + attack head); the first fine-tuned version is still a setup
+    # in the evaluation (full_agent_router_finetuned) but no longer the fine-tuned option priced here.
+    "finetuned": ("full_agent_router_finetuned_lora", "Fine-tuned router (XLM-RoBERTa, LoRA + attack head)"),
     "single_agent": ("single_agent", "Single Sonnet agent, no router (baseline)"),
     # Same agent, same measured numbers, but during the pilot a person approves every billing and
     # warranty reply before it is sent, so an expensive promise cannot reach a customer.

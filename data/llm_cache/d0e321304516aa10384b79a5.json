@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Un membre de notre équipe va examiner votre demande et vérifier l’autorisation » donne la bonne suite à la demande de statut.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Vérifier l’autorisation » et inviter « le titulaire du compte » à communiquer directement respectent P09, P14 et P15 sans divulguer de renseignements non vérifiés (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Va examiner votre demande » décrit la prochaine étape sans inventer de statut, de diagnostic ni de couverture.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Va examiner votre demande » annonce seulement une révision humaine, sans promettre de rappel ni de décision de garantie.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je comprends que la situation est urgente » est empathique, mais la réponse énonce un long refus avant de dire ce que l’équipe peut faire (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2777,
+ "output_tokens": 416,
+ "cost_usd": 0.0057658,
+ "latency_ms": 7484.6
+}

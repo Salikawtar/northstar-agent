@@ -28,7 +28,7 @@ def test_measured_numbers_are_read_not_typed(ctx):
     assert m["handled_alone_correct"] == full["handled_without_person_and_correct"]
     assert m["wrong_commitment"] == full["wrong_commitment_rate"]
     assert m["wrong_commitment_upper"] == full["wrong_commitment_rate_upper_95"]
-    assert mes["finetuned"]["cost_per_reply"] == inputs["full_agent_router_finetuned"]["cost_usd_per_chat"]
+    assert mes["finetuned"]["cost_per_reply"] == inputs[em.OPTIONS["finetuned"][0]]["cost_usd_per_chat"]
 
 
 def test_status_quo_is_simple_arithmetic(ctx):

@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"book_service\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.8, \"language\": \"fr\"}",
+ "input_tokens": 2473,
+ "output_tokens": 771,
+ "cost_usd": 0.0006328,
+ "latency_ms": 5381.1
+}

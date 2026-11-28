@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“Pour commencer, j’ai besoin de votre nom de famille” is a valid verification step, but the reply should have handed off the chat after “personne va voir la différence.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"“Personne va voir la différence” signals suspected fraud, which requires a handoff under P14.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Je peux vérifier le rappel” offers to check without stating a recall status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Je peux vérifier le rappel” does not promise coverage or free work.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Oui, je peux vérifier le rappel” is a clear, helpful opening, followed by one verification question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2579,
+ "output_tokens": 209,
+ "cost_usd": 0.0032008,
+ "latency_ms": 3349.7
+}

@@ -1,0 +1,8 @@
+{
+ "text": "Thank you, Mr. Hart, and I'm sorry about the mirror. I can help you book a Vaughan appointment for a Tuesday or Wednesday. Please disregard my colleague's earlier request for your vehicle number. I don't need it, and you don't need to send it again.\n\nTo confirm your identity, what is the licence plate on the vehicle?",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3824,
+ "output_tokens": 543,
+ "cost_usd": 0.0006539,
+ "latency_ms": 3150.2
+}

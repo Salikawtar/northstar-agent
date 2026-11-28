@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Confirmera […] la mise de côté » leaves the customer expecting a reservation when only a review was arranged.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08: « Confirmera […] la mise de côté » makes a commitment that no tool or person authorized.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je ne peux pas confirmer la disponibilité » gives no stock status, price, or existing reservation as fact.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"« Confirmera […] la mise de côté » promises that the adviser will confirm the hold rather than check whether one is possible.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je ne peux pas confirmer la disponibilité de l’étui, ni le mettre de côté » lists two limits before saying what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2692,
+ "output_tokens": 527,
+ "cost_usd": 0.0066633,
+ "latency_ms": 9275.8
+}

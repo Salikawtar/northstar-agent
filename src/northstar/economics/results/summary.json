@@ -57,29 +57,29 @@
    "latency_s_median": 4.96
   },
   "finetuned": {
-   "setup": "full_agent_router_finetuned",
-   "label": "Fine-tuned router (XLM-RoBERTa)",
+   "setup": "full_agent_router_finetuned_lora",
+   "label": "Fine-tuned router (XLM-RoBERTa, LoRA + attack head)",
    "n": 40,
-   "cost_per_reply": 0.00451,
-   "cost_per_successful_reply": 0.01128,
-   "task_success": 0.4,
-   "handled_alone": 0.375,
-   "handled_alone_correct": 0.25,
+   "cost_per_reply": 0.00558,
+   "cost_per_successful_reply": 0.00971,
+   "task_success": 0.575,
+   "handled_alone": 0.475,
+   "handled_alone_correct": 0.325,
    "handled_alone_correct_ci": [
-    0.142,
-    0.402
+    0.201,
+    0.48
    ],
-   "handled_alone_correct_k": 10,
-   "handled_alone_k": 15,
+   "handled_alone_correct_k": 13,
+   "handled_alone_k": 19,
    "wrong_commitment": 0.05,
    "wrong_commitment_k": 2,
    "wrong_commitment_upper": 0.165,
-   "invented": 0.075,
-   "invented_k": 3,
-   "invented_upper": 0.199,
-   "missed_handoffs": 1,
-   "missed_handoff_rate": 0.025,
-   "latency_s_median": 0.28
+   "invented": 0.025,
+   "invented_k": 1,
+   "invented_upper": 0.129,
+   "missed_handoffs": 2,
+   "missed_handoff_rate": 0.05,
+   "latency_s_median": 4.95
   },
   "single_agent": {
    "setup": "single_agent",
@@ -251,9 +251,9 @@
    }
   },
   "finetuned_router_inside_agent": {
-   "router_saving_usd_per_conversation": 0.0025,
-   "containment_loss_points": 10.0,
-   "people_cost_of_that_loss_usd_per_conversation": 0.266
+   "router_saving_usd_per_conversation": -0.0007,
+   "containment_loss_points": 2.5,
+   "people_cost_of_that_loss_usd_per_conversation": 0.066
   },
   "finetuned_router_alone_vs_haiku_chats_per_month": 197000
  },
@@ -338,28 +338,28 @@
   "1000": {
    "small_prompted": -732.0,
    "large_prompted": -13305.0,
-   "finetuned": -14020.0,
+   "finetuned": -26124.0,
    "single_agent": -89126.0,
    "small_prompted_pilot": -835.0
   },
   "20000": {
    "small_prompted": 11086.0,
    "large_prompted": -240383.0,
-   "finetuned": -253318.0,
+   "finetuned": -495397.0,
    "single_agent": -1756786.0,
    "small_prompted_pilot": 9036.0
   },
   "100000": {
    "small_prompted": 62629.0,
    "large_prompted": -1194714.0,
-   "finetuned": -1259108.0,
+   "finetuned": -2469503.0,
    "single_agent": -8776730.0,
    "small_prompted_pilot": 52378.0
   },
   "1000000": {
    "small_prompted": 641498.0,
    "large_prompted": -11931938.0,
-   "finetuned": -12575228.0,
+   "finetuned": -24679179.0,
    "single_agent": -87752096.0,
    "small_prompted_pilot": 538982.0
   }
@@ -368,28 +368,28 @@
   "1000": {
    "small_prompted": -27.1,
    "large_prompted": -492.2,
-   "finetuned": -518.6,
+   "finetuned": -966.4,
    "single_agent": -3297.0,
    "small_prompted_pilot": -30.9
   },
   "20000": {
    "small_prompted": 20.5,
    "large_prompted": -444.6,
-   "finetuned": -468.5,
+   "finetuned": -916.3,
    "single_agent": -3249.4,
    "small_prompted_pilot": 16.7
   },
   "100000": {
    "small_prompted": 23.2,
    "large_prompted": -442.0,
-   "finetuned": -465.8,
+   "finetuned": -913.5,
    "single_agent": -3246.7,
    "small_prompted_pilot": 19.4
   },
   "1000000": {
    "small_prompted": 23.7,
    "large_prompted": -441.4,
-   "finetuned": -465.2,
+   "finetuned": -912.9,
    "single_agent": -3246.1,
    "small_prompted_pilot": 19.9
   }

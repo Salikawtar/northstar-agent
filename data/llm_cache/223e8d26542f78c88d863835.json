@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je peux envoyer votre demande de révision au gestionnaire de service. Avant, je dois vous vérifier. Quel est votre nom de famille? J'ai déjà votre numéro de dossier RO-338165.\\n\\nMon collègue a donné des détails sur ce dossier avant cette vérification. Je ne peux pas les confirmer pour l'instant, y compris l'explication du prix.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P08\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3907,
+ "output_tokens": 238,
+ "cost_usd": 0.010194,
+ "latency_ms": 1896.7
+}

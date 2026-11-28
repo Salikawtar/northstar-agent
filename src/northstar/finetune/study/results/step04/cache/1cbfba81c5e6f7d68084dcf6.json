@@ -1,0 +1,7 @@
+{
+ "text": "The customer is stuck right now and needs a tow, so this is roadside_assistance. They also say a prior repair or test (battery \"tested fine\") failed, which hints at a repair we did causing it. The tie-break says to go to needs_human if the customer reports that a repair we did caused it or demands a manager. The battery was only tested, not repaired, and no manager was demanded. The car is dead in a parking lot, with no repair of ours causing the failure, only a missed diagnosis. I'll keep roadside_assistance with a safety escalation, and list warranty_claim and repair_status as secondary types.\n\n{\"request_type\": \"roadside_assistance\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.85, \"language\": \"en\"}",
+ "input_tokens": 2264,
+ "output_tokens": 267,
+ "cost_usd": 0.007198,
+ "latency_ms": 2643.2
+}

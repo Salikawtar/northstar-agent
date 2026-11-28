@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"recall_inquiry\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2278,
+ "output_tokens": 233,
+ "cost_usd": 0.0003443,
+ "latency_ms": 2976.4
+}

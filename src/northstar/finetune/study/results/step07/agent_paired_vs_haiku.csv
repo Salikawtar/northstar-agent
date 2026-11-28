@@ -1,0 +1,8 @@
+split,setup,versus,only_haiku_agent_right,only_this_router_right,p_value
+test,full_agent_router_ft_balanced,full_agent (Haiku),5,0,0.0625
+test,full_agent_router_ft_safest,full_agent (Haiku),9,0,0.0039
+test,full_agent_router_jev2,full_agent (Haiku),6,0,0.0312
+test,full_agent_router_finetuned,full_agent (Haiku),12,0,0.0005
+fresh,full_agent_router_ft_balanced,full_agent (Haiku),10,1,0.0117
+fresh,full_agent_router_ft_safest,full_agent (Haiku),10,1,0.0117
+fresh,full_agent_router_jev2,full_agent (Haiku),3,1,0.625

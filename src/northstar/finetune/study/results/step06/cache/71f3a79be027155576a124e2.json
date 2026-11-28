@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"recall_inquiry\", \"secondary_types\": [\"warranty_claim\", \"book_service\"], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.72, \"language\": \"en\"}",
+ "input_tokens": 2394,
+ "output_tokens": 80,
+ "cost_usd": 0.005588,
+ "latency_ms": 1035.0
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The handoff is appropriate, but it leaves the customer with the earlier unsupported assurance that the fee is “completely waived under warranty.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your request to a team member” follows P06 and P14 without repeating or confirming the earlier waiver.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your request to a team member” matches the actual handoff, and the reply adds no unsupported record details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will get back to you” sets no response time and does not promise a fee waiver.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Thank you for your patience” is polite, but the reply does not lead with the handoff or briefly correct “completely waived under warranty.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2587,
+ "output_tokens": 336,
+ "cost_usd": 0.0044908,
+ "latency_ms": 5475.0
+}

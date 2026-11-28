@@ -1,0 +1,10 @@
+model,language,chats,accuracy
+full_3heads,en,104,1.0
+full_3heads,fr,56,1.0
+full_3heads,all,160,1.0
+lora_1e4,en,104,0.981
+lora_1e4,fr,56,1.0
+lora_1e4,all,160,0.988
+lora_3e4,en,104,1.0
+lora_3e4,fr,56,1.0
+lora_3e4,all,160,1.0

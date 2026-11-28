@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"billing_dispute\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"policy_limit\", \"confidence\": 0.93, \"language\": \"fr\"}",
+ "input_tokens": 2521,
+ "output_tokens": 296,
+ "cost_usd": 0.0004001,
+ "latency_ms": 2601.7
+}

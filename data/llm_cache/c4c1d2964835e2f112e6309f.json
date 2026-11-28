@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Please don't drive the vehicle” addresses the safety risk, and “A person will review your case” handles the records request without disclosing anything (P07, P14).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Please call 911” covers immediate danger, and “requests made on behalf of a company go through our general manager” preserves the required channel without sharing records (P02, P07, P09).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A person will review your case” describes the handoff without adding unsupported case details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't promise a callback time” declines the five-minute callback without making another promise.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't send files” and “I can't promise a callback time” state two limits rather than one (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2663,
+ "output_tokens": 329,
+ "cost_usd": 0.0046108,
+ "latency_ms": 5393.4
+}

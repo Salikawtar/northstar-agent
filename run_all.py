@@ -4,8 +4,8 @@
     python run_all.py datagen    # replay the data-generation run and compare it with the dataset
     python run_all.py dms        # just rebuild the mock dealer system
     python run_all.py results    # reproduce every key result from the recordings (no key, no cost)
-    python run_all.py evaluate   # final evaluation on the 40 test chats: 8 setups, graded, tables (Phase 4)
-    python run_all.py finetune   # three-router comparison on the test chats (Phase 5)
+    python run_all.py evaluate   # final evaluation on the 40 test chats: 10 setups, graded, tables (Phase 4)
+    python run_all.py finetune   # router comparison and the fine-tuning study's tables and figure (Phase 5)
     python run_all.py economics  # cost model, break-even points and memo numbers (Phase 6)
     python run_all.py record     # after a prompt or tool change: make the missing model calls (needs a key)
     python run_all.py test       # run the test suite
@@ -55,7 +55,7 @@ COMPARISON_COMMANDS = [
     ["-m", "northstar.agent.specialist", "--agent", "billing_lease", "--split", "validation", "--model", "small", "--effort", "low"],
 ]
 
-# Phase 5: the two prompted routers on the 40 test chats, for the three-router comparison.
+# Phase 5: the two prompted routers on the 40 test chats, for the router comparison.
 FINETUNE_BASELINE_COMMANDS = [
     ["-m", "northstar.agent.router", "--split", "test", "--model", "small"],
     ["-m", "northstar.agent.router", "--split", "test", "--model", "large"],
@@ -89,7 +89,8 @@ def _run(commands, keep_key: bool):
 EVALUATION_COMMANDS = [
     ["-m", "northstar.evaluation", "--split", "validation", "--setups", "full_agent", "full_agent_before_fixes"],
     ["-m", "northstar.evaluation"],
-    ["-m", "northstar.evaluation", "--split", "fresh", "--setups", "full_agent", "single_agent"],   # D-33, run once
+    ["-m", "northstar.evaluation", "--split", "fresh", "--setups", "full_agent", "single_agent",   # D-33, run once
+     "full_agent_router_finetuned_lora", "full_agent_router_jev"],     # the study's two routers, recorded once
     ["-m", "northstar.evaluation", "consistency"],
     ["-m", "northstar.evaluation", "check"],          # grader vs the two reviewers' hand labels (evaluation/human_review/)
 ]
@@ -115,7 +116,7 @@ def stage_record():
 
 
 def stage_finetune():
-    """Three-router comparison (Phase 5). Prompted routers are replayed from the recordings.
+    """Router comparison (Phase 5) and the fine-tuning study. Prompted routers are replayed from the recordings.
     The fine-tuned router is rerun if its checkpoint is on this machine (1.1 GB, not in git);
     otherwise its committed test results are used. Training itself needs a GPU:
     python -m northstar.finetune.train_router select, then final (see src/northstar/finetune/README.md)."""
@@ -127,6 +128,10 @@ def stage_finetune():
         print("No local checkpoint: building the comparison from the committed test results.")
         _run([["-m", "northstar.finetune.compare"]], keep_key=False)
     _run([["-m", "northstar.finetune.breakeven"]], keep_key=False)
+    # The fine-tuning study (src/northstar/finetune/study/): every router option and training setup, rebuilt
+    # from the saved predictions (no training, no key). Training itself ran on Kaggle (the study's notebooks).
+    _run([["-m", "northstar.finetune.study.comparison_report"],
+          ["-m", "northstar.finetune.study.report_figure"]], keep_key=False)     # the figure of report page 4
     if (ROOT / "src" / "northstar" / "finetune" / "results" / "datasize_runs.csv").exists():
         _run([["-m", "northstar.finetune.datasize"],
               ["-m", "northstar.finetune.report_figure"]], keep_key=False)     # the figure of report page 4

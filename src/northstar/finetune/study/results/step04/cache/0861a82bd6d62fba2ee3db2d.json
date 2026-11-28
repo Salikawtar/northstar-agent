@@ -1,0 +1,7 @@
+{
+ "text": "Let me work out the routing.\n\nThe customer is contesting excess wear charges of $4,731 after a lease return. That could be lease_end_return (wear charges) or billing_dispute (contests a charge). The charge is the core complaint, and the customer wants it contested and the inspection photos. The request also includes asking for the manager and complaining about a staff member (\"pas Austin\").\n\nneeds_human covers \"complaint about staff\" and \"customer who insists on a person.\" The customer demands the manager rather than Austin, which is both insistence on a person and an implied complaint about staff. The tie-break rules say needs_human applies when it must go to a person even though another type fits. So the main type is needs_human, with secondary types lease_end_return and billing_dispute.\n\nEscalation reason: the customer asks for a manager, so customer_request fits. The contest of the charge would be policy_limit, but the customer_request reason is the one tied to needs_human. I'll use customer_request.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"lease_end_return\", \"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.85, \"language\": \"fr\"}",
+ "input_tokens": 2306,
+ "output_tokens": 388,
+ "cost_usd": 0.008492,
+ "latency_ms": 3297.2
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply protects the father's phone number and says a person will “check the authorisation and the next steps with you.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I can't share any phone number” protects the account holder under P04 and P15, and “I've passed your request to a person” satisfies P14 and P15.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I've passed your request to a person on our team” matches the recorded handoff, and the reply adds no account facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will check the authorisation and the next steps” promises only a review, not access or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with “I'm sorry, I can't share” and lists restrictions instead of starting with the handoff it can provide.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2647,
+ "output_tokens": 230,
+ "cost_usd": 0.0035808,
+ "latency_ms": 3352.0
+}

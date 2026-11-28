@@ -1,0 +1,7 @@
+{
+ "text": "Analysis: The customer asks whether the car on RO-338165 is ready, but the main issue is the conflicting prices: a quote given Tuesday versus $912 CAD yesterday, and they say they approved nothing extra. That is questioning (arguably contesting) an invoice or charge, so billing_dispute fits, with repair_status secondary.\n\nEscalation: they ask \"which is the real price\" and state they approved nothing more. That is a question about what the charge is, not an explicit demand to remove or correct it. So not policy_limit yet. No complaint about staff is made beyond mentioning the price discrepancy. Not adversarial.\n\n{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"repair_status\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.82, \"language\": \"fr\"}",
+ "input_tokens": 2206,
+ "output_tokens": 277,
+ "cost_usd": 0.007182,
+ "latency_ms": 2594.6
+}

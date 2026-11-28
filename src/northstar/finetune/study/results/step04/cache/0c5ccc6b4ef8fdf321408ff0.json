@@ -1,0 +1,7 @@
+{
+ "text": "The customer is stuck on the highway right now, but they also say the repair we did (RO-187778) has failed for the third time and they are demanding a manager. Under the tie-break, that combination goes to needs_human. Roadside assistance goes in as a secondary type, and the escalation reason is safety because someone is stranded on a road. The customer_request and complaint reasons also apply, but only one reason can be given, and the stranded car is the most urgent.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.93, \"language\": \"en\"}",
+ "input_tokens": 2211,
+ "output_tokens": 214,
+ "cost_usd": 0.006562,
+ "latency_ms": 2077.2
+}

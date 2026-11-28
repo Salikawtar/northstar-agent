@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"out_of_scope\", \"secondary_types\": [], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.92, \"language\": \"en\"}",
+ "input_tokens": 2364,
+ "output_tokens": 285,
+ "cost_usd": 0.0003789,
+ "latency_ms": 2564.1
+}

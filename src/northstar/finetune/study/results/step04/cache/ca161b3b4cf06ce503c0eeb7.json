@@ -1,0 +1,7 @@
+{
+ "text": "Being towed by the city for a parking issue is not something the service department handles, and it's not a breakdown. The car isn't stuck or broken down; it's been impounded. So out_of_scope (registration/parking/plate-type matters, not a repair). No safety failure, no one stranded on a road. Not adversarial.\n\n{\"request_type\": \"out_of_scope\", \"secondary_types\": [], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2227,
+ "output_tokens": 164,
+ "cost_usd": 0.006094,
+ "latency_ms": 1751.1
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The handoff leaves the earlier claim that the fee is “completely waived under warranty” uncorrected, even though no waiver was confirmed.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your message to a team member” hands off the billing dispute without endorsing the earlier waiver claim (P06, P14).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your message to a team member” matches the recorded handoff, and the reply adds no billing or warranty facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” gives no contact deadline and does not promise a fee waiver.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is brief and warm but omits the brief correction of “completely waived under warranty” called for by P13.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2592,
+ "output_tokens": 485,
+ "cost_usd": 0.0059933,
+ "latency_ms": 8813.4
+}

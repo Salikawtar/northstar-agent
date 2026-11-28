@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"needs_human\", \"secondary_types\": [\"billing_dispute\", \"lease_end_return\"], \"needs_escalation\": true, \"escalation_reason\": \"bereavement\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2415,
+ "output_tokens": 411,
+ "cost_usd": 0.000447,
+ "latency_ms": 2988.1
+}

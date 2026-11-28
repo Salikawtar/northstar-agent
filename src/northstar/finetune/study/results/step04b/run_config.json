@@ -1,0 +1,12 @@
+{
+ "model": "typesafe/jev-1.14",
+ "questions": "jev_questions_v2",
+ "variants": [
+  "first_message",
+  "full_conversation"
+ ],
+ "repeats": 2,
+ "budget_usd": 3.0,
+ "date": "2026-11-26",
+ "git_commit": "214fae1"
+}

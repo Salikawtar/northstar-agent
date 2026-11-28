@@ -1,0 +1,7 @@
+{
+ "text": "Routing logic: the car is stuck right now, which defaults to roadside_assistance. The tie-break sends it to needs_human only if the customer also reports that a repair we did caused it or demands a manager. Here the customer says the car has the same problem after a repair we did (\"exact same thing,\" \"resolved\"). That is a repeat failure of our repair, not clearly a repair that caused a new failure, but it is close. The customer does not demand a manager or a person. They ask for a tow and a written explanation, which is something staff can provide but is not an insistence on a human.\n\nThe \"same issue returned after our repair\" case is best read as a repair-related failure, so I'm treating it as roadside_assistance with the repair_status as secondary. The escalation is safety because someone is stranded.\n\n{\"request_type\": \"roadside_assistance\", \"secondary_types\": [\"repair_status\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2246,
+ "output_tokens": 317,
+ "cost_usd": 0.007662,
+ "latency_ms": 3199.9
+}

@@ -1,0 +1,7 @@
+{
+ "text": "Main type: warranty_claim, with book_service as secondary since the customer asks when it can be fixed. Escalation: nothing adversarial is stated, only a firm demand for coverage. The mileage of 189,000 km likely exceeds typical warranty limits, but that is for a human to decide later. There is no safety failure and no demand for a manager yet, so no escalation.\n\n{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"book_service\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2215,
+ "output_tokens": 189,
+ "cost_usd": 0.00632,
+ "latency_ms": 2077.1
+}

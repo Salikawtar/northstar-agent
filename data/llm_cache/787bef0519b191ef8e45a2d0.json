@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The customer said “Have a wonderful day,” so a friendly closing was more appropriate than “passing your message to a team member.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P01\", \"P08\"],\n  \"policy_reason\": \"For the out-of-scope request, the reply did not say what dealership help was available (P01) and made an unsupported promise that someone “will contact you” (P08).\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your message to a team member” matches the recorded handoff and adds no unsupported record details.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"“Who will contact you” guarantees outreach when only a review is assured.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I want to make sure you get the right help” is polite and concise, with no limits or questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2649,
+ "output_tokens": 453,
+ "cost_usd": 0.0058158,
+ "latency_ms": 8117.9
+}

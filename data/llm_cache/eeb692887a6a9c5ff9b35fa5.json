@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can look into this for you. To pull up RO-275786, please tell me the last name on the repair order. Once you're verified, I can check the repair status and whether your Meridian Halden has any open recall campaigns. Also, my colleague said the recall would be added to this visit. I can't confirm that until I've checked your records.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P08\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3671,
+ "output_tokens": 437,
+ "cost_usd": 0.0005856,
+ "latency_ms": 4104.5
+}

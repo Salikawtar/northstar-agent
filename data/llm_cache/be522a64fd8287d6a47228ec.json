@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply says « Je transfère votre demande », but omits safety guidance after the customer reported « un char m’a accroché au stationnement ».\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"After « un char m’a accroché au stationnement », P07 required an urgent handoff, advice not to drive if the car might be unsafe, and advice to call 911 if anyone was hurt or in danger.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Je n’ai pas non plus pu vérifier votre véhicule » does not assert a recall status or an estimate.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne de notre équipe […] examinera la situation » promises only human review.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with « Je ne peux pas » and repeats limits instead of leading with « Je transfère votre demande ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2646,
+ "output_tokens": 442,
+ "cost_usd": 0.0056983,
+ "latency_ms": 7618.2
+}

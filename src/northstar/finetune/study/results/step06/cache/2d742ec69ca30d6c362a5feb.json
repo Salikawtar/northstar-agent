@@ -1,0 +1,7 @@
+{
+ "text": "Analysis: The customer is stranded on a highway shoulder right now, so the tie-break gives roadside_assistance. They also contest a charge, which goes in secondary_types as billing_dispute. They do not say a repair we did caused the breakdown and do not demand a manager, so this is not needs_human. Every roadside_assistance request is escalated for safety.\n\n{\"request_type\": \"roadside_assistance\", \"secondary_types\": [\"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.9, \"language\": \"fr\"}",
+ "input_tokens": 2283,
+ "output_tokens": 191,
+ "cost_usd": 0.006476,
+ "latency_ms": 1842.3
+}

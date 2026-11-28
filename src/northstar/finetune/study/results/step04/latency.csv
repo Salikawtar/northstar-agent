@@ -1,0 +1,4 @@
+model,chats,median_ms,p90_ms
+haiku,39,2340.0,2822.0
+sonnet,39,1004.0,2035.0
+jev,39,200.0,222.0

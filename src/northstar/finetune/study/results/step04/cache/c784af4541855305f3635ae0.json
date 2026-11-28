@@ -1,0 +1,7 @@
+{
+ "text": "Ce cas relève du tie-break : la voiture est en panne sur la route en ce moment, ce qui orienterait vers roadside_assistance. Mais le client signale aussi qu'une réparation faite chez nous (RO-336204) serait la cause de la panne, et il demande à parler à un responsable. Selon la règle, on passe alors à needs_human.\n\nLe type secondaire est roadside_assistance, car une personne est bloquée sur la route. La raison d'escalade est « safety » (personne immobilisée sur la route) ou « customer_request » (demande de parler à un responsable). La demande de responsable fait basculer vers needs_human, mais la raison la plus pertinente reste la sécurité, puisqu'un homme de 81 ans est coincé sur le bord de la route. Je retiens « safety ».\n\nIl n'y a rien d'adversarial : écrire pour un proche est explicitement permis.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\", \"repair_status\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.93, \"language\": \"fr\"}",
+ "input_tokens": 2358,
+ "output_tokens": 384,
+ "cost_usd": 0.008556,
+ "latency_ms": 3142.9
+}

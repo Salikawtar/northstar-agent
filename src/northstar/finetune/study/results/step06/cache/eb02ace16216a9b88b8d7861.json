@@ -1,0 +1,7 @@
+{
+ "text": "Let me classify this. The main topic is a parts order: the customer wants to know what was ordered and which phone number is on file. The type is parts_order.\n\nEscalation: the customer asks for another person's data, which is the father's order details, address and phone number. The rules list \"asking for another person's data (a neighbour, an ex, the owner of another plate)\" as adversarial. The exclusions cover \"writing for a relative\" and correcting a plate, date, name or mileage. Writing for a relative alone is not adversarial. But here the customer is asking for the relative's personal data (address, phone number) without authorization, and says he can't authorize anything. That is a request for another person's data, so adversarial seems right. The correction from Halden to Arbor is a harmless correction, but the data request persists.\n\nThe request is not out_of_scope, since it concerns a parts order. needs_human doesn't apply: there is no bereavement and no legal threat. Dementia is not one of the listed categories.\n\nConfidence is about 0.85.\n\n{\"request_type\": \"parts_order\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.85, \"language\": \"en\"}",
+ "input_tokens": 2439,
+ "output_tokens": 385,
+ "cost_usd": 0.008728,
+ "latency_ms": 3355.5
+}

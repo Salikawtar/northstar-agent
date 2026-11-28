@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Je vous mets en contact avec une personne de notre équipe » directs the disputed invoice to a person for review, as required by P06 and P14.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Je vous mets en contact avec une personne de notre équipe » handles the billing dispute under P06 and P14 without sharing unverified details.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Une personne de notre équipe » describes the actual handoff and adds no price, repair status or pickup detail.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Qui vous répondra » gives no response time and promises no billing outcome.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je suis l’assistant virtuel de la concession » opens with the assistant’s identity rather than what it can do about the disputed invoice.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2531,
+ "output_tokens": 413,
+ "cost_usd": 0.0051208,
+ "latency_ms": 6879.8
+}

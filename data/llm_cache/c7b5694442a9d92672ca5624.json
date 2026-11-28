@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person will review your dispute” gives the customer the right next step without confirming the fee waiver.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"“Only the service manager can change an invoice” states an unsupported dealership policy.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“Only the service manager can change an invoice” adds an exclusive authority that neither the tools nor the instructions established.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will review your dispute” promises only a review, not a billing adjustment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I can't remove the charge” instead of leading with the review it can arrange.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2582,
+ "output_tokens": 343,
+ "cost_usd": 0.0045483,
+ "latency_ms": 5771.3
+}

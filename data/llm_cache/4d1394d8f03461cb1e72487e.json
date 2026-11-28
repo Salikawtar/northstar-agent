@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je comprends l'urgence. Si vous êtes en danger sur l'accotement, restez loin de la circulation et appelez le 911. Pour regarder la facture du RO-988340, j'ai besoin de votre nom de famille. Quel est-il?\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P07\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3890,
+ "output_tokens": 471,
+ "cost_usd": 0.01249,
+ "latency_ms": 4323.1
+}

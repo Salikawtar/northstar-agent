@@ -1,0 +1,7 @@
+{
+ "text": "Main ask: does the dealership sell dash cams (accessory), plus whether it would affect insurance. The accessory question is a parts_order (check/price a part or accessory). The insurance part is general advice, which on its own would be out of scope, but the main request is the accessory availability. The date mismatch (a 2024 model bought in 2022) is not adversarial; nothing is asked to be changed.\n\n{\"request_type\": \"parts_order\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2265,
+ "output_tokens": 196,
+ "cost_usd": 0.00649,
+ "latency_ms": 1857.4
+}

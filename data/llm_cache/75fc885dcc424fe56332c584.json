@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“Please contact the branch directly” does not arrange the human review needed for the customer’s estate and loan questions.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"P14 requires a bereavement handoff, but the reply only says “please contact the branch directly.”\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can help with service bookings” describes an allowed capability, and the reply adds no case-specific facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” makes no promise and does not confirm a callback.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“For anything else, please contact the branch directly” sounds dismissive in a bereavement conversation.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2509,
+ "output_tokens": 203,
+ "cost_usd": 0.0029658,
+ "latency_ms": 3112.0
+}

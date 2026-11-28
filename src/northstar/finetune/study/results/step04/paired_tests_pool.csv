@@ -1,0 +1,7 @@
+input,method,versus,only_method_right,only_tuned_right,p_value
+first_message,haiku,tuned XLM-R,29,10,0.0034
+first_message,sonnet,tuned XLM-R,33,7,0.0
+first_message,jev,tuned XLM-R,26,10,0.0113
+full_conversation,haiku,tuned XLM-R,25,21,0.6587
+full_conversation,sonnet,tuned XLM-R,27,17,0.1742
+full_conversation,jev,tuned XLM-R,20,15,0.4996

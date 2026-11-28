@@ -100,7 +100,7 @@
    "ungraded": 0,
    "latency_s_median": 4.63,
    "latency_s_median_ci": [
-    3.56,
+    3.55,
     6.7
    ],
    "latency_s_p90": 7.64,
@@ -205,6 +205,212 @@
    "cost_usd_per_1000_chats": 13.04,
    "cost_usd_per_successful_chat": 0.02887,
    "grading_cost_usd": 0.142
+  },
+  "full_agent_router_finetuned_lora": {
+   "change": "router model: fine-tuned XLM-RoBERTa, LoRA + attack head (fine-tuning study) instead of Haiku 5.5",
+   "setup_id": {
+    "name": "full_agent_router_finetuned_lora",
+    "router": "finetuned_lora",
+    "agent_model": "booking_status=claude-haiku-5.5; warranty_recall=claude-sonnet-5.5; billing_lease=claude-sonnet-5.5",
+    "reasoning_effort": "booking_status=low; warranty_recall=medium; billing_lease=medium",
+    "prompt_version": "v3",
+    "architecture": "multi_agent"
+   },
+   "n": 31,
+   "task_success": {
+    "k": 12,
+    "n": 31,
+    "rate": 0.387,
+    "ci_low": 0.237,
+    "ci_high": 0.562
+   },
+   "request_type_accuracy": {
+    "k": 17,
+    "n": 31,
+    "rate": 0.548,
+    "ci_low": 0.378,
+    "ci_high": 0.708
+   },
+   "escalation_recall": {
+    "k": 23,
+    "n": 24,
+    "rate": 0.958,
+    "ci_low": 0.798,
+    "ci_high": 0.993
+   },
+   "escalation_precision": {
+    "k": 23,
+    "n": 28,
+    "rate": 0.821,
+    "ci_low": 0.644,
+    "ci_high": 0.921
+   },
+   "missed_handoffs": 1,
+   "extra_handoffs": 5,
+   "wrong_commitments": {
+    "k": 1,
+    "n": 31,
+    "rate": 0.032,
+    "ci_low": 0.006,
+    "ci_high": 0.162
+   },
+   "invented_facts": {
+    "k": 3,
+    "n": 31,
+    "rate": 0.097,
+    "ci_low": 0.033,
+    "ci_high": 0.249
+   },
+   "policy_failures": {
+    "k": 17,
+    "n": 31,
+    "rate": 0.548,
+    "ci_low": 0.378,
+    "ci_high": 0.708
+   },
+   "resolved_by_grader": {
+    "k": 19,
+    "n": 31,
+    "rate": 0.613,
+    "ci_low": 0.438,
+    "ci_high": 0.763
+   },
+   "tone_ok": {
+    "k": 9,
+    "n": 31,
+    "rate": 0.29,
+    "ci_low": 0.161,
+    "ci_high": 0.466
+   },
+   "handled_without_person": {
+    "k": 3,
+    "n": 31,
+    "rate": 0.097,
+    "ci_low": 0.033,
+    "ci_high": 0.249
+   },
+   "handled_without_person_and_correct": {
+    "k": 2,
+    "n": 31,
+    "rate": 0.065,
+    "ci_low": 0.018,
+    "ci_high": 0.207
+   },
+   "crashes": 0,
+   "ungraded": 0,
+   "latency_s_median": 3.91,
+   "latency_s_median_ci": [
+    2.7,
+    4.88
+   ],
+   "latency_s_p90": 6.5,
+   "cost_usd_per_chat": 0.00546,
+   "cost_usd_per_1000_chats": 5.46,
+   "cost_usd_per_successful_chat": 0.01409,
+   "grading_cost_usd": 0.1515
+  },
+  "full_agent_router_jev": {
+   "change": "router model: Jev 1.14, typed questions with the v3 prompt's rules, instead of Haiku 5.5",
+   "setup_id": {
+    "name": "full_agent_router_jev",
+    "router": "prompted_jev",
+    "agent_model": "booking_status=claude-haiku-5.5; warranty_recall=claude-sonnet-5.5; billing_lease=claude-sonnet-5.5",
+    "reasoning_effort": "booking_status=low; warranty_recall=medium; billing_lease=medium",
+    "prompt_version": "v3",
+    "architecture": "multi_agent"
+   },
+   "n": 31,
+   "task_success": {
+    "k": 19,
+    "n": 31,
+    "rate": 0.613,
+    "ci_low": 0.438,
+    "ci_high": 0.763
+   },
+   "request_type_accuracy": {
+    "k": 25,
+    "n": 31,
+    "rate": 0.806,
+    "ci_low": 0.637,
+    "ci_high": 0.908
+   },
+   "escalation_recall": {
+    "k": 23,
+    "n": 24,
+    "rate": 0.958,
+    "ci_low": 0.798,
+    "ci_high": 0.993
+   },
+   "escalation_precision": {
+    "k": 23,
+    "n": 27,
+    "rate": 0.852,
+    "ci_low": 0.675,
+    "ci_high": 0.941
+   },
+   "missed_handoffs": 1,
+   "extra_handoffs": 4,
+   "wrong_commitments": {
+    "k": 0,
+    "n": 31,
+    "rate": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.11
+   },
+   "invented_facts": {
+    "k": 2,
+    "n": 31,
+    "rate": 0.065,
+    "ci_low": 0.018,
+    "ci_high": 0.207
+   },
+   "policy_failures": {
+    "k": 9,
+    "n": 31,
+    "rate": 0.29,
+    "ci_low": 0.161,
+    "ci_high": 0.466
+   },
+   "resolved_by_grader": {
+    "k": 26,
+    "n": 31,
+    "rate": 0.839,
+    "ci_low": 0.674,
+    "ci_high": 0.929
+   },
+   "tone_ok": {
+    "k": 6,
+    "n": 31,
+    "rate": 0.194,
+    "ci_low": 0.092,
+    "ci_high": 0.363
+   },
+   "handled_without_person": {
+    "k": 4,
+    "n": 31,
+    "rate": 0.129,
+    "ci_low": 0.051,
+    "ci_high": 0.289
+   },
+   "handled_without_person_and_correct": {
+    "k": 2,
+    "n": 31,
+    "rate": 0.065,
+    "ci_low": 0.018,
+    "ci_high": 0.207
+   },
+   "crashes": 0,
+   "ungraded": 0,
+   "latency_s_median": 3.21,
+   "latency_s_median_ci": [
+    0.46,
+    4.6
+   ],
+   "latency_s_p90": 6.1,
+   "cost_usd_per_chat": 0.00455,
+   "cost_usd_per_1000_chats": 4.55,
+   "cost_usd_per_successful_chat": 0.00743,
+   "grading_cost_usd": 0.1545
   }
  },
  "comparisons_with_full_agent": [
@@ -216,11 +422,29 @@
    "only_full_agent_right": 10,
    "only_setup_right": 3,
    "p_value": 0.0923
+  },
+  {
+   "setup": "full_agent_router_finetuned_lora",
+   "change": "router model: fine-tuned XLM-RoBERTa, LoRA + attack head (fine-tuning study) instead of Haiku 5.5",
+   "success_full_agent": 0.677,
+   "success_setup": 0.387,
+   "only_full_agent_right": 10,
+   "only_setup_right": 1,
+   "p_value": 0.0117
+  },
+  {
+   "setup": "full_agent_router_jev",
+   "change": "router model: Jev 1.14, typed questions with the v3 prompt's rules, instead of Haiku 5.5",
+   "success_full_agent": 0.677,
+   "success_setup": 0.613,
+   "only_full_agent_right": 3,
+   "only_setup_right": 1,
+   "p_value": 0.625
   }
  ],
  "model_calls": {
-  "total": 145,
-  "replayed": 0,
-  "new_spend_usd": 0.8497
+  "total": 249,
+  "replayed": 249,
+  "new_spend_usd": 0.0
  }
 }

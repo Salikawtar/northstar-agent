@@ -1,0 +1,7 @@
+{
+ "text": "Le client demande si sa voiture est prête (repair_status), mais le sujet principal est la contestation du prix : deux prix différents, rien d'approuvé de plus. Il demande lequel est le vrai, ce qui est une question sur la facture. Il dit n'avoir rien approuvé, ce qui laisse entendre une contestation, mais il ne demande pas explicitement de retirer ou de corriger le montant. Il veut savoir quel est le bon prix, donc ce n'est pas du policy_limit pour l'instant.\n\nType principal : billing_dispute, avec repair_status en secondaire. Pas d'escalade.\n\n{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"repair_status\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"fr\"}",
+ "input_tokens": 2206,
+ "output_tokens": 283,
+ "cost_usd": 0.007242,
+ "latency_ms": 2634.9
+}

@@ -10,15 +10,21 @@ recommend), so a difference in the results can only come from that change.
 | full_agent_before_fixes     | the four fixes from the error analysis off (D-32): the agent as it was when the test set was first run |
 | full_agent_router_sonnet    | router model: Claude Sonnet 5.5 instead of Haiku 5.5   |
 | full_agent_router_finetuned | router model: Neeraj's fine-tuned XLM-RoBERTa          |
+| full_agent_router_finetuned_lora | router model: the fine-tuning study's final router (XLM-RoBERTa, LoRA + attack head) |
+| full_agent_router_jev       | router model: Jev 1.14 (typed questions, the v3 prompt's rules) instead of Haiku 5.5 |
 | full_agent_router_v2        | router prompt version: v2 instead of v3                |
 | full_agent_warranty_high    | reasoning effort of the warranty desk: high, not medium|
 | full_agent_no_guardrails    | input and output checks switched off                  |
 | single_agent                | architecture: one Sonnet agent with every tool        |
 
 Adding a setup is one entry in SETUPS.
+
+The two study routers (src/northstar/finetune/study/) replay the decisions they made on the test and
+fresh chats (`router_recording`); the rest of the agent runs as usual. Haiku stays the recommended router.
 """
 from __future__ import annotations
 
+import os
 import threading
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -42,6 +48,7 @@ class Setup:
     desk_effort: dict = field(default_factory=dict)   # e.g. {"warranty_recall": "high"}
     guardrails: bool = True
     reply_fixes: bool = True                     # False = fixed replies as before the test error analysis (D-32)
+    router_recording: Optional[str] = None       # file under STUDY_RECORDINGS: replay that router's recorded decisions
 
     def setup_id(self) -> SetupId:
         cfg = settings()["components"]
@@ -51,7 +58,7 @@ class Setup:
                            reasoning_effort=sa["reasoning_effort"],
                            prompt_version=sa["prompt"].split("/")[-1].removesuffix(".md"), architecture="single_agent")
         r = cfg["router"]
-        router = ("finetuned" if self.router_model == "finetuned"
+        router = (self.router_model if self.router_model in ("finetuned", "finetuned_lora")
                   else f"prompted_{self.router_model or r['tier']}")
         desks = {d: self.desk_effort.get(d, cfg[d]["reasoning_effort"])
                  for d in ("booking_status", "warranty_recall", "billing_lease")}
@@ -70,6 +77,11 @@ SETUPS: dict[str, Setup] = {s.name: s for s in [
     Setup("full_agent_router_sonnet", "router model: Sonnet 5.5 instead of Haiku 5.5", router_model="large"),
     Setup("full_agent_router_finetuned", "router model: fine-tuned XLM-RoBERTa instead of Haiku 5.5",
           router_model="finetuned"),
+    Setup("full_agent_router_finetuned_lora",
+          "router model: fine-tuned XLM-RoBERTa, LoRA + attack head (fine-tuning study) instead of Haiku 5.5",
+          router_model="finetuned_lora", router_recording="step08/router_finetuned-balanced_five_models_test_and_fresh.csv"),
+    Setup("full_agent_router_jev", "router model: Jev 1.14, typed questions with the v3 prompt's rules, instead of Haiku 5.5",
+          router_model="jev", router_recording="step06/recordings/router_jev2_full_conversation_test_and_fresh.csv"),
     Setup("full_agent_router_v2", "router prompt: v2 instead of v3", router_prompt="router/v2.md"),
     Setup("full_agent_warranty_high", "warranty desk effort: high instead of medium",
           desk_effort={"warranty_recall": "high"}),
@@ -88,6 +100,12 @@ MAIN = "full_agent"
 # ---------------------------------------------------------------------------
 FINETUNED_RECORDING = ROOT / "src" / "northstar" / "finetune" / "results" / "router_test" / \
     "router_finetuned-xlm-roberta-base_none_none_test.csv"
+
+
+# The fine-tuning study's routers, recorded once on the test and fresh chats (notebook 06 of the study). The fine-tuned
+# router's time is the five averaged models measured live in notebook 08 (step 06 had timed one model).
+STUDY_RECORDINGS = ROOT / "src" / "northstar" / "finetune" / "study" / "results"
+RECORDED_NAMES = {"finetuned_lora": "finetuned-xlm-roberta-base-lora-attack", "jev": "typesafe/jev-1.14"}
 
 
 class RecordedRouter:
@@ -116,6 +134,12 @@ class RecordedRouter:
 
 
 def build_router(setup: Setup, client):
+    if setup.router_model == "finetuned_lora" and os.environ.get("NORTHSTAR_LIVE_FINETUNED") == "1":
+        from northstar.finetune.study.handover_router import TunedRouter   # needs torch, transformers, peft
+        return TunedRouter()                                              # the model itself, on CPU
+    if setup.router_recording:
+        return RecordedRouter(STUDY_RECORDINGS / setup.router_recording,
+                              name=RECORDED_NAMES.get(setup.router_model, setup.router_model))
     if setup.router_model == "finetuned":
         ckpt = ROOT / settings()["models"].get("finetuned_router", "models/finetuned_router")
         if (ckpt / "weights.pt").exists():

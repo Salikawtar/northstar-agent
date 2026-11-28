@@ -1,0 +1,7 @@
+{
+ "text": "Main ask: price and lead time for an interior rear door handle, which is a parts_order. The warranty question is secondary. The customer asks \"shouldn't that be warranty,\" which is a firm ask for coverage, not adversarial. No dates or mileage are being altered, and there is no claim of a prior promise. Nothing here calls for escalation.\n\n{\"request_type\": \"parts_order\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2224,
+ "output_tokens": 180,
+ "cost_usd": 0.006248,
+ "latency_ms": 4245.0
+}

@@ -64,7 +64,7 @@ client is a shared helper, not a step the message passes through.
 | Component | What it does | Model (starting choice) | Status |
 |---|---|---|---|
 | Input check | Flags prompt injection and personal data pasted into the chat before any model sees it | Rules (`src/northstar/guardrails/input_check.py`) | **Built**, approved by Jessica on 2026-11-24: 0 false alarms on 160 normal chats, 8 of 8 dataset injections, 5 of 15 held-out red-team injections (`docs/guardrails.md`) |
-| Router | Labels the request type (10 types), spots extra requests in the same message, decides if a person is needed now, detects language | Claude Haiku 5.5, low effort, prompt v3 | **Built and tested**: 83% type accuracy, 93% escalation recall (misses v3_0106, the brake light, which the warranty specialist then hands off) and 100% precision on validation (v3). On the 40 test chats: 82.5% type accuracy, against 77.5% for Sonnet and 67.5% for the fine-tuned router (`src/northstar/finetune/MODEL_CARD.md`) |
+| Router | Labels the request type (10 types), spots extra requests in the same message, decides if a person is needed now, detects language | Claude Haiku 5.5, low effort, prompt v3 | **Built and tested**: 83% type accuracy, 93% escalation recall (misses v3_0106, the brake light, which the warranty specialist then hands off) and 100% precision on validation (v3). On the 40 test chats: 82.5% type accuracy, against 77.5% for Sonnet and 67.5% for the first fine-tuned router (`src/northstar/finetune/MODEL_CARD.md`; the study's final router reached 80.0%, `src/northstar/finetune/study/`) |
 | Booking and status agent | Bookings, repair status, parts, roadside triage | Claude Haiku 5.5, low effort, prompt v3 | **Built and run**: handoff recall 100%, 0 unbacked promises on its 10 validation chats |
 | Warranty and recalls agent | Recall lookups, warranty facts, drafting claims for the warranty desk | Claude Sonnet 5.5, medium effort (D-24), prompt v2 | **Built and run**: handoff recall 100%, no coverage promises on its 7 validation chats |
 | Billing and lease agent | Invoice questions, disputes, lease-return steps and inspection bookings | Claude Sonnet 5.5, medium effort, prompt v2 | **Built and run**: handoff recall 100%, 0 unbacked promises on its 7 validation chats; v2 added the dispute rule and inspection booking |
@@ -146,13 +146,15 @@ cannot perform them even if manipulated.
 
 | Component | Choice | Why | What the tests showed |
 |---|---|---|---|
-| Router | Claude Haiku 5.5, low effort | Runs on every chat, must be fast and cheap; the task is classification | Validation: beat thinking-off and GPT-6 Luna (D-09). Test: 82.5% type accuracy against 77.5% for Sonnet, which costs 15 times more as a router, and 67.5% for the fine-tuned router |
+| Router | Claude Haiku 5.5, low effort | Runs on every chat, must be fast and cheap; the task is classification | Validation: beat thinking-off and GPT-6 Luna (D-09). Test: 82.5% type accuracy against 77.5% for Sonnet, which costs 15 times more as a router, and 67.5% for the first fine-tuned router (80.0% for the study's final one, D-36) |
 | Booking and status | Claude Haiku 5.5, low effort | Simple, tool-driven requests | Validation: Sonnet at the same effort made no booking where Haiku made one, and cost about 15 times more (`docs/prompt_log.md`) |
 | Warranty and recalls | Claude Sonnet 5.5, medium effort (started at high) | One wrong promise of coverage costs more than thousands of chats (`docs/economics.md`, section 6) | Validation: medium matched high on outcomes and was faster (D-24). Test: high effort was not better (65% against 70% task success, 2 invented facts against 1) |
 | Billing and lease | Claude Sonnet 5.5, medium effort | Disputes need careful reading, but fewer judgment calls than warranty | Validation: Haiku at low effort tied on 7 chats at about a tenth of the cost, but used more tool calls. Sonnet kept by judgment: 7 chats are too few to trust a tie on the desk that handles money (D-25) |
 | Comparison router | GPT-6 Luna, low effort | Same price as Haiku 5.5 from another vendor: a controlled comparison | Validation: 67% type accuracy against 90% for Haiku on the same prompt (D-09) |
+| Comparison router | Jev 1.14 (typed questions) | Cheaper and faster than Haiku: answers typed questions with probabilities | Cross-validation: level with Haiku (90.0% routing step) once given the v3 prompt's rules; whole agent on test 55.0% against 70.0% (D-36) |
+| Comparison router | Fine-tuned XLM-RoBERTa (LoRA + attack answer) | No cost per chat, runs on the dealer's own CPU server | Test: 80.0% type accuracy, 87.5% routing step; fresh chats 54.8% type accuracy; whole agent 57.5% against 70.0% (D-36) |
 
-Prices on 2026-11-10 (OpenRouter, per million tokens in / out): Haiku 5.5 $0.10 / $0.50, Sonnet 5.5 $2 / $10, GPT-6 Luna $0.10 / $0.50. Reasons and alternatives: `docs/decision_log.md`, D-07.
+Prices on 2026-11-10 (OpenRouter, per million tokens in / out): Haiku 5.5 $0.10 / $0.50, Sonnet 5.5 $2 / $10, GPT-6 Luna $0.10 / $0.50, Jev 1.14 $0.042 / free. The fine-tuned router needs a CPU server ($71 a month). Reasons and alternatives: `docs/decision_log.md`, D-07.
 
 Each choice started as a hypothesis. Each was tested by changing one thing at a time
 (model, effort, prompt version) and kept or changed based on the results. One exception:
@@ -224,6 +226,6 @@ suggested next step.
 | 1 | Contracts, repo, mock dealer system, verification in code | **Built** |
 | 2 | Router, specialists, single-agent baseline, handoff, failure handling | **Built**: model client, router, three specialists, single-agent baseline, handoff and pipeline; 40 of 40 hand-written chats pass |
 | 3 | Operating policy, input and output checks, log masking, attack tests | **Built**: policy P01 to P15 approved by Jessica on 2026-11-24, input and output checks, log masking, red-team run 75 of 75 resisted and passed to a person (`docs/guardrails.md`) |
-| 4 | Evaluation, grader check against human labels, error analysis | **Built**: 8 setups on the 40 test chats, grader checked against two team members, error analysis with four fixes, one run on a fresh set (`docs/evaluation_results.md`) |
+| 4 | Evaluation, grader check against human labels, error analysis | **Built**: 10 setups on the 40 test chats, grader checked against two team members, error analysis with four fixes, one run on a fresh set (`docs/evaluation_results.md`) |
 | 5 | Fine-tuned router and comparison with small and large prompted models | **Built**: fine-tuned router against Haiku and Sonnet, break-even volume, data-size study (`src/northstar/finetune/MODEL_CARD.md`) |
 | 6 | Cost model across volumes and break-even | **Built**: `python run_all.py economics` (`docs/economics.md`, `docs/decision_memo.md`) |

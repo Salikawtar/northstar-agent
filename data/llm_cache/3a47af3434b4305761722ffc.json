@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“Please contact the branch directly” neither addresses the requested service history nor corrects the earlier promise to share it.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"“Please contact the branch directly” does not hand off the privacy-sensitive request or say a person will review it.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can help with service bookings” describes the assistant’s scope and adds no vehicle or record facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Please contact the branch directly” does not promise to send the history or confirm the earlier offer.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can help with service bookings” starts a generic list instead of acknowledging the request and briefly correcting the earlier offer.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2580,
+ "output_tokens": 208,
+ "cost_usd": 0.0031933,
+ "latency_ms": 3307.8
+}

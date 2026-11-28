@@ -1,0 +1,7 @@
+{
+ "text": "Main type: the customer wants the airbag light repair covered by warranty and asks to open a claim, so warranty_claim. Secondary: recall_inquiry (asks if the recall applies) and billing_dispute (refuses to pay the $2,078). \n\nEscalation: an airbag warning light with no failure is not a safety escalation. Is the charge being contested and wanting it removed? \"I am NOT PAYING\" contests the charge, so policy_limit applies. Not adversarial: firmly asking for coverage is explicitly allowed. Not needs_human, because there is no legal threat or request for a person.\n\n{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"recall_inquiry\", \"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"policy_limit\", \"confidence\": 0.85, \"language\": \"en\"}",
+ "input_tokens": 2271,
+ "output_tokens": 281,
+ "cost_usd": 0.007352,
+ "latency_ms": 2607.1
+}

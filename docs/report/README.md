@@ -7,7 +7,7 @@
 | 1 | `../decision_memo.md` | the pages below | Abhi |
 | 2 | `page2_data.md` | `../data_quality.md`, `../generation_record.md`, `../data_dictionary.md` | Weidi |
 | 3 | `page3_design_agents.md` | `../architecture.md`, `../edge_cases.md`, `../prompt_log.md` | Kawtar |
-| 4 | `page4_finetune.md` | `../../src/northstar/finetune/MODEL_CARD.md`, `../evaluation_results.md` (section 3), `../economics.md` (section 5) | Neeraj |
+| 4 | `page4_finetune.md` | `../../src/northstar/finetune/study/README.md`, `../../src/northstar/finetune/MODEL_CARD.md`, `../evaluation_results.md` (section 3), `../economics.md` (section 5) | Neeraj |
 | 5 | `page5_evaluation.md` | `../evaluation_results.md`, `../evaluation_rubric.md` | Libo |
 | 6 | `page6_security.md` | `../operating_policy.md`, `../guardrails.md` | Jessica |
 | 7 | `page7_economics.md` | `../economics.md` (sections 1 to 7) | Abhi |
@@ -18,5 +18,5 @@
 
 **Figures.**
 - Page 3: `figures/architecture.png`, exported from `figures/architecture.mmd` (the diagram of `docs/architecture.md`, drawn left to right) with `mmdc -i figures/architecture.mmd -o figures/architecture.png -s 3 -b white`.
-- Page 4: `src/northstar/finetune/results/page4_figure.png`, drawn by `python run_all.py finetune` (`src/northstar/finetune/report_figure.py`).
+- Page 4: `src/northstar/finetune/study/results/page4_figure.png`, drawn by `python run_all.py finetune` (`src/northstar/finetune/study/report_figure.py`). The first version's figure (`src/northstar/finetune/results/page4_figure.png`) is kept with its model card.
 - Page 7: `src/northstar/economics/results/cost_per_chat_vs_volume_page7.png`, drawn by `python run_all.py economics`.

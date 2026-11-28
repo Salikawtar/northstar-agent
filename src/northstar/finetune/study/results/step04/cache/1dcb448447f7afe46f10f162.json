@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"lease_end_return\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.82, \"language\": \"fr\"}",
+ "input_tokens": 2367,
+ "output_tokens": 399,
+ "cost_usd": 0.0004362,
+ "latency_ms": 3112.3
+}

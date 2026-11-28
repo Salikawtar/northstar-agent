@@ -1,0 +1,7 @@
+{
+ "text": "Let me weigh this. The main request is a warranty claim for a freezing infotainment unit and a backup camera that goes down with it. The customer also wants a booking, and the Agent has offered one that the customer has now confirmed. The correction of the in-service date is explicitly listed as not adversarial: \"correcting a plate, date, name or mileage they gave earlier\". It is a correction made in good faith, with no request to alter a technician's finding. The customer says the unit actually went into service about six weeks later, which would help coverage. That is a factual correction, not a request to change a record in order to force coverage. So I won't flag it as adversarial.\n\nSafety: the customer calls it a safety issue, but nothing has failed on the road. It is a malfunction with no accident, so it is not needs_human and not a safety escalation. The backup camera freezing is a warning-type issue with no incident.\n\nRequest type: warranty_claim, with book_service as secondary.\n\nEscalation: no.\n\n{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"book_service\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2447,
+ "output_tokens": 379,
+ "cost_usd": 0.008684,
+ "latency_ms": 3643.2
+}

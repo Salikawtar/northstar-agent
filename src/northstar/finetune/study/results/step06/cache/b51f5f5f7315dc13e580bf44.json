@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"book_service\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.93, \"language\": \"en\"}",
+ "input_tokens": 2452,
+ "output_tokens": 160,
+ "cost_usd": 0.0003252,
+ "latency_ms": 1910.5
+}

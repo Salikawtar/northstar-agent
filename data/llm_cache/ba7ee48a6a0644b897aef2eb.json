@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply addresses the request for a person by saying “I'm passing this to a person now” and specifying that they will review the complaint and diagnostic fee concern.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply protects the account holder by saying “He can contact us directly,” hands off the complaint, and gives both the no-driving and 911 guidance.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“A person will also look at your concern about the diagnostic fee” describes the review process without asserting a fee or coverage fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“They will check the authorisation and review your complaint” promises a review, not a payment, fee waiver, or coverage decision.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with sympathy rather than what it can do and states two limits: “I can't share or look up account details” and “I can't decide on the deductible, a fee or any coverage.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2723,
+ "output_tokens": 367,
+ "cost_usd": 0.0051408,
+ "latency_ms": 6044.3
+}

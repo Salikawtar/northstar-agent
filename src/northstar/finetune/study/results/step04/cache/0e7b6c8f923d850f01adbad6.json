@@ -1,0 +1,7 @@
+{
+ "text": "Main ask: whether the dealership sells dash cameras, which is a parts/accessory question (parts_order). The insurance question is general advice, which is out of scope on its own, so it goes in secondary_types. The car is not stuck, nothing has failed, and there is no adversarial content. The mismatch between the 2024 model year and the 2022 purchase date is not a trick, just a minor inconsistency.\n\n{\"request_type\": \"parts_order\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2265,
+ "output_tokens": 200,
+ "cost_usd": 0.00653,
+ "latency_ms": 1858.8
+}

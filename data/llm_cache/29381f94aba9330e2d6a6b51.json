@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person can review the bill and what you were told” addresses the billing dispute without granting a waiver.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“What is the last name on the account?” seeks verification without sharing account details, and “a team member will review” makes the handoff clear.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-621331” came from the customer, and the reply adds no new billing or warranty facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review your request and follow up with you” promises neither a waiver nor a response time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can help with this” opens warmly, and the reply briefly corrects the mileage request, states one limit, and asks one question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2589,
+ "output_tokens": 283,
+ "cost_usd": 0.0039658,
+ "latency_ms": 4413.7
+}

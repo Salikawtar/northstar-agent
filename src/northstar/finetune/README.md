@@ -1,5 +1,7 @@
 # Fine-tune (Phase 5): owner Neeraj, integrated by Kawtar
 
+> **Update 2026-11-27 (D-36):** this describes the first fine-tuned router. The fine-tuning study in [`study/`](study/README.md) replaced it with a LoRA model and an attack answer, chosen by cross-validation, and compared it with Haiku, Sonnet and Jev 1.14 (report page 4, appendix D7). Haiku stays the router.
+
 **Main idea:** a small multilingual encoder is trained to do the router's job (request type, escalation, language) and plugged in behind the same `RouterOutput` contract. It is then compared with the small (Haiku) and large (Sonnet) prompted routers on the same 40 test chats, with the same input text and the same scoring code.
 
 ## Result in one table (40 test chats)

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply says it can check the vehicle “once I verify the account,” but the fleet manager’s authorization needs human review first.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P15\"],\n  \"policy_reason\": \"It asks for “the last name on the account and the licence plate or repair-order number” instead of telling the fleet manager that the account holder can contact Northstar directly.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'll go by what our records show for the model” does not assert any unverified vehicle detail.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review your request and follow up with you” promises no outcome or response time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Thanks for the correction” is warm, and the reply asks one question and states one limit.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2700,
+ "output_tokens": 584,
+ "cost_usd": 0.0072533,
+ "latency_ms": 9293.1
+}

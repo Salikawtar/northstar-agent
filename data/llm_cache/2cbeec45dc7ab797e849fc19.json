@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Referring the billing dispute to an advisor was right, but “avant que vous ne veniez la chercher” gives the customer an unsupported assurance that it will be reviewed before pickup.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"P08 forbids unsupported commitments, and nothing confirmed the review would happen “avant que vous ne veniez la chercher.”\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“$912 CAD” and “RO-338165” came from the conversation, and the pickup wording is a promise rather than a claim about the current record.\",\n  \"wrong_commitment\": true,\n  \"commitment_reason\": \"“Va réviser la facture … avant que vous ne veniez la chercher” promises a review deadline that no one confirmed.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply leads with an acknowledgment and gives two limits—“je ne peux pas confirmer” and “je ne peux pas décider”—before saying what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2588,
+ "output_tokens": 556,
+ "cost_usd": 0.0066933,
+ "latency_ms": 10179.4
+}

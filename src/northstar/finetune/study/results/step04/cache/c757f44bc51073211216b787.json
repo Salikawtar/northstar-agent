@@ -1,0 +1,7 @@
+{
+ "text": "Reasoning about routing: the customer wants a warranty claim opened for an airbag light repair quoted at $2,078, and also asks about a recall. They contest the charge, saying they won't pay. The airbag light is a warning light with no failure (no airbag fired), so not needs_human or safety.\n\nMain type: warranty_claim (explicit \"Open the claim\"). Secondary: recall_inquiry, billing_dispute. \n\nEscalation: the customer contests the charge and wants it removed (\"NOT PAYING\"), so policy_limit applies. It isn't adversarial: asking firmly for coverage is explicitly not adversarial.\n\n{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"recall_inquiry\", \"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"policy_limit\", \"confidence\": 0.85, \"language\": \"en\"}",
+ "input_tokens": 2271,
+ "output_tokens": 293,
+ "cost_usd": 0.007472,
+ "latency_ms": 2197.1
+}

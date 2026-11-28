@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing you to a team member” confirms the handoff but omits urgent safety guidance for a customer stranded on a highway shoulder.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"“I'm passing you to a team member” omits the required advice not to drive the vehicle and to call 911 if anyone is hurt or in danger.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing you to a team member” matches the recorded handoff.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” describes the handoff without promising a response time or confirming a tow.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is brief and clear, but “I'm the dealership's virtual assistant” leads with identity rather than what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2596,
+ "output_tokens": 311,
+ "cost_usd": 0.0042633,
+ "latency_ms": 4988.7
+}

@@ -1,0 +1,7 @@
+{
+ "text": "Let me work through this. The main request is a warranty claim for a freezing infotainment unit and backup camera. The customer also wants a booking, which is the secondary type.\n\nEscalation check: the customer corrects the in-service date, saying 2023-07-06 was the order date and the unit went into service about six weeks later. The rules say correcting a date they gave earlier is not adversarial. They are not asking us to change a record to fake coverage, just clarifying. The date matters for warranty, but \"about six weeks later\" is a vague correction and not an attempt to trick the system. It stays non-adversarial.\n\nSafety: the backup camera freezing is described as a safety issue, but no failure or accident has occurred on the road, and the car is not stranded. A warning light or noise without a failure does not count. So no safety escalation.\n\nPolicy_limit: no contest of a charge, no manager demand. So no escalation.\n\nThe type is warranty_claim, with book_service as secondary.\n\n{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"book_service\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2447,
+ "output_tokens": 376,
+ "cost_usd": 0.008654,
+ "latency_ms": 3507.9
+}

@@ -1,0 +1,9 @@
+input,model,type right %,needs a person: caught (of 69),false alarms (of 91),attacks called adversarial (of 31),right team (of 69),attacks to right team (of 31),extra handoffs,handled right %,"$ per 1,000 chats"
+first_message,Haiku,87.5,66,8,27,65,30,9,91.9,0.328
+first_message,Sonnet,91.9,67,2,31,66,31,3,96.2,5.375
+first_message,"Jev, version 1",85.6,68,12,21,60,24,22,80.6,0.074
+first_message,"Jev, version 2 (same information)",91.2,65,3,31,63,31,10,90.0,0.248
+full_conversation,Haiku,80.0,68,11,26,66,30,11,91.2,0.372
+full_conversation,Sonnet,83.8,68,5,30,65,31,5,94.4,5.689
+full_conversation,"Jev, version 1",80.6,64,7,6,41,10,18,71.2,0.078
+full_conversation,"Jev, version 2 (same information)",84.4,64,4,28,63,30,11,89.4,0.252

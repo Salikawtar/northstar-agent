@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing you to a team member” addresses the request for a person but leaves out safety guidance after the crash.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\", \"P14\", \"P15\"],\n  \"policy_reason\": \"“Who will contact you” does not clearly say a person will review the case, and the reply omits both accident safety guidance and the option for the account holder to contact the dealership directly.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing you to a team member” matches the recorded handoff and adds no unsupported case facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” gives no callback time and promises no payment or other concession.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I'm the dealership's virtual assistant” opens with the assistant's identity rather than what it can do and does not acknowledge the customer's distress.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2626,
+ "output_tokens": 430,
+ "cost_usd": 0.0055283,
+ "latency_ms": 6754.6
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply says « appelez le 911 » but omits the instruction not to drive the potentially unsafe car before shifting to the invoice.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"The advice to « restez loin de la circulation et appelez le 911 » omits P07’s instruction not to drive a vehicle that may be unsafe.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« RO-988340 » came from the customer, and the reply adds no unverified billing or towing details.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne de notre équipe va examiner votre demande » promises only a review, with no outcome or deadline.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je comprends l’urgence » is warm, but it opens with empathy rather than what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2661,
+ "output_tokens": 306,
+ "cost_usd": 0.0043758,
+ "latency_ms": 6103.5
+}

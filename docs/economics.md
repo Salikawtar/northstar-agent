@@ -21,12 +21,12 @@ Every number below comes from `python run_all.py economics` (or `python -m north
 | People only (today) | n/a | 70.2% (benchmark) | n/a | $2.70 | $3.85 |
 | **Recommended agent (Haiku router)** | **$0.017** | **70.0%** | **35.0%** | **$2.08** | **$2.97** |
 | Sonnet router | $0.038 | 65.0% | 37.5% | $14.65 ($2.15 if its one missed handoff is not priced) | $22.54 |
-| Fine-tuned router | $0.014 | 40.0% | 25.0% | $15.29 ($2.79 without it) | $38.24 |
+| Fine-tuned router (final: LoRA + attack head) | $0.018 | 57.5% | 32.5% | $27.40 ($2.40 without it) | $47.65 |
 | Single Sonnet agent | $0.050 | 45.0% | 30.0% | $90.47 ($2.97 without it) | $201.05 |
 
 "Model cost per chat" is the measured cost of one reply times 3 replies per chat plus 5% for retries. The measured cost per reply is $0.0053 ($0.0076 per successful reply). All-in adds people (handed-off chats, chats closed wrongly that come back, a 5% review sample), mistakes, servers, monitoring, engineering and the build cost paid back over 24 months.
 
-**Reading:** the recommended agent is the cheapest option even before missed handoffs are priced. The Sonnet router is not worth it here: it contains 2.5 points more, but costs more, made one more wrong commitment, and missed a contested charge. Each missed handoff is priced at $500 (assumption), which is why the options that missed one in 40 chats look so expensive.
+**Reading:** the recommended agent is the cheapest option even before missed handoffs are priced. The Sonnet router is not worth it here: it contains 2.5 points more, but costs more, made one more wrong commitment, and missed a contested charge. Each missed handoff is priced at $500 (assumption), which is why the options that missed one or two in 40 chats look so expensive.
 
 ## 3. Volume scenarios (recommended agent, USD per month)
 
@@ -65,7 +65,7 @@ Every number below comes from `python run_all.py economics` (or `python -m north
 | Small wrong commitments that wipe out the saving | 15.7% at 100,000 chats | 2.5% (up to 12.9%) | Safe margin even at the pessimistic end |
 | Share of chats finished alone and correctly needed | 11.4% at 100,000; 14.1% at 20,000 | 35% (22% to 50%) on the test chats; 9.7% (3 of 31) on the fresh set | Margin on the test chats, none on the fresh set (section 7) |
 | Wrong-approval rate above which automating warranty decisions loses money | **0.74% (1 wrong approval in 134 claims)**; 0.37% to 1.5% with 10 to 40 minutes of review saved | Wrong commitments up to 12.9% on 40 chats; 4 warranty chats | **Do not automate warranty approvals.** The saving is a reviewer's 20 minutes ($6.31); one wrong approval costs $847 |
-| Fine-tuned router (alone vs Haiku, Neeraj) | 197,000 chats a month | Server $71 a month | Inside the agent it never pays: it saves $0.0025 a chat but finishes 10 points fewer chats correctly, which costs $0.27 a chat in people's time (100 times more) |
+| Fine-tuned router (alone vs Haiku, Neeraj) | 197,000 chats a month | Server $71 a month | Inside the agent it never pays: it costs $0.0007 more a chat (it keeps more chats) and finishes 2.5 points fewer chats correctly, which costs $0.066 a chat in people's time |
 
 ## 6. When a bigger model is worth it
 

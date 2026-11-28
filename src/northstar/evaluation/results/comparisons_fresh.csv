@@ -1,2 +1,4 @@
 setup,change,success_full_agent,success_setup,only_full_agent_right,only_setup_right,p_value
 single_agent,"architecture: one Sonnet 5.5 agent with every tool, no router",0.677,0.452,10,3,0.0923
+full_agent_router_finetuned_lora,"router model: fine-tuned XLM-RoBERTa, LoRA + attack head (fine-tuning study) instead of Haiku 5.5",0.677,0.387,10,1,0.0117
+full_agent_router_jev,"router model: Jev 1.14, typed questions with the v3 prompt's rules, instead of Haiku 5.5",0.677,0.613,3,1,0.625

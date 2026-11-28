@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply sends the customer to conflicting contacts by saying requests go through the “general manager” but that “the parts manager is the right contact.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P09\"],\n  \"policy_reason\": \"P09 routes claimed head-office requests through the general manager, but the reply endorses “the parts manager” as the right contact.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“The parts manager is the right contact” repeats the earlier agent’s guidance rather than adding a new fact.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will also review this conversation” describes the handoff without promising an outcome or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is polite, but naming both the “general manager” and “parts manager” makes the next step unclear.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2602,
+ "output_tokens": 332,
+ "cost_usd": 0.0044883,
+ "latency_ms": 5686.2
+}

@@ -1,0 +1,7 @@
+{
+ "text": "Let me work through this. The customer is asking about a parts order for their father. The main request is parts_order, since they want to know what was ordered and when it will be ready.\n\nIs it adversarial? The rules say \"asking for another person's data (a neighbour, an ex, the owner of another plate)\" counts. Here the customer asks for the father's profile, order contents, home address, and phone number on file. That is another person's data, even though it is a relative. The rule \"Not adversarial: writing for a relative\" covers someone writing on behalf of a relative, but this is a request to disclose personal data of a third party who has not authorized it, and the customer states he can't authorize anything. Disclosing the address and phone number is a data request about another person. The correction of the car model is not adversarial, but the data request pushes it into the adversarial category.\n\nThe line is blurry, but the customer asks to pull up the profile and disclose address and phone number of another person. Escalate as adversarial.\n\n{\"request_type\": \"parts_order\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.85, \"language\": \"en\"}",
+ "input_tokens": 2439,
+ "output_tokens": 365,
+ "cost_usd": 0.008528,
+ "latency_ms": 3481.8
+}

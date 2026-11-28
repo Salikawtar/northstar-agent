@@ -20,6 +20,8 @@ All tables: `src/northstar/evaluation/results/`. Rubric: `docs/evaluation_rubric
 | full_agent_before_fixes (blind run) | 52.5% (21/40; 38 to 67) | 100% (18/18) | 72.0% (18/25) | 2/40 | 1/40 | 37.5% | 5.6 s | $5.34 | $0.0102 |
 | router: Sonnet 5.5 | 65.0% (26/40; 50 to 78) | 94.4% (17/18) | 73.9% (17/23) | 2/40 | 1/40 | 42.5% | 5.0 s | $11.93 | $0.0184 |
 | router: fine-tuned XLM-RoBERTa | 40.0% (16/40; 26 to 55) | 94.4% (17/18) | 68.0% (17/25) | 2/40 | 3/40 | 37.5% | 0.3 s | $4.51 | $0.0113 |
+| router: fine-tuned XLM-RoBERTa, LoRA + attack head (study) | 57.5% (23/40; 42 to 72) | 88.9% (16/18) | 76.2% (16/21) | 2/40 | 1/40 | 47.5% | 5.0 s | $5.58 | $0.0097 |
+| router: Jev 1.14 | 55.0% (22/40; 40 to 69) | 88.9% (16/18) | 72.7% (16/22) | 1/40 | 1/40 | 45.0% | 3.8 s | $5.47 | $0.0099 |
 | router prompt v2 | 67.5% (27/40; 52 to 80) | 94.4% (17/18) | 77.3% (17/22) | 1/40 | 1/40 | 45.0% | 6.1 s | $5.60 | $0.0083 |
 | warranty desk effort: high | 65.0% (26/40; 50 to 78) | 100% (18/18) | 75.0% (18/24) | 1/40 | 2/40 | 40.0% | 5.8 s | $5.56 | $0.0086 |
 | input and output checks off | 70.0% (28/40; 55 to 82) | 100% (18/18) | 75.0% (18/24) | 2/40 | 0/40 | 40.0% | 5.6 s | $5.31 | $0.0076 |
@@ -30,7 +32,7 @@ Request-type accuracy of the router inside the agent: Haiku v3 82.5%, Sonnet 77.
 **What the numbers mean for the business**
 - **No missed emergencies:** all 18 chats that needed a person (safety, legal, bereavement, attacks, contested charges) got one. With 18 chats the true recall is at least 82% (95% range), so a pilot should keep monitoring it.
 - **Wrong commitments:** 1 in 40 (2.5%). The upper end of the range is 12.9%: the cost of mistakes should be planned on that, not on 2.5%.
-- **Customer data:** across all 8 setups (320 graded replies) the rule checks found no other person's data and no data shared before verification (`results/per_chat.csv`).
+- **Customer data:** across all 10 setups (400 graded replies) the rule checks found no other person's data and no data shared before verification (`results/per_chat.csv`).
 - **Containment:** 40% of chats are finished without a person; 35% are finished without a person and correctly. That share, not the success rate, is what saves advisor time.
 - **Cost:** $0.0053 per chat, $0.0076 per successful chat. The two Sonnet desks (billing, warranty) are most of it; the router is $0.36 per 1,000 chats. A test chat is one graded reply: the cost model counts 3 replies per conversation plus 5% for retries, which gives the $0.017 a chat in the memo.
 
@@ -62,6 +64,8 @@ Request-type accuracy of the router inside the agent: Haiku v3 82.5%, Sonnet 77.
 | Single agent | 14 | 4 | 0.031 | Keep the multi-agent design (D-17 confirmed on test, on handoffs and cost; the people who checked the grader did not confirm the gap in task success, see 5.3) |
 
 **Why the fine-tuned router loses inside the agent.** On its own it is 15 points behind Haiku on request type (67.5% vs 82.5%, Neeraj's comparison). Inside the agent the gap doubles (40% vs 70% success) for a reason the router test cannot see: the fine-tuned model has no escalation reason, so 8 of its 17 handoffs went to the wrong queue: 7 attacks did not reach the service manager (5 went to general advisors, 1 to the warranty desk, 1 to roadside) and 1 safety chat went to advisors instead of roadside. It also saves less than it seems: the router is 7% of the agent's cost, so replacing it cuts the cost per chat by 16% only ($4.51 vs $5.34 per 1,000 chats).
+
+**The fine-tuning study's final router and Jev (D-36).** The study (`src/northstar/finetune/study/`) replaced the reason rule with an attack answer and chose every setting by cross-validation. Inside the agent its router reaches 57.5% (lost 5, won none against Haiku, p = 0.063) and Jev 1.14 55.0% (lost 6, won none, p = 0.031); on the 31 fresh chats 38.7% and 61.3% against 67.7%. Most of the remaining gap is roadside chats that Haiku marks as a safety risk, which sends the fixed safety reply; the fine-tuned router reads its reason from the request type. Haiku stays.
 
 **Why the single agent loses.** It missed 7 of 18 handoffs: it politely refused 6 attacks (impersonation, data extraction, fraud) and one contested charge but did not pass them to a person for review, at three times the cost. It is faster (3.6 s vs 5.6 s) because it has no router call.
 
@@ -157,7 +161,7 @@ Libo and Jessica each labelled the blind sheet of 80 replies on their own (40 fr
 
 ## 6. Limitations
 
-- **40 chats is small.** One chat moves a rate by 2.5 points, and most ranges are 25 to 30 points wide. Only three comparisons are significant at 5%: the single agent, the fine-tuned router and the fixes (the last one post hoc).
+- **40 chats is small.** One chat moves a rate by 2.5 points, and most ranges are 25 to 30 points wide. Only four comparisons are significant at 5%: the single agent, the first fine-tuned router, the Jev router and the fixes (the last one post hoc).
 - **Three-turn scripts.** The agent writes one reply; a chat that continues (the customer gives the plate, then books) is tested by the hand-written chats, not here.
 - **Synthetic chats** written by a model and reviewed by the team: real customers will be messier.
 - **One recorded run per setup.** Re-running live gives slightly different replies; the recordings make the reported numbers exact and checkable.

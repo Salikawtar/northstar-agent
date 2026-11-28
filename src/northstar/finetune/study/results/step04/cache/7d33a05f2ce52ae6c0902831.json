@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"lease_end_return\"], \"needs_escalation\": true, \"escalation_reason\": \"policy_limit\", \"confidence\": 0.85, \"language\": \"en\"}",
+ "input_tokens": 2422,
+ "output_tokens": 75,
+ "cost_usd": 0.005594,
+ "latency_ms": 1002.4
+}

@@ -2,6 +2,8 @@ setup,change,success_full_agent,success_setup,only_full_agent_right,only_setup_r
 full_agent_before_fixes,before the error analysis: D-32 reply fixes off (the blind test result),0.7,0.525,8,1,0.0391
 full_agent_router_sonnet,router model: Sonnet 5.5 instead of Haiku 5.5,0.7,0.65,3,1,0.625
 full_agent_router_finetuned,router model: fine-tuned XLM-RoBERTa instead of Haiku 5.5,0.7,0.4,12,0,0.0005
+full_agent_router_finetuned_lora,"router model: fine-tuned XLM-RoBERTa, LoRA + attack head (fine-tuning study) instead of Haiku 5.5",0.7,0.575,5,0,0.0625
+full_agent_router_jev,"router model: Jev 1.14, typed questions with the v3 prompt's rules, instead of Haiku 5.5",0.7,0.55,6,0,0.0312
 full_agent_router_v2,router prompt: v2 instead of v3,0.7,0.675,3,2,1.0
 full_agent_warranty_high,warranty desk effort: high instead of medium,0.7,0.65,2,0,0.5
 full_agent_no_guardrails,input and output checks off,0.7,0.7,0,0,1.0

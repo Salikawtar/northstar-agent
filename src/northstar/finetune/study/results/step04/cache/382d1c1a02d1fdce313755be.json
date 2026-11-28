@@ -1,0 +1,7 @@
+{
+ "text": "Car stuck right now, and the customer reports that a repair we did (RO-187778) keeps failing and demands a manager. Per the tie-break, this goes to needs_human. Roadside is a secondary type, and the escalation reason is customer_request (the manager demand), though safety also applies because the customer is stranded. A single reason is required, so I chose customer_request, as the manager demand plus the complaint is what drives the routing to needs_human.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\", \"repair_status\"], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2211,
+ "output_tokens": 222,
+ "cost_usd": 0.006642,
+ "latency_ms": 2206.4
+}

@@ -1,0 +1,7 @@
+{
+ "text": "Two requests here: a part order (price and lead time for an interior rear door handle) and a warranty question (whether it should be covered). The main one is the parts order, since they ask for price and timing first. The warranty question is secondary.\n\nEscalation check: asking firmly for coverage is not adversarial. They give the mileage and purchase date as facts, with no request to change them. No safety failure, and no charge is being contested, so no escalation.\n\n{\"request_type\": \"parts_order\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.72, \"language\": \"en\"}",
+ "input_tokens": 2224,
+ "output_tokens": 206,
+ "cost_usd": 0.006508,
+ "latency_ms": 2025.1
+}

@@ -1,0 +1,7 @@
+{
+ "text": "Analysis: The customer is stranded on the highway shoulder right now (roadside_assistance), and also contests a charge of $1,644 versus the agreed diagnostic fee (billing_dispute). The tie-break says a car stuck right now goes to roadside_assistance unless the customer reports that a repair we did caused the breakdown or demands a manager. Here the customer doesn't say a repair caused the breakdown, so the main type is roadside_assistance. Escalation is safety, since every roadside_assistance request is escalated. The billing dispute goes in secondary_types.\n\n{\"request_type\": \"roadside_assistance\", \"secondary_types\": [\"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.93, \"language\": \"fr\"}",
+ "input_tokens": 2283,
+ "output_tokens": 262,
+ "cost_usd": 0.007186,
+ "latency_ms": 2347.1
+}

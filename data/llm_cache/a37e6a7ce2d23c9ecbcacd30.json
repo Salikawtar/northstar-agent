@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for verification was appropriate, but “Once you're verified, I'll check” misses the required handoff after “before I contact CAMVAP.”\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"P14 requires a handoff after “before I contact CAMVAP,” but the reply only mentions a parts advisor as a fallback.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'll check the status of your order” does not state an order status, price or arrival date.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I'll check the status of your order” offers to check without promising an arrival date or price.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't look up records” and “I can't confirm parts prices or arrival dates” state more than one limit.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2614,
+ "output_tokens": 300,
+ "cost_usd": 0.0041983,
+ "latency_ms": 4276.1
+}

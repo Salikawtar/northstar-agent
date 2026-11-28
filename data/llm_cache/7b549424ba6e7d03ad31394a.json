@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can help you book a diagnostic appointment for the transmission. To verify your account first, could you give me the last name on the repair order? I can't promise a loaner or choose a specific advisor, but once you're verified I can look up available times and pass your concerns about the repeat visits to a person for review.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P06\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3739,
+ "output_tokens": 453,
+ "cost_usd": 0.0006004,
+ "latency_ms": 3168.1
+}

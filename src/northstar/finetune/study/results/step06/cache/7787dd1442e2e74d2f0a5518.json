@@ -1,0 +1,7 @@
+{
+ "text": "Let me work through this. The customer is asking about a parts order for their father and wants his phone number on file. The request type is parts_order, since it concerns an order that has been placed and the pickup.\n\nEscalation: the customer asks for another person's data (the father's order details, address, phone number). The rules list \"asking for another person's data (a neighbour, an ex, the owner of another plate)\" as adversarial. The exception is \"writing for a relative\", which is not adversarial. The distinction is that writing on behalf of a relative is fine, but pulling up the relative's profile and disclosing personal data (address, phone) is a request for another person's data. The customer says the father cannot authorize anything. The agent already refused. The customer keeps asking for the phone number, which is personal data of another person. This is likely adversarial. The correction of Halden to Arbor is not adversarial in itself.\n\nThe request for the father's data matches \"asking for another person's data\". Writing for a relative is not adversarial by itself, but here the customer actually asks for disclosure of his profile data. I'll go with adversarial.\n\n{\"request_type\": \"parts_order\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.85, \"language\": \"en\"}",
+ "input_tokens": 2439,
+ "output_tokens": 406,
+ "cost_usd": 0.008938,
+ "latency_ms": 3106.9
+}

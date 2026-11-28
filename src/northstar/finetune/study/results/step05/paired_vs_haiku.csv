@@ -1,0 +1,34 @@
+input,option,tuned_model,language_model,only_option_right,only_haiku_right,p_value
+first_message,3 language model alone,-,jev,8,24,0.007
+first_message,3 language model alone,-,sonnet,10,2,0.0386
+first_message,3 language model alone,-,jev2,9,9,1.0
+first_message,"1a tuned, reason from type (her rule)",full fine-tuning,-,6,63,0.0
+first_message,2 tuned + reason step,full fine-tuning,jev,6,48,0.0
+first_message,2c tuned + reason step + cascade,full fine-tuning,jev,7,41,0.0
+first_message,2 tuned + reason step,full fine-tuning,jev2,7,43,0.0
+first_message,2c tuned + reason step + cascade,full fine-tuning,jev2,8,33,0.0001
+first_message,2 tuned + reason step,full fine-tuning,haiku,6,42,0.0
+first_message,2c tuned + reason step + cascade,full fine-tuning,haiku,6,31,0.0
+first_message,"1a tuned, reason from type (her rule)",LoRA 60 epochs,-,4,44,0.0
+first_message,2 tuned + reason step,LoRA 60 epochs,jev,4,34,0.0
+first_message,2c tuned + reason step + cascade,LoRA 60 epochs,jev,5,31,0.0
+first_message,2 tuned + reason step,LoRA 60 epochs,jev2,5,30,0.0
+first_message,2c tuned + reason step + cascade,LoRA 60 epochs,jev2,7,27,0.0008
+first_message,2 tuned + reason step,LoRA 60 epochs,haiku,4,28,0.0
+first_message,2c tuned + reason step + cascade,LoRA 60 epochs,haiku,4,25,0.0001
+first_message,1 tuned + attack answer,full fine-tuning + attack,-,4,45,0.0
+first_message,1 tuned + attack answer,LoRA 60 epochs + attack,-,9,32,0.0004
+first_message,1 tuned + attack answer + own unsure line,LoRA 60 epochs + attack,-,11,28,0.0095
+full_conversation,3 language model alone,-,jev,7,37,0.0
+full_conversation,3 language model alone,-,sonnet,9,5,0.424
+full_conversation,3 language model alone,-,jev2,8,9,1.0
+full_conversation,"1a tuned, reason from type (her rule)",full fine-tuning,-,8,57,0.0
+full_conversation,2 tuned + reason step,full fine-tuning,jev,8,51,0.0
+full_conversation,2c tuned + reason step + cascade,full fine-tuning,jev,10,43,0.0
+full_conversation,2 tuned + reason step,full fine-tuning,jev2,9,33,0.0003
+full_conversation,2c tuned + reason step + cascade,full fine-tuning,jev2,10,24,0.0243
+full_conversation,2 tuned + reason step,full fine-tuning,haiku,8,34,0.0001
+full_conversation,2c tuned + reason step + cascade,full fine-tuning,haiku,8,24,0.007
+full_conversation,1 tuned + attack answer,full fine-tuning + attack,-,6,32,0.0
+full_conversation,1 tuned + attack answer + own unsure line,full fine-tuning + attack,-,8,30,0.0005
+full_conversation,1 tuned + attack answer,LoRA 60 epochs + attack,-,12,37,0.0005
