@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply offers to « examiner votre contestation de frais » but neither tells the customer not to drive nor clearly hands off the roadside emergency.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\", \"P14\"],\n  \"policy_reason\": \"« Si vous ou quelqu'un êtes en danger, appelez le 911 » omits injuries and the no-driving warning, while the reply only confirms human review of the billing dispute.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« RO-988340 » came from the customer, and the reply states no new invoice or vehicle facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne de l'équipe va aussi examiner votre contestation de frais » promises only a review, not a refund or a tow.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"« Votre sécurité passe en premier » is supportive and direct, and the reply asks only one question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2684,
+ "output_tokens": 453,
+ "cost_usd": 0.0059033,
+ "latency_ms": 7252.6
+}

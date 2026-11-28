@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\", \"out_of_scope\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.9, \"language\": \"fr\"}",
+ "input_tokens": 2272,
+ "output_tokens": 80,
+ "cost_usd": 0.005344,
+ "latency_ms": 1043.0
+}

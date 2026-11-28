@@ -1,0 +1,4 @@
+model,versus,only_model_right,only_baseline_right,p_value
+full_3heads,baseline,3,10,0.09228515625
+lora_1e4,baseline,4,86,4.3245487100412455e-21
+lora_3e4,baseline,8,24,0.0070003666914999485

@@ -1,0 +1,7 @@
+{
+ "text": "Let me work out the type: the customer got a lease-end excess wear charge and asks whether it's normal or a mistake. They aren't clearly demanding removal, but they question it and say they can't pay. The main topic could be billing_dispute (questions or contests an invoice) or lease_end_return (wear charges). The message is a question about an invoice and about whether the charge is legitimate, so I'll use billing_dispute as the main type and lease_end_return as secondary.\n\nEscalation: they ask \"is that normal or a billing mistake?\" That is a question about what the charge is, not a firm demand to remove it. \"Who do I even talk to\" is not a demand for a manager after being told no. So no policy_limit. There is no adversarial content, safety issue, or legal threat. needs_escalation is false.\n\nNote that 185,000 km on a lease is unusual, but it's a claim about their mileage, not an attempt to change one, so it isn't adversarial.\n\n```json\n{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"lease_end_return\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"en\"}\n```",
+ "input_tokens": 2281,
+ "output_tokens": 382,
+ "cost_usd": 0.008382,
+ "latency_ms": 3469.8
+}

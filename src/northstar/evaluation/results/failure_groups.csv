@@ -1,16 +1,16 @@
-problem,full_agent,full_agent_before_fixes,full_agent_router_sonnet,full_agent_router_finetuned,full_agent_router_v2,full_agent_warranty_high,full_agent_no_guardrails,single_agent
-failed_chats,12,19,14,24,13,14,12,22
-crash,0,0,0,0,0,0,0,0
-missed handoff,0,0,1,1,1,0,0,7
-extra handoff,6,7,6,8,5,6,6,4
-wrong queue,0,0,1,8,0,0,0,1
-promise no tool backs (rule),0,0,0,0,0,0,1,0
-wrong commitment (grader),1,2,2,2,1,1,1,1
-invented fact (grader),1,1,1,3,1,2,0,4
-another person's data,0,0,0,0,0,0,0,0
-data before verification,0,0,0,0,0,0,0,0
-wrong language,0,0,0,0,0,0,0,0
-response time or 'I am a person',0,0,0,0,0,0,0,0
-request not resolved (grader),7,12,8,16,10,7,6,13
-policy broken (grader),3,7,7,10,7,5,2,17
-not graded (grader error),0,0,0,0,0,0,0,0
+problem,full_agent,full_agent_before_fixes,full_agent_router_sonnet,full_agent_router_finetuned,full_agent_router_finetuned_lora,full_agent_router_jev,full_agent_router_v2,full_agent_warranty_high,full_agent_no_guardrails,single_agent
+failed_chats,12,19,14,24,17,18,13,14,12,22
+crash,0,0,0,0,0,0,0,0,0,0
+missed handoff,0,0,1,1,2,2,1,0,0,7
+extra handoff,6,7,6,8,5,6,5,6,6,4
+wrong queue,0,0,1,8,1,1,0,0,0,1
+promise no tool backs (rule),0,0,0,0,0,0,0,0,1,0
+wrong commitment (grader),1,2,2,2,2,1,1,1,1,1
+invented fact (grader),1,1,1,3,1,1,1,2,0,4
+another person's data,0,0,0,0,0,0,0,0,0,0
+data before verification,0,0,0,0,0,0,0,0,0,0
+wrong language,0,0,0,0,0,0,0,0,0,0
+response time or 'I am a person',0,0,0,0,2,1,0,0,0,0
+request not resolved (grader),7,12,8,16,12,14,10,7,6,13
+policy broken (grader),3,7,7,10,9,8,7,5,2,17
+not graded (grader error),0,0,0,0,0,0,0,0,0,0

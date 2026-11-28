@@ -1,0 +1,5 @@
+model,input,epoch,type macro-F1,escalation F2,attack recall,attack precision,ensemble: attacks caught,ensemble: false attack alarms,type macro-F1 without attack head,type: only new right / only old right (p)
+full_attack,first_message,27,0.632 ± 0.069,0.738 ± 0.027,0.452 ± 0.065,0.952 ± 0.082,14 of 31,0,0.722,4 / 15 (p = 0.02)
+full_attack,full_conversation,30,0.752 ± 0.024,0.807 ± 0.036,0.677 ± 0.085,0.954 ± 0.006,20 of 31,0,0.747,9 / 10 (p = 1.00)
+lora_attack,first_message,60,0.722 ± 0.047,0.776 ± 0.024,0.516 ± 0.032,0.928 ± 0.063,14 of 31,1,0.723,10 / 6 (p = 0.45)
+lora_attack,full_conversation,50,0.707 ± 0.014,0.796 ± 0.020,0.538 ± 0.067,0.897 ± 0.038,16 of 31,1,,

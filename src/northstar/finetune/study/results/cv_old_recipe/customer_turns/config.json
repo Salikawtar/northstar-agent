@@ -1,0 +1,34 @@
+{
+  "config": {
+    "model_name": "xlm-roberta-base",
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "epochs": 30,
+    "batch_size": 16,
+    "max_length": 320,
+    "dropout": 0.2,
+    "schedule": "constant",
+    "warmup_ratio": 0.0,
+    "grad_clip": 0.0,
+    "fp16": true,
+    "heads": [
+      "type",
+      "escalation"
+    ]
+  },
+  "variant": "customer_turns",
+  "rep": 0,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "epochs_run": 30,
+  "git_commit": "313227b",
+  "torch": "2.11.0+cu130",
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "dataset_sha256": "b664b78faaffa3ff7925da9ed4354b83ae18861c20f650dd09042fe7fc63a7c9",
+  "folds_sha256": "4c4bccdf24b72e89bdd0ac18529c37df3b8769d2642b1ccb7a26a4cf13eded5d",
+  "mean_tokens": 133.05625
+}

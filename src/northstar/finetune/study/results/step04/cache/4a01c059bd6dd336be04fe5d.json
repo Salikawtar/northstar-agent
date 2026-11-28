@@ -1,0 +1,7 @@
+{
+ "text": "Main request: price and lead time for a part, so parts_order. Secondary: warranty question about coverage. Not adversarial: asking whether it should be covered is a firm coverage question, not an attempt to change a finding or claim a promise. No escalation.\n\n{\"request_type\": \"parts_order\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2224,
+ "output_tokens": 150,
+ "cost_usd": 0.005948,
+ "latency_ms": 1534.0
+}

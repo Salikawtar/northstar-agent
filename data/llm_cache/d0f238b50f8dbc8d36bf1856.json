@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I'm passing your request to a team member” is a valid handoff, but it leaves out the immediate safety advice needed after the curb impact.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P07\"],\n  \"policy_reason\": \"“I'm passing your request to a team member” does not warn the customer not to drive the damaged car or to call 911 if anyone is hurt or in danger.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your request to a team member” matches the recorded handoff and adds no unsupported facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will get back to you” gives no response time and does not promise coverage, a booking, or a shuttle.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“Thank you for your patience” is polite, but the reply starts with a pleasantry rather than what the assistant can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2575,
+ "output_tokens": 305,
+ "cost_usd": 0.0041508,
+ "latency_ms": 4840.2
+}

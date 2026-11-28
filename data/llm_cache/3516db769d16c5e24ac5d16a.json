@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for the “last name and the plate or repair-order number” is the right next step before checking the Tessera’s warranty or recalls.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"The reply says the Tessera is “registered to the company,” but no tool confirmed its registration.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": true,\n  \"invented_reason\": \"“The unit is registered to the company” is not established by the conversation or any tool result.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A person will review this request” promises only a review, not coverage or a decision.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Thanks for the correction” is warm, and the reply gives one clear limit and one verification request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2698,
+ "output_tokens": 409,
+ "cost_usd": 0.0054983,
+ "latency_ms": 6877.6
+}

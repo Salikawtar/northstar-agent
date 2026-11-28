@@ -1,0 +1,7 @@
+{
+ "text": "Analysis: The customer contests excess wear charges of $4,731 after a lease return. The main issue is the contested charge, which makes it billing_dispute. Lease_end_return is a secondary type because it concerns the return inspection and wear charges. The customer demands the manager and complains about a staff member (Austin), which points to needs_human. The type list says needs_human applies when a complaint about staff or an insistence on a person exists \"even though a type above might fit.\"\n\nWhich main type: the instruction says needs_human is for cases that must go to a person even though another type might fit. The customer insists on a manager and complains about staff (\"pas Austin\"), so needs_human fits. The billing dispute and lease return go in secondary_types. The escalation reason is customer_request (insisting on a manager), and policy_limit also applies, but one reason must be chosen. The customer explicitly demands a person, so customer_request is the best fit.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"billing_dispute\", \"lease_end_return\"], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.82, \"language\": \"fr\"}",
+ "input_tokens": 2306,
+ "output_tokens": 374,
+ "cost_usd": 0.008352,
+ "latency_ms": 3094.0
+}

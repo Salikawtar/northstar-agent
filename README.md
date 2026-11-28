@@ -74,7 +74,7 @@ Run the 75 red-team attacks through the whole agent and grade them:
 python -m northstar.guardrails.redteam
 ```
 
-Final evaluation: 8 setups on the 40 held-out test chats, graded by rules and a model grader, with every table the report uses (replays in about 10 seconds, no key):
+Final evaluation: 10 setups on the 40 held-out test chats, graded by rules and a model grader, with every table the report uses (replays in about 10 seconds, no key):
 
 ```bash
 python -m northstar.evaluation                  # or: python run_all.py evaluate
@@ -142,8 +142,8 @@ Where to read first: `docs/architecture.md` (the design), `docs/edge_cases.md` (
 | 1. Contracts, repo, mock dealer system | Done |
 | 2. Agent (router, specialists, baseline, handoff, failures) | Done: tested on validation, 40 hand-written chats, single-agent comparison |
 | 3. Guardrails and attack test set | Built: input and output checks, log masking, red team 75 of 75 resisted, 40 of 40 hand-written chats pass; operating policy P01 to P15 approved by Jessica (`docs/operating_policy.md`) |
-| 4. Evaluation and error analysis | Done: 8 setups on the 40 test chats (recommended agent 70% task success by the model grader and 62.5% by the two people who checked it, 18 of 18 handoffs, $5.34 per 1,000 chats), error analysis with 4 fixes (D-32), grader self-consistency, grader checked against two team members' hand labels (kappa 0.71 and 0.77), one run on 31 fresh chats made after the fixes (67.7%, D-33) |
-| 5. Fine-tune and 3-model comparison | Done: XLM-RoBERTa vs Haiku vs Sonnet routers on the 40 test chats, break-even volume, data-size study (`src/northstar/finetune/MODEL_CARD.md`). Inside the whole agent the fine-tuned router reaches 40% task success against 70%, so the Haiku router stays |
+| 4. Evaluation and error analysis | Done: 10 setups on the 40 test chats (recommended agent 70% task success by the model grader and 62.5% by the two people who checked it, 18 of 18 handoffs, $5.34 per 1,000 chats), error analysis with 4 fixes (D-32), grader self-consistency, grader checked against two team members' hand labels (kappa 0.71 and 0.77), one run on 31 fresh chats made after the fixes (67.7%, D-33) |
+| 5. Fine-tune and 3-model comparison | Done: XLM-RoBERTa vs Haiku vs Sonnet routers on the 40 test chats, break-even volume, data-size study (`src/northstar/finetune/MODEL_CARD.md`). Inside the whole agent the fine-tuned router reaches 40% task success against 70%. The fine-tuning study (`src/northstar/finetune/study/`: cross-validation, LoRA, an attack answer, Jev 1.14 as a third prompted model) raised it to 57.5%; Jev reached 55.0%; the Haiku router stays |
 | 6. Cost model and decision memo | Done: `python run_all.py economics`; recommended agent saves 21% at 20,000 chats a month on the test-chat rates (about 2% on the fresh-set rates), break-even 2,200 chats; gated pilot recommended (`docs/decision_memo.md`) |
 | 7. One-command reproduction, final README | Done: `python run_all.py`. Checked on 2026-11-25 on a fresh clone from GitHub, with a new Python 3.13 environment and no key: every stage replays and 241 tests pass. The whole git history was scanned the same day: no API key, token or private key, and no `.env`, in any commit |
 

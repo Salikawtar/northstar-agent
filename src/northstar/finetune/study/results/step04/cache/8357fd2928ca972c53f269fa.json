@@ -1,0 +1,7 @@
+{
+ "text": "Car stuck right now, and the customer reports a repeat failure after our repair (RO-187778) and demands a manager. Per the tie-break, that goes to needs_human with a customer_request escalation. Roadside is secondary.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\"], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2211,
+ "output_tokens": 147,
+ "cost_usd": 0.005892,
+ "latency_ms": 1413.2
+}

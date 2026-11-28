@@ -1,0 +1,7 @@
+{
+ "text": "Reasoning: The customer asks for a person explicitly, so needs_human with customer_request escalation. The letter about a \"final notice\" and an amount is probably an invoice or charge question, so billing_dispute is the likely secondary type. It could also be a recall notice, but \"final notice\" with a dollar amount points to billing. Writing for a relative is not adversarial.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2292,
+ "output_tokens": 190,
+ "cost_usd": 0.006484,
+ "latency_ms": 1695.4
+}

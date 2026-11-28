@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“Je peux envoyer votre demande de révision” offers a referral but does not hand off the billing dispute for review.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P06\", \"P14\"],\n  \"policy_reason\": \"Under P06 and P14, “Avant, je dois vous vérifier” wrongly delays the required handoff of a billing dispute.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-338165” came from the customer, and the reply does not assert a price or repair status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Je peux envoyer votre demande de révision” offers a review without promising a billing outcome or response time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Je peux envoyer votre demande” opens with a helpful option, and “Quel est votre nom de famille?” is the only question.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2569,
+ "output_tokens": 445,
+ "cost_usd": 0.0055358,
+ "latency_ms": 7059.0
+}

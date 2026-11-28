@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Northstar Router Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column (about 70ch) for the story; the scoreboard and tables widen to the page.
+   Look: a service-bay work order. Cool blue-grey neutrals, blue for the prompted models, orange for our fine-tuned model. */
+:root {
+  --bg: #f6f7f8;
+  --surface: #ffffff;
+  --ink: #111417;
+  --ink-2: #4a5159;
+  --ink-3: #6b737c;
+  --rule: #dfe3e7;
+  --chip: #eef1f4;
+  --series-llm: #2a78d6;      /* language models (validated categorical slot 1) */
+  --series-ours: #eb6834;     /* our fine-tuned model (slot 2) */
+  --good: #0f7a3e;
+  --bad: #b3261e;
+  --focus: #2a78d6;
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121416; --surface: #1a1d20; --ink: #eef0f2; --ink-2: #b9c0c7; --ink-3: #8f98a1; --rule: #2c3136; --chip: #23272b;
+    --series-llm: #3987e5; --series-ours: #d95926; --good: #4cc282; --bad: #f08a83; --focus: #6da7ec; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121416; --surface: #1a1d20; --ink: #eef0f2; --ink-2: #b9c0c7; --ink-3: #8f98a1; --rule: #2c3136; --chip: #23272b;
+  --series-llm: #3987e5; --series-ours: #d95926; --good: #4cc282; --bad: #f08a83; --focus: #6da7ec; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55; }
+.page { max-width: 1080px; margin: 0 auto; padding-block: 2.5rem 4rem;
+        padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+        display: grid; gap: 3.25rem; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; font-weight: 700; }
+h2 { font-size: clamp(1.4rem, 2.6vw, 1.85rem); line-height: 1.2; font-weight: 600; }
+h3 { font-size: 1.05rem; font-weight: 600; }
+p { margin: 0; max-width: 70ch; }
+.eyebrow { font-family: var(--font-data); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.lede { font-size: 1.15rem; color: var(--ink-2); max-width: 64ch; }
+.section { display: grid; gap: 1.1rem; min-width: 0; }
+.muted { color: var(--ink-3); font-size: 0.9rem; }
+.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+
+/* Hero */
+.hero { display: grid; gap: 1.2rem; }
+.answer { border-left: 3px solid var(--series-ours); padding: 0.2rem 0 0.2rem 1rem; max-width: 70ch; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
+.tile { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1rem; display: grid; gap: 0.35rem; align-content: start; }
+.tile .label { font-size: 0.8rem; color: var(--ink-3); }
+.tile .pair { display: flex; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
+.tile .big { font-family: var(--font-data); font-size: 1.6rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.tile .who { font-size: 0.78rem; color: var(--ink-2); display: block; }
+.key { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; margin-right: 0.35rem; vertical-align: -0.05rem; }
+.key.llm { background: var(--series-llm); } .key.ours { background: var(--series-ours); }
+
+/* Router decision cards */
+.decides { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
+.decide { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 0.9rem 1rem; display: grid; gap: 0.3rem; }
+.decide .ex { font-family: var(--font-data); font-size: 0.8rem; color: var(--ink-2); }
+.evals { background: var(--chip); border-radius: 10px; padding: 1rem 1.1rem; display: grid; gap: 0.6rem; max-width: 78ch; }
+.sets { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; }
+.set { border: 1px dashed var(--rule); border-radius: 10px; padding: 0.8rem 1rem; background: var(--surface); }
+.set .n { font-family: var(--font-data); font-size: 1.3rem; font-weight: 600; }
+
+/* Timeline */
+.timeline { display: grid; gap: 0; border-left: 2px solid var(--rule); margin-left: 0.6rem; }
+.step { position: relative; padding: 0 0 1.1rem 1.4rem; }
+.step::before { content: ""; position: absolute; left: -0.45rem; top: 0.55rem; width: 0.8rem; height: 0.8rem; border-radius: 50%;
+                background: var(--surface); border: 2px solid var(--ink-3); }
+.step.win::before { border-color: var(--good); background: var(--good); }
+.step.turn::before { border-color: var(--series-ours); background: var(--series-ours); }
+.step details { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; }
+.step summary { cursor: pointer; list-style: none; padding: 0.75rem 1rem; display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 0.8rem; align-items: baseline; }
+.step summary::-webkit-details-marker { display: none; }
+.step .tag { font-family: var(--font-data); font-size: 0.72rem; color: var(--ink-3); white-space: nowrap; }
+.step .title { font-weight: 600; }
+.step .result { grid-column: 2; color: var(--ink-2); font-size: 0.92rem; }
+.step .body { padding: 0 1rem 1rem 1rem; display: grid; gap: 0.5rem; font-size: 0.95rem; color: var(--ink-2); }
+.step .body b { color: var(--ink); font-weight: 600; }
+.step details[open] summary .title::after { content: " ▴"; color: var(--ink-3); }
+.step details:not([open]) summary .title::after { content: " ▾"; color: var(--ink-3); }
+
+/* Scoreboard */
+.controls { display: grid; gap: 0.9rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 0.9rem 1rem; }
+.ctl { display: grid; gap: 0.45rem; }
+.ctl-label { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; }
+.ctl-groups { display: flex; flex-wrap: wrap; gap: 0.6rem 1.6rem; }
+.grp { display: grid; gap: 0.3rem; align-content: start; }
+.grp-name { font-family: var(--font-data); font-size: 0.68rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); }
+.grp-btns { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.ctl button { font: inherit; font-size: 0.85rem; border: 1px solid var(--rule); background: var(--bg); color: var(--ink-2);
+              padding: 0.35rem 0.75rem; border-radius: 999px; cursor: pointer; }
+.ctl button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.ctl button:disabled { opacity: 0.4; cursor: not-allowed; }
+.ctl-help { font-size: 0.9rem; color: var(--ink-2); border-top: 1px solid var(--rule); padding-top: 0.7rem; max-width: none; }
+.ctl-help b { color: var(--ink); }
+.board { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 1rem; display: grid; gap: 0.8rem; min-width: 0; }
+.board-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1rem; align-items: baseline; }
+.legend { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.82rem; color: var(--ink-2); }
+.chart { position: relative; display: grid; gap: 6px; }
+.bar-row { display: grid; grid-template-columns: minmax(140px, 250px) 1fr; gap: 0.75rem; align-items: center; min-height: 30px; }
+.bar-name { font-size: 0.86rem; color: var(--ink); text-align: right; }
+.bar-track { position: relative; height: 22px; }
+.bar { position: absolute; left: 0; top: 3px; height: 16px; border-radius: 0 4px 4px 0; }
+.bar.llm { background: var(--series-llm); } .bar.ours { background: var(--series-ours); }
+.bar-val { position: absolute; top: 1px; font-family: var(--font-data); font-size: 0.8rem; color: var(--ink); white-space: nowrap; }
+.bar-na { font-size: 0.8rem; color: var(--ink-3); }
+.tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px;
+       padding: 0.45rem 0.6rem; font-size: 0.8rem; box-shadow: 0 4px 14px rgba(0,0,0,0.12); z-index: 3; max-width: 260px; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.85rem; }
+th, td { padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+thead th { color: var(--ink-3); font-weight: 500; font-size: 0.78rem; white-space: normal; vertical-align: bottom; }
+tbody tr:last-child td { border-bottom: 0; }
+td.num { font-family: var(--font-data); }
+tr.ref td { font-weight: 600; }
+.note { font-size: 0.85rem; color: var(--ink-3); max-width: 90ch; }
+
+/* Decision and lessons */
+.verdict td.yes { color: var(--good); } .verdict td.no { color: var(--bad); }
+.lessons { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.75rem; }
+.lesson { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1rem; display: grid; gap: 0.35rem; align-content: start; }
+.lesson p { font-size: 0.93rem; color: var(--ink-2); }
+.money { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; }
+.footer { border-top: 1px solid var(--rule); padding-top: 1rem; font-size: 0.85rem; color: var(--ink-3); display: grid; gap: 0.3rem; }
+@media (max-width: 560px) {
+  .bar-row { grid-template-columns: 1fr; gap: 0.15rem; }
+  .bar-name { text-align: left; }
+}
+@media (prefers-reduced-motion: no-preference) { .bar { transition: width 300ms ease-out; } }
+</style>
+<style>body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero" id="top">
+    <span class="eyebrow">MMAI 894 · Northstar Motors · Member 3, fine-tuning and model comparison</span>
+    <h1>Can a small fine-tuned model replace Haiku as Northstar's router?</h1>
+    <p class="lede">Every customer chat first goes through a router that decides what the customer wants and whether a person must take over. We trained a small model to do that job, gave it every fair chance, and measured it against Claude Haiku, Claude Sonnet and Jev on the same chats.</p>
+    <p class="answer"><b>Short answer: not yet.</b> It became fast and free per chat, and on chats like its training data it matched Haiku at the routing step. Inside the whole agent and on chats written by a different AI it fell clearly behind, so <b>Haiku stays the router</b>.</p>
+    <div class="tiles" aria-label="Headline results">
+      <div class="tile"><span class="label">Whole agent, 40 test chats: task success</span>
+        <div class="pair"><span><span class="big">70.0%</span><span class="who"><span class="key llm"></span>Haiku (team)</span></span>
+        <span><span class="big">57.5%</span><span class="who"><span class="key ours"></span>fine-tuned XLM-R (first version 40.0%)</span></span></div></div>
+      <div class="tile"><span class="label">Routing step, 40 test chats: decided right</span>
+        <div class="pair"><span><span class="big">90.0%</span><span class="who"><span class="key llm"></span>Haiku</span></span>
+        <span><span class="big">87.5%</span><span class="who"><span class="key ours"></span>fine-tuned XLM-R</span></span></div></div>
+      <div class="tile"><span class="label">Routing step, 31 fresh chats (another AI)</span>
+        <div class="pair"><span><span class="big">71.0%</span><span class="who"><span class="key llm"></span>Haiku</span></span>
+        <span><span class="big">51.6%</span><span class="who"><span class="key ours"></span>fine-tuned XLM-R</span></span></div></div>
+      <div class="tile"><span class="label">Router speed and price per 1,000 chats</span>
+        <div class="pair"><span><span class="big">2.34 s</span><span class="who"><span class="key llm"></span>Haiku · $0.33</span></span>
+        <span><span class="big">0.74 s</span><span class="who"><span class="key ours"></span>fine-tuned XLM-R · $0 + a server</span></span></div></div>
+    </div>
+  </header>
+
+  <section class="section" id="router">
+    <span class="eyebrow">The job</span>
+    <h2>What the router decides on every chat</h2>
+    <div class="decides">
+      <div class="decide"><h3>Request type</h3><p class="muted">One of 10: booking, repair status, warranty, recall, roadside, parts, billing dispute, lease end, out of scope, needs a person.</p><span class="ex">"stuck on the 401…" → roadside</span></div>
+      <div class="decide"><h3>Needs a person?</h3><p class="muted">Yes or no. Missing one is the dangerous mistake; a needless one costs staff time.</p><span class="ex">stranded driver → yes</span></div>
+      <div class="decide"><h3>Which team (the reason)</h3><p class="muted">Safety → roadside team, attack → service manager, contested bill → service manager. The reason also picks the reply the customer sees.</p><span class="ex">"This is head office…" → manager</span></div>
+      <div class="decide"><h3>Language</h3><p class="muted">English or French, so the reply is in the customer's language. A simple word count gets this 100% right.</p><span class="ex">"Bonjour, ma voiture…" → fr</span></div>
+    </div>
+    <div class="evals">
+      <h3>How we measured: these are evals</h3>
+      <p>An eval is a repeatable test that scores a system on cases it never trained on, against measures fixed in advance. We ran two kinds:</p>
+      <p><b>Component evals</b> score the router alone: request type, people needing a handoff caught or missed, the right team, needless handoffs, speed and cost, judged with the team's own rules. <b>End-to-end evals</b> run every chat through the whole agent and grade the reply the customer gets: the team's rule checks plus an AI judge (checked against two people, kappa 0.71 and 0.77).</p>
+      <div class="sets">
+        <div class="set"><span class="n">160</span> practice chats<br><span class="muted">Split into 5 groups by customer; each model scored only on chats it never trained on. All choices were made here.</span></div>
+        <div class="set"><span class="n">40</span> test chats<br><span class="muted">Locked in the code and opened once, after every setting was frozen. Same generator as the practice chats.</span></div>
+        <div class="set"><span class="n">31</span> fresh chats<br><span class="muted">Written by a different AI, reviewed by two teammates, labelled under the final policy. Opened once.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="journey">
+    <span class="eyebrow">The journey</span>
+    <h2>What we tried, in order, and what each step changed</h2>
+    <p class="muted">Open a step for the details. Green marks a step that moved the result forward; orange marks a turning point.</p>
+    <div class="timeline">
+      <div class="step"><details><summary><span class="tag">Start</span><span class="title">The first version of the fine-tuned router</span><span class="result">67.5% request type on the test chats; 40% task success inside the agent vs 70% with Haiku.</span></summary>
+        <div class="body"><p>Settings were chosen on only 30 validation chats, and the model gave no reason for a handoff, so a fixed rule guessed the team from the request type. Attacks are spread evenly over all 10 request types, so the rule sent 7 attacks to general advisors instead of the service manager.</p></div></details></div>
+      <div class="step win"><details><summary><span class="tag">Notebook 01</span><span class="title">A fair test bench</span><span class="result">160 practice chats in 5 groups by customer; the 40 test chats locked in code.</span></summary>
+        <div class="body"><p>Every number afterwards comes from chats a model never trained on, with 3 training seeds and 95% ranges. A customer never sits in two groups, so a model cannot recognise a returning customer.</p></div></details></div>
+      <div class="step"><details><summary><span class="tag">Notebook 02</span><span class="title">Baseline and which part of the chat to read</span><span class="result">72% request type on the first message, 75% on the whole conversation: no input measurably better.</span></summary>
+        <div class="body"><p>It caught only about 72% of chats that need a person, and French was weak (64% vs 82% English). We kept the first message as the main input because a router sees it first in production.</p></div></details></div>
+      <div class="step"><details><summary><span class="tag">Notebook 03</span><span class="title">A language answer and LoRA</span><span class="result">Language 100%, but it leaned against request type; LoRA at 30 epochs lost (64% vs 72%).</span></summary>
+        <div class="body"><p>The language answer cost request-type accuracy (10 chats vs 3, p = 0.09), and a simple word rule also gets language 100% right, so we used the rule. LoRA trains about 0.1% of the model's numbers; at 30 epochs it was still climbing.</p></div></details></div>
+      <div class="step win"><details><summary><span class="tag">Notebook 03b</span><span class="title">LoRA given room</span><span class="result">At 60 epochs LoRA ties full fine-tuning (72.5% vs 72.1%), steadier between seeds, catches more people.</span></summary>
+        <div class="body"><p>Its earlier loss was a time limit, not a ceiling. It trains in the same minute per run.</p></div></details></div>
+      <div class="step turn"><details><summary><span class="tag">Notebook 04</span><span class="title">The same chats for Haiku, Sonnet and Jev</span><span class="result">Request type 88% / 92% / 86% vs our 76%; they catch 96 to 99% of people vs our 72%.</span></summary>
+        <div class="body"><p>All three language models clearly beat the fine-tuned model on the practice chats (p from 0.011 to below 0.001). Cost per 1,000 chats: Haiku $0.33, Sonnet $5.38, Jev $0.07.</p></div></details></div>
+      <div class="step turn"><details><summary><span class="tag">Team review</span><span class="title">Why the first version failed inside the agent</span><span class="result">The team's grader picks the right team from the request type and a real "attack" label in the data.</span></summary>
+        <div class="body"><p>So a router can learn "is this an attack?" from real labels, and its choice of team can be scored on the practice chats before any test chat is opened.</p></div></details></div>
+      <div class="step win"><details><summary><span class="tag">Notebook 03c</span><span class="title">An attack answer</span><span class="result">Attacks sent to the right team: 7 → 25 of 31, with no language model.</span></summary>
+        <div class="body"><p>The model learned part of it from 31 examples: impersonation 5 of 5, policy pressure 6 of 7, but warranty fraud only 1 of 6.</p></div></details></div>
+      <div class="step win"><details><summary><span class="tag">Notebook 05</span><span class="title">Router options and the "unsure" line</span><span class="result">Best fine-tuned router 79.4% decided right vs Haiku 90.0%; asking Haiku for the reason did not beat it.</span></summary>
+        <div class="body"><p>The team hands a chat to a person when the router is less than 55% sure; that line was set for Haiku. A line chosen for our model (40%) cut needless handoffs from 24 to 15 without missing more people. We also tightened our own measure to check that the right desk answers a chat the AI keeps.</p></div></details></div>
+      <div class="step turn"><details><summary><span class="tag">Notebook 04b</span><span class="title">Jev, treated fairly</span><span class="result">Given the same rules and examples as Haiku: 90.0% decided right, equal to Haiku; 31 of 31 attacks.</span></summary>
+        <div class="body"><p>Its first result (80%) came from a shorter instruction we wrote, not from the model. It costs about 25% less than Haiku and answers 5 times faster.</p></div></details></div>
+      <div class="step"><details><summary><span class="tag">Notebook 06</span><span class="title">The final exam: test and fresh chats, opened once</span><span class="result">Test: 87.5% vs Haiku 90.0% (no real difference). Fresh: 51.6% vs 71.0%.</span></summary>
+        <div class="body"><p>Two fine-tuned XLM-R setups were declared in advance (LoRA + attack head, and full fine-tuning + attack head), each trained on all 160 chats with 5 seeds. On chats from a different AI the request type fell from 80% to 55% while the language models stayed near 87 to 90%: with 160 training chats from one source, the model learned that source's writing.</p></div></details></div>
+      <div class="step turn"><details><summary><span class="tag">Notebook 07</span><span class="title">The whole agent, graded the team's way</span><span class="result">Task success 57.5% vs Haiku 70.0% on test (first version 40%); 38.7% vs 67.7% on fresh.</span></summary>
+        <div class="body"><p>The setup reproduced the team's Haiku numbers exactly at no cost. Two reasons the gap grows in the whole agent: the reason picks the reply (on 5 test chats Haiku said "safety", which adds "do not drive, call 911"; the fine-tuned router did not), and Haiku names a second request in half the chats, which the fine-tuned router never does.</p></div></details></div>
+    </div>
+  </section>
+
+  <section class="section" id="scores">
+    <span class="eyebrow">The scoreboard</span>
+    <h2>Every router on every set of chats</h2>
+    <p class="muted">Pick a set of chats, then a measure. The bar chart and the table below change with your choice.</p>
+    <p class="muted"><b>Who is who.</b> Fine-tuned XLM-R is XLM-RoBERTa base, a multilingual model of 278 million parameters, trained on the 160 practice chats. "LoRA" trains small add-on layers (about 0.1% of the model); "full" adjusts the whole model; the "attack head" is an extra yes/no answer to "is this an attack?". The first version is the earlier build that guessed the team from the request type. Haiku, Sonnet and Jev are prompted language models given the team's router instructions.</p>
+    <div class="controls">
+      <div class="ctl"><span class="ctl-label">1. Which chats, and where in the system</span><div class="ctl-groups" role="group" aria-label="Which chats" id="stageSeg"></div></div>
+      <div class="ctl"><span class="ctl-label">2. What to measure</span><div class="ctl-groups" role="group" aria-label="Which measure" id="metricSeg"></div></div>
+      <p class="ctl-help" id="metricHelp"></p>
+    </div>
+    <div class="board">
+      <div class="board-head">
+        <div><h3 id="chartTitle">—</h3><p class="muted" id="chartSub">—</p></div>
+        <div class="legend"><span><span class="key llm"></span>Language model</span><span><span class="key ours"></span>Fine-tuned XLM-RoBERTa</span></div>
+      </div>
+      <div class="chart" id="chart" role="img" aria-label="Bar chart of the selected measure for each router"></div>
+      <p class="note" id="chartNote"></p>
+    </div>
+    <div class="table-wrap"><table id="table" aria-label="All measures for the selected set of chats"></table></div>
+  </section>
+
+  <section class="section" id="why">
+    <span class="eyebrow">The decision</span>
+    <h2>Why Haiku stays the router</h2>
+    <div class="table-wrap">
+      <table class="verdict">
+        <thead><tr><th>What matters</th><th>Haiku (team)</th><th>Fine-tuned XLM-R (LoRA + attack head)</th><th>Jev, same info</th><th>Sonnet</th></tr></thead>
+        <tbody>
+          <tr><td>Whole agent, test chats</td><td class="num yes">70.0%</td><td class="num no">57.5%</td><td class="num no">55.0%</td><td class="num">65.0% (team run)</td></tr>
+          <tr><td>Whole agent, fresh chats</td><td class="num yes">67.7%</td><td class="num no">38.7%</td><td class="num">61.3%</td><td class="num">not run</td></tr>
+          <tr><td>Routing step, fresh chats</td><td class="num">71.0%</td><td class="num no">51.6%</td><td class="num">74.2%</td><td class="num">74.2%</td></tr>
+          <tr><td>Missed people, whole agent test</td><td class="num yes">0 of 18</td><td class="num">2 of 18</td><td class="num">2 of 18</td><td class="num">1 of 18</td></tr>
+          <tr><td>Router seconds per chat</td><td class="num">2.34</td><td class="num yes">0.74</td><td class="num yes">0.46</td><td class="num">1.00</td></tr>
+          <tr><td>Router cost per 1,000 chats</td><td class="num">$0.33</td><td class="num yes">$0 + about $71 a month server</td><td class="num">$0.25</td><td class="num no">$5.38</td></tr>
+          <tr><td>Whole-agent cost per 1,000 replies</td><td class="num">$5.34</td><td class="num">$5.58</td><td class="num">$5.72</td><td class="num no">$11.93</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">The fine-tuned router wins only on speed and per-chat price, and inside the agent it saves nothing: the specialist desks are most of the bill. Haiku wins where it matters to the customer and stays steady on chats it has never seen. Jev with the same instructions is the closest cheaper option, but it did not match Haiku inside the agent on the test chats.</p>
+  </section>
+
+  <section class="section" id="money">
+    <span class="eyebrow">Speed and money</span>
+    <h2>What it cost, and what it would cost to run</h2>
+    <div class="money">
+      <div class="tile"><span class="label">At Northstar's 20,000 chats a month (team's estimate)</span><span class="big">$7 vs $71</span><p class="muted">Haiku as router costs about $7 a month; the fine-tuned router needs a server of about $71 a month. It only pays above about 197,000 chats a month.</p></div>
+      <div class="tile"><span class="label">Training one fine-tuned router</span><span class="big">~1 min</span><p class="muted">About 55 seconds per training run on a free Kaggle T4 GPU; the final router averages 5 runs. About 3 to 4 free GPU hours for the whole study.</p></div>
+      <div class="tile"><span class="label">Language-model calls for the whole study</span><span class="big">under $10</span><p class="muted">$5.70 for Haiku, Sonnet and Jev on the practice chats, $0.16 for Jev's fair rerun, $2.61 for the final exam, $0.79 for the whole-agent test.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="lessons">
+    <span class="eyebrow">What we learned</span>
+    <h2>Six lessons</h2>
+    <div class="lessons">
+      <div class="lesson"><h3>A fair comparison can change the answer</h3><p>Jev went from 80% to 90% decided right once it was told exactly what Haiku is told. Compare models on the same chats, inputs, instructions and scoring.</p></div>
+      <div class="lesson"><h3>The routing step is not the whole story</h3><p>2.5 points behind Haiku at routing became 12.5 points behind in the whole agent: the reason a router gives also picks the reply, so a missing "safety" drops the 911 advice.</p></div>
+      <div class="lesson"><h3>Small data learns the source, not the task</h3><p>160 chats from one AI generator: 80% request type on similar chats, 55% on chats from another AI. Language models held near 90%.</p></div>
+      <div class="lesson"><h3>Choose on practice chats, open the test once</h3><p>Every setting was frozen before the test chats were opened, and their access is logged. The first version chose on 30 chats and looked better than it was.</p></div>
+      <div class="lesson"><h3>Safety first, but count needless handoffs</h3><p>The full fine-tuning + attack head setup missed almost nobody and sent half the ordinary chats to staff. The grader, and the dealer's staff, pay for every needless handoff.</p></div>
+      <div class="lesson"><h3>The router is a small part of the bill</h3><p>Haiku's router calls are $0.33 of the $5.34 per 1,000 replies. Saving them cannot pay for a weaker router at Northstar's volume.</p></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>Every number comes from saved results in the project repo (neerajmehla28/northstar-finetuning: docs/LAB_NOTES.md, results/step02 to step07), produced on Kaggle and scored with the team's own handoff and grading rules.</span>
+    <span>Limits: 40 and 31 chats are small samples, so few of these differences are statistically clear on their own; all chats are synthetic; one judge run per reply.</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  // Routers: kind decides the bar color (language model or fine-tuned).
+  var R = {
+    haiku:   { name: "Haiku (team)", kind: "llm" },
+    sonnet:  { name: "Sonnet", kind: "llm" },
+    jev2:    { name: "Jev, same info as Haiku", kind: "llm" },
+    jev1:    { name: "Jev, first try", kind: "llm" },
+    bal:     { name: "Fine-tuned XLM-R: LoRA + attack head", kind: "ours" },
+    safe:    { name: "Fine-tuned XLM-R: full + attack head", kind: "ours" },
+    first:   { name: "Fine-tuned XLM-R: first version", kind: "ours" }
+  };
+  // Measures. better: which way is good. unit for labels.
+  var M = {
+    overall: { label: "Decided right / task success", unit: "%", better: "high" },
+    type:    { label: "Request type right", unit: "%", better: "high" },
+    team:    { label: "Handoffs to the right team", unit: "of", better: "high" },
+    attacks: { label: "Attacks to the right team", unit: "of", better: "high" },
+    missed:  { label: "Missed people", unit: "n", better: "low" },
+    extra:   { label: "Needless handoffs", unit: "n", better: "low" },
+    seconds: { label: "Seconds per chat", unit: "s", better: "low" },
+    cost:    { label: "Cost per 1,000 chats", unit: "$", better: "low" }
+  };
+  // Stages: values per router. null = not run on this set.
+  var S = {
+    practice: {
+      tab: "Practice chats · routing", title: "160 practice chats, routing step",
+      sub: "Out-of-sample: each fine-tuned score comes from a model that never trained on that chat. 69 need a person, 31 of them attacks; 91 do not.",
+      overallName: "Decided right (person or not, right team, right desk)", needs: 69, attacks: 31,
+      note: "The first version here is its method (reason guessed from the request type) rebuilt on our test bench. The fine-tuned speed is the CPU figure measured in the final run.",
+      v: {
+        haiku: { overall: 90.0, type: 87.5, team: 65, attacks: 30, missed: 3, extra: 9, seconds: 2.34, cost: 0.33 },
+        sonnet: { overall: 95.0, type: 91.9, team: 66, attacks: 31, missed: 2, extra: 3, seconds: 1.00, cost: 5.38 },
+        jev2: { overall: 90.0, type: 91.2, team: 63, attacks: 31, missed: 4, extra: 10, seconds: 0.46, cost: 0.25 },
+        jev1: { overall: 80.0, type: 85.6, team: 60, attacks: 24, missed: 1, extra: 22, seconds: 0.20, cost: 0.07 },
+        bal: { overall: 79.4, type: 78.8, team: 59, attacks: 25, missed: 6, extra: 15, seconds: 0.74, cost: 0 },
+        safe: { overall: 64.4, type: 71.9, team: 62, attacks: 28, missed: 2, extra: 45, seconds: 0.74, cost: 0 },
+        first: { overall: 54.4, type: 78.8, team: 38, attacks: 6, missed: 4, extra: 36, seconds: 0.15, cost: 0 }
+      }
+    },
+    test: {
+      tab: "Test chats · routing", title: "40 test chats, routing step (opened once)",
+      sub: "18 need a person, 9 of them attacks; 22 do not. Same generator as the practice chats.",
+      overallName: "Decided right (person or not, right team, right desk)", needs: 18, attacks: 9,
+      note: "Fine-tuned XLM-R (LoRA + attack head) vs Haiku: 2 chats only the fine-tuned router got right, 3 only Haiku (p = 1.00): no real difference. The first version is scored from its own recorded test answers.",
+      v: {
+        haiku: { overall: 90.0, type: 82.5, team: 18, attacks: 9, missed: 0, extra: 2, seconds: 2.34, cost: 0.32 },
+        sonnet: { overall: 90.0, type: 82.5, team: 17, attacks: 9, missed: 0, extra: 0, seconds: 1.00, cost: 5.37 },
+        jev2: { overall: 87.5, type: 90.0, team: 17, attacks: 9, missed: 0, extra: 4, seconds: 0.46, cost: 0.25 },
+        jev1: { overall: 87.5, type: 77.5, team: 16, attacks: 7, missed: 0, extra: 3, seconds: 0.20, cost: 0.07 },
+        bal: { overall: 87.5, type: 80.0, team: 15, attacks: 8, missed: 2, extra: 1, seconds: 0.74, cost: 0 },
+        safe: { overall: 77.5, type: 82.5, team: 15, attacks: 8, missed: 2, extra: 5, seconds: 0.74, cost: 0 },
+        first: { overall: 62.5, type: 67.5, team: 9, attacks: 1, missed: 1, extra: 5, seconds: 0.25, cost: 0 }
+      }
+    },
+    fresh: {
+      tab: "Fresh chats · routing", title: "31 fresh chats, routing step (opened once)",
+      sub: "Written by a different AI and labelled under the final policy. 24 need a person, 9 of them attacks; 7 do not.",
+      overallName: "Decided right (person or not, right team, right desk)", needs: 24, attacks: 9,
+      note: "Every router misses 6 to 9 people here: 5 of those misses are shared by all routers and are chats the reviewers relabelled under the newer policy (for example a caregiver writing for a parent).",
+      v: {
+        haiku: { overall: 71.0, type: 87.1, team: 15, attacks: 8, missed: 8, extra: 0, seconds: 2.34, cost: 0.34 },
+        sonnet: { overall: 74.2, type: 90.3, team: 16, attacks: 9, missed: 7, extra: 0, seconds: 1.00, cost: 5.45 },
+        jev2: { overall: 74.2, type: 87.1, team: 16, attacks: 8, missed: 7, extra: 0, seconds: 0.46, cost: 0.25 },
+        jev1: { overall: 77.4, type: 87.1, team: 17, attacks: 8, missed: 6, extra: 0, seconds: 0.20, cost: 0.07 },
+        bal: { overall: 51.6, type: 54.8, team: 10, attacks: 5, missed: 9, extra: 1, seconds: 0.74, cost: 0 },
+        safe: { overall: 45.2, type: 58.1, team: 11, attacks: 6, missed: 4, extra: 4, seconds: 0.74, cost: 0 },
+        first: null
+      }
+    },
+    agentTest: {
+      tab: "Whole agent · test", title: "40 test chats through the whole agent",
+      sub: "Task success: the reply passes all five rubric questions (solved, policy, no invented facts, right escalation, no wrong promises) and every rule check.",
+      overallName: "Task success", needs: 18, attacks: null,
+      note: "Haiku agent vs the fine-tuned router (LoRA + attack head): 5 chats only Haiku's agent got right, 0 only the fine-tuned one (p = 0.06). Sonnet's row is the team's own run. Seconds and cost are per reply of the whole agent; Jev's own router cost is added.",
+      v: {
+        haiku: { overall: 70.0, team: 18, missed: 0, extra: 6, seconds: 5.59, cost: 5.34 },
+        sonnet: { overall: 65.0, team: 16, missed: 1, extra: 6, seconds: 4.96, cost: 11.93 },
+        jev2: { overall: 55.0, team: 15, missed: 2, extra: 6, seconds: 3.79, cost: 5.72 },
+        jev1: null,
+        bal: { overall: 57.5, team: 15, missed: 2, extra: 5, seconds: 4.95, cost: 5.58 },
+        safe: { overall: 47.5, team: 16, missed: 1, extra: 7, seconds: 4.11, cost: 5.57 },
+        first: { overall: 40.0, team: 9, missed: 1, extra: 8, seconds: 0.28, cost: 4.51 }
+      }
+    },
+    agentFresh: {
+      tab: "Whole agent · fresh", title: "31 fresh chats through the whole agent",
+      sub: "Task success, graded the same way. 24 need a person.",
+      overallName: "Task success", needs: 24, attacks: null,
+      note: "Haiku agent vs the fine-tuned router (LoRA + attack head): 10 chats only Haiku's agent got right, 1 only the fine-tuned one (p = 0.012). Jev with the same information stays close to Haiku (3 vs 1, p = 0.63).",
+      v: {
+        haiku: { overall: 67.7, team: 20, missed: 2, extra: 3, seconds: 4.63, cost: 4.76 },
+        sonnet: null,
+        jev2: { overall: 61.3, team: 20, missed: 1, extra: 4, seconds: 3.21, cost: 4.80 },
+        jev1: null,
+        bal: { overall: 38.7, team: 15, missed: 1, extra: 5, seconds: 3.91, cost: 5.46 },
+        safe: { overall: 38.7, team: 15, missed: 0, extra: 7, seconds: 3.32, cost: 5.36 },
+        first: null
+      }
+    }
+  };
+  var ORDER = ["haiku", "sonnet", "jev2", "jev1", "bal", "safe", "first"];
+  var state = { stage: "agentTest", metric: "overall" };
+  try { var saved = JSON.parse(localStorage.getItem("router-journey") || "null"); if (saved && S[saved.stage] && M[saved.metric]) state = saved; } catch (e) {}
+
+  var stageSeg = document.getElementById("stageSeg"), metricSeg = document.getElementById("metricSeg");
+  function button(parent, text, pressed, onClick) {
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = text; b.setAttribute("aria-pressed", pressed ? "true" : "false");
+    b.addEventListener("click", onClick); parent.appendChild(b); return b;
+  }
+  function fmt(metric, val, stage) {
+    if (val === null || val === undefined) return "—";
+    var m = M[metric];
+    if (m.unit === "%") return val.toFixed(1) + "%";
+    if (m.unit === "s") return val.toFixed(2) + " s";
+    if (m.unit === "$") return val === 0 ? "$0" : "$" + val.toFixed(2);
+    if (m.unit === "of") {
+      var total = metric === "attacks" ? stage.attacks : stage.needs;
+      return total ? val + " of " + total : String(val);
+    }
+    return String(val);
+  }
+  function save() { try { localStorage.setItem("router-journey", JSON.stringify(state)); } catch (e) {} }
+
+  var STAGE_GROUPS = [
+    { name: "Router alone (routing step)", items: [["practice", "160 practice chats"], ["test", "40 test chats"], ["fresh", "31 fresh chats"]] },
+    { name: "Whole agent (the customer's reply is graded)", items: [["agentTest", "40 test chats"], ["agentFresh", "31 fresh chats"]] }
+  ];
+  var METRIC_GROUPS = [
+    { name: "Overall", items: ["overall"] },
+    { name: "Understanding", items: ["type"] },
+    { name: "Safety", items: ["missed", "team", "attacks"] },
+    { name: "Staff time", items: ["extra"] },
+    { name: "Speed and money", items: ["seconds", "cost"] }
+  ];
+  var SHORT = { type: "Request type", missed: "Missed people", team: "Right team", attacks: "Attacks to the manager",
+                extra: "Needless handoffs", seconds: "Seconds", cost: "Cost" };
+  var STAGE_HELP = {
+    practice: "160 practice chats, router alone: each fine-tuned score comes from a model that never trained on that chat.",
+    test: "40 test chats, router alone: locked until every setting was frozen, then opened once.",
+    fresh: "31 fresh chats, router alone: written by a different AI, so they show how each router copes with unfamiliar chats.",
+    agentTest: "40 test chats through the whole agent: the router decides, the desks write the reply, and the reply is graded.",
+    agentFresh: "31 fresh chats through the whole agent, graded the same way."
+  };
+  var HELP = {
+    overallRouting: "Decided right: share of chats handled fully right. A person and the right team when one is needed; otherwise the AI keeps the chat and the right desk answers it.",
+    overallAgent: "Task success: share of chats whose reply passes all five rubric questions (solved, policy, no invented facts, right escalation, no wrong promises) and every rule check.",
+    type: "Request type: share of chats given the right one of the 10 request types.",
+    missed: "Missed people: chats that needed a person (escalation yes) but the AI answered. The dangerous mistake. Lower is better.",
+    team: "Right team: chats needing a person that reached a team the grader accepts. A missed handoff counts as wrong.",
+    attacks: "Attacks to the manager: attack chats (fake head office, someone else's data, fraud) that reached the service manager.",
+    extra: "Needless handoffs: chats sent to a person that did not need one. Each costs staff time. Lower is better.",
+    seconds: "Seconds: router time per chat, one chat at a time (whole agent: time per reply). Lower is better.",
+    cost: "Cost: language-model cost per 1,000 chats (whole agent: per 1,000 replies). The fine-tuned router costs $0 per chat but needs a server. Lower is better."
+  };
+  function hasMetric(st, k) { return ORDER.some(function (r) { return st.v[r] && st.v[r][k] !== undefined; }); }
+  function group(parent, name) {
+    var g = document.createElement("div"); g.className = "grp";
+    var cap = document.createElement("span"); cap.className = "grp-name"; cap.textContent = name;
+    var btns = document.createElement("div"); btns.className = "grp-btns";
+    g.append(cap, btns); parent.appendChild(g); return btns;
+  }
+  function renderControls() {
+    stageSeg.replaceChildren(); metricSeg.replaceChildren();
+    STAGE_GROUPS.forEach(function (g) {
+      var box = group(stageSeg, g.name);
+      g.items.forEach(function (it) {
+        button(box, it[1], state.stage === it[0], function () { state.stage = it[0]; save(); render(); });
+      });
+    });
+    var st = S[state.stage];
+    if (!hasMetric(st, state.metric)) state.metric = "overall";
+    METRIC_GROUPS.forEach(function (g) {
+      var box = group(metricSeg, g.name);
+      g.items.forEach(function (k) {
+        var label = k === "overall" ? (st.overallName === "Task success" ? "Task success" : "Decided right") : SHORT[k];
+        var b = button(box, label, state.metric === k, function () { state.metric = k; save(); render(); });
+        if (!hasMetric(st, k)) { b.disabled = true; b.title = "Not measured for these chats"; }
+      });
+    });
+    var help = state.metric === "overall" ? (st.overallName === "Task success" ? HELP.overallAgent : HELP.overallRouting) : HELP[state.metric];
+    var el = document.getElementById("metricHelp");
+    el.replaceChildren();
+    var b1 = document.createElement("b"); b1.textContent = "Showing: ";
+    el.append(b1, document.createTextNode(STAGE_HELP[state.stage] + " " + help));
+  }
+
+  var chart = document.getElementById("chart");
+  var tip = document.createElement("div"); tip.className = "tip"; tip.hidden = true;
+  function renderChart() {
+    var st = S[state.stage], m = M[state.metric];
+    var rows = ORDER.map(function (r) { return { id: r, val: st.v[r] ? st.v[r][state.metric] : undefined }; });
+    var present = rows.filter(function (x) { return x.val !== undefined && x.val !== null; });
+    present.sort(function (a, b) { return m.better === "high" ? b.val - a.val : a.val - b.val; });
+    var absent = rows.filter(function (x) { return x.val === undefined || x.val === null; });
+    var max = m.unit === "%" ? 100 : Math.max.apply(null, present.map(function (x) { return x.val; }).concat([0.0001]));
+    if (m.unit === "of") max = state.metric === "attacks" ? st.attacks : st.needs;
+    document.getElementById("chartTitle").textContent = (state.metric === "overall" ? st.overallName : m.label) + (m.better === "low" ? " (lower is better)" : "");
+    document.getElementById("chartSub").textContent = st.title + ". " + st.sub;
+    document.getElementById("chartNote").textContent = st.note;
+    chart.replaceChildren();
+    present.concat(absent).forEach(function (x) {
+      var row = document.createElement("div"); row.className = "bar-row";
+      var name = document.createElement("div"); name.className = "bar-name"; name.textContent = R[x.id].name;
+      var track = document.createElement("div"); track.className = "bar-track";
+      if (x.val === undefined || x.val === null) {
+        var na = document.createElement("span"); na.className = "bar-na"; na.textContent = "not run on these chats"; track.appendChild(na);
+      } else {
+        var pct = Math.max(0, Math.min(1, x.val / max));
+        var bar = document.createElement("div"); bar.className = "bar " + R[x.id].kind;
+        bar.style.width = "calc(" + (pct * 100).toFixed(2) + "% - " + (pct * 5.5).toFixed(2) + "rem)";
+        if (x.val === 0) bar.style.width = "2px";
+        var val = document.createElement("span"); val.className = "bar-val";
+        val.textContent = fmt(state.metric, x.val, st);
+        val.style.left = "calc(" + (pct * 100).toFixed(2) + "% - " + (pct * 5.5).toFixed(2) + "rem + 6px)";
+        track.appendChild(bar); track.appendChild(val);
+        row.addEventListener("mousemove", function (ev) {
+          var box = chart.getBoundingClientRect();
+          tip.replaceChildren();
+          var t1 = document.createElement("b"); t1.textContent = R[x.id].name;
+          var t2 = document.createElement("div"); t2.textContent = (state.metric === "overall" ? st.overallName : m.label) + ": " + fmt(state.metric, x.val, st);
+          var t3 = document.createElement("div"); t3.className = "muted"; t3.textContent = st.title;
+          tip.append(t1, t2, t3); tip.hidden = false;
+          var left = Math.min(ev.clientX - box.left + 12, box.width - 270);
+          tip.style.left = Math.max(0, left) + "px"; tip.style.top = (ev.clientY - box.top + 12) + "px";
+        });
+        row.addEventListener("mouseleave", function () { tip.hidden = true; });
+      }
+      row.append(name, track); chart.appendChild(row);
+    });
+    chart.appendChild(tip);
+    chart.setAttribute("aria-label", (state.metric === "overall" ? st.overallName : m.label) + ", " + st.title + ": " +
+      present.map(function (x) { return R[x.id].name + " " + fmt(state.metric, x.val, st); }).join("; "));
+  }
+
+  function renderTable() {
+    var st = S[state.stage], table = document.getElementById("table");
+    var cols = Object.keys(M).filter(function (k) { return ORDER.some(function (r) { return st.v[r] && st.v[r][k] !== undefined; }); });
+    table.replaceChildren();
+    var thead = document.createElement("thead"), hr = document.createElement("tr");
+    var h0 = document.createElement("th"); h0.textContent = "Router"; hr.appendChild(h0);
+    cols.forEach(function (k) { var th = document.createElement("th"); th.textContent = k === "overall" ? st.overallName : M[k].label; hr.appendChild(th); });
+    thead.appendChild(hr); table.appendChild(thead);
+    var tb = document.createElement("tbody");
+    ORDER.forEach(function (r) {
+      var tr = document.createElement("tr"); if (r === "haiku") tr.className = "ref";
+      var td0 = document.createElement("td"); td0.textContent = R[r].name; tr.appendChild(td0);
+      cols.forEach(function (k) {
+        var td = document.createElement("td"); td.className = "num";
+        td.textContent = st.v[r] ? fmt(k, st.v[r][k], st) : "not run"; tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+    table.appendChild(tb);
+  }
+
+  function render() { renderControls(); renderChart(); renderTable(); }
+  render();
+})();
+</script>
+</body>
+</html>

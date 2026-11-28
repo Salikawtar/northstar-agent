@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"« Votre père peut communiquer directement avec nous » and « Je transfère votre demande » give the right next steps under P15.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Une personne de l'équipe qui vérifiera l'autorisation » satisfies P14 and P15 without disclosing customer or vehicle details.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Un possible service de navette » does not assert that a shuttle is available.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne de l'équipe qui vérifiera l'autorisation » promises only a review, not authorization or a shuttle.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je comprends que vous vouliez des nouvelles » is warm but does not start with what the assistant can do, as P13 advises.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2607,
+ "output_tokens": 216,
+ "cost_usd": 0.0033408,
+ "latency_ms": 3404.9
+}

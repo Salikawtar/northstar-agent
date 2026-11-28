@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\", \"warranty_claim\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.93, \"language\": \"en\"}",
+ "input_tokens": 2425,
+ "output_tokens": 317,
+ "cost_usd": 0.000401,
+ "latency_ms": 2534.7
+}

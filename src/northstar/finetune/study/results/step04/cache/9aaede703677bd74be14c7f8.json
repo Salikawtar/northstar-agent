@@ -1,0 +1,7 @@
+{
+ "text": "Tie-break check: the car is stuck right now, so this is roadside_assistance by default. The exception applies when the customer reports that a repair we did caused it or demands a manager. Here the customer says the car has the same problem we supposedly fixed last week. That is a repeat failure, not a claim that our repair caused it, and they do not demand a manager or a person. They ask for a tow and a written explanation, which is a secondary request about repair history (repair_status). So the main type is roadside_assistance, and escalation is for safety, since every roadside request is escalated.\n\n{\"request_type\": \"roadside_assistance\", \"secondary_types\": [\"repair_status\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2246,
+ "output_tokens": 250,
+ "cost_usd": 0.006992,
+ "latency_ms": 2226.3
+}

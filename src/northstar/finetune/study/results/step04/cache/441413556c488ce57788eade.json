@@ -1,0 +1,7 @@
+{
+ "text": "Routing check: the car is stuck right now, so this is roadside_assistance. The tie-break sends it to needs_human only if the customer reports that a repair we did caused the failure or demands a manager. Here the customer says the earlier diagnosis (\"battery tested fine\") was wrong. That is a complaint about a missed diagnosis, not a claim that our repair caused the breakdown, and there is no demand for a manager. So the type stays roadside_assistance.\n\nEscalation: every roadside_assistance request is escalated for safety, since someone is stranded. The customer also wants the car fixed properly, which could be book_service or warranty_claim, but the main request is the tow. I will list repair_status as secondary because it references the earlier repair order RO-285714, and book_service as secondary for the fix.\n\n{\"request_type\": \"roadside_assistance\", \"secondary_types\": [\"book_service\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2264,
+ "output_tokens": 327,
+ "cost_usd": 0.007798,
+ "latency_ms": 3125.8
+}

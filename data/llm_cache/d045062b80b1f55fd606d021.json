@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A person on our warranty team will review your case, including the diagnostic fee” sends the dispute for review without upholding the earlier waiver promise.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“A person on our warranty team will review your case” meets the handoff requirement (P06, P14), and “your last name and either your licence plate or your repair-order number” requests only permitted verification details (P02, P03).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Will review your case, including the diagnostic fee” describes the next step without asserting a fee amount, coverage, or vehicle record.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't waive the fee or confirm any coverage” makes clear that the handoff is for review, not approval.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry” rather than what it can do and stacks limits in “I can't waive the fee or confirm any coverage, and I don't need your VIN.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2654,
+ "output_tokens": 313,
+ "cost_usd": 0.0044283,
+ "latency_ms": 4923.0
+}

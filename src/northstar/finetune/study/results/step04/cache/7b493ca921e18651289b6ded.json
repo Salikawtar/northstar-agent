@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"parts_order\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.72, \"language\": \"en\"}",
+ "input_tokens": 2289,
+ "output_tokens": 69,
+ "cost_usd": 0.005268,
+ "latency_ms": 959.4
+}

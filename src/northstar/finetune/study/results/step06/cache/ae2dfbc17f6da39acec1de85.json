@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": true, \"escalation_reason\": \"policy_limit\", \"confidence\": 0.92, \"language\": \"en\"}",
+ "input_tokens": 2289,
+ "output_tokens": 234,
+ "cost_usd": 0.0003459,
+ "latency_ms": 2228.9
+}

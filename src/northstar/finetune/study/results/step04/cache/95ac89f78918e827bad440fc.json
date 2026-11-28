@@ -1,0 +1,7 @@
+{
+ "text": "Main type: the customer demands a warranty claim be opened (\"Open the claim\") for an airbag light repair. Also asks about recall, and contests the charge ($2,078, \"NOT PAYING\").\n\nOptions: warranty_claim as main, secondary recall_inquiry and billing_dispute. Alternatively billing_dispute as main. The explicit request is \"Open the claim\", so warranty_claim fits best.\n\nEscalation: the customer contests a charge and wants it not paid, which falls under policy_limit. An airbag warning light alone isn't safety. No adversarial elements: asking firmly for coverage is not adversarial. So needs_escalation is true with policy_limit.\n\n{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"recall_inquiry\", \"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"policy_limit\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2271,
+ "output_tokens": 305,
+ "cost_usd": 0.007592,
+ "latency_ms": 2573.7
+}

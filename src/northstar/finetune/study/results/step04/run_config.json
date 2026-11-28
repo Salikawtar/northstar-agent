@@ -1,0 +1,25 @@
+{
+ "models": {
+  "haiku": "anthropic/claude-haiku-5.5",
+  "sonnet": "anthropic/claude-sonnet-5.5",
+  "jev": "typesafe/jev-1.14"
+ },
+ "reasoning_effort": "low",
+ "max_tokens": 1500,
+ "temperature": "not set (provider default)",
+ "prompt": "prompts/router_v3.md",
+ "prompt_sha256": "3d587ac96476192a40cd9335d89fab19d583e000ba355169f258c199eb312468",
+ "variants": [
+  "first_message",
+  "full_conversation"
+ ],
+ "repeats": {
+  "haiku": 3,
+  "sonnet": 3,
+  "jev": 2
+ },
+ "budget_usd": 10.0,
+ "date": "2026-11-26",
+ "git_commit": "a06357b",
+ "chats": 160
+}

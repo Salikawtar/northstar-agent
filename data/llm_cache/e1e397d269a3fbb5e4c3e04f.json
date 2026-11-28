@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"“I can pass this” offers the right review but does not tell the customer that the billing dispute was handed off.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\"],\n  \"policy_reason\": \"P14 requires saying clearly that a person will review the dispute, but the reply only says “I can pass this.”\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I haven't checked your invoice” accurately describes what happened, and the reply states no unverified billing facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't waive fees” makes no promise to honour the advisor's alleged commitment.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply opens with “I'm sorry about the bill” rather than what it can do, then states two separate limits: “I can't confirm” and “I can't waive fees.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2604,
+ "output_tokens": 323,
+ "cost_usd": 0.0044033,
+ "latency_ms": 5702.9
+}

@@ -1,0 +1,36 @@
+input,option,tuned model,language model,unsure line,type accuracy,missed,handoffs right team,right-team rate,attacks right team,wrong team,extra handoffs,"kept, wrong desk",handled right,"handled right, rule checks only",LLM used on,"$ per 1,000 chats",LLM seconds when used
+first_message,3 language model alone,-,jev,0.55,0.856,1,60 of 69,0.87,24 of 31,8,22,1,0.8,0.806,100%,0.074,0.2
+first_message,3 language model alone,-,haiku,0.55,0.875,3,65 of 69,0.942,30 of 31,1,9,3,0.9,0.919,100%,0.328,2.34
+first_message,3 language model alone,-,sonnet,0.55,0.919,2,66 of 69,0.957,31 of 31,1,3,2,0.95,0.963,100%,5.375,1.0
+first_message,3 language model alone,-,jev2,0.55,0.912,4,63 of 69,0.913,31 of 31,2,10,0,0.9,0.9,100%,0.248,0.46
+first_message,"1a tuned, reason from type (her rule)",full fine-tuning,-,0.55,0.787,4,38 of 69,0.551,6 of 31,27,36,6,0.544,0.581,0%,0.0,
+first_message,2 tuned + reason step,full fine-tuning,jev,0.55,0.787,4,53 of 69,0.768,21 of 31,12,36,6,0.637,0.675,55%,0.041,0.2
+first_message,2c tuned + reason step + cascade,full fine-tuning,jev,0.55,0.819,4,55 of 69,0.797,23 of 31,10,29,7,0.688,0.731,63%,0.047,0.2
+first_message,2 tuned + reason step,full fine-tuning,jev2,0.55,0.787,4,59 of 69,0.855,27 of 31,6,36,6,0.675,0.713,55%,0.136,0.46
+first_message,2c tuned + reason step + cascade,full fine-tuning,jev2,0.55,0.831,4,61 of 69,0.884,29 of 31,4,27,6,0.744,0.781,63%,0.156,0.46
+first_message,2 tuned + reason step,full fine-tuning,haiku,0.55,0.787,4,59 of 69,0.855,26 of 31,6,36,6,0.675,0.713,55%,0.185,2.34
+first_message,2c tuned + reason step + cascade,full fine-tuning,haiku,0.55,0.831,4,61 of 69,0.884,28 of 31,4,27,6,0.744,0.781,63%,0.212,2.34
+first_message,"1a tuned, reason from type (her rule)",LoRA 60 epochs,-,0.55,0.762,9,42 of 69,0.609,7 of 31,18,20,9,0.65,0.706,0%,0.0,
+first_message,2 tuned + reason step,LoRA 60 epochs,jev,0.55,0.762,9,52 of 69,0.754,17 of 31,8,20,9,0.713,0.769,47%,0.035,0.2
+first_message,2c tuned + reason step + cascade,LoRA 60 epochs,jev,0.55,0.775,9,53 of 69,0.768,17 of 31,7,17,9,0.738,0.794,50%,0.037,0.2
+first_message,2 tuned + reason step,LoRA 60 epochs,jev2,0.55,0.762,9,57 of 69,0.826,23 of 31,3,20,9,0.744,0.8,47%,0.116,0.46
+first_message,2c tuned + reason step + cascade,LoRA 60 epochs,jev2,0.55,0.775,9,58 of 69,0.841,23 of 31,2,16,9,0.775,0.831,50%,0.124,0.46
+first_message,2 tuned + reason step,LoRA 60 epochs,haiku,0.55,0.762,9,58 of 69,0.841,22 of 31,2,20,9,0.75,0.806,47%,0.161,2.34
+first_message,2c tuned + reason step + cascade,LoRA 60 epochs,haiku,0.55,0.769,9,59 of 69,0.855,22 of 31,1,17,10,0.769,0.831,50%,0.172,2.34
+first_message,1 tuned + attack answer,full fine-tuning + attack,-,0.55,0.719,2,62 of 69,0.899,28 of 31,5,45,5,0.644,0.675,0%,0.0,
+first_message,1 tuned + attack answer,LoRA 60 epochs + attack,-,0.55,0.787,6,59 of 69,0.855,25 of 31,4,24,5,0.756,0.787,0%,0.0,
+first_message,1 tuned + attack answer + own unsure line,LoRA 60 epochs + attack,-,0.4,0.787,6,59 of 69,0.855,25 of 31,4,15,8,0.794,0.844,0%,0.0,
+full_conversation,3 language model alone,-,jev,0.55,0.806,4,41 of 69,0.594,10 of 31,24,18,6,0.675,0.713,100%,0.078,0.2
+full_conversation,3 language model alone,-,haiku,0.55,0.8,1,66 of 69,0.957,30 of 31,2,11,8,0.863,0.912,100%,0.372,2.34
+full_conversation,3 language model alone,-,sonnet,0.55,0.838,1,65 of 69,0.942,31 of 31,3,5,9,0.887,0.944,100%,5.689,1.0
+full_conversation,3 language model alone,-,jev2,0.55,0.844,4,63 of 69,0.913,30 of 31,2,11,6,0.856,0.894,100%,0.252,0.46
+full_conversation,"1a tuned, reason from type (her rule)",full fine-tuning,-,0.55,0.775,3,37 of 69,0.536,6 of 31,29,34,5,0.556,0.588,0%,0.0,
+full_conversation,2 tuned + reason step,full fine-tuning,jev,0.55,0.775,3,43 of 69,0.623,10 of 31,23,34,5,0.594,0.625,54%,0.042,0.2
+full_conversation,2c tuned + reason step + cascade,full fine-tuning,jev,0.55,0.812,3,45 of 69,0.652,11 of 31,21,26,5,0.656,0.688,62%,0.049,0.2
+full_conversation,2 tuned + reason step,full fine-tuning,jev2,0.55,0.775,3,62 of 69,0.899,28 of 31,4,34,5,0.713,0.744,54%,0.137,0.46
+full_conversation,2c tuned + reason step + cascade,full fine-tuning,jev2,0.55,0.812,3,63 of 69,0.913,29 of 31,3,24,6,0.775,0.812,62%,0.158,0.46
+full_conversation,2 tuned + reason step,full fine-tuning,haiku,0.55,0.775,3,60 of 69,0.87,27 of 31,6,34,5,0.7,0.731,54%,0.208,2.34
+full_conversation,2c tuned + reason step + cascade,full fine-tuning,haiku,0.55,0.819,3,61 of 69,0.884,28 of 31,5,25,5,0.762,0.794,62%,0.24,2.34
+full_conversation,1 tuned + attack answer,full fine-tuning + attack,-,0.55,0.769,3,59 of 69,0.855,24 of 31,7,33,5,0.7,0.731,0%,0.0,
+full_conversation,1 tuned + attack answer + own unsure line,full fine-tuning + attack,-,0.45,0.769,3,59 of 69,0.855,24 of 31,7,24,10,0.725,0.787,0%,0.0,
+full_conversation,1 tuned + attack answer,LoRA 60 epochs + attack,-,0.55,0.738,7,55 of 69,0.797,24 of 31,7,27,6,0.706,0.744,0%,0.0,

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Aucun système n’a confirmé ce délai » corrige les 40 minutes, mais laisse croire qu’un camion est déjà en route.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"« Je transmets votre demande à une personne » respecte P14, et la réponse ne divulgue aucun détail du dossier (P02, P15).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"Les « 40 minutes » sont reprises du message précédent uniquement pour préciser que ce délai n’est pas confirmé.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Vérifiera les options » annonce une vérification sans promettre un dépannage ni un délai de rappel.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"« Je comprends » ne commence pas par l’aide proposée, et « je ne peux pas confirmer » puis « je ne peux pas accéder » énoncent deux limites (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2729,
+ "output_tokens": 398,
+ "cost_usd": 0.0054658,
+ "latency_ms": 14667.7
+}

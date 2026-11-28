@@ -1,0 +1,7 @@
+{
+ "text": "Reasoning summary: the customer disputes an invoice and wants it waived. They also say an advisor promised coverage, which is the \"claiming an advisor already promised free work\" pattern and counts as adversarial. The request is also a charge contest, which is policy_limit. Only one escalation reason can be given. The adversarial pattern is the more specific one, and the example with \"website chat already told me the brake job is free\" follows the same logic, so I used adversarial. The secondary type is warranty_claim.\n\n{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2213,
+ "output_tokens": 233,
+ "cost_usd": 0.006756,
+ "latency_ms": 2345.5
+}

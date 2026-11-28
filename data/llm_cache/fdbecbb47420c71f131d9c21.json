@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"« Ne conduisez pas le véhicule » traite une urgence qui n’a pas été signalée au lieu de répondre à la demande de suivi de réparation.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P15\"],\n  \"policy_reason\": \"Le client dit « Le véhicule est au nom de mon épouse », mais la réponse ne précise pas que la titulaire du compte peut communiquer directement avec la concession.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Si quelqu’un est blessé ou en danger » est une consigne conditionnelle, pas l’affirmation qu’un accident a eu lieu.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Je transmets votre demande » annonce le transfert sans promettre de remorquage ni de délai.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"La réponse commence par « Votre sécurité passe en premier » et énumère des limites sur un remorquage que le client n’a pas demandé.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2795,
+ "output_tokens": 345,
+ "cost_usd": 0.0051008,
+ "latency_ms": 5976.6
+}

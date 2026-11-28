@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"The reply offers a « rendez-vous d’inspection de fin de bail » instead of helping with the bumper repair requested « avant l’inspection ».\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P08\"],\n  \"policy_reason\": \"« Je leur transmets votre demande » claims a transfer to the business office, but the chat was sent to service advisors.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": true,\n  \"invented_reason\": \"« Je leur transmets votre demande » reports a business-office transfer that did not occur.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Une personne la prendra en charge » promises review, not a price, booking or response time.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"The French reply is brief and polite, corrects the earlier VIN request once, and asks one question: « Quel est votre nom de famille? ».\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2676,
+ "output_tokens": 423,
+ "cost_usd": 0.0055833,
+ "latency_ms": 7176.0
+}

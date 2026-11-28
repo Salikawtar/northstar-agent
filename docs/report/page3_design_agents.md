@@ -9,7 +9,7 @@
 
 | Part and choice | Evidence, one change at a time |
 |---|---|
-| Router: Haiku, low effort | Test: 82.5% of request types right; Sonnet 77.5% at 2.2 times the cost; fine-tuned 67.5%. Validation: thinking off missed a handoff |
+| Router: Haiku, low effort | Test: 82.5% of request types right; Sonnet 77.5% at 2.2 times the cost; fine-tuned 67.5% (80.0% after the study, page 4). Validation: thinking off missed a handoff |
 | Booking: Haiku, low | Validation: Sonnet booked nothing and cost about 15 times more |
 | Warranty: Sonnet, medium | Test: high effort was not better (65% against 70%). Model not compared: it rests on the $847 cost of a wrong promise |
 | Billing: Sonnet, medium | Validation: Haiku tied on 7 chats at a tenth of the cost. Sonnet kept by judgment, not by a test |

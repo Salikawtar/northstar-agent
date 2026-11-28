@@ -1,0 +1,59 @@
+{
+ "answers": {
+  "request_type": {
+   "type": "choice",
+   "choice": "warranty_claim",
+   "probabilities": {
+    "book_service": 0,
+    "repair_status": 0,
+    "warranty_claim": 0.59,
+    "recall_inquiry": 0,
+    "roadside_assistance": 0,
+    "parts_order": 0,
+    "billing_dispute": 0.37,
+    "lease_end_return": 0,
+    "out_of_scope": 0,
+    "needs_human": 0.04
+   },
+   "confidence": 0.54
+  },
+  "escalate": {
+   "type": "noul",
+   "noul": 0.73
+  },
+  "language": {
+   "type": "choice",
+   "choice": "fr",
+   "probabilities": {
+    "en": 0,
+    "fr": 1
+   },
+   "confidence": 1
+  },
+  "reason": {
+   "type": "choice",
+   "choice": "policy_limit",
+   "probabilities": {
+    "none": 0.14,
+    "safety": 0,
+    "bereavement": 0,
+    "legal_threat": 0.01,
+    "adversarial": 0,
+    "customer_request": 0.02,
+    "policy_limit": 0.83
+   },
+   "confidence": 0.8
+  }
+ },
+ "raw_keys": [
+  "answers",
+  "id",
+  "model",
+  "provider",
+  "usage"
+ ],
+ "input_tokens": 1933,
+ "output_tokens": 235,
+ "cost_usd": 8.1186e-05,
+ "latency_ms": 224.3
+}

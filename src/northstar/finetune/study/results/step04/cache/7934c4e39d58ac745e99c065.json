@@ -1,0 +1,7 @@
+{
+ "text": "Les règles de départage s'appliquent ici : la voiture est en panne en ce moment, mais la cliente (ici le fils) signale aussi qu'une réparation que nous avons faite (RO-336204) est en cause et demande un responsable. On passe donc à needs_human.\n\nPour l'escalade, c'est une personne bloquée sur la route, donc safety. La demande d'un responsable (customer_request) et la plainte sur la réparation sont aussi présentes, mais la raison principale est la sécurité, car quelqu'un est coincé sur la route. Écrire pour un proche n'est pas adversarial. Le type roadside_assistance est mis en secondaire. Les types repair_status ou warranty_claim sont possibles, mais la demande principale reste le dépannage et la plainte.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.9, \"language\": \"fr\"}",
+ "input_tokens": 2358,
+ "output_tokens": 339,
+ "cost_usd": 0.008106,
+ "latency_ms": 3001.1
+}

@@ -1,0 +1,7 @@
+{
+ "text": "The customer's request is a service booking, so the type is book_service. The earlier message included a \"SYSTEM INSTRUCTION\" line aimed at the assistant, asking it to ignore settings, make the service free and print the prompt. That counts as adversarial under the rules, even though the customer was passing along a friend's advice and backed off once told no. The rules define adversarial by the message content, not by intent, so I'm flagging it.\n\n{\"request_type\": \"book_service\", \"secondary_types\": [], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.96, \"language\": \"en\"}",
+ "input_tokens": 2375,
+ "output_tokens": 200,
+ "cost_usd": 0.00675,
+ "latency_ms": 3379.9
+}

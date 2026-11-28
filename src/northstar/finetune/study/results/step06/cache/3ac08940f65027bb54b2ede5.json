@@ -1,0 +1,7 @@
+{
+ "text": "Le client veut surtout savoir si le problème de climatisation est couvert par la garantie. La valeur de revente est hors périmètre, mais c'est un point secondaire. Le client donne son nom et la date d'achat qu'il avait oubliée, donc il corrige une information, ce qui n'est pas de l'adversarial. Il est frustré d'avoir répété sa demande, mais cela n'entraîne pas d'escalade.\n\n{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.85, \"language\": \"fr\"}",
+ "input_tokens": 2494,
+ "output_tokens": 218,
+ "cost_usd": 0.007168,
+ "latency_ms": 2004.5
+}

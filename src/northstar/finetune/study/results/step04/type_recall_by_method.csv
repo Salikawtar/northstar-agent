@@ -1,0 +1,9 @@
+,,book_service,repair_status,warranty_claim,recall_inquiry,roadside_assistance,parts_order,billing_dispute,lease_end_return,out_of_scope,needs_human
+tuned XLM-R,first_message,0.81,0.62,0.75,0.88,0.88,0.82,0.81,0.73,0.69,0.56
+haiku,first_message,0.94,0.94,0.94,0.94,0.75,0.88,1.0,0.93,0.88,0.56
+sonnet,first_message,1.0,0.88,1.0,0.94,0.81,0.94,0.94,0.93,0.88,0.88
+jev,first_message,0.94,0.81,0.75,0.81,0.75,0.82,0.94,0.8,0.94,1.0
+tuned XLM-R,full_conversation,0.81,0.69,0.88,0.75,0.88,0.76,0.81,0.73,0.69,0.75
+haiku,full_conversation,1.0,0.94,0.69,0.81,0.75,0.71,0.88,1.0,0.81,0.44
+sonnet,full_conversation,1.0,0.88,0.69,0.69,0.69,0.82,0.94,1.0,0.81,0.88
+jev,full_conversation,0.94,0.75,0.5,0.69,0.81,0.88,0.81,0.87,0.81,1.0

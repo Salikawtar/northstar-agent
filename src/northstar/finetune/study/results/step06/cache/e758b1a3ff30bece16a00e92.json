@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"needs_human\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.7, \"language\": \"en\"}",
+ "input_tokens": 2286,
+ "output_tokens": 451,
+ "cost_usd": 0.009082,
+ "latency_ms": 4387.1
+}

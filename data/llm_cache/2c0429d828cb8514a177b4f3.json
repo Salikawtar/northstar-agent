@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“Your dad can contact us directly” and “passing this to a person” address authorisation and the shuttle request under P15.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply shares no account details and says a person “will check the authorisation,” as P15 requires.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Can look at the shuttle question” states no recall status or shuttle availability.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Can look at the shuttle question” offers review without promising a shuttle.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"After a warm thank-you, the reply leads with “I can't look up or share” instead of what it can do.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2600,
+ "output_tokens": 199,
+ "cost_usd": 0.0031533,
+ "latency_ms": 3418.9
+}

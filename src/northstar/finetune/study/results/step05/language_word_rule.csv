@@ -1,0 +1,7 @@
+input,language,chats,accuracy
+first_message,en,104,1.0
+first_message,fr,56,1.0
+first_message,all,160,1.0
+full_conversation,en,104,1.0
+full_conversation,fr,56,1.0
+full_conversation,all,160,1.0

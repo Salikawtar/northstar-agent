@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Instead of acknowledging the correction to “Tessera” and asking for the plate or repair-order number when available, the reply says “I’m passing your message to a team member.”\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply transparently says “I’m passing your message to a team member” and discloses no unverified vehicle information.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I’m passing your message to a team member” matches the recorded handoff, and the reply adds no vehicle, warranty, or recall facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” describes follow-up without promising a callback time or an outcome.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I want to make sure you get the right help” is warm, and the reply is brief and clear.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2626,
+ "output_tokens": 406,
+ "cost_usd": 0.0052883,
+ "latency_ms": 6449.8
+}

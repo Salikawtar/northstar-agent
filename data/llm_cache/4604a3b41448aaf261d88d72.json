@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Asking for verification was reasonable, but “I can check recalls and warranty facts” did not route the fleet representative’s warranty request to a person.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\", \"P15\"],\n  \"policy_reason\": \"The customer said “I manage the fleet operations,” but the reply asked for account identifiers without handing off for authorization and warranty review or inviting the account holder to contact the dealership directly.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can check recalls and warranty facts” states what the assistant can do, not a recall or coverage finding.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can check” offers a lookup without promising coverage, claim approval or a fee waiver.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Thanks for the correction” is warm, and the reply quickly explains what it can do and makes one concise request.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2664,
+ "output_tokens": 383,
+ "cost_usd": 0.0051533,
+ "latency_ms": 6753.2
+}

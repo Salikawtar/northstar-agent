@@ -1,0 +1,13 @@
+key,setup,input,epoch,type_right,spread,macro_f1,combined,english,french,esc_recall,esc_precision,language_head,trained,seconds
+t1,"Full fine-tuning, 2e-5, 30 epochs",first message,27,72.1,4.3,0.722,78.8,83.7,69.6,71.5,85.7,,278052107,52
+t2,"Full fine-tuning, 2e-5, 30 epochs",customer turns,30,71.0,0.4,0.712,75.0,78.8,67.9,74.9,83.8,,278052107,58
+t3,"Full fine-tuning, 2e-5, 30 epochs",full conversation,29,74.6,3.4,0.747,77.5,81.7,69.6,75.8,87.7,,278052107,71
+t4,Full fine-tuning + language head,first message,30,70.0,5.1,0.699,74.4,77.9,67.9,73.4,86.8,100.0,278053645,54
+t5,"LoRA 1e-4, 30 epochs (+ language head)",first message,30,26.0,1.6,0.226,27.5,32.7,17.9,37.7,61.6,99.2,304909,27
+t6,"LoRA 3e-4, 30 epochs (+ language head)",first message,30,63.8,4.4,0.635,68.8,75.0,57.1,72.0,77.4,99.8,304909,27
+t7,"LoRA 3e-4, 60 epochs",first message,60,72.5,2.7,0.723,76.2,79.8,69.6,78.7,83.2,,303371,49
+t8,"LoRA 1e-3, 60 epochs",first message,58,70.2,7.8,0.702,77.5,82.7,67.9,72.9,85.3,,303371,49
+t9,Full fine-tuning + attack answer,first message,27,63.3,6.7,0.632,71.9,76.9,62.5,70.5,91.0,,278052876,52
+t10,Full fine-tuning + attack answer,full conversation,30,75.2,2.0,0.752,76.9,78.8,73.2,78.7,89.6,,278052876,72
+t11,"LoRA 3e-4, 60 epochs + attack answer",first message,60,72.5,4.5,0.722,78.8,81.7,73.2,75.8,85.5,,304140,49
+t12,"LoRA 3e-4, 60 epochs + attack answer",full conversation,50,71.0,1.4,0.707,73.8,77.9,66.1,77.8,88.1,,304140,85

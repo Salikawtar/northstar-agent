@@ -1,0 +1,7 @@
+{
+ "text": "The car was towed by the city for a parking issue. This is not a breakdown, and it is not a repair, booking, part, or invoice matter. Towing and impound questions are outside what the service department handles. The customer is not stranded on the road in a breakdown sense, and no safety failure occurred. So the request is out_of_scope, with no escalation.\n\n{\"request_type\": \"out_of_scope\", \"secondary_types\": [], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2227,
+ "output_tokens": 173,
+ "cost_usd": 0.006184,
+ "latency_ms": 1601.1
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“A team member will review this chat” gives the fleet director a safe next step without disclosing the former employee’s information.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P15\"],\n  \"policy_reason\": \"“A team member will review this chat” explains the handoff but omits that the account holder can contact Northstar directly, as P15 requires.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Go through our general manager” describes an allowed process, not a fact about the vehicle or its records.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review this chat” promises only a review, not an outcome or response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"“I can't help with that request here” leads with a limit rather than the review the assistant can arrange.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2685,
+ "output_tokens": 295,
+ "cost_usd": 0.0043258,
+ "latency_ms": 4912.0
+}

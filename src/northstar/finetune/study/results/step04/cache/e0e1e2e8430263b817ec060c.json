@@ -1,0 +1,59 @@
+{
+ "answers": {
+  "request_type": {
+   "type": "choice",
+   "choice": "billing_dispute",
+   "probabilities": {
+    "book_service": 0.02,
+    "repair_status": 0,
+    "warranty_claim": 0,
+    "recall_inquiry": 0,
+    "roadside_assistance": 0,
+    "parts_order": 0,
+    "billing_dispute": 0.85,
+    "lease_end_return": 0.1,
+    "out_of_scope": 0,
+    "needs_human": 0.03
+   },
+   "confidence": 0.83
+  },
+  "escalate": {
+   "type": "noul",
+   "noul": 0.95
+  },
+  "language": {
+   "type": "choice",
+   "choice": "en",
+   "probabilities": {
+    "en": 1,
+    "fr": 0
+   },
+   "confidence": 1
+  },
+  "reason": {
+   "type": "choice",
+   "choice": "policy_limit",
+   "probabilities": {
+    "none": 0.04,
+    "safety": 0,
+    "bereavement": 0,
+    "legal_threat": 0.01,
+    "adversarial": 0,
+    "customer_request": 0,
+    "policy_limit": 0.95
+   },
+   "confidence": 0.94
+  }
+ },
+ "raw_keys": [
+  "answers",
+  "id",
+  "model",
+  "provider",
+  "usage"
+ ],
+ "input_tokens": 1758,
+ "output_tokens": 233,
+ "cost_usd": 7.3836e-05,
+ "latency_ms": 215.8
+}

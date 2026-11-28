@@ -1,0 +1,7 @@
+{
+ "text": "Le client veut deux choses : la valeur de revente (hors périmètre) et savoir si la climatisation est couverte par la garantie. La demande principale à traiter maintenant est la garantie, car l'agent a déjà redirigé la revente et le client fournit les renseignements pour vérifier la couverture. Il corrige sa date d'achat, ce qui n'est pas adversarial. Il n'y a pas de menace légale ni de demande de parler à une personne. Le client est frustré, mais cela ne justifie pas une escalade.\n\n{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.85, \"language\": \"fr\"}",
+ "input_tokens": 2494,
+ "output_tokens": 252,
+ "cost_usd": 0.007508,
+ "latency_ms": 2373.9
+}

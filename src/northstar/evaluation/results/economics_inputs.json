@@ -75,6 +75,44 @@
   "latency_s_median": 0.28,
   "latency_s_p90": 7.32
  },
+ "full_agent_router_finetuned_lora": {
+  "cost_usd_per_chat": 0.00558,
+  "cost_usd_per_successful_chat": 0.00971,
+  "task_success": 0.575,
+  "task_success_ci": [
+   0.422,
+   0.715
+  ],
+  "handoff_rate": 0.525,
+  "handled_without_person_and_correct": 0.325,
+  "wrong_commitment_rate": 0.05,
+  "wrong_commitment_rate_upper_95": 0.165,
+  "invented_fact_rate": 0.025,
+  "invented_fact_rate_upper_95": 0.129,
+  "missed_handoffs": 2,
+  "escalation_recall": 0.889,
+  "latency_s_median": 4.95,
+  "latency_s_p90": 7.99
+ },
+ "full_agent_router_jev": {
+  "cost_usd_per_chat": 0.00547,
+  "cost_usd_per_successful_chat": 0.00994,
+  "task_success": 0.55,
+  "task_success_ci": [
+   0.398,
+   0.693
+  ],
+  "handoff_rate": 0.55,
+  "handled_without_person_and_correct": 0.275,
+  "wrong_commitment_rate": 0.025,
+  "wrong_commitment_rate_upper_95": 0.129,
+  "invented_fact_rate": 0.025,
+  "invented_fact_rate_upper_95": 0.129,
+  "missed_handoffs": 2,
+  "escalation_recall": 0.889,
+  "latency_s_median": 3.79,
+  "latency_s_p90": 7.05
+ },
  "full_agent_router_v2": {
   "cost_usd_per_chat": 0.0056,
   "cost_usd_per_successful_chat": 0.00829,
@@ -92,7 +130,7 @@
   "missed_handoffs": 1,
   "escalation_recall": 0.944,
   "latency_s_median": 6.09,
-  "latency_s_p90": 9.77
+  "latency_s_p90": 9.78
  },
  "full_agent_warranty_high": {
   "cost_usd_per_chat": 0.00556,

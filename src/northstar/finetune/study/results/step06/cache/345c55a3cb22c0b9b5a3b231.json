@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"needs_human\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.85, \"language\": \"en\"}",
+ "input_tokens": 2305,
+ "output_tokens": 456,
+ "cost_usd": 0.0004585,
+ "latency_ms": 3072.8
+}

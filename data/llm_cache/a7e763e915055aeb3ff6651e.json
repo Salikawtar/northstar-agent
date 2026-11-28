@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"I can look at invoice RO-287266 with you and pass your concern to a person. First I need to verify you. What is your last name?\\n\\nOne correction to my colleague's earlier message. I can't send invoices by email, and I can't give insurance advice. Whether the glass is covered is a decision for a person, not me.\",\"action\":\"asked_clarification\",\"escalation_reason\":\"none\",\"summary\":\"\",\"policy_rules_cited\":[\"P02\",\"P01\",\"P06\",\"P10\",\"P13\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3793,
+ "output_tokens": 478,
+ "cost_usd": 0.012366,
+ "latency_ms": 4298.9
+}

@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"needs_human\", \"secondary_types\": [\"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.95, \"language\": \"fr\"}",
+ "input_tokens": 2313,
+ "output_tokens": 204,
+ "cost_usd": 0.0003333,
+ "latency_ms": 1882.6
+}

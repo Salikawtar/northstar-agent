@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"I can help with your parts order, but I need to verify your account first. I can't look up records with a phone number. Please send your last name and either your licence plate or your repair-order number (RO-######). Once you're verified, I'll check the status of your order. I can't confirm parts prices or arrival dates myself, so if I can't find a date, a parts advisor can confirm availability and pricing.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P03\", \"P08\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3756,
+ "output_tokens": 491,
+ "cost_usd": 0.0006211,
+ "latency_ms": 2974.2
+}

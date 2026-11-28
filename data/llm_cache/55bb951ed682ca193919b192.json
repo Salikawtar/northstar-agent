@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your message to a team member” safely hands off the request without disclosing the father's phone number.\",\n  \"policy_followed\": false,\n  \"rules_broken\": [\"P14\", \"P15\"],\n  \"policy_reason\": \"“Who will contact you” does not clearly say a person will review the request (P14), and the reply omits that the account holder can contact the dealership directly (P15).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your message to a team member” matches the recorded handoff, and no account details are stated.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Will contact you” gives no callback time and grants no restricted outcome.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I want to make sure you get the right help” is warm and brief, and the reply states no limits and asks no questions.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2610,
+ "output_tokens": 405,
+ "cost_usd": 0.0052383,
+ "latency_ms": 7776.9
+}

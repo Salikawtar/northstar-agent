@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"parts_order\", \"secondary_types\": [\"out_of_scope\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2402,
+ "output_tokens": 228,
+ "cost_usd": 0.0003542,
+ "latency_ms": 2445.0
+}

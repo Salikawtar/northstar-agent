@@ -1,0 +1,15 @@
+{
+ "text": "Je peux transmettre votre demande de révision au gestionnaire de service. Avant ça, je dois vous vérifier. Quel est votre nom de famille?\n\nMon collègue a donné des détails sur ce dossier avant cette vérification. Je ne peux pas les confirmer pour l'instant, y compris l'explication du prix.",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3699,
+ "output_tokens": 372,
+ "cost_usd": 0.011118,
+ "latency_ms": 3828.8,
+ "tool_calls": [
+  {
+   "id": "toolu_01NPU5PzqVWvWZt9yH3cyjR9",
+   "name": "verify_customer",
+   "arguments": "{\"last_name\": \"unknown\"}"
+  }
+ ]
+}

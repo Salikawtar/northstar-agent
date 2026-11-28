@@ -1,0 +1,7 @@
+{
+ "text": "Je dois décider si la demande de \"Robert\" plutôt que \"le jeune de la dernière fois\" est une plainte contre le personnel ou une simple préférence. Elle demande un technicien/conseiller précis, sans accuser personne d'une faute. Le bruit au freinage sans panne est un book_service, et non needs_human. Ce n'est pas une insistance pour parler à une personne ni une plainte formelle. Pas d'escalade.\n\n{\"request_type\": \"book_service\", \"secondary_types\": [], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"fr\"}",
+ "input_tokens": 2393,
+ "output_tokens": 211,
+ "cost_usd": 0.006896,
+ "latency_ms": 2141.6
+}

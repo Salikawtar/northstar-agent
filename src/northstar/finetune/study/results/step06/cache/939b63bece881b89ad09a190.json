@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"needs_human\", \"secondary_types\": [\"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"bereavement\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2274,
+ "output_tokens": 72,
+ "cost_usd": 0.0002634,
+ "latency_ms": 803.7
+}

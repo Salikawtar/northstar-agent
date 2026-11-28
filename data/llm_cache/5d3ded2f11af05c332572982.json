@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\": \"Bonjour M. Allard. Je peux vous aider à réserver le mardi de la semaine du 23 novembre à Richmond Hill. Pour vérifier votre dossier avant toute réservation, pouvez-vous me donner la plaque d'un des véhicules ou le numéro de bon de réparation (RO-######)? Aucune réservation n'a encore été faite, et je n'ai pas encore vérifié le rappel, donc je ne peux pas confirmer ce qui a été dit plus tôt à ce sujet.\", \"action\": \"asked_clarification\", \"escalation_reason\": \"none\", \"summary\": \"\", \"policy_rules_cited\": [\"P02\", \"P03\", \"P08\", \"P13\"]}",
+ "model": "anthropic/claude-haiku-5.5",
+ "input_tokens": 3848,
+ "output_tokens": 1024,
+ "cost_usd": 0.0008968,
+ "latency_ms": 5950.8
+}

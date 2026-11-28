@@ -1,0 +1,7 @@
+{
+ "text": "Main request: book_service (brake noise, no failure). The customer is asking for a specific advisor (\"Robert\"), not the \"jeune\", which is a preference rather than a formal complaint about staff or an insistence on a human. Insisting on a person means refusing the bot, and here she is just requesting an advisor for the booking. It is a mild comment about staff, but not a formal complaint. So no escalation.\n\n{\"request_type\": \"book_service\", \"secondary_types\": [], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"fr\"}",
+ "input_tokens": 2393,
+ "output_tokens": 190,
+ "cost_usd": 0.006686,
+ "latency_ms": 2014.6
+}

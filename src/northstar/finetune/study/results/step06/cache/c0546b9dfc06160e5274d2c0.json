@@ -1,0 +1,7 @@
+{
+ "text": "Analysis: The customer is asking when an OEM part they ordered and paid a deposit for will arrive. That makes it parts_order, with warranty_claim as a secondary type since they dispute the warranty denial. The mention of CAMVAP (Canada's arbitration program for vehicle disputes) is a threat of formal dispute, which counts as a legal threat or formal complaint. They are also complaining about a staff member's decision, though the main trigger is the CAMVAP reference. This falls under needs_human, with the parts_order request as a secondary type.\n\nThe tie-break says needs_human applies when a type might fit but the case must go to a person because of a legal threat or formal complaint. CAMVAP is a formal arbitration route, so I treat it as a legal_threat. The correction from \"screen\" to \"instrument cluster\" is not adversarial.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"parts_order\", \"warranty_claim\"], \"needs_escalation\": true, \"escalation_reason\": \"legal_threat\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2451,
+ "output_tokens": 353,
+ "cost_usd": 0.008432,
+ "latency_ms": 3011.0
+}

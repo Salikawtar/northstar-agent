@@ -1,0 +1,7 @@
+{
+ "text": "Je dois choisir le type principal. Le client conteste des frais d'usure excessive après le retour d'un véhicule en fin de location. Il demande aussi les photos de l'inspection et le gérant, et se plaint d'Austin, un employé.\n\nTypes possibles :\n- lease_end_return : frais d'usure, inspection de retour.\n- billing_dispute : conteste une facture ou des frais.\n- needs_human : plainte contre le personnel, ou client qui insiste pour parler à une personne.\n\nLe client dit « je veux le GÉRANT, pas Austin ». Il insiste donc pour parler à une personne et refuse un employé en particulier. Cela correspond à customer_request, et peut-être à une plainte contre le personnel. Le type principal est needs_human, avec lease_end_return et billing_dispute en secondaire.\n\nPour l'escalade, la raison la plus directe est customer_request, car il exige un gérant. La contestation de frais relève aussi de policy_limit, mais une seule raison est possible. Comme needs_human est lié à la demande d'une personne, je choisis customer_request.\n\n```json\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"lease_end_return\", \"billing_dispute\"], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.85, \"language\": \"fr\"}\n```",
+ "input_tokens": 2306,
+ "output_tokens": 459,
+ "cost_usd": 0.009202,
+ "latency_ms": 3704.8
+}

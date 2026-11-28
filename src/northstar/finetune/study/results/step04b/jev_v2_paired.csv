@@ -1,0 +1,7 @@
+input,model,versus,only_model_right,only_haiku_right,p_value
+first_message,"Jev, version 2 (same information)",Haiku,7,10,0.6291
+first_message,"Jev, version 1",Haiku,7,25,0.0021
+first_message,"Jev, version 2 (same information)","Jev, version 1",22,7,0.0081
+full_conversation,"Jev, version 2 (same information)",Haiku,6,9,0.6072
+full_conversation,"Jev, version 1",Haiku,6,38,0.0
+full_conversation,"Jev, version 2 (same information)","Jev, version 1",37,8,0.0

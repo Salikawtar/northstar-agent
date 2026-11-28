@@ -1,0 +1,17 @@
+dataset,input,router,versus,only_router_right,only_reference_right,p_value
+test,first_message,Sonnet,Haiku,2,2,1.0
+test,first_message,"Jev, same information as Haiku",Haiku,1,2,1.0
+test,first_message,"Jev, first version",Haiku,2,3,1.0
+test,full_conversation,Sonnet,Haiku,2,4,0.6875
+test,full_conversation,"Jev, same information as Haiku",Haiku,3,5,0.7265625
+test,full_conversation,"Jev, first version",Haiku,2,9,0.0654296875
+test,first_message,"Fine-tuned, safest",Haiku,1,6,0.125
+test,first_message,"Fine-tuned, balanced",Haiku,2,3,1.0
+fresh,first_message,Sonnet,Haiku,2,1,1.0
+fresh,first_message,"Jev, same information as Haiku",Haiku,1,0,1.0
+fresh,first_message,"Jev, first version",Haiku,2,0,0.5
+fresh,full_conversation,Sonnet,Haiku,1,2,1.0
+fresh,full_conversation,"Jev, same information as Haiku",Haiku,0,2,0.5
+fresh,full_conversation,"Jev, first version",Haiku,0,5,0.0625
+fresh,first_message,"Fine-tuned, safest",Haiku,3,11,0.057373046875
+fresh,first_message,"Fine-tuned, balanced",Haiku,2,8,0.109375

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"Asking for “the last name on the repair order” is the right next step before checking whether the current repair is for the recall.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“Once you're verified” makes clear that the assistant will check vehicle-specific details only after verification, as required by P02.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I can check the repair status” describes a future check and does not assert a repair status or recall finding.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“I can't confirm that until I've checked your records” does not promise that the recall repair will be added to this visit.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I can look into this for you” is a warm opening, followed by one request and a brief correction.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2586,
+ "output_tokens": 218,
+ "cost_usd": 0.0033083,
+ "latency_ms": 3323.4
+}

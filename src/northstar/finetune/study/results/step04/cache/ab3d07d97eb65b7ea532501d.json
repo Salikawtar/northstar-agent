@@ -1,0 +1,7 @@
+{
+ "text": "Routing: the car is stuck now, which points to roadside_assistance. The tie-break says it goes to needs_human only if the customer reports that a repair we did caused the failure, or demands a manager. Here the customer says the battery was \"tested fine\" last time and \"clearly it wasn't\". That is a complaint about a prior diagnosis, not a claim that our repair caused the breakdown, and there is no manager demand. So it stays roadside_assistance, with escalation for safety (stranded), and a possible secondary type of repair_status or warranty_claim.\n\n{\"request_type\": \"roadside_assistance\", \"secondary_types\": [\"repair_status\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.85, \"language\": \"en\"}",
+ "input_tokens": 2264,
+ "output_tokens": 250,
+ "cost_usd": 0.007028,
+ "latency_ms": 2312.2
+}

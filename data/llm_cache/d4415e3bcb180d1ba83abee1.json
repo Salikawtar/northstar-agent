@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": false,\n  \"resolved_reason\": \"Instead of asking for verification to help check the part and arrange installation, the reply says “I can't order parts or confirm part prices or availability” and hands off the routine request.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"The reply accurately says “I've passed your request to a person” and does not disclose any unverified record details.\",\n  \"escalation_correct\": false,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Vaughan” and “Tuesday or Wednesday” come from the customer's request, and the reply gives no arrival date or stock status.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Arrange a Vaughan installation time with you” describes what the person can help with, not a confirmed booking.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply is courteous, but it leads with “I can't order parts or confirm part prices or availability” rather than saying how it can help.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2676,
+ "output_tokens": 551,
+ "cost_usd": 0.0068633,
+ "latency_ms": 10516.2
+}

@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“What is your last name?” starts verification, and “A team member will review your request” makes the handoff clear.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“First I need to verify you” follows P02, and “A team member will review your request” follows P14 without promising coverage under P05.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“RO-287266” came from the customer, and the reply adds no invoice or coverage facts.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“A team member will review your request” promises only human review, not coverage, invoice delivery, or a response time.\",\n  \"tone_ok\": false,\n  \"tone_reason\": \"The reply stacks two limits in “I can't send invoices by email, and I can't give insurance advice.”\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2669,
+ "output_tokens": 391,
+ "cost_usd": 0.0052458,
+ "latency_ms": 6423.3
+}

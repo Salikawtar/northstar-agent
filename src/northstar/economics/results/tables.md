@@ -7,7 +7,7 @@
 | People answer every chat (today) | $0.0000 | 70.2% | 0.0% | $2.70 | $3.85 | $2.70 |
 | Small prompted router (Haiku 5.5), recommended agent | $0.0168 | 70.0% | 35.0% | $2.08 | $2.97 | $2.08 |
 | Large prompted router (Sonnet 5.5) | $0.0376 | 65.0% | 37.5% | $14.65 | $22.54 | $2.15 |
-| Fine-tuned router (XLM-RoBERTa) | $0.0142 | 40.0% | 25.0% | $15.29 | $38.24 | $2.79 |
+| Fine-tuned router (XLM-RoBERTa, LoRA + attack head) | $0.0176 | 57.5% | 32.5% | $27.40 | $47.65 | $2.40 |
 | Single Sonnet agent, no router (baseline) | $0.0505 | 45.0% | 30.0% | $90.47 | $201.05 | $2.97 |
 | Recommended agent, person approves billing and warranty replies (pilot) | $0.0168 | 70.0% | 35.0% | $2.18 | $3.11 | $2.18 |
 
@@ -18,7 +18,7 @@
 | People only (today) | $0.00 | $2,656 | $47.00 | $0.00 | $2,703 | $0.00 (+0.0%) |
 | Small prompted router (Haiku 5.5), recommended agent | $17.00 | $1,806 | $236 | $1,376 | $3,435 | $-732 (-27.1%) |
 | Large prompted router (Sonnet 5.5) | $38.00 | $1,739 | $12,855 | $1,376 | $16,009 | $-13,305 (-492.2%) |
-| Fine-tuned router (XLM-RoBERTa) | $14.00 | $2,170 | $13,092 | $1,447 | $16,723 | $-14,020 (-518.6%) |
+| Fine-tuned router (XLM-RoBERTa, LoRA + attack head) | $18.00 | $2,007 | $25,355 | $1,447 | $28,827 | $-26,124 (-966.4%) |
 | Single Sonnet agent, no router (baseline) | $50.00 | $2,311 | $88,091 | $1,376 | $91,829 | $-89,126 (-3297.0%) |
 | Recommended agent, person approves billing and warranty replies (pilot) | $17.00 | $1,806 | $236 | $1,376 | $3,538 | $-835 (-30.9%) |
 
@@ -29,7 +29,7 @@
 | People only (today) | $0.00 | $53,119 | $946 | $0.00 | $54,065 | $0.00 (+0.0%) |
 | Small prompted router (Haiku 5.5), recommended agent | $336 | $36,107 | $4,732 | $1,803 | $42,979 | $11,086 (+20.5%) |
 | Large prompted router (Sonnet 5.5) | $752 | $34,796 | $257,098 | $1,803 | $294,448 | $-240,383 (-444.6%) |
-| Fine-tuned router (XLM-RoBERTa) | $284 | $43,396 | $261,829 | $1,874 | $307,384 | $-253,318 (-468.5%) |
+| Fine-tuned router (XLM-RoBERTa, LoRA + attack head) | $352 | $40,140 | $507,098 | $1,874 | $549,463 | $-495,397 (-916.3%) |
 | Single Sonnet agent, no router (baseline) | $1,009 | $46,210 | $1,761,829 | $1,803 | $1,810,851 | $-1,756,786 (-3249.4%) |
 | Recommended agent, person approves billing and warranty replies (pilot) | $336 | $36,107 | $4,732 | $1,803 | $45,030 | $9,036 (+16.7%) |
 
@@ -40,7 +40,7 @@
 | People only (today) | $0.00 | $265,596 | $4,732 | $0.00 | $270,327 | $0.00 (+0.0%) |
 | Small prompted router (Haiku 5.5), recommended agent | $1,682 | $180,539 | $23,658 | $1,819 | $207,698 | $62,629 (+23.2%) |
 | Large prompted router (Sonnet 5.5) | $3,758 | $173,979 | $1,285,487 | $1,819 | $1,465,042 | $-1,194,714 (-442.0%) |
-| Fine-tuned router (XLM-RoBERTa) | $1,421 | $216,979 | $1,309,144 | $1,890 | $1,529,435 | $-1,259,108 (-465.8%) |
+| Fine-tuned router (XLM-RoBERTa, LoRA + attack head) | $1,758 | $200,695 | $2,535,487 | $1,890 | $2,739,830 | $-2,469,503 (-913.5%) |
 | Single Sonnet agent, no router (baseline) | $5,046 | $231,047 | $8,809,144 | $1,819 | $9,047,057 | $-8,776,730 (-3246.7%) |
 | Recommended agent, person approves billing and warranty replies (pilot) | $1,682 | $180,539 | $23,658 | $1,819 | $217,950 | $52,378 (+19.4%) |
 
@@ -51,7 +51,7 @@
 | People only (today) | $0.00 | $2,655,957 | $47,315 | $0.00 | $2,703,272 | $0.00 (+0.0%) |
 | Small prompted router (Haiku 5.5), recommended agent | $16,821 | $1,805,388 | $236,576 | $2,988 | $2,061,773 | $641,498 (+23.7%) |
 | Large prompted router (Sonnet 5.5) | $37,580 | $1,739,778 | $12,854,864 | $2,988 | $14,635,209 | $-11,931,938 (-441.4%) |
-| Fine-tuned router (XLM-RoBERTa) | $14,206 | $2,169,794 | $13,091,440 | $3,059 | $15,278,499 | $-12,575,228 (-465.2%) |
+| Fine-tuned router (XLM-RoBERTa, LoRA + attack head) | $17,577 | $2,006,950 | $25,354,864 | $3,059 | $27,382,451 | $-24,679,179 (-912.9%) |
 | Single Sonnet agent, no router (baseline) | $50,463 | $2,310,478 | $88,091,439 | $2,988 | $90,455,368 | $-87,752,096 (-3246.1%) |
 | Recommended agent, person approves billing and warranty replies (pilot) | $16,821 | $1,805,388 | $236,576 | $2,988 | $2,164,290 | $538,982 (+19.9%) |
 
@@ -92,8 +92,8 @@
 | Goodwill per small mistake (C$) | 50 / 0 | $-17,083 | $11,086 | $-78,216 | $62,629 |
 | Finished alone and correct (test 95% range) | 0.221 / 0.505 | $808 | $23,436 | $11,236 | $124,380 |
 | Advisor minutes per chat | 5 / 12 | $4,074 | $18,426 | $27,569 | $99,330 |
-| Invented facts (test 95% range) | 0.129 / 0.004427 | $1,245 | $13,033 | $13,421 | $72,363 |
 | Small wrong commitments (test 95% range) | 0.129 / 0.004427 | $1,245 | $13,033 | $13,421 | $72,363 |
+| Invented facts (test 95% range) | 0.129 / 0.004427 | $1,245 | $13,033 | $13,421 | $72,363 |
 | Advisor wage (C$/h) | 17.6 / 33.17 | $8,687 | $18,265 | $50,633 | $98,524 |
 | Handed-off chat time (share of a full chat) | 1 / 0.8 | $11,086 | $17,461 | $62,629 | $94,501 |
 | Recovery minutes per small mistake | 30 / 5 | $7,301 | $13,610 | $43,703 | $75,247 |

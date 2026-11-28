@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply asks for « la plaque d’un des véhicules ou le numéro de bon de réparation » and makes clear that nothing has been booked.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"It asks « Pour vérifier votre dossier » before sharing any vehicle-specific information (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"« Le mardi de la semaine du 23 novembre à Richmond Hill » restates the requested timing and branch, not verified availability.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"« Aucune réservation n’a encore été faite » explicitly avoids confirming a booking.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"It opens with « Je peux vous aider à réserver », asks one question, and briefly corrects the earlier message.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2697,
+ "output_tokens": 461,
+ "cost_usd": 0.0060158,
+ "latency_ms": 7434.5
+}

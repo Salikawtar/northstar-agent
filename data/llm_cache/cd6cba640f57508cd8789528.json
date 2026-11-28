@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"The reply answers the same-visit question with “we can look at the recall and the brake noise together” and asks for verification before checking vehicle details.\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"Asking for “your last name and your licence plate (or a repair-order number)” follows P02 without disclosing vehicle information or promising coverage.\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“Once you're verified, I'll check your recall and your warranty facts” describes a next step rather than claiming a recall or coverage result.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“We can look at the recall and the brake noise together” offers help without confirming a booking, price, or warranty coverage.\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“Yes, we can look at the recall and the brake noise together” starts helpfully, and the reply makes one clear request and briefly corrects the VIN issue.\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2627,
+ "output_tokens": 314,
+ "cost_usd": 0.0043708,
+ "latency_ms": 4721.2
+}

@@ -1,5 +1,7 @@
 # Model card: fine-tuned router (XLM-RoBERTa base)
 
+> **Update 2026-11-27 (D-36):** this describes the first fine-tuned router. The fine-tuning study in [`study/`](study/README.md) replaced it with a LoRA model and an attack answer, chosen by cross-validation, and compared it with Haiku, Sonnet and Jev 1.14 (report page 4, appendix D7). Haiku stays the router.
+
 **Main idea:** a small multilingual model trained on 130 chats does the router's job in about a quarter of a second, on a plain CPU, at no cost per chat. It is less accurate than the prompted routers (67.5% vs 82.5% and 77.5% on request type). It knows when it is unsure, so most of its mistakes go to a person instead of to the wrong specialist. That is not enough inside the agent: in the final end-to-end evaluation the agent with this router handles 40% of the test chats correctly, against 70% with Haiku, mainly because the model gives no escalation reason and its handoffs land in the wrong queue.
 
 All numbers come from the files in `results/`. Rebuild the tables with `python -m northstar.finetune.compare`.
@@ -122,7 +124,7 @@ Full tables: `results/comparison_per_class.csv` and `results/comparison_by_slice
 - **Break-even:** cheaper than Haiku above about **197,000 chats a month**, and cheaper than Sonnet above about 12,800.
 - **Sensitivity:** with a 1-year committed price, the break-even with Haiku falls to about 143,000 chats a month. With a second server for redundancy, it rises to about 393,000.
 - **What this means:** for a single dealership, the router is a small cost either way (Haiku: $36 a month at 100,000 chats). So the choice should rest on accuracy and safety, not on router cost. Fine-tuning pays off on cost only at the scale of a large dealer group or a manufacturer-wide service.
-- **Inside the agent it does not pay at any volume today:** the cost model finds it saves $0.0025 a chat in model calls and finishes 10 points fewer chats alone and correctly, which costs about $0.27 a chat in people's time (`docs/economics.md` section 5).
+- **Inside the agent it does not pay at any volume today:** the cost model, which now prices the study's final router (`study/`, D-36), finds it costs $0.0007 more a chat in model calls (it keeps more chats) and finishes 2.5 points fewer chats alone and correctly, which costs about $0.066 a chat in people's time (`docs/economics.md` section 5).
 - **Not included:** people's time to label new chats for retraining, engineering time to run the server, and the cost of mistakes. The economics section (Phase 6) adds these.
 
 ## Training method: full fine-tuning vs LoRA (`results/lora_summary.json`)
@@ -140,7 +142,7 @@ Same base model, data and settings, scored on validation only. LoRA freezes the 
 - **Full fine-tuning kept:** it scored higher on every measure, most clearly on escalation recall, which matters most for safety.
 - **The gap is small next to the noise:** the macro F1 difference (0.05) is within one standard deviation across seeds. LoRA is not clearly worse on type, only on escalation.
 - **LoRA's real advantages** (half the training time, a checkpoint of a few MB instead of 1.1 GB) do not matter here: a full run already takes about a minute and the model fits easily on a free GPU.
-- At learning rate 3e-4, LoRA was still improving at the 30-epoch limit, so that setting was under-trained. At 1e-3 it stopped earlier on its own.
+- At learning rate 3e-4, LoRA was still improving at the 30-epoch limit, so that setting was under-trained. At 1e-3 it stopped earlier on its own. The fine-tuning study (`study/`, D-36) then trained it for 60 epochs: it matched full fine-tuning on request type with a smaller spread across seeds and was chosen, partly because its trained weights (6 MB for five seeds) can live in git and run in the agent.
 
 ## How much data would it need? (`datasize.py`, `results/datasize_curve.png`)
 

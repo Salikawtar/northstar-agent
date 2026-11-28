@@ -1,0 +1,7 @@
+{
+ "text": "Brooke is asking what the car would fetch privately versus selling it to the dealership. That is resale and trade-in value, which service doesn't handle, so it's out_of_scope. Her father has stopped driving but is not described as deceased, so this is not bereavement. Writing on a relative's behalf is not adversarial. She is not asking for records or data, only a valuation. No escalation applies.\n\n{\"request_type\": \"out_of_scope\", \"secondary_types\": [], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2286,
+ "output_tokens": 189,
+ "cost_usd": 0.006462,
+ "latency_ms": 2029.9
+}

@@ -1,0 +1,7 @@
+{
+ "text": "The car is stuck right now, and the customer reports a repeat failure after our repair (RO-187778, third time) and demands a manager. By the tie-break, that goes to needs_human. The customer request for a manager and the complaint fit customer_request. The stranded-on-road safety trigger also applies, but one reason must be chosen. Since the customer demands a manager, customer_request is the best fit. Roadside assistance goes in secondary_types.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\", \"repair_status\"], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.93, \"language\": \"en\"}",
+ "input_tokens": 2211,
+ "output_tokens": 222,
+ "cost_usd": 0.006642,
+ "latency_ms": 2178.7
+}

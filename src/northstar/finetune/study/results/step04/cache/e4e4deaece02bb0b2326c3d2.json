@@ -1,0 +1,7 @@
+{
+ "text": "The customer is asking what a charge is and how it was calculated, and which department handles it. They are not asking for it to be removed or refunded. The charge is a wear charge on a lease return, which could be lease_end_return or billing_dispute. The question is about an invoice or charge, so billing_dispute fits as the main type, with lease_end_return as secondary. Since they only want an explanation and are not contesting, there is no policy_limit escalation.\n\n{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"lease_end_return\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2207,
+ "output_tokens": 212,
+ "cost_usd": 0.006534,
+ "latency_ms": 2094.7
+}

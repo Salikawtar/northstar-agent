@@ -1,0 +1,7 @@
+{
+ "text": "Reading the conversation: the customer wants to know when an OEM replacement part, ordered yesterday with a $184 deposit paid, will arrive. That makes parts_order the main type. Warranty was refused, but the customer accepted that and is paying for the part, so warranty_claim is only a secondary theme. They are not asking for coverage now.\n\nEscalation: the customer mentions contacting CAMVAP, which is the Canadian Motor Vehicle Arbitration Plan. That is a formal complaint channel, so it counts as a legal threat or formal complaint. It has to go to a person, so request_type is needs_human, with parts_order as secondary and legal_threat as the reason. The customer is correcting the part they named, which is not adversarial.\n\nThe tie-break says a formal complaint or legal threat goes to needs_human even if another type fits. \"Before I contact CAMVAP\" is a conditional threat of arbitration, and I treat it as a legal threat. There is also a complaint about staff (Nicole), but it is mild and not the main point.\n\n<br>\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"parts_order\", \"warranty_claim\"], \"needs_escalation\": true, \"escalation_reason\": \"legal_threat\", \"confidence\": 0.8, \"language\": \"en\"}",
+ "input_tokens": 2451,
+ "output_tokens": 423,
+ "cost_usd": 0.009132,
+ "latency_ms": 3420.9
+}

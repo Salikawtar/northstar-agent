@@ -1,0 +1,48 @@
+{
+  "frozen_on": "2026-11-26",
+  "frozen_from": "results/step05 (notebook 05, second run, commit 65eee80) and results/cv_step03c, before any test or fresh chat was opened",
+  "why_two_fine_tuned": "The safety-first rule (EVAL_PROTOCOL section 7) ranks 'safest' first; 'balanced' is far better overall. Both are declared before the test chats are opened, so neither is picked after seeing them.",
+  "fine_tuned": {
+    "safest": {
+      "label": "Fine-tuned, full fine-tuning + attack answer",
+      "input": "first_message",
+      "training": {"lora": false, "lr": 2e-05, "epochs": 27, "heads": ["type", "escalation", "attack"],
+                   "batch_size": 16, "max_length": 320, "dropout": 0.2, "schedule": "constant"},
+      "escalation_cutoff": 0.05,
+      "attack_cutoff": 0.05,
+      "unsure_line": 0.55,
+      "pool_estimate": {"handled_right": 0.644, "missed": 2, "right_team": 62, "attacks_right": 28, "extra_handoffs": 45}
+    },
+    "balanced": {
+      "label": "Fine-tuned, LoRA + attack answer + own unsure line",
+      "input": "first_message",
+      "training": {"lora": true, "lr": 0.0003, "epochs": 60, "heads": ["type", "escalation", "attack"],
+                   "lora_r": 8, "lora_alpha": 16, "lora_dropout": 0.1,
+                   "batch_size": 16, "max_length": 320, "dropout": 0.2, "schedule": "constant"},
+      "escalation_cutoff": 0.10,
+      "attack_cutoff": 0.05,
+      "unsure_line": 0.40,
+      "pool_estimate": {"handled_right": 0.794, "missed": 6, "right_team": 59, "attacks_right": 25, "extra_handoffs": 15}
+    }
+  },
+  "fine_tuned_common": {
+    "train_on": "all 160 pool chats (train + validation)",
+    "seeds": [101, 102, 103, 104, 105],
+    "combine": "average of the five seeds' scores, as the cross-validated combined answer; each seed is also scored alone to show the spread",
+    "language": "word rule (routing.language_rule)",
+    "reason": "attack -> adversarial; otherwise from the request type (routing.reason_from_type)",
+    "scored_after": "the last epoch only; no test or fresh chat is scored at any other epoch"
+  },
+  "language_models": {
+    "haiku": {"model": "anthropic/claude-haiku-5.5", "prompt": "prompts/router_v3.md", "repeats": 3},
+    "sonnet": {"model": "anthropic/claude-sonnet-5.5", "prompt": "prompts/router_v3.md", "repeats": 3},
+    "jev2": {"model": "typesafe/jev-1.14", "questions": "jev_questions_v2", "repeats": 2},
+    "jev": {"model": "typesafe/jev-1.14", "questions": "jev_questions (first version)", "repeats": 2}
+  },
+  "language_model_inputs": ["first_message", "full_conversation"],
+  "datasets": {"test": "the 40 locked test chats", "fresh": "the team's 31 fresh held-out chats (one of 32 rejected in review)"},
+  "reference": "haiku on the same dataset and input",
+  "primary_measure": "strict handled-right (person or not, the right team, the right desk); safety columns first",
+  "statistics": "95% ranges by resampling customers; exact McNemar against Haiku on the same chats",
+  "api_budget_usd": 6.0
+}

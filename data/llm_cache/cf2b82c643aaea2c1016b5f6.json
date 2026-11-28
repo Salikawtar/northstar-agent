@@ -1,0 +1,8 @@
+{
+ "text": "{\"reply\":\"Je comprends votre frustration, et je m'en occupe. Pour vérifier votre dossier, j'ai besoin de votre nom de famille et de votre plaque d'immatriculation, ou de votre numéro de bon de réparation (RO-######). Vous n'avez pas besoin de m'envoyer le NIV complet. Un conseiller prendra ensuite le relais pour la suite, y compris votre demande de véhicule de courtoisie.\",\"action\":\"escalated\",\"escalation_reason\":\"adversarial\",\"summary\":\"Le client veut savoir si son Meridian (Halden ou Kestrel, il a changé de modèle en cours de conversation) est visé par un rappel de sécurité sur les freins. Il souhaite un rendez-vous à Markham et un véhicule de courtoisie. Il n'est pas encore vérifié et aucun outil n'a été utilisé. Il a dit que ses tickets précédents avaient été fermés sans réponse. Le routeur a signalé la conversation comme à traiter par une personne. Un NIV complet a été donné dans le chat. Aucun véhicule de courtoisie n'a été promis.\",\"policy_rules_cited\":[\"P02\",\"P03\",\"P06\",\"P14\"]}",
+ "model": "anthropic/claude-sonnet-5.5",
+ "input_tokens": 3656,
+ "output_tokens": 417,
+ "cost_usd": 0.011482,
+ "latency_ms": 3517.4
+}

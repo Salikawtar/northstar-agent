@@ -8,3 +8,5 @@ pyyaml>=6.0
 python-dotenv>=1.0
 openai>=1.40        # OpenRouter uses the OpenAI-compatible API
 pytest>=8.0
+scipy>=1.10          # fine-tuning study: exact paired tests
+requests>=2.31      # fine-tuning study: OpenRouter client for Jev's typed questions

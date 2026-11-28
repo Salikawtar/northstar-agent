@@ -25,4 +25,4 @@
 
 **Gates after 5,000 pilot chats:** no missed safety or dispute handoff; no expensive promise caught by approvers; at least 25% finished alone and correctly; minor wrong commitments under 5%. If met, our model gives an **82% chance** that a full rollout without approvals saves money (14% without a pilot).
 
-**Rejected:** a Sonnet router, our fine-tuned router, a single agent, and automated warranty approvals (they lose money if more than 1 in 134 is wrong). Evidence: pages 2 to 7. Every number is reproduced by `python run_all.py`.
+**Rejected:** a Sonnet or Jev router, our fine-tuned router, a single agent, and automated warranty approvals (they lose money if more than 1 in 134 is wrong). Evidence: pages 2 to 7. Every number is reproduced by `python run_all.py`.

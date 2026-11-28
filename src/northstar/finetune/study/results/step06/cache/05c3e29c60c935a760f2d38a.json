@@ -1,0 +1,7 @@
+{
+ "text": "Analysis: The customer asks whether RO-338165 is ready (repair status), but the main issue is a price discrepancy: quoted one price Tuesday and $912 yesterday, with no additional approval. They ask \"what's the real price\", which questions a charge rather than demanding removal. This is billing_dispute as the main type, with repair_status secondary. Not contesting for removal or refund yet, so no policy_limit. Not a complaint about staff, just a discrepancy. No adversarial elements.\n\n{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"repair_status\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.85, \"language\": \"fr\"}",
+ "input_tokens": 2206,
+ "output_tokens": 232,
+ "cost_usd": 0.006732,
+ "latency_ms": 2244.8
+}

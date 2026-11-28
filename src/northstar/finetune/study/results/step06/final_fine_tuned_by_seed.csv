@@ -1,0 +1,21 @@
+dataset,router,seed,type_accuracy,handled_right,missed,extra_handoffs
+test,"Fine-tuned, safest",101,0.8,0.75,0,5
+test,"Fine-tuned, safest",102,0.65,0.75,0,8
+test,"Fine-tuned, safest",103,0.825,0.8,2,4
+test,"Fine-tuned, safest",104,0.8,0.775,1,6
+test,"Fine-tuned, safest",105,0.675,0.7,1,8
+test,"Fine-tuned, balanced",101,0.725,0.8,2,2
+test,"Fine-tuned, balanced",102,0.8,0.825,1,2
+test,"Fine-tuned, balanced",103,0.7,0.8,2,2
+test,"Fine-tuned, balanced",104,0.8,0.925,1,1
+test,"Fine-tuned, balanced",105,0.725,0.825,2,2
+fresh,"Fine-tuned, safest",101,0.5161290322580645,0.4838709677419355,4,4
+fresh,"Fine-tuned, safest",102,0.4838709677419355,0.5483870967741935,5,3
+fresh,"Fine-tuned, safest",103,0.5161290322580645,0.3548387096774194,6,4
+fresh,"Fine-tuned, safest",104,0.5483870967741935,0.5161290322580645,4,4
+fresh,"Fine-tuned, safest",105,0.5483870967741935,0.4838709677419355,5,5
+fresh,"Fine-tuned, balanced",101,0.45161290322580644,0.45161290322580644,9,3
+fresh,"Fine-tuned, balanced",102,0.5483870967741935,0.4838709677419355,8,0
+fresh,"Fine-tuned, balanced",103,0.45161290322580644,0.3870967741935484,8,2
+fresh,"Fine-tuned, balanced",104,0.5806451612903226,0.41935483870967744,7,3
+fresh,"Fine-tuned, balanced",105,0.5161290322580645,0.4838709677419355,7,1

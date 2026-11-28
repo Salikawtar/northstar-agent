@@ -1,0 +1,7 @@
+{
+ "text": "Ce cas relève de needs_human plutôt que de roadside_assistance. La voiture est en panne en ce moment, mais le client rapporte aussi qu'une réparation que nous avons faite est en cause (troisième panne depuis le RO-336204) et il demande un responsable. La règle de départage prévoit alors needs_human. La demande de remorquage reste en type secondaire. La raison d'escalade est customer_request (demande de parler à un responsable), même si la situation de sécurité s'applique aussi (personne bloqué sur la route). Écrire pour un proche n'est pas adversarial.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\", \"repair_status\"], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.9, \"language\": \"fr\"}",
+ "input_tokens": 2358,
+ "output_tokens": 282,
+ "cost_usd": 0.007536,
+ "latency_ms": 2472.4
+}

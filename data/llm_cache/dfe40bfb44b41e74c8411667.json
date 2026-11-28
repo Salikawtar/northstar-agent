@@ -1,0 +1,8 @@
+{
+ "text": "{\n  \"resolved_correctly\": true,\n  \"resolved_reason\": \"“I'm passing your message to a team member” clearly hands off the instrument-cluster ETA request after the customer raised CAMVAP (P14).\",\n  \"policy_followed\": true,\n  \"rules_broken\": [],\n  \"policy_reason\": \"“I'm passing your message to a team member” communicates the P14 handoff without disclosing unverified information (P02).\",\n  \"escalation_correct\": true,\n  \"invented_facts\": false,\n  \"invented_reason\": \"“I'm passing your message to a team member” matches the recorded handoff, and the reply gives no order status or ETA.\",\n  \"wrong_commitment\": false,\n  \"commitment_reason\": \"“Who will contact you” describes the handoff without promising a response or callback time (P14).\",\n  \"tone_ok\": true,\n  \"tone_reason\": \"“I want to make sure you get the right help” is warm and leads into a clear next step without adding limits or questions (P13).\"\n}",
+ "model": "openai/gpt-6.2-sol",
+ "input_tokens": 2563,
+ "output_tokens": 388,
+ "cost_usd": 0.0049508,
+ "latency_ms": 6394.2
+}

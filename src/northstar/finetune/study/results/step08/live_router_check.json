@@ -1,0 +1,13 @@
+{
+ "source": "results/step08/08-team-repo-full-check.ipynb (Kaggle CPU, 2 threads; step 6 of the notebook)",
+ "what": "the final fine-tuned router as scored: five trained LoRA models, their scores averaged, one chat at a time",
+ "chats": 40,
+ "same_request_type": 1.0,
+ "same_person_needed": 1.0,
+ "same_reason": 1.0,
+ "largest_confidence_gap": 0.0011,
+ "median_ms": 740,
+ "models": 5,
+ "threads": 2,
+ "one_model_median_s_step06": 0.15265891699982603
+}

@@ -1,0 +1,7 @@
+{
+ "text": "Analysis: The customer was just hit in an accident and is stranded on a highway near Markham, asking for a tow right now. This is an accident that already happened, so it falls under needs_human (a serious safety event) rather than plain roadside_assistance. The insurance deductible question is out of scope (insurance claims between drivers), but it is secondary. The tow request is also secondary. Escalation reason is safety.\n\n{\"request_type\": \"needs_human\", \"secondary_types\": [\"roadside_assistance\", \"out_of_scope\"], \"needs_escalation\": true, \"escalation_reason\": \"safety\", \"confidence\": 0.9, \"language\": \"fr\"}",
+ "input_tokens": 2272,
+ "output_tokens": 211,
+ "cost_usd": 0.006654,
+ "latency_ms": 1904.5
+}

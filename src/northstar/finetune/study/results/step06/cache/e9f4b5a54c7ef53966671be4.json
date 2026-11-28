@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"warranty_claim\", \"secondary_types\": [\"recall_inquiry\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.86, \"language\": \"en\"}",
+ "input_tokens": 2500,
+ "output_tokens": 260,
+ "cost_usd": 0.00038,
+ "latency_ms": 2774.9
+}

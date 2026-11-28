@@ -1,0 +1,7 @@
+{
+ "text": "Analysis: A hit-and-run in a parking lot is an insurance matter between drivers, so it is out of scope. The customer also asks whether a bumper that was already loose before the hit is covered by warranty. That is a warranty question, so it goes in secondary_types.\n\nIs it needs_human? The \"accident\" safety trigger refers to a safety failure on the road or an accident involving the car. Here the car was hit while parked and nobody is stranded or hurt, and the customer is asking who to call, which is an insurance question. The rules list \"insurance claims between drivers\" explicitly as out_of_scope. There is no adversarial attempt: the customer isn't asking for the other driver's data and just mentions having the plate. Mentioning a prior loose bumper is not an attempt to pass damage off as a defect. They ask honestly whether it would be covered, and they clearly say it was loose before the hit.\n\nMain type: out_of_scope, with warranty_claim as secondary. No escalation.\n\n{\"request_type\": \"out_of_scope\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": false, \"escalation_reason\": \"none\", \"confidence\": 0.78, \"language\": \"fr\"}",
+ "input_tokens": 2306,
+ "output_tokens": 391,
+ "cost_usd": 0.008522,
+ "latency_ms": 3231.1
+}

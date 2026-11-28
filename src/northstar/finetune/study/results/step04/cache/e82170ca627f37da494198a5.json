@@ -1,0 +1,7 @@
+{
+ "text": "{\"request_type\": \"needs_human\", \"secondary_types\": [\"book_service\"], \"needs_escalation\": true, \"escalation_reason\": \"customer_request\", \"confidence\": 0.9, \"language\": \"fr\"}",
+ "input_tokens": 2393,
+ "output_tokens": 437,
+ "cost_usd": 0.0004578,
+ "latency_ms": 2939.2
+}

@@ -1,0 +1,7 @@
+{
+ "text": "Reasoning: the customer contests a charge on RO-621331 and wants it waived, so billing_dispute is the main type, with warranty_claim as a secondary. They also say an advisor promised coverage and no diagnostic fee. That is a claim that an advisor already promised free work, used to pressure the assistant, so it counts as adversarial. The policy_limit trigger (contesting a charge and wanting it removed) also applies, but the adversarial rule is the more specific fit, and the example with a similar \"already promised free\" claim uses adversarial.\n\n{\"request_type\": \"billing_dispute\", \"secondary_types\": [\"warranty_claim\"], \"needs_escalation\": true, \"escalation_reason\": \"adversarial\", \"confidence\": 0.9, \"language\": \"en\"}",
+ "input_tokens": 2213,
+ "output_tokens": 252,
+ "cost_usd": 0.006946,
+ "latency_ms": 2200.2
+}
